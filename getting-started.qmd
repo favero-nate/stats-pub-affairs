@@ -1,0 +1,273 @@
+# Getting Started with Data[^getting-started-1] {#sec-getting-started}
+
+[^getting-started-1]: This chapter was written by Nathan Favero.
+
+Data is everywhere. Yet many of us find numbers intimidating. When people make claims using numbers, they often appear authoritative. It's tempting to assume that if someone is sophisticated enough to fluently cite numerical information, they must be worth taking seriously. At the same time, there is a kind of backlash to using numbers to describe the world. The title of the popular book *How to Lie with Statistics* captures a cynicism many people feel: since statistics can easily trick you, you shouldn't believe them at all. Such extreme reactions reflect people's lack of self-confidence in evaluating quantitative information. Because we don't trust ourselves, we reflexively either dismiss or accept numerical claims—perhaps depending on whether the claim is one we already agree with or the source is one we trust.
+
+Fortunately, understanding of statistics is something that most anyone can learn. Even if you think you are not a "numbers person," I am confident that you can learn important fundamentals of statistics that will allow you to critically assess statistical claims for yourself. I say this because I have spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study public affairs—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. In my experience, it is true that some people learn numerical concepts quicker than others. For most people, lots of repetition is required before many statistical concepts are fully grasped. But I have yet to encounter a student who is unable to learn the fundaments of statistics. If you set your mind to it, you will learn statistics.
+
+In my opinion, the most important part of evaluating or conducting statistical analyses is critical thinking. While statistics is inherently quantitative, doing statistical analysis typically does not require you to perform any complex mathematical operations because statistical software will handle the number crunching. Thus, being comfortable with statistics is mostly about developing familiarity with abstract statistical concepts, learning a few technical details, and thinking carefully about how to best apply statistical tools to real-world data. "Subject-matter expertise," by which I mean familiarity with the policy or program area described by the data, is almost always required for good interpretation of statistical results. Sometimes, a bit of math will be helpful for explaining how a statistic works or understanding the implications of a statistical result. But even then, most of the math we need for an introductory course is relatively simple arithmetic.
+
+## 3 Questions to Always Ask about Data
+
+To help focus your attention on thinking critically, I encourage you to ask the following three questions whenever you encounter statistical information:
+
+1.  What is being measured?
+
+2.  Who (or what) is in the dataset?
+
+3.  How big are the differences?
+
+::: callout-tip
+## Example: Long-Term Trends in U.S. Education {.unnumbered}
+
+Many have argued that despite huge investments in public schooling, the U.S. has little to show in terms of learning gains.[^getting-started-2] In the following graph, the solid line indicates a clear upward trend in spending on education over the decades, although there is a slight dip at the very end of the series (following the 2008 financial crisis). The trajectory for math scores (the dashed line) is much less clear: while the average score in 2012 is a bit higher than in 1973 (306 vs. 304), this gain is tiny compared to the fluctuations seen across years.
+
+![Trends in U.S. education spending[^getting-started-3] and average math proficiency (17-year-olds)[^getting-started-4]](Images/getting-started/naep.png){width="550"}
+
+Notice that there are two y-axes on this graph: one on the left edge showing the units for expenditures and one on the right edge displaying units that are described as NAEP scores. That is because the trend in Math proficiency (measured using NAEP scores) is superimposed over the trend in spending levels, despite the fact that these two variables are measured in entirely different units. In my experience, the use of two y-axes often leads to confusion, and it is usually better to "keep it simple" by separating the data into two separate graphs.
+
+In analyzing this example, I will mostly ignore the spending trend in favor of evaluating the math trend, for sake of brevity. Still, I will note that increased spending is largely driven by (1) increasing labor costs across the (high-skilled) economy and (2) greater investments in special education. The latter investments likely improve equity and fairness in society but may do little to improve test scores.
+
+Regarding the math trend, let us consider our 3 Questions to Always Ask about Data:
+
+1.  **What is being measured?**
+
+    If you were encountering this data for the first time on your own, I would recommend doing a quick online search for NAEP scores, perhaps focusing on descriptions from familiar sources like Wikipedia or government websites. You would find that NAEP score come from standardized tests conducted by the U.S. Department of Education. If you wanted to go even deeper, you might do a Google Scholar search to see how researchers seem to be discussing/using NAEP scores. They are generally considered to be high-quality measures of student learning. You might also discover that there are actually two different kinds of NAEP scores: the long-term trend scores, shown here, as well as another set of scores based on a test that has only been administered since the 1990s.
+
+2.  **Who (or what) is in the dataset?**
+
+    Typically, we ask this question because we wonder who (or what) might be *missing* from the data. Perhaps the first thing you notice is that the data stops in 2012. Why aren't students after 2012 included? It turns out that 2012 is the most recent year available for this trendline because the Department of Education has canceled data collection multiple times for the long-term trend NAEP among 17-year-olds, citing limited funding and COVID-19 pandemic disruptions. This reflects a frequent but unfortunate problem we face when analyzing data in the real world: data collectors often discontinue their work and leave us with an incomplete picture. Nonetheless, we can still use this data to say something meaningful about learning trends from prior decades.
+
+    If you did some basic reading about the NAEP as suggested for the prior question, you would probably find that NAEP scores are available for various ages. Specifically, the long-term trend scores are available for kids aged 9, 13, and 17. Yet the graph only depicts the data for 17-year olds. On the one hand, it might seem that the oldest age is the most important since it indicates how students are doing near the end of their secondary education. On the other hand, it might be useful to see what the other trends look like. A quick online search for "naep scores over time" will likely return a government website showing NAEP scores for younger students, such as those shown below.[^getting-started-7] Among 9 and 13-year-olds, there is clear improvement in math between the '70s and 2012. Then more recently, there is a large drop associated with the disruptions of COVID-19.
+
+    ![Trend in 9-year-old math proficiency[^getting-started-8]](Images/getting-started/9yo_naep.png){width="700"}
+
+    ![Trend in 13-year-old math proficiency[^getting-started-10]](Images/getting-started/13yo_naep.png){width="700"}
+
+    Given these results, you might conclude that there was some possible cherry picking in presenting the initial graph, since the trend among 17-year-olds shows much less improvement from the 1970s to the early 2000s than the trends for younger students. That is an important conclusion to reach and helps put the original graph in context.
+
+    If you have some expertise in U.S. education, you can go even further with your evaluation of this data. One potentially important difference between 13 and 17-year-olds in the U.S. is that school attendance is typically compulsory at age 13 but not at 17. An online search (e.g., for "change in school dropout rate over time") will likely reveal government reports showing that the dropout rate has generally declined over previous decades. Thus, one potential explanation for the mostly-flat trendline in 17-year-old NAEP scores is that in prior decades the 17-year-old scores were artificially inflated due to lower-performing students dropping out of high school and thus not taking the exams. In more recent years, more of these lower-performing students remain in school (a positive policy outcome), and even if they are learning more than in the past, their continue presence in schools brings the NAEP score average down, all else equal. To be precise, the overall picture is muddy because of limited data, and it is not clear exactly how much the improving dropout rate has distorted the 17-year-old trendline. But there is probably at least some distortion, and it is thus difficult to make definitive statements about the trends in learning among 17-year-olds.[^getting-started-12]
+
+    One final note about what is (not) included in the data we've been discussing: in addition to math, there are reading scores available for NAEP. While I focus on a single subject here for simplicity, an important caveat to our story about 9 and 13-year-olds is that their reading scores improved less than their math scores between the 1970s and 2012.
+
+3.  **How big are the differences?**
+
+    The 9-year-olds' 2012 scores are 25 points higher than in 1973 (244-219=25). Gains for 13-year-olds over the same period are a bit smaller: 19 points of improvement (285-266=19). How big is a 25-point increase? It's a bit hard to say because NAEP scores are measured in units that are not familiar to most of us. When working with unfamiliar units of measurement, sometimes the best we can do is to make relative comparisons. For example, we see that in 1973, 13-year-olds scored 47 points higher than 9-year-olds (266-219=47). Thus, a 25-point gain is over half the difference between 9 and 13-year-olds in terms of math proficiency on the 1973 exam. We could further contextualize these numbers by making the simplistic assumption that 11-year-olds—who don't take the NAEP—land exactly halfway between 9 and 13-year-olds. If so, 1973's 11-year-olds should have scored a 242.5. Thus, over the course of four decades, 9-year-olds seem to have improved to roughly the level of 11-year-olds in 1973. This is a substantial improvement!
+
+    The term "back-of-the-envelope" calculations refers to the use of simple math to make approximations based on convenient assumptions, as we have just done. Such calculations yield only rough approximations, but they can helps us develop an understanding of the sizes of differences we encounter in data analysis.
+:::
+
+[^getting-started-2]: See <https://www.hamiltonproject.org/wp-content/uploads/2023/01/092011_education_greenstone_looney_shevlin.pdf>.
+
+[^getting-started-3]: Expenditure per pupil in fall enrollment from Table 236.55 of the *2023 Digest of Education Statistics,* National Center for Education Statistics. <https://nces.ed.gov/programs/digest/d23/tables/dt23_236.55.asp>
+
+[^getting-started-4]: National Center for Education Statistics (2013). *The Nation's Report Card: Trends in Academic Progress 2012*  (NCES 2013–456). National Center for Education Statistics, Institute of Education Sciences, U.S. Department of Education, Washington, D.C.
+
+[^getting-started-5]: Expenditure per pupil in fall enrollment from Table 236.55 of the *2023 Digest of Education Statistics,* National Center for Education Statistics. <https://nces.ed.gov/programs/digest/d23/tables/dt23_236.55.asp>
+
+[^getting-started-6]: National Center for Education Statistics (2013). *The Nation's Report Card: Trends in Academic Progress 2012*  (NCES 2013–456). National Center for Education Statistics, Institute of Education Sciences, U.S. Department of Education, Washington, D.C.
+
+[^getting-started-7]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
+
+[^getting-started-8]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
+
+[^getting-started-9]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
+
+[^getting-started-10]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
+
+[^getting-started-11]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
+
+[^getting-started-12]: See <https://www.chalkbeat.org/2022/3/31/23005371/high-school-test-scores-underestimate-naep-dropout-nces/> and <https://www.edweek.org/teaching-learning/are-rising-grad-rates-pulling-down-naep-scores/2016/05>.
+
+## How Datasets are Structured
+
+We often display data in the form of a spreadsheet. In the table below, we see a small dataset describing a few countries. Each row represents one country, and we call the rows **observations**. Each column represents one characteristic of the countries. We call the columns **variables**. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns [vari]{.underline}ables because they display values of a characteristic that [varies]{.underline} depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.
+
+| country_name | publ_sector_size | females_publ | females_priv | former_british_colony |
+|----|----|----|----|----|
+| Guatemala | 0.0642733 | 0.437011 | 0.2751051 | 0 |
+| Guinea-Bissau | 0.0535029 | 0.2742133 | 0.3592181 | 0 |
+| Honduras | 0.0602268 | 0.5613141 | 0.3063367 | 0 |
+| Hungary | 0.2614872 | 0.694158 | 0.3943521 | 0 |
+| India | 0.0851988 | 0.3021879 | 0.1555202 | 1 |
+| Indonesia | 0.097229 | 0.4430795 | 0.3249187 | 0 |
+
+: Preview of a dataset of countries and their characteristics[^getting-started-13]
+
+[^getting-started-13]: Data sources are the Worldwide Bureaucracy Indicators dataset ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc)) and the Colonial Dates Dataset.
+
+The next table shows a dataset where each observation (row) is a different individual who responded to a survey. We use the term **unit of analysis** to describe what constitutes one observation in a dataset: in the prior table the unit of analysis was the country, whereas here it is the individual. Other common units of analysis are the organization, the work unit, and the subnational unit (e.g., city or region).
+
+| random_id | race | hispanic | sex | q1 | q2 |
+|----|----|----|----|----|----|
+| 194868625278 | White  | No  | Male  | Neither Agree nor Disagree | Neither Agree nor Disagree |
+| 152966380283 | White  | No  | Male  | Disagree | Strongly Disagree |
+| 146904434378 | Other | No  | Female  | Agree | Agree |
+| 161966059804 | White  | Yes  |  | Strongly Agree | Strongly Agree |
+| 133516090099 | Black or African American  | No  | Male  | Agree | Agree |
+
+: Preview of data from a 2024 survey of U.S. government employees[^getting-started-14]
+
+[^getting-started-14]: 2024 U.S. Federal Employee Viewpoint Survey
+
+### Types of variables
+
+We also distinguish among different kinds of variables, which will often require different types of analysis.
+
+**Quantitative variables** are expressed in numbers. The public sector variable we examined above is quantitative.
+
+For **qualitative variables**, it typically makes more sense to use text instead of numbers to describe the values. For example, race is a qualitative variable, as shown in the example survey data above. While you may sometimes encounter datasets that record the values of a qualitative variable using numbers (for ease of processing), the assignment of numbers to values will be arbitrary. This is because qualitative variables take on values that are unordered categories (cannot be arranged from least to most). Hispanic and sex are also qualitative variables in the example survey data.
+
+A qualitative variable that takes on only two values is also called a **binary variable**. The variables hispanic and sex are binary. For the sex variable, there is also one blank cell, indicating a missing value. Binary variables often appear in spreadsheets with values shown as 1s and 0s. In some cases, a 1 indicates “yes” while a 0 indicates “no.” For example, in the country data shown above, the variable “former_british_colony” is coded as a 1 if “yes, this country is a former British colony” and 0 if it is not.
+
+There is also a third type of variable called an **ordinal variable**, where values can be arranged in order but cannot be easily quantified. This type exists in a somewhat grey zone between quantitative and qualitative. Many surveys utilize Likert scales, which allow respondents to choose from a range of options along a continuum (e.g., strongly disagree, disagree, agree, strongly agree). Variables Q1 and Q2 in the survey data example use this kind of scale. For Q1, people are responding to the statement "I am given a real opportunity to improve my skills in my organization." Q2 asks them to indicate whether they agree that "I feel encouraged to come up with new and better ways of doing things." Likert scales result in ordinal variables: while we can arrange response options from most agreement to least agreement, it is not clear how to assign precise numbers because we don’t know if the distances between response options are equal. If “strongly disagree” is a 1 and “disagree” is a 2, should “neither agree nor disagree” be a 3? Or a 4? Maybe 3.5? It is difficult to say what numbering scheme would most accurately represent respondents’ attitudes because this is an ordinal variable.
+
+### Types of datasets
+
+So far, the datasets we have seen are what we call **cross sections**. Each observation is a different unit. There are also **time series** datasets, where each observation is a different point in time. We saw an example of time series data on U.S. education being depicted graphically at the beginning of the chapter. Below, we see some of this same data displayed as a spreadsheet. With time series data, the unit of analysis could be the year (as in our example), the quarter, the month, the week, the day, etc.
+
+| year | spending_per_pupil |
+|------|--------------------|
+| 1973 | 7817               |
+| 1974 | 7994               |
+| 1975 | 8235               |
+| 1976 | 8445               |
+
+: Time series data (U.S. education spending)
+
+You may also sometimes encounter more complicated data structures that combine the attributes of cross-sectional and time series data. A **panel** dataset tracks multiple units over multiple time periods. For example, a dataset might track several countries over several years (each row describing one country in one year). A **repeated cross-section** is similar, except that different units are observed in each time period. For example, a survey that is conducted annually but where the respondents are different each year is a repeated cross section.
+
+### Varying terminology
+
+Unfortunately, there are many cases where statistical terminology is inconsistent from one source to the next. Since you will probably encounter research reports or articles that use different terminology than I use here, it is important to be familiar with these alternative terms:
+
+-   Qualitative variables can also be called **categorical variables** or **nominal variables**.
+
+-   Binary variables are often called **dummy variables**.
+
+-   Time series data is sometimes called **longitudinal data**.
+
+Sources also disagree on whether ordinal variables should be considered a subcategory of quantitative or qualitative variables. For this text, I consider ordinal variables to be their own distinct third category, but different authors classify them somewhat differently.
+
+## Visualization Basics
+
+Creating simple graphs is often a great first step for getting familiar with a dataset. In this chapter, we will focus mainly on graphing just one variable at a time.
+
+### Qualitative and ordinal variables
+
+For qualitative and ordinal variables, we often use bar charts to depict the frequencies of different values:
+
+![Bar chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/bar.png){width="550"}
+
+One can quickly see from the chart above that the most common value for the race variable is White, meaning that most U.S. government employees responding to the survey are White. We also see that the values of Asian and Other are fairly rare (each occurring in fewer than 10% of observations).
+
+Another type of graph you can create with qualitative data is a pie chart, using the frequency of each value to create the size of the pie slice. Pie charts visually suggest a zero-sum approach to thinking about the sizes of the different categories: you can't make one slice bigger without making at least one other slice smaller. This makes pie charts particularly effective for depicting something like a budget allocation where a fixed resource is being distributed across categories. However, a zero-sum allocation is not always what we wish to emphasize when summarizing a qualitative variable. Pie charts can also be hard to read with certain configurations of data (i.e., when there are too many categories or the slices get too small). Thus, it should come as no surprise that research scientists tend to rely on bar charts more than pie charts for depicting qualitative variables.
+
+![Pie chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/pie.png){width="550"}
+
+Note that bar charts and pie charts can be used to represent things other than the frequency with which different values of a variable occur. It is important to always carefully read the titles and labels for a graph to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or you might see the levels for the budget categories themselves depicted in a pie chart—highlighting how some categories make up a much larger share of the budget than others. In such cases, the charts would not be telling you how many observations (rows of data) record different values of a variable, as in the example graphs shown above.
+
+### Quantitative variables {#sec-quantitative-variables}
+
+Perhaps the most popular type of graph for visualizing a single quantitative variable is a histogram. An example is shown below, using the publ_sector_size variable we discussed above. In a histogram, each bar represents a range of values, known as a “bin.” The x-axis (along the bottom of the graph) shows us the range of values for the publ_sector_size variable being described by each bar. The height of each bar represents how many data points fall within the corresponding bin. In this particular histogram, the y-axis (along the left side of the graph) shows how different heights indicate different numbers of observations. For example, the first bar on the left has a height indicating seven observations. The approximate range shown on the x-axis for this bar is .02 to .07. Therefore, seven countries have a public sector size between approximately .02 and .07, meaning that 2-7% of employment in those countries is within the public sector. The right-most bar indicates that 5 countries—those with the largest public sectors—have approximately 30-35% of all workers employed by the public sector. Most countries in this dataset lie between the two extremes depicted by the left-most and right-most bars. There are more observations in the middle three bins (indicated by the taller bars) than there are in the two left-most or the two right-most bins.
+
+![Histogram of public_sector_size variable from a dataset of countries and their characteristics](Images/getting-started/hist1.png){width="550"}
+
+Now, let's examine a histogram for the variable females_publ, which indicates the proportion of public sector employees who are female. In this graph, we can notice a certain asymmetry: the bars on the right half of the graph tend to be taller than those on the left. The short bars indicate that relatively few countries have proportions in the approximate range of .1 to .45; in other words, for a small number of countries, we see that 10-45% of the public workforce is female. Most countries have a public workforce that is more like 45-75% female (the tall bars on the right side of the graph). Thus, it seems that in a majority of the 44 countries included in this dataset, the public sector employs more females than males.
+
+![Histogram of females_publ variable from a dataset of countries and their characteristics](Images/getting-started/hist2.png){width="550"}
+
+There are several alternatives to histograms. You can see in the figure below several different types of graphs being used to depict the same data for the females_publ variable. Each one indicates the relative density of observations across the range of possible values. Much like a histogram, a kernel density (k-density) plot uses height to indicate the frequency with which values occur, but rather than dividing values up into discrete ranges (bins), an algorithm is used to create a smooth, continuous line that is drawn across the values. A violin plot (which can be oriented horizontally or vertically) is somewhat similar but uses thickness rather than height to indicate density of observations across the range of values. A strip plot uses one dot per observation but usually adds some random noise called "jitter" to the data. Without this jitter, dots often stack on top of one another such that the actual density of observations is obscured. Finally, a box plot uses a box to indicate the range of values containing the middle 50% of observations, with other lines indicating other important quantities like the full range of values. Given the importance and complexity of box plots, we will examine them in more detail in the next chapter.
+
+![Various plots of public_sector_size variable from a dataset of countries and their characteristics](Images/getting-started/compare.png)
+
+Regardless of which type of plot we use, we see the same asymmetry apparent in the original histogram for females_publ: most of the data lies in the range of .4-.8, with a few observations also occurring in the range of .1-.4.
+
+### Best practices for simple graphs
+
+As useful as graphs are, it is also easy to go wrong with data visualization. Here are three simple guidelines to keep in mind when getting started with graphs.
+
+First, the simple graphs we examined for quantative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
+
+::: callout-tip
+## Example: Estimates of Small Donations {.unnumbered}
+
+A survey of nonprofits asked them to estimate the percentage of individual donations to their organization in 2019 that were smaller than \$250.[^getting-started-15] Look at how different the right-most bars of the histogram look, depending on whether we use 10 bins or 11 bins (a setting we can change in the software creating the histograms):
+
+![Histograms with different bin settings (depicting donations estimate variable)](Images/getting-started/donations_hist1.png){width="550"}
+
+Why the dramatic change? If we plot bins with a width of 1, we get a better sense of what is unusual about the underlying data:
+
+![Histogram with a bin width of 1 (depicting donations estimate variable)](Images/getting-started/donations_hist2.png){width="550"}
+
+From this more fine-grained depiction of the data, we see that respondents appear to typically answer with numbers divisible by 5. Remember, survey respondents were asked to provide an estimate. People are more likely to offer estimates that are "round" numbers like 90 or 95, as opposed to something like 92.
+
+In the initial histogram with 10 bins, the right-most bin included the value 90—the most popular answer. When we switched to using 11 bins, the right-most bin was redrawn to exclude 90, so height dropped dramatically. Because of the spikes in frequency at round numbers (divisible by 10 or 5), changes in bin settings can cause relatively large changes to the visual pattern of the histogram.
+:::
+
+[^getting-started-15]: Year 1 of the Nonprofit Trends Longitudinal Survey Public Use Data Files
+
+Second, be careful about using line graphs. When working with time series data, we often depict quantitative variables using a line graph. As we already saw in our example on trends in U.S. education, line graphs allow one to visually observe trends over time. While line graphs are appropriate for depicting time series data, their use in other contexts is often misleading, since the lines suggest connections between points that may not be connected at all in reality.
+
+Finally, it is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. As I alluded to near the beginning of the chapter, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-16] Focus on simplicity and clarity in data visualization, not trying to stand out.
+
+[^getting-started-16]: See, for example, violations of the "principle of proportional ink": <https://callingbullshit.org/tools/tools_proportional_ink.html>
+
+## Critically Evaluating Graphs {#sec-critically-evaluating-graphs}
+
+Graphs are often poorly constructed in ways that can mislead, so it's always important to think critically and exercise caution when interpreting data visualizations.
+
+Let's look at some examples and try seeing if any of the 3 Questions to Always Ask about Data can help us identify misleading graphs.
+
+First, let us consider q2 from the survey of federal employees, which asks whether there is a workplace environment supportive of innovation. As we noted, this variable is ordinal, meaning it is not obvious what numbers would be most appropriate to attach to the variable values. Nonetheless, we adopt here the common practice of assigning 1 to one end of the Likert scale (Strongly Disagree) and counting up by whole numbers for each successive response option:
+
+-   Strong Disagree = 1
+
+-   Disagree = 2
+
+-   Neither Agree nor Disagree = 3
+
+-   Agree = 4
+
+-   Strongly Agree = 5
+
+We're not sure if these numbers are really the ideal ones to assign, but they are a reasonable approximation of how attitudes might be mapped to numbers. And by assigning precise numbers to the response options, we enable treating this variable as quantitative. This is beneficial because quantitative variables are often easier to work with than qualitative variables. For example, we can calculate the average of a quantitative variable. The overall average of the q2 variable is 3.79, which is a bit less than the value we assigned to Agree. We can also compute averages for different subsets of survey respondents. For example, we can compute separate averages by sex (separating out males and females) and display these averages in a simple graph. Here is one possibility for what that graph could look like:
+
+![A tiny difference that looks large: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedin.png)
+
+A quick glance at this graph suggests that males feel much more supported in pursuing innovation than than females. But our third Question to Always Ask about Data suggests we should always carefully consider "How big is the difference?" Look closely at the y-axis here. The average response for females appears to be around 3.787, while the average response for males is approximately 3.798. That is a tiny difference—just .011 on a 1-5 scale. In reality, male and female respondents report very similar average levels of support for pursing innovation. It is just that the figure is depicting a very narrow portion of the range for this variable, which makes a mole hill look like a mountain.
+
+Let's look at what happens when we redraw the y-axis:
+
+![A tiny difference that looks tiny: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedout.png)
+
+Now, the difference in averages between females and males is difficult to visually detect because the dot for Male is barely higher up than the dot for Female. Notice the values on the y-axis: the range begins at 3 (Neither Agree nor Disagree) and ends at 4 (Agree). We have "zoomed out" on the difference we saw in the prior graph.
+
+Generally speaking, any difference can be made to visually look very large or very small depending on how the axes are drawn. It is all about how "zoomed in" or "zoomed out" you are relative to the range of possible values for the variable.
+
+::: callout-tip
+## Example: Childhood Vaccination Rates {.unnumbered}
+
+It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the initial one we just saw comparing males and females. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y axis in order to avoid "zooming in" on part of the y axis so much that we make small differences appear larger than they really are. Let's consider this rule in the context of some data on trends in childhood vaccination. Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-17] The figure below shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line). The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.
+
+![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target[^getting-started-18]](Images/getting-started/vaccination2.png)
+
+Now look at the following alternative. While the exact same data is being depicted in this new graph, the redrawn y axis makes the solid line look like it is moving a lot (suggesting big year-to-year differences). Prior to 2020, rates were pretty consistently within the 94-95% range. But more recent years show rates two or three percentage points below the 95% target. Given the potential public health implications of falling just one or two percentage points below the target of 95% vaccine coverage, it does not seem like a smart choice to include 0 on the y axis for this data, since doing so makes it quite difficult to precisely discern changes of one or two percentage points.
+
+![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target[^getting-started-20]](Images/getting-started/vaccination1.png)
+:::
+
+[^getting-started-17]: Pandey, A., & Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide. *The Lancet Global Health*, *11*(4), e478-e479. <https://doi.org/10.1016/S2214-109X(23)00063-3>
+
+[^getting-started-18]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
+
+[^getting-started-19]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
+
+[^getting-started-20]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
+
+[^getting-started-21]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
+
+For good visualization, we want differences that are meaningful in reality to be visually noticeable in our graphs. How do we define a "meaningful" difference? There is no universal rule. Typically, subject-matter expertise and careful judgment will be our best guides.
+
+Whenever you see a difference in a graph that "looks big" or "looks small," take a moment to pause. Look carefully at the numbers on the axes, and think about how to evaluate the third Question to Always Ask about Data: "Based on what I know about this topic and how the variables are measured, *how big is this difference*? Does my understanding of the numbers match what my eyes see?"

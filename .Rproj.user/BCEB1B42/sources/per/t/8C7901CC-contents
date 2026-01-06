@@ -1,0 +1,124 @@
+# Probabilistic models {#prob-models}
+
+Policy makers, managers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution. **Probability distributions** are precise descriptions of all possible values that could be obtained from a random process as well as the probability of each value occurring. One of the simplest probability distributions is that describing a coin flip. The two possible values are "heads" and "tails," and each value has a 50% chance or .5 probability of occurring. Probability distributions are very useful in statistics because they allow us to build statistical models that account for randomness or uncertainty.
+
+::: callout-tip
+## Anticipating How Many Visitors to Expect {.unnumbered}
+
+CC BY (<https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0183224#ack>)
+:::
+
+We learned before that a distribution describes how frequently every possible value for a variable occurs in a dataset (i.e., what you see when you use the tab command in Stata) • Probability distributions don’t describe data we’ve collected; instead, they describe a random process and indicate how likely we are to obtain different possible values from this random process
+
+When we talked about distributions the last few weeks, we were talking about data that had already been collected • Probability distributions describe a (theoretical) random process from which we get data • Example: • If we write out the (theoretical) probabilities for each possible outcome of a coin flip (heads, tails) or a die roll (1, 2, 3, etc.), we’re talking about a probability distribution • If we flip a coin (rolled a die) 20 times and record the results, we’re looking at a distribution of data, which we might depict with a histogram
+
+Another way to think about this distinction is that for a distribution of data we’ve collected, each observation was (theoretically) drawn from the probability distribution • Example: • If we have a distribution (PDF graph) that describes how likely we think it is that we get various numbers of patients visiting the ER on a given day, we’re looking at a probability distribution • If we’re looking at data (e.g., a histogram) of past daily totals for the number of patients who visited the ER, we’re looking at a distribution of data
+
+Many of the same statistics and words we use to describe data that’s been collected can also be used (with a bit of adaptation) to describe probability distributions. • For example, a probability distribution will (often) have a mean (also called the expected value) and a variance
+
+Random variable: has a set of possible values that can be described by a probability distribution
+
+Most of the distributions we’ll think about in this class will be more complex, and we’ll mainly depict them graphically • We generally depict complex (continuous) distributions using a probability density function (PDF) • Our statistics software will be doing a lot of fancy math behind the scenes based on these PDFs, but you don’t need to worry about such details in this class • You can basically interpret a graph of a PDF like a kernel density plot (or even a histogram)
+
+Statisticians have developed PDFs for distributions with lots of different shapes
+
+A precise interpretation for PDFs is a bit tricky since any value can be measured to infinite digits (and therefore has infinitely small probability of being selected) • Total area under line equals 1 • Probability for a range of possible values (e.g., probability of drawing a value between 0 and 0.7) equals the area under the line within that range (requires calculus)
+
+With PDF graphs, wherever the height is greater, the values are more likely to be observed (just like a histogram) • But kernal desnity plots or histograms are generally used for data that we’ve already collected; PDF graphs depict a probability distribution from which data is “drawn” (the distinction is subtle, and you can’t necessarily tell from just looking at the graph)
+
+One of the most important probability distributions we use in statistics is called the **normal distribution**. It has a symmetrical shape called a bell curve. Many variables in nature appear to approximately follow the normal distribution. If you measure the heights of a population of adult humans of a single sex (male or female), the distribution should look similar to the normal distribution, for example. We often encounter the normal distribution because of a principle described in the central limit theorem, which states that any variable that results from summing up many small, independent factors will approximately follow a normal distribution.
+
+All normal distributions have this basic shape, but it can be shifted to the left or right, squished, or expanded For normal distribution, two parameters needed to identify exact distribution: mean (μ) and variance (σ2)
+
+68-95-99.7
+
+Standard normal distribution: normal distribution with mean of 0 and standard deviation of 1 (μ = 0; σ = 1) • When you hear “standard” normal, think of standardization (Lecture 2); you can transform any normal distribution into a standard normal distribution by standardizing the values in the original distribution
+
+## Models and Uncertainty {#sec-models-and-uncertainty}
+
+Before I leave my house each morning, I need to decide whether to take an umbrella. So I check my phone to see whether it’s supposed to rain. Instead of giving me a direct yes or no answer, the weather app tells me the percent chance of rain for the day.
+
+Why does the weather app give me a percentage? Because there’s uncertainty. Science has done a lot to help us understand the weather. And as our understanding of the weather improves, our predictions get better. But we still can’t predict rain perfectly.
+
+Facing uncertainty is a common problem when we’re looking at data. Whether we’re trying to explain the weather, human behavior, or even plant growth, we can’t make perfect predictions because there are things we can’t fully explain with our current scientific knowledge.
+
+In statistics, we have several tools that allow us to acknowledge uncertainty. This enables us to build models like the ones powering my weather app—models that give us a prediction that includes a description of how uncertain we are. Some days we are 100% sure it will rain, other days only 60%.
+
+In order to build these models that acknowledge uncertainty, we need a way to talk about what we do know and what we don’t know. Let me give a very simple example of a model that accounts for uncertainty:
+
+$$
+happiness = 3.0 + 2.3 \times income + \varepsilon
+$$ {#eq-a}
+
+This model attempts to explain one’s level of happiness based on their income. You might notice that it looks very similar to the regression equations we saw in @sec-correlation. That’s because regression is one of the main tools used to estimate a model that includes uncertainty.
+
+What does this model mean in practical terms? Well, there are no obvious units we can use to quantify the amount of happiness someone experiences, so the exact values of the numbers we see are not particularly meaningful. But the fact that there’s a positive number (2.3) that is being multiplied by income implies that as income gets bigger, happiness gets larger.
+
+The key part of this equation that I want to focus on is the little Greek letter at the end of the equation: $\varepsilon$. This letter is called “epsilon,” and it is often used to represent what we call an **error term** (also sometimes called a **disturbance term**). The error term ($\varepsilon$) represents everything else besides income that affects happiness. By including an error term, we are acknowledging that we can’t perfectly predict one’s level of happiness based on their income. We think that knowing one’s income will help us predict their happiness, but we know there are other factors we won’t be able to measure or identify that will also affect happiness. Thus, if all we know about someone is their income, we will have uncertainty about their exact level of happiness. By including an error term ($\varepsilon$) in the model, we make clear that we only claim to have a partial understanding of happiness, not a complete one.
+
+Think for a moment about how few topics we could study if we didn’t have the freedom to build models that include uncertainty. We’d only be able to build a model of a dependent variable after we had identified (and measured) *all* of the factors that affect that variable! We wouldn’t be able to build a model of rain since we don’t know all of the factors that affect the rain. We couldn’t build a model of voting behavior since we don’t know everything that affects how someone will vote. By including an error term in our model, we can build models even when our understanding of something is incomplete.
+
+The first part of our model that appears on the right side of the equation ($3.0 + 2.3 \times income$) is sometimes described as the *systematic* part of our model. It’s what we would use to build a prediction of happiness if all we knew about someone was their income level. Suppose, for example, that someone has an income of 4 units (perhaps income is measured in tens of thousands of dollars of annual income, so a salary of \$40,000 is coded as a 4). According to our model, that person’s happiness would be:
+
+$$
+happiness=3.0+2.3 \times (4)+\varepsilon
+$$ $$
+happiness=12.2+\varepsilon
+$$
+
+We, therefore, predict that someone with an income of 4 will have a happiness of 12.2, but we also acknowledge that their actual happiness will likely be a bit different from our prediction since our model indicates that their actual happiness will equal 12.2 plus the value of the error term ($\varepsilon$).
+
+The error term describes something unknown, so we can’t measure it or directly observe it. But what we can do is talk about its characteristics using concepts from probability theory. Specifically, we’re going to describe the value of the error term as being randomly selected. You may have dealt with randomness in math classes before using examples such as coin flips, die rolls, or drawing cards from a 52-card deck. Just as the likelihood of different outcomes from parlor games can be described using probability, we’re going to use probability to describe different possible values for the error term of a statistical model.
+
+## Assumptions About Error Terms
+
+It’s easy to write out an equation that includes an error term, but we are not going to be able to do much with our model unless we make some assumptions about the error term. One of the most important (and challenging) parts of doing statistical analysis is making assumptions about the possible values of the error term. Different assumptions about the error term can result in very different conclusions.
+
+Let’s again consider the simple model of happiness that was introduced above:
+
+$$
+happiness=3.0+2.3 \times income+\varepsilon
+$$
+
+We might assume the following things about the error term ($\varepsilon$):
+
+1.  The values of the error term ($\varepsilon$) can be described by a normal distribution with a mean of 0
+2.  Knowing someone’s income doesn’t help us predict the values of the error term ($\varepsilon$)
+
+What do these two assumptions mean?
+
+First, if the error term ($\varepsilon$) follows a normal distribution with a mean of zero, that means that (according to our model), people are just as likely to have a positive value of the error term as they are to have a negative value of the error term. In other words, all those factors we haven’t accounted for in our model are equally likely to push people in the direction of being happier or in the direction of being less happy. Our model and assumptions tell us that if we predict happiness purely based on income, we’ll *overestimate* some people’s happiness, and we’ll *underestimate* an equal number of people’s happiness.[^prob-models-1]
+
+[^prob-models-1]: Note that these deviations from our prediction don’t imply that our model is wrong; our model explicitly acknowledges that we’ll get only imperfect estimates if we predict happiness based on income, since the unobserved error term ($\varepsilon$) also contributes to happiness.
+
+Second, these assumptions allow us to describe how much individual observations will tend to deviate from our income-based predictions. We haven’t specified in our assumptions what the standard deviation is for the normal distribution for the error term ($\varepsilon$), but statistical analysis will let us estimate the standard deviation of an error term. And we know that there is a 95% chance of drawing a value within two standard deviations of the mean for any normal distribution. So whatever the standard deviation of the error term ($\varepsilon$) is, we would expect that 95% of the time, the error term will take on a value that is within two standard deviations of zero. Conversely, 5% of the time, the error term will take on a value that is more than two standard deviations from zero. Suppose that the standard deviation of the error term ($\varepsilon$) happens to be three. If we have a dataset containing the income and happiness of 1,000 randomly selected people, we would expect that about 950 of these people will have a level of happiness that falls within six units of our income-based prediction. But for about 50 of these people, our prediction of their happiness will be off by more than six units.
+
+Third, our assumptions imply that income is not tied in any consistent way to (the total sum of) factors other than income that also affect peoples’ happiness. Remember, the error term ($\varepsilon$) represents all factors other than income that affect satisfaction. If income is related to these other factors, then the value of income should help us predict the value of the error term. For example, if having a stable environment in childhood directly causes (on average) both higher incomes and greater happiness in adulthood,[^prob-models-2] the error term will partially reflect the effect of childhood stability on happiness, so high incomes (which are partially caused by childhood stability) will probably be predictive of a more positive error term. This would constitute a violation of our assumptions since we specifically indicated that income wasn’t predictive of the error term. As this example illustrates, our assumptions about error terms are often quite strict, making it rather difficult in practice to build good models that account for uncertainty. This example also illustrates how problems of causality can often be conceptualized as violations of assumptions about the error term; in @sec-causality-and-experimental-designs, we would have labeled the problem posed for our analysis by the effects of childhood stability a "third-variable problem," but here we have shown how it can also be understood as problematic correlation between the dependent variable and the error term.
+
+[^prob-models-2]: By "directly cause" greater happiness in adulthood, I mean that a stable childhood environment causes greater adult happiness by means other than increasing income (which in turn may increase happiness).
+
+If you want to practice getting familiar with how equations can be used to describe statistical models, you can find a more formal presentation of some of these ideas in the appendix to this chapter.
+
+## Models and Probabilistic Thinking
+
+Despite the difficulty inherent in building models that accommodate uncertainty, we have little alternative unless we wish to only build models of things we think we can predict with 100% accuracy. And fortunately, our models do not always have to be perfectly correct in order to generate useful predictions or explanations. As the statistician George Box famously said, “all models are wrong, but some are useful.”
+
+An important part of learning to do good statistical analysis is learning to think clearly about models so that you can pick out a model that is useful for whatever it is you want to accomplish. And the first step toward understanding many statistical models is learning to think about the world in probabilistic terms, as we’ve done here in this chapter. Probabilistic thinking asks questions like:
+
+-   Based on what I do know and what I don’t know, what can I predict?
+
+-   How does adding or removing different pieces of information change my prediction?
+
+-   How much uncertainty is there in my prediction?
+
+-   How often will my prediction differ greatly from what actually happens (even if my model is correct)?
+
+## Appendix: Expected Values and Conditional Probabilities {.unnumbered}
+
+Let us now practice using equations to more formally describe some of what we discussed in the prior section. Given our assumptions, we can use the notation of expected value to express the predictions we previously made:
+
+$$ \mathbb{E}[happiness|income=4]=\mathbb{E}[(3.0+2.3 \times (4)+\varepsilon)|income=4] =12.2+\mathbb{E}[\varepsilon|income=4] = 12.2 $$
+
+We use $\mathbb{E}$ to indicate an expected value and the symbol $|$ indicates "conditional on," meaning that we want to know the expected value of happiness conditional on income being equal to 4. Given that the error term ($\varepsilon$) is independent of income, $\mathbb{E}[\varepsilon|income=4]$ simplifies to $\mathbb{E}[\varepsilon]$ and since $\varepsilon$ is drawn from a normal distribution with a mean of 0, $\mathbb{E}[\varepsilon]=0$.
+
+\[add conditional probabilities; show something like Pr( Y \> 50 \| X=a)... gives a chance to apply 64% 95% 99% thresholds if I do it right\]

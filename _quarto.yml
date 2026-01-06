@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Statistics Minus the Math 2.0"
+  author: "Nathan Favero"
+  license: "CC BY"
+  date: "1/6/2026"
+  chapters:
+    - index.qmd
+    - part: "Describing Data"
+      chapters:
+      - getting-started.qmd
+      - describing-one-variable.qmd
+      - qual-associations.qmd
+
+#bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: superhero
+
