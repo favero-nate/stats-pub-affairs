@@ -1,8 +1,8 @@
-# Relationships with Qualitative Variables[^qual-associations-1] {#sec-qual-associations}
+# Relationships with Qualitative Variables {#sec-qual-associations}
+
+The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.[^qual-associations-1]
 
 [^qual-associations-1]: The first two paragraphs of this chapter are written by Nathan Favero.
-
-The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.
 
 Where do ordinal variables fit into this discussion? For many types of analysis, ordinal variables can be treated as either qualitative (for maximum flexibility) or as quantitative (if we are willing to assign fixed numbers to the various values, as we saw in @sec-critically-evaluating-graphs). Often, analysis will be simpler if we treat ordinal variables as quantitative, so that can be a good place to start. You can always then follow up with an analysis treating the ordinal variable as qualitative, which allows you to check if the results indicate something similar to what you saw when you treated the variable as quantitative.
 
@@ -14,20 +14,20 @@ The relationship between two qualitative variables can be examined using a conti
 
 [^qual-associations-3]: <https://onlinestatbook.com/2/case_studies/diet.html>
 
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-|               | **Outcome** |                     |                         |         | **Total** |
-+===============+=============+=====================+=========================+=========+===========+
-| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy |           |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-| AHA           | 15\         | 24\                 | 25\                     | 239\    | 303\      |
-|               | 4.95%       | 7.92%               | 8.25%                   | 78.88%  | 100%      |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-| Mediterranean | 7\          | 14\                 | 8\                      | 273\    | 302\      |
-|               | 2.32%       | 4.64%               | 2.65%                   | 90.40%  | 100%      |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-| **Total**     | 22\         | 38\                 | 33\                     | 512\    | 605\      |
-|               | 3.64%       | 6.28%               | 5.45%                   | 84.63%  | 100%      |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+|               | **Outcome** |                     |                         |          | **Total** |
++===============+=============+=====================+=========================+==========+===========+
+| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |           |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+| AHA           | 15\         | 24\                 | 25\                     | 239\     | 303\      |
+|               | 4.95%       | 7.92%               | 8.25%                   | 78.88%   | 100%      |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+| Mediterranean | 7\          | 14\                 | 8\                      | 273\     | 302\      |
+|               | 2.32%       | 4.64%               | 2.65%                   | 90.40%   | 100%      |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+| **Total**     | 22\         | 38\                 | 33\                     | 512\     | 605\      |
+|               | 3.64%       | 6.28%               | 5.45%                   | 84.63%   | 100%      |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
 
 : Frequencies and Percentages by Row for Diet and Health Study. {#tbl-diet-row-percentages}
 
@@ -37,20 +37,20 @@ If we continue moving down the table column by column, we see that rates of hear
 
 We can reach an equivalent conclusion by examining percentages that are calculated by column, as shown in @tbl-diet-column-percentages. Here, percentages are calculated by dividing the frequency in each cell by the total shown at the bottom of the column.
 
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-|               | **Outcome** |                     |                         |         | **Total** |
-+===============+=============+=====================+=========================+=========+===========+
-| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy |           |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-| AHA           | 15\         | 24\                 | 25\                     | 239\    | 303\      |
-|               | 68.18%      | 63.16%              | 75.76%                  | 46.68%  | 50.08%    |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-| Mediterranean | 7\          | 14\                 | 8\                      | 273\    | 302\      |
-|               | 31.82%      | 36.84%              | 24.24%                  | 53.32%  | 49.92%    |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
-| **Total**     | 22\         | 38\                 | 33\                     | 512\    | 605\      |
-|               | 100%        | 100%                | 100%                    | 100%    | 100%      |
-+---------------+-------------+---------------------+-------------------------+---------+-----------+
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+|               | **Outcome** |                     |                         |          | **Total** |
++===============+=============+=====================+=========================+==========+===========+
+| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |           |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+| AHA           | 15\         | 24\                 | 25\                     | 239\     | 303\      |
+|               | 68.18%      | 63.16%              | 75.76%                  | 46.68%   | 50.08%    |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+| Mediterranean | 7\          | 14\                 | 8\                      | 273\     | 302\      |
+|               | 31.82%      | 36.84%              | 24.24%                  | 53.32%   | 49.92%    |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
+| **Total**     | 22\         | 38\                 | 33\                     | 512\     | 605\      |
+|               | 100%        | 100%                | 100%                    | 100%     | 100%      |
++---------------+-------------+---------------------+-------------------------+----------+-----------+
 
 : Frequencies and Percentages by Column for Diet and Health Study. {#tbl-diet-column-percentages}
 

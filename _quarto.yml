@@ -13,7 +13,18 @@ book:
       chapters:
       - getting-started.qmd
       - describing-one-variable.qmd
+      - correlation.qmd
       - qual-associations.qmd
+    - part: "Estimation"
+      chapters:
+      - prob-models.qmd
+      - stat-inference.qmd
+      - sampling-distributions.qmd
+      - h-tests.qmd
+      - h-tests-applied.qmd
+    - part: "Putting Data to Work"
+      chapters:
+      - causality.qmd
 
 #bibliography: references.bib
 

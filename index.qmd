@@ -1,9 +1,47 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+:::: {.content-visible when-format="html"}
+::: column-margin
+![](cover.png)
+:::
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+<!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. An [EPUB version (for e-readers)](Statistics-Minus-The-Math.epub) is also available, although the formatting has not been optimized for this format, so some sections do not display well. -->
+::::
 
-```{r}
-1 + 1
-```
+Note: This is an early version of a substantial rewrite (version 2.0).
+
+<!-- This book was largely adapted from the public domain resource *Online Statistics Education: A Multimedia Course of Study* (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate precisely where the various sections of each chapter came from. Chapters 11-13 (as well as @sec-quick-guide-to-interpreting-regression-results, @sec-introducing-confidence-intervals-for-regression, most of @sec-interpreting-confidence-intervals-correctly, and @sec-drawing-substantive-conclusions-from-a-contingency-table) were written by me (Nathan). -->
+
+<!-- This book is meant to be a free resource and is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). You're welcome to share or adapt it, as long as you provide attribution to any work of mine that you use. This book was made using [Quarto](https://quarto.org/) and is hosted using [GitHub Pages](https://pages.github.com/). -->
+
+<!-- There are still formatting inconsistencies, and this is ever a work in progress. If you find errors, feel free to reach out (find updated contact info here: <https://nathanfavero.com>) so I can correct them for the next version I publish. -->
+
+<!-- ## What's Unique About This Text? -->
+
+<!-- 1.  It is a true introduction, not assuming any prior training in statistics. -->
+
+<!-- 2.  I try to minimize use of math (beyond the very elementary) in initial explanations, instead focusing on conceptual description and interpretation. -->
+
+<!-- 3.  I introduce regression very early on (Ch. 3) so that students (especially PhD students) can quickly get started on their term papers and better understand any quantitative articles they're reading. The treatment of regression is further built out in the final chapters (11-13). Regression is, after all, the workhorse of applied statistics for the social sciences. -->
+
+<!-- 4.  I skip a traditional treatment of probability theory because I don't find traditional treatments to be very useful for students interested in applied statistics. Instead, I've written a brief chapter (11) on the logic and practice of building models that account for uncertainty. -->
+
+<!-- 5.  There is a bit of Stata code in the final chapter, but otherwise all examples are presented apart from any statistical software package. -->
+
+<!-- ## Lecture Slides/Videos -->
+
+<!-- While they do not directly correspond to this text, there are some (Stata-based) lecture slides and videos I created to use alongside this book when I teach. They track thematically with the first 10 chapters of this book and are currently available here: <https://github.com/favero-nate/minus-the-math/tree/main/lecture_slides> -->
+
+<!-- ## For Instructors -->
+
+<!-- If you're using this text, I'd love to know. You can fill out this brief form (<https://forms.gle/qBUFdb4vEuDUkzBu6>), where you can also sign up to receive emails when I post updated versions or related materials. -->
+
+<!-- This version (1.3) was updated July 31, 2024. PDFs of past versions are currently available at <https://github.com/favero-nate/minus-the-math/tree/main/past_versions> -->
+
+<!-- -   Version 1.3 updates: New material on multiple regression (end of @sec-correlation, @sec-introducing-confidence-intervals-for-regression, @sec-confidence-interval-for-a-regression-slope-coefficient, and @sec-significance-test-for-a-regression-slope-coefficient). Expanded discussion of confidence intervals (@sec-estimation), including new @sec-interpreting-confidence-intervals-correctly on interpreting confidence intervals. Expanded discussion of ANOVA (end of @sec-comparing-means) and of contingency tables (@sec-contingency-tables). Notation updated in line with conventions: regression parameters are redone, and $\bar{X}$ is now used for the sample mean and $n$ for sample size. Slight extension of section on the standard normal distribution (@sec-the-standard-normal-distribution). Section on degrees of freedom moved to an appendix (end of @sec-sampling-distributions). Various formatting updates (book was recreated using Quarto) and minor (mostly non-substantive) edits throughout. -->
+
+<!-- -   Version 1.2 updates: The discussion of transforming variables now appears in @sec-describing-one-variable (rather than @sec-correlation). -->
+
+## Acknowledgements
+
+I would like to thank Natasha Kallish for help transforming an earlier version of this text from Word to a Quarto document.

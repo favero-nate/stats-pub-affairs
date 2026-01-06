@@ -1,8 +1,8 @@
-# Getting Started with Data[^getting-started-1] {#sec-getting-started}
+# Getting Started with Data {#sec-getting-started}
+
+Data is everywhere. Yet many of us find numbers intimidating. When people make claims using numbers, they often appear authoritative. It's tempting to assume that if someone is sophisticated enough to fluently cite numerical information, they must be worth taking seriously. At the same time, there is a kind of backlash to using numbers to describe the world. The title of the popular book *How to Lie with Statistics* captures a cynicism many people feel: since statistics can easily trick you, you shouldn't believe them at all. Such extreme reactions reflect people's lack of self-confidence in evaluating quantitative information. Because we don't trust ourselves, we reflexively either dismiss or accept numerical claims—perhaps depending on whether the claim is one we already agree with or the source is one we trust.[^getting-started-1]
 
 [^getting-started-1]: This chapter was written by Nathan Favero.
-
-Data is everywhere. Yet many of us find numbers intimidating. When people make claims using numbers, they often appear authoritative. It's tempting to assume that if someone is sophisticated enough to fluently cite numerical information, they must be worth taking seriously. At the same time, there is a kind of backlash to using numbers to describe the world. The title of the popular book *How to Lie with Statistics* captures a cynicism many people feel: since statistics can easily trick you, you shouldn't believe them at all. Such extreme reactions reflect people's lack of self-confidence in evaluating quantitative information. Because we don't trust ourselves, we reflexively either dismiss or accept numerical claims—perhaps depending on whether the claim is one we already agree with or the source is one we trust.
 
 Fortunately, understanding of statistics is something that most anyone can learn. Even if you think you are not a "numbers person," I am confident that you can learn important fundamentals of statistics that will allow you to critically assess statistical claims for yourself. I say this because I have spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study public affairs—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. In my experience, it is true that some people learn numerical concepts quicker than others. For most people, lots of repetition is required before many statistical concepts are fully grasped. But I have yet to encounter a student who is unable to learn the fundaments of statistics. If you set your mind to it, you will learn statistics.
 
@@ -21,9 +21,9 @@ To help focus your attention on thinking critically, I encourage you to ask the 
 ::: callout-tip
 ## Example: Long-Term Trends in U.S. Education {.unnumbered}
 
-Many have argued that despite huge investments in public schooling, the U.S. has little to show in terms of learning gains.[^getting-started-2] In the following graph, the solid line indicates a clear upward trend in spending on education over the decades, although there is a slight dip at the very end of the series (following the 2008 financial crisis). The trajectory for math scores (the dashed line) is much less clear: while the average score in 2012 is a bit higher than in 1973 (306 vs. 304), this gain is tiny compared to the fluctuations seen across years.
+Many have argued that despite huge investments in public schooling, the U.S. has little to show in terms of learning gains.[^getting-started-2] In the following graph, the solid line indicates a clear upward trend in spending on education over the decades, although there is a slight dip at the very end of the series (following the 2008 financial crisis).[^getting-started-3] The trajectory for math scores (the dashed line) is much less clear: while the average score in 2012 is a bit higher than in 1973 (306 vs. 304), this gain is tiny compared to the fluctuations seen across years.[^getting-started-4]
 
-![Trends in U.S. education spending[^getting-started-3] and average math proficiency (17-year-olds)[^getting-started-4]](Images/getting-started/naep.png){width="550"}
+![Trends in U.S. education spending and average math proficiency (17-year-olds)](Images/getting-started/naep.png){width="550"}
 
 Notice that there are two y-axes on this graph: one on the left edge showing the units for expenditures and one on the right edge displaying units that are described as NAEP scores. That is because the trend in Math proficiency (measured using NAEP scores) is superimposed over the trend in spending levels, despite the fact that these two variables are measured in entirely different units. In my experience, the use of two y-axes often leads to confusion, and it is usually better to "keep it simple" by separating the data into two separate graphs.
 
@@ -39,15 +39,15 @@ Regarding the math trend, let us consider our 3 Questions to Always Ask about Da
 
     Typically, we ask this question because we wonder who (or what) might be *missing* from the data. Perhaps the first thing you notice is that the data stops in 2012. Why aren't students after 2012 included? It turns out that 2012 is the most recent year available for this trendline because the Department of Education has canceled data collection multiple times for the long-term trend NAEP among 17-year-olds, citing limited funding and COVID-19 pandemic disruptions. This reflects a frequent but unfortunate problem we face when analyzing data in the real world: data collectors often discontinue their work and leave us with an incomplete picture. Nonetheless, we can still use this data to say something meaningful about learning trends from prior decades.
 
-    If you did some basic reading about the NAEP as suggested for the prior question, you would probably find that NAEP scores are available for various ages. Specifically, the long-term trend scores are available for kids aged 9, 13, and 17. Yet the graph only depicts the data for 17-year olds. On the one hand, it might seem that the oldest age is the most important since it indicates how students are doing near the end of their secondary education. On the other hand, it might be useful to see what the other trends look like. A quick online search for "naep scores over time" will likely return a government website showing NAEP scores for younger students, such as those shown below.[^getting-started-7] Among 9 and 13-year-olds, there is clear improvement in math between the '70s and 2012. Then more recently, there is a large drop associated with the disruptions of COVID-19.
+    If you did some basic reading about the NAEP as suggested for the prior question, you would probably find that NAEP scores are available for various ages. Specifically, the long-term trend scores are available for kids aged 9, 13, and 17. Yet the graph only depicts the data for 17-year olds. On the one hand, it might seem that the oldest age is the most important since it indicates how students are doing near the end of their secondary education. On the other hand, it might be useful to see what the other trends look like. A quick online search for "naep scores over time" will likely return a government website showing NAEP scores for younger students, such as those shown below.[^getting-started-5] Among 9 and 13-year-olds, there is clear improvement in math between the '70s and 2012. Then more recently, there is a large drop associated with the disruptions of COVID-19.
 
-    ![Trend in 9-year-old math proficiency[^getting-started-8]](Images/getting-started/9yo_naep.png){width="700"}
+    [![Trend in 9-year-old math proficiency](Images/getting-started/9yo_naep.png){width="700"}](https://www.nationsreportcard.gov/ltt)
 
-    ![Trend in 13-year-old math proficiency[^getting-started-10]](Images/getting-started/13yo_naep.png){width="700"}
+    [![Trend in 13-year-old math proficiency](Images/getting-started/13yo_naep.png){width="700"}](https://www.nationsreportcard.gov/ltt)
 
     Given these results, you might conclude that there was some possible cherry picking in presenting the initial graph, since the trend among 17-year-olds shows much less improvement from the 1970s to the early 2000s than the trends for younger students. That is an important conclusion to reach and helps put the original graph in context.
 
-    If you have some expertise in U.S. education, you can go even further with your evaluation of this data. One potentially important difference between 13 and 17-year-olds in the U.S. is that school attendance is typically compulsory at age 13 but not at 17. An online search (e.g., for "change in school dropout rate over time") will likely reveal government reports showing that the dropout rate has generally declined over previous decades. Thus, one potential explanation for the mostly-flat trendline in 17-year-old NAEP scores is that in prior decades the 17-year-old scores were artificially inflated due to lower-performing students dropping out of high school and thus not taking the exams. In more recent years, more of these lower-performing students remain in school (a positive policy outcome), and even if they are learning more than in the past, their continue presence in schools brings the NAEP score average down, all else equal. To be precise, the overall picture is muddy because of limited data, and it is not clear exactly how much the improving dropout rate has distorted the 17-year-old trendline. But there is probably at least some distortion, and it is thus difficult to make definitive statements about the trends in learning among 17-year-olds.[^getting-started-12]
+    If you have some expertise in U.S. education, you can go even further with your evaluation of this data. One potentially important difference between 13 and 17-year-olds in the U.S. is that school attendance is typically compulsory at age 13 but not at 17. An online search (e.g., for "change in school dropout rate over time") will likely reveal government reports showing that the dropout rate has generally declined over previous decades. Thus, one potential explanation for the mostly-flat trendline in 17-year-old NAEP scores is that in prior decades the 17-year-old scores were artificially inflated due to lower-performing students dropping out of high school and thus not taking the exams. In more recent years, more of these lower-performing students remain in school (a positive policy outcome), and even if they are learning more than in the past, their continue presence in schools brings the NAEP score average down, all else equal. To be precise, the overall picture is muddy because of limited data, and it is not clear exactly how much the improving dropout rate has distorted the 17-year-old trendline. But there is probably at least some distortion, and it is thus difficult to make definitive statements about the trends in learning among 17-year-olds.[^getting-started-6]
 
     One final note about what is (not) included in the data we've been discussing: in addition to math, there are reading scores available for NAEP. While I focus on a single subject here for simplicity, an important caveat to our story about 9 and 13-year-olds is that their reading scores improved less than their math scores between the 1970s and 2012.
 
@@ -64,28 +64,16 @@ Regarding the math trend, let us consider our 3 Questions to Always Ask about Da
 
 [^getting-started-4]: National Center for Education Statistics (2013). *The Nation's Report Card: Trends in Academic Progress 2012*  (NCES 2013–456). National Center for Education Statistics, Institute of Education Sciences, U.S. Department of Education, Washington, D.C.
 
-[^getting-started-5]: Expenditure per pupil in fall enrollment from Table 236.55 of the *2023 Digest of Education Statistics,* National Center for Education Statistics. <https://nces.ed.gov/programs/digest/d23/tables/dt23_236.55.asp>
+[^getting-started-5]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
 
-[^getting-started-6]: National Center for Education Statistics (2013). *The Nation's Report Card: Trends in Academic Progress 2012*  (NCES 2013–456). National Center for Education Statistics, Institute of Education Sciences, U.S. Department of Education, Washington, D.C.
-
-[^getting-started-7]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
-
-[^getting-started-8]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
-
-[^getting-started-9]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
-
-[^getting-started-10]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
-
-[^getting-started-11]: U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <https://www.nationsreportcard.gov/ltt>
-
-[^getting-started-12]: See <https://www.chalkbeat.org/2022/3/31/23005371/high-school-test-scores-underestimate-naep-dropout-nces/> and <https://www.edweek.org/teaching-learning/are-rising-grad-rates-pulling-down-naep-scores/2016/05>.
+[^getting-started-6]: See <https://www.chalkbeat.org/2022/3/31/23005371/high-school-test-scores-underestimate-naep-dropout-nces/> and <https://www.edweek.org/teaching-learning/are-rising-grad-rates-pulling-down-naep-scores/2016/05>.
 
 ## How Datasets are Structured
 
 We often display data in the form of a spreadsheet. In the table below, we see a small dataset describing a few countries. Each row represents one country, and we call the rows **observations**. Each column represents one characteristic of the countries. We call the columns **variables**. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns [vari]{.underline}ables because they display values of a characteristic that [varies]{.underline} depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.
 
 | country_name | publ_sector_size | females_publ | females_priv | former_british_colony |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Guatemala | 0.0642733 | 0.437011 | 0.2751051 | 0 |
 | Guinea-Bissau | 0.0535029 | 0.2742133 | 0.3592181 | 0 |
 | Honduras | 0.0602268 | 0.5613141 | 0.3063367 | 0 |
@@ -93,23 +81,23 @@ We often display data in the form of a spreadsheet. In the table below, we see a
 | India | 0.0851988 | 0.3021879 | 0.1555202 | 1 |
 | Indonesia | 0.097229 | 0.4430795 | 0.3249187 | 0 |
 
-: Preview of a dataset of countries and their characteristics[^getting-started-13]
+: Preview of a dataset of countries and their characteristics[^getting-started-7]
 
-[^getting-started-13]: Data sources are the Worldwide Bureaucracy Indicators dataset ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc)) and the Colonial Dates Dataset.
+[^getting-started-7]: Data sources are the Worldwide Bureaucracy Indicators dataset ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc)) and the Colonial Dates Dataset.
 
 The next table shows a dataset where each observation (row) is a different individual who responded to a survey. We use the term **unit of analysis** to describe what constitutes one observation in a dataset: in the prior table the unit of analysis was the country, whereas here it is the individual. Other common units of analysis are the organization, the work unit, and the subnational unit (e.g., city or region).
 
 | random_id | race | hispanic | sex | q1 | q2 |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | 194868625278 | White  | No  | Male  | Neither Agree nor Disagree | Neither Agree nor Disagree |
 | 152966380283 | White  | No  | Male  | Disagree | Strongly Disagree |
 | 146904434378 | Other | No  | Female  | Agree | Agree |
 | 161966059804 | White  | Yes  |  | Strongly Agree | Strongly Agree |
 | 133516090099 | Black or African American  | No  | Male  | Agree | Agree |
 
-: Preview of data from a 2024 survey of U.S. government employees[^getting-started-14]
+: Preview of data from a 2024 survey of U.S. government employees[^getting-started-8]
 
-[^getting-started-14]: 2024 U.S. Federal Employee Viewpoint Survey
+[^getting-started-8]: 2024 U.S. Federal Employee Viewpoint Survey
 
 ### Types of variables
 
@@ -193,7 +181,7 @@ First, the simple graphs we examined for quantative variables are typically a go
 ::: callout-tip
 ## Example: Estimates of Small Donations {.unnumbered}
 
-A survey of nonprofits asked them to estimate the percentage of individual donations to their organization in 2019 that were smaller than \$250.[^getting-started-15] Look at how different the right-most bars of the histogram look, depending on whether we use 10 bins or 11 bins (a setting we can change in the software creating the histograms):
+A survey of nonprofits asked them to estimate the percentage of individual donations to their organization in 2019 that were smaller than \$250.[^getting-started-9] Look at how different the right-most bars of the histogram look, depending on whether we use 10 bins or 11 bins (a setting we can change in the software creating the histograms):
 
 ![Histograms with different bin settings (depicting donations estimate variable)](Images/getting-started/donations_hist1.png){width="550"}
 
@@ -206,13 +194,13 @@ From this more fine-grained depiction of the data, we see that respondents appea
 In the initial histogram with 10 bins, the right-most bin included the value 90—the most popular answer. When we switched to using 11 bins, the right-most bin was redrawn to exclude 90, so height dropped dramatically. Because of the spikes in frequency at round numbers (divisible by 10 or 5), changes in bin settings can cause relatively large changes to the visual pattern of the histogram.
 :::
 
-[^getting-started-15]: Year 1 of the Nonprofit Trends Longitudinal Survey Public Use Data Files
+[^getting-started-9]: Year 1 of the Nonprofit Trends Longitudinal Survey Public Use Data Files
 
 Second, be careful about using line graphs. When working with time series data, we often depict quantitative variables using a line graph. As we already saw in our example on trends in U.S. education, line graphs allow one to visually observe trends over time. While line graphs are appropriate for depicting time series data, their use in other contexts is often misleading, since the lines suggest connections between points that may not be connected at all in reality.
 
-Finally, it is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. As I alluded to near the beginning of the chapter, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-16] Focus on simplicity and clarity in data visualization, not trying to stand out.
+Finally, it is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. As I alluded to near the beginning of the chapter, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-10] Focus on simplicity and clarity in data visualization, not trying to stand out.
 
-[^getting-started-16]: See, for example, violations of the "principle of proportional ink": <https://callingbullshit.org/tools/tools_proportional_ink.html>
+[^getting-started-10]: See, for example, violations of the "principle of proportional ink": <https://callingbullshit.org/tools/tools_proportional_ink.html>
 
 ## Critically Evaluating Graphs {#sec-critically-evaluating-graphs}
 
@@ -249,24 +237,18 @@ Generally speaking, any difference can be made to visually look very large or ve
 ::: callout-tip
 ## Example: Childhood Vaccination Rates {.unnumbered}
 
-It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the initial one we just saw comparing males and females. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y axis in order to avoid "zooming in" on part of the y axis so much that we make small differences appear larger than they really are. Let's consider this rule in the context of some data on trends in childhood vaccination. Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-17] The figure below shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line). The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.
+It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the initial one we just saw comparing males and females. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y axis in order to avoid "zooming in" on part of the y axis so much that we make small differences appear larger than they really are. Let's consider this rule in the context of some data on trends in childhood vaccination. Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-11] The figure below shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line).[^getting-started-12] The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.
 
-![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target[^getting-started-18]](Images/getting-started/vaccination2.png)
+![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination2.png)
 
 Now look at the following alternative. While the exact same data is being depicted in this new graph, the redrawn y axis makes the solid line look like it is moving a lot (suggesting big year-to-year differences). Prior to 2020, rates were pretty consistently within the 94-95% range. But more recent years show rates two or three percentage points below the 95% target. Given the potential public health implications of falling just one or two percentage points below the target of 95% vaccine coverage, it does not seem like a smart choice to include 0 on the y axis for this data, since doing so makes it quite difficult to precisely discern changes of one or two percentage points.
 
-![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target[^getting-started-20]](Images/getting-started/vaccination1.png)
+![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination1.png)
 :::
 
-[^getting-started-17]: Pandey, A., & Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide. *The Lancet Global Health*, *11*(4), e478-e479. <https://doi.org/10.1016/S2214-109X(23)00063-3>
+[^getting-started-11]: Pandey, A., & Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide. *The Lancet Global Health*, *11*(4), e478-e479. <https://doi.org/10.1016/S2214-109X(23)00063-3>
 
-[^getting-started-18]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
-
-[^getting-started-19]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
-
-[^getting-started-20]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
-
-[^getting-started-21]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
+[^getting-started-12]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
 
 For good visualization, we want differences that are meaningful in reality to be visually noticeable in our graphs. How do we define a "meaningful" difference? There is no universal rule. Typically, subject-matter expertise and careful judgment will be our best guides.
 
