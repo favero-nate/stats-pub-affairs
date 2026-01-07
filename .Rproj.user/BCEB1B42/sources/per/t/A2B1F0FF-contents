@@ -1,7 +1,0 @@
-# Getting Started with Data {#sampling-dist}
-
-\[introduce sample & pop notation?\]
-
-Statistical models (and scientific models) are simplifications of reality, and risk being incomplete • We have a pretty good idea of what statistical models work well to analyze data from simple experiments or random samples, so in these cases the distinction between model and reality might not be obvious • But usually, real-world data is messy in ways we can’t fully account for in our models (e.g., missing data, potential clustering/interdepence among observations, potential selection effects, measurement error) • Experience and careful study help reveal how to best accomodate peculiarities of our data; best statistical practices are constantly evolving • Scientific inference is not the same as statistical inference: after obtaining estimates, we must judge the implications for scientific understanding
-
-Power: “statistical power” basically describes how likely we are to have enough precision to detect whatever it is we care about (e.g., an association of a certain size) • If I tell my colleague about plans to conduct a survey with 40 respondents, he might reasonably ask “will you have enough statistical power with only 40 observations?” • Larger sample sizes yield greater power
