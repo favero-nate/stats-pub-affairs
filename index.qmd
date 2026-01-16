@@ -8,7 +8,7 @@
 <!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. An [EPUB version (for e-readers)](Statistics-Minus-The-Math.epub) is also available, although the formatting has not been optimized for this format, so some sections do not display well. -->
 ::::
 
-Note: This is an early version of a substantial rewrite (version 2.0).
+Note: This is an early version of a substantial rewrite (which may become version 2.0).
 
 <!-- This book was largely adapted from the public domain resource *Online Statistics Education: A Multimedia Course of Study* (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate precisely where the various sections of each chapter came from. Chapters 11-13 (as well as @sec-quick-guide-to-interpreting-regression-results, @sec-introducing-confidence-intervals-for-regression, most of @sec-interpreting-confidence-intervals-correctly, and @sec-drawing-substantive-conclusions-from-a-contingency-table) were written by me (Nathan). -->
 
