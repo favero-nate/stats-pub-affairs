@@ -16,10 +16,13 @@ We take as an example the data from the "Animal Research" case study, previously
 
 [^h-tests-applied-2]: <https://onlinestatbook.com/2/case_studies/animal_research.html>
 
-|     | **Group** |     | **n** |     | **Mean** |     | **Variance** |     |
-|:---:|:---------:|:---:|:-----:|:---:|:--------:|:---:|:------------:|:---:|
-|     |  Females  |     |  17   |     |  5.353   |     |    2.743     |     |
-|     |   Males   |     |  17   |     |  3.882   |     |    2.985     |     |
++------+-----------+------+-------+------+----------+------+--------------+------+
+|      | **Group** |      | **n** |      | **Mean** |      | **Variance** |      |
++:====:+:=========:+:====:+:=====:+:====:+:========:+:====:+:============:+:====:+
+|      | Females   |      | 17    |      | 5.353    |      | 2.743        |      |
++------+-----------+------+-------+------+----------+------+--------------+------+
+|      | Males     |      | 17    |      | 3.882    |      | 2.985        |      |
++------+-----------+------+-------+------+----------+------+--------------+------+
 
 : Means and Variances in Animal Research study. {#tbl-meansvaranimalresearch}
 
@@ -136,14 +139,19 @@ Many experiments are designed to compare more than two conditions. We will take 
 
 [^h-tests-applied-7]: <https://onlinestatbook.com/2/case_studies/leniency.html>
 
-|  |  |  |
-|----|----|----|
-| false vs. felt | ![](Images/h-tests-applied/false.png) | ![](Images/h-tests-applied/felt.png) |
-| false vs. miserable | ![](Images/h-tests-applied/false.png) | ![](Images/h-tests-applied/miserable.png) |
-| false vs. neutral | ![](Images/h-tests-applied/false.png) | ![](Images/h-tests-applied/neutral.png) |
-| felt vs. miserable | ![](Images/h-tests-applied/felt.png) | ![](Images/h-tests-applied/miserable.png) |
-| felt vs. neutral | ![](Images/h-tests-applied/felt.png) | ![](Images/h-tests-applied/neutral.png) |
-| miserable vs. neutral | ![](Images/h-tests-applied/miserable.png) | ![](Images/h-tests-applied/neutral.png) |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| false vs. felt        | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/felt.png)      |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| false vs. miserable   | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/miserable.png) |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| false vs. neutral     | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/neutral.png)   |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| felt vs. miserable    | ![](Images/h-tests-applied/felt.png)      | ![](Images/h-tests-applied/miserable.png) |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| felt vs. neutral      | ![](Images/h-tests-applied/felt.png)      | ![](Images/h-tests-applied/neutral.png)   |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| miserable vs. neutral | ![](Images/h-tests-applied/miserable.png) | ![](Images/h-tests-applied/neutral.png)   |
++-----------------------+-------------------------------------------+-------------------------------------------+
 
 : Six Comparisons among Means. {#tbl-feltmisneutral}
 
@@ -301,22 +309,27 @@ To demonstrate the Chi Square test, we again look to data from the Mediterranean
 
 [^h-tests-applied-14]: <https://onlinestatbook.com/2/case_studies/diet.html>
 
-|   | Outcome |   |   |   | Total |
-|----|----|----|----|----|----|
-| **Diet** | Cancers | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy |  |
-| AHA | 15 | 24 | 25 | 239 | 303 |
-| Mediterranean | 7 | 14 | 8 | 273 | 302 |
-| **Total** | 22 | 38 | 33 | 512 | 605 |
++---------------+----------+---------------------+-------------------------+----------+----------+
+|               | Outcome  |                     |                         |          | Total    |
++===============+==========+=====================+=========================+==========+==========+
+| **Diet**      | Cancers  | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |          |
++---------------+----------+---------------------+-------------------------+----------+----------+
+| AHA           | 15       | 24                  | 25                      | 239      | 303      |
++---------------+----------+---------------------+-------------------------+----------+----------+
+| Mediterranean | 7        | 14                  | 8                       | 273      | 302      |
++---------------+----------+---------------------+-------------------------+----------+----------+
+| **Total**     | 22       | 38                  | 33                      | 512      | 605      |
++---------------+----------+---------------------+-------------------------+----------+----------+
 
 : Frequencies for Diet and Health Study. {#tbl-studyfreqs}
 
-As with all other hypothesis tests in this chapter, the null hypothesis indicates no relationship between the two values. And once again, software can calculate a p-value for us to evaluate this hypothesis. But if we are wondering what’s going on under the hood, the first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet/Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome (as the null hypothesis states), then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the $i$th row and the $j$th column is equal to
+As with all other hypothesis tests in this chapter, the null hypothesis indicates no relationship between the two values. And once again, software can calculate a p-value for us to evaluate this hypothesis. But if we are wondering what’s going on under the hood, the first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet-Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome (as the null hypothesis states), then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the $i$th row and the $j$th column is equal to
 
 $$
 E_{ij}=\frac{T_iT_j}{T}
 $$
 
-where $E_{ij}$ is the expected frequency for cell $i,j$, $T_i$ is the total for the $i$th row, $T_j$ is the total for the $j$th column, and $T$ is the total number of observations. For the AHA Diet/Cancers cell, $i = 1$, $j = 1$, $T_i = 303$, $T_j = 22$, and $T = 605$. @tbl-observedstudyfreqs shows the expected frequencies (in parenthesis) for each cell in the experiment.
+where $E_{ij}$ is the expected frequency for cell $i,j$, $T_i$ is the total for the $i$th row, $T_j$ is the total for the $j$th column, and $T$ is the total number of observations. For the AHA Diet-Cancers cell, $i = 1$, $j = 1$, $T_i = 303$, $T_j = 22$, and $T = 605$. @tbl-observedstudyfreqs shows the expected frequencies (in parenthesis) for each cell in the experiment.
 
 The significance test is conducted by computing Chi Square as follows.
 
@@ -326,19 +339,19 @@ The degrees of freedom is equal to $(r-1)(c-1)$, where $r$ is the number of rows
 
 [^h-tests-applied-15]: <https://onlinestatbook.com/2/calculators/chi_square_prob.html>
 
-+---------------+-------------+---------------------+-------------------------+----------+
-|               | **Outcome** |                     |                         |          |
-+===============+=============+=====================+=========================+==========+
-| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |
-+---------------+-------------+---------------------+-------------------------+----------+
-| AHA           | 15\         | 24\                 | 25\                     | 239\     |
-|               | (11.02)     | (19.03)             | (16.53)                 | (256.42) |
-+---------------+-------------+---------------------+-------------------------+----------+
-| Mediterranean | 7\          | 14\                 | 8\                      | 273\     |
-|               | (10.98)     | (18.97)             | (16.47)                 | (255.58) |
-+---------------+-------------+---------------------+-------------------------+----------+
-| **Total**     | 22          | 38                  | 33                      | 512      |
-+---------------+-------------+---------------------+-------------------------+----------+
++---------------+-------------+---------------------+-------------------------+------------+
+|               | **Outcome** |                     |                         |            |
++===============+=============+=====================+=========================+============+
+| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy    |
++---------------+-------------+---------------------+-------------------------+------------+
+| AHA           | 15\         | 24\                 | 25\                     | 239\       |
+|               | (11.02)     | (19.03)             | (16.53)                 | (256.42)   |
++---------------+-------------+---------------------+-------------------------+------------+
+| Mediterranean | 7\          | 14\                 | 8\                      | 273\       |
+|               | (10.98)     | (18.97)             | (16.47)                 | (255.58)   |
++---------------+-------------+---------------------+-------------------------+------------+
+| **Total**     | 22          | 38                  | 33                      | 512        |
++---------------+-------------+---------------------+-------------------------+------------+
 
 : Observed and Expected Frequencies for Diet and Health Study. {#tbl-observedstudyfreqs}
 
