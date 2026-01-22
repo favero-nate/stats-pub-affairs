@@ -1,0 +1,37 @@
+# Practical points {#sec-practical-points}
+
+Data management is often a huge part doing quantitative analysis: make take up much more time and effort than running the actual statistical analysis. Learning to properly merge files, rearrange data so that it is in the format you need for analysis, combine variables or figure out how to deal with missingness (sometimes combining categories for a qualitative variable). It can take a long time to get good at these tasks. Often we receive data that is not in a format very friendly to analysis.
+
+Get to know your data before you run a bunch of deeper analysis. Make sure you explain to the reader about the data too so that they have context and understanding when you do show them results of more complex analysis
+
+Often helpful to try multiple models and check for "robustness"
+
+ - If outliers are a potential concern, try robust regression or median regression
+
+ - try different sets of controls (including perhaps no controls)
+
+ - try different subsamples, although be careful not to read too much into them, especially if the samples are small
+
+ - try logging skewed variables (and not)
+
+ - do you have more than one measure? (or different ways to construct index?)
+
+Keep as simple as possible (even if you've done more complicated analysis to convince yourself) if you want to speak to the broadest possible audience
+
+\- often a tradeoff between precise prediction and interpretability
+
+Every analysis has limits; calibrate conclusions accordingly
+
+\- worms eye view vs birds eye view
+
+\- humility
+
+\- macro questions more difficult to study quantitatively
+
+Multicollinearity
+
+Doing what you can to contextualize sizes of associations (e.g., standardizing can sometimes help)
+
+null results?
+
+always stop and ask: does this make sense? will catch a lot of errors doing this; need to step back and look at the big picture and spending time down in the weeds

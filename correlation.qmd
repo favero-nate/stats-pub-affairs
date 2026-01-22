@@ -54,11 +54,21 @@ Not all scatter plots show linear relationships. @fig-scatterplotgalileo shows t
 
 [^correlation-2]: <https://www.amstat.org/publications/jse/v3n1/datasets.dickey.html>
 
+With large datasets, scatter plots can be difficult to interpret since observations tend to stack on top of one another (often leaving only outliers to show up distinctly). The positive association between work experience and wages in @fig-crowded-scatterplot is not particularly strong, but it is a bit difficult to discern exactly what is going on because the graph is crowded with so many observations (2,246 in total).[^correlation-3] Larger samples will make this problem even worse.
+
+[^correlation-3]: US National Longitudinal Survey of Young Women (NLSW), 1988 extract. Accessed via Stata.
+
+![Scatter plot of 1988 wages and work experience from a sample of young women, r=0.27.](Images/correlations/crowded_scatterplot.png){#fig-crowded-scatterplot width="400"}
+
+Fortunately, we can create what is called a binned scatter plot. Rather than plotting every observation, we can divide the x axis into bins and plot just one dot per bin. The dot will indicate the mean or median value of the y variable among observations within that bin. While binned scatter plots can bring greater clarity when working large datasets, be aware that binned scatter plots tend to make relationships look stronger than they really are. This is because aggregating data (by bin, in this case) tends to reduce the noisiness associated with idiosyncrasies in individual observations. See how clear and consistent the relationship between work experience and wages appears in the binned scatter plot (@fig-binned-scatterplot), despite the relatively weak relationship in the individual-level data. Notice too that the ranges of both axes are smaller than in the original scatter plot (@fig-crowded-scatterplot), since the binning means that the full ranges of the variables are no longer depicted.
+
+![Binned scatter plot of the 1988 data for wages and work experienced among young women](Images/correlations/binned_scatterplot.png){#fig-binned-scatterplot width="400"}
+
 Scatter plots that show linear relationships between variables can differ in several ways including the slope of the line about which they cluster and how tightly the points cluster about the line. We now turn our attention to a statistical measure of the strength of the relationship between two quantitative variables.
 
-## What is Correlation?[^correlation-3]
+## What is Correlation?[^correlation-4]
 
-[^correlation-3]: This section is adapted from David M. Lane. “Values of the Pearson Correlation.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/pearson.html>
+[^correlation-4]: This section is adapted from David M. Lane. “Values of the Pearson Correlation.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/pearson.html>
 
 The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two variables. It is referred to as Pearson's correlation or simply as the **correlation coefficient**. If the relationship between the variables is not linear, then the correlation coefficient does not adequately represent the strength of the relationship between the variables.
 
@@ -76,9 +86,9 @@ With real data, you would not expect to get values of r of exactly -1, 0, or 1. 
 
 The relationship between grip strength and arm strength depicted in @fig-scatterplotstrength (also described in the introductory section) is 0.63.
 
-## How Correlation is Calculated[^correlation-4]
+## How Correlation is Calculated[^correlation-5]
 
-[^correlation-4]: This section is adapted from David M. Lane. “Computing Pearson's r.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/calculation.html>
+[^correlation-5]: This section is adapted from David M. Lane. “Computing Pearson's r.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/calculation.html>
 
 There are several formulas that can be used to compute Pearson's correlation. Some formulas make more conceptual sense whereas others are easier to actually compute. We are going to begin with a formula that makes more conceptual sense.
 
@@ -116,9 +126,9 @@ $$
 r = \frac{\sum{XY}-\frac{\sum{X}\sum{Y}}{n}}{\sqrt{\left(\sum{X^2}-\frac{(\sum{X})^2}{n}\right)}\sqrt{\left(\sum{Y^2}-\frac{(\sum{Y})^2}{n}\right)}}
 $$
 
-## Introduction to Linear Regression[^correlation-5] {#sec-introduction-to-linear-regression}
+## Introduction to Linear Regression[^correlation-6] {#sec-introduction-to-linear-regression}
 
-[^correlation-5]: This section is adapted from David M. Lane. “Introduction to Linear Regression.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/intro.html>
+[^correlation-6]: This section is adapted from David M. Lane. “Introduction to Linear Regression.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/intro.html>
 
 In simple linear regression, we predict scores on one variable from the scores on a second variable. The variable we are predicting is called the **dependent variable** and is referred to as $Y$. The variable we are basing our predictions on is called the **independent variable** and is referred to as $X$. When there is only one predictor variable, the prediction method is called simple regression. In simple linear regression, the topic of this section, the predictions of $Y$ when plotted as a function of $X$ form a straight line.
 
@@ -180,9 +190,9 @@ $$
 
 ### A Real Example
 
-The case study "SAT and College GPA"[^correlation-6] contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student's university GPA if we knew his or her high school GPA.
+The case study "SAT and College GPA"[^correlation-7] contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student's university grade point average (GPA) if we knew his or her high sch
 
-[^correlation-6]: <https://onlinestatbook.com/2/case_studies/sat.html>
+[^correlation-7]: <https://onlinestatbook.com/2/case_studies/sat.html>
 
 @fig-unihighschoolgpa shows a scatter plot of University GPA as a function of High School GPA. You can see from the figure that there is a strong positive relationship. The correlation is 0.78. The regression equation is
 
@@ -196,17 +206,17 @@ $$
 \widehat{University\_GPA} = (0.675)(3) + 1.097 = 3.12.
 $$
 
-![University GPA as a function of High School GPA.](Images/correlations/unihighschoolgpa.jpg){#fig-unihighschoolgpa}
+![University GPA as a function of High School GPA.](Images/correlations/unihighschoolgpa.jpg){#fig-unihighschoolgpa width="450"}
 
-## Quick Guide to Interpreting Regression Results[^correlation-7] {#sec-quick-guide-to-interpreting-regression-results}
+## Quick Guide to Interpreting Regression Results[^correlation-8] {#sec-quick-guide-to-interpreting-regression-results}
 
-[^correlation-7]: This section is written by Nathan Favero.
+[^correlation-8]: This section is written by Nathan Favero.
 
-Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:[^correlation-8]
+Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:[^correlation-9]
 
-[^correlation-8]: Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
+[^correlation-9]: Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
 
--   **Significance**: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?[^correlation-9] To assess this, check the p-value. For now, you can use the following rule-of-thumb:
+-   **Significance**: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?[^correlation-10] To assess this, check the p-value. For now, you can use the following rule-of-thumb:
 
     -   If p \< 0.05: the relationship is statistically significant; proceed to evaluating sign and size
 
@@ -222,13 +232,13 @@ Many social science papers report their main results in the form of a regression
 
 -   **Size**: How big is the (predictive) effect? This S is often the most difficult to make sense of, and sometimes you may not have enough information to meaningfully evaluate it (e.g., if the units of measurement for a variable are not clearly explained).
 
-    -   For linear models: A one-unit increase in the independent variable means we change our prediction for the dependent variable by $\hat{\beta_i}$ (where $\hat{\beta_i}$ represents the value of the coefficient estimate)[^correlation-10]
+    -   For linear models: A one-unit increase in the independent variable means we change our prediction for the dependent variable by $\hat{\beta_i}$ (where $\hat{\beta_i}$ represents the value of the coefficient estimate)[^correlation-11]
 
     -   For non-linear models: Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors' explanation of effect size or "magnitude" of association
 
-[^correlation-9]: In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., & Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. *The American Statistician*, *73*(sup1), 374-384.
+[^correlation-10]: In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., & Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. *The American Statistician*, *73*(sup1), 374-384.
 
-[^correlation-10]: Why $\hat{\beta_i}$ and not simply $\beta_i$? We use the hat symbol ($\hat{~}$) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We'll learn more about estimation in @sec-stat-inference.
+[^correlation-11]: Why $\hat{\beta_i}$ and not simply $\beta_i$? We use the hat symbol ($\hat{~}$) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We'll learn more about estimation in @sec-stat-inference.
 
 @tbl-regression-cs-gpa provides an example of regression results in a format similar to what you may encounter in many research publications. Note, however, that many publications do not list exact p-values; instead, they often use one or more asterisks (\*) to denote coefficients with p-values smaller than 0.05 (sometimes also flagging p-values falling below various other thresholds).
 
@@ -243,26 +253,26 @@ Many social science papers report their main results in the form of a regression
 
 : Results for a regression with computer science GPA as the dependent variable. {#tbl-regression-cs-gpa}
 
-Up til now, we have only discussed simple regression, in which we have a single independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables—SAT scores on the verbal section (verb_sat) and SAT scores on the math section (math_sat)—are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in the appendix to this chapter. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in @tbl-regression-cs-gpa, we can interpret the results as follows:
+Up til now, we have only discussed simple regression, in which we have a single independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables representing students' university entrance exam scores—the verbal (verb_sat) and math (math_sat) sections of the SAT—are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in the appendix to this chapter. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in @tbl-regression-cs-gpa, we can interpret the results as follows:
 
--   verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. Therefore, we don't necessarily need to interpret the sign or size. We might simply say that we could not establish a reliable link between verbal SAT scores and computer science GPA in this model.[^correlation-11]
+-   verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA.[^correlation-12] Maybe there is no link, or maybe we would need more data to detect the link. Since we don't find statistical significance, we don't necessarily need to interpret the sign or size.
 -   math_sat: The p-value (0.00014) is smaller than 0.05, so math_sat is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible if scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher ($0.0048 \times 100 = 0.48$). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.
 
-[^correlation-11]: Note, however, that the absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA—just one that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association).
+[^correlation-12]: Note, however, that the absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA—just one that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association).
 
 Note that we do not need to apply the three S's to the intercept (which can also be labeled the "constant") because it is not a variable. @tbl-regression-cs-gpa also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in @sec-sampling-distributions), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).
 
-Remember that the three S's are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. If you've started working with a statistical software package by now, you can run your own regression models and try using the three S's to help you understand the results.
+Remember that the three S's are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. And notice that the third S (size) is helps equip us to address the third Question to Always Ask about Data ("how big is the difference?"). If you've started working with a statistical software package by now, you can run your own regression models and try using the three S's to help you understand the results.
 
 <!-- And We will learn much more about testing for statistical significance in @sec-h-tests. And there are other important tools for interpreting regression results, such as confidence intervals (see @sec-estimation). Slight differences in the setup or type of regression model can sometimes yeild important differences, as discussed more in the appendix for this chapter. Entire books are devoted to the topic of regression, so there is always more to learn! -->
 
-## @sec-correlation Appendix: Multiple Regression[^correlation-12] {.unnumbered}
+## @sec-correlation Appendix: Multiple Regression[^correlation-13] {.unnumbered}
 
-[^correlation-12]: This section is adapted from Rudy Guerra and David M. Lane. “Introduction to Multiple Regression.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/multiple_regression.html>
+[^correlation-13]: This section is adapted from Rudy Guerra and David M. Lane. “Introduction to Multiple Regression.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/multiple_regression.html>
 
-In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination[^correlation-13] of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of $\beta_1$ and $\beta_2$ in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction.
+In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination[^correlation-14] of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of $\beta_1$ and $\beta_2$ in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction.
 
-[^correlation-13]: A linear combination of variables is a way of creating a new variable by combining other variables. A linear combination is one in which each variable is multiplied by a coefficient and the products are summed. For example, if\
+[^correlation-14]: A linear combination of variables is a way of creating a new variable by combining other variables. A linear combination is one in which each variable is multiplied by a coefficient and the products are summed. For example, if\
     $$Y = 3X_1 + 2X_2 + .5X_3$$\
     then $Y$ is a linear combination of the variables $X_1$, $X_2$, and $X_3$.
 
@@ -292,7 +302,7 @@ In other words, to compute the prediction of a student's University GPA, you add
 
 : Data and Predictions {#tbl-multipleregression}
 
-The values of $\beta$ ($\beta_1$ and $\beta_2$) are called "regression coefficients."
+The values of $\beta$ ($\beta_1$ and $\beta_2$) are called "regression slope coefficients."
 
 The multiple correlation (R) is equal to the correlation between the predicted scores and the actual scores. In this example, it is the correlation between $\widehat{UGPA}$ and $UGPA$, which turns out to be 0.79. That is, R = 0.79. Note that R will never be negative since if there are negative correlations between the predictor variables and the criterion, the regression coefficients will be negative so that the correlation between the predicted and actual scores will be positive.
 
@@ -314,8 +324,8 @@ $$\widehat{UGPA} = 3.173 + 0.541 \times HSGPA.SAT$$
 
 Notice that the slope (0.541) is the same value given previously for the estimate of $\beta_1$ in the multiple regression equation.
 
-This means that the regression coefficient for HSGPA is the slope of the relationship between the dependent variable and the part of HSGPA that is independent of (uncorrelated with) the other independent variables. It represents the change in the dependent variable associated with a change of one in the independent variable when all other independent variables are held constant. Since the regression coefficient for HSGPA is 0.54, this means that, holding SAT constant, a change of one in HSGPA is associated with a change of 0.54 in $\widehat{UGPA}$. If two students had the same SAT and differed in HSGPA by 2, then you would predict they would differ in UGPA by (2)(0.54) = 1.08. Similarly, if they differed by 0.5, then you would predict they would differ by (0.50)(0.54) = 0.27.
+This means that the regression coefficient for HSGPA is the slope of the relationship between the dependent variable and the part of HSGPA that is independent of (uncorrelated with) the other independent variables. It represents the change in the prediction for the dependent variable associated with a change of one in the independent variable when all other independent variables are held constant. Since the regression coefficient for HSGPA is 0.54, this means that, holding SAT constant, a change of one in HSGPA is associated with a change of 0.54 in $\widehat{UGPA}$. If two students had the same SAT and differed in HSGPA by 2, then you would predict they would differ in UGPA by (2)(0.54) = 1.08. Similarly, if they differed by 0.5, then you would predict they would differ by (0.50)(0.54) = 0.27.
 
 The slope of the relationship between the dependent variable and the part of an independent variable that is unique from (independent of) other independent variables is its partial slope. Thus, the regression coefficient of 0.541 for HSGPA and the regression coefficient of 0.008 for SAT are partial slopes. Each partial slope represents the relationship between the independent variable and the dependent variable holding constant all of the other independent variables.
 
-It is difficult to compare the coefficients for different variables directly because they are measured on different scales. A difference of 1 in HSGPA is a fairly large difference, whereas a difference of 1 on the SAT is negligible. Therefore, it can be advantageous to transform the variables so that they are on the same scale. The most straightforward approach is to standardize the variables (see @sec-standardization) so that they each have a standard deviation of 1. A regression coefficient for standardized variables is called a "standardized coefficient" or "beta coefficient." For these data, the standardized coefficients are 0.625 and 0.198. These values represent the change in the dependent variable (in standard deviations) associated with a change of one standard deviation on an independent variable (holding constant the value(s) on the other independent variable(s)). Clearly, a change of one standard deviation on HSGPA is associated with a larger difference than a change of one standard deviation of SAT. In practical terms, this means that if you know a student's HSGPA, knowing the student's SAT does not aid the prediction of UGPA much. However, if you do not know the student's HSGPA, his or her SAT can aid in the prediction since the standardized coefficient in the simple regression predicting UGPA from SAT is 0.68. For comparison purposes, the standardized coefficient in the simple regression predicting UGPA from HSGPA is 0.78. As is typically the case, the partial slopes are smaller than the slopes in simple regression.
+It is difficult to compare the coefficients for different variables directly because they are measured on different scales. A difference of 1 in HSGPA is a fairly large difference, whereas a difference of 1 on the SAT is negligible. Therefore, it can be advantageous to transform the variables so that they are on the same scale. The most straightforward approach is to standardize the variables (see @sec-standardization) so that they each have a standard deviation of 1. A regression coefficient for standardized variables is called a "standardized coefficient" or "beta coefficient." For these data, the standardized coefficients are 0.625 and 0.198. These values represent the change in the prediction for the dependent variable (in standard deviations) associated with a change of one standard deviation on an independent variable (holding constant the value(s) on the other independent variable(s)). Clearly, a change of one standard deviation on HSGPA is associated with a larger difference than a change of one standard deviation of SAT. In practical terms, this means that if you know a student's HSGPA, knowing the student's SAT does not aid the prediction of UGPA much. However, if you do not know the student's HSGPA, his or her SAT can aid in the prediction since the standardized coefficient in the simple regression predicting UGPA from SAT is 0.68. For comparison purposes, the standardized coefficient in the simple regression predicting UGPA from HSGPA is 0.78. As is typically the case, the partial slopes are smaller than the slopes in simple regression.

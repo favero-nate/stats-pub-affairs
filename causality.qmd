@@ -1,12 +1,90 @@
-# Causality and Experimental Designs {#sec-causality-and-experimental-designs}
+# Research Designs and Causality {#sec-causality}
 
-## Causation[^causality-1]
+We analyze data because we wish to learn things about the world around us, but all data has limitations. How do we establish what our data can and cannot tell us? There are no simple answers to this question; the critical thinking we have been practicing with Three Questions to Always Ask about Data is one place to start. But more generally, we can help clarify what our data is capable of revealing through a **research design**. A research design describes how your data relates to the particular questions you hope to answer. Ideally, your research design is compelling enough that someone (other scientists, maybe even yourself) could be convinced to rethink their opinion if the results the design yields don’t match their expectations. In other words, when we speak of research design, we are trying to separate out the *process* from the *results*. The research design describes the process through we obtain and analyze the data. Using a rigorous process will make your results more credible.
 
-[^causality-1]: This section is adapted from David M. Lane. “Causation.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/research_design/causation.html>
+## Types of Research Designs
 
-The concept of causation is a complex one in the philosophy of science.[^causality-2] Since a full coverage of this topic is well beyond the scope of this text, we focus on two specific topics: (1) the establishment of causation in experiments and (2) the establishment of causation in non-experimental designs.
+There are many types of research designs, so it can be helpful to organize them into different categories. For example, we often distinguish between inductive and deductive research. **Inductive research** refers to drawing general conclusions (inferring broader principles or patterns) based on observations of specific examples. We often use the term **exploratory** when describing inductive research. Inductive studies can help us to develop hypotheses. We might begin an inductive study with some research questions, or we might not even have particularly precise questions at the start of the study.
 
-[^causality-2]: See <https://plato.stanford.edu/search/searcher.py?query=causation>
+**Deductive research** applies broader theories or principles to specific situations or data. For example, a deductive study might test a hypothesis (or the implications of some theory) in a particular setting. We can also refer to this as **confirmatory** research. One important element of confirmatory work is that it can be clearly stated what it would look like to get results that negate the argument being tested.
+
+In practice, the lines between inductive and deductive research are often blurry. Many studies use elements of both approaches.
+
+We can also categorize research as descriptive versus causal. **Descriptive** research addresses questions about what is. For example, we might want to know how closely the general public follows the news, or whether countries generally moved away from democracy during the past decade. **Causal** research allows us to get at "why" questions. Why do some people follow the news more carefully than others? Why do countries move away from democracy?
+
+Once again, the lines between categories are often blurry in practice. For example, many studies advance causal arguments about what is occurring in the world, but the actual data analyzed may not allow for drawing any strong conclusions about causality.
+
+Another way we can categorize research is to distinguish between experimental and observational studies. In an **experiment**, the researcher is involved in manipulating one or more variables of interest. We saw an example in @sec-stat-inference, where researchers studying a food assistance program assigned applicants to either receive text message reminders about an interview or to be part of a control group that received no such reminders. In social science, we usually want to randomize any experimental manipulation (e.g., use a random number generator to determine whether a subject receives the treatment or control), in order to match the assumptions of statistical models used for analysis.
+
+In **observational studies**, the researcher observes variation in variables caused by something other than the researcher’s own intervention. There are practical and ethical barriers to manipulating many variables we care about in the social world, so important research questions are not always suitable for experimental study. A sub-category of observational studies is **quasi-experimental studies**, which utilitize research designs aimed at assessing causality rigorously, despite lacking true experimental manipulation. For example, a researcher might study a specific policy shock, such as a court ruling that altered a policy in certain jurisdictions but not others (creating plausibly distinct "treatment" and "control" groups). While such designs are generally beyond the scope of what is covered in this text, they are an important and growing part of the social scientific literature.[^causality-1]
+
+[^causality-1]: For an excellent conceptual overview of several quasi-experimental designs, see Chapter 13 of Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
+
+The concepts of internal and external validity can help us describe the strengths and weaknesses of various research designs. **Internal validity** refers to confidence that a causal conclusion can be drawn about one or more relationships among variables. Internal validity refers specifically to learning about the causal effects that exist *among the units observed in the study*. **External validity** describes confidence that the findings of a study can be generalized to a broader set of units, beyond those directly observed in the study. For an application of these concepts, consider that many classic psychology studies consisted of lab experiments conducted with undergraduate psychology students. While well-constructed lab experiments allow for strong conclusions to be reached about the causal effects of a manipulation on the students within the lab (good internal validity), such studies have also been criticized for poor external validity since undergraduate psychology students may tend to react differently to certain stimuli than the general public. More recent innovations like the use of online survey experiments have allowed psychologists to regularly collect data from more a diverse cross section of the public, although the precision and control afforded by a lab setting is weakened in an online experiment. Thus, online experiments may be generally considered to have weaker internal validity than lab experiments (due to less precise control of experimental manipulations), while the more diverse populations associated with online experiments may afford greater external validity. Many other considerations are important for a detailed assessment of the internal and external validity of any given experiment, but this broad (and somewhat simplistic) summary of experimental psychology illustrates how these concepts can help us identify important aspects of research designs to scrutinize.
+
+## Causality[^causality-2]
+
+[^causality-2]: This section is adapted from David M. Lane. “Causation.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/research_design/causation.html>
+
+Causality is a complex concept that is difficult to precisely define.[^causality-3] One way to think about causality in a social science context is as the sequence in which our variables are ordered. Researchers often depict variables sequentially with directional arrows showing the presumed causal connections among variables. As already introduced in @sec-introduction-to-linear-regression, we give variables different designations depending on where they appear in this sequence (although we introduced this idea by focusing on prediction rather than causation). An **independent variable** is supposed to be a cause of the **dependent variable**. If we have a sequence that extends beyond two variables, we can call an in-between variable a **mediator** or **mediating variable** (e.g., if A causes B and B causes C, we consider B to be a mediator in the relationship between A and C).
+
+[^causality-3]: See <https://plato.stanford.edu/search/searcher.py?query=causation>
+
+### A framework for assessing causality
+
+How can we evaluate whether an independent variable X causes a dependent variable Y? There are many different tools for assessing causality, but for now we will introduce a simple framework that can help us informally evaluate evidence.
+
+To begin with, we start from the assumption that an association (e.g., a correlation or non-zero regression slope) between X and Y has been found. If X does cause Y, then there should be some sort of association between the two variables,[^causality-4] even though an association is not sufficient to conclude causation. If no association is found, then our data indicate no evidence in support of a causal relationship.
+
+[^causality-4]: This association can take the form of a partial correlation (and a bivariate correlation may be altogether absent) if there is a confounding effect that masks the bivariate association between the two variables that are causally linked.
+
+Under this framework, there are five possibilities for why X is associated with Y:
+
+1.  The association is a coincidence
+2.  Z causes X and Y
+3.  Y causes X
+4.  Research design problems create an artificial association
+5.  X causes Y
+
+Assessing causality under this framework is a bit like detective work: we can potentially use the process of elimination to establish causality. Specifically, if we rule out options 1-4, we can conclude 5 must be true. Of course, we do not normally reach purely binary conclusions (that something is certainly true or certainly false); instead, we are weighing evidence and assessing the relatively plausibility of these 5 possibilities. The more confident we are that 1-4 are untrue, the more sure we are that 5 is true.
+
+Let's briefly discuss some considerations under each of the five possibilities.
+
+#### 1. The association is a coincidence
+
+The social world is fully of complexity and variation, so we can never hope to create a perfectly sterile environment where everything is held constant except a single variable. In other words, we always have an error term to contend with, as described in @sec-models-and-uncertainty. There is always a risk that by pure coincidence, the random noisiness of the world will yield an apparent association in our particular sample, even if there is no systematic linkage in reality.[^causality-5] Fortunately, confidence intervals and hypothesis tests explicitly allow us to account for such random noise. Thus, the standard way studies address this first possibility is by testing whether an association is strong enough to achieve statistical significance. When we achieve statistical significance, we are essentially concluding that the relationship between variables is unlikely to be coincidental.
+
+[^causality-5]: In fact, a sample correlation between two variables will almost never be exactly 0, even if two variables are unrelated to one another.
+
+In many ways, this first possibility is the easiest to assess, given that the fundamental tools of statistical inference are designed to address it. Yet for some research questions, it impossible to collect large samples, making statistical significance very difficult to achieve. For example, studies of presidential elections within a single country typically suffer from small sample sizes, since current institutional practices and data availability usually extend back at most for several decades (and presidential elections typically occur once every several years).
+
+Another common difficulty is that failing to meet model assumptions can distort the results of hypothesis tests, as when standard errors are not accurately estimated.
+
+Cherry picking of results (or data) is another common concern, since false positives will sometimes occur due to coincidence (at a rate consistent with the chosen alpha level, at least in theory). If insignificant results are discarded and only significant results are presented, the rate of false positives among the remaining results could be dramatically inflated. Recent attention to issues of p-hacking and publication bias directly address such concerns, and efforts to adapt research designs to incorporate practices like preregistration may help to mitigate such problems in the social scientific literature.
+
+#### 2. Z causes X and Y
+
+This possibility is perhaps the most vexing cause for concern in observational studies. If a third variable Z causes both X and Y, then X and Y will generally exhibit an association even if there is no direct causal link between X and Y. Such a third variable may be called a **confounder** (or confounding variable). For example, suppose an observational study finds that participants in a microloan program experience substantial improvements in economic wellbeing compared to peers who did not participate in the program. If the program had an opt-in element, we should be worried about self-selection distorting accurate estimation of program effects. People with higher levels of ambition (a third variable Z) will probably be more likely to participate in the program (the X variable), but this ambition will likely also serve to boost future economic wellbeing (the Y variable). Thus, even if the program itself has no effect on future economic wellbeing, we can still expect to find a positive association between X and Y due to Z affecting both variables.
+
+If we can successfully identify any (and all) confounders and are able to perfectly measure them, we can control for them (include them as additional independent variables) in a regression, which will generally address this concern. Specifically, if Z is the only confounder of concern, we can run a multiple regression that includes both X and Z as independent variables (and Y as the dependent variable). If X exhibits a (significant) association with Y in this multiple regression, we can generally be satisfied that Z was not the cause of the association between X and Y since multiple regression will estimate an association for X independent of Z.
+
+However, as a practical matter, it is very difficult to be confident we have identified and precisely measured all potential confounders. Going back to the microloan example, a practical difficulty is that ambition is difficult to precisely measure, challenging our ability to fully remove any confounding effect of ambition by controlling for it in a regression. Given such difficulties, the most persuasive tests of causality generally rely on examining variation in X that is believed to be random (as in an experiment) or near-random (e.g., varying substantially and sharply in response to a clear cause, such that third factors are unlikely to be varying in a similarly arbitrary pattern). If the value of X was randomly assigned (e.g., determined by the result of a random number generator), then we have no reason to worry that some confounder Z caused both X and Y (since the result of the random number generator should have no direct effect on Y). This is why experiments utilizing random assignment are considered the gold standard for building evidence of causality.
+
+#### 3. Y causes X
+
+Sometimes, we can be fairly confident that this is not a concern. For example, if X clearly precedes Y in time and there is no concern about anticipatory effects (i.e., it is implausible that Y could be predicted or that people adjusted X in anticipation of Y), we might logically conclude that Y causing X is unlikely. Or we might simply deem it rather implausible that Y would affect X based on our existing understanding of social behavior. For example, we might assumed that voting intention does not affect economic conditions, since it is hard to imagine a mechanism by which macroeconomic conditions would notable shift in response to how people planned to vote (at least assuming a reasonably close election for which the results were in doubt ahead of time).
+
+Sometimes, collecting data over time (e.g., panel data) will help us better evaluate this possibility. Random or near-random variation again provides some of the best means of address this concern (where such variation can plausibly be identified), since a random assignment of values to X implies that Y was not causing the values of X.
+
+#### 4. Research design problems create an artificial association
+
+This fourth possibility is quite open ended, since artificial findings of an association may arise due to a variety of issues associated with a study's design. We cannot possibly provide an exhaustive list here, so some examples will have to suffice. A study might suffer attrition (people dropping out of a study) in particular patterns that distort the picture of how variables are associated with one another. More generally, non-random patterns of missing data may bias estimates of associations. Measurement error can also bias results, especially if misreporting is correlated with another variable of interest. Another common concern in social science is that people may distort their behavior due to awareness that they are being studied (a Hawthorne effect) or treated (placebo effects); good research designs will make efforts to mitigate such effects by, for example, creating a carefully constructed control condition for an experiment.
+
+#### 5. X causes Y
+
+Beyond considering whether there are any good rival explanations (possibilities 1-4), it is important to assess the plausibility of this relationship itself. Is there a theory or a plausible mechanism that explains how X could affect Y? If we are examining the effects of a policy change on future electoral outcomes, is the public broadly aware of the policy or its effects? If not, it is probably difficult to imagine how the policy change could have a large effect on a subsequent election.[^causality-6]
+
+[^causality-6]: Of course in some settings, it might be plausible that elites (who have greater awareness of the policy change) can affect public sentiment through endorsements or campaign contributions. The greater point is that the plausibility of such mechanisms should be assessed on their own terms; establishing a plausible mechanism for how X could affect Y makes this fifth possibility itself more plausible when weighing it against the other four possibilities in this framework.
 
 ### Establishing Causation in Experiments
 
@@ -20,31 +98,31 @@ This problem seems intractable since, by definition, it is impossible to measure
 
 ### Causation in Non-Experimental Designs
 
-It is almost a cliché that correlation does not mean causation. The main fallacy in inferring causation from correlation is called the third variable problem and means that a third variable is responsible for the correlation between two other variables. An excellent example used by Li (1975)[^causality-3] to illustrate this point is the positive correlation in Taiwan in the 1970's between the use of contraception and the number of electric appliances in one's house. Of course, using contraception does not induce you to buy electrical appliances or vice versa. Instead, the third variable of education level affects both.
+It is almost a cliché that correlation does not mean causation. The main fallacy in inferring causation from correlation is called the third variable problem and means that a third variable is responsible for the correlation between two other variables. An excellent example used by Li (1975)[^causality-7] to illustrate this point is the positive correlation in Taiwan in the 1970's between the use of contraception and the number of electric appliances in one's house. Of course, using contraception does not induce you to buy electrical appliances or vice versa. Instead, the third variable of education level affects both.
 
-[^causality-3]: Li, C. (1975) *Path analysis: A primer*. Boxwood Press, Pacific Grove, CA.
+[^causality-7]: Li, C. (1975) *Path analysis: A primer*. Boxwood Press, Pacific Grove, CA.
 
 Does the possibility of a third-variable problem make it impossible to draw causal inferences without doing an experiment? One approach is to simply assume that you do not have a third-variable problem. This approach, although common, is not very satisfactory. However, be aware that the assumption of no third-variable problem may be hidden behind a complex causal model that contains sophisticated and elegant mathematics.
 
 A better, though admittedly more difficult approach, is to find converging evidence. This was the approach taken to conclude that smoking causes cancer. The analysis included converging evidence from retrospective studies, prospective studies, lab studies with animals, and theoretical understandings of cancer causes.
 
-A second problem is determining the direction of causality. A correlation between two variables does not indicate which variable is causing which. For example, Reinhart and Rogoff (2010)[^causality-4] found a strong correlation between public debt and GDP growth. Although some have argued that public debt slows growth, most evidence supports the alternative that slow growth increases public debt.[^causality-5]
+A second problem is determining the direction of causality. A correlation between two variables does not indicate which variable is causing which. For example, Reinhart and Rogoff (2010)[^causality-8] found a strong correlation between public debt and GDP growth. Although some have argued that public debt slows growth, most evidence supports the alternative that slow growth increases public debt.[^causality-9]
 
-[^causality-4]: Reinhart, C. M. and Rogoff, K. S. (2010). Growth in a Time of Debt. Working Paper 15639, National Bureau of Economic Research, <https://www.nber.org/papers/w15639>
+[^causality-8]: Reinhart, C. M. and Rogoff, K. S. (2010). Growth in a Time of Debt. Working Paper 15639, National Bureau of Economic Research, <https://www.nber.org/papers/w15639>
 
-[^causality-5]: For a video on causality featuring evidence that smoking causes cancer, see <https://www.learner.org/series/against-all-odds-inside-statistics/the-question-of-causation/>
+[^causality-9]: For a video on causality featuring evidence that smoking causes cancer, see <https://www.learner.org/series/against-all-odds-inside-statistics/the-question-of-causation/>
 
-## Experimental Designs[^causality-6]
+## @sec-causality Appendix: Classic Experimental Designs from Psychology[^causality-10]
 
-[^causality-6]: This section is adapted from David M. Lane. “Experimental Designs.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/research_design/designs.html>
+[^causality-10]: This section is adapted from David M. Lane. “Experimental Designs.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/research_design/designs.html>
 
 There are many ways an experiment can be designed. For example, subjects can all be tested under each of the treatment conditions or a different group of subjects can be used for each treatment. An experiment might have just one independent variable or it might have several. This section describes basic experimental designs and their advantages and disadvantages.
 
 ### Between-Subjects Designs
 
-In a **between-subjects** design, the various experimental treatments are given to different groups of subjects. For example, in the "Teacher Ratings"[^causality-7] case study, subjects were randomly divided into two groups. Subjects were all told they were going to see a video of an instructor's lecture after which they would rate the quality of the lecture. The groups differed in that the subjects in one group were told that prior teaching evaluations indicated that the instructor was charismatic whereas subjects in the other group were told that the evaluations indicated the instructor was punitive. In this experiment, the independent variable is "Condition" and has two levels (charismatic teacher and punitive teacher). It is a between-subjects variable because different subjects were used for the two levels of the independent variable: subjects were in either the "charismatic teacher" or the "punitive teacher" condition. Thus the comparison of the charismatic-teacher condition with the punitive-teacher condition is a comparison between the subjects in one condition with the subjects in the other condition.
+In a **between-subjects** design, the various experimental treatments are given to different groups of subjects. For example, in the "Teacher Ratings"[^causality-11] case study, subjects were randomly divided into two groups. Subjects were all told they were going to see a video of an instructor's lecture after which they would rate the quality of the lecture. The groups differed in that the subjects in one group were told that prior teaching evaluations indicated that the instructor was charismatic whereas subjects in the other group were told that the evaluations indicated the instructor was punitive. In this experiment, the independent variable is "Condition" and has two levels (charismatic teacher and punitive teacher). It is a between-subjects variable because different subjects were used for the two levels of the independent variable: subjects were in either the "charismatic teacher" or the "punitive teacher" condition. Thus the comparison of the charismatic-teacher condition with the punitive-teacher condition is a comparison between the subjects in one condition with the subjects in the other condition.
 
-[^causality-7]: <https://onlinestatbook.com/2/case_studies/ratings.html>
+[^causality-11]: <https://onlinestatbook.com/2/case_studies/ratings.html>
 
 The two conditions were treated exactly the same except for the instructions they received. Therefore, it would appear that any difference between conditions should be attributed to the treatments themselves. However, this ignores the possibility of chance differences between the groups. That is, by chance, the raters in one condition might have, on average, been more lenient than the raters in the other condition. Randomly assigning subjects to treatments ensures that all differences between conditions are chance differences; it does not ensure there will be no differences. The key question, then, is how to distinguish real differences from chance differences. The field of inferential statistics answers just this question. Analyzing the data from this experiment reveals that the ratings in the charismatic-teacher condition were higher than those in the punitive-teacher condition. Using inferential statistics, it can be calculated that the probability of finding a difference as large or larger than the one obtained if the treatment had no effect is only 0.018. Therefore it seems likely that the treatment had an effect and it is not the case that all differences were chance differences.
 
@@ -52,9 +130,9 @@ Independent variables often have several levels. For example, in the "Smiles and
 
 ### Multi-Factor Between-Subject Designs
 
-In the "Bias Against Associates of the Obese"[^causality-8] experiment, the qualifications of potential job applicants were judged. Each applicant was accompanied by an associate. The experiment had two independent variables: the weight of the associate (obese or average) and the applicant's relationship to the associate (girl friend or acquaintance). This design can be described as an Associate's Weight (2) x Associate's Relationship (2) factorial design. The numbers in parentheses represent the number of levels of the independent variable. The design was a factorial design because all four combinations of associate's weight and associate's relationship were included. The dependent variable was a rating of the applicant's qualifications (on a 9-point scale).
+In the "Bias Against Associates of the Obese"[^causality-12] experiment, the qualifications of potential job applicants were judged. Each applicant was accompanied by an associate. The experiment had two independent variables: the weight of the associate (obese or average) and the applicant's relationship to the associate (girl friend or acquaintance). This design can be described as an Associate's Weight (2) x Associate's Relationship (2) factorial design. The numbers in parentheses represent the number of levels of the independent variable. The design was a factorial design because all four combinations of associate's weight and associate's relationship were included. The dependent variable was a rating of the applicant's qualifications (on a 9-point scale).
 
-[^causality-8]: <https://onlinestatbook.com/2/case_studies/obesity_relation.html>
+[^causality-12]: <https://onlinestatbook.com/2/case_studies/obesity_relation.html>
 
 If two separate experiments had been conducted, one to test the effect of Associate's Weight and one to test the effect of Associate's Relationship then there would be no way to assess whether the effect of Associate's Weight depended on the Associate's Relationship. One might imagine that the Associate's Weight would have a larger effect if the associate were a girl friend rather than merely an acquaintance. A factorial design allows this question to be addressed. When the effect of one variable does differ depending on the level of the other variable then it is said that there is an *interaction* (also known as moderation) between the variables.
 
@@ -62,9 +140,9 @@ Factorial designs can have three or more independent variables. In order to be a
 
 ### Within-Subjects Designs
 
-A **within-subjects** design differs from a between-subjects design in that the same subjects perform at all levels of the independent variable. For example consider the "ADHD Treatment"[^causality-9] case study. In this experiment, subjects diagnosed as having attention deficit disorder were each tested on a delay of gratification task after receiving methylphenidate (MPH). All subjects were tested four times, once after receiving one of the four doses. Since each subject was tested under *each* of the four levels of the independent variable "dose," the design is a within-subjects design and dose is a within-subjects variable. Within-subjects designs are sometimes called repeated-measures designs.
+A **within-subjects** design differs from a between-subjects design in that the same subjects perform at all levels of the independent variable. For example consider the "ADHD Treatment"[^causality-13] case study. In this experiment, subjects diagnosed as having attention deficit disorder were each tested on a delay of gratification task after receiving methylphenidate (MPH). All subjects were tested four times, once after receiving one of the four doses. Since each subject was tested under *each* of the four levels of the independent variable "dose," the design is a within-subjects design and dose is a within-subjects variable. Within-subjects designs are sometimes called repeated-measures designs.
 
-[^causality-9]: <https://onlinestatbook.com/2/case_studies/adhd.html>
+[^causality-13]: <https://onlinestatbook.com/2/case_studies/adhd.html>
 
 ### Advantage of Within-Subjects Designs
 
@@ -74,6 +152,6 @@ Within-subjects designs are often called "repeated-measures" designs since repea
 
 ### Complex Designs
 
-Designs can contain combinations of between-subject and within-subject variables. For example, the "Weapons and Aggression"[^causality-10] case study has one between-subject variable (gender) and two within-subject variables (the type of priming word and the type of word to be responded to).
+Designs can contain combinations of between-subject and within-subject variables. For example, the "Weapons and Aggression"[^causality-14] case study has one between-subject variable (gender) and two within-subject variables (the type of priming word and the type of word to be responded to).
 
-[^causality-10]: <https://onlinestatbook.com/2/case_studies/guns.html>
+[^causality-14]: <https://onlinestatbook.com/2/case_studies/guns.html>

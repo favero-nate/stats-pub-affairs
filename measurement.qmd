@@ -1,0 +1,151 @@
+# Measurement {#sec-measurement}
+
+Two main statistics traditions in social science\
+• Psychometrics: applied statistical methods\
+developed for studying psychology\
+• Central focus on measurement error\
+• Many methods for data with multiple measures of\
+constructs (e.g., survey data with multiple items for\
+each construct)\
+• Commonly used in psychology and related research\
+areas (organizational behavior, public opinion)\
+• Key methods include reliability measures, factor\
+analysis, SEM\
+• Econometrics: applied statistical methods developed\
+for studying economics\
+• Central focus on threats to accurate causal inference\
+• Commonly used in many social science disciplines\
+• Key method is regression
+
+Reliability measures\
+• Basic intuition: if we measure a construct multiple\
+times or multiple ways, the various measurements\
+should give us similar results (unless there’s reason\
+to believe the true value of the construct has changed\
+between measures)\
+• If the measurements are inconsistent (unreliable),\
+this undermines confidence in the measures\
+• Most reliability measures indicate some sort of\
+correlation (or average correlation) among measures,\
+so the maximum value (perfect reliability) is typically 1
+
+• There are often cutpoints offered as “rules of thumb”\
+for what constitute “good” or “acceptable” levels of\
+reliability; I think these are of somewhat limited use\
+since different types of measures allow for different\
+realistic levels of reliability\
+• Even if reliability is high, there is no guarantee that\
+validity is high—no guarantee that the variables\
+actually measure what we want them to measure\
+• Cronbach’s alpha: the most common measure of\
+reliability when researchers have multiple survey\
+items that are supposed to measure a single\
+construct\
+• Essentially measures the average correlation among\
+a set of variables
+
+Scaling\
+• Scaling: combining multiple measures of a construct\
+into a single variable\
+• Example: combining responses to several survey\
+items to form a single variable\
+• Simplest scaling method: taking the average (or\
+sum) of several measures\
+• If measures don’t have a common scale, we might\
+want to first standardize the items before\
+averaging/totaling them\
+• Assuming there is a common scale, all measures are\
+given equal weight in contributing to final measure
+
+• Factor analysis: an approach to scaling that allows\
+for estimation of different weights to assign to\
+different measures\
+• Basic intuition: assign weights to different measures\
+to maximize the extent to which a single common\
+(latent) factor can explain the variation in the various\
+measure
+
+• If you’re only interested in using items to measure a\
+single variable, factor analysis is fairly\
+straightforward: it will assign less weight to items that\
+have a relatively weak correlation with the other items\
+whereas taking a simple average will give all items\
+equal weight\
+• Factor loadings will give an indication of which\
+variables having stronger weights (values closer to 0\
+have less weight)\
+• A negative factor loading indicates a negative weight,\
+meaning that higher values of that item correspond to\
+lower values of the factor index
+
+Factor analysis\
+• There are many types of factor analysis\
+• One of the simplest is principal components analysis,\
+often abbreviated PCA or PCF (for principal\
+components factor analysis)\
+• PCA is a type of exploratory factor analysis, meaning\
+that you don’t necessary have to specify how many\
+constructs you wish to measure with the variables\
+you have or which measures you expect to measure\
+which constructs\
+• PCA can essentially find groupings of measures that\
+have high correlations with one another and identify a\
+factor (new scaled variable) for each grouping\
+• PCA assumes that each factor is uncorrelated with all\
+other factors, but other types of factor analysis allow\
+for correlated factors
+
+• Basic PCA will make it so that the first factor explains\
+as much variation in the measures as possible, the\
+second factor explains as much of the remaining\
+variation as possible (after creating the first factor),\
+etc.\
+• “Rotation” allows for the variation to be split up more\
+evening among factors, but you must specify how\
+many factors you want to create\
+• There’s no obvious way to choose how many factors\
+to retain, but several approaches (beyond the scope\
+of this course) are frequently used
+
+• Each measure will have a factor loading for each\
+factor; this loading indicates the correlation (ranging\
+from -1 to 1) between that measure and the factor\
+• Each factor will have an eigenvalue, indicating how\
+much of the variation in the measures is explained by\
+that factor\
+• With PCA, the eigenvalue divided by the number of\
+measures indicates the proportion of variance in the\
+measures that can be accounted for with that factor
+
+SEM\
+• SEM allows for scaling (think factor analysis) and\
+estimation of associations (think regression) to be\
+simultaneously carried out in a single model\
+• By combining these two steps, SEM is able to easily\
+account for certain types of measurement error\
+• More traditional econometric approaches typically\
+assume there is no error in the independent/control\
+variables, although econometric regression\
+approaches have been developed that allow for\
+measurement error (they’re just not widely used)\
+• SEM users often include multiple mediating and/or\
+dependent variables, unlike most regression models\
+• One can think of these multiple links as similar to\
+running multiple regressions successively, like we’ll\
+learn how to do next week with mediating variables
+
+• SEM can be a useful way to model measurement\
+error, but there are some potential pitfalls\
+• SEM models typically assume that measurement\
+error is uncorrelated across items; violation of this\
+assumption is often referred to as common method\
+variance or common source bias and is very difficult\
+to deal with, even with SEM\
+• SEM typically has arrows that indicate causal\
+directions, but the models are not able to do much to\
+distinguish which direction causality flows (does A\
+cause B, or does B cause A?); instead the causal\
+direction is assumed\
+• Tests of whether the model adequately fits/explains\
+the data exist, but these tests are not very informative\
+in practice

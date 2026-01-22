@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./getting-started.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9ac4c4d7723caba69398381a32a42326.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-18279696052386181f2d5e2642aac360.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -358,13 +359,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models[^prob-models-1]</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference[^stat-inference-1]</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,7 +400,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Causality and Experimental Designs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Research Designs and Causality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
   </div>
 </li>
       </ul>
@@ -417,34 +436,36 @@ window.Quarto = {
   <li><a href="#distributionsdescribing-one-variable-1" id="toc-distributionsdescribing-one-variable-1" class="nav-link active" data-scroll-target="#distributionsdescribing-one-variable-1"><span class="header-section-number">2.1</span> Distributions</a>
   <ul class="collapse">
   <li><a href="#distributions-of-qualitative-or-discrete-variables" id="toc-distributions-of-qualitative-or-discrete-variables" class="nav-link" data-scroll-target="#distributions-of-qualitative-or-discrete-variables"><span class="header-section-number">2.1.1</span> Distributions of Qualitative or Discrete Variables</a></li>
-  <li><a href="#continuous-variables" id="toc-continuous-variables" class="nav-link" data-scroll-target="#continuous-variables"><span class="header-section-number">2.1.2</span> Continuous Variables</a></li>
+  <li><a href="#sec-continuous-variables" id="toc-sec-continuous-variables" class="nav-link" data-scroll-target="#sec-continuous-variables"><span class="header-section-number">2.1.2</span> Continuous Variables</a></li>
   <li><a href="#sec-shapes-of-distributions" id="toc-sec-shapes-of-distributions" class="nav-link" data-scroll-target="#sec-shapes-of-distributions"><span class="header-section-number">2.1.3</span> Shapes of Distributions</a></li>
   </ul></li>
-  <li><a href="#measures-of-central-tendencydescribing-one-variable-2" id="toc-measures-of-central-tendencydescribing-one-variable-2" class="nav-link" data-scroll-target="#measures-of-central-tendencydescribing-one-variable-2"><span class="header-section-number">2.2</span> Measures of Central Tendency</a>
+  <li><a href="#percentilesdescribing-one-variable-2" id="toc-percentilesdescribing-one-variable-2" class="nav-link" data-scroll-target="#percentilesdescribing-one-variable-2"><span class="header-section-number">2.2</span> Percentiles</a>
   <ul class="collapse">
-  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">2.2.1</span> Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">2.2.2</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">2.2.3</span> Mode</a></li>
-  <li><a href="#comparing-measures-of-central-tendencydescribing-one-variable-4" id="toc-comparing-measures-of-central-tendencydescribing-one-variable-4" class="nav-link" data-scroll-target="#comparing-measures-of-central-tendencydescribing-one-variable-4"><span class="header-section-number">2.2.4</span> Comparing Measures of Central Tendency</a></li>
+  <li><a href="#three-alternative-definitions-of-percentile" id="toc-three-alternative-definitions-of-percentile" class="nav-link" data-scroll-target="#three-alternative-definitions-of-percentile"><span class="header-section-number">2.2.1</span> Three Alternative Definitions of Percentile</a></li>
   </ul></li>
-  <li><a href="#measures-of-spreaddescribing-one-variable-5" id="toc-measures-of-spreaddescribing-one-variable-5" class="nav-link" data-scroll-target="#measures-of-spreaddescribing-one-variable-5"><span class="header-section-number">2.3</span> Measures of Spread</a>
+  <li><a href="#measures-of-central-tendencydescribing-one-variable-3" id="toc-measures-of-central-tendencydescribing-one-variable-3" class="nav-link" data-scroll-target="#measures-of-central-tendencydescribing-one-variable-3"><span class="header-section-number">2.3</span> Measures of Central Tendency</a>
   <ul class="collapse">
-  <li><a href="#what-is-variability" id="toc-what-is-variability" class="nav-link" data-scroll-target="#what-is-variability"><span class="header-section-number">2.3.1</span> What is Variability?</a></li>
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">2.3.2</span> Range</a></li>
-  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">2.3.3</span> Interquartile Range</a></li>
-  <li><a href="#sec-variance" id="toc-sec-variance" class="nav-link" data-scroll-target="#sec-variance"><span class="header-section-number">2.3.4</span> Variance</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">2.3.5</span> Standard Deviation</a></li>
+  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">2.3.1</span> Mean</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">2.3.2</span> Median</a></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">2.3.3</span> Mode</a></li>
+  <li><a href="#comparing-measures-of-central-tendencydescribing-one-variable-5" id="toc-comparing-measures-of-central-tendencydescribing-one-variable-5" class="nav-link" data-scroll-target="#comparing-measures-of-central-tendencydescribing-one-variable-5"><span class="header-section-number">2.3.4</span> Comparing Measures of Central Tendency</a></li>
   </ul></li>
-  <li><a href="#percentilesdescribing-one-variable-7" id="toc-percentilesdescribing-one-variable-7" class="nav-link" data-scroll-target="#percentilesdescribing-one-variable-7"><span class="header-section-number">2.4</span> Percentiles</a>
+  <li><a href="#measures-of-spreaddescribing-one-variable-6" id="toc-measures-of-spreaddescribing-one-variable-6" class="nav-link" data-scroll-target="#measures-of-spreaddescribing-one-variable-6"><span class="header-section-number">2.4</span> Measures of Spread</a>
   <ul class="collapse">
-  <li><a href="#three-alternative-definitions-of-percentile" id="toc-three-alternative-definitions-of-percentile" class="nav-link" data-scroll-target="#three-alternative-definitions-of-percentile"><span class="header-section-number">2.4.1</span> Three Alternative Definitions of Percentile</a></li>
-  <li><a href="#sec-box-plots" id="toc-sec-box-plots" class="nav-link" data-scroll-target="#sec-box-plots"><span class="header-section-number">2.4.2</span> Box Plots</a></li>
-  <li><a href="#variations-on-box-plots" id="toc-variations-on-box-plots" class="nav-link" data-scroll-target="#variations-on-box-plots"><span class="header-section-number">2.4.3</span> Variations on box plots</a></li>
+  <li><a href="#what-is-variability" id="toc-what-is-variability" class="nav-link" data-scroll-target="#what-is-variability"><span class="header-section-number">2.4.1</span> What is Variability?</a></li>
+  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">2.4.2</span> Range</a></li>
+  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">2.4.3</span> Interquartile Range</a></li>
+  <li><a href="#sec-variance" id="toc-sec-variance" class="nav-link" data-scroll-target="#sec-variance"><span class="header-section-number">2.4.4</span> Variance</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">2.4.5</span> Standard Deviation</a></li>
   </ul></li>
-  <li><a href="#transforming-variablesdescribing-one-variable-10" id="toc-transforming-variablesdescribing-one-variable-10" class="nav-link" data-scroll-target="#transforming-variablesdescribing-one-variable-10"><span class="header-section-number">2.5</span> Transforming Variables</a>
+  <li><a href="#sec-box-plots" id="toc-sec-box-plots" class="nav-link" data-scroll-target="#sec-box-plots"><span class="header-section-number">2.5</span> Box Plots</a>
   <ul class="collapse">
-  <li><a href="#sec-standardization" id="toc-sec-standardization" class="nav-link" data-scroll-target="#sec-standardization"><span class="header-section-number">2.5.1</span> Standardization (Z Scores)</a></li>
-  <li><a href="#log-transformationsdescribing-one-variable-11" id="toc-log-transformationsdescribing-one-variable-11" class="nav-link" data-scroll-target="#log-transformationsdescribing-one-variable-11"><span class="header-section-number">2.5.2</span> Log Transformations</a></li>
+  <li><a href="#variations-on-box-plots" id="toc-variations-on-box-plots" class="nav-link" data-scroll-target="#variations-on-box-plots"><span class="header-section-number">2.5.1</span> Variations on box plots</a></li>
+  </ul></li>
+  <li><a href="#transforming-variablesdescribing-one-variable-10" id="toc-transforming-variablesdescribing-one-variable-10" class="nav-link" data-scroll-target="#transforming-variablesdescribing-one-variable-10"><span class="header-section-number">2.6</span> Transforming Variables</a>
+  <ul class="collapse">
+  <li><a href="#sec-standardization" id="toc-sec-standardization" class="nav-link" data-scroll-target="#sec-standardization"><span class="header-section-number">2.6.1</span> Standardization (Z Scores)</a></li>
+  <li><a href="#log-transformationsdescribing-one-variable-11" id="toc-log-transformationsdescribing-one-variable-11" class="nav-link" data-scroll-target="#log-transformationsdescribing-one-variable-11"><span class="header-section-number">2.6.2</span> Log Transformations</a></li>
   </ul></li>
   <li><a href="#sec-describing-one-variable-appendix-calculating-percentiles-under-the-third-definitiondescribing-one-variable-12" id="toc-sec-describing-one-variable-appendix-calculating-percentiles-under-the-third-definitiondescribing-one-variable-12" class="nav-link" data-scroll-target="#sec-describing-one-variable-appendix-calculating-percentiles-under-the-third-definitiondescribing-one-variable-12"><span>Chapter 2</span> Appendix: Calculating Percentiles Under the Third Definition</a></li>
   </ul>
@@ -486,11 +507,11 @@ Table&nbsp;2.1: Frequencies in the Bag of M&amp;M’s
 <div aria-describedby="tbl-mmfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 16%">
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 22%">
-<col style="width: 9%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -526,8 +547,8 @@ Orange</td>
 </div>
 <p>This table is called a frequency table and it describes the distribution of M&amp;M color frequencies. Not surprisingly, this kind of distribution is called a <strong>frequency distribution</strong>. Often a frequency distribution is shown graphically, as we saw in the prior chapter.</p>
 </section>
-<section id="continuous-variables" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="continuous-variables"><span class="header-section-number">2.1.2</span> Continuous Variables</h3>
+<section id="sec-continuous-variables" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-continuous-variables"><span class="header-section-number">2.1.2</span> Continuous Variables</h3>
 <p>The variable “color of M&amp;M” is a qualitative variable, and its distribution is called discrete because there are a finite number of values the variable can take on. Let us now extend the concept of a distribution to quantitative variables measured to many decimal places.</p>
 <p>The data shown in <a href="#tbl-responsetimes" class="quarto-xref">Table&nbsp;<span>2.2</span></a> are the times it took David Lane (the author of much of the material appearing in this book) to move the cursor over a small target in a series of 20 trials. The times are sorted from shortest to longest. The variable “time to respond” is a continuous variable. With time measured accurately (to many decimal places), no two response times would be expected to be the same. Measuring time in milliseconds (thousandths of a second) is often precise enough to approximate a continuous variable in psychology. As you can see in <a href="#tbl-responsetimes" class="quarto-xref">Table&nbsp;<span>2.2</span></a>, measuring David Lane’s responses this way produced times no two of which were the same. As a result, a frequency distribution would be uninformative: it would consist of the 20 times in the experiment, each with a frequency of 1.</p>
 <div id="tbl-responsetimes" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -538,11 +559,11 @@ Table&nbsp;2.2: Response Times
 <div aria-describedby="tbl-responsetimes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
+<col style="width: 5%">
 <col style="width: 9%">
-<col style="width: 6%">
+<col style="width: 5%">
 <col style="width: 9%">
-<col style="width: 6%">
+<col style="width: 5%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -584,11 +605,11 @@ Table&nbsp;2.3: Grouped frequency distribution
 <div aria-describedby="tbl-groupfreqdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 16%">
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 22%">
-<col style="width: 9%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -660,11 +681,20 @@ Figure&nbsp;2.3: Frequencies of times between eruptions of the Old Faithful geys
 </div>
 </section>
 </section>
-<section id="measures-of-central-tendencydescribing-one-variable-2" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="measures-of-central-tendencydescribing-one-variable-2"><span class="header-section-number">2.2</span> Measures of Central Tendency<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h2>
-<section id="mean" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">2.2.1</span> Mean</h3>
-<p>The <strong>mean</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> is the most common measure of central tendency. It is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in <span class="quarto-unresolved-ref">?sec-stat-inference</span>. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.</p>
+<section id="percentilesdescribing-one-variable-2" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="percentilesdescribing-one-variable-2"><span class="header-section-number">2.2</span> Percentiles<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h2>
+<p><strong>Percentiles</strong> are a helpful tool for describing distributions. Many of us have probably encountered percentiles before in the context of standardized exam testing. A test score in and of itself is usually difficult to interpret. For example, if you learned that your score on a measure of shyness was 35 out of a possible 50, you would have little idea how shy you are compared to other people. More relevant is the percentage of people with lower shyness scores than yours. This percentage is called a percentile. If 65% of the scores were below yours, then your score would be the 65th percentile.</p>
+<section id="three-alternative-definitions-of-percentile" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="three-alternative-definitions-of-percentile"><span class="header-section-number">2.2.1</span> Three Alternative Definitions of Percentile</h3>
+<p>There is no universally accepted definition of a percentile. Using the 65th percentile as an example, the 65th percentile can be defined as the lowest score that is greater than 65% of the scores. This is the way we defined it above and we will call this “Definition 1.” The 65th percentile can also be defined as the smallest score that is greater than <em>or equal to</em> 65% of the scores. This we will call “Definition 2.” Though these two definitions appear very similar, they can sometimes lead to dramatically different results, especially when there is relatively little data. Moreover, neither of these definitions is explicit about how to handle rounding. For instance, what rank is required to be higher than 65% of the scores when the total number of scores is 50? This is tricky because 65% of 50 is 32.5. How do we find the lowest number that is higher than 32.5 of the scores?</p>
+<p>A third way to compute percentiles is a weighted average of the percentiles computed according to the first two definitions. The details of computing percentiles under this third definition are a bit complicated, but fortunately, statistical software can easily do the calculations for us. Since it is unlikely you will need to compute percentiles by hand, we leave the details of these computations to the appendix appearing at the end of this chapter. Despite its complexity, the third definition handles rounding more gracefully than the other two and has the advantage that it allows the median to be defined conveniently as the 50th percentile. Unless otherwise specified, when we refer to “percentile,” we will be referring to this third definition of percentiles.</p>
+</section>
+</section>
+<section id="measures-of-central-tendencydescribing-one-variable-3" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="measures-of-central-tendencydescribing-one-variable-3"><span class="header-section-number">2.3</span> Measures of Central Tendency<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></h2>
+<section id="mean" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">2.3.1</span> Mean</h3>
+<p>The <strong>mean</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is the most common measure of central tendency. It is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in <a href="stat-inference.html" class="quarto-xref"><span>Chapter 6</span></a>. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.</p>
 <p>The symbol <span class="math inline">\(\mu\)</span> is used for the mean of a population. The symbol <span class="math inline">\(\bar{X}\)</span> is used for the mean of a sample. The formula for <span class="math inline">\(\mu\)</span> is shown below:</p>
 <p><span class="math display">\[
 \mu = \frac{\sum X}{N}
@@ -688,9 +718,9 @@ Table&nbsp;2.4: Number of touchdown passes.
 <div aria-describedby="tbl-tdownpasses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 66%">
-<col style="width: 16%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -704,17 +734,17 @@ Table&nbsp;2.4: Number of touchdown passes.
 </figure>
 </div>
 </section>
-<section id="median" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="median"><span class="header-section-number">2.2.2</span> Median</h3>
+<section id="median" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="median"><span class="header-section-number">2.3.2</span> Median</h3>
 <p>The <strong>median</strong> is also a frequently used measure of central tendency. The median is the midpoint of a distribution: the same number of scores is above the median as below it. For the data in <a href="#tbl-tdownpasses" class="quarto-xref">Table&nbsp;<span>2.4</span></a>, there are 31 scores. The 16th highest score (which equals 20) is the median because there are 15 scores below the 16th score and 15 scores above the 16th score. The median can also be thought of as the 50th percentile.</p>
-<section id="computation-of-the-median" class="level4" data-number="2.2.2.1">
-<h4 data-number="2.2.2.1" class="anchored" data-anchor-id="computation-of-the-median"><span class="header-section-number">2.2.2.1</span> Computation of the Median</h4>
+<section id="computation-of-the-median" class="level4" data-number="2.3.2.1">
+<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="computation-of-the-median"><span class="header-section-number">2.3.2.1</span> Computation of the Median</h4>
 <p>When there is an odd number of numbers, the median is simply the middle number. For example, the median of 2, 4, and 7 is 4. When there is an even number of numbers, the median is the mean of the two middle numbers. Thus, the median of the numbers 2, 4, 7, 12 is (4+7)/2 = 5.5.</p>
 </section>
 </section>
-<section id="mode" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">2.2.3</span> Mode</h3>
-<p>The <strong>mode</strong> is the most frequently occurring value. For the data in <a href="#tbl-tdownpasses" class="quarto-xref">Table&nbsp;<span>2.4</span></a>, the mode is 18 since more teams (4) had 18 touchdown passes than any other number of touchdown passes. With continuous data such as response time measured to many decimals, the frequency of each value is one since no two scores will be exactly the same (see discussion of continuous variables). Therefore the mode of continuous data is normally computed from a grouped frequency distribution. <a href="#tbl-groupfreqdist1" class="quarto-xref">Table&nbsp;<span>2.5</span></a> shows a grouped frequency distribution for the target response time data. Since the interval with the highest frequency is 600-700, the mode is the middle of that interval (650).</p>
+<section id="mode" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">2.3.3</span> Mode</h3>
+<p>The <strong>mode</strong> is the most frequently occurring value. For the data in <a href="#tbl-tdownpasses" class="quarto-xref">Table&nbsp;<span>2.4</span></a>, the mode is 18 since more teams (4) had 18 touchdown passes than any other number of touchdown passes. With continuous data such as response time measured to many decimals, the frequency of each value is one since no two scores will be exactly the same (see <a href="#sec-continuous-variables" class="quarto-xref"><span>Section 2.1.2</span></a>). Therefore the mode of continuous data is normally computed from a grouped frequency distribution. <a href="#tbl-groupfreqdist1" class="quarto-xref">Table&nbsp;<span>2.5</span></a> shows a grouped frequency distribution for the target response time data. Since the interval with the highest frequency is 600-700, the mode is the middle of that interval (650).</p>
 <div id="tbl-groupfreqdist1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-groupfreqdist1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -723,10 +753,10 @@ Table&nbsp;2.5: Grouped frequency distribution.
 <div aria-describedby="tbl-groupfreqdist1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
+<col style="width: 5%">
 <col style="width: 16%">
 <col style="width: 22%">
-<col style="width: 11%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -759,8 +789,8 @@ Table&nbsp;2.5: Grouped frequency distribution.
 </figure>
 </div>
 </section>
-<section id="comparing-measures-of-central-tendencydescribing-one-variable-4" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="comparing-measures-of-central-tendencydescribing-one-variable-4"><span class="header-section-number">2.2.4</span> Comparing Measures of Central Tendency<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h3>
+<section id="comparing-measures-of-central-tendencydescribing-one-variable-5" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="comparing-measures-of-central-tendencydescribing-one-variable-5"><span class="header-section-number">2.3.4</span> Comparing Measures of Central Tendency<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></h3>
 <p>How do the various measures of central tendency compare with each other? For symmetric distributions, the mean and median are equal, as is the mode except in bimodal distributions. Differences among the measures occur with skewed distributions. Consider the positively skewed distribution we saw earlier in the chapter (<a href="#fig-posskewdist" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). Measures of central tendency for this distribution are shown in <a href="#tbl-testscoremeasures" class="quarto-xref">Table&nbsp;<span>2.6</span></a>. Notice they do not differ greatly, with the exception that the mode is considerably lower than the other measures. When distributions have a positive skew, the mean is typically higher than the median, although it may not be in bimodal distributions. For these data, the mean of 91.58 is higher than the median of 90.</p>
 <div id="tbl-testscoremeasures" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -770,10 +800,10 @@ Table&nbsp;2.6: Measures of central tendency for the test scores.
 <div aria-describedby="tbl-testscoremeasures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
+<col style="width: 5%">
 <col style="width: 19%">
 <col style="width: 16%">
-<col style="width: 11%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -799,7 +829,7 @@ Mean</td>
 </div>
 </figure>
 </div>
-<p>The distribution of baseball salaries (in 1994) shown in <a href="#fig-bballsalarydist" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> has a much more pronounced skew than the distribution in <span class="quarto-unresolved-ref">?fig-fig-posskewdistfig-posskewdist</span>.</p>
+<p>The distribution of baseball salaries (in 1994) shown in <a href="#fig-bballsalarydist" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> has a much more pronounced skew than the distribution in <a href="#fig-posskewdist" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>.</p>
 <div id="fig-bballsalarydist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bballsalarydist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -819,11 +849,11 @@ Table&nbsp;2.7: Measures of central tendency for baseball salaries (in thousands
 <div aria-describedby="tbl-bballmeasures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 19%">
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 16%">
-<col style="width: 9%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -853,49 +883,48 @@ Mean</td>
 </div>
 </section>
 </section>
-<section id="measures-of-spreaddescribing-one-variable-5" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="measures-of-spreaddescribing-one-variable-5"><span class="header-section-number">2.3</span> Measures of Spread<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></h2>
-<section id="what-is-variability" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="what-is-variability"><span class="header-section-number">2.3.1</span> What is Variability?</h3>
-<p>Variability refers to how “spread out” a group of scores is. To see what we mean by spread out, consider graphs in <a href="#fig-quizzes" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>. These graphs represent the scores on two quizzes. The mean score for each quiz is 7.0. Despite the equality of means, you can see that the distributions are quite different. Specifically, the scores on Quiz 1 are more densely packed and those on Quiz 2 are more spread out. The differences among students were much greater on Quiz 2 than on Quiz 1.</p>
-<div id="fig-quizzes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="measures-of-spreaddescribing-one-variable-6" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="measures-of-spreaddescribing-one-variable-6"><span class="header-section-number">2.4</span> Measures of Spread<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></h2>
+<section id="what-is-variability" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="what-is-variability"><span class="header-section-number">2.4.1</span> What is Variability?</h3>
+<p>Variability refers to how “spread out” a group of scores is. To see what we mean by spread out, consider <a href="#fig-quiz-1" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> and <a href="#fig-quiz-2" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. These graphs represent the scores on two quizzes. The mean score for each quiz is 7.0. Despite the equality of means, you can see that the distributions are quite different. Specifically, the scores on Quiz 1 are more densely packed and those on Quiz 2 are more spread out. The differences among students were much greater on Quiz 2 than on Quiz 1.</p>
+<div id="fig-quiz-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-quizzes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/describing-one-variable/Quiz1.jpg" class="img-fluid figure-img" width="425"></p>
-<figcaption>Quiz 1</figcaption>
+<div aria-describedby="fig-quiz-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/describing-one-variable/Quiz1.jpg" class="img-fluid figure-img" width="425">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quiz-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Quiz 1
+</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/describing-one-variable/Quiz2.jpg" class="img-fluid figure-img" width="425"></p>
-<figcaption>Quiz 2</figcaption>
-</figure>
+<div id="fig-quiz-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quiz-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/describing-one-variable/Quiz2.jpg" class="img-fluid figure-img" width="425">
 </div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quizzes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.5: Bar charts of two quizzes.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quiz-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Quiz 2
 </figcaption>
 </figure>
 </div>
 <p>The terms variability, spread, and dispersion are synonyms, and refer to how spread out a distribution is. Just as in the section on central tendency where we discussed measures of the center of a distribution of scores, in this section we will discuss measures of the variability of a distribution. There are four frequently used measures of variability: the range, interquartile range, variance, and standard deviation. In the next few paragraphs, we will look at each of these four measures of variability in more detail.</p>
 </section>
-<section id="range" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="range"><span class="header-section-number">2.3.2</span> Range</h3>
-<p>The <strong>range</strong> is the simplest measure of variability to calculate, and one you have probably encountered many times in your life. The range is simply the highest score minus the lowest score. Let’s take a few examples. What is the range of the following group of numbers: 10, 2, 5, 6, 7, 3, 4? Well, the highest number is 10, and the lowest number is 2, so 10 - 2 = 8. The range is 8. Let’s take another example. Here’s a dataset with 10 numbers: 99, 45, 23, 67, 45, 91, 82, 78, 62, 51. What is the range? The highest number is 99 and the lowest number is 23, so 99 - 23 equals 76; the range is 76. Now consider the two quizzes shown in <a href="#fig-quizzes" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>. On Quiz 1, the lowest score is 5 and the highest score is 9. Therefore, the range is 4. The range on Quiz 2 was larger: the lowest score was 4 and the highest score was 10. Therefore the range is 6.</p>
-<p>Be careful, though, about using the range to make comparisons. The range can be sensitive to sample size: a larger sample offers greater opportunity for the range to expand. In the example above, both quizzes have the same number of observations (20), so using the range to make a comparison is perfectly fine. However, if we were to compare to samples with different numbers of observations, then the range is not necessarily a good way to compare the variability of the two samples.</p>
+<section id="range" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="range"><span class="header-section-number">2.4.2</span> Range</h3>
+<p>The <strong>range</strong> is the simplest measure of variability to calculate, and one you have probably encountered many times in your life. The range is simply the highest score minus the lowest score. Let’s take a few examples. What is the range of the following group of numbers: 10, 2, 5, 6, 7, 3, 4? Well, the highest number is 10, and the lowest number is 2, so 10 - 2 = 8. The range is 8. Let’s take another example. Here’s a dataset with 10 numbers: 99, 45, 23, 67, 45, 91, 82, 78, 62, 51. What is the range? The highest number is 99 and the lowest number is 23, so 99 - 23 equals 76; the range is 76. Now consider the two quizzes shown above. On Quiz 1, the lowest score is 5 and the highest score is 9. Therefore, the range is 4. The range on Quiz 2 was larger: the lowest score was 4 and the highest score was 10. Therefore the range is 6.</p>
+<p>Be careful, though, about using the range to make comparisons. The range can be sensitive to sample size: a larger sample offers greater opportunity for the range to expand. In the example above, both quizzes have the same number of observations (20), so using the range to make a comparison is perfectly fine. However, if we were to compare two samples with different numbers of observations, then the range is not necessarily a good way to compare the variability of the samples.</p>
 </section>
-<section id="interquartile-range" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">2.3.3</span> Interquartile Range</h3>
+<section id="interquartile-range" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">2.4.3</span> Interquartile Range</h3>
 <p>The <strong>interquartile range</strong> (IQR) is the range of the middle 50% of the scores in a distribution. It is computed as follows:</p>
 <p><span class="math display">\[
 IQR = \text{ 75th percentile } - \text{ 25th percentile }
 \]</span></p>
-<p>For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquartile range is therefore 2. For Quiz 2, which has greater spread, the 75th percentile is 9, the 25th percentile is 5, and the interquartile range is 4. Recall that in the discussion of box plots (<a href="#sec-box-plots" class="quarto-xref"><span>Section 2.4.2</span></a>), the 75th percentile was called the upper hinge and the 25th percentile was called the lower hinge. Thus, the interquartile range is neatly depicted by the box portion of a boxplot.</p>
+<p>For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquartile range is therefore 2. For Quiz 2, which has greater spread, the 75th percentile is 9, the 25th percentile is 5, and the interquartile range is 4. We’ll see in <a href="#sec-box-plots" class="quarto-xref"><span>Section 2.5</span></a> that when creating boxplots, the 75th percentile is also called the upper hinge and the 25th percentile is called the lower hinge. Thus, the interquartile range is neatly depicted by the box portion of a boxplot.</p>
 </section>
-<section id="sec-variance" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="sec-variance"><span class="header-section-number">2.3.4</span> Variance</h3>
+<section id="sec-variance" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="sec-variance"><span class="header-section-number">2.4.4</span> Variance</h3>
 <p>Variability can also be defined in terms of how close the scores in the distribution are to the middle of the distribution. Using the mean as the measure of the middle of the distribution, the <strong>variance</strong> is defined as the average squared difference of the scores from the mean. The data from Quiz 1 are shown in <a href="#tbl-quiz1var" class="quarto-xref">Table&nbsp;<span>2.8</span></a>. The mean score is 7.0. Therefore, the column “Deviation from Mean” contains the score minus 7. The column “Squared Deviation” is simply the previous column squared.</p>
 <div id="tbl-quiz1var" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -905,13 +934,13 @@ Table&nbsp;2.8: Calculation of Variance for Quiz 1 scores.
 <div aria-describedby="tbl-quiz1var-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 8%">
-<col style="width: 25%">
-<col style="width: 8%">
-<col style="width: 23%">
-<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 15%">
+<col style="width: 6%">
+<col style="width: 31%">
+<col style="width: 6%">
+<col style="width: 28%">
+<col style="width: 6%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1138,7 +1167,7 @@ Table&nbsp;2.8: Calculation of Variance for Quiz 1 scores.
 s^2=\frac{\sum(X-\bar{X})^2}{n-1}
 \]</span></p>
 <p>where <span class="math inline">\(s^2\)</span> is the estimate of the variance and <span class="math inline">\(\bar{X}\)</span> is the sample mean.</p>
-<p>Note that <span class="math inline">\(\bar{X}\)</span> is the mean of a sample taken from a population with a mean of <span class="math inline">\(\mu\)</span>. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by <span class="math inline">\(n-1\)</span> rather than simply <span class="math inline">\(n\)</span>, the simulation “estimating variance”<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> illustrates the bias that arises if we use <span class="math inline">\(n\)</span> as the denominator in the formula.</p>
+<p>Note that <span class="math inline">\(\bar{X}\)</span> is the mean of a sample taken from a population with a mean of <span class="math inline">\(\mu\)</span>. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by <span class="math inline">\(n-1\)</span> rather than simply <span class="math inline">\(n\)</span>, the simulation “estimating variance”<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> illustrates the bias that arises if we use <span class="math inline">\(n\)</span> as the denominator in the formula.</p>
 <p>Let’s look at a concrete example of calculating the sample variance. Assume the scores 1, 2, 4, and 5 were sampled from a larger population. To estimate the variance in the population you would compute <span class="math inline">\(s^2\)</span> as follows:</p>
 <p><span class="math display">\[
 \bar{X} = (1 + 2 + 4 + 5)/4 = 12/4 = 3
@@ -1149,30 +1178,22 @@ s^2 = [(1-3)^2 + (2-3)^2 + (4-3)^2 + (5-3)^2]/(4-1)
 = (4 + 1 + 1 + 4)/3 = 10/3 = 3.333
 \]</span></p>
 </section>
-<section id="standard-deviation" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">2.3.5</span> Standard Deviation</h3>
+<section id="standard-deviation" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">2.4.5</span> Standard Deviation</h3>
 <p>The <strong>standard deviation</strong> is simply the square root of the variance. This makes the standard deviations of the two quiz distributions 1.225 and 2.588. We can interpret the standard deviation of X as approximating the typical distance between a given value of X and the mean of X. For example, suppose I tell you about a prison where the prisoners have a mean age of 42 years with a standard deviation of 8 years. If I randomly select one prisoner and ask you to guess their age, you should probably guess 42 since I’ve told you that is the mean. But even though 42 is your best guess, you can expect your guess to be off by about 8 years since the standard deviation is 8 (meaning the typical distance between a random prisoner’s age and the mean age is approximately 8). You can’t say ahead of time which direction your guess is likely to be off (guessing too old versus too young), just that you are likely to miss the reality for a randomly-selected individual by about 8 years on a typical guess (though any one guess may happen to be closer or further than 8 years).</p>
 </section>
 </section>
-<section id="percentilesdescribing-one-variable-7" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="percentilesdescribing-one-variable-7"><span class="header-section-number">2.4</span> Percentiles<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></h2>
-<p><strong>Percentiles</strong> are another helpful tool for describing distributions. Many of us have probably encountered percentiles before in the context of standardized exam testing. A test score in and of itself is usually difficult to interpret. For example, if you learned that your score on a measure of shyness was 35 out of a possible 50, you would have little idea how shy you are compared to other people. More relevant is the percentage of people with lower shyness scores than yours. This percentage is called a percentile. If 65% of the scores were below yours, then your score would be the 65th percentile.</p>
-<section id="three-alternative-definitions-of-percentile" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="three-alternative-definitions-of-percentile"><span class="header-section-number">2.4.1</span> Three Alternative Definitions of Percentile</h3>
-<p>There is no universally accepted definition of a percentile. Using the 65th percentile as an example, the 65th percentile can be defined as the lowest score that is greater than 65% of the scores. This is the way we defined it above and we will call this “Definition 1.” The 65th percentile can also be defined as the smallest score that is greater than <em>or equal to</em> 65% of the scores. This we will call “Definition 2.” Though these two definitions appear very similar, they can sometimes lead to dramatically different results, especially when there is relatively little data. Moreover, neither of these definitions is explicit about how to handle rounding. For instance, what rank is required to be higher than 65% of the scores when the total number of scores is 50? This is tricky because 65% of 50 is 32.5. How do we find the lowest number that is higher than 32.5 of the scores?</p>
-<p>A third way to compute percentiles is a weighted average of the percentiles computed according to the first two definitions. The details of computing percentiles under this third definition are a bit complicated, but fortunately, statistical software can easily do the calculations for us. Since it is unlikely you will need to compute percentiles by hand, we leave the details of these computations to the appendix appearing at the end of this chapter. Despite its complexity, the third definition handles rounding more gracefully than the other two and has the advantage that it allows the median to be defined conveniently as the 50th percentile. Unless otherwise specified, when we refer to “percentile,” we will be referring to this third definition of percentiles.</p>
-</section>
-<section id="sec-box-plots" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="sec-box-plots"><span class="header-section-number">2.4.2</span> Box Plots<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></h3>
+<section id="sec-box-plots" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-box-plots"><span class="header-section-number">2.5</span> Box Plots<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></h2>
 <p>Box plots are useful for making comparisons and identifying <strong>outliers</strong>, meaning unusually large or small values for a variable. We will explain box plots with the help of data from an in-class experiment. As part of the “Stroop Interference Case Study,”<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> students in introductory statistics were presented with a page containing 30 colored rectangles. Their task was to name the colors as quickly as possible. Their times (in seconds) were recorded. We’ll compare the scores for the 16 men and 31 women who participated in the experiment by making separate box plots for each gender. Such a display is said to involve <em>parallel box plots</em>.</p>
-<p>There are several steps in constructing a box plot. The first relies on the 25<sup>th</sup>, 50<sup>th</sup>, and 75<sup>th</sup> percentiles in the distribution of scores. <a href="#fig-boxplot1" class="quarto-xref">Figure&nbsp;<span>2.6</span></a> shows how these three statistics are used. For each gender, we draw a box extending from the 25<sup>th</sup> percentile to the 75<sup>th</sup> percentile. The 50<sup>th</sup> percentile is drawn inside the box. Therefore, the bottom of each box is the 25th percentile, the top is the 75th percentile, and the line in the middle is the 50th percentile. The data for the women in our sample are shown in <a href="#tbl-womenstimes" class="quarto-xref">Table&nbsp;<span>2.9</span></a>.</p>
+<p>There are several steps in constructing a box plot. The first relies on the 25<sup>th</sup>, 50<sup>th</sup>, and 75<sup>th</sup> percentiles in the distribution of scores. <a href="#fig-boxplot1" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> shows how these three statistics are used. For each gender, we draw a box extending from the 25<sup>th</sup> percentile to the 75<sup>th</sup> percentile. The 50<sup>th</sup> percentile is drawn inside the box. Therefore, the bottom of each box is the 25th percentile, the top is the 75th percentile, and the line in the middle is the 50th percentile. The data for the women in our sample are shown in <a href="#tbl-womenstimes" class="quarto-xref">Table&nbsp;<span>2.9</span></a>.</p>
 <div id="fig-boxplot1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/boxplot1.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6: The first step in creating box plots.
+Figure&nbsp;2.7: The first step in creating box plots.
 </figcaption>
 </figure>
 </div>
@@ -1241,9 +1262,9 @@ Table&nbsp;2.10: Box plot terms and values for women’s times.
 <div aria-describedby="tbl-terminology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 56%">
-<col style="width: 21%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1319,44 +1340,43 @@ Table&nbsp;2.10: Box plot terms and values for women’s times.
 </figure>
 </div>
 <p>Continuing with the box plots, we put “whiskers” above and below each box to give additional information about the spread of the data. Whiskers are vertical lines that end in a horizontal stroke. Whiskers are drawn from the upper and lower hinges to the upper and lower adjacent values (24 and 14 for the women’s data).</p>
-<p>Although we don’t draw whiskers all the way to outside or far out values, we still wish to represent them in our box plots. This is achieved by adding additional marks beyond the whiskers. Specifically, outside values are indicated by small “o’s” and far out values are indicated by asterisks (*). In our data, there are no far out values and just one outside value. This outside value of 29 is for the women and is shown in <a href="#fig-boxplotoutsidevalue" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>.</p>
+<p>Although we don’t draw whiskers all the way to outside or far out values, we still wish to represent them in our box plots. This is achieved by adding additional marks beyond the whiskers. Specifically, outside values are indicated by small “o’s” and far out values are indicated by asterisks (*). In our data, there are no far out values and just one outside value. This outside value of 29 is for the women and is shown in <a href="#fig-boxplotoutsidevalue" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>.</p>
 <div id="fig-boxplotoutsidevalue" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplotoutsidevalue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/boxplotoutsidevalue.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplotoutsidevalue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: The box plots with the whiskers and outside value shown.
+Figure&nbsp;2.8: The box plots with the whiskers and outside value shown.
 </figcaption>
 </figure>
 </div>
-<p>There is one more mark to include in box plots (although sometimes it is omitted). We indicate the mean score for a group by inserting a plus sign. <a href="#fig-completedboxplots" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> shows the result of adding means to our box plots.</p>
+<p>There is one more mark to include in box plots (although sometimes it is omitted). We indicate the mean score for a group by inserting a plus sign. <a href="#fig-completedboxplots" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> shows the result of adding means to our box plots.</p>
 <div id="fig-completedboxplots" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-completedboxplots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/completedboxplots.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-completedboxplots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.8: The completed box plots.
+Figure&nbsp;2.9: The completed box plots.
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-completedboxplots" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> provides a revealing summary of the data. Since half the scores in a distribution are between the hinges (recall that the hinges are the 25<sup>th</sup> and 75<sup>th</sup> percentiles), we see that half the women’s times are between 17 and 20 seconds, whereas half the men’s times are between 19 and 25.5. We also see that women generally named the colors faster than the men did, although one woman was slower than almost all of the men. <a href="#fig-boxplotdetailedlabels" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> shows the box plot for the women’s data with detailed labels.</p>
+<p><a href="#fig-completedboxplots" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> provides a revealing summary of the data. Since half the scores in a distribution are between the hinges (recall that the hinges are the 25<sup>th</sup> and 75<sup>th</sup> percentiles), we see that half the women’s times are between 17 and 20 seconds, whereas half the men’s times are between 19 and 25.5. We also see that women generally named the colors faster than the men did, although one woman was slower than almost all of the men. <a href="#fig-boxplotdetailedlabels" class="quarto-xref">Figure&nbsp;<span>2.10</span></a> shows the box plot for the women’s data with detailed labels.</p>
 <div id="fig-boxplotdetailedlabels" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplotdetailedlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/boxplotdetailedlabels.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplotdetailedlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.9: The box plot for the women’s data with detailed labels.
+Figure&nbsp;2.10: The box plot for the women’s data with detailed labels.
 </figcaption>
 </figure>
 </div>
 <p>Box plots provide basic information about a distribution. For example, a distribution with a positive skew would have a longer whisker in the positive direction than in the negative direction. A larger mean than median would also indicate a positive skew. Box plots are good at portraying extreme values and are especially good at showing differences between distributions. However, many of the details of a distribution are not revealed in a box plot, and to examine these details one should create a histogram.</p>
-</section>
-<section id="variations-on-box-plots" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="variations-on-box-plots"><span class="header-section-number">2.4.3</span> Variations on box plots</h3>
-<p>Statistical analysis programs may offer options on how box plots are created. For example, the box plots in <a href="#fig-boxplotindvscores" class="quarto-xref">Figure&nbsp;<span>2.10</span></a> are constructed from our data but differ from the previous box plots in several ways.</p>
+<section id="variations-on-box-plots" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="variations-on-box-plots"><span class="header-section-number">2.5.1</span> Variations on box plots</h3>
+<p>Statistical analysis programs may offer options on how box plots are created. For example, the box plots in <a href="#fig-boxplotindvscores" class="quarto-xref">Figure&nbsp;<span>2.11</span></a> are constructed from our data but differ from the previous box plots in several ways.</p>
 <ol type="1">
 <li><p>It does not mark outliers.</p></li>
 <li><p>The means are indicated by green lines rather than plus signs.</p></li>
@@ -1370,26 +1390,26 @@ Figure&nbsp;2.9: The box plot for the women’s data with detailed labels.
 <img src="Images/describing-one-variable/boxplotindvscores.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplotindvscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.10: Box plots showing the individual scores and the means.
+Figure&nbsp;2.11: Box plots showing the individual scores and the means.
 </figcaption>
 </figure>
 </div>
-<p>Each dot in <a href="#fig-boxplotindvscores" class="quarto-xref">Figure&nbsp;<span>2.10</span></a> represents a group of subjects with the same score (rounded to the nearest second). An alternative graphing technique is to “jitter” the points. This means spreading out different dots at the same horizontal position, one dot for each subject. The exact horizontal position of a dot is determined randomly (under the constraint that different dots don’t overlap exactly). Spreading out the dots helps you to see multiple occurrences of a given score. However, depending on the dot size and the screen resolution, some points may be obscured even if the points are jittererd. <a href="#fig-boxplotindvscoresjittered" class="quarto-xref">Figure&nbsp;<span>2.11</span></a> shows what jittering looks like.</p>
+<p>Each dot in <a href="#fig-boxplotindvscores" class="quarto-xref">Figure&nbsp;<span>2.11</span></a> represents a group of subjects with the same score (rounded to the nearest second). An alternative graphing technique is to “jitter” the points. This means spreading out different dots at the same horizontal position, one dot for each subject. The exact horizontal position of a dot is determined randomly (under the constraint that different dots don’t overlap exactly). Spreading out the dots helps you to see multiple occurrences of a given score. However, depending on the dot size and the screen resolution, some points may be obscured even if the points are jittererd. <a href="#fig-boxplotindvscoresjittered" class="quarto-xref">Figure&nbsp;<span>2.12</span></a> shows what jittering looks like.</p>
 <div id="fig-boxplotindvscoresjittered" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplotindvscoresjittered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/boxplotindvscoresjittered.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplotindvscoresjittered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.11: Box plots with the individual scores jittered.
+Figure&nbsp;2.12: Box plots with the individual scores jittered.
 </figcaption>
 </figure>
 </div>
 <p>Different styles of box plots are best for different situations, and there are no firm rules for which to use. When exploring your data, you should try several ways of visualizing them. Which graphs you include in your report should depend on how well different graphs reveal the aspects of the data you consider most important.</p>
 </section>
 </section>
-<section id="transforming-variablesdescribing-one-variable-10" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="transforming-variablesdescribing-one-variable-10"><span class="header-section-number">2.5</span> Transforming Variables<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></h2>
+<section id="transforming-variablesdescribing-one-variable-10" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="transforming-variablesdescribing-one-variable-10"><span class="header-section-number">2.6</span> Transforming Variables<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></h2>
 <p>Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. <a href="#tbl-heightconversion" class="quarto-xref">Table&nbsp;<span>2.11</span></a> shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.</p>
 <div id="tbl-heightconversion" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1399,11 +1419,11 @@ Table&nbsp;2.11: Converting between feet and inches.
 <div aria-describedby="tbl-heightconversion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 15%">
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 18%">
-<col style="width: 9%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1442,13 +1462,13 @@ Table&nbsp;2.12: Temperatures in 5 cities on 11/16/2002.
 <div aria-describedby="tbl-temp5cities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 14%">
-<col style="width: 7%">
-<col style="width: 24%">
-<col style="width: 7%">
-<col style="width: 24%">
-<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 17%">
+<col style="width: 4%">
+<col style="width: 29%">
+<col style="width: 4%">
+<col style="width: 29%">
+<col style="width: 4%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1497,19 +1517,19 @@ F = 1.8C + 32
 C = 0.5556F - 17.778
 \]</span></p>
 <p>The transformation consists of multiplying by a constant and then adding a second constant. For the conversion from Centigrade to Fahrenheit, the first constant is 1.8 and the second is 32.</p>
-<p><a href="#fig-cfunctionf" class="quarto-xref">Figure&nbsp;<span>2.12</span></a> shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called <strong>linear transformations</strong>.</p>
+<p><a href="#fig-cfunctionf" class="quarto-xref">Figure&nbsp;<span>2.13</span></a> shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called <strong>linear transformations</strong>.</p>
 <div id="fig-cfunctionf" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cfunctionf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/cfunctionf.png" class="img-fluid figure-img" width="350">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cfunctionf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.12: Degrees Centigrade as a function of degrees Fahrenheit.
+Figure&nbsp;2.13: Degrees Centigrade as a function of degrees Fahrenheit.
 </figcaption>
 </figure>
 </div>
-<section id="sec-standardization" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="sec-standardization"><span class="header-section-number">2.5.1</span> Standardization (Z Scores)</h3>
+<section id="sec-standardization" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="sec-standardization"><span class="header-section-number">2.6.1</span> Standardization (Z Scores)</h3>
 <p>So far, we’ve discussed transformations that are probably familiar to you. A type of transformation that may be new to you is <strong>standardization</strong> or creating <span class="math inline">\(Z\)</span> scores. A value from any distribution can be transformed into a <span class="math inline">\(Z\)</span> score using the following formula:</p>
 <p><span class="math display">\[
 Z = \frac{(X - \mu)}{\sigma}
@@ -1521,17 +1541,17 @@ Z = (26 - 50)/10 = -2.4
 \]</span></p>
 <p>If all the values in a distribution are transformed to <span class="math inline">\(Z\)</span> scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.</p>
 </section>
-<section id="log-transformationsdescribing-one-variable-11" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="log-transformationsdescribing-one-variable-11"><span class="header-section-number">2.5.2</span> Log Transformations<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></h3>
-<p>Sometimes it is also useful to use transformations that are not linear. For example, the log transformation can be used to make highly skewed distributions less skewed. This can be valuable both for making patterns in the data more interpretable and for helping to meet the assumptions of inferential statistics (see <span class="quarto-unresolved-ref">?sec-stat-inference</span>).</p>
-<p><a href="#fig-scatterplotbrainweight" class="quarto-xref">Figure&nbsp;<span>2.13</span></a> shows an example of how a log transformation can make patterns more visible. Both graphs plot the brain weight of animals as a function of their body weight. The raw weights are shown in the upper panel; the log-transformed weights are plotted in the lower panel.</p>
+<section id="log-transformationsdescribing-one-variable-11" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="log-transformationsdescribing-one-variable-11"><span class="header-section-number">2.6.2</span> Log Transformations<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></h3>
+<p>Sometimes it is also useful to use transformations that are not linear. For example, the log transformation can sometimes be used to make highly skewed distributions less skewed. This can be valuable both for making patterns in the data more interpretable and for helping to meet the assumptions of inferential statistics (see <a href="stat-inference.html" class="quarto-xref"><span>Chapter 6</span></a>).</p>
+<p><a href="#fig-scatterplotbrainweight" class="quarto-xref">Figure&nbsp;<span>2.14</span></a> shows an example of how a log transformation can make patterns more visible. Both graphs plot the brain weight of animals as a function of their body weight. The raw weights are shown in the upper panel; the log-transformed weights are plotted in the lower panel.</p>
 <div id="fig-scatterplotbrainweight" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplotbrainweight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/describing-one-variable/scatterplotbrainweight.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplotbrainweight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.13: Scatter plots of brain weight as a function of body weight in terms of both raw data (upper panel) and log-transformed data (lower panel).
+Figure&nbsp;2.14: Scatter plots of brain weight as a function of body weight in terms of both raw data (upper panel) and log-transformed data (lower panel).
 </figcaption>
 </figure>
 </div>
@@ -1549,11 +1569,11 @@ Table&nbsp;2.13: Test Scores.
 <div aria-describedby="tbl-numberrankscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 18%">
-<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 15%">
-<col style="width: 9%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1599,12 +1619,12 @@ R = P/100 \times (N + 1)
 <p><span class="math display">\[
 R = 25/100 \times (8 + 1) = 9/4 = 2.25.
 \]</span></p>
-<p>If <span class="math inline">\(R\)</span> is an integer, the <span class="math inline">\(Pth\)</span> percentile is the number with rank <span class="math inline">\(R\)</span>. When <span class="math inline">\(R\)</span> is not an integer, we compute the Pth percentile by interpolation as follows:</p>
+<p>If <span class="math inline">\(R\)</span> is an integer, the <span class="math inline">\(Pth\)</span> percentile is the number with rank <span class="math inline">\(R\)</span>. When <span class="math inline">\(R\)</span> is not an integer, we compute the <span class="math inline">\(Pth\)</span> percentile by interpolation as follows:</p>
 <ol type="1">
 <li><p>Define <span class="math inline">\(IR\)</span> as the integer portion of <span class="math inline">\(R\)</span> (the number to the left of the decimal point). For this example, <span class="math inline">\(IR\)</span> = 2.</p></li>
-<li><p>Define <span class="math inline">\(FR\)</span> as the fractional portion of R. For this example, <span class="math inline">\(FR\)</span> = 0.25.</p></li>
+<li><p>Define <span class="math inline">\(FR\)</span> as the fractional portion of <span class="math inline">\(R\)</span>. For this example, <span class="math inline">\(FR\)</span> = 0.25.</p></li>
 <li><p>Find the scores with Rank <span class="math inline">\(IR\)</span> and with Rank <span class="math inline">\(IR\)</span> + 1. For this example, this means the score with Rank 2 and the score with Rank 3. The scores are 5 and 7.</p></li>
-<li><p>Interpolate by multiplying the difference between the scores by FR and add the result to the lower score. For these data, this is (0.25)(7 - 5) + 5 = 5.5.</p></li>
+<li><p>Interpolate by multiplying the difference between the scores by <span class="math inline">\(FR\)</span> and add the result to the lower score. For these data, this is (0.25)(7 - 5) + 5 = 5.5.</p></li>
 </ol>
 <p>Therefore, the 25th percentile is 5.5. If we had used the first definition (the smallest score greater than 25% of the scores), the 25th percentile would have been 7. If we had used the second definition (the smallest score greater than or equal to 25% of the scores), the 25th percentile would have been 5.</p>
 <p>For a second example, consider the 20 quiz scores shown in <a href="#tbl-quizscores" class="quarto-xref">Table&nbsp;<span>2.14</span></a>.</p>
@@ -1616,11 +1636,11 @@ Table&nbsp;2.14: 20 quiz scores.
 <div aria-describedby="tbl-quizscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 8%">
+<col style="width: 5%">
 <col style="width: 16%">
-<col style="width: 8%">
+<col style="width: 5%">
 <col style="width: 15%">
-<col style="width: 8%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1701,7 +1721,7 @@ R = 85/100 \times (20 + 1) = 17.85.
 IR = 17 \text{ and } FR = 0.85
 \]</span></p>
 <blockquote class="blockquote">
-<p>Caution: FR does not generally equal the percentile to be computed as it does here.</p>
+<p>Caution: <span class="math inline">\(FR\)</span> does not generally equal the percentile to be computed as it does here.</p>
 </blockquote>
 <p>The score with a rank of 17 is 9 and the score with a rank of 18 is 10. Therefore, the 85th percentile is:</p>
 <p><span class="math display">\[
@@ -1736,12 +1756,12 @@ IR = 3 \text{ and } FR = 0.
 <hr>
 <ol>
 <li id="fn1"><p>This section is adapted from David M. Lane and Heidi Ziemer. “Distributions.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/introduction/distributions.html" class="uri">https://onlinestatbook.com/2/introduction/distributions.html</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This section is adapted from David M. Lane. “Measures of Central Tendency.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/summarizing_distributions/measures.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/measures.html</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only “mean” (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term “mean” is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>This section is adapted from David M. Lane. “Comparing Measures of Central Tendency.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>This section is adapted from David M. Lane. “Measures of Variability.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/summarizing_distributions/variability.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/variability.html</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p><a href="https://onlinestatbook.com/2/summarizing_distributions/variance_est.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/variance_est.html</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>This section is adapted from David M. Lane. “Percentiles.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/introduction/percentiles.html" class="uri">https://onlinestatbook.com/2/introduction/percentiles.html</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This section is adapted from David M. Lane. “Percentiles.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/introduction/percentiles.html" class="uri">https://onlinestatbook.com/2/introduction/percentiles.html</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This section is adapted from David M. Lane. “Measures of Central Tendency.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/summarizing_distributions/measures.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/measures.html</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only “mean” (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term “mean” is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This section is adapted from David M. Lane. “Comparing Measures of Central Tendency.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>This section is adapted from David M. Lane. “Measures of Variability.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/summarizing_distributions/variability.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/variability.html</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://onlinestatbook.com/2/summarizing_distributions/variance_est.html" class="uri">https://onlinestatbook.com/2/summarizing_distributions/variance_est.html</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>This section is adapted from David M. Lane. “Box Plots.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/graphing_distributions/boxplots.html" class="uri">https://onlinestatbook.com/2/graphing_distributions/boxplots.html</a><a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p><a href="https://onlinestatbook.com/2/case_studies/stroop.html" class="uri">https://onlinestatbook.com/2/case_studies/stroop.html</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>The initial part of this section is adapted from David M. Lane. “Linear Transformations.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/introduction/linear_transforms.html" class="uri">https://onlinestatbook.com/2/introduction/linear_transforms.html</a>. There is also material adapted from David M. Lane. “Standard Normal Distribution.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/normal_distribution/standard_normal.html" class="uri">https://onlinestatbook.com/2/normal_distribution/standard_normal.html</a>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1815,13 +1835,14 @@ IR = 3 \text{ and } FR = 0.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

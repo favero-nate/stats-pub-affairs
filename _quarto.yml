@@ -5,8 +5,7 @@ project:
 book:
   title: "Statistics Minus the Math 2.0"
   author: "Nathan Favero"
-  license: "CC BY"
-  date: "1/6/2026"
+  date: "1/16/2026"
   chapters:
     - index.qmd
     - part: "Describing Data"
@@ -25,6 +24,9 @@ book:
     - part: "Putting Data to Work"
       chapters:
       - causality.qmd
+      - measurement.qmd
+      - regression.qmd
+      - practical-points.qmd
 
 #bibliography: references.bib
 
@@ -33,4 +35,5 @@ format:
     theme:
       light: cosmo
       dark: superhero
-
+  pdf:
+    documentclass: scrreprt

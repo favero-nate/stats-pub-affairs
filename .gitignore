@@ -2,3 +2,4 @@
 /.Rproj.user/
 /.quarto/
 .bak
+**/*.quarto_ipynb

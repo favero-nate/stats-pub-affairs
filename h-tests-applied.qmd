@@ -12,7 +12,7 @@ There are actually many different types of significance tests that can be used w
 
 This section covers how to test for differences between means from two separate groups of subjects, using an independent-groups t test.
 
-We take as an example the data from the "Animal Research" case study, previously described when discussing confidence intervals (@sec-using-confidence-intervals).[^h-tests-applied-2] As a reminder, students rated (on a 7-point scale) whether they thought animal research is wrong.
+We take as an example the data from the "Animal Research" case study.[^h-tests-applied-2] In this experiment, students rated (on a 7-point scale) whether they thought animal research is wrong. The sample sizes, means, and variances are shown separately for males and females in @tbl-meansvaranimalresearch.
 
 [^h-tests-applied-2]: <https://onlinestatbook.com/2/case_studies/animal_research.html>
 
@@ -26,9 +26,9 @@ We take as an example the data from the "Animal Research" case study, previously
 
 : Means and Variances in Animal Research study. {#tbl-meansvaranimalresearch}
 
-As we noted previously, the female mean is 1.47 units higher than the male mean (@tbl-meansvaranimalresearch). This is just the difference in our sample, however, and we wish to draw an inference about the difference in the *population* means.
+The female mean is 1.47 units higher than the male mean. This is just the difference in our sample, however, and we wish to draw an inference about the difference in the *population* means.
 
-In order to test whether there is a difference between population means, we are going to make three assumptions (just as we did when constructing a confidence interval):
+In order to test whether there is a difference between population means, we are going to make three assumptions:
 
 1.  The two populations have the same variance. This assumption is called the assumption of homogeneity of variance.
 
@@ -287,7 +287,7 @@ An F distribution calculator[^h-tests-applied-12] shows that p = 0.018. Again, b
 
 : ANOVA Summary Table. {#tbl-anova-results-summary}
 
-#### Relationship to T Tests and Regression
+#### Relationship to T Tests and Regression {#sec-relationship-to-t-tests-and-regression}
 
 Since an ANOVA and an independent-groups t test can both test the difference between two means, you might be wondering which one to use. Fortunately, it does not matter since the results will always be the same. When there are only two groups, the following relationship between F and t will always hold:
 
@@ -297,7 +297,7 @@ $$
 
 where dfd is the degrees of freedom for the denominator of the F test and df is the degrees of freedom for the t test. dfd will always equal df. And because of how their probability distributions are constructed, these values of F and t will yield identical p-values for the (two tailed) null hypothesis of no difference between the two means.
 
-There is also a third equivalent way to compare two means: using regression, as described in @sec-regression-with-a-qualitative-independent-variable. More generally, regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.
+There is also a third equivalent way to compare two means: using linear regression, as described in @sec-regression-with-a-qualitative-independent-variable. More generally, linear regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.
 
 ## Chi Square Tests for Contingency Tables (Two Qualitative Variables)[^h-tests-applied-13] {#sec-contingency-tables}
 
@@ -367,7 +367,7 @@ Though it is easy to make sense of results in this manner based on a comparison 
 
 The good news is that regardless of whether we examine (1) expected versus observed outcomes, (2) percentages by row, or (3) percentages by column, we reach the same conclusion: health outcomes are uniformly better for those on the Mediterranean diet. All three approaches are equally valid ways of evaluating associations from a contingency table, and you normally need use only one. We briefly mention all three here for learning purposes since each approach is one you may encounter in your own analysis or in a research report.
 
-## @sec-comparing-means Appendix: More about ANOVA {.unnumbered}
+## @sec-h-testing-applied Appendix I: More about ANOVA {.unnumbered}
 
 ### Terminology for Various Designs[^h-tests-applied-17] {.unnumbered}
 
@@ -550,7 +550,7 @@ Here there are three groups, each with three observations. To format these data 
 
 : Reformatted data (now in long form). {#tbl-reformatting-anova-long}
 
-## @sec-comparing-groups Appendix: More about the Chi Square Distribution and its Tests {.unnumbered}
+## @sec-h-testing-applied Appendix II: More about the Chi Square Distribution and its Tests {.unnumbered}
 
 ### Chi Square Distribution[^h-tests-applied-20]
 
@@ -628,7 +628,7 @@ This Chi Square test can also be used to test other deviations between expected 
 
 [^h-tests-applied-23]: <https://onlinestatbook.com/2/case_studies/sat.html>
 
-The first column in @tbl-universitygpascores shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in @sec-probability-distributions; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by \[0, 1\]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see @sec-the-standard-normal-distribution). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.
+The first column in @tbl-universitygpascores shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in @sec-prob-models; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by \[0, 1\]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see @sec-normal-distributions). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.
 
 | **Range** | **Proportion** | **E**  | **O** |
 |-----------|----------------|--------|-------|

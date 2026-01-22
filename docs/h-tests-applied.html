@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./h-tests.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9ac4c4d7723caba69398381a32a42326.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-18279696052386181f2d5e2642aac360.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -358,13 +359,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models[^prob-models-1]</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference[^stat-inference-1]</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,7 +400,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Causality and Experimental Designs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Research Designs and Causality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
   </div>
 </li>
       </ul>
@@ -424,12 +443,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-drawing-substantive-conclusions-from-a-contingency-table" id="toc-sec-drawing-substantive-conclusions-from-a-contingency-table" class="nav-link" data-scroll-target="#sec-drawing-substantive-conclusions-from-a-contingency-table"><span class="header-section-number">9.2.1</span> Drawing Substantive Conclusions from a Contingency Table</a></li>
   </ul></li>
-  <li><a href="#sec-comparing-means-appendix-more-about-anova" id="toc-sec-comparing-means-appendix-more-about-anova" class="nav-link" data-scroll-target="#sec-comparing-means-appendix-more-about-anova"><span>Section 9.1</span> Appendix: More about ANOVA</a>
+  <li><a href="#sec-h-testing-applied-appendix-i-more-about-anova" id="toc-sec-h-testing-applied-appendix-i-more-about-anova" class="nav-link" data-scroll-target="#sec-h-testing-applied-appendix-i-more-about-anova"><span>Chapter 9</span> Appendix I: More about ANOVA</a>
   <ul class="collapse">
   <li><a href="#terminology-for-various-designsh-tests-applied-17" id="toc-terminology-for-various-designsh-tests-applied-17" class="nav-link" data-scroll-target="#terminology-for-various-designsh-tests-applied-17">Terminology for Various Designs</a></li>
   <li><a href="#details-of-one-factor-anova-between-subjectsh-tests-applied-19" id="toc-details-of-one-factor-anova-between-subjectsh-tests-applied-19" class="nav-link" data-scroll-target="#details-of-one-factor-anova-between-subjectsh-tests-applied-19">Details of One-Factor ANOVA (Between Subjects)</a></li>
   </ul></li>
-  <li><a href="#sec-comparing-groups-appendix-more-about-the-chi-square-distribution-and-its-tests" id="toc-sec-comparing-groups-appendix-more-about-the-chi-square-distribution-and-its-tests" class="nav-link" data-scroll-target="#sec-comparing-groups-appendix-more-about-the-chi-square-distribution-and-its-tests"><span class="quarto-unresolved-ref">sec-comparing-groups</span> Appendix: More about the Chi Square Distribution and its Tests</a>
+  <li><a href="#sec-h-testing-applied-appendix-ii-more-about-the-chi-square-distribution-and-its-tests" id="toc-sec-h-testing-applied-appendix-ii-more-about-the-chi-square-distribution-and-its-tests" class="nav-link" data-scroll-target="#sec-h-testing-applied-appendix-ii-more-about-the-chi-square-distribution-and-its-tests"><span>Chapter 9</span> Appendix II: More about the Chi Square Distribution and its Tests</a>
   <ul class="collapse">
   <li><a href="#chi-square-distributionh-tests-applied-20" id="toc-chi-square-distributionh-tests-applied-20" class="nav-link" data-scroll-target="#chi-square-distributionh-tests-applied-20"><span class="header-section-number">9.2.2</span> Chi Square Distribution</a></li>
   <li><a href="#one-way-tablesh-tests-applied-21" id="toc-one-way-tablesh-tests-applied-21" class="nav-link" data-scroll-target="#one-way-tablesh-tests-applied-21"><span class="header-section-number">9.2.3</span> One-Way Tables</a></li>
@@ -467,7 +486,7 @@ window.Quarto = {
 <section id="sec-difference-between-two-means" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="sec-difference-between-two-means"><span class="header-section-number">9.1.1</span> Difference between Two Means<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h3>
 <p>This section covers how to test for differences between means from two separate groups of subjects, using an independent-groups t test.</p>
-<p>We take as an example the data from the “Animal Research” case study, previously described when discussing confidence intervals (<span class="quarto-unresolved-ref">?sec-using-confidence-intervals</span>).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> As a reminder, students rated (on a 7-point scale) whether they thought animal research is wrong.</p>
+<p>We take as an example the data from the “Animal Research” case study.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In this experiment, students rated (on a 7-point scale) whether they thought animal research is wrong. The sample sizes, means, and variances are shown separately for males and females in <a href="#tbl-meansvaranimalresearch" class="quarto-xref">Table&nbsp;<span>9.1</span></a>.</p>
 <div id="tbl-meansvaranimalresearch" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-meansvaranimalresearch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -477,13 +496,13 @@ Table&nbsp;9.1: Means and Variances in Animal Research study.
 <table class="caption-top table">
 <colgroup>
 <col style="width: 7%">
-<col style="width: 16%">
+<col style="width: 13%">
 <col style="width: 7%">
-<col style="width: 10%">
+<col style="width: 9%">
 <col style="width: 7%">
-<col style="width: 14%">
+<col style="width: 12%">
 <col style="width: 7%">
-<col style="width: 20%">
+<col style="width: 17%">
 <col style="width: 7%">
 </colgroup>
 <thead>
@@ -527,8 +546,8 @@ Table&nbsp;9.1: Means and Variances in Animal Research study.
 </div>
 </figure>
 </div>
-<p>As we noted previously, the female mean is 1.47 units higher than the male mean (<a href="#tbl-meansvaranimalresearch" class="quarto-xref">Table&nbsp;<span>9.1</span></a>). This is just the difference in our sample, however, and we wish to draw an inference about the difference in the <em>population</em> means.</p>
-<p>In order to test whether there is a difference between population means, we are going to make three assumptions (just as we did when constructing a confidence interval):</p>
+<p>The female mean is 1.47 units higher than the male mean. This is just the difference in our sample, however, and we wish to draw an inference about the difference in the <em>population</em> means.</p>
+<p>In order to test whether there is a difference between population means, we are going to make three assumptions:</p>
 <ol type="1">
 <li><p>The two populations have the same variance. This assumption is called the assumption of homogeneity of variance.</p></li>
 <li><p>The populations are normally distributed.</p></li>
@@ -715,9 +734,9 @@ Table&nbsp;9.4: Six Comparisons among Means.
 <div aria-describedby="tbl-feltmisneutral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 21%">
+<col style="width: 38%">
+<col style="width: 38%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1011,14 +1030,14 @@ Table&nbsp;9.7: ANOVA Summary Table.
 </figure>
 </div>
 </section>
-<section id="relationship-to-t-tests-and-regression" class="level4" data-number="9.1.3.2">
-<h4 data-number="9.1.3.2" class="anchored" data-anchor-id="relationship-to-t-tests-and-regression"><span class="header-section-number">9.1.3.2</span> Relationship to T Tests and Regression</h4>
+<section id="sec-relationship-to-t-tests-and-regression" class="level4" data-number="9.1.3.2">
+<h4 data-number="9.1.3.2" class="anchored" data-anchor-id="sec-relationship-to-t-tests-and-regression"><span class="header-section-number">9.1.3.2</span> Relationship to T Tests and Regression</h4>
 <p>Since an ANOVA and an independent-groups t test can both test the difference between two means, you might be wondering which one to use. Fortunately, it does not matter since the results will always be the same. When there are only two groups, the following relationship between F and t will always hold:</p>
 <p><span class="math display">\[
 F(1,dfd) = t^2(df)
 \]</span></p>
 <p>where dfd is the degrees of freedom for the denominator of the F test and df is the degrees of freedom for the t test. dfd will always equal df. And because of how their probability distributions are constructed, these values of F and t will yield identical p-values for the (two tailed) null hypothesis of no difference between the two means.</p>
-<p>There is also a third equivalent way to compare two means: using regression, as described in <a href="qual-associations.html#sec-regression-with-a-qualitative-independent-variable" class="quarto-xref"><span>Section 4.2.2</span></a>. More generally, regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.</p>
+<p>There is also a third equivalent way to compare two means: using linear regression, as described in <a href="qual-associations.html#sec-regression-with-a-qualitative-independent-variable" class="quarto-xref"><span>Section 4.2.2</span></a>. More generally, linear regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.</p>
 </section>
 </section>
 </section>
@@ -1034,12 +1053,12 @@ Table&nbsp;9.8: Frequencies for Diet and Health Study.
 <div aria-describedby="tbl-studyfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 25%">
+<col style="width: 10%">
+<col style="width: 10%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1089,11 +1108,11 @@ Table&nbsp;9.8: Frequencies for Diet and Health Study.
 </div>
 </figure>
 </div>
-<p>As with all other hypothesis tests in this chapter, the null hypothesis indicates no relationship between the two values. And once again, software can calculate a p-value for us to evaluate this hypothesis. But if we are wondering what’s going on under the hood, the first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet/Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome (as the null hypothesis states), then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the <span class="math inline">\(i\)</span>th row and the <span class="math inline">\(j\)</span>th column is equal to</p>
+<p>As with all other hypothesis tests in this chapter, the null hypothesis indicates no relationship between the two values. And once again, software can calculate a p-value for us to evaluate this hypothesis. But if we are wondering what’s going on under the hood, the first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet-Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome (as the null hypothesis states), then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the <span class="math inline">\(i\)</span>th row and the <span class="math inline">\(j\)</span>th column is equal to</p>
 <p><span class="math display">\[
 E_{ij}=\frac{T_iT_j}{T}
 \]</span></p>
-<p>where <span class="math inline">\(E_{ij}\)</span> is the expected frequency for cell <span class="math inline">\(i,j\)</span>, <span class="math inline">\(T_i\)</span> is the total for the <span class="math inline">\(i\)</span>th row, <span class="math inline">\(T_j\)</span> is the total for the <span class="math inline">\(j\)</span>th column, and <span class="math inline">\(T\)</span> is the total number of observations. For the AHA Diet/Cancers cell, <span class="math inline">\(i = 1\)</span>, <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(T_i = 303\)</span>, <span class="math inline">\(T_j = 22\)</span>, and <span class="math inline">\(T = 605\)</span>. <a href="#tbl-observedstudyfreqs" class="quarto-xref">Table&nbsp;<span>9.9</span></a> shows the expected frequencies (in parenthesis) for each cell in the experiment.</p>
+<p>where <span class="math inline">\(E_{ij}\)</span> is the expected frequency for cell <span class="math inline">\(i,j\)</span>, <span class="math inline">\(T_i\)</span> is the total for the <span class="math inline">\(i\)</span>th row, <span class="math inline">\(T_j\)</span> is the total for the <span class="math inline">\(j\)</span>th column, and <span class="math inline">\(T\)</span> is the total number of observations. For the AHA Diet-Cancers cell, <span class="math inline">\(i = 1\)</span>, <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(T_i = 303\)</span>, <span class="math inline">\(T_j = 22\)</span>, and <span class="math inline">\(T = 605\)</span>. <a href="#tbl-observedstudyfreqs" class="quarto-xref">Table&nbsp;<span>9.9</span></a> shows the expected frequencies (in parenthesis) for each cell in the experiment.</p>
 <p>The significance test is conducted by computing Chi Square as follows.</p>
 <p><span class="math display">\[ \chi^2_3=\sum\frac{(E-O)^2}{E}=-16.55 \]</span></p>
 <p>The degrees of freedom is equal to <span class="math inline">\((r-1)(c-1)\)</span>, where <span class="math inline">\(r\)</span> is the number of rows and <span class="math inline">\(c\)</span> is the number of columns. For this example, the degrees of freedom is <span class="math inline">\((2-1)(4-1) = 3\)</span>. A Chi Square calculator<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> can be used to determine that the probability value for a Chi Square of 16.55 with three degrees of freedom is equal to 0.0009. Therefore, the null hypothesis of no relationship between diet and outcome can be rejected.</p>
@@ -1106,10 +1125,10 @@ Table&nbsp;9.9: Observed and Expected Frequencies for Diet and Health Study.
 <table class="caption-top table">
 <colgroup>
 <col style="width: 17%">
-<col style="width: 15%">
+<col style="width: 14%">
 <col style="width: 23%">
-<col style="width: 28%">
-<col style="width: 11%">
+<col style="width: 27%">
+<col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1170,8 +1189,8 @@ Table&nbsp;9.9: Observed and Expected Frequencies for Diet and Health Study.
 <p>The good news is that regardless of whether we examine (1) expected versus observed outcomes, (2) percentages by row, or (3) percentages by column, we reach the same conclusion: health outcomes are uniformly better for those on the Mediterranean diet. All three approaches are equally valid ways of evaluating associations from a contingency table, and you normally need use only one. We briefly mention all three here for learning purposes since each approach is one you may encounter in your own analysis or in a research report.</p>
 </section>
 </section>
-<section id="sec-comparing-means-appendix-more-about-anova" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-comparing-means-appendix-more-about-anova"><a href="#sec-comparing-means" class="quarto-xref"><span>Section 9.1</span></a> Appendix: More about ANOVA</h2>
+<section id="sec-h-testing-applied-appendix-i-more-about-anova" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-h-testing-applied-appendix-i-more-about-anova"><a href="#sec-h-testing-applied" class="quarto-xref"><span>Chapter 9</span></a> Appendix I: More about ANOVA</h2>
 <section id="terminology-for-various-designsh-tests-applied-17" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="terminology-for-various-designsh-tests-applied-17">Terminology for Various Designs<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a></h3>
 <p>There are many types of experimental designs that can be analyzed by ANOVA. This section discusses many of these designs and defines several key terms used.</p>
@@ -1412,8 +1431,8 @@ Table&nbsp;9.12: Reformatted data (now in long form).
 </section>
 </section>
 </section>
-<section id="sec-comparing-groups-appendix-more-about-the-chi-square-distribution-and-its-tests" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-comparing-groups-appendix-more-about-the-chi-square-distribution-and-its-tests"><span class="quarto-unresolved-ref">?sec-comparing-groups</span> Appendix: More about the Chi Square Distribution and its Tests</h2>
+<section id="sec-h-testing-applied-appendix-ii-more-about-the-chi-square-distribution-and-its-tests" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-h-testing-applied-appendix-ii-more-about-the-chi-square-distribution-and-its-tests"><a href="#sec-h-testing-applied" class="quarto-xref"><span>Chapter 9</span></a> Appendix II: More about the Chi Square Distribution and its Tests</h2>
 <section id="chi-square-distributionh-tests-applied-20" class="level3" data-number="9.2.2">
 <h3 data-number="9.2.2" class="anchored" data-anchor-id="chi-square-distributionh-tests-applied-20"><span class="header-section-number">9.2.2</span> Chi Square Distribution<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></h3>
 <p>A standard normal deviate is a random sample from the standard normal distribution. The Chi Square distribution is the distribution of the sum of squared standard normal deviates, and the degrees of freedom of the distribution is equal to the number of standard normal deviates being summed. Therefore, Chi Square with one degree of freedom, written as <span class="math inline">\(\chi^2(1)\)</span>, is simply the distribution of a single normal deviate squared. The area of the <span class="math inline">\(\chi^2(1)\)</span> distribution below 4 is the same as the area of a standard normal distribution below 2, since 4 is 2<sup>2</sup>.</p>
@@ -1570,7 +1589,7 @@ Table&nbsp;9.14: Outcome Frequencies from a Six-Sided Die.
 <p>which means the value of Chi Square with 5 degrees of freedom is 5.333.</p>
 <p>From a Chi Square calculator<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a> it can be determined that the probability of a Chi Square of 5.333 or larger is 0.377. Therefore, the null hypothesis that the die is fair cannot be rejected.</p>
 <p>This Chi Square test can also be used to test other deviations between expected and observed frequencies. The following example shows a test of whether the variable “University GPA” in the “SAT and College GPA” case study<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a> (used previously to demonstrate regression) is normally distributed.</p>
-<p>The first column in <a href="#tbl-universitygpascores" class="quarto-xref">Table&nbsp;<span>9.15</span></a> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <span class="quarto-unresolved-ref">?sec-probability-distributions</span>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <span class="quarto-unresolved-ref">?sec-the-standard-normal-distribution</span>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.</p>
+<p>The first column in <a href="#tbl-universitygpascores" class="quarto-xref">Table&nbsp;<span>9.15</span></a> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <a href="prob-models.html" class="quarto-xref"><span>Chapter 5</span></a>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <a href="prob-models.html#sec-normal-distributions" class="quarto-xref"><span>Section 5.1.1</span></a>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.</p>
 <div id="tbl-universitygpascores" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-universitygpascores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1717,13 +1736,14 @@ Table&nbsp;9.15: Expected and Observed Scores for 105 University GPA Scores.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2072,8 +2092,8 @@ Table&nbsp;9.15: Expected and Observed Scores for 105 University GPA Scores.
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./causality.html" class="pagination-link" aria-label="Causality and Experimental Designs">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Causality and Experimental Designs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./causality.html" class="pagination-link" aria-label="Research Designs and Causality">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Research Designs and Causality</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

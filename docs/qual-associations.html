@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./correlation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9ac4c4d7723caba69398381a32a42326.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-18279696052386181f2d5e2642aac360.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -358,13 +359,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models[^prob-models-1]</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference[^stat-inference-1]</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,7 +400,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Causality and Experimental Designs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Research Designs and Causality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
   </div>
 </li>
       </ul>
@@ -423,7 +442,7 @@ window.Quarto = {
   <li><a href="#visualizing-a-quantitative-qualitative-relationshipqual-associations-6" id="toc-visualizing-a-quantitative-qualitative-relationshipqual-associations-6" class="nav-link" data-scroll-target="#visualizing-a-quantitative-qualitative-relationshipqual-associations-6"><span class="header-section-number">4.2.1</span> Visualizing a Quantitative-Qualitative Relationship</a></li>
   <li><a href="#sec-regression-with-a-qualitative-independent-variable" id="toc-sec-regression-with-a-qualitative-independent-variable" class="nav-link" data-scroll-target="#sec-regression-with-a-qualitative-independent-variable"><span class="header-section-number">4.2.2</span> Regression with a Qualitative Independent Variable</a></li>
   </ul></li>
-  <li><a href="#appendix-regression-with-a-qualitative-dependent-variablequal-associations-10" id="toc-appendix-regression-with-a-qualitative-dependent-variablequal-associations-10" class="nav-link" data-scroll-target="#appendix-regression-with-a-qualitative-dependent-variablequal-associations-10">Appendix: Regression with a Qualitative Dependent Variable</a></li>
+  <li><a href="#sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variablequal-associations-10" id="toc-sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variablequal-associations-10" class="nav-link" data-scroll-target="#sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variablequal-associations-10"><span>Chapter 4</span> Appendix: Regression with a Qualitative Dependent Variable</a></li>
   </ul>
 </nav>
     </div>
@@ -619,25 +638,29 @@ Table&nbsp;4.2: Frequencies and Percentages by Column for Diet and Health Study.
 <p>Interpreting results from contingency tables is not always intuitive. You may need to practice several times before you can confidently describe the relationship between two qualitative variables based on a contingency table.</p>
 <section id="visualizing-a-qualitative-qualitative-relationshipqual-associations-4" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="visualizing-a-qualitative-qualitative-relationshipqual-associations-4"><span class="header-section-number">4.1.1</span> Visualizing a Qualitative-Qualitative Relationship<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h3>
-<p>Let us now visualize the relationship we have just discussed based on contingency tables. Bar charts are often an effective choice, although there are many different ways that such charts can be configured, and it may take some trial and error to find the most effective chart for any given data. In this case, because the number of individuals for each of the two diets is roughly the same (303 for the AHA diet and 302 for the Mediterranean diet), it makes it fairly easy to create a helpful chart. We clearly see that more people on the Mediterranean diet have the healthy outcome, while the various negative outcomes are all more common among people on the AHA diet.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/qual-associations/barchart-diets.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>A bar chart of health outcomes by diet</figcaption>
+<p>Let us now visualize the relationship we have just discussed based on contingency tables. Bar charts are often an effective choice, although there are many different ways that such charts can be configured, and it may take some trial and error to find the most effective chart for any given data. In this case, because the number of individuals for each of the two diets is roughly the same (303 for the AHA diet and 302 for the Mediterranean diet), it makes it fairly easy to create a helpful chart. We clearly see from <a href="#fig-diet-health" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> that more people on the Mediterranean diet have the healthy outcome, while the various negative outcomes are all more common among people on the AHA diet.</p>
+<div id="fig-diet-health" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diet-health-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/qual-associations/barchart-diets.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diet-health-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: A bar chart of health outcomes by diet
+</figcaption>
 </figure>
 </div>
-<p>More broadly, suppose we are comparing the results of different surveys, or of different conditions within the same overall survey. Because a qualitative variable allows us to divide our sample into sub-samples (based on survey or condition) and then examine distributions for each sub-sample, we can say that we are comparing the “distributions” of responses between the surveys or conditions. Bar charts are often excellent for illustrating differences between two distributions. <a href="#fig-cardgamebarchart" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> shows the number of people playing card games at the Yahoo website on a Sunday and on a Wednesday in the Spring of 2001. We see that there were more players overall on Wednesday compared to Sunday. The number of people playing Pinochle was nonetheless the same on these two days. In contrast, there were about twice as many people playing hearts on Wednesday as on Sunday. Facts like these emerge clearly from a well-designed bar chart.</p>
+<p>More broadly, suppose we are comparing the results of different surveys, or of different conditions within the same overall survey. Because a qualitative variable allows us to divide our sample into sub-samples (based on survey or condition) and then examine distributions for each sub-sample, we can say that we are comparing the “distributions” of responses between the surveys or conditions. Bar charts are often excellent for illustrating differences between two distributions. <a href="#fig-cardgamebarchart" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> shows the number of people playing card games at the Yahoo website on a Sunday and on a Wednesday in the Spring of 2001. We see that there were more players overall on Wednesday compared to Sunday. The number of people playing Pinochle was nonetheless the same on these two days. In contrast, there were about twice as many people playing hearts on Wednesday as on Sunday. Facts like these emerge clearly from a well-designed bar chart.</p>
 <div id="fig-cardgamebarchart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cardgamebarchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/qual-associations/cardgamebarchart.jpg" class="img-fluid figure-img" width="350">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cardgamebarchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: A bar chart of the number of people playing different card games on Sunday and Wednesday.
+Figure&nbsp;4.2: A bar chart of the number of people playing different card games on Sunday and Wednesday.
 </figcaption>
 </figure>
 </div>
-<p>The bars in <a href="#fig-cardgamebarchart" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> are oriented horizontally rather than vertically. The horizontal format is useful when you have many categories because there is more room for the category labels.</p>
+<p>The bars in <a href="#fig-cardgamebarchart" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> are oriented horizontally rather than vertically. The horizontal format is useful when you have many categories because there is more room for the category labels.</p>
 </section>
 </section>
 <section id="describing-the-relationship-between-a-qualitative-and-a-quantitative-variablequal-associations-5" class="level2" data-number="4.2">
@@ -645,25 +668,25 @@ Figure&nbsp;4.1: A bar chart of the number of people playing different card game
 <p>When we have a quantitative variable and a qualitative variable, we typically begin by dividing our sample into sub-samples according to the qualitative variable. For example, if we are examining the qualitative variable sex (indicating male or female), we can divide the sample into males and females. We can then compute measures of central tendency for the sub-samples and compare them. We already saw an example of this in <a href="getting-started.html#sec-critically-evaluating-graphs" class="quarto-xref"><span>Section 1.4</span></a>, where the relationship between sex and support for innovation was evaluated by comparing the means of the support-for-innovation variable among males versus females. Typically, we compare means, but we can also compare medians if we are concerned about our results being sensitive to outliers. Ultimately, we want to observe whether the means/medians appear similar across groups or if some groups have meaningfully higher means/medians than others. In the example with sex and support for innovation, the means were nearly the same (3.787 for females, 3.798 for males), suggesting that the two variables are not related (at least not to a meaningful extent).</p>
 <section id="visualizing-a-quantitative-qualitative-relationshipqual-associations-6" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="visualizing-a-quantitative-qualitative-relationshipqual-associations-6"><span class="header-section-number">4.2.1</span> Visualizing a Quantitative-Qualitative Relationship<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></h3>
-<p>Bar charts are often used to compare the means of different experimental conditions. <a href="#fig-barchartmeantime" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> shows the mean time it took one of us (DL) to move the mouse to either a small target or a large target. On average, more time was required for small targets than for large ones.</p>
+<p>Bar charts are often used to compare the means of different experimental conditions. <a href="#fig-barchartmeantime" class="quarto-xref">Figure&nbsp;<span>4.3</span></a> shows the mean time it took one of us (DL) to move the mouse to either a small target or a large target. On average, more time was required for small targets than for large ones.</p>
 <div id="fig-barchartmeantime" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-barchartmeantime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/qual-associations/barchartmeantime.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-barchartmeantime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Bar chart showing the means for the two conditions.
+Figure&nbsp;4.3: Bar chart showing the means for the two conditions.
 </figcaption>
 </figure>
 </div>
-<p>Although bar charts can display means, we do not recommend them for this purpose. Box plots should be used instead since they provide more information than bar charts without taking up more space. For example, a box plot of the mouse-movement data is shown in <a href="#fig-boxplotmousemovement" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>. You can see that <a href="#fig-boxplotmousemovement" class="quarto-xref">Figure&nbsp;<span>4.3</span></a> reveals more about the distribution of movement times than does <a href="#fig-barchartmeantime" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>.</p>
+<p>Although bar charts can display means, we do not recommend them for this purpose. Box plots should be used instead since they provide more information than bar charts without taking up more space. For example, a box plot of the mouse-movement data is shown in <a href="#fig-boxplotmousemovement" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>. You can see that <a href="#fig-boxplotmousemovement" class="quarto-xref">Figure&nbsp;<span>4.4</span></a> reveals more about the distribution of movement times than does <a href="#fig-barchartmeantime" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>.</p>
 <div id="fig-boxplotmousemovement" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplotmousemovement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/qual-associations/boxplotmousemovement.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplotmousemovement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Box plots of times to move the mouse to the small and large targets.
+Figure&nbsp;4.4: Box plots of times to move the mouse to the small and large targets.
 </figcaption>
 </figure>
 </div>
@@ -671,109 +694,109 @@ Figure&nbsp;4.3: Box plots of times to move the mouse to the small and large tar
 <section id="sec-regression-with-a-qualitative-independent-variable" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="sec-regression-with-a-qualitative-independent-variable"><span class="header-section-number">4.2.2</span> Regression with a Qualitative Independent Variable<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></h3>
 <p>Regression analysis is a very flexible set of tools that can be used to examine almost any sort of relationship among variables. For now, we will focus on understanding how it can be used to describe the relationship between a <em>quantitative</em> dependent variable and a <em>qualitative</em> independent variable.</p>
-<p>Let’s say I’m interested in studying how personality relates to gender. The most common model of personality in psychology is called the “Big Five.” One common measure consists of 50 survey items (the IPIP Big-Five Factor Markers), with 10 items for each of the five personality traits from the model.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> <a href="#fig-Big5" class="quarto-xref">Figure&nbsp;<span>4.4</span></a> shows some of these questions and how they are formatted.</p>
+<p>Let’s say I’m interested in studying how personality relates to gender. The most common model of personality in psychology is called the “Big Five.” One common measure consists of 50 survey items (the IPIP Big-Five Factor Markers), with 10 items for each of the five personality traits from the model.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> <a href="#fig-Big5" class="quarto-xref">Figure&nbsp;<span>4.5</span></a> shows some of these questions and how they are formatted.</p>
 <div id="fig-Big5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Big5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/Big5.jpg" class="img-fluid figure-img" width="500">
+<img src="Images/qual-associations/Big5.jpg" class="img-fluid figure-img" width="450">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Big5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: Example survey items used in the “Big Five” case study.
+Figure&nbsp;4.5: Example survey items used in the “Big Five” case study.
 </figcaption>
 </figure>
 </div>
 <p>For now, I decide to focus on whether people are introverted or extroverted. Extroverts are outgoing and tend to enjoy interacting with others. Extroverts will tend to agree with the statement “I am the life of the party” while introverts will tend to agree with the item “I don’t talk a lot.”</p>
-<p>I find a dataset that contains many responses to the Big Five personality questions as well as information on the gender of each respondent.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> There are 10 different questions related to extroversion, and the dataset has one variable for each of these 10 questions (<a href="#fig-big5dataset" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>). The variable labeled e1 shows responses to the item “I am the life of the party.” A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.</p>
+<p>I find a dataset that contains many responses to the Big Five personality questions as well as information on the gender of each respondent.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> There are 10 different questions related to extraversion, and the dataset has one variable for each of these 10 questions (<a href="#fig-big5dataset" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>). The variable labeled e1 shows responses to the item “I am the life of the party.” A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.</p>
 <div id="fig-big5dataset" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-big5dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/big5dataset.jpg" class="img-fluid figure-img" width="500">
+<img src="Images/qual-associations/big5dataset.jpg" class="img-fluid figure-img" width="450">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-big5dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: Screenshot of some observations and variable values in the “Big Five” dataset.
+Figure&nbsp;4.6: Screenshot of some observations and variable values in the “Big Five” dataset.
 </figcaption>
 </figure>
 </div>
-<p>For all of the odd-numbered extroversion questions (e1, e3, e5, etc.), agreement indicates extroversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extroversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extrovert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 (<span class="math inline">\(5 \times 5-5 \times 1=20\)</span>). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones (<span class="math inline">\(5 \times 1-5 \times 5=-20\)</span>).</p>
-<p>As <a href="#fig-ExtHist" class="quarto-xref">Figure&nbsp;<span>4.6</span></a> indicates, most people lie somewhere in the middle between introversion and extroversion.</p>
+<p>For all of the odd-numbered extraversion questions (e1, e3, e5, etc.), agreement indicates extraversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extraversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extrovert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 (<span class="math inline">\(5 \times 5-5 \times 1=20\)</span>). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones (<span class="math inline">\(5 \times 1-5 \times 5=-20\)</span>).</p>
+<p>As <a href="#fig-ExtHist" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> indicates, most people lie somewhere in the middle between introversion and extraversion.</p>
 <div id="fig-ExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/ExtHist.jpg" class="img-fluid figure-img">
+<img src="Images/qual-associations/ExtHist.jpg" class="img-fluid figure-img" width="350">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: Distribution of the extroversion trait.
+Figure&nbsp;4.7: Distribution of the extraversion trait.
 </figcaption>
 </figure>
 </div>
 <p>Our gender variable was measured by asking respondents “What is your gender?” and they could choose from male (coded as a 1), female (2), or other (3). In a moment, we’ll consider those who responded “other,” but for now, let’s just look at those who chose either male or female.</p>
-<section id="predicting-extroversion-using-gender" class="level4" data-number="4.2.2.1">
-<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="predicting-extroversion-using-gender"><span class="header-section-number">4.2.2.1</span> Predicting extroversion using gender</h4>
-<p>If I want to describe differences in extroversion by gender in this dataset, I can compute the mean value of extroversion for males and for females. It turns out that males have an average extroversion of -0.46 while females’ average level of extroversion is 0.53. Thus, the average female is about 1-point more extroverted than the average male. But of course, there is abundant variation in extroversion among both groups, as seen clearly in <a href="#fig-GenderExtHist" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>. There are plenty of females who are introverts and plenty of males who are extroverts.</p>
+<section id="predicting-extraversion-using-gender" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="predicting-extraversion-using-gender"><span class="header-section-number">4.2.2.1</span> Predicting extraversion using gender</h4>
+<p>If I want to describe differences in extraversion by gender in this dataset, I can compute the mean value of extraversion for males and for females. It turns out that males have an average extraversion of -0.46 while females’ average level of extraversion is 0.53. Thus, the average female is about 1-point more extroverted than the average male. But of course, there is abundant variation in extraversion among both groups, as seen clearly in <a href="#fig-GenderExtHist" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>. There are plenty of females who are introverts and plenty of males who are extroverts.</p>
 <div id="fig-GenderExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-GenderExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/GenderExtHist.jpg" class="img-fluid figure-img">
+<img src="Images/qual-associations/GenderExtHist.jpg" class="img-fluid figure-img" width="350">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GenderExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Distribution of extroversion by female/male identity.
+Figure&nbsp;4.8: Distribution of extraversion by female/male identity.
 </figcaption>
 </figure>
 </div>
-<p>If you asked me to guess the extroversion level of someone in this dataset and the only thing you told me about them was their gender, my best bet would probably be to guess the average extroversion level for someone of that gender. So for a female I knew nothing else about, I would guess their extroversion to be 0.53, while for a male I’d guess -0.46.</p>
-<p>When we’re working with data, sometimes it’s helpful to express how I would make a guess about a dependent variable (extroversion) based on an independent variable (gender) using a mathematical formula. In fact, this is exactly what we do when we run a regression. There are many ways I could write this formula, but I’ll show just two for now. First, I could write:</p>
-<p><span class="math display">\[ \widehat{Extraversion}=0.53 \times Female-0.46 \times Male \]</span></p>
-<p>Notice I’ve added a “hat” above the name of the variable <em>Extraversion</em>; this hat means that I’m making a guess about the value of that variable (I’m guessing the level of extroversion based on gender). The equation has two other variables <em>Female</em> and <em>Male</em>, and these two variables will take on a value of 1 if the person’s gender is equal to the name of the variable and will otherwise take on a value of 0. For a female, <em>Female</em> will equal 1 and <em>Male</em> will equal 0, giving us:</p>
+<p>If you asked me to guess the extraversion level of someone in this dataset and the only thing you told me about them was their gender, my best bet would probably be to guess the average extraversion level for someone of that gender. So for a female I knew nothing else about, I would guess their extraversion to be 0.53, while for a male I’d guess -0.46.</p>
+<p>When we’re working with data, sometimes it’s helpful to express how I would make a guess about a dependent variable (extraversion) based on an independent variable (gender) using a mathematical formula. In fact, this is exactly what we do when we run a regression. There are many ways I could write this formula, but I’ll show just two for now. First, I could write:</p>
+<p><span id="eq-ExtReg"><span class="math display">\[ \widehat{Extraversion}=0.53 \times Female-0.46 \times Male  \tag{4.1}\]</span></span></p>
+<p>Notice I’ve added a “hat” above the name of the variable <em>Extraversion</em>; this hat means that I’m making a guess about the value of that variable (I’m guessing the level of extraversion based on gender). The equation has two other variables <em>Female</em> and <em>Male</em>, and these two variables will take on a value of 1 if the person’s gender is equal to the name of the variable and will otherwise take on a value of 0. For a female, <em>Female</em> will equal 1 and <em>Male</em> will equal 0, giving us:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53 \times (1)-0.46 \times (0)=0.53 \]</span></p>
-<p>So our guess for the level of extroversion (<span class="math inline">\(\widehat{Extraversion}\)</span>) of a female we know nothing about is 0.53.</p>
+<p>So our guess for the level of extraversion (<span class="math inline">\(\widehat{Extraversion}\)</span>) of a female we know nothing about is 0.53.</p>
 <p>For a male, our guess is:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53 \times (0)-0.46 \times (1)=-0.46 \]</span></p>
 <p>There’s a second way I can write my formula, which will turn out to be more useful in the future when we come to consider multiple factors at the same time that might help us predict the value of a dependent variable. Rather than having two variables to represent gender in my equation, I can just use one:</p>
-<p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times Male \]</span></p>
-<p>In <span class="quarto-unresolved-ref">?eq-ExtRegFem</span>, we start from female as our baseline. Notice that the first number we see (0.53) is our guess for the value of extroversion for a female. When we’re considering a female, Male=0, so:</p>
+<p><span id="eq-ExtRegFem"><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times Male  \tag{4.2}\]</span></span></p>
+<p>In <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>, we start from female as our baseline. Notice that the first number we see (0.53) is our guess for the value of extraversion for a female. When we’re considering a female, Male=0, so:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times 0=0.53 \]</span></p>
 <p>Thus, we get the right prediction for females from this equation, even though we didn’t include a variable specifically for females. If we have a male, Male=1, so we get:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times 1=-0.46 \]</span></p>
 <p>This is the same prediction we got before. Remember, I decided to initially just analyze respondents who selected either male or female. Since we are only considering two categories (male or female), and each respondent is either a male or a female, saying <em>Male</em> = 1 lets me know that <em>Female</em> = 0. It’s actually repetitive in this context to both say that <em>Male</em> = 1 and <em>Female</em> = 0. Similarly, saying <em>Male</em> = 0 implies that <em>Female</em> = 1. So I can simplify my equation by just including one variable to indicate binary gender.</p>
-<p>Notice that in <span class="quarto-unresolved-ref">?eq-ExtRegFem</span>, the number next to <em>Male</em> is equal to the difference between the average level of extroversion for females and the average level for males (0.53-(-0.46)=0.99). This is because <span class="quarto-unresolved-ref">?eq-ExtRegFem</span> starts with females as the baseline, so to get our prediction for males, we have to adjust our baseline prediction by the average difference for males.</p>
-<p><span class="quarto-unresolved-ref">?eq-ExtRegFem</span> is also typically how we will arrange our equation when we’re running a regression.</p>
+<p>Notice that in <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>, the number next to <em>Male</em> is equal to the difference between the average level of extraversion for females and the average level for males (0.53-(-0.46)=0.99). This is because <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> starts with females as the baseline, so to get our prediction for males, we have to adjust our baseline prediction by the average difference for males.</p>
+<p><a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> is also typically how we will arrange our equation when we’re running a regression.</p>
 </section>
 <section id="prediction-with-more-than-two-categories-for-gender" class="level4" data-number="4.2.2.2">
 <h4 data-number="4.2.2.2" class="anchored" data-anchor-id="prediction-with-more-than-two-categories-for-gender"><span class="header-section-number">4.2.2.2</span> Prediction with more than two categories for gender</h4>
-<p>I now move beyond the gender binary and consider the “other” category in survey responses. I’ll refer to this other category as “non-binary” gender, although the data was collected at a time when survey items were not generally designed with this group in mind; thus, we might expect that this “other” category is only a rough proxy for a non-binary gender identity. The average level of extroversion among those with non-binary gender is -5.66. So people in this dataset identified as likely non-binary tend to be quite a bit more introverted than those who identify as male or female. As with males and females, there is still considerable variation among non-binary people (<a href="#fig-NonBExtHist" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>).</p>
+<p>I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as “other” gender (<a href="#fig-NonBExtHist" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
 <div id="fig-NonBExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-NonBExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/qual-associations/NonBExtHist.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-NonBExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: Distribution of extroversion trait among those identifying with “other” gender (neither male nor female).
+Figure&nbsp;4.9: Distribution of extraversion trait among those identifying with “other” gender (neither male nor female).
 </figcaption>
 </figure>
 </div>
-<p>The number of non-binary respondents is relatively small (102), so it’s not terrible surprising that this histogram looks a bit choppier than the ones we saw before.</p>
-<p>Again, if we had to make a guess about the level of extroversion of someone, and all we knew about that person was that their gender was non-binary, we would probably want to guess the mean value among non-binary respondents (-5.66). Modifying <span class="quarto-unresolved-ref">?eq-ExtReg</span> to incorporate a third category is relatively straightforward:</p>
-<p><span class="math display">\[ \widehat{Extraversion}=0.53 \times Female-0.46 \times Male-5.69 \times Other \]</span></p>
+<p>The number of respondents selecting “other” is relatively small (102), so it’s not terribly surprising that this histogram looks a bit choppier than the ones we saw before.</p>
+<p>Again, if we had to make a guess about the level of extraversion of someone, and all we knew about that person was that their gender is other, we would probably want to guess the mean value among other-gender respondents (-5.66). Modifying <a href="#eq-ExtReg" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> to incorporate a third category is relatively straightforward:</p>
+<p><span id="eq-ExtRegNonBin"><span class="math display">\[ \widehat{Extraversion}=0.53 \times Female-0.46 \times Male-5.69 \times Other  \tag{4.3}\]</span></span></p>
 <p>For someone who identifies as female, we would plug in <em>Female</em> = 1, <em>Male</em> = 0, and <em>Other</em> = 0:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53 \times (1)-0.46 \times (0)-5.66 \times (0)=0.53 \]</span></p>
-<p>If someone identifies as non-binary, we would use <em>Female</em> = 0, <em>Male</em> = 0, and <em>Other</em> = 1:</p>
+<p>If someone identifies as other-gender, we would use <em>Female</em> = 0, <em>Male</em> = 0, and <em>Other</em> = 1:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53 \times (0)-0.46 \times (0)-5.66 \times (1)=-5.66 \]</span></p>
-<p>We can also return to the format of <span class="quarto-unresolved-ref">?eq-ExtRegFem</span> but modify it to include the other category. This is how we will typically write our equation if we are doing a regression:</p>
-<p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times Male-6.19 \times Other \]</span></p>
-<p>Now that there are three possible values for gender (female, male, and other), knowing the value of <em>Male</em> doesn’t necessarily allow us to conclude what the value of female is. If <em>Male</em> = 0, the individual could identify as either female or non-binary. So we have to include a second variable. In this case, we chose to include the variable <em>Other</em>. If we know the values of <em>Male</em> and <em>Other</em>, we can always figure out the value of <em>Female</em> by process of elimination.</p>
-<p>For a non-binary person, we plug in <em>Male</em> = 0, and <em>Other</em> = 1:</p>
+<p>We can also return to the format of <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> but modify it to include the other category. This is how we will typically write our equation if we are doing a regression:</p>
+<p><span id="eq-ExtRegFemNonBin"><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times Male-6.19 \times Other  \tag{4.4}\]</span></span></p>
+<p>Now that there are three possible values for gender (female, male, and other), knowing the value of <em>Male</em> doesn’t necessarily allow us to conclude what the value of female is. If <em>Male</em> = 0, the individual could identify as either female or other. So we have to include a second variable. In this case, we chose to include the variable <em>Other</em>. If we know the values of <em>Male</em> and <em>Other</em>, we can always figure out the value of <em>Female</em> by process of elimination.</p>
+<p>For an other-gender person, we plug in <em>Male</em> = 0, and <em>Other</em> = 1:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (1)=-5.66 \]</span></p>
 <p>When considering a female, we use <em>Male</em> = 0, and <em>Other</em> = 0:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (0)=0.53 \]</span></p>
-<p><span class="quarto-unresolved-ref">?eq-ExtRegNonBin</span> and <span class="quarto-unresolved-ref">?eq-ExtRegFemNonBin</span> indicate equivalent predictions for extroversion based on gender; they just offer this information in two different formats. <span class="quarto-unresolved-ref">?eq-ExtRegFemNonBin</span> might be a bit trickier to understand for now, but it will become very useful in the future.</p>
+<p><a href="#eq-ExtRegNonBin" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> and <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> indicate equivalent predictions for extraversion based on gender; they just offer this information in two different formats. <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> might be a bit trickier to understand for now, but it will become very useful in the future.</p>
 <p>Notice that we can talk about gender either as one qualitative variable with three possible values (female, male, or other), or we can talk about it as a series of three variables (<em>Female</em>, <em>Male</em>, and <em>Other</em>) that can each take on a value of either 0 or 1 (we call such variables “binary” or “dummy” variables). This can make things a bit confusing, but the important thing to remember is that when we have a qualitative variable with more than two categories, we’ll need to break out the categories into a set of dummy variables for purposes of representing the qualitative variable in an equation.</p>
-<p>However, as <span class="quarto-unresolved-ref">?eq-ExtRegFem</span> and <span class="quarto-unresolved-ref">?eq-ExtRegFemNonBin</span> illustrate, we don’t necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like <span class="quarto-unresolved-ref">?eq-ExtRegFem</span> or <span class="quarto-unresolved-ref">?eq-ExtRegFemNonBin</span>, the number of dummy variables should be equal to the number of categories minus one. Since our gender variable can take on three possible values in this example, we included two independent variables in <span class="quarto-unresolved-ref">?eq-ExtRegFemNonBin</span>. No dummy variable is included for female, so we call female the <strong>omitted category</strong>, also known as the <strong>reference group</strong> or <strong>baseline category</strong>. Remember, the first number in <span class="quarto-unresolved-ref">?eq-ExtRegFemNonBin</span> is 0.53, which represents our guess for females—the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.</p>
+<p>However, as <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> and <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> illustrate, we don’t necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> or <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a>, the number of dummy variables should be equal to the number of categories minus one. Since our gender variable can take on three possible values in this example, we included two independent variables in <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a>. No dummy variable is included for female, so we call female the <strong>omitted category</strong>, also known as the <strong>reference group</strong> or <strong>baseline category</strong>. Remember, the first number in <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is 0.53, which represents our guess for females—the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.</p>
 <p>As we can see in the appendix, it doesn’t really matter which group we select as the omitted category because we get equivalent predictions regardless of which one we choose.</p>
 </section>
 </section>
 </section>
-<section id="appendix-regression-with-a-qualitative-dependent-variablequal-associations-10" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="appendix-regression-with-a-qualitative-dependent-variablequal-associations-10">Appendix: Regression with a Qualitative Dependent Variable<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></h2>
+<section id="sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variablequal-associations-10" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variablequal-associations-10"><a href="#sec-qual-associations" class="quarto-xref"><span>Chapter 4</span></a> Appendix: Regression with a Qualitative Dependent Variable<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></h2>
 <p>This appendix will demonstrate one way to perform regression with a qualitative dependent variable, using output from the statistical software program <em>Stata</em>. Suppose I want to build a model of voting. I decide to use the 2016 American National Election Studies[^qual-associations-11] survey results to try to understand how race is associated with voting. Respondents in the 2016 survey were asked about who they voted for in 2012, and I’m going to focus on their 2012 voting patterns for now. Using the statistical software package Stata to conduct my analysis, I find the following distributions for my two main variables of interest:</p>
 <pre><code>. tab vote         
 PRE: RECALL OF LAST (2012) PRESIDENTAL  |
@@ -855,7 +878,7 @@ Mitt Romney |      Freq.     Percent        Cum.
 <p>Since our independent variable is qualitative, we have an omitted category. In this case, we’ve left category 1 (race_1) out of our regression, which indicates non-Hispanic White respondents. Our constant (or y-intercept) indicates the predicted value of the dependent variable when all independent variables are equal to zero. We can see this by writing out the regression equation:</p>
 <p><span id="eq-a"><span class="math display">\[
 \widehat{vote\_1}=.48+.50race\_2+.21race\_3 +.10race\_4+.31race\_5+.10race\_6
-\tag{4.1}\]</span></span></p>
+\tag{4.5}\]</span></span></p>
 <p>For non-Hispanic White respondents, race_1 equals one and all other race dummy variables equal zero, so we get:</p>
 <p><span class="math display">\[
 \widehat{vote\_1}=.48+.50(0)+.21(0)+.10(0)+.31(0)+.10(0)= .48
@@ -1009,13 +1032,14 @@ Mitt Romney |      Freq.     Percent        Cum.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1364,8 +1388,8 @@ Mitt Romney |      Freq.     Percent        Cum.
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic models[^prob-models-1]">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models[^prob-models-1]</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic models">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

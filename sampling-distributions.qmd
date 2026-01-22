@@ -8,7 +8,7 @@ This is perhaps the most difficult chapter in the whole book. That is because sa
 
 Suppose you randomly sampled 10 people from the population of women in Houston, Texas, between the ages of 21 and 35 years and computed the mean height of your sample. You would not expect your sample mean to be equal to the mean of all women in Houston. It might be somewhat lower or it might be somewhat higher, but it would not equal the population mean exactly. Similarly, if you took a second sample of 10 people from the same population, you would not expect the mean of this second sample to equal the mean of the first sample.
 
-Recall that inferential statistics concern generalizing from a sample to a population. A critical part of inferential statistics involves determining how far sample statistics are likely to vary from each other and from the population **parameter**. (In this example, the sample statistics are the sample means and the population parameter is the population mean.) As the later portions of this chapter show, these determinations are based on sampling distributions.
+Recall from @sec-stat-inference that inferential statistics concern generalizing from a sample to a population (or to a counterfactual, but for this chapter we will focus on inferring about a population). A critical part of inferential statistics involves determining how far sample statistics are likely to vary from each other and from the population parameter being estimated. (In this example, the sample statistics are the sample means and the population parameter is the population mean.) As the later portions of this chapter show, these determinations are based on sampling distributions.
 
 ### Discrete Distributions
 
@@ -170,7 +170,7 @@ $$
 90 + (1.96)(12) = 113.52
 $$
 
-The value of 1.96 is based on the fact that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean; 12 is the standard error of the mean given our sample size of 9.
+The value of 1.96 is based on the fact that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean (in @sec-prob-models, we used 2 as a close approximation, but 1.96 is a more precise value); 12 is the standard error of the mean given our sample size of 9.
 
 ![The sampling distribution of the mean for n=9. The middle 95% of the distribution is shaded.](Images/sampling-distributions/samplingdistn9.png){#fig-samplingdistn9 width="350"}
 
@@ -214,7 +214,7 @@ $$
 
 You should use the t distribution rather than the normal distribution when the variance is not known and has to be estimated from sample data. You will learn more about the t distribution in the next section. When the sample size is large, say 100 or above, the t distribution is very similar to the standard normal distribution. However, with smaller sample sizes, the t distribution has relatively more scores in its tails than does the normal distribution. As a result, you have to extend farther from the mean to contain a given proportion of the area. Recall that with a normal distribution, 95% of the distribution is within 1.96 standard deviations of the mean. Using the t distribution, if you have a sample size of only 5, 95% of the area is within 2.78 standard deviations of the mean. Therefore, the standard error of the mean would be multiplied by 2.78 rather than 1.96.
 
-The values of t to be used in a confidence interval can be looked up in a table of the t distribution, a small version of which is provided in the following section. You can also use an "inverse t distribution" calculator[^sampling-distributions-6] to find the t values to use in confidence intervals. With either approach, the t values will vary depending upon the degrees of freedom (df). For confidence intervals on the mean, df is equal to n - 1, where n is the sample size.
+The values of t to be used in a confidence interval can be looked up in a table of the t distribution, a small version of which is provided in the following section. You can also use an "inverse t distribution" calculator[^sampling-distributions-6] to find the t values to use in confidence intervals. With either approach, the t values will vary depending upon what is called the degrees of freedom (df). For confidence intervals on the mean, df is equal to n - 1, where n is the sample size.
 
 [^sampling-distributions-6]: <https://onlinestatbook.com/2/calculators/inverse_t_dist.html>
 
@@ -301,7 +301,7 @@ The **t distribution** is very similar to the normal distribution when the estim
 
 ![A comparison of t distributions with 2, 4, and 10 df and the standard normal distribution. The distribution with the lowest peak is the 2 df distribution, the next lowest is 4 df, the lowest after that is 10 df, and the highest is the standard normal distribution.](Images/sampling-distributions/tdiststandardsd.jpg){#fig-tdiststandardsd}
 
-Since the t distribution has more area in the tails, the percentage of the distribution within 1.96 standard deviations of the mean is less than the 95% for the normal distribution. @tbl-abbrevttable shows the number of standard deviations from the mean required to contain 95% and 99% of the area of the t distribution for various degrees of freedom. These are the values of t that you use in a confidence interval. The corresponding values for the normal distribution are 1.96 and 2.58 respectively. Notice that with few degrees of freedom, the values of t are much higher than the corresponding values for a normal distribution and that the difference decreases as the degrees of freedom increase. , since the critical t value for probability 0.95 got closer and closer to 1.96 (the critical value for 0.95 in the normal distribution) as the degrees of freedom incrased. The values shown in Table 6-7 can be obtained from statistical software or an online calculator.[^sampling-distributions-9]
+Since the t distribution has more area in the tails, the percentage of the distribution within 1.96 standard deviations of the mean is less than the 95% for the normal distribution. @tbl-abbrevttable shows the number of standard deviations from the mean required to contain 95% and 99% of the area of the t distribution for various degrees of freedom. These are the values of t that you use in a confidence interval. The corresponding values for the normal distribution are 1.96 and 2.58 respectively. Notice that with few degrees of freedom, the values of t are much higher than the corresponding values for a normal distribution and that the difference decreases as the degrees of freedom increase. The values shown in Table 6-7 can be obtained from statistical software or an online calculator.[^sampling-distributions-9]
 
 [^sampling-distributions-9]: <https://onlinestatbook.com/2/calculators/inverse_t_dist.html>
 
@@ -355,20 +355,6 @@ As we saw in @sec-introduction-to-linear-regression, the estimated regression sl
 Applying these formulas we obtain a confidence interval with the following lower and upper limits:
 
 $$ \text{Lower limit} = 0.425 - (3.182)(0.305) = -0.55 $$$$ \text{Upper limit} = 0.425 + (3.182)(0.305) = 1.40 $$
-
-#### Assumptions for Statistical Inference from Regression
-
-Although no assumptions were needed to determine the best-fitting straight line, assumptions are made in the calculation of inferential statistics. Naturally, these assumptions refer to the population, not the sample.
-
-1.  Linearity: The relationship between the two variables is linear.
-
-2.  Homoscedasticity: The variance around the regression line is the same for all values of X. A clear violation of this assumption is shown in @fig-homoscedasticity. Notice that the predictions for students with high high-school GPAs are very good, whereas the predictions for students with low high-school GPAs are not very good. In other words, the points for students with high high-school GPAs are close to the regression line, whereas the points for low high-school GPA students are not.
-
-3.  The errors of prediction are distributed normally. This means that the deviations from the regression line are normally distributed. It does not mean that X or Y is normally distributed.
-
-![University GPA as a function of High School GPA.](Images/sampling-distributions/homoscedasticty.jpg){#fig-homoscedasticity width="350"}
-
-We will return to the topic of model assumptions and the consequences of violating them in @sec-models-and-uncertainty.
 
 ## @sec-sampling-distributions Appendix I: Degrees of Freedom[^sampling-distributions-12] {.unnumbered}
 
