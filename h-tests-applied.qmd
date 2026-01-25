@@ -1,6 +1,6 @@
 # Hypothesis Testing in Practice {#sec-h-testing-applied}
 
-Throughout this chapter, we will build on the tools we previously examined in @qual-associations (comparisons of means and contingency tables). Specifically, we will learn about hypothesis tests that can be used in conjunction with previously discussed tools, allowing us to determine whether associations we observe are statistically significant.
+Throughout this chapter, we will build on the tools we previously examined in @sec-qual-associations (comparisons of means and contingency tables). Specifically, we will learn about hypothesis tests that can be used in conjunction with previously discussed tools, allowing us to determine whether associations we observe are statistically significant.
 
 ## Comparing Means (One Qualitative and One Quantitative Variable) {#sec-comparing-means}
 

@@ -8,16 +8,16 @@
 
 I recently purchased a bag of Plain M&M's. The M&M's were in six different colors. A quick count showed that there were 55 M&M's: 17 brown, 18 red, 7 yellow, 7 green, 2 blue, and 4 orange. These counts are shown below in @tbl-mmfreqs.
 
-+---+-----------+---+---------------+---+
-|   | **Color** |   | **Frequency** |   |
-+===+===========+===+===============+===+
-|   | Brown\    |   | 17\           |   |
-|   | Red\      |   | 18\           |   |
-|   | Yellow\   |   | 7\            |   |
-|   | Green\    |   | 7\            |   |
-|   | Blue\     |   | 2\            |   |
-|   | Orange    |   | 4             |   |
-+---+-----------+---+---------------+---+
++------+-----------+------+---------------+------+
+|      | **Color** |      | **Frequency** |      |
++======+===========+======+===============+======+
+|      | Brown\    |      | 17\           |      |
+|      | Red\      |      | 18\           |      |
+|      | Yellow\   |      | 7\            |      |
+|      | Green\    |      | 7\            |      |
+|      | Blue\     |      | 2\            |      |
+|      | Orange    |      | 4             |      |
++------+-----------+------+---------------+------+
 
 : Frequencies in the Bag of M&M's {#tbl-mmfreqs}
 
@@ -29,33 +29,33 @@ The variable "color of M&M" is a qualitative variable, and its distribution is c
 
 The data shown in @tbl-responsetimes are the times it took David Lane (the author of much of the material appearing in this book) to move the cursor over a small target in a series of 20 trials. The times are sorted from shortest to longest. The variable "time to respond" is a continuous variable. With time measured accurately (to many decimal places), no two response times would be expected to be the same. Measuring time in milliseconds (thousandths of a second) is often precise enough to approximate a continuous variable in psychology. As you can see in @tbl-responsetimes, measuring David Lane's responses this way produced times no two of which were the same. As a result, a frequency distribution would be uninformative: it would consist of the 20 times in the experiment, each with a frequency of 1.
 
-+---+------+---+------+---+
-|   | 568\ |   | 720\ |   |
-|   | 577\ |   | 728\ |   |
-|   | 581\ |   | 729\ |   |
-|   | 640\ |   | 777\ |   |
-|   | 641\ |   | 808\ |   |
-|   | 645\ |   | 824\ |   |
-|   | 657\ |   | 825\ |   |
-|   | 673\ |   | 865\ |   |
-|   | 696\ |   | 875\ |   |
-|   | 703  |   | 1007 |   |
-+---+------+---+------+---+
++----+------+----+------+----+
+|    | 568\ |    | 720\ |    |
+|    | 577\ |    | 728\ |    |
+|    | 581\ |    | 729\ |    |
+|    | 640\ |    | 777\ |    |
+|    | 641\ |    | 808\ |    |
+|    | 645\ |    | 824\ |    |
+|    | 657\ |    | 825\ |    |
+|    | 673\ |    | 865\ |    |
+|    | 696\ |    | 875\ |    |
+|    | 703  |    | 1007 |    |
++----+------+----+------+----+
 
 : Response Times {#tbl-responsetimes}
 
 The solution to this problem is to create a grouped frequency distribution, as we saw when creating bins for histograms in @sec-quantitative-variables. In a grouped frequency distribution, scores falling within various ranges are tabulated. @tbl-groupfreqdist shows a grouped frequency distribution for these 20 times.
 
-+---+-----------+---+---------------+---+
-|   | **Range** |   | **Frequency** |   |
-+===+===========+===+===============+===+
-|   | 500-600\  |   | 3\            |   |
-|   | 600-700\  |   | 6\            |   |
-|   | 700-800\  |   | 5\            |   |
-|   | 800-900\  |   | 5\            |   |
-|   | 900-1000\ |   | 0\            |   |
-|   | 1000-1100 |   | 1             |   |
-+---+-----------+---+---------------+---+
++------+-----------+------+---------------+------+
+|      | **Range** |      | **Frequency** |      |
++======+===========+======+===============+======+
+|      | 500-600\  |      | 3\            |      |
+|      | 600-700\  |      | 6\            |      |
+|      | 700-800\  |      | 5\            |      |
+|      | 800-900\  |      | 5\            |      |
+|      | 900-1000\ |      | 0\            |      |
+|      | 1000-1100 |      | 1             |      |
++------+-----------+------+---------------+------+
 
 : Grouped frequency distribution {#tbl-groupfreqdist}
 
@@ -119,9 +119,9 @@ $$
 \mu = \frac{\sum X}{N} = \frac{634}{31} = 20.4516
 $$
 
-|  |  |  |
-|----|----|----|
-|  | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |  |
++----------------------+--------------------------------------------------------------------------------------------+----------------------+
+|                      | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |                      |
++----------------------+--------------------------------------------------------------------------------------------+----------------------+
 
 : Number of touchdown passes. {#tbl-tdownpasses}
 
@@ -137,16 +137,16 @@ When there is an odd number of numbers, the median is simply the middle number. 
 
 The **mode** is the most frequently occurring value. For the data in @tbl-tdownpasses, the mode is 18 since more teams (4) had 18 touchdown passes than any other number of touchdown passes. With continuous data such as response time measured to many decimals, the frequency of each value is one since no two scores will be exactly the same (see @sec-continuous-variables). Therefore the mode of continuous data is normally computed from a grouped frequency distribution. @tbl-groupfreqdist1 shows a grouped frequency distribution for the target response time data. Since the interval with the highest frequency is 600-700, the mode is the middle of that interval (650).
 
-+---+-----------+---------------+---+
-|   | **Range** | **Frequency** |   |
-+===+===========+===============+===+
-|   | 500-600\  | 3\            |   |
-|   | 600-700\  | 6\            |   |
-|   | 700-800\  | 5\            |   |
-|   | 800-900\  | 5\            |   |
-|   | 900-1000\ | 0\            |   |
-|   | 1000-1100 | 1             |   |
-+---+-----------+---------------+---+
++-------+-----------+---------------+-------+
+|       | **Range** | **Frequency** |       |
++=======+===========+===============+=======+
+|       | 500-600\  | 3\            |       |
+|       | 600-700\  | 6\            |       |
+|       | 700-800\  | 5\            |       |
+|       | 800-900\  | 5\            |       |
+|       | 900-1000\ | 0\            |       |
+|       | 1000-1100 | 1             |       |
++-------+-----------+---------------+-------+
 
 : Grouped frequency distribution. {#tbl-groupfreqdist1}
 
@@ -156,13 +156,13 @@ The **mode** is the most frequently occurring value. For the data in @tbl-tdownp
 
 How do the various measures of central tendency compare with each other? For symmetric distributions, the mean and median are equal, as is the mode except in bimodal distributions. Differences among the measures occur with skewed distributions. Consider the positively skewed distribution we saw earlier in the chapter (@fig-posskewdist). Measures of central tendency for this distribution are shown in @tbl-testscoremeasures. Notice they do not differ greatly, with the exception that the mode is considerably lower than the other measures. When distributions have a positive skew, the mean is typically higher than the median, although it may not be in bimodal distributions. For these data, the mean of 91.58 is higher than the median of 90.
 
-+---+-------------+-----------+---+
-|   | **Measure** | **Value** |   |
-+===+=============+===========+===+
-|   | Mode\       | 84.00\    |   |
-|   | Median\     | 90.00\    |   |
-|   | Mean        | 91.58     |   |
-+---+-------------+-----------+---+
++-------+-------------+-----------+-------+
+|       | **Measure** | **Value** |       |
++=======+=============+===========+=======+
+|       | Mode\       | 84.00\    |       |
+|       | Median\     | 90.00\    |       |
+|       | Mean        | 91.58     |       |
++-------+-------------+-----------+-------+
 
 : Measures of central tendency for the test scores. {#tbl-testscoremeasures}
 
@@ -172,13 +172,13 @@ The distribution of baseball salaries (in 1994) shown in @fig-bballsalarydist ha
 
 @tbl-bballmeasures shows the measures of central tendency for these data. The large skew results in very different values for these measures. No single measure of central tendency is sufficient for data such as these. If you were asked the very general question: "So, what do baseball players make?" and answered with the mean of \$1,183,000, you would not have told the whole story since only about one third of baseball players make that much. If you answered with the mode of \$250,000 or the median of \$500,000, you would not be giving any indication that some players make many millions of dollars. Fortunately, there is no need to summarize a distribution with a single number. When the various measures differ, our opinion is that you should report the mean and the median. Sometimes it is worth reporting the mode as well. In the media, the median is usually reported to summarize the center of skewed distributions. You will hear about median salaries and median prices of houses sold, etc. This is better than reporting only the mean, but it would be informative to hear more statistics.
 
-+---+-------------+---+-----------+---+
-|   | **Measure** |   | **Value** |   |
-+===+=============+===+===========+===+
-|   | Mode\       |   | 250\      |   |
-|   | Median\     |   | 500\      |   |
-|   | Mean        |   | 1,183     |   |
-+---+-------------+---+-----------+---+
++------+-------------+------+-----------+------+
+|      | **Measure** |      | **Value** |      |
++======+=============+======+===========+======+
+|      | Mode\       |      | 250\      |      |
+|      | Median\     |      | 500\      |      |
+|      | Mean        |      | 1,183     |      |
++------+-------------+------+-----------+------+
 
 : Measures of central tendency for baseball salaries (in thousands of dollars). {#tbl-bballmeasures}
 
@@ -216,30 +216,53 @@ For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquar
 
 Variability can also be defined in terms of how close the scores in the distribution are to the middle of the distribution. Using the mean as the measure of the middle of the distribution, the **variance** is defined as the average squared difference of the scores from the mean. The data from Quiz 1 are shown in @tbl-quiz1var. The mean score is 7.0. Therefore, the column "Deviation from Mean" contains the score minus 7. The column "Squared Deviation" is simply the previous column squared.
 
-|     | **Scores** |     | **Deviation from Mean** |     | **Squared Deviation** |     |
-|-----|------------|-----|-------------------------|-----|-----------------------|-----|
-|     | 9          |     | 2                       |     | 4                     |     |
-|     | 9          |     | 2                       |     | 4                     |     |
-|     | 9          |     | 2                       |     | 4                     |     |
-|     | 8          |     | 1                       |     | 1                     |     |
-|     | 8          |     | 1                       |     | 1                     |     |
-|     | 8          |     | 1                       |     | 1                     |     |
-|     | 8          |     | 1                       |     | 1                     |     |
-|     | 7          |     | 0                       |     | 0                     |     |
-|     | 7          |     | 0                       |     | 0                     |     |
-|     | 7          |     | 0                       |     | 0                     |     |
-|     | 7          |     | 0                       |     | 0                     |     |
-|     | 7          |     | 0                       |     | 0                     |     |
-|     | 6          |     | -1                      |     | 1                     |     |
-|     | 6          |     | -1                      |     | 1                     |     |
-|     | 6          |     | -1                      |     | 1                     |     |
-|     | 6          |     | -1                      |     | 1                     |     |
-|     | 6          |     | -1                      |     | 1                     |     |
-|     | 6          |     | -1                      |     | 1                     |     |
-|     | 5          |     | -2                      |     | 4                     |     |
-|     | 5          |     | -2                      |     | 4                     |     |
-|     |            |     | **Means**               |     |                       |     |
-|     | 7          |     | 0                       |     | 1.5                   |     |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | **Scores** |        | **Deviation from Mean** |        | **Squared Deviation** |        |
++========+============+========+=========================+========+=======================+========+
+|        | 9          |        | 2                       |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 9          |        | 2                       |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 9          |        | 2                       |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 5          |        | -2                      |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 5          |        | -2                      |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        |            |        | **Means**               |        |                       |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 1.5                   |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
 
 : Calculation of Variance for Quiz 1 scores. {#tbl-quiz1var}
 
@@ -305,20 +328,33 @@ For these data, the 25th percentile is 17, the 50th percentile is 19, and the 75
 
 Before proceeding, the terminology in @tbl-terminology is helpful.
 
-| Name | Formula | Value |
-|----|----|----|
-| Upper Hinge | 75th Percentile | 20 |
-| Lower Hinge | 25th Percentile | 17 |
-| H-Spread | Upper Hinge - Lower Hinge | 3 |
-| Step | 1.5 x H-Spread | 4.5 |
-| Upper Inner Fence | Upper Hinge + 1 Step | 24.5 |
-| Lower Inner Fence | Lower Hinge - 1 Step | 12.5 |
-| Upper Outer Fence | Upper Hinge + 2 Steps | 29 |
-| Lower Outer Fence | Lower Hinge - 2 Steps | 8 |
-| Upper Adjacent | Largest value below Upper Inner Fence | 24 |
-| Lower Adjacent | Smallest value above Lower Inner Fence | 14 |
-| Outside Value | A value beyond an Inner Fence but not beyond an Outer Fence | 29 |
-| Far Out Value | A value beyond an Outer Fence | None |
++----------------------+-------------------------------------------------------------+----------------------+
+| Name                 | Formula                                                     | Value                |
++======================+=============================================================+======================+
+| Upper Hinge          | 75th Percentile                                             | 20                   |
++----------------------+-------------------------------------------------------------+----------------------+
+| Lower Hinge          | 25th Percentile                                             | 17                   |
++----------------------+-------------------------------------------------------------+----------------------+
+| H-Spread             | Upper Hinge - Lower Hinge                                   | 3                    |
++----------------------+-------------------------------------------------------------+----------------------+
+| Step                 | 1.5 x H-Spread                                              | 4.5                  |
++----------------------+-------------------------------------------------------------+----------------------+
+| Upper Inner Fence    | Upper Hinge + 1 Step                                        | 24.5                 |
++----------------------+-------------------------------------------------------------+----------------------+
+| Lower Inner Fence    | Lower Hinge - 1 Step                                        | 12.5                 |
++----------------------+-------------------------------------------------------------+----------------------+
+| Upper Outer Fence    | Upper Hinge + 2 Steps                                       | 29                   |
++----------------------+-------------------------------------------------------------+----------------------+
+| Lower Outer Fence    | Lower Hinge - 2 Steps                                       | 8                    |
++----------------------+-------------------------------------------------------------+----------------------+
+| Upper Adjacent       | Largest value below Upper Inner Fence                       | 24                   |
++----------------------+-------------------------------------------------------------+----------------------+
+| Lower Adjacent       | Smallest value above Lower Inner Fence                      | 14                   |
++----------------------+-------------------------------------------------------------+----------------------+
+| Outside Value        | A value beyond an Inner Fence but not beyond an Outer Fence | 29                   |
++----------------------+-------------------------------------------------------------+----------------------+
+| Far Out Value        | A value beyond an Outer Fence                               | None                 |
++----------------------+-------------------------------------------------------------+----------------------+
 
 : Box plot terms and values for women's times. {#tbl-terminology}
 
@@ -360,34 +396,34 @@ Each dot in @fig-boxplotindvscores represents a group of subjects with the same 
 
 Different styles of box plots are best for different situations, and there are no firm rules for which to use. When exploring your data, you should try several ways of visualizing them. Which graphs you include in your report should depend on how well different graphs reveal the aspects of the data you consider most important.
 
-## Transforming Variables[^describing-one-variable-10]
+## Transforming Variables[^describing-one-variable-10] {#sec-transforming-variables}
 
 [^describing-one-variable-10]: The initial part of this section is adapted from David M. Lane. “Linear Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/linear_transforms.html>. There is also material adapted from David M. Lane. “Standard Normal Distribution.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/normal_distribution/standard_normal.html>.
 
 Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. @tbl-heightconversion shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
 
-+---+----------+---+------------+---+
-|   | **Feet** |   | **Inches** |   |
-+===+==========+===+============+===+
-|   | 5.00\    |   | 60\        |   |
-|   | 6.25\    |   | 75\        |   |
-|   | 5.50\    |   | 66\        |   |
-|   | 5.75     |   | 69         |   |
-+---+----------+---+------------+---+
++------+----------+------+------------+------+
+|      | **Feet** |      | **Inches** |      |
++======+==========+======+============+======+
+|      | 5.00\    |      | 60\        |      |
+|      | 6.25\    |      | 75\        |      |
+|      | 5.50\    |      | 66\        |      |
+|      | 5.75     |      | 69         |      |
++------+----------+------+------------+------+
 
 : Converting between feet and inches. {#tbl-heightconversion}
 
 Some conversions require that you multiply by a number and then add a second number. A good example of this is the transformation between degrees Centigrade and degrees Fahrenheit. @tbl-temp5cities shows the temperatures of 5 US cities in the early afternoon of November 16, 2002.
 
-+---+--------------+---+------------------------+---+------------------------+---+
-|   | **City**     |   | **Degrees Fahrenheit** |   | **Degrees Centigrade** |   |
-+===+==============+===+========================+===+========================+===+
-|   | Houston\     |   | 54\                    |   | 12.22\                 |   |
-|   | Chicago\     |   | 37\                    |   | 2.78\                  |   |
-|   | Minneapolis\ |   | 31\                    |   | -0.56\                 |   |
-|   | Miami\       |   | 78\                    |   | 25.56\                 |   |
-|   | Phoenix      |   | 70                     |   | 21.11                  |   |
-+---+--------------+---+------------------------+---+------------------------+---+
++-------+--------------+-------+------------------------+-------+------------------------+-------+
+|       | **City**     |       | **Degrees Fahrenheit** |       | **Degrees Centigrade** |       |
++=======+==============+=======+========================+=======+========================+=======+
+|       | Houston\     |       | 54\                    |       | 12.22\                 |       |
+|       | Chicago\     |       | 37\                    |       | 2.78\                  |       |
+|       | Minneapolis\ |       | 31\                    |       | -0.56\                 |       |
+|       | Miami\       |       | 78\                    |       | 25.56\                 |       |
+|       | Phoenix      |       | 70                     |       | 21.11                  |       |
++-------+--------------+-------+------------------------+-------+------------------------+-------+
 
 : Temperatures in 5 cities on 11/16/2002. {#tbl-temp5cities}
 
@@ -445,18 +481,18 @@ It is hard to discern a pattern in the upper panel whereas the strong relationsh
 
 Let's begin with an example. Consider the 25th percentile for the 8 numbers in @tbl-numberrankscores. Notice the numbers are given ranks ranging from 1 for the lowest number to 8 for the highest number.
 
-+---+------------+---+----------+---+
-|   | **Number** |   | **Rank** |   |
-+===+============+===+==========+===+
-|   | 3\         |   | 1\       |   |
-|   | 5\         |   | 2\       |   |
-|   | 7\         |   | 3\       |   |
-|   | 8\         |   | 4\       |   |
-|   | 9\         |   | 5\       |   |
-|   | 11\        |   | 6\       |   |
-|   | 13\        |   | 7\       |   |
-|   | 15         |   | 8        |   |
-+---+------------+---+----------+---+
++------+------------+------+----------+------+
+|      | **Number** |      | **Rank** |      |
++======+============+======+==========+======+
+|      | 3\         |      | 1\       |      |
+|      | 5\         |      | 2\       |      |
+|      | 7\         |      | 3\       |      |
+|      | 8\         |      | 4\       |      |
+|      | 9\         |      | 5\       |      |
+|      | 11\        |      | 6\       |      |
+|      | 13\        |      | 7\       |      |
+|      | 15         |      | 8        |      |
++------+------------+------+----------+------+
 
 : Test Scores. {#tbl-numberrankscores}
 
@@ -486,30 +522,30 @@ Therefore, the 25th percentile is 5.5. If we had used the first definition (the 
 
 For a second example, consider the 20 quiz scores shown in @tbl-quizscores.
 
-+---+-----------+---+----------+---+
-|   | **Score** |   | **Rank** |   |
-+===+===========+===+==========+===+
-|   | 4\        |   | 1\       |   |
-|   | 4\        |   | 2\       |   |
-|   | 5\        |   | 3\       |   |
-|   | 5\        |   | 4\       |   |
-|   | 5\        |   | 5\       |   |
-|   | 5\        |   | 6\       |   |
-|   | 6\        |   | 7\       |   |
-|   | 6\        |   | 8\       |   |
-|   | 6\        |   | 9\       |   |
-|   | 7\        |   | 10\      |   |
-|   | 7\        |   | 11\      |   |
-|   | 7\        |   | 12\      |   |
-|   | 8\        |   | 13\      |   |
-|   | 8\        |   | 14\      |   |
-|   | 9\        |   | 15\      |   |
-|   | 9\        |   | 16\      |   |
-|   | 9\        |   | 17\      |   |
-|   | 10\       |   | 18\      |   |
-|   | 10\       |   | 19\      |   |
-|   | 10        |   | 20       |   |
-+---+-----------+---+----------+---+
++-----+-----------+-----+----------+-----+
+|     | **Score** |     | **Rank** |     |
++=====+===========+=====+==========+=====+
+|     | 4\        |     | 1\       |     |
+|     | 4\        |     | 2\       |     |
+|     | 5\        |     | 3\       |     |
+|     | 5\        |     | 4\       |     |
+|     | 5\        |     | 5\       |     |
+|     | 5\        |     | 6\       |     |
+|     | 6\        |     | 7\       |     |
+|     | 6\        |     | 8\       |     |
+|     | 6\        |     | 9\       |     |
+|     | 7\        |     | 10\      |     |
+|     | 7\        |     | 11\      |     |
+|     | 7\        |     | 12\      |     |
+|     | 8\        |     | 13\      |     |
+|     | 8\        |     | 14\      |     |
+|     | 9\        |     | 15\      |     |
+|     | 9\        |     | 16\      |     |
+|     | 9\        |     | 17\      |     |
+|     | 10\       |     | 18\      |     |
+|     | 10\       |     | 19\      |     |
+|     | 10        |     | 20       |     |
++-----+-----------+-----+----------+-----+
 
 : 20 quiz scores. {#tbl-quizscores}
 

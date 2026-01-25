@@ -1,0 +1,19 @@
+# Teaching Resources {#sec-teaching-resources}
+
+If you're using this text, I'd love to know. You can fill out this brief form (<https://forms.gle/qBUFdb4vEuDUkzBu6>), where you can also sign up to receive emails when I post updated versions or related materials.
+
+## Stata/R Labs
+
+I've created a number of Stata and R labs that I use when I teach. There are also some handouts, including a couple covering Excel. Such resources are available here: <https://github.com/favero-nate/minus-the-math/tree/main/labs>
+
+## Lecture Slides/Videos
+
+While they do not directly correspond to this version of the text, there are some (Stata-based) lecture slides and videos I created to use alongside this book when I teach. They are currently available here: <https://github.com/favero-nate/minus-the-math/tree/main/lecture_slides>
+
+## A Few More Details about What's Unique in this Text
+
+1.  There is a bit of Stata code in one appendix (@sec-qual-associations), but otherwise all examples are presented apart from any statistical software package.
+
+2.  The treatment of probability theory skips much of the typical material in favor of discussing probabilistic modeling, which I believe is far more relevant to quantitative social science.
+
+3.  In addition to traditional statistical inference ideas that describe estimating parameters of population from a sample, I emphasize that we often use inference to draw conclusions about counterfactuals. This approach is informed by Kass (2011): <https://doi.org/10.1214%2F10-STS337>

@@ -16,8 +16,8 @@ book:
       - qual-associations.qmd
     - part: "Estimation"
       chapters:
-      - prob-models.qmd
       - stat-inference.qmd
+      - prob-models.qmd
       - sampling-distributions.qmd
       - h-tests.qmd
       - h-tests-applied.qmd
@@ -27,6 +27,8 @@ book:
       - measurement.qmd
       - regression.qmd
       - practical-points.qmd
+    - teaching-resources.qmd
+    - change-log.qmd
 
 #bibliography: references.bib
 

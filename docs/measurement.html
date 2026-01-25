@@ -329,14 +329,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
+  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -348,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./h-tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -394,13 +394,33 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./change-log.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#validity-and-reliability" id="toc-validity-and-reliability" class="nav-link active" data-scroll-target="#validity-and-reliability"><span class="header-section-number">11.1</span> Validity and reliability</a></li>
+  <li><a href="#scaling" id="toc-scaling" class="nav-link" data-scroll-target="#scaling"><span class="header-section-number">11.2</span> Scaling</a></li>
+  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link" data-scroll-target="#measurement-error"><span class="header-section-number">11.3</span> Measurement error</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -425,147 +445,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Two main statistics traditions in social science<br>
-• Psychometrics: applied statistical methods<br>
-developed for studying psychology<br>
-• Central focus on measurement error<br>
-• Many methods for data with multiple measures of<br>
-constructs (e.g., survey data with multiple items for<br>
-each construct)<br>
-• Commonly used in psychology and related research<br>
-areas (organizational behavior, public opinion)<br>
-• Key methods include reliability measures, factor<br>
-analysis, SEM<br>
-• Econometrics: applied statistical methods developed<br>
-for studying economics<br>
-• Central focus on threats to accurate causal inference<br>
-• Commonly used in many social science disciplines<br>
-• Key method is regression</p>
-<p>Reliability measures<br>
-• Basic intuition: if we measure a construct multiple<br>
-times or multiple ways, the various measurements<br>
-should give us similar results (unless there’s reason<br>
-to believe the true value of the construct has changed<br>
-between measures)<br>
-• If the measurements are inconsistent (unreliable),<br>
-this undermines confidence in the measures<br>
-• Most reliability measures indicate some sort of<br>
-correlation (or average correlation) among measures,<br>
-so the maximum value (perfect reliability) is typically 1</p>
-<p>• There are often cutpoints offered as “rules of thumb”<br>
-for what constitute “good” or “acceptable” levels of<br>
-reliability; I think these are of somewhat limited use<br>
-since different types of measures allow for different<br>
-realistic levels of reliability<br>
-• Even if reliability is high, there is no guarantee that<br>
-validity is high—no guarantee that the variables<br>
-actually measure what we want them to measure<br>
-• Cronbach’s alpha: the most common measure of<br>
-reliability when researchers have multiple survey<br>
-items that are supposed to measure a single<br>
-construct<br>
-• Essentially measures the average correlation among<br>
-a set of variables</p>
-<p>Scaling<br>
-• Scaling: combining multiple measures of a construct<br>
-into a single variable<br>
-• Example: combining responses to several survey<br>
-items to form a single variable<br>
-• Simplest scaling method: taking the average (or<br>
-sum) of several measures<br>
-• If measures don’t have a common scale, we might<br>
-want to first standardize the items before<br>
-averaging/totaling them<br>
-• Assuming there is a common scale, all measures are<br>
-given equal weight in contributing to final measure</p>
-<p>• Factor analysis: an approach to scaling that allows<br>
-for estimation of different weights to assign to<br>
-different measures<br>
-• Basic intuition: assign weights to different measures<br>
-to maximize the extent to which a single common<br>
-(latent) factor can explain the variation in the various<br>
-measure</p>
-<p>• If you’re only interested in using items to measure a<br>
-single variable, factor analysis is fairly<br>
-straightforward: it will assign less weight to items that<br>
-have a relatively weak correlation with the other items<br>
-whereas taking a simple average will give all items<br>
-equal weight<br>
-• Factor loadings will give an indication of which<br>
-variables having stronger weights (values closer to 0<br>
-have less weight)<br>
-• A negative factor loading indicates a negative weight,<br>
-meaning that higher values of that item correspond to<br>
-lower values of the factor index</p>
-<p>Factor analysis<br>
-• There are many types of factor analysis<br>
-• One of the simplest is principal components analysis,<br>
-often abbreviated PCA or PCF (for principal<br>
-components factor analysis)<br>
-• PCA is a type of exploratory factor analysis, meaning<br>
-that you don’t necessary have to specify how many<br>
-constructs you wish to measure with the variables<br>
-you have or which measures you expect to measure<br>
-which constructs<br>
-• PCA can essentially find groupings of measures that<br>
-have high correlations with one another and identify a<br>
-factor (new scaled variable) for each grouping<br>
-• PCA assumes that each factor is uncorrelated with all<br>
-other factors, but other types of factor analysis allow<br>
-for correlated factors</p>
-<p>• Basic PCA will make it so that the first factor explains<br>
-as much variation in the measures as possible, the<br>
-second factor explains as much of the remaining<br>
-variation as possible (after creating the first factor),<br>
-etc.<br>
-• “Rotation” allows for the variation to be split up more<br>
-evening among factors, but you must specify how<br>
-many factors you want to create<br>
-• There’s no obvious way to choose how many factors<br>
-to retain, but several approaches (beyond the scope<br>
-of this course) are frequently used</p>
-<p>• Each measure will have a factor loading for each<br>
-factor; this loading indicates the correlation (ranging<br>
-from -1 to 1) between that measure and the factor<br>
-• Each factor will have an eigenvalue, indicating how<br>
-much of the variation in the measures is explained by<br>
-that factor<br>
-• With PCA, the eigenvalue divided by the number of<br>
-measures indicates the proportion of variance in the<br>
-measures that can be accounted for with that factor</p>
-<p>SEM<br>
-• SEM allows for scaling (think factor analysis) and<br>
-estimation of associations (think regression) to be<br>
-simultaneously carried out in a single model<br>
-• By combining these two steps, SEM is able to easily<br>
-account for certain types of measurement error<br>
-• More traditional econometric approaches typically<br>
-assume there is no error in the independent/control<br>
-variables, although econometric regression<br>
-approaches have been developed that allow for<br>
-measurement error (they’re just not widely used)<br>
-• SEM users often include multiple mediating and/or<br>
-dependent variables, unlike most regression models<br>
-• One can think of these multiple links as similar to<br>
-running multiple regressions successively, like we’ll<br>
-learn how to do next week with mediating variables</p>
-<p>• SEM can be a useful way to model measurement<br>
-error, but there are some potential pitfalls<br>
-• SEM models typically assume that measurement<br>
-error is uncorrelated across items; violation of this<br>
-assumption is often referred to as common method<br>
-variance or common source bias and is very difficult<br>
-to deal with, even with SEM<br>
-• SEM typically has arrows that indicate causal<br>
-directions, but the models are not able to do much to<br>
-distinguish which direction causality flows (does A<br>
-cause B, or does B cause A?); instead the causal<br>
-direction is assumed<br>
-• Tests of whether the model adequately fits/explains<br>
-the data exist, but these tests are not very informative<br>
-in practice</p>
+<p>Measuring what we care about in the social world is often difficult. Attitudes, behaviors, and cultures do not easily lend themselves to being recorded succinctly as a column in a spreadsheet. Thus, a central concern with data in social science is measurement.</p>
+<p>To distinguish what it is we truly care about from the things we are able to measure, we use the term <strong>construct</strong> to describe the concept or property we wish to study. By contrast, the data that ends up in our files is a variable—a term we’ve been using already throughout this book. For example, we can create a personality questionnaire to measure someone’s extroversion, but there will always be a gap (measurement error) between the values that end up in our spreadsheets—the variable—and the “true” value of the construct extraversion—a complex personality trait that is difficult to precisely quantify. For complex constructs that defy easy measurement, an <strong>operational definition</strong> describes a particular approach to practically measuring the construct. The distinction between construct and variable is particularly pronounced in psychology (where many variables of interest are difficult to measure precisely), so literature drawing on that discipline is where you are most likely to encounter this terminology. By contrast, suppose we are interested in something relatively easy to measure, like someone’s age. It is difficult to articulate a difference between the concept of age and the measured values of age, so the distinction between construct and variable is not particularly useful in this instance.</p>
+<section id="validity-and-reliability" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="validity-and-reliability"><span class="header-section-number">11.1</span> Validity and reliability</h2>
+<p>How do we evaluate whether a particular measurement approach is effective? We want measures that are <strong>valid</strong>, meaning that they (on average) reflect the underlying construct (a property known as <strong>construct validity</strong>). We also want measures to be <strong>reliable</strong>, meaning that they are precise and we get consistent results from the measurement approach.</p>
+<p>There are many ways to evaluate validity, often identified as different types of validity. A full accounting is beyond the scope of this text, but two broadly-applicable examples are worth discussing. First, <strong>face validity</strong> refers to a qualitative judgement of whether the measurement approach appears reasonable. You can always ask yourself whether a measure makes sense, based on what you know about the topic being studied. Second, <strong>criterion validity</strong> refers to a measure exhibiting associations with other variables in expected ways. When we see that a variable tracks with other variables that should be interrelated, that builds some confidence that we have not gone horribly astray in our attempts to measure a construct.</p>
+<p>Reliability is usually evaluated by repeating measurement in some manner and then comparing how similar the results are across the different measurements. If a measure is highly reliable, the various measurements should give us similar results (unless there’s reason to believe the true value of the construct has changed between measurement attempts). Various types of reliability scores can be calculated. While the details differ, they usually have a range of either 0 to 1 or -1 to 1, with 0 or -1 indicating no reliability and 1 indicating perfect reliability (equivalent scores from the different measurement attempts). Three common methods for estimating reliability are test-retest reliability, Cronbach’s alpha, and inter-rater reliability.</p>
+<p><strong>Test-retest reliability</strong> involves administering a measure once and then repeating the measure, usually at a later date. In order for the test-retest approach to make sense, we generally need to be measuring a highly stable construct (at least during the period separating the two measurements). For example, personality refers to a stable set of characteristics (at least in theory), so test-retest reliability is often used to assess measures of personality. By contrast, emotional states are generally more transient, so finding that someone indicates a different emotional state at two different points in time does not indicate that the measurement approach is unreliable; the subject may simply be experiencing a different emotional state than last time they were measured.</p>
+<p><strong>Cronbach’s alpha</strong> can be computed when multiple indicators are combined into an index that measures the construct of interest. The classic example is a survey with several items related to one construct (as in the measure of extraversion we have repeatedly referenced) or an exam with multiple problems. Cronbach’s alpha reflects the <em>internal consistency</em> of the indicators used to form the index. In other words, it tells us how similar our various indicators are to one another. Conbach’s alpha also increases—all else equal—as the number of indicators increases. So a 10-item index will have a higher Cronbach’s alpha than a 3-item index, assuming the two indices have items that are equally internally consistent. The reason for this is that as the number of indicators increases, the idiosyncrasies associated with individual items matter less to the overall index (just as larger sample sizes result in less noisy estimates). Whether this property of indices implies that we should generally use long multi-item scales to measure complex psychological or behavioral constructs is a topic of debate among survey researchers.</p>
+<p>Finally, <strong>inter-rater reliability</strong> can be computed when multiple sources are rating (or coding) the same material. For example, a study might rely on multiple research assistants to rate the level of charisma exhibited by a speaker, using a rubric that details specific tactics of charismatic speech that are to be counted. One can use a measure of inter-rater reliability to determine how similar the ratings are from the different research assistants. This requires that there is a sample (could be a subsample) of speeches that have each been rated by more than one person, so that direct comparisons of the scores can be made. If all raters give the same score to every speech, there will be perfect inter-rater reliability. If raters give highly inconsistent scorings of the same speech, inter-rater reliability will be low.</p>
+<p>For all types of reliability, researchers often rely on “rules of thumb” about what threshold (e.g., 0.8) a reliability score must reach to constitute “good” or “acceptable” levels of reliability. Trying to identify meaningful thresholds for the entirety of the social sciences is perhaps a hopeless tasks, since different constructs and types of measures allow for different realistic levels of reliability to be achieved. Within a given field, there will probably be established norms regarding acceptable levels of reliability.</p>
+<p>Validity and reliability are both important. However, because reliability is often easier to evaluate quantitatively, you may find that more space is devoted to discussions of reliability than validity in many social science journals. Some scholars even argue that the scientific norms associated with scrutinizing reliability have led survey researchers to unjustifiably sacrifice validity in their scale development in order to achieve reliability levels that are deemed sufficient.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+<section id="scaling" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="scaling"><span class="header-section-number">11.2</span> Scaling</h2>
+<p><strong>Scaling</strong> refers to combining multiple indicates of a construct into a single variable called an index. The simplest scaling method involves taking the average (or sum) of the indicators. We call the result a <strong>summative index</strong>. While taking the average and taking the sum might seem like entirely distinct ways of creating an index, they are in some sense equivalent since each is a linear transformation of the other: divide the sum by the number of indicators, and you will have the average. Just as our results should not meaningfully change if we decide to measure something in inches instead of feet (<a href="describing-one-variable.html#sec-transforming-variables" class="quarto-xref"><span>Section 2.6</span></a>), using a sum versus an average to construct an index will make not difference to our results so long as we remember to interpret our units correctly.</p>
+<p>If the indicators don’t have a common scale (or even if they do), it is often a good idea to first standardize the items before combining them into an index. Some scaling approaches will automatically do this in the background, but if you are creating a summative index you may need to make this transformation first before calculating a sum/average.</p>
+<p><strong>Factor analysis</strong> refers to various methods for scaling that involve calculating different weights to apply to the various indicators. By contrast, with a summative index we are effectively applying an equal weight to all indicators, making it so that all indicators contribute equally to the final index. By assigning different weights, we make some indicators more important than others. This makes conceptual sense if we believe that some indicators are more precise or offer more unique information about the true value of the construct. <em>Confirmatory factor analysis</em> (as opposed to exploratory factor analysis) requires that you specify a measurement model indicating how various indicators are linked to constructs (as well as other linkages indicators may have to one another) and yields results that can be used as tests of whether the measurement model is plausible.</p>
+<p><strong>Principal component analysis</strong> (PCA, also called principal component factors or PCF) is a widely used technique that is often (mis)labled a type of factor analysis and accomplishes something similar, in that it creates an index based on calculating different weights for the indicators. Unlike confirmatory factor analysis, PCA does not require the user to map out a model of measurement. The basic intuition underlying PCA is that it selects values for weights in a way that maximizes the extent to which a common (latent) factor can explain the variation in the various indicators.</p>
+<p>The factor loadings (or weights) from factor analysis or PCA will indicate how closely alligned each indicator is to the index. There are different ways in which these values can be reported, depending on the technique and what transformations might be applied. But generally speaking, loadings closer to 0 indicate less alignment of the indicator with the index. Negative loadings mean that an indicator is negatively associated with the index (e.g., an indicator of <em>introversion</em> should have a negative loading for an index of <em>extraversion</em>).</p>
+</section>
+<section id="measurement-error" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">11.3</span> Measurement error</h2>
+<p>Measurement error usually distorts our ability to make valid estimates. An exception is that random measurement error in a dependent variable will not necessarily violate any regression assumptions since we can consider the measurement error to be part of the error term (so long as the measurement error conforms with the particular assumptions made about the error term). Unfortunately, measurement error often extends to our independent variables as well when we are examining data about the social world. This brings a serious source of concern regarding the validity of our estimate, including the validity of our inferential statistical results (confidence intervals and significance tests).</p>
+<p>If we are only examining a bivariate relationship (e.g., how X relates to Y, without any control variables), then we can at least say that <em>random measurement error</em> in the independent variable should lead to <strong>attenuation bias</strong>, meaning that we will tend to underestimate the strength of an association. For example, if the actual correlation between two constructs is 0.6, attenuation bias means that we will systematically tend to get estimates that are smaller than this (e.g., 0.5 or 0.4). By <em>random</em> measurement error, I mean that the value of the variable’s measurement error is unrelated to the true value of either construct (and is also unrelated any the measurement error in the other variable).</p>
+<p>Unfortunately, as soon as we move to the world of multiple regression (to be covered more in <a href="regression.html" class="quarto-xref"><span>Chapter 12</span></a>), random measurement error in the independent variables can easily lead to inflated estimates of associations (meaning the strength of an association is overstated) or even systematically wrong-signed estimates (e.g., a negative instead of a positive association). Generally speaking, it is difficult to correctly anticipate the direction of bias that might occur from measurement error (among independent variables) in the context of multiple regression.</p>
+<p><em>Correlated measurement error</em> generates similarly disruptive problems for estimation, even when looking at bivariate relationships. <em>Correlated</em> measurement error refers to errors in measurement that are correlated with underlying constructs or with errors in the measurement of other variables. For example, <em>common method variance</em> is a frequent source of potentially correlated measurement error in survey research. Suppose that we are using a survey of employees and want to estimate the association between one’s work motivation and job performance. If we rely on self-reported survey scales (a “common method”) to measure both variables, our variables will likely exhibit correlated measurement error. Respondents who think particularly highly of themselves (or wish to convey a positive image of themselves on a survey) are likely to overstate both their own motivation and their performance. They will have high values for both variables. Respondents with a more humble disposition will tend to report lower values for both variables. Thus, measurement error will likely push the association in a positive direction (high values of one variable paired with high values in the other variable, and low values paired with low values). This can lead to an association even if none exists in the underlying constructs.</p>
+<p>Two main sets of tools exist that can create corrections for measurement errors. They emerge out of distinct traditions of statistical analysis emerging from the disciplines of psychology and economics. The psychology tradition has developed rather elaborate tools that utilize structural equation modeling (SEM) to estimate associations while accounting for measurement error. From the economic tradition, there is errors-in-variables regression, which allows for estimation of regression models that account for known error in the measurements of variables. Both sets of tools can be helpful for testing the sensitivity of findings to different assumptions about measurement error, but the tools are also somewhat limited in that they generally require strict assumptions about the nature of measurement error than cannot be fully tested.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Clifton, Jeremy D. W. 2020. “Managing validity versus reliability trade-offs in scale-building decisions.” <em>Psychological Methods</em> 25(3): 259.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

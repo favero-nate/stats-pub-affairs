@@ -164,7 +164,7 @@ Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the differen
 
 I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as "other" gender (@fig-NonBExtHist).
 
-![Distribution of extraversion trait among those identifying with "other" gender (neither male nor female).](Images/qual-associations/NonBExtHist.jpg){#fig-NonBExtHist}
+![Distribution of extraversion trait among those identifying with "other" gender (neither male nor female).](Images/qual-associations/NonBExtHist.jpg){#fig-NonBExtHist width="350"}
 
 The number of respondents selecting "other" is relatively small (102), so it’s not terribly surprising that this histogram looks a bit choppier than the ones we saw before.
 

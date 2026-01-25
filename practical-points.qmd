@@ -1,37 +1,39 @@
 # Practical points {#sec-practical-points}
 
-Data management is often a huge part doing quantitative analysis: make take up much more time and effort than running the actual statistical analysis. Learning to properly merge files, rearrange data so that it is in the format you need for analysis, combine variables or figure out how to deal with missingness (sometimes combining categories for a qualitative variable). It can take a long time to get good at these tasks. Often we receive data that is not in a format very friendly to analysis.
+[content to be added]
 
-Get to know your data before you run a bunch of deeper analysis. Make sure you explain to the reader about the data too so that they have context and understanding when you do show them results of more complex analysis
+<!-- Data management is often a huge part doing quantitative analysis: make take up much more time and effort than running the actual statistical analysis. Learning to properly merge files, rearrange data so that it is in the format you need for analysis, combine variables or figure out how to deal with missingness (sometimes combining categories for a qualitative variable). It can take a long time to get good at these tasks. Often we receive data that is not in a format very friendly to analysis. -->
 
-Often helpful to try multiple models and check for "robustness"
+<!-- Get to know your data before you run a bunch of deeper analysis. Make sure you explain to the reader about the data too so that they have context and understanding when you do show them results of more complex analysis -->
 
- - If outliers are a potential concern, try robust regression or median regression
+<!-- Often helpful to try multiple models and check for "robustness" -->
 
- - try different sets of controls (including perhaps no controls)
+<!--  - If outliers are a potential concern, try robust regression or median regression -->
 
- - try different subsamples, although be careful not to read too much into them, especially if the samples are small
+<!--  - try different sets of controls (including perhaps no controls) -->
 
- - try logging skewed variables (and not)
+<!--  - try different subsamples, although be careful not to read too much into them, especially if the samples are small -->
 
- - do you have more than one measure? (or different ways to construct index?)
+<!--  - try logging skewed variables (and not) -->
 
-Keep as simple as possible (even if you've done more complicated analysis to convince yourself) if you want to speak to the broadest possible audience
+<!--  - do you have more than one measure? (or different ways to construct index?) -->
 
-\- often a tradeoff between precise prediction and interpretability
+<!-- Keep as simple as possible (even if you've done more complicated analysis to convince yourself) if you want to speak to the broadest possible audience -->
 
-Every analysis has limits; calibrate conclusions accordingly
+<!-- \- often a tradeoff between precise prediction and interpretability -->
 
-\- worms eye view vs birds eye view
+<!-- Every analysis has limits; calibrate conclusions accordingly -->
 
-\- humility
+<!-- \- worms eye view vs birds eye view -->
 
-\- macro questions more difficult to study quantitatively
+<!-- \- humility -->
 
-Multicollinearity
+<!-- \- macro questions more difficult to study quantitatively -->
 
-Doing what you can to contextualize sizes of associations (e.g., standardizing can sometimes help)
+<!-- Multicollinearity -->
 
-null results?
+<!-- Doing what you can to contextualize sizes of associations (e.g., standardizing can sometimes help) -->
 
-always stop and ask: does this make sense? will catch a lot of errors doing this; need to step back and look at the big picture and spending time down in the weeds
+<!-- null results? -->
+
+<!-- always stop and ask: does this make sense? will catch a lot of errors doing this; need to step back and look at the big picture and spending time down in the weeds -->

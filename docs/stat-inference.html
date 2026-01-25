@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Statistical Inference – Statistics Minus the Math 2.0</title>
+<title>5&nbsp; Statistical Inference – Statistics Minus the Math 2.0</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sampling-distributions.html" rel="next">
-<link href="./prob-models.html" rel="prev">
+<link href="./prob-models.html" rel="next">
+<link href="./qual-associations.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -278,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Estimation</a></li><li class="breadcrumb-item"><a href="./stat-inference.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./stat-inference.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -358,14 +358,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
+  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,7 +377,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./h-tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -423,6 +423,18 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./change-log.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -433,17 +445,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-concepts-for-statistical-inference" id="toc-key-concepts-for-statistical-inference" class="nav-link active" data-scroll-target="#key-concepts-for-statistical-inference"><span class="header-section-number">6.1</span> Key Concepts for Statistical Inference</a>
+  <li><a href="#key-concepts-for-statistical-inference" id="toc-key-concepts-for-statistical-inference" class="nav-link active" data-scroll-target="#key-concepts-for-statistical-inference"><span class="header-section-number">5.1</span> Key Concepts for Statistical Inference</a>
   <ul class="collapse">
-  <li><a href="#types-of-samples" id="toc-types-of-samples" class="nav-link" data-scroll-target="#types-of-samples"><span class="header-section-number">6.1.1</span> Types of samples</a></li>
-  <li><a href="#counterfactuals" id="toc-counterfactuals" class="nav-link" data-scroll-target="#counterfactuals"><span class="header-section-number">6.1.2</span> Counterfactuals</a></li>
-  <li><a href="#parameters-of-interest" id="toc-parameters-of-interest" class="nav-link" data-scroll-target="#parameters-of-interest"><span class="header-section-number">6.1.3</span> Parameters of interest</a></li>
-  <li><a href="#importance-of-sample-size" id="toc-importance-of-sample-size" class="nav-link" data-scroll-target="#importance-of-sample-size"><span class="header-section-number">6.1.4</span> Importance of sample size</a></li>
+  <li><a href="#types-of-samples" id="toc-types-of-samples" class="nav-link" data-scroll-target="#types-of-samples"><span class="header-section-number">5.1.1</span> Types of samples</a></li>
+  <li><a href="#counterfactuals" id="toc-counterfactuals" class="nav-link" data-scroll-target="#counterfactuals"><span class="header-section-number">5.1.2</span> Counterfactuals</a></li>
+  <li><a href="#parameters-of-interest" id="toc-parameters-of-interest" class="nav-link" data-scroll-target="#parameters-of-interest"><span class="header-section-number">5.1.3</span> Parameters of interest</a></li>
+  <li><a href="#importance-of-sample-size" id="toc-importance-of-sample-size" class="nav-link" data-scroll-target="#importance-of-sample-size"><span class="header-section-number">5.1.4</span> Importance of sample size</a></li>
   </ul></li>
-  <li><a href="#confidence-intervals-a-key-tool-for-estimation" id="toc-confidence-intervals-a-key-tool-for-estimation" class="nav-link" data-scroll-target="#confidence-intervals-a-key-tool-for-estimation"><span class="header-section-number">6.2</span> Confidence Intervals: A Key Tool for Estimation</a>
+  <li><a href="#confidence-intervals-a-key-tool-for-estimation" id="toc-confidence-intervals-a-key-tool-for-estimation" class="nav-link" data-scroll-target="#confidence-intervals-a-key-tool-for-estimation"><span class="header-section-number">5.2</span> Confidence Intervals: A Key Tool for Estimation</a>
   <ul class="collapse">
-  <li><a href="#sec-introducing-confidence-intervals-for-regression" id="toc-sec-introducing-confidence-intervals-for-regression" class="nav-link" data-scroll-target="#sec-introducing-confidence-intervals-for-regression"><span class="header-section-number">6.2.1</span> Confidence Intervals for Regression</a></li>
-  <li><a href="#sec-interpreting-confidence-intervals-correctly" id="toc-sec-interpreting-confidence-intervals-correctly" class="nav-link" data-scroll-target="#sec-interpreting-confidence-intervals-correctly"><span class="header-section-number">6.2.2</span> Interpreting Confidence Intervals Correctly</a></li>
+  <li><a href="#sec-introducing-confidence-intervals-for-regression" id="toc-sec-introducing-confidence-intervals-for-regression" class="nav-link" data-scroll-target="#sec-introducing-confidence-intervals-for-regression"><span class="header-section-number">5.2.1</span> Confidence Intervals for Regression</a></li>
+  <li><a href="#sec-interpreting-confidence-intervals-correctly" id="toc-sec-interpreting-confidence-intervals-correctly" class="nav-link" data-scroll-target="#sec-interpreting-confidence-intervals-correctly"><span class="header-section-number">5.2.2</span> Interpreting Confidence Intervals Correctly</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -452,9 +464,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Estimation</a></li><li class="breadcrumb-item"><a href="./stat-inference.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./stat-inference.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-stat-inference" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></h1>
+<h1 class="title"><span id="sec-stat-inference" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></h1>
 </div>
 
 
@@ -483,7 +495,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p><a href="https://doi.org/10.1002/pam.70007">Kim et. al (2025)</a> study the experience of people trying to access food assistance benefits in the U.S. One requirement of the assistance program is to complete an interview. Working together with a nonprofit organization and a local government, the researchers designed an experiment to study whether interview completion rates could be improved by sending text messages to remind applicants of upcoming appointments and inform them of a new drop-in interview option.</p>
-<p>For the experiment, some study participants were assigned to be part of the “control” group and thus received only a traditional mailer and no text reminders. The rest of the participants received the “treatment,” consisting of text reminders that were sent in addition to the mailer. Assignment to treatment and control groups was based on each participant’s randomly-assigned case number: odd case numbers received the treatment while even case numbers received the control.</p>
+<p>For the experiment, some study participants were assigned to be part of a <strong>control</strong> group and thus received only a traditional mailer and no text reminders. The rest of the participants received the <strong>treatment</strong>, consisting of text reminders that were sent in addition to the mailer. Assignment to treatment and control groups was based on each participant’s randomly-assigned case number: odd case numbers received the treatment while even case numbers received the control.</p>
 <p>Using inferential statistics, the authors estimate how the text reminders affect the chances of completing an interview. The exact effect may vary depending on the study participant. We can game this out by imagining several distinct categories of applicants. Some applicants receiving the reminders would have completed the interview anyway, so for them the reminders had no effect. For others, the reminders were pivotal, causing them to attend an interview instead of missing it. And some missed the interview even with reminders (and possibly some <em>because of</em> the reminders, but I assume this is unlikely). Among those who did not receive the reminders, there were those who completed the interview anyway and for whom the reminders presumably would have had no effect (unless reminders somehow discouraged completion of the interview). There were also those who did not complete the interview but would have had they received the texts. Finally, there are those who did not complete the interview and wouldn’t have even with reminders.</p>
 <p>In a perfect world, we might like to know whether and how the text reminders would have changed the behavior of each person in the study. This is impossible to determine, however, since we can’t ever observe the counterfactual to what actually occurred. The best we can do is estimate the likely effect of the text reminders in the aggregate—an <em>average treatment effect</em>. Based on the fact that this study’s sample of participants receiving text reminders completed interviews at a rate 10.7 percentage points higher than those who received no texts, the researchers estimate that the text reminders increase the rate of interview completion by 10.7 percentage points. In other words, for 10.7% of people in the control group, it is estimated that text reminders could have caused them to complete an interview that they missed (again assuming that no one is discouraged from completing the interview based on the reminders).</p>
 <div id="fig-text-reminders" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -492,41 +504,41 @@ window.Quarto = {
 <img src="Images/stat-inference/SNAP.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-text-reminders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: Difference in interview completion rate for treatment versus control groups, originally Figure 2 in <a href="https://doi.org/10.1002/pam.70007">Kim et. al</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
+Figure&nbsp;5.1: Difference in interview completion rate for treatment versus control groups, originally Figure 2 in <a href="https://doi.org/10.1002/pam.70007">Kim et. al</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
 </figcaption>
 </figure>
 </div>
 <p>Will this estimate be exactly correct? Almost certainly not. There is always noisiness in the real world that will partially distord our estimates. For example, by dumb luck, the participants in the treatment group may have had more family support on average, making it more likely that they would show up to their appointments even without the reminders. If so, the researchers would have overestimated the positive effect of the reminders. However, it is just as likely that the opposite is true: the control group may have had more favorable conditions for attending their appointments, causing the estimated effect to be smaller than the true effect. Because assignment to treatment and control groups was random, we can assume that there are not any systematic differences between the people in the two groups. But there will still be random mismatches, meaning that estimates will almost always be wrong by at least a bit. We have no idea in which direction the estimate is off, however, and 10.7 percentage points is our best guess for what the average treatment effect was.</p>
 </div>
 </div>
-<p>Because we are trying to make claims about data we do not directly observe, we are doing <strong>estimation</strong> when we use inferential statistics. We also have to make assumptions about how the data in our dataset were generated, as we did when creating a model of happiness in the prior chapter. Because assumptions usually cannot be (fully) tested and could end up being incorrect, there is always a risk with statistical inference that we will draw invalid conclusions. In the example above, the main assumption made is that the assignment of individuals into the treatment and control groups is truly random. This assumption could be violated if there was an error such that participants with a greater ability to make a scheduled interview were systematically more likely to receive an odd case number, for example. Fortunately, it is difficult to imagine how such a violation could have occurred in practice, unless there was deliberate data manipulation by researchers or program personnel. More broadly, it is hard to imagine a system of case ID assignment by which those receiving even-numbered case IDs would be systematically different in important ways from those receiving odd-numbered case IDs, so we can feel fairly confident about meeting the assumption of random assignment in the example above. For other studies, the assumption of random assignment for an experiment may be more questionable, such as when there are concerns that participants may have been able to tamper with their own assignment or when subjects drop out mid-study and thus cannot be included in the final analysis. Assumptions of statistical models were introduced in the prior chapter and will be discussed further in future chapters.</p>
+<p>Because we are trying to make claims about data we do not directly observe, we are doing <strong>estimation</strong> when we use inferential statistics. We also have to make assumptions about how the data in our dataset were generated. Because assumptions usually cannot be (fully) tested and could end up being incorrect, there is always a risk with statistical inference that we will draw invalid conclusions. In the example above, a key assumption is that the assignment of individuals into the treatment and control groups is truly random. This assumption could be violated if there was an error such that participants with a greater ability to make a scheduled interview were systematically more likely to receive an odd case number, for example. Fortunately, it is difficult to imagine how such a violation could have occurred in practice, unless there was deliberate data manipulation by researchers or program personnel. More broadly, it is hard to imagine a system of case ID assignment by which those receiving even-numbered case IDs would be systematically different in important ways from those receiving odd-numbered case IDs, so we can feel fairly confident about meeting the assumption of random assignment in the example above. For other studies, the assumption of random assignment for an experiment may be more questionable, such as when there are concerns that participants may have been able to tamper with their own assignment or when subjects drop out mid-study and thus cannot be included in the final analysis. Assumptions of statistical models will be discussed further in future chapters.</p>
 <p>Another important feature of inferential statistics is that it involves drawing conclusions that are expressed probabilistically. We generally cannot draw 100% definitive conclusions, but we can draw conclusions based on confidence thresholds. In most scientific work, the default confidence threshold is 95%, meaning that we are willing to accept a process for drawing conclusions with a known 5% error rate. We will see this concept demonstrated later in this chapter when discussion confidence intervals.</p>
-<section id="key-concepts-for-statistical-inference" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="key-concepts-for-statistical-inference"><span class="header-section-number">6.1</span> Key Concepts for Statistical Inference</h2>
+<section id="key-concepts-for-statistical-inference" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="key-concepts-for-statistical-inference"><span class="header-section-number">5.1</span> Key Concepts for Statistical Inference</h2>
 <p>In the context of inferential statistics, the <strong>sample</strong> refers to the actual units we observe (the observations in our dataset). Traditionally, this is contrasted with the <strong>population</strong>, meaning the full universe of units we are interested in learning about. The sample is therefore a subset of the population. If every unit in the population is included in our dataset, we have a <strong>census</strong>, not a sample, that we are analyzing.</p>
-<section id="types-of-samples" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="types-of-samples"><span class="header-section-number">6.1.1</span> Types of samples</h3>
+<section id="types-of-samples" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="types-of-samples"><span class="header-section-number">5.1.1</span> Types of samples</h3>
 <p>Statistical models used for making inferences about a population based on a sample will almost always assume that probability sampling was used. <strong>Probability sampling</strong> means that the sample is made up of units that were randomly selected from the population. For example, governments may collect survey data from samples of randomly selected participants of public programs (e.g., workforce training). In a <strong>simple random sample</strong>, all units in the population have an equal probability of being selected. There are also more elaborate techniques, such as <strong>stratified random sampling</strong> whereby the population is subdivided into various “strata” (e.g., by age and gender) and then units are randomly sampled within strata.</p>
 <p>In practice, it is often impossible to obtain a sample that is perfectly random. Even if there is a current list of everyone in a population (e.g., a client list for an organization) allowing for random selection of names to contact, there will almost always be people who refuse to provide the information required to assemble a dataset (e.g., failing to respond to a survey). One simple measure of this phenomenon commonly employed in survey research is the <strong>response rate</strong> or percentage of people invited to a survey who actually respond. For polling firms and others studying public opinion, persistently falling response rates over the past decades have made reliably measuring public opinion more difficult. Governments are often able to obtain higher response rates than private entities, but they too have struggled with declining willingness by the public to participate in data collection in many contexts.</p>
-<p>Given these challenges, it is perhaps no surprise that many datasets consist of <strong>convenience samples</strong>, whereby units are included in the sample because of convenience rather than random selection. Perhaps the most credible type of convenience sampling is representative sampling, which refers to techniques (such as demographic quotas) used to ensure that certain sample characteristics will resemble the known demographics of the broader population. Users of this approach hope that matching on certain known characteristics will lead the sample to resemble the population on other characteristics where the distribution in the population is unknown, but there is no guarantee that this will be the case.</p>
-<p>The risk for most analysts trying to draw conclusions about a population based on a sample is that they rarely have the type of purely random sample assumed in statical models used for inference. Thus, it is unclear how well the probabilistic conclusions drawn through inference methods will actually map to real-world error rates. Still, inferential statistics provide a starting point by examining what conclusions can be drawn under the best case scenario of a sample that was perfectly random. A savvy analyst will also take into account context and any available information about the sample selection process to help inform what conclusions can reasonably be drawn from the data at hand. The more closely the sampling process appears to resemble the random selection process we assume in our statistical models, the more confidence we can have that the conclusions of our statistical models properly describe the uncertainty of our estimates.</p>
+<p>Given these challenges, it is perhaps no surprise that many datasets consist of <strong>convenience samples</strong>, whereby units are included in the sample because of convenience rather than random selection. Perhaps the most credible type of convenience sampling is <strong>representative sampling</strong>, which refers to techniques (such as demographic quotas) used to ensure that certain sample characteristics will resemble the known demographics of the broader population. Users of this approach hope that matching on certain known characteristics will lead the sample to resemble the population on other characteristics where the distribution in the population is unknown, but there is no guarantee that this will be the case.</p>
+<p>The risk for most analysts trying to draw conclusions about a population based on a sample is that they rarely have the type of purely random sample assumed in statical models used for inference. Thus, it is unclear how well the probabilistic conclusions drawn through inference methods will actually map to real-world accuracy of estimation. Still, inferential statistics provide a starting point by examining what conclusions can be drawn under the best case scenario of a sample that was perfectly random. A savvy analyst will also take into account context and any available information about the sample selection process to help inform what conclusions can reasonably be drawn from the data at hand. The more closely the sampling process appears to resemble the random selection process we assume in our statistical models, the more confidence we can have that the conclusions of our statistical models properly describe the uncertainty of our estimates.</p>
 </section>
-<section id="counterfactuals" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="counterfactuals"><span class="header-section-number">6.1.2</span> Counterfactuals</h3>
+<section id="counterfactuals" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="counterfactuals"><span class="header-section-number">5.1.2</span> Counterfactuals</h3>
 <p>We’ve already seen how statistical inference can be used to draw conclusions about counterfactuals, but a more precise explanation of terminology is provided here. A <strong>counterfactual</strong> is a hypothetical alternative to what actually occurred, where one or more independent variables takes on a different value. For example, we have seen how a treatment effect can be estimated, which represents the expected change in the dependent variable if an independent variable representing the experimental group changes from “control” to “treatment.”&nbsp;</p>
 </section>
-<section id="parameters-of-interest" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="parameters-of-interest"><span class="header-section-number">6.1.3</span> Parameters of interest</h3>
-<p>Whether we are trying to draw conclusions about the population or a counterfactual, the quantitaty that we are estimating is called a <strong>parameter</strong>. For example, the parameter might be the population mean or the average treatment effect. By contrast, a <strong>sample statistic</strong> directly describes the sample itself but may also be used as an estimate of a parameter. For example, if the parameter of interest is the population mean, the sample mean will likely be our estimate of the parameter.</p>
+<section id="parameters-of-interest" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="parameters-of-interest"><span class="header-section-number">5.1.3</span> Parameters of interest</h3>
+<p>Whether we are trying to draw conclusions about the population or a counterfactual, the quantity that we are estimating is called a <strong>parameter</strong>. For example, the parameter might be the population mean or the average treatment effect. By contrast, a <strong>sample statistic</strong> directly describes the sample itself and is often used as an estimate of a parameter. For example, if the parameter of interest is the population mean, the sample mean can be our estimate of the parameter.</p>
 </section>
-<section id="importance-of-sample-size" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="importance-of-sample-size"><span class="header-section-number">6.1.4</span> Importance of sample size</h3>
+<section id="importance-of-sample-size" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="importance-of-sample-size"><span class="header-section-number">5.1.4</span> Importance of sample size</h3>
 <p>All else equal, larger samples are better. This is fairly intuitive: we are better able to estimate the attitudes of a country’s population with a sample of 2000 people than with 20, all else equal.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Larger samples allow us to draw more precise conclusions. Since we typically assume that the imprecision of our estimates is rooted in the random and unpredictable peculiarities of individual units in our sample, a larger sample will increase our precision because the individual-level idiosyncrasies begin to matter less to the overall sample. With a sample of just 20 randomly selected people, it is not at all uncommon to end up with a very unrepresentative sample, such as one with mostly men and very few women. With a random sample of 2000, it would be extremely unlikely (though not technically impossible) to get a gender balance in the sample that deviates substantially from that of the population. One reason the tools of inferential statistics are so useful is that they can precisely show us how much the precision of an estimate increases as the sample size increases (given the assumptions of the model).&nbsp;</p>
 </section>
 </section>
-<section id="confidence-intervals-a-key-tool-for-estimation" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="confidence-intervals-a-key-tool-for-estimation"><span class="header-section-number">6.2</span> Confidence Intervals: A Key Tool for Estimation</h2>
-<p>Returning to the example at the beginning of the chapter, we saw that researchers found that applicants for a food assistance program who received text reminders were 10.7 percentage points more likely to complete an interview than those in the control group who received no text reminders. This difference in the completion rate between the treatment and control groups serves as a <strong>point estimate</strong> for the parameter (effect of the text reminders). As we noted, this estimate is likely to be imperfect because of random differences in who gets assigned to the treatment versus control groups. To better convey the uncertainty surrounding a point estimate, it is usually helpful to provide an <strong>interval estimate</strong>. Interval estimates identify a range of likely values rather than a single number representing one’s best guess. For example, the researchers studying text reminders report a 95% confidence interval ranging from 5.8 to 15.5 percentage points. Thus, there is good reason to believe that the true effect size is at least 5.8 percentage points but no greater than 15.5 percentage points:</p>
+<section id="confidence-intervals-a-key-tool-for-estimation" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="confidence-intervals-a-key-tool-for-estimation"><span class="header-section-number">5.2</span> Confidence Intervals: A Key Tool for Estimation</h2>
+<p>Returning to the example at the beginning of the chapter, we saw that researchers found that applicants for a food assistance program who received text reminders were 10.7 percentage points more likely to complete an interview than those in the control group who received no text reminders. This difference in the completion rate between the treatment and control groups (the sample statistic) serves as a <strong>point estimate</strong> for the parameter (effect of the text reminders). As we noted, this estimate is likely to be imperfect because of random differences in who gets assigned to the treatment versus control groups. To better convey the uncertainty surrounding a point estimate, it is usually helpful to provide an <strong>interval estimate</strong>. Interval estimates identify a range of likely values rather than a single number representing one’s best guess. For example, the researchers studying text reminders report a 95% confidence interval ranging from 5.8 to 15.5 percentage points. Thus, there is good reason to believe that the true effect size is at least 5.8 percentage points but no greater than 15.5 percentage points:</p>
 <p><span class="math display">\[
 5.8 &lt; \text{effect size} &lt; 15.5
 \]</span></p>
@@ -538,20 +550,20 @@ Figure&nbsp;6.1: Difference in interview completion rate for treatment versus co
 <img src="Images/stat-inference/CI-simulation.png" class="img-fluid figure-img" width="550">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ci-simulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Simulation of interval estimates based on different random samples, adapted from <a href="https://doi.org/10.1525/collabra.197">Nalborczyk et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
+Figure&nbsp;5.2: Simulation of interval estimates based on different random samples, adapted from <a href="https://doi.org/10.1525/collabra.197">Nalborczyk et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
 </figcaption>
 </figure>
 </div>
-<p>This property of 95% confidence intervals is demonstrated in <a href="#fig-ci-simulation" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> which shows the results of a simulation in which random samples were drawn again and again, to see how interval estimates behave. Suppose the true effect size of a treatment is zero and each vertical bar represents the confidence interval resulting from a different random assignment of participants to treatment and control groups. As you can see, most intervals overlap with the true parameter value of zero (on the y axis), but we also expect one out of every 20 estimates (5%) to miss the mark (the bars shown in blue). In practice, we would normally only have one sample and wouldn’t know for sure if ours is one of the unlucky cases in which the confidence interval fails to include the true effect. What we do know is that we’ve followed a process that theoretically gives a correct answer 19 times out of 20.</p>
+<p>This property of 95% confidence intervals is demonstrated in <a href="#fig-ci-simulation" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> which shows the results of a simulation in which random samples were drawn again and again, to see how interval estimates behave. Suppose the true effect size for a treatment is zero and each vertical bar represents the confidence interval resulting from a different random assignment of participants to treatment and control groups. As you can see, most intervals overlap with the true parameter value of zero (on the y axis), but we also expect one out of every 20 estimates (5%) to miss the mark (the bars shown in blue). In practice, we would normally only have one sample and wouldn’t know for sure if ours is one of the unlucky cases in which the confidence interval fails to include the true effect. What we do know is that we’ve followed a process that theoretically gives a correct answer 19 times out of 20.</p>
 <p>The 95% confidence level is perhaps most common, but we also frequently encounter confidence levels of 90% and 99%. Whatever confidence level we choose, we are accepting that our procedure will yield a false answer some of the time. With a 95% confidence level we expect a 5% error rate, while a 99% confidence level is associated with an error rate of only 1%. There is always a tradeoff when choosing a confidence level. A more conservative level (e.g., 99%) will yield a wider interval, meaning that we are accepting a wider range of values as possible in order to obtain this higher level of confidence that we will avoid an error.</p>
 <p>What procedure is used to construct a confidence interval? We will learn the details in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 7</span></a>. For now, it is enough to know that there are well-established procedures for constructing confidence intervals in various settings, based on assumptions about the data. Even without knowing these exact procedures, you can hopefully begin to see the usefulness of confidence intervals from the examples in this chapter.</p>
-<section id="sec-introducing-confidence-intervals-for-regression" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-introducing-confidence-intervals-for-regression"><span class="header-section-number">6.2.1</span> Confidence Intervals for Regression</h3>
-<p>To examine use of confidence intervals for regression, we will return to the example of predicting university grades based on an admissions exam (<a href="correlation.html#sec-quick-guide-to-interpreting-regression-results" class="quarto-xref"><span>Section 3.5</span></a>). The table is shown again here as <a href="#tbl-regression-cs-gpa-repeated" class="quarto-xref">Table&nbsp;<span>6.1</span></a>.</p>
+<section id="sec-introducing-confidence-intervals-for-regression" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="sec-introducing-confidence-intervals-for-regression"><span class="header-section-number">5.2.1</span> Confidence Intervals for Regression</h3>
+<p>To examine use of confidence intervals for regression, we will return to the example of predicting university grades based on an admissions exam (<a href="correlation.html#sec-quick-guide-to-interpreting-regression-results" class="quarto-xref"><span>Section 3.5</span></a>). The table is shown again here as <a href="#tbl-regression-cs-gpa-repeated" class="quarto-xref">Table&nbsp;<span>5.1</span></a>.</p>
 <div id="tbl-regression-cs-gpa-repeated" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-regression-cs-gpa-repeated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Results for a regression with computer science GPA as the dependent variable.
+Table&nbsp;5.1: Results for a regression with computer science GPA as the dependent variable.
 </figcaption>
 <div aria-describedby="tbl-regression-cs-gpa-repeated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -607,22 +619,22 @@ Table&nbsp;6.1: Results for a regression with computer science GPA as the depend
 </div>
 <p>Because the coefficients we see in the table are just point estimates, confidence intervals can help us better understand the precision of these estimates by providing us with a range of plausible values for the coefficients. Notice that no confidence intervals have been provided in the table (which is a situation you may frequently encounter when reading social scientific research publications). Fortunately, we can easily calculate a good approximation of a confidence interval for a coefficient estimate <span class="math inline">\(\hat{\beta_i}\)</span> as long as we also have its standard error estimate (<span class="math inline">\(s_{\beta_i}\)</span>), which is provided in the table (in the column label “Std. err.”).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> We will learn exactly what a standard error is in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 7</span></a>, but for now, we can simply insert the standard error estimate into the following formulas:</p>
 <p><span class="math display">\[
-\text{Lower limit} \approx \hat{\beta_i} - 2\times s_{\beta_i}
+\text{Lower bound} \approx \hat{\beta_i} - 2\times s_{\beta_i}
 \]</span><span class="math display">\[
-\text{Upper limit} \approx \hat{\beta_i} + 2\times s_{\beta_i}
+\text{Upper bound} \approx \hat{\beta_i} + 2\times s_{\beta_i}
 \]</span></p>
-<p>Note that these formulas are just an approximation for a 95% confidence interval; the formulas for precise intervals are shown in <a href="sampling-distributions.html#sec-confidence-interval-for-a-regression-slope-coefficient" class="quarto-xref"><span>Section 7.3.3</span></a>. In this approximation, all we are doing is multiplying the standard error by two to get the margin of error.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> From our initial point estimate of the slope, we can then add or subtract the margin of error to identify a full range of plausible values.</p>
+<p>Note that these formulas are just an approximation for a 95% confidence interval; the formulas for precise intervals are shown in <a href="sampling-distributions.html#sec-confidence-interval-for-a-regression-slope-coefficient" class="quarto-xref"><span>Section 7.3.3</span></a>. Multiplying the standard error by two yields the approximate margin of error.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> From our initial point estimate of the slope, we can then add or subtract the margin of error to identify a full range of plausible values.</p>
 <p>Our approximation approach provides an inexact but close approximation of a 95% confidence interval as long as the sample size is reasonably large (e.g., at least 30 more observations than the number of independent variables included in the regression). In this case, there are 105 observations and only two independent variables, so we will obtain a good approximation. And an approximation is usually the best we can hope for when calculating confidence intervals by hand from a regression table, since we will usually also lose some precision due to rounding error.</p>
-<p>For the verbal SAT scores, we find the following limits:</p>
-<p><span class="math display">\[ \text{Lower limit} \approx 0.0017 - (2)(0.0010) = -0.0003 \]</span><span class="math display">\[ \text{Upper limit} \approx 0.0017 + (2)(0.0010) = 0.0037 \]</span></p>
+<p>For the verbal SAT scores, we find the following bounds:</p>
+<p><span class="math display">\[ \text{Lower bound} \approx 0.0017 - (2)(0.0010) = -0.0003 \]</span><span class="math display">\[ \text{Upper bound} \approx 0.0017 + (2)(0.0010) = 0.0037 \]</span></p>
 <p>This is very close to the precise 95% confidence interval that one finds using statistical software to compute an exact interval: [-0.0003, 0.0038]. Any values within this range can be considered plausible values for the coefficient, according to our model results.</p>
 <p>How do we interpret this confidence interval? Remember that when it comes to interpreting size, the coefficient indicates how many units the prediction for the dependent variable changes when the independent variable increases by one unit. But with SAT scores, a 1-unit increase is so small that we found it more useful to consider a 100-point increase, which required multiplying the coefficient by 100. Doing so here, we can conclude that a 100-point increase in the verbal SAT score (e.g., comparing a student with a 600 to a student with a 500, assuming math SAT scores are equal) predicts a difference in the computer science GPA somewhere in the range of [-0.03, 0.38]. Zero is part of this range, so it’s entirely plausible that there is no real association between verbal SAT score and computer science GPA (hence, the lack of statistical significance for this relationship). According to the model results, it is also plausible that a 100-point increase in verbal SAT is associated with the predicted computer science GPA decreasing by as much as 0.03, or increasing by as much as 0.38. A 0.03 decrease in GPA is tiny, so we might feel comfortable ruling out the possibility that a good verbal SAT score has any substantial negative predictive effect for computer science GPA. But a positive effect of 0.38 grade points is much more substantial, so it is plausible that the verbal SAT has a meaningfully-large positive association with computer science GPA.</p>
 <p>What about the math SAT? Using our approximation method:</p>
-<p><span class="math display">\[ \text{Lower limit} \approx 0.0048 - (2)(0.0012) = 0.0024 \]</span><span class="math display">\[ \text{Upper limit} \approx 0.0048 + (2)(0.0012) = 0.0072 \]</span></p>
-<p>Multiplying these two values by 100, we find that a 100-point increase in one’s math SAT is plausibly associated with an increase of between 0.24 and 0.72 points on one’s computer science GPA.</p>
+<p><span class="math display">\[ \text{Lower bound} \approx 0.0048 - (2)(0.0012) = 0.0024 \]</span><span class="math display">\[ \text{Upper bound} \approx 0.0048 + (2)(0.0012) = 0.0072 \]</span></p>
+<p>Multiplying these two values by 100, we find that a 100-point increase in the math SAT is plausibly associated with an increase of between 0.24 and 0.72 points in predicted computer science GPA.</p>
 </section>
-<section id="sec-interpreting-confidence-intervals-correctly" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-interpreting-confidence-intervals-correctly"><span class="header-section-number">6.2.2</span> Interpreting Confidence Intervals Correctly</h3>
+<section id="sec-interpreting-confidence-intervals-correctly" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="sec-interpreting-confidence-intervals-correctly"><span class="header-section-number">5.2.2</span> Interpreting Confidence Intervals Correctly</h3>
 <p>Suppose we want to estimate the average poverty rate for a city based on a sample of residents who have completed a survey. We might calculate a confidence interval and obtain the values [13.4%, 15.1%]. A common mistake made by students and scientists alike when describing this 95% confidence interval is to say “this means there is a 95% chance that the true poverty rate is between 13.4% and 15.1%.” One reason this interpretation is too simplistic is that there may be other relevant evidence about the poverty rate beyond the data used to compute our confidence interval. If several other high-quality studies of the city have recently estimated the poverty rate and produced results in the range of 17-20%, we would probably conclude that our own interval estimate has a good chance of being wrong (much greater than 5%).</p>
 <p>So what is the correct interpretation of a confidence interval? You can make the following statement any time you encounter a 95% confidence interval (of the form [A, B]):</p>
 <blockquote class="blockquote">
@@ -1076,13 +1088,13 @@ Table&nbsp;6.1: Results for a regression with computer science GPA as the depend
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span>
+      <a href="./qual-associations.html" class="pagination-link" aria-label="Relationships with Qualitative Variables">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Relationships with Qualitative Variables</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sampling-distributions.html" class="pagination-link" aria-label="Sampling Distributions">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic models">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

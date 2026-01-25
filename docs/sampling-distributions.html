@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./h-tests.html" rel="next">
-<link href="./stat-inference.html" rel="prev">
+<link href="./prob-models.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -278,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Estimation</a></li><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -358,14 +358,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
+  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,7 +377,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./h-tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -423,6 +423,18 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./change-log.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -460,7 +472,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Estimation</a></li><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-sampling-distributions" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></h1>
 </div>
@@ -483,7 +495,7 @@ window.Quarto = {
 <section id="introduction-to-sampling-distributionssampling-distributions-1" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="introduction-to-sampling-distributionssampling-distributions-1"><span class="header-section-number">7.1</span> Introduction to Sampling Distributions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
 <p>Suppose you randomly sampled 10 people from the population of women in Houston, Texas, between the ages of 21 and 35 years and computed the mean height of your sample. You would not expect your sample mean to be equal to the mean of all women in Houston. It might be somewhat lower or it might be somewhat higher, but it would not equal the population mean exactly. Similarly, if you took a second sample of 10 people from the same population, you would not expect the mean of this second sample to equal the mean of the first sample.</p>
-<p>Recall from <a href="stat-inference.html" class="quarto-xref"><span>Chapter 6</span></a> that inferential statistics concern generalizing from a sample to a population (or to a counterfactual, but for this chapter we will focus on inferring about a population). A critical part of inferential statistics involves determining how far sample statistics are likely to vary from each other and from the population parameter being estimated. (In this example, the sample statistics are the sample means and the population parameter is the population mean.) As the later portions of this chapter show, these determinations are based on sampling distributions.</p>
+<p>Recall from <a href="stat-inference.html" class="quarto-xref"><span>Chapter 5</span></a> that inferential statistics concern generalizing from a sample to a population (or to a counterfactual, but for this chapter we will focus on inferring about a population). A critical part of inferential statistics involves determining how far sample statistics are likely to vary from each other and from the population parameter being estimated. (In this example, the sample statistics are the sample means and the population parameter is the population mean.) As the later portions of this chapter show, these determinations are based on sampling distributions.</p>
 <section id="discrete-distributions" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="discrete-distributions"><span class="header-section-number">7.1.1</span> Discrete Distributions</h3>
 <p>We will illustrate the concept of sampling distributions with a simple example. <a href="#fig-poolballs" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> shows three pool balls, each with a number on it. Two of the balls are selected randomly (with replacement) and the average of their numbers is computed.</p>
@@ -1028,7 +1040,7 @@ Figure&nbsp;7.6: A simulation of a sampling distribution. The parent population 
 <p><span class="math display">\[
 90 + (1.96)(12) = 113.52
 \]</span></p>
-<p>The value of 1.96 is based on the fact that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean (in <a href="prob-models.html" class="quarto-xref"><span>Chapter 5</span></a>, we used 2 as a close approximation, but 1.96 is a more precise value); 12 is the standard error of the mean given our sample size of 9.</p>
+<p>The value of 1.96 is based on the fact that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean (in <a href="prob-models.html" class="quarto-xref"><span>Chapter 6</span></a>, we used 2 as a close approximation, but 1.96 is a more precise value); 12 is the standard error of the mean given our sample size of 9.</p>
 <div id="fig-samplingdistn9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-samplingdistn9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1954,13 +1966,13 @@ s_{\beta} = \frac{0.964}{\sqrt{10}} = 0.305
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./stat-inference.html" class="pagination-link" aria-label="Statistical Inference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span>
+      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./h-tests.html" class="pagination-link" aria-label="Hypothesis Testing">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./h-tests.html" class="pagination-link" aria-label="Theory of Hypothesis Testing">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -197,13 +197,13 @@ The case study "SAT and College GPA"[^correlation-7] contains high school and un
 @fig-unihighschoolgpa shows a scatter plot of University GPA as a function of High School GPA. You can see from the figure that there is a strong positive relationship. The correlation is 0.78. The regression equation is
 
 $$
-\widehat{University\_GPA} = (0.675)(High School GPA) + 1.097
+\widehat{University\_GPA} = 1.097 + 0.675 \times High School GPA
 $$
 
 Therefore, a student with a high school GPA of 3 would be predicted to have a university GPA of
 
 $$
-\widehat{University\_GPA} = (0.675)(3) + 1.097 = 3.12.
+\widehat{University\_GPA} = 1.097 + 0.675 \times (3) = 3.12.
 $$
 
 ![University GPA as a function of High School GPA.](Images/correlations/unihighschoolgpa.jpg){#fig-unihighschoolgpa width="450"}
@@ -253,7 +253,7 @@ Many social science papers report their main results in the form of a regression
 
 : Results for a regression with computer science GPA as the dependent variable. {#tbl-regression-cs-gpa}
 
-Up til now, we have only discussed simple regression, in which we have a single independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables representing students' university entrance exam scores—the verbal (verb_sat) and math (math_sat) sections of the SAT—are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in the appendix to this chapter. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in @tbl-regression-cs-gpa, we can interpret the results as follows:
+Up til now, we have only discussed simple regression, in which we have a single independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables representing students' university entrance exam scores—the verbal (verb_sat) and math (math_sat) sections of the SAT—are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in @sec-regression. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in @tbl-regression-cs-gpa, we can interpret the results as follows:
 
 -   verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA.[^correlation-12] Maybe there is no link, or maybe we would need more data to detect the link. Since we don't find statistical significance, we don't necessarily need to interpret the sign or size.
 -   math_sat: The p-value (0.00014) is smaller than 0.05, so math_sat is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible if scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher ($0.0048 \times 100 = 0.48$). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.
@@ -263,69 +263,3 @@ Up til now, we have only discussed simple regression, in which we have a single 
 Note that we do not need to apply the three S's to the intercept (which can also be labeled the "constant") because it is not a variable. @tbl-regression-cs-gpa also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in @sec-sampling-distributions), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).
 
 Remember that the three S's are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. And notice that the third S (size) is helps equip us to address the third Question to Always Ask about Data ("how big is the difference?"). If you've started working with a statistical software package by now, you can run your own regression models and try using the three S's to help you understand the results.
-
-<!-- And We will learn much more about testing for statistical significance in @sec-h-tests. And there are other important tools for interpreting regression results, such as confidence intervals (see @sec-estimation). Slight differences in the setup or type of regression model can sometimes yeild important differences, as discussed more in the appendix for this chapter. Entire books are devoted to the topic of regression, so there is always more to learn! -->
-
-## @sec-correlation Appendix: Multiple Regression[^correlation-13] {.unnumbered}
-
-[^correlation-13]: This section is adapted from Rudy Guerra and David M. Lane. “Introduction to Multiple Regression.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/multiple_regression.html>
-
-In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination[^correlation-14] of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of $\beta_1$ and $\beta_2$ in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction.
-
-[^correlation-14]: A linear combination of variables is a way of creating a new variable by combining other variables. A linear combination is one in which each variable is multiplied by a coefficient and the products are summed. For example, if\
-    $$Y = 3X_1 + 2X_2 + .5X_3$$\
-    then $Y$ is a linear combination of the variables $X_1$, $X_2$, and $X_3$.
-
-$$\widehat{UGPA} = \alpha + \beta_1HSGPA + \beta_2SAT$$
-
-where $\widehat{UGPA}$ is the predicted value of University GPA and $\alpha$ is a constant. For these data, the best prediction equation is shown below:
-
-$$\widehat{UGPA} = 0.540 + 0.541 \times HSGPA + 0.008 \times SAT$$
-
-In other words, to compute the prediction of a student's University GPA, you add up (a) 0.540, (b) their High-School GPA multiplied by 0.541, and (c) their SAT multiplied by 0.008. @tbl-multipleregression shows the data and predictions for the first five students in the dataset.
-
-|     |         |     |       |     |                  |     |
-|-----|---------|-----|-------|-----|------------------|-----|
-|     |         |     |       |     |                  |     |
-|     | $HSGPA$ |     | $SAT$ |     | $\widehat{UGPA}$ |     |
-|     |         |     |       |     |                  |     |
-|     | 3.45    |     | 1232  |     | 3.38             |     |
-|     |         |     |       |     |                  |     |
-|     | 2.78    |     | 1070  |     | 2.89             |     |
-|     |         |     |       |     |                  |     |
-|     | 2.52    |     | 1086  |     | 2.76             |     |
-|     |         |     |       |     |                  |     |
-|     | 3.67    |     | 1287  |     | 3.55             |     |
-|     |         |     |       |     |                  |     |
-|     | 3.24    |     | 1130  |     | 3.19             |     |
-|     |         |     |       |     |                  |     |
-
-: Data and Predictions {#tbl-multipleregression}
-
-The values of $\beta$ ($\beta_1$ and $\beta_2$) are called "regression slope coefficients."
-
-The multiple correlation (R) is equal to the correlation between the predicted scores and the actual scores. In this example, it is the correlation between $\widehat{UGPA}$ and $UGPA$, which turns out to be 0.79. That is, R = 0.79. Note that R will never be negative since if there are negative correlations between the predictor variables and the criterion, the regression coefficients will be negative so that the correlation between the predicted and actual scores will be positive.
-
-### Interpretation of Regression Coefficients {.unnumbered}
-
-A regression coefficient in multiple regression is the slope of the linear relationship between the criterion variable and the part of a predictor variable that is independent of all other predictor variables. In this example, the regression coefficient for HSGPA can be computed by first predicting HSGPA from SAT and saving the errors of prediction (the differences between $HSGPA$ and $\widehat{HSGPA}$). These errors of prediction are called "residuals" since they are what is left over in HSGPA after the predictions from SAT are subtracted, and represent the part of HSGPA that is independent of SAT. These residuals are referred to as HSGPA.SAT, which means they are the residuals in HSGPA after having been predicted by SAT. The correlation between HSGPA.SAT and SAT is necessarily 0.
-
-The final step in computing the regression coefficient is to find the slope of the relationship between these residuals and UGPA. This slope is the regression coefficient for HSGPA. The following equation is used to predict HSGPA from SAT:
-
-$$\widehat{HSGPA} = -1.314 + 0.0036 \times SAT$$
-
-The residuals are then computed as:
-
-$$HSGPA.SAT = HSGPA - \widehat{HSGPA}$$
-
-The linear regression equation for the prediction of UGPA by the residuals is
-
-$$\widehat{UGPA} = 3.173 + 0.541 \times HSGPA.SAT$$
-
-Notice that the slope (0.541) is the same value given previously for the estimate of $\beta_1$ in the multiple regression equation.
-
-This means that the regression coefficient for HSGPA is the slope of the relationship between the dependent variable and the part of HSGPA that is independent of (uncorrelated with) the other independent variables. It represents the change in the prediction for the dependent variable associated with a change of one in the independent variable when all other independent variables are held constant. Since the regression coefficient for HSGPA is 0.54, this means that, holding SAT constant, a change of one in HSGPA is associated with a change of 0.54 in $\widehat{UGPA}$. If two students had the same SAT and differed in HSGPA by 2, then you would predict they would differ in UGPA by (2)(0.54) = 1.08. Similarly, if they differed by 0.5, then you would predict they would differ by (0.50)(0.54) = 0.27.
-
-The slope of the relationship between the dependent variable and the part of an independent variable that is unique from (independent of) other independent variables is its partial slope. Thus, the regression coefficient of 0.541 for HSGPA and the regression coefficient of 0.008 for SAT are partial slopes. Each partial slope represents the relationship between the independent variable and the dependent variable holding constant all of the other independent variables.
-
-It is difficult to compare the coefficients for different variables directly because they are measured on different scales. A difference of 1 in HSGPA is a fairly large difference, whereas a difference of 1 on the SAT is negligible. Therefore, it can be advantageous to transform the variables so that they are on the same scale. The most straightforward approach is to standardize the variables (see @sec-standardization) so that they each have a standard deviation of 1. A regression coefficient for standardized variables is called a "standardized coefficient" or "beta coefficient." For these data, the standardized coefficients are 0.625 and 0.198. These values represent the change in the prediction for the dependent variable (in standard deviations) associated with a change of one standard deviation on an independent variable (holding constant the value(s) on the other independent variable(s)). Clearly, a change of one standard deviation on HSGPA is associated with a larger difference than a change of one standard deviation of SAT. In practical terms, this means that if you know a student's HSGPA, knowing the student's SAT does not aid the prediction of UGPA much. However, if you do not know the student's HSGPA, his or her SAT can aid in the prediction since the standardized coefficient in the simple regression predicting UGPA from SAT is 0.68. For comparison purposes, the standardized coefficient in the simple regression predicting UGPA from HSGPA is 0.78. As is typically the case, the partial slopes are smaller than the slopes in simple regression.

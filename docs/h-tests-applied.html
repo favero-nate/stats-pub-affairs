@@ -278,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Estimation</a></li><li class="breadcrumb-item"><a href="./h-tests-applied.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hypothesis Testing in Practice</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./h-tests-applied.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hypothesis Testing in Practice</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -358,14 +358,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
+  <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,7 +377,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./h-tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -423,6 +423,18 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./change-log.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -460,7 +472,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Estimation</a></li><li class="breadcrumb-item"><a href="./h-tests-applied.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hypothesis Testing in Practice</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./h-tests-applied.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hypothesis Testing in Practice</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-h-testing-applied" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hypothesis Testing in Practice</span></span></h1>
 </div>
@@ -479,7 +491,7 @@ window.Quarto = {
 </header>
 
 
-<p>Throughout this chapter, we will build on the tools we previously examined in <span class="citation" data-cites="qual-associations">@qual-associations</span> (comparisons of means and contingency tables). Specifically, we will learn about hypothesis tests that can be used in conjunction with previously discussed tools, allowing us to determine whether associations we observe are statistically significant.</p>
+<p>Throughout this chapter, we will build on the tools we previously examined in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> (comparisons of means and contingency tables). Specifically, we will learn about hypothesis tests that can be used in conjunction with previously discussed tools, allowing us to determine whether associations we observe are statistically significant.</p>
 <section id="sec-comparing-means" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="sec-comparing-means"><span class="header-section-number">9.1</span> Comparing Means (One Qualitative and One Quantitative Variable)</h2>
 <p>There are actually many different types of significance tests that can be used when comparing means or medians. In this section, we will introduce some of the most common ones.</p>
@@ -1589,7 +1601,7 @@ Table&nbsp;9.14: Outcome Frequencies from a Six-Sided Die.
 <p>which means the value of Chi Square with 5 degrees of freedom is 5.333.</p>
 <p>From a Chi Square calculator<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a> it can be determined that the probability of a Chi Square of 5.333 or larger is 0.377. Therefore, the null hypothesis that the die is fair cannot be rejected.</p>
 <p>This Chi Square test can also be used to test other deviations between expected and observed frequencies. The following example shows a test of whether the variable “University GPA” in the “SAT and College GPA” case study<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a> (used previously to demonstrate regression) is normally distributed.</p>
-<p>The first column in <a href="#tbl-universitygpascores" class="quarto-xref">Table&nbsp;<span>9.15</span></a> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <a href="prob-models.html" class="quarto-xref"><span>Chapter 5</span></a>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <a href="prob-models.html#sec-normal-distributions" class="quarto-xref"><span>Section 5.1.1</span></a>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.</p>
+<p>The first column in <a href="#tbl-universitygpascores" class="quarto-xref">Table&nbsp;<span>9.15</span></a> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <a href="prob-models.html" class="quarto-xref"><span>Chapter 6</span></a>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <a href="prob-models.html#sec-normal-distributions" class="quarto-xref"><span>Section 6.1.1</span></a>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.</p>
 <div id="tbl-universitygpascores" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-universitygpascores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2087,8 +2099,8 @@ Table&nbsp;9.15: Expected and Observed Scores for 105 University GPA Scores.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./h-tests.html" class="pagination-link" aria-label="Hypothesis Testing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span>
+      <a href="./h-tests.html" class="pagination-link" aria-label="Theory of Hypothesis Testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

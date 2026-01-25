@@ -1,0 +1,9 @@
+# Change Log {#sec-change-log}
+
+<!-- This version (1.3) was updated July 31, 2024. -->
+
+PDFs of past versions are currently available at <https://github.com/favero-nate/minus-the-math/tree/main/past_versions>
+
+-   Version 1.3 updates: New material on multiple regression (end of @sec-correlation, @sec-introducing-confidence-intervals-for-regression, @sec-confidence-interval-for-a-regression-slope-coefficient, and @sec-significance-test-for-a-regression-slope-coefficient). Expanded discussion of confidence intervals (@sec-estimation), including new @sec-interpreting-confidence-intervals-correctly on interpreting confidence intervals. Expanded discussion of ANOVA (end of @sec-comparing-means) and of contingency tables (@sec-contingency-tables). Notation updated in line with conventions: regression parameters are redone, and $\bar{X}$ is now used for the sample mean and $n$ for sample size. Slight extension of section on the standard normal distribution (@sec-the-standard-normal-distribution). Section on degrees of freedom moved to an appendix (end of @sec-sampling-distributions). Various formatting updates (book was recreated using Quarto) and minor (mostly non-substantive) edits throughout.
+
+-   Version 1.2 updates: The discussion of transforming variables now appears in @sec-describing-one-variable (rather than @sec-correlation).

@@ -1,4 +1,4 @@
-# Hypothesis Testing {#sec-h-tests}
+# Theory of Hypothesis Testing {#sec-h-tests}
 
 ## Introduction to Hypothesis Testing[^h-tests-1]
 
