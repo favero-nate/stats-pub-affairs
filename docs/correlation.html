@@ -415,24 +415,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+ <span class="menu-text">Teaching Resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./change-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+ <span class="menu-text">Change Log</span></a>
   </div>
 </li>
     </ul>
@@ -445,14 +439,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-bivariate-datacorrelation-1" id="toc-introduction-to-bivariate-datacorrelation-1" class="nav-link active" data-scroll-target="#introduction-to-bivariate-datacorrelation-1"><span class="header-section-number">3.1</span> Introduction to Bivariate Data</a></li>
-  <li><a href="#what-is-correlationcorrelation-4" id="toc-what-is-correlationcorrelation-4" class="nav-link" data-scroll-target="#what-is-correlationcorrelation-4"><span class="header-section-number">3.2</span> What is Correlation?</a></li>
-  <li><a href="#how-correlation-is-calculatedcorrelation-5" id="toc-how-correlation-is-calculatedcorrelation-5" class="nav-link" data-scroll-target="#how-correlation-is-calculatedcorrelation-5"><span class="header-section-number">3.3</span> How Correlation is Calculated</a></li>
-  <li><a href="#sec-introduction-to-linear-regression" id="toc-sec-introduction-to-linear-regression" class="nav-link" data-scroll-target="#sec-introduction-to-linear-regression"><span class="header-section-number">3.4</span> Introduction to Linear Regression</a>
-  <ul class="collapse">
-  <li><a href="#a-real-example" id="toc-a-real-example" class="nav-link" data-scroll-target="#a-real-example"><span class="header-section-number">3.4.1</span> A Real Example</a></li>
-  </ul></li>
+  <li><a href="#scatter-plots-and-correlation" id="toc-scatter-plots-and-correlation" class="nav-link active" data-scroll-target="#scatter-plots-and-correlation"><span class="header-section-number">3.1</span> Scatter Plots and Correlation</a></li>
+  <li><a href="#straight-lines-and-measuring-correlation" id="toc-straight-lines-and-measuring-correlation" class="nav-link" data-scroll-target="#straight-lines-and-measuring-correlation"><span class="header-section-number">3.2</span> Straight Lines and Measuring Correlation</a></li>
+  <li><a href="#sec-how-correlation-is-calculated" id="toc-sec-how-correlation-is-calculated" class="nav-link" data-scroll-target="#sec-how-correlation-is-calculated"><span class="header-section-number">3.3</span> How Correlation is Calculated</a></li>
+  <li><a href="#sec-introduction-to-linear-regression" id="toc-sec-introduction-to-linear-regression" class="nav-link" data-scroll-target="#sec-introduction-to-linear-regression"><span class="header-section-number">3.4</span> Introduction to Linear Regression</a></li>
   <li><a href="#sec-quick-guide-to-interpreting-regression-results" id="toc-sec-quick-guide-to-interpreting-regression-results" class="nav-link" data-scroll-target="#sec-quick-guide-to-interpreting-regression-results"><span class="header-section-number">3.5</span> Quick Guide to Interpreting Regression Results</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.6</span> Exercises</a></li>
+  <li><a href="#sec-correlation-appendix-formulas-for-correlation-covariance-and-regression-coefficients" id="toc-sec-correlation-appendix-formulas-for-correlation-covariance-and-regression-coefficients" class="nav-link" data-scroll-target="#sec-correlation-appendix-formulas-for-correlation-covariance-and-regression-coefficients"><span>Chapter 3</span> Appendix: Formulas for Correlation, Covariance, and Regression Coefficients</a></li>
   </ul>
 </nav>
     </div>
@@ -479,299 +472,268 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction-to-bivariate-datacorrelation-1" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="introduction-to-bivariate-datacorrelation-1"><span class="header-section-number">3.1</span> Introduction to Bivariate Data<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
-<p>Measures of central tendency, variability, and spread summarize a single variable by providing important information about its distribution. Often, more than one variable is collected on each individual. For example, in large health studies of populations it is common to obtain variables such as age, sex, height, weight, blood pressure, and total cholesterol on each individual. Economic studies may be interested in, among other things, personal income and years of education. As a third example, most university admissions committees ask for an applicant’s high school grade point average and standardized admission test scores (e.g., SAT). In this chapter we consider bivariate data, which for now consists of two quantitative variables for each individual. Our first interest is in summarizing such data in a way that is analogous to summarizing univariate (single variable) data.</p>
-<p>By way of illustration, let’s consider something with which we are all familiar: age. Let’s begin by asking if people tend to marry other people of about the same age. Our experience tells us “yes,” but how good is the correspondence? One way to address the question is to look at pairs of ages for a sample of married couples. <a href="#tbl-spousalage" class="quarto-xref">Table&nbsp;<span>3.1</span></a> below shows the ages of 10 married couples. Going across the columns we see that, yes, husbands and wives tend to be of about the same age, with men having a tendency to be slightly older than their wives. This is no big surprise, but at least the data bear out our experiences, which is not always the case.</p>
-<div id="tbl-spousalage" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spousalage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.1: Sample of spousal ages of 10 White American Couples.
-</figcaption>
-<div aria-describedby="tbl-spousalage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Husband</strong></td>
-<td>36</td>
-<td>72</td>
-<td>37</td>
-<td>36</td>
-<td>51</td>
-<td>50</td>
-<td>47</td>
-<td>50</td>
-<td>37</td>
-<td>41</td>
-</tr>
-<tr class="even">
-<td><strong>Wife</strong></td>
-<td>35</td>
-<td>67</td>
-<td>33</td>
-<td>35</td>
-<td>50</td>
-<td>46</td>
-<td>47</td>
-<td>42</td>
-<td>36</td>
-<td>41</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p>The pairs of ages in <a href="#tbl-spousalage" class="quarto-xref">Table&nbsp;<span>3.1</span></a> are from a dataset consisting of 282 pairs of spousal ages, too many to make sense of from a table. What we need is a way to summarize the 282 pairs of ages. We know that each variable can be summarized by a histogram (see <a href="#fig-histspousalage" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>) and by a mean and standard deviation (See <a href="#tbl-spousalagemeansd" class="quarto-xref">Table&nbsp;<span>3.2</span></a>).</p>
-<div id="fig-histspousalage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country’s political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.</p>
+<section id="scatter-plots-and-correlation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="scatter-plots-and-correlation"><span class="header-section-number">3.1</span> Scatter Plots and Correlation</h2>
+<p>Visually, we can depict the relationship between two quantitative variables using a scatter plot. <a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> shows an example using data from the 2018 World Bank Development Indicators dataset.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Two variables are depicted: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores).</p>
+<p>Each observation in a scatter plot is shown as one dot, with the x-axis showing values for one variable (GDP per capita in <a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>) and the y-axis representing the other variable (political stability). It is also common to add a straight line, called a regression line, showing the general trend in the data. In this first example, the regression line slopes upward from left to right, so we say there is a <strong>positive relationship</strong> between the two variables. A positive relationship means that when values of one variable are higher, values of the other variable also tend to be higher. If the line slopes downward, we say there is a <strong>negative relationship</strong>. With a negative relationship, higher values for one variable correspond to lower values for the other variable.</p>
+<div id="fig-stability-gdp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-histspousalage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/histspousalage.jpg" class="img-fluid figure-img">
+<div aria-describedby="fig-stability-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/correlations/stability_gdp.png" class="img-fluid figure-img" width="400">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histspousalage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Histograms of spousal ages.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stability-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Scatter plot of country wealth and political stability, r=0.66
 </figcaption>
 </figure>
 </div>
-<div id="tbl-spousalagemeansd" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spousalagemeansd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.2: Means and standard deviations of spousal ages.
-</figcaption>
-<div aria-describedby="tbl-spousalagemeansd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Mean</strong></th>
-<th><strong>Standard<br>
-Deviation</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Husbands</td>
-<td>49</td>
-<td>11</td>
-</tr>
-<tr class="even">
-<td>Wives</td>
-<td>47</td>
-<td>11</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p>Each distribution is fairly skewed with a long right tail. From <a href="#tbl-spousalage" class="quarto-xref">Table&nbsp;<span>3.1</span></a> we see that not all husbands are older than their wives and it is important to see that this fact is lost when we separate the variables. That is, even though we provide summary statistics on each variable, the pairing within couple is lost by separating the variables. We cannot say, for example, based on the means alone what percentage of couples has younger husbands than wives. We have to count across pairs to find this out. Only by maintaining the pairing can meaningful answers be found about couples per se. Another example of information not available from the separate descriptions of husbands and wives’ ages is the mean age of husbands with wives of a certain age. For instance, what is the average age of husbands with 45-year-old wives? Finally, we do not know the relationship between the husband’s age and the wife’s age.</p>
-<div id="fig-scatterplotspousalage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>If we want a single number to summarize the relationship between two variables, we can use a <strong>correlation coefficient</strong>. A correlation, represented by the letter “r” (<span class="math inline">\(r\)</span>), always falls between -1 and 1. It tells us two things. First, the sign indicates the direction of the relationship (positive or negative). Second, it tells us how <em>strong</em> the relationship is. Numbers closer to 0 indicate weaker relationships, while numbers closer to 1 or -1 indicate stronger relationships.</p>
+<p>For this first example, the correlation is 0.66, which indicates a positive and moderately strong relationship. The correlation matches what we see visually: it is clear that typical values for political stability tend to be higher when GDP per capita is higher. We can therefore say there is a clear, positive <strong>association</strong> between wealth and political stability (the terms “association” and “relationship” are interchangeable).</p>
+<p><a href="#fig-mortality-gpa" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> shows an example of a negative relationship. The correlation is -0.86. Wealthier countries tend to have lower infant mortality rates. The data in this scatter plot also appear to track more closely to the regression line than in our prior example. Notice that the absolute value of this correlation (0.86) is larger than that of the previous example (0.66), indicating a stronger relationship. Thus, we can say that the wealth-infant morality relationship is stronger than the wealth-political stability relationship.</p>
+<div id="fig-mortality-gpa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplotspousalage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/scatterplotspousalage.jpg" class="img-fluid figure-img" width="325">
+<div aria-describedby="fig-mortality-gpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/correlations/mortality_gdp.png" class="img-fluid figure-img" width="400">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplotspousalage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: Scatter plot showing wife’s age as a function of husband’s age, r = 0.97.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mortality-gpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Scatter plot of country wealth and infant mortality, r=-0.86
 </figcaption>
 </figure>
 </div>
-<p>We can learn much more by displaying the bivariate data in a graphical form that maintains the pairing. <a href="#fig-scatterplotspousalage" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> shows a scatter plot of the paired ages. The x-axis represents the age of the husband and the y-axis the age of the wife.</p>
-<p>There are two important characteristics of the data revealed by <a href="#fig-scatterplotspousalage" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>. First, it is clear that there is a strong relationship between the husband’s age and the wife’s age: the older the husband, the older the wife. When one variable (Y) increases with the second variable (X), we say that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have a <strong>positive association</strong>. Conversely, when <span class="math inline">\(Y\)</span> decreases as <span class="math inline">\(X\)</span> increases, we say that they have a <strong>negative association</strong>.</p>
-<p>Second, the points cluster along a straight line. When this occurs, the relationship is called a <strong>linear relationship</strong>.</p>
-<div id="fig-scatterplotstrength" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>As another example, consider <a href="#fig-unemployment-urban" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>. The data does not clearly follow any upward or downward trendline. In fact, the regression line in the graph is almost completely flat. The correlation is 0.01, which is very close to 0. Thus, there appears to be no relationship between the variables of urban population and unemployment rate.</p>
+<div id="fig-unemployment-urban" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplotstrength-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/scatterplotstrength.jpg" class="img-fluid figure-img" width="350">
+<div aria-describedby="fig-unemployment-urban-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/correlations/unemployment_urban.png" class="img-fluid figure-img" width="400">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplotstrength-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.3: Scatter plot of Grip Strength and Arm Strength, r = 0.63.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unemployment-urban-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Scatter plot of urban population and unemployment, r=0.01
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-scatterplotstrength" class="quarto-xref">Figure&nbsp;<span>3.3</span></a> shows a scatter plot of Arm Strength and Grip Strength from 149 individuals working in physically demanding jobs including electricians, construction and maintenance workers, and auto mechanics. Not surprisingly, the stronger someone’s grip, the stronger their arm tends to be. There is therefore a positive association between these variables. Although the points cluster along a line, they are not clustered quite as closely as they are for the scatter plot of spousal age.</p>
-<div id="fig-scatterplotgalileo" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplotgalileo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/scatterplotgalileo.jpg" class="img-fluid figure-img" width="400">
+<p>Note that a scatter plot can be redrawn by changing which variables are assigned to the x- and y- axes. It is standard practice, however, to choose which variable goes where based on a judgement about the likely cause-and-effect (or predictive) relationship between the two variables. Specifically, we usually depict the variable that we assume is the cause on the x-axis. We call this the <strong>independent variable</strong>. The y-axis shows the <strong>dependent variable</strong>, which is the one we believe could be affected (or predicted) by the other variable. In some cases, causal ordering is unclear and we have no intention to predict, so the graph can be drawn either way. Our first scatter plot (<a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>) is an example of an unclear case: wealth might improve stability, but stability might also enable wealth creation.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplotgalileo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.4: Galileo’s data showing a non-linear relationship.
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: Visualization with Large Datasets
 </div>
-<p>Not all scatter plots show linear relationships. <a href="#fig-scatterplotgalileo" class="quarto-xref">Figure&nbsp;<span>3.4</span></a> shows the results of an experiment conducted by Galileo on projectile motion.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In the experiment, Galileo rolled balls down an incline and measured how far they traveled as a function of the release height. It is clear from <a href="#fig-scatterplotgalileo" class="quarto-xref">Figure&nbsp;<span>3.4</span></a> that the relationship between “Release Height” and “Distance Traveled” is not described well by a straight line: If you drew a line connecting the lowest point and the highest point, all of the remaining points would be above the line. The data are better fit by a parabola (a type of curved line).</p>
-<p>With large datasets, scatter plots can be difficult to interpret since observations tend to stack on top of one another (often leaving only outliers to show up distinctly). The positive association between work experience and wages in <a href="#fig-crowded-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.5</span></a> is not particularly strong, but it is a bit difficult to discern exactly what is going on because the graph is crowded with so many observations (2,246 in total).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Larger samples will make this problem even worse.</p>
+</div>
+<div class="callout-body-container callout-body">
+<p>With large datasets, scatter plots can be difficult to interpret since observations tend to stack on top of one another (often leaving only outliers to show up distinctly). The positive association between work experience and wages in <a href="#fig-crowded-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.4</span></a> is not particularly strong, but it is a bit difficult to discern exactly what is going on because the graph is crowded with so many observations (2,246 in total).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Larger samples will make this problem even worse.</p>
 <div id="fig-crowded-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crowded-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/correlations/crowded_scatterplot.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crowded-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.5: Scatter plot of 1988 wages and work experience from a sample of young women, r=0.27.
+Figure&nbsp;3.4: Scatter plot of 1988 wages and work experience from a sample of young women, r=0.27
 </figcaption>
 </figure>
 </div>
-<p>Fortunately, we can create what is called a binned scatter plot. Rather than plotting every observation, we can divide the x axis into bins and plot just one dot per bin. The dot will indicate the mean or median value of the y variable among observations within that bin. While binned scatter plots can bring greater clarity when working large datasets, be aware that binned scatter plots tend to make relationships look stronger than they really are. This is because aggregating data (by bin, in this case) tends to reduce the noisiness associated with idiosyncrasies in individual observations. See how clear and consistent the relationship between work experience and wages appears in the binned scatter plot (<a href="#fig-binned-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.6</span></a>), despite the relatively weak relationship in the individual-level data. Notice too that the ranges of both axes are smaller than in the original scatter plot (<a href="#fig-crowded-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>), since the binning means that the full ranges of the variables are no longer depicted.</p>
+<p>Fortunately, we can create what is called a binned scatter plot. Rather than plotting every observation, we can divide the x axis into bins and plot just one dot per bin. The dot will indicate the mean or median value of the y variable among observations within that bin. While binned scatter plots can bring greater clarity when working with large datasets, be aware that binned scatter plots tend to make relationships look stronger than they really are. This is because aggregating data (by bin, in this case) tends to reduce the noisiness associated with idiosyncrasies in individual observations. See how clear and consistent the relationship between work experience and wages appears in the binned scatter plot (<a href="#fig-binned-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>), despite the relatively weak relationship in the individual-level data (<span class="math inline">\(r=0.27\)</span>). Notice too that the ranges of both axes have changed, resulting in a regression line that looks much steeper than in the original scatter plot (<a href="#fig-crowded-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.4</span></a>). This happened by default in the software used to create the graph, since the binning procedure produced a narrower range of values. By manually adjusting the graph’s settings, the axes could be redrawn to match the original graph.</p>
 <div id="fig-binned-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-binned-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/correlations/binned_scatterplot.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-binned-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.6: Binned scatter plot of the 1988 data for wages and work experienced among young women
+Figure&nbsp;3.5: Binned scatter plot of the 1988 data for wages and work experienced among young women
 </figcaption>
 </figure>
 </div>
-<p>Scatter plots that show linear relationships between variables can differ in several ways including the slope of the line about which they cluster and how tightly the points cluster about the line. We now turn our attention to a statistical measure of the strength of the relationship between two quantitative variables.</p>
+</div>
+</div>
 </section>
-<section id="what-is-correlationcorrelation-4" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="what-is-correlationcorrelation-4"><span class="header-section-number">3.2</span> What is Correlation?<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h2>
-<p>The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two variables. It is referred to as Pearson’s correlation or simply as the <strong>correlation coefficient</strong>. If the relationship between the variables is not linear, then the correlation coefficient does not adequately represent the strength of the relationship between the variables.</p>
-<p>The symbol for Pearson’s correlation is “<span class="math inline">\(\rho\)</span>” when it is measured in the population and “r” when it is measured in a sample. Because we will be dealing almost exclusively with samples, we will use r to represent Pearson’s correlation unless otherwise noted.</p>
-<p>Pearson’s r can range from -1 to 1. An r of -1 indicates a perfect negative linear relationship between variables, an r of 0 indicates no linear relationship between variables, and an r of 1 indicates a perfect positive linear relationship between variables. <a href="#fig-poslinearrel" class="quarto-xref">Figure&nbsp;<span>3.7</span></a> shows a scatter plot for which r = 1.</p>
-<div id="fig-poslinearrel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="straight-lines-and-measuring-correlation" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="straight-lines-and-measuring-correlation"><span class="header-section-number">3.2</span> Straight Lines and Measuring Correlation</h2>
+<p>There are multiple types of correlation coefficients, but the one we’ve been using is Pearson’s correlation coefficient. It is the most widely used and the one that is implied when people refer to a “correlation coefficient” without further clarification. Pearson’s correlation coefficient describes the <em>linear</em> relationship between two variables, so it indicates strength of association by telling us how closely the data follow a straight line. A value of 1 or -1 means that the data fall perfectly along a straight line. The closer the absolute value of the Pearson’s correlation is to 1, the better the data track with a straight line. The closer the correlation is to 0, the more the data defy any pattern conducive to us drawing an upward or downward sloping line through them (the data may still appear to follow a perfectly flat line).</p>
+<p><a href="#fig-perfect-corr" class="quarto-xref">Figure&nbsp;<span>3.6</span></a> shows an example of a perfect correlation. Any variable has a correlation of 1 with itself, and here we see that a variable also has a correlation of 1 with a linear transformation of itself (i.e., a standardized version of the variable, something we learned about in the prior chapter). Both axes are depicting the same variable, just expressed in different units (notice the different values on the two axes).</p>
+<div id="fig-perfect-corr" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-poslinearrel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/poslinearrel.jpg" class="img-fluid figure-img" width="325">
+<div aria-describedby="fig-perfect-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/correlations/perfect_corr.png" class="img-fluid figure-img" width="400">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poslinearrel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.7: A perfect positive linear relationship, r = 1.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-perfect-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.6: A scatter plot of a variable and its standardized values, r=1.00
 </figcaption>
 </figure>
 </div>
-<div id="fig-neglinearrel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Because Pearson’s correlation measures <em>linear</em> relationships, data that perfectly follow a curved line will not have a correlation of 1. <a href="#fig-log-transform-scatterplot" class="quarto-xref">Figure&nbsp;<span>3.7</span></a> shows GDP per capita plotted against its log transformation. Because log transformations are non-linear transformations, the data does not follow a straight line. The correlation of 0.79 indicates that the data still maps reasonably well to the straight regression line shown in the figure, but this coefficient falls well short of 1 even though we can perfectly determine the value of y (logged GDP per capita) if we know the value of x (GDP per capita). Put differently, there is a perfect relationship between the two variables—just not a linear one. Of course, the reason there is a perfect relationship is because one variable is a transformed version of the other variable. We do not normally expect to encounter variables that are perfectly related unless they are measuring they exact same thing.</p>
+<div id="fig-log-transform-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-neglinearrel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/neglinearrel.jpg" class="img-fluid figure-img" width="325">
+<div aria-describedby="fig-log-transform-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/correlations/log_transform_scatterplot.png" class="img-fluid figure-img" width="400">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neglinearrel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.8: A perfect negative linear relationship, r = 1.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-log-transform-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: A scatter plot of a variable and its log transformation, r=0.79
 </figcaption>
 </figure>
 </div>
-<div id="fig-scatterplotnorel" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplotnorel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/scatterplotnorel.jpg" class="img-fluid figure-img" width="325">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplotnorel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.9: A scatter plot for which r = 0. Notice that there is no relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.
-</figcaption>
-</figure>
-</div>
-<p>With real data, you would not expect to get values of r of exactly -1, 0, or 1. The data for spousal ages shown earlier in this chapter in <a href="#fig-scatterplotspousalage" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> has an r of 0.97.</p>
-<p>The relationship between grip strength and arm strength depicted in <a href="#fig-scatterplotstrength" class="quarto-xref">Figure&nbsp;<span>3.3</span></a> (also described in the introductory section) is 0.63.</p>
+<p>One implication of relying on a measure of linear association is that a correlation of 0 can mask non-linear relationships. Specifically, a Pearson’s correlation of 0 indicates that there is no linear association between two variables, but it is still possible for a relationship between variables to exist that cannot be approximated meaningfully with a straight line. This is one reason it is usually helpful during analysis to inspect data visually in addition to observing numerical summaries. Doing so may reveal patterns that standard statistics (like Pearson’s correlation) are not well equipped to handle. In <a href="regression.html" class="quarto-xref"><span>Chapter 12</span></a>, we will learn more about ways to build statistical models for non-linear relationships.</p>
 </section>
-<section id="how-correlation-is-calculatedcorrelation-5" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="how-correlation-is-calculatedcorrelation-5"><span class="header-section-number">3.3</span> How Correlation is Calculated<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></h2>
-<p>There are several formulas that can be used to compute Pearson’s correlation. Some formulas make more conceptual sense whereas others are easier to actually compute. We are going to begin with a formula that makes more conceptual sense.</p>
-<p>We are going to compute the correlation between the variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> shown in <a href="#tbl-rcalulation" class="quarto-xref">Table&nbsp;<span>3.3</span></a>. We begin by computing the mean for <span class="math inline">\(X\)</span> and subtracting this mean from all values of <span class="math inline">\(X\)</span>. The new variable is called “x.” The variable “y” is computed similarly. The variables x and y are said to be deviation scores because each score is a deviation from the mean. Notice that the means of x and y are both 0. Next we create a new column by multiplying x and y.</p>
-<p>Before proceeding with the calculations, let’s consider why the sum of the xy column reveals the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. If there were no relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, then positive values of x would be just as likely to be paired with negative values of y as with positive values. This would make negative values of xy as likely as positive values and the sum would be small. On the other hand, consider <a href="#tbl-rcalulation" class="quarto-xref">Table&nbsp;<span>3.3</span></a> in which high values of <span class="math inline">\(X\)</span> are associated with high values of <span class="math inline">\(Y\)</span> and low values of <span class="math inline">\(X\)</span> are associated with low values of <span class="math inline">\(Y\)</span>. You can see that positive values of x are associated with positive values of y and negative values of x are associated with negative values of y. In all cases, the product of x and y is positive, resulting in a high total for the xy column. Finally, if there were a negative relationship then positive values of x would be associated with negative values of y and negative values of x would be associated with positive values of y. This would lead to negative values for xy.</p>
-<div id="tbl-rcalulation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="sec-how-correlation-is-calculated" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-how-correlation-is-calculated"><span class="header-section-number">3.3</span> How Correlation is Calculated</h2>
+<p>There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a “sample” versus a “population” when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus here on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the appendix. Note that we use the Greek letter <span class="math inline">\(\rho\)</span> (rather than <span class="math inline">\(r\)</span>) to represent the correlation when we are describing a population.</p>
+<p>Here is one way to calculate correlation:</p>
+<p><span id="eq-pop-corr"><span class="math display">\[ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \left( \frac{y_i-\mu_y}{\sigma_y} \right)  \tag{3.1}\]</span></span></p>
+<p>Let’s try to make sense of <a href="#eq-pop-corr" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> by breaking it up into parts, starting from within the summation.</p>
+<p><span class="math inline">\(\left( \frac{x_i-\mu_x}{\sigma_x} \right)\)</span> looks like the formula for standardization we learned last chapter, except now we have added some subscripts because we are working in the context of two different variables: <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Adding <span class="math inline">\(x\)</span> as a subscript to <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> clarifies that we are referring to the mean and standard deviation of <span class="math inline">\(x\)</span>. With this part of the equation, we are converting the values of <span class="math inline">\(x\)</span> to z-scores. We can use <span class="math inline">\(z_x\)</span> to indicate z-scores of <span class="math inline">\(x\)</span>, and we can use <span class="math inline">\(z_{x_i}\)</span> to indicate that we are describing the z-score of <span class="math inline">\(x\)</span> for observation <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[z_{x_i} = \frac{x_i-\mu_x}{\sigma_x}\]</span></p>
+<p>Similarly, the second set of parentheses in <a href="#eq-pop-corr" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> indicates that we should generate z-scores for <span class="math inline">\(y\)</span>:</p>
+<p><span class="math display">\[z_{y_i} = \frac{y_i-\mu_y}{\sigma_y}\]</span></p>
+<p>Thus, we can re-write <a href="#eq-pop-corr" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> as:</p>
+<p><span class="math display">\[
+\rho =\frac{1}{N} \sum_{i=1}^{N} z_{x_i} z_{y_i}=\frac{\sum_{i=1}^{N} z_{x_i} z_{y_i}}{N}
+\]</span></p>
+<p>This makes it clear that after standardizing our two variables (<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>), we multiply them together and then take the average of this product across all observations <span class="math inline">\(i\)</span> in our dataset to find the correlation.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: Correlation of Political Stability with Urban Population
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#tbl-corr-data-excerpt" class="quarto-xref">Table&nbsp;<span>3.1</span></a> shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.</p>
+<p>In <a href="#tbl-corr-data-excerpt" class="quarto-xref">Table&nbsp;<span>3.1</span></a>, we see that the variables <code>stability</code> and <code>urban</code> have been transformed to z-scores (columns labeled <code>z_stability</code> and <code>z_urban</code>).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between <code>stability</code> and <code>urban</code>: 0.36. Thus, there is a weak but noticeable positive association between the two variables.</p>
+<div id="tbl-corr-data-excerpt" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rcalulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.3: Calculation of r.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-corr-data-excerpt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.1: Excerpt of data for example of calculating correlation
 </figcaption>
-<div aria-describedby="tbl-rcalulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-corr-data-excerpt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th><strong>X</strong></th>
-<th><strong>Y</strong></th>
-<th><strong>x</strong></th>
-<th><strong>y</strong></th>
-<th><strong>xy</strong></th>
-<th><strong>x<sup>2</sup></strong></th>
-<th><strong>y<sup>2</sup></strong></th>
+<th>id</th>
+<th>country</th>
+<th>stability</th>
+<th>urban</th>
+<th>z_stability</th>
+<th>z_urban</th>
+<th>z_stability × z_urban</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td>&nbsp;1</td>
-<td>&nbsp;4</td>
-<td>-3</td>
-<td>-5</td>
-<td>15</td>
-<td>&nbsp;9</td>
-<td>25</td>
+<td>1</td>
+<td>Afghanistan</td>
+<td>-2.76</td>
+<td>25.50</td>
+<td>-2.73</td>
+<td>-1.46</td>
+<td>3.99</td>
 </tr>
 <tr class="even">
-<td></td>
-<td>&nbsp;3</td>
-<td>&nbsp;6</td>
-<td>-1</td>
-<td>-3</td>
-<td>&nbsp;3</td>
-<td>&nbsp;1</td>
-<td>&nbsp;9</td>
+<td>2</td>
+<td>Albania</td>
+<td>0.37</td>
+<td>60.32</td>
+<td>0.40</td>
+<td>0.00</td>
+<td>0.00</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td>&nbsp;5</td>
-<td>10</td>
-<td>&nbsp;1</td>
-<td>&nbsp;1</td>
-<td>&nbsp;1</td>
-<td>&nbsp;1</td>
-<td>&nbsp;1</td>
+<td>3</td>
+<td>Algeria</td>
+<td>-0.84</td>
+<td>72.63</td>
+<td>-0.80</td>
+<td>0.52</td>
+<td>-0.42</td>
 </tr>
 <tr class="even">
-<td></td>
-<td>&nbsp;5</td>
-<td>12</td>
-<td>&nbsp;1</td>
-<td>&nbsp;3</td>
-<td>&nbsp;3</td>
-<td>&nbsp;1</td>
-<td>&nbsp;9</td>
+<td>4</td>
+<td>American Samoa</td>
+<td>1.22</td>
+<td>87.15</td>
+<td>1.25</td>
+<td>1.13</td>
+<td>1.41</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td>&nbsp;6</td>
-<td>13</td>
-<td>&nbsp;2</td>
-<td>&nbsp;4</td>
-<td>&nbsp;8</td>
-<td>&nbsp;4</td>
-<td>16</td>
+<td>5</td>
+<td>Andorra</td>
+<td>1.42</td>
+<td>88.06</td>
+<td>1.45</td>
+<td>1.17</td>
+<td>1.69</td>
 </tr>
 <tr class="even">
-<td>Total</td>
-<td>20</td>
-<td>45</td>
-<td>&nbsp;0</td>
-<td>&nbsp;0</td>
-<td>30</td>
-<td>16</td>
-<td>60</td>
+<td>6</td>
+<td>Angola</td>
+<td>-0.34</td>
+<td>65.51</td>
+<td>-0.30</td>
+<td>0.22</td>
+<td>-0.07</td>
 </tr>
 <tr class="odd">
-<td>Mean</td>
-<td>&nbsp;4</td>
-<td>&nbsp;9</td>
-<td>&nbsp;0</td>
-<td>&nbsp;0</td>
-<td>&nbsp;6</td>
+<td>7</td>
+<td>Antigua and Barbuda</td>
+<td>0.84</td>
+<td>24.60</td>
+<td>0.87</td>
+<td>-1.50</td>
+<td>-1.31</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Argentina</td>
+<td>0.01</td>
+<td>91.87</td>
+<td>0.04</td>
+<td>1.33</td>
+<td>0.06</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Armenia</td>
+<td>-0.44</td>
+<td>63.15</td>
+<td>-0.41</td>
+<td>0.12</td>
+<td>-0.05</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td><strong>Mean</strong></td>
+<td></td>
+<td>-0.03</td>
+<td>60.26</td>
+<td>0.00</td>
+<td>0.00</td>
+<td><strong>0.36</strong></td>
+</tr>
+<tr class="even">
+<td>N=204</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -780,210 +742,80 @@ Table&nbsp;3.3: Calculation of r.
 </div>
 </figure>
 </div>
-<p>Pearson’s r is designed so that the correlation between height and weight is the same whether height is measured in inches or in feet. To achieve this property, Pearson’s correlation is computed by dividing the sum of the xy column (<span class="math inline">\(\sum{xy}\)</span>) by the square root of the product of the sum of the <span class="math inline">\(x^2\)</span> column (<span class="math inline">\(\sum{x^2}\)</span>) and the sum of the <span class="math inline">\(y^2\)</span> column (<span class="math inline">\(\sum{y^2}\)</span>). The resulting formula is:</p>
-<p><span class="math display">\[
-r = \frac{\sum{xy}}{\sqrt{\sum{x^2}\sum{y^2}}}\
-\]</span></p>
-<p>and therefore:</p>
-<p><span class="math display">\[
-r = \frac{30}{\sqrt{(16)(60)}} = \frac{30}{\sqrt{960}} = \frac{30}{30.984} = 0.968\
-\]</span></p>
-<p>An alternative computational formula that avoids the step of computing deviation scores is:</p>
-<p><span class="math display">\[
-r = \frac{\sum{XY}-\frac{\sum{X}\sum{Y}}{n}}{\sqrt{\left(\sum{X^2}-\frac{(\sum{X})^2}{n}\right)}\sqrt{\left(\sum{Y^2}-\frac{(\sum{Y})^2}{n}\right)}}
-\]</span></p>
+<p>This same data is depicted in <a href="#fig-scatterplot-quadrants" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>, with <code>id</code> numbers used to plot the 9 observations shown in <a href="#tbl-corr-data-excerpt" class="quarto-xref">Table&nbsp;<span>3.1</span></a>; the remainder of the observations are plotted as circles.</p>
+<div id="fig-scatterplot-quadrants" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatterplot-quadrants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/correlations/scatterplot_quadrants.png" class="img-fluid figure-img" width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-quadrants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.8: Scatter plot with horizontal and vertical lines depicting means; initial countries are plotted using IDs rather than dots
+</figcaption>
+</figure>
+</div>
+<p>Let’s consider some of the mechanics underlying the calculation of correlation coefficients. By transforming values to z-scores, we indicate where each observation lies relative to the variable’s mean. A positive z-score indicates that the original value of the variable is above the mean while a negative z-score tells us it is below the mean. Visually, we can also see this in <a href="#fig-scatterplot-quadrants" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>, where a vertical line indicates the mean of <code>urban</code> and a horizontal line marks the mean for <code>stability</code>. This divides the observations into four quadrants. The observations in the upper-right quadrant (including observations 2, 4, 5, and 8) have positive z-scores for both variables. Multiplying two positive values results in a positive value, so all observations in this quadrant also have a positive value in the final column of the spreadsheet previewed in <a href="#tbl-corr-data-excerpt" class="quarto-xref">Table&nbsp;<span>3.1</span></a>. The bottom-left quadrant contains observations that have both below-average political stability and a below-average urban population (e.g., observation 1). Since this results in two negative z-scores being multiplied together (and the product of two negative numbers is always positive), we again see positive values in the final column of the spreadsheet. The two remaining quadrants will yield negative values in the final column because one z-score will be negative and the other positive (and the product of a negative and a positive number is negative). The upper-left quadrant has below-average values (negative z-scores) for <code>urban</code> but above-average values (positive z-scores) for <code>stability</code> (e.g., observation 7). In the bottom-right quadrant, the share of the population that is urban is above average but stability is below average (e.g., observations 3, 6, and 9).</p>
+<p>Since the correlation is the mean of the final column, we can imagine the observations with positive values in the final column “pushing” the correlation toward a positive value while the observations with negative products “push” the correlation toward a negative value. From <a href="#fig-scatterplot-quadrants" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>, we can see that there are more observations in the two quadrants yielding positive products (upper-right and bottom-left) than in the two “negative” quadrants (upper-left and bottom-right). Thus, it should come as no surprise that the correlation is positive (0.36).</p>
+</div>
+</div>
+<p>As illustrated in the example above, multiplying two standardized values together results in a positive value any time both variables are above average. This maps neatly to our conceptual definition of a positive relationship: when values of x tend to be higher (above average), values of y also tend to be higher (above average). Thus, finding above-average values for x being paired with above-average values of y (the upper-right quadrant) is consistent with the notion of a positive relationship (as are below-average x values paired with below-average y values, the lower-left quadrant). A negative relationship means that higher values of x (above average) tend to go with lower values for y (below average), so the combination of a positive z-score for x and a negative z-score for y (or vice versa) is consistent with a negative relationship.</p>
 </section>
 <section id="sec-introduction-to-linear-regression" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="sec-introduction-to-linear-regression"><span class="header-section-number">3.4</span> Introduction to Linear Regression<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></h2>
-<p>In simple linear regression, we predict scores on one variable from the scores on a second variable. The variable we are predicting is called the <strong>dependent variable</strong> and is referred to as <span class="math inline">\(Y\)</span>. The variable we are basing our predictions on is called the <strong>independent variable</strong> and is referred to as <span class="math inline">\(X\)</span>. When there is only one predictor variable, the prediction method is called simple regression. In simple linear regression, the topic of this section, the predictions of <span class="math inline">\(Y\)</span> when plotted as a function of <span class="math inline">\(X\)</span> form a straight line.</p>
-<p>The example data in <a href="#tbl-exampledata-regression" class="quarto-xref">Table&nbsp;<span>3.4</span></a> are plotted in <a href="#fig-splotexampledata" class="quarto-xref">Figure&nbsp;<span>3.10</span></a>. You can see that there is a positive relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. If you were going to predict <span class="math inline">\(Y\)</span> from <span class="math inline">\(X\)</span>, the higher the value of <span class="math inline">\(X\)</span>, the higher your prediction of <span class="math inline">\(Y\)</span>.</p>
-<div id="tbl-exampledata-regression" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-exampledata-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.4: Example data.
-</figcaption>
-<div aria-describedby="tbl-exampledata-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th><span class="math inline">\(X\)</span></th>
-<th><span class="math inline">\(Y\)</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td>1.00</td>
-<td>1.00</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>2.00</td>
-<td>2.00</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>3.00</td>
-<td>1.30</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>4.00</td>
-<td>3.75</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>5.00</td>
-<td>2.25</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<div id="fig-splotexampledata" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-splotexampledata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/splotexampledata.jpg" class="img-fluid figure-img" width="250">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-splotexampledata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.10: A scatter plot of the example data.
-</figcaption>
-</figure>
-</div>
-<p>Linear regression consists of finding the best-fitting straight line through the points. The best-fitting line is called a regression line. The black diagonal line in <a href="#fig-splotexampledatadetail" class="quarto-xref">Figure&nbsp;<span>3.11</span></a> is the regression line and consists of the predicted score on <span class="math inline">\(Y\)</span> for each possible value of <span class="math inline">\(X\)</span>. The vertical lines from the points to the regression line represent the errors of prediction. As you can see, the red point is very near the regression line; its error of prediction is small. By contrast, the yellow point is much higher than the regression line and therefore its error of prediction is large.</p>
-<div id="fig-splotexampledatadetail" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-splotexampledatadetail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/splotexampledatadetail.jpg" class="img-fluid figure-img" width="325">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-splotexampledatadetail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.11: A scatter plot of the example data. The black line consists of the predictions, the points are the actual data, and the vertical lines between the points and the black line represent errors of prediction.
-</figcaption>
-</figure>
-</div>
-<p>The error of prediction for a point is the value of the point minus the predicted value (the value on the line). <a href="#tbl-exampledatatable" class="quarto-xref">Table&nbsp;<span>3.5</span></a> shows the predicted values (<span class="math inline">\(\hat{Y}\)</span>) and the errors of prediction (<span class="math inline">\(Y-\hat{Y}\)</span>). For example, the first point has a <span class="math inline">\(Y\)</span> of 1.00 and a predicted <span class="math inline">\(Y\)</span> (called <span class="math inline">\(\hat{Y}\)</span>) of 1.21. Therefore, its error of prediction is -0.21.</p>
-<div id="tbl-exampledatatable" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-exampledatatable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.5: Example data.
-</figcaption>
-<div aria-describedby="tbl-exampledatatable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th><span class="math inline">\(X\)</span></th>
-<th><span class="math inline">\(Y\)</span></th>
-<th><span class="math inline">\(\hat{Y}\)</span></th>
-<th><span class="math inline">\(Y-\hat{Y}\)</span></th>
-<th><span class="math inline">\((Y-\hat{Y})^2\)</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td>1.00</td>
-<td>1.00</td>
-<td>1.210</td>
-<td>-0.210</td>
-<td>0.044</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>2.00</td>
-<td>2.00</td>
-<td>1.635</td>
-<td>0.365</td>
-<td>0.133</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>3.00</td>
-<td>1.30</td>
-<td>2.060</td>
-<td>-0.760</td>
-<td>0.578</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>4.00</td>
-<td>3.75</td>
-<td>2.485</td>
-<td>1.265</td>
-<td>1.600</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>5.00</td>
-<td>2.25</td>
-<td>2.910</td>
-<td>-0.660</td>
-<td>0.436</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p>You may have noticed that we did not specify what is meant by “best-fitting line.” By far, the most commonly-used criterion for the best-fitting line is the line that minimizes the sum of the squared errors of prediction. That is the criterion that was used to find the line in <a href="#fig-splotexampledatadetail" class="quarto-xref">Figure&nbsp;<span>3.11</span></a>. The last column in <a href="#tbl-exampledatatable" class="quarto-xref">Table&nbsp;<span>3.5</span></a> shows the squared errors of prediction. The sum of the squared errors of prediction shown in <a href="#tbl-exampledatatable" class="quarto-xref">Table&nbsp;<span>3.5</span></a> is lower than it would be for any other regression line.</p>
-<p>The formula for a regression line is</p>
+<h2 data-number="3.4" class="anchored" data-anchor-id="sec-introduction-to-linear-regression"><span class="header-section-number">3.4</span> Introduction to Linear Regression</h2>
+<p>As you have already seen, we often use a regression line to help demonstrate the relationship between two variables when creating a scatter plot. More broadly, regression techniques turn out to be incredibly powerful and are widely used throughout the social sciences. Regression lines are often reported using numbers in tables or equations, so it is important to understand how they can be represented in such formats and not just visually in a graph.</p>
+<p>You may recall from geometry that straight lines can be represented with an equation of the following form:</p>
 <p><span class="math display">\[
-\hat{Y} = \alpha + \beta X
+y = mx + b
 \]</span></p>
-<p>where <span class="math inline">\(\hat{Y}\)</span> is the predicted score, <span class="math inline">\(\alpha\)</span> is the <span class="math inline">\(Y\)</span>-intercept, and <span class="math inline">\(\beta\)</span> is the slope of the line. The equation for the line in <a href="#fig-splotexampledatadetail" class="quarto-xref">Figure&nbsp;<span>3.11</span></a> is</p>
+<p>where <span class="math inline">\(m\)</span> represents the slope and <span class="math inline">\(b\)</span> represents the y-intercept. By changing the values of <span class="math inline">\(m\)</span> and <span class="math inline">\(b\)</span>, we can represent any straight line.</p>
+<p>In the context of regression, we usually rearrange the terms and change the notation a bit. We can add a hat (^) above <span class="math inline">\(y\)</span> to indicate that we are making a <em>prediction</em> for the value of <span class="math inline">\(y\)</span>, and we will also add the subscript <span class="math inline">\(i\)</span> to indicate that the equation is used to make a prediction for each observation in the dataset. We use <span class="math inline">\(\alpha\)</span> to represent the y-intercept, which we usually just call the <strong>intercept</strong>, and we use <span class="math inline">\(\beta\)</span> to indicate the <strong>slope coefficient</strong>. Finally, we can add the subscript <span class="math inline">\(i\)</span> to <span class="math inline">\(x\)</span> just like we did with <span class="math inline">\(y\)</span>:</p>
 <p><span class="math display">\[
-\hat{Y} = 0.785 + 0.425X
+\hat{y_i} = \alpha + \beta x_i
 \]</span></p>
-<p>Using this equation, we can calculate predictions for <span class="math inline">\(Y\)</span> based on the value of <span class="math inline">\(X\)</span>. For <span class="math inline">\(X\)</span> = 1,</p>
+<p>How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called “least squares” because it involves minimizing the squared errors of prediction. “Error of prediction” refers to the difference between the predicted value of <span class="math inline">\(y\)</span> and the actual value of <span class="math inline">\(y\)</span> for each observation. There are well-known formulas for selecting <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> that result in the line that minimizes the sum of the squared errors. These formulas are shown in the appendix.</p>
+<p>When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. <span class="math inline">\(y\)</span> will always represent the dependent variable, since it is the variable we are trying to predict based on the value of <span class="math inline">\(x\)</span>. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of <span class="math inline">\(x\)</span> with <span class="math inline">\(y\)</span> equals the correlation of <span class="math inline">\(y\)</span> with <span class="math inline">\(x\)</span>. But when we “run a regression” (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Predicting University Student Grades
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lane and colleagues<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> offer a simple example of regression being used to predict university student performance based on high school (secondary school) performance. Performance is measured using the standard U.S. grade point system, in which students receive letter grades that are scored between 0 and 4 (e.g., A=4, B=3, C=2, D=1, F=0). Students receive separate grades in each class they take, so their overall performance is measured as a grade point average (GPA).</p>
+<p>The dataset consists of observations from 105 students who completed a computer science degree at a state university. The two variables being examined in this initial example are the GPA achieved during university studies and GPA during high school.</p>
+<p>Using the least squares formulas for estimating a regression line, Lane finds that university GPA can be predicted with the following equation:</p>
 <p><span class="math display">\[
-\hat{Y} = 0.785 + (0.425)(1) = 1.21.
+\widehat{university\_gpa}_i = 1.097 + 0.675 \times highschool\_gpa_i
 \]</span></p>
-<p>For <span class="math inline">\(X\)</span> = 2,</p>
-<p><span class="math display">\[
-\hat{Y} = 0.785 + (0.425)(2) = 1.64.
-\]</span></p>
-<section id="a-real-example" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="a-real-example"><span class="header-section-number">3.4.1</span> A Real Example</h3>
-<p>The case study “SAT and College GPA”<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student’s university grade point average (GPA) if we knew his or her high sch</p>
-<p><a href="#fig-unihighschoolgpa" class="quarto-xref">Figure&nbsp;<span>3.12</span></a> shows a scatter plot of University GPA as a function of High School GPA. You can see from the figure that there is a strong positive relationship. The correlation is 0.78. The regression equation is</p>
-<p><span class="math display">\[
-\widehat{University\_GPA} = 1.097 + 0.675 \times High School GPA
-\]</span></p>
-<p>Therefore, a student with a high school GPA of 3 would be predicted to have a university GPA of</p>
-<p><span class="math display">\[
-\widehat{University\_GPA} = 1.097 + 0.675 \times (3) = 3.12.
-\]</span></p>
+<p>This line is depicted visually in <a href="#fig-unihighschoolgpa" class="quarto-xref">Figure&nbsp;<span>3.9</span></a>. The correlation for the two variables is 0.78.</p>
 <div id="fig-unihighschoolgpa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-unihighschoolgpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/unihighschoolgpa.jpg" class="img-fluid figure-img" width="450">
+<img src="Images/correlations/unihighschoolgpa.jpg" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unihighschoolgpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.12: University GPA as a function of High School GPA.
+Figure&nbsp;3.9: Predicting university GPA based on high school GPA. Source: Lane, public domain.
 </figcaption>
 </figure>
 </div>
-</section>
+<p>We can plug in any number we want for <code>highschool_gpa</code> to see what the resulting prediction is. For example, we can see what the prediction is for students who had a high school GPA of 2.8:</p>
+<p><span class="math display">\[
+\widehat{university\_gpa}_i = 1.097 + 0.675 \times (2.8)
+\]</span><span class="math display">\[
+= 1.097 + 1.89 = 2.987
+\]</span></p>
+<p>So a student with a GPA of 2.8 in high school is predicted (based on this sample) to have a slightly higher university GPA of around 3.0 by the time they graduate. This also tracks with what we see in <a href="#fig-unihighschoolgpa" class="quarto-xref">Figure&nbsp;<span>3.9</span></a>: if we find 2.8 on the x axis and then draw a straight line up to the regression line, we can see that the height of this point on the regression line appears to correspond to approximately 3.0 on the y axis.</p>
+<p>If we stop and think about about the second Question to Always Asks about Data (who is in the dataset?), we might realize the need to add an important caveat to this analysis. The sample only includes university students who completed their degree, but many people who complete high school will never go to university. And even among those who do attend university, those with very poor grades at university are at higher risk of dropping out. Thus, the regression analysis here is unlikely to tell the full story of how high school GPA is related to academic performance at a university, since we don’t get to see from this sample how high school GPA affects the rate of completing a university degree in the first place. We only see the final grade point average among students who do complete their degrees.</p>
+</div>
+</div>
 </section>
 <section id="sec-quick-guide-to-interpreting-regression-results" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="sec-quick-guide-to-interpreting-regression-results"><span class="header-section-number">3.5</span> Quick Guide to Interpreting Regression Results<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></h2>
-<p>Many social science papers report their main results in the form of a regression table. It’s fairly easy to get started interpreting these results using the three S’s:<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<h2 data-number="3.5" class="anchored" data-anchor-id="sec-quick-guide-to-interpreting-regression-results"><span class="header-section-number">3.5</span> Quick Guide to Interpreting Regression Results</h2>
+<p>Many social science papers report their main results in the form of a regression table. It’s fairly easy to get started interpreting these results using the three S’s:<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <ul>
-<li><p><strong>Significance</strong>: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> To assess this, check the p-value. For now, you can use the following rule-of-thumb:</p>
+<li><p><strong>Significance</strong>: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> To assess this, check the p-value. For now, you can use the following rule-of-thumb:</p>
 <ul>
 <li><p>If p &lt; 0.05: the relationship is statistically significant; proceed to evaluating sign and size</p></li>
 <li><p>If p &gt; 0.05: results are somewhat indeterminate; any association detected between the two variables could easily be caused by coincidence or random “noise” (so you may want to skip evaluating sign and size)</p></li>
@@ -996,15 +828,15 @@ Figure&nbsp;3.12: University GPA as a function of High School GPA.
 </ul></li>
 <li><p><strong>Size</strong>: How big is the (predictive) effect? This S is often the most difficult to make sense of, and sometimes you may not have enough information to meaningfully evaluate it (e.g., if the units of measurement for a variable are not clearly explained).</p>
 <ul>
-<li><p>For linear models: A one-unit increase in the independent variable means we change our prediction for the dependent variable by <span class="math inline">\(\hat{\beta_i}\)</span> (where <span class="math inline">\(\hat{\beta_i}\)</span> represents the value of the coefficient estimate)<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p></li>
-<li><p>For non-linear models: Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors’ explanation of effect size or “magnitude” of association</p></li>
+<li><p>For linear models: When the independent variable increases by one unit, we adjust our prediction for the dependent variable by <span class="math inline">\(\hat{\beta_i}\)</span> (where <span class="math inline">\(\hat{\beta_i}\)</span> represents the value of the coefficient estimate)<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p></li>
+<li><p>For non-linear models (e.g., logit, probit): Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors’ explanation of effect size or “magnitude” of association</p></li>
 </ul></li>
 </ul>
-<p><a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.6</span></a> provides an example of regression results in a format similar to what you may encounter in many research publications. Note, however, that many publications do not list exact p-values; instead, they often use one or more asterisks (*) to denote coefficients with p-values smaller than 0.05 (sometimes also flagging p-values falling below various other thresholds).</p>
+<p><a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.2</span></a> provides an example of regression results in a format similar to what you may encounter in many research publications. Note, however, that many publications do not list exact p-values; instead, they often use one or more asterisks (*) to denote coefficients with p-values smaller than 0.05 (sometimes also flagging p-values falling below various other thresholds).</p>
 <div id="tbl-regression-cs-gpa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-regression-cs-gpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.6: Results for a regression with computer science GPA as the dependent variable.
+Table&nbsp;3.2: Results for a regression with computer science GPA as the dependent variable.
 </figcaption>
 <div aria-describedby="tbl-regression-cs-gpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1058,31 +890,119 @@ Table&nbsp;3.6: Results for a regression with computer science GPA as the depend
 </div>
 </figure>
 </div>
-<p>Up til now, we have only discussed simple regression, in which we have a single independent variable. But in <a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.6</span></a>, we find results for a regression where two independent variables representing students’ university entrance exam scores—the verbal (verb_sat) and math (math_sat) sections of the SAT—are jointly used to predict students’ GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in <a href="regression.html" class="quarto-xref"><span>Chapter 12</span></a>. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S’s. For the results in <a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.6</span></a>, we can interpret the results as follows:</p>
+<p><a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.2</span></a> was created by analyzing the same dataset described in the previous example, although with different variables. The dependent variable is now university GPA <em>in computer science classes</em>. Instead of high school GPA, this regression uses students’ university entrance exam scores on the verbal (<code>verb_sat</code>) and math (<code>math_sat</code>) sections of a test called the SAT. The SAT reports scores on a scale of 200 to 800 for each subject, with 800 representing a perfect score.</p>
+<p>Until now, we have looked at <em>simple</em> regression, meaning there is just one independent variable. But in <a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.2</span></a>, we find results for a regression where two independent variables (<code>verb_sat</code> and <code>math_sat</code>) are jointly used to predict students’ GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as will be further described in <a href="regression.html" class="quarto-xref"><span>Chapter 12</span></a>. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S’s. We can interpret the results in <a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.2</span></a> as follows:</p>
 <ul>
-<li>verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Maybe there is no link, or maybe we would need more data to detect the link. Since we don’t find statistical significance, we don’t necessarily need to interpret the sign or size.</li>
-<li>math_sat: The p-value (0.00014) is smaller than 0.05, so math_sat is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible if scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher (<span class="math inline">\(0.0048 \times 100 = 0.48\)</span>). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.</li>
+<li><code>verb_sat</code>: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA. Maybe there is no link, or maybe we would need more data to detect the link.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> Since we don’t find statistical significance, we don’t necessarily need to interpret the sign or size.</li>
+<li><code>math_sat</code>: The p-value (0.00014) is smaller than 0.05, so <code>math_sat</code> is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible since scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher (<span class="math inline">\(0.0048 \times 100 = 0.48\)</span>). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.</li>
 </ul>
-<p>Note that we do not need to apply the three S’s to the intercept (which can also be labeled the “constant”) because it is not a variable. <a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.6</span></a> also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 7</span></a>), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).</p>
-<p>Remember that the three S’s are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. And notice that the third S (size) is helps equip us to address the third Question to Always Ask about Data (“how big is the difference?”). If you’ve started working with a statistical software package by now, you can run your own regression models and try using the three S’s to help you understand the results.</p>
+<p>Note that we do not need to apply the three S’s to the intercept (which some publications label the “constant”) because it is not a variable. <a href="#tbl-regression-cs-gpa" class="quarto-xref">Table&nbsp;<span>3.2</span></a> also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 7</span></a>), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).</p>
+<p>Remember that the three S’s are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. And notice that the third S (size) helps equip us to address the third Question to Always Ask about Data (“how big is the difference?”). If you’ve started working with a statistical software package by now, you can run your own regression models and try using the three S’s to help you understand the results.</p>
+</section>
+<section id="exercises" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.6</span> Exercises</h2>
+<ol type="1">
+<li><p>If x is <em>negatively</em> correlated with y, that means that larger values of x are associated with _____________ values of y.</p></li>
+<li><p>If the data follows an upward sloping line (going left to right), what is the sign of the correlation?</p></li>
+<li><p>Suppose x and y have a correlation of -0.8 while x and z have a correlation of 0.2. Which pair of variables has a stronger relationship?</p></li>
+<li><p>If data in a scatter plot appear to closely follow the shape of a U, will there be a strong correlation between the two variables?</p></li>
+<li><p>With a binned scatter plot, will relationships tend to look weaker or stronger than in a traditional scatter plot?</p></li>
+<li><p>In the table below, is the independent variable (x) statistically significant? What is its sign? Size?</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Coefficients</th>
+<th>Standard Error</th>
+<th>t Stat</th>
+<th>P-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td>0.3907111</td>
+<td>0.2158171</td>
+<td>1.81</td>
+<td>0.087</td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>-0.1092141</td>
+<td>0.2002251</td>
+<td>-0.55</td>
+<td>0.592</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Write the equation for the regression results shown for question 6. Using this equation, find the predicted value of the dependent variable when x is -2.</p></li>
+<li><p>Suppose I am studying two variables (x and y), and I discover that their correlation is -0.7. If I then run a regression with x and y, what can I say ahead of time about the slope coefficient that I will find?</p></li>
+</ol>
+</section>
+<section id="sec-correlation-appendix-formulas-for-correlation-covariance-and-regression-coefficients" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-correlation-appendix-formulas-for-correlation-covariance-and-regression-coefficients"><a href="#sec-correlation" class="quarto-xref"><span>Chapter 3</span></a> Appendix: Formulas for Correlation, Covariance, and Regression Coefficients</h2>
+<p>If we are working with a sample, we can rewrite <a href="#eq-pop-corr" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> as:</p>
+<p><span id="eq-sample-corr"><span class="math display">\[
+r=\frac{1}{n-1} \sum_{i=1}^{n} \left( \frac{x_i-\bar{x}}{s_x} \right) \left( \frac{y_i-\bar{y}}{s_y} \right)
+\tag{3.2}\]</span></span></p>
+<p>The only real difference (besides notation) is that we divide by <span class="math inline">\(n-1\)</span> rather than <span class="math inline">\(N\)</span>. That is because we use sample standard deviations (<span class="math inline">\(s_x\)</span> and <span class="math inline">\(s_y\)</span>) rather than population standard deviations (<span class="math inline">\(\sigma_x\)</span>, <span class="math inline">\(\sigma_y\)</span>), and sample standard deviations are computed using <span class="math inline">\(n-1\)</span> in the denominator.</p>
+<p>It is also the case, though, that the correlation coefficient equation can be rewritten without using <span class="math inline">\(N\)</span> or <span class="math inline">\(n-1\)</span> at all, because these terms cancel out (as we will demonstrate below). Thus, we get equivalent results for the correlation coefficient (unlike with standard deviation or variance) whether we treat our dataset as a population or a sample; we just need to make sure that our formula for the correlation matches whatever formula we have used to calculate the standard deviations (when using a correlation formula that relies on standard deviations).</p>
+<p>Before we show how <span class="math inline">\(n-1\)</span> can be taken out of <a href="#eq-sample-corr" class="quarto-xref">Equation&nbsp;<span>3.2</span></a>, let’s look at an important and related statistic called “covariance.” The sample covariance, written as <span class="math inline">\(s_{xy}\)</span> or <span class="math inline">\(Cov(x,y)\)</span>, is:</p>
+<p><span class="math display">\[
+s_{xy}=Cov(x,y)= \frac{ \sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{n-1}
+\]</span></p>
+<p>The population variance is similar, except we divide by <span class="math inline">\(N\)</span> rather than <span class="math inline">\(n-1\)</span>:</p>
+<p><span class="math display">\[
+\sigma_{xy}=Cov(x,y)= \frac{ \sum_{i=1}^{N}(x_i-\bar{x})(y_i-\bar{y}) }{N}
+\]</span></p>
+<p>We can rewrite <a href="#eq-sample-corr" class="quarto-xref">Equation&nbsp;<span>3.2</span></a> to show the relationship between correlation and covariation:</p>
+<p><span class="math display">\[
+r=\frac{1}{n-1} \sum_{i=1}^{n} \left( \frac{x_i-\bar{x}}{s_x} \right) \left( \frac{y_i-\bar{y}}{s_y} \right)
+\]</span><span class="math display">\[
+=\frac{1}{n-1} \sum_{i=1}^{n}  \frac{(x_i-\bar{x})(y_i-\bar{y})}{s_x s_y}
+\]</span><span class="math display">\[
+=\frac{\sum_{i=1}^{n} (x_i-\bar{x})(y_i-\bar{y})}{n-1}   \left( \frac{1}{s_x s_y} \right)
+\]</span><span class="math display">\[
+=s_{xy} \left( \frac{1}{s_x s_y} \right) = \frac{s_{xy}}{s_x s_y} = \frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}
+\]</span></p>
+<p>Because variances are never negative values, the denominator of this equation will always be positive (assuming it is not zero). Thus, correlation and covariance will always have the same sign. They both measure association, but covariance is harder to intepret because unlike correlation, covariance is not bounded by -1 and 1. We can have a covariance of -2,000 or 1,000,000. Correlation cannot have an absolute value greater than 1 because the covariance is scaled by the variance of the underlying variables.</p>
+<p>Note too that <span class="math inline">\(Cov(x,x)=Var(x)\)</span>. Knowing this, we can demonstrate that any variable has a correlation of 1 with itself:</p>
+<p><span class="math display">\[
+r_{x,x}=\frac{Cov(x,x)}{\sqrt{Var(x)Var(x)}}=\frac{Var(x)}{Var(x)}=1
+\]</span></p>
+<p>Now that we know how to write correlation as a function of covariance and variance (or standard deviation), it is not too difficult to show how to remove <span class="math inline">\(n-1\)</span> from the equation. We will need to use the formula for the standard deviation from last chapter (<span class="math inline">\(s=\sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}\)</span>):</p>
+<p><span class="math display">\[
+r=\frac{s_{xy}}{s_x s_y} = \frac{\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{n-1}}{ \sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}} \sqrt{\frac{\sum_{i=1}^{n}(y_i-\bar{y})^2}{n-1}}  }
+\]</span> <span class="math display">\[
+= \frac{\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{n-1}}{ \frac{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2 }}{n-1} }
+\]</span> <span class="math display">\[
+= \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2 } }
+\]</span></p>
+<p>This final expression is another common way to write the equation for the correlation coefficient. It also helps explain why there is no need to create separate functions (in statistical software) for calculating sample versus population correlations, since there is no need to divide by <span class="math inline">\(N\)</span> or <span class="math inline">\(n-1\)</span> or to rely on calculations of variance/standard deviation (which differ for the population and sample).</p>
+<p>To conclude this appendix, let’s go over the formulas for ordinary least squares (OLS) estimates of a simple regression line. The formula for estimating the slope is:</p>
+<p><span class="math display">\[
+\hat{\beta} = \frac{s_{xy}}{s_x^2} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sum_{i=1}^{n}(x_i-\bar{x})^2  }
+\]</span></p>
+<p>As we discussed with correlation, a denominator made up of variances will never be negative. Therefore, the sign of the slope will always be equal to the sign of the covariance (<span class="math inline">\(s_{xy}\)</span>) and also of correlation (since covariance and correlation always share the same sign).</p>
+<p>The estimate of the intercept is:</p>
+<p><span class="math display">\[
+\hat{\alpha} = \bar{y} - \hat{\beta} \bar{x}
+\]</span></p>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>This section is adapted from Rudy Guerra and David M. Lane. “Introduction to Bivariate Data.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/describing_bivariate_data/intro.html" class="uri">https://onlinestatbook.com/2/describing_bivariate_data/intro.html</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://www.amstat.org/publications/jse/v3n1/datasets.dickey.html" class="uri">https://www.amstat.org/publications/jse/v3n1/datasets.dickey.html</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>US National Longitudinal Survey of Young Women (NLSW), 1988 extract. Accessed via Stata.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>This section is adapted from David M. Lane. “Values of the Pearson Correlation.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/describing_bivariate_data/pearson.html" class="uri">https://onlinestatbook.com/2/describing_bivariate_data/pearson.html</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>This section is adapted from David M. Lane. “Computing Pearson’s r.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/describing_bivariate_data/calculation.html" class="uri">https://onlinestatbook.com/2/describing_bivariate_data/calculation.html</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>This section is adapted from David M. Lane. “Introduction to Linear Regression.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/regression/intro.html" class="uri">https://onlinestatbook.com/2/regression/intro.html</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p><a href="https://onlinestatbook.com/2/case_studies/sat.html" class="uri">https://onlinestatbook.com/2/case_studies/sat.html</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>This section is written by Nathan Favero.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Wheelan, C. (2010.) <em>Introduction to Public Policy</em>. New York: W. W. Norton &amp; Company.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., &amp; Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. <em>The American Statistician</em>, <em>73</em>(sup1), 374-384.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Why <span class="math inline">\(\hat{\beta_i}\)</span> and not simply <span class="math inline">\(\beta_i\)</span>? We use the hat symbol (<span class="math inline">\(\hat{~}\)</span>) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We’ll learn more about estimation in <a href="stat-inference.html" class="quarto-xref"><span>Chapter 5</span></a>.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Note, however, that the absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA—just one that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association).<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">World Development Indicators</a> (<a href="https://datacatalog.worldbank.org/public-licenses?fragment=cc">CC-BY 4.0</a>)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>US National Longitudinal Survey of Young Women (NLSW), 1988 extract. Accessed via Stata.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Note that standardizing was accomplished using the population variance formula, in order to match the calculation of the mean for the final column, which divides by N rather than n - 1.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The main exception is that if we have two standardized variables, the regression slope will be equal to the correlation and the intercept will be 0, so coefficients will be equivalent regardless of which variable is designated the dependent variable.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>David M. Lane. “Introduction to Linear Regression.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/regression/intro.html" class="uri">https://onlinestatbook.com/2/regression/intro.html</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Wheelan, C. (2010.) <em>Introduction to Public Policy</em>. New York: W. W. Norton &amp; Company.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., &amp; Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. <em>The American Statistician</em>, <em>73</em>(sup1), 374-384.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Why <span class="math inline">\(\hat{\beta_i}\)</span> and not simply <span class="math inline">\(\beta_i\)</span>? We use the hat symbol (<span class="math inline">\(\hat{~}\)</span>) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We’ll learn more about estimation in <a href="stat-inference.html" class="quarto-xref"><span>Chapter 5</span></a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>The absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association). Confidence intervals (introduced in <a href="stat-inference.html" class="quarto-xref"><span>Chapter 5</span></a>) will help us evaluate this possibility.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

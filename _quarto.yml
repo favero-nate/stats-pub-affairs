@@ -5,7 +5,7 @@ project:
 book:
   title: "Statistics Minus the Math 2.0"
   author: "Nathan Favero"
-  date: "1/16/2026"
+  date: "2/5/2026"
   chapters:
     - index.qmd
     - part: "Describing Data"
@@ -26,7 +26,7 @@ book:
       - causality.qmd
       - measurement.qmd
       - regression.qmd
-      - practical-points.qmd
+#      - practical-points.qmd
     - teaching-resources.qmd
     - change-log.qmd
 

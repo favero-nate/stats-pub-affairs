@@ -18,7 +18,7 @@ To help focus your attention on thinking critically, I encourage you to ask the 
 
 3.  How big are the differences?
 
-::: callout-tip
+::: {.callout-tip icon="false"}
 ## Example: Long-Term Trends in U.S. Education {.unnumbered}
 
 Many have argued that despite huge investments in public schooling, the U.S. has little to show in terms of learning gains.[^getting-started-2] In @fig-edu-trends, the solid line indicates a clear upward trend in spending on education over the decades, although there is a slight dip at the very end of the series (following the 2008 financial crisis).[^getting-started-3] The trajectory for math scores (the dashed line) is much less clear: an initial drop is followed by steep gains for a little while. Looking to the beginning and end points, we see the average score in 2012 is a bit higher than in 1973 (306 vs. 304), but this gain is tiny compared to the fluctuations seen across years.[^getting-started-4]
@@ -178,7 +178,7 @@ As useful as graphs are, it is also easy to go wrong with data visualization. He
 
 First, the simple graphs we examined for quantitative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
 
-::: callout-tip
+::: {.callout-tip icon="false"}
 ## Example: Estimates of Small Donations {.unnumbered}
 
 A survey of nonprofits asked each respondent to estimate the percentage of individual donations to their organization in 2019 that were smaller than \$250.[^getting-started-9] Look at how different the right-most bars of the histogram look, depending on whether we use 10 bins or 11 bins (a setting we can change in the software creating the histogram):
@@ -208,7 +208,7 @@ Graphs are often poorly constructed in ways that can mislead, so it's always imp
 
 Let's look at some examples and see if any of the Three Questions to Always Ask about Data can help us identify misleading graphs.
 
-::: {.callout-tip .unnumbered}
+::: {.callout-tip .unnumbered icon="false"}
 ## Example: Differences in employee attitudes by sex
 
 Q2 from the survey of federal employees asks whether there is a workplace environment supportive of innovation. As already noted, this variable is ordinal, meaning it is not obvious what numbers would be most appropriate to attach to the variable values. Nonetheless, we adopt here the common practice of starting from 1 and counting up by whole numbers for the different response option:
@@ -240,7 +240,7 @@ Generally speaking, any difference can be made to visually look very large or ve
 
 It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the one from the prior example. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y axis in order to avoid "zooming in" on the y axis so much that we make small differences appear larger than they really are. Let's consider this rule in the context of some data on trends in childhood vaccination.
 
-::: callout-tip
+::: {.callout-tip icon="false"}
 ## Example: Childhood Vaccination Rates {.unnumbered}
 
 Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-11] @fig-vaccines-zoomed-out shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line).[^getting-started-12] The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.

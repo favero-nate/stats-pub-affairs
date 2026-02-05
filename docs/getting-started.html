@@ -386,24 +386,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+ <span class="menu-text">Teaching Resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./change-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+ <span class="menu-text">Change Log</span></a>
   </div>
 </li>
     </ul>
@@ -430,6 +424,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#best-practices-for-simple-graphs" id="toc-best-practices-for-simple-graphs" class="nav-link" data-scroll-target="#best-practices-for-simple-graphs"><span class="header-section-number">1.3.3</span> Best practices for simple graphs</a></li>
   </ul></li>
   <li><a href="#sec-critically-evaluating-graphs" id="toc-sec-critically-evaluating-graphs" class="nav-link" data-scroll-target="#sec-critically-evaluating-graphs"><span class="header-section-number">1.4</span> Critically Evaluating Graphs</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -457,8 +452,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Data is everywhere. Yet many of us find numbers intimidating. It can be tempting to assume that someone sophisticated enough to fluently cite numerical information must know what they’re talking about. At the same time, there is a kind of backlash to using numbers to describe the world. The title of the popular book <em>How to Lie with Statistics</em> captures a cynicism many people feel: since statistics can easily trick you, you shouldn’t believe them at all. Such extreme reactions reflect people’s lack of self-confidence in evaluating quantitative information. Because we don’t trust ourselves, we reflexively either dismiss or accept numerical claims—perhaps depending on whether the claim is one we already agree with or the source is one we trust.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Fortunately, statistics is a topic that most anyone can learn. Even if you think you are not a “numbers person,” I am confident you can learn fundamentals that will allow you to critically assess statistical claims. I say this as someone who has spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study public affairs—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. It is true that some people learn numerical material quicker than others. For most people, lots of repetition is required before many statistical concepts are grasped. But I have yet to encounter a student who is unable to learn statistics. If you set your mind to it, you will learn it.</p>
-<p>In my opinion, the most important skill for dealing with statistics is critical thinking. While statistics is certainly quantitative, doing statistical analysis does not require you to perform complex math because software will handle the number crunching. Thus, being comfortable with statistics is mostly about developing familiarity with statistical concepts, mastering a few technical details, and thinking carefully about how to best apply statistical tools to real-world data. “Subject-matter expertise,” by which I mean familiarity with the policy or program area described by the data, is almost always required for good interpretation of statistical results. Sometimes, a bit of math will help with explaining how a statistic works or gaming out the implications of a statistical result. But even then, most of the math we need for an introductory course is relatively simple arithmetic.</p>
+<p>Fortunately, statistics is a topic that most anyone can learn. Even if you think you are not a “numbers person,” I am confident you can learn fundamentals that will allow you to critically assess statistical claims. I say this as someone who has spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study social science topics—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. It is true that some people learn numerical material more quickly than others. For most people, lots of repetition is required before many statistical concepts are grasped. But I have yet to encounter a student who is unable to learn statistics. If you set your mind to it, you will learn it.</p>
+<p>In my opinion, the most important skill for dealing with statistics is critical thinking. While statistics is certainly quantitative, doing statistical analysis does not require you to perform complex math because software will handle the number crunching. Thus, being comfortable with statistics is mostly about developing familiarity with statistical concepts, mastering a few technical details, and thinking carefully about how to best apply statistical tools to real-world data. “Subject-matter expertise,” by which I mean familiarity with the topics (e.g., policy or program area) described by the data, is almost always required for good interpretation of statistical results. Sometimes, a bit of math will help with explaining how a statistic works or gaming out the implications of a statistical result. But even then, most of the math we need for an introductory course is relatively simple arithmetic.</p>
 <section id="three-questions-to-always-ask-about-data" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="three-questions-to-always-ask-about-data"><span class="header-section-number">1.1</span> Three Questions to Always Ask about Data</h2>
 <p>To help focus your attention on thinking critically, I encourage you to ask the following three questions whenever you encounter statistical information:</p>
@@ -467,10 +462,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Who (or what) is in the dataset?</p></li>
 <li><p>How big are the differences?</p></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example: Long-Term Trends in U.S. Education
@@ -490,7 +485,7 @@ Figure&nbsp;1.1: Trends in U.S. education spending and average math proficiency 
 </div>
 <p>Notice that there are two y-axes on this graph: one on the left edge showing the units for expenditures and one on the right edge displaying units that are described as NAEP scores. That is because the trend in Math proficiency (measured using NAEP scores) is superimposed over the trend in spending levels, despite the fact that these two variables are measured in entirely different units. In my experience, the use of two y-axes often leads to confusion, and it is usually better to “keep it simple” by separating the data into two separate graphs.</p>
 <p>In analyzing this example, I will mostly ignore the spending trend in favor of evaluating the math trend, for sake of brevity. Still, I will note that increased spending is largely driven by (1) increasing labor costs across the (high-skilled) economy and (2) greater investments in special education. The latter investments likely improve equity and fairness in society but may do little to improve test scores.</p>
-<p>Regarding the math trend, let us consider our 3 Questions to Always Ask about Data:</p>
+<p>Regarding the math trend, let us consider our three Questions to Always Ask about Data:</p>
 <ol type="1">
 <li><p><strong>What is being measured?</strong></p>
 <p>If you were encountering this data for the first time on your own, I would recommend doing a quick online search for NAEP scores, perhaps focusing on descriptions from familiar sources like Wikipedia or government websites. You would find that NAEP scores come from standardized tests conducted by the Department of Education. If you wanted to go even deeper, you might do a Google Scholar search to see how researchers seem to be discussing/using NAEP scores. They are generally considered to be high-quality measures of student learning. You might also discover that there are actually two different kinds of NAEP scores: the long-term trend scores, shown here, as well as another set of scores based on a test that has only been administered since the 1990s.</p></li>
@@ -503,17 +498,17 @@ Figure&nbsp;1.1: Trends in U.S. education spending and average math proficiency 
 <img src="Images/getting-started/9yo_naep.png" class="img-fluid figure-img" width="550">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-naep-9yr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Trend in 9-year-old math proficiency
+Figure&nbsp;1.2: Trend in 9-year-old math proficiency. Source: <a href="https://www.nationsreportcard.gov/ltt">NCES</a> (public domain).
 </figcaption>
 </figure>
 </div>
-<div id="fig-naep-13yr" class="quarto-float quarto-figure quarto-figure-center anchored" width="550">
+<div id="fig-naep-13yr" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-naep-13yr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://www.nationsreportcard.gov/ltt"><img src="Images/getting-started/13yo_naep.png" class="img-fluid figure-img" width="550"></a>
+<img src="Images/getting-started/13yo_naep.png" class="img-fluid figure-img" width="550">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-naep-13yr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: Trend in 13-year-old math proficiency
+Figure&nbsp;1.3: Trend in 13-year-old math proficiency. Source: <a href="https://www.nationsreportcard.gov/ltt">NCES</a> (public domain).
 </figcaption>
 </figure>
 </div>
@@ -529,7 +524,7 @@ Figure&nbsp;1.3: Trend in 13-year-old math proficiency
 </section>
 <section id="how-datasets-are-structured" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="how-datasets-are-structured"><span class="header-section-number">1.2</span> How Datasets are Structured</h2>
-<p>We often display data in the form of a spreadsheet. <a href="#tbl-country-preview" class="quarto-xref">Table&nbsp;<span>1.1</span></a> shows part of a dataset describing countries. Each row represents one country, and we call the rows <strong>observations</strong>. Each column represents one characteristic of the countries. We call the columns <strong>variables</strong>. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns <u>vari</u>ables because they display values of a characteristic that <u>varies</u> depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.</p>
+<p>We often display data in the form of a spreadsheet. <a href="#tbl-country-preview" class="quarto-xref">Table&nbsp;<span>1.1</span></a> shows part of a dataset describing countries. Each row represents one country, and we call the rows <strong>observations</strong>. Each column represents one characteristic of the countries. We call the columns <strong>variables</strong>. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns <u>vari</u>ables because each column displays values of a characteristic that <u>varies</u> depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.</p>
 <div id="tbl-country-preview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-country-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -760,7 +755,7 @@ Figure&nbsp;1.5: Pie chart of race variable from 2024 survey of U.S. government 
 </figcaption>
 </figure>
 </div>
-<p>Note that bar charts and pie charts can be used to represent things other than the frequency with which different values of a variable occur, even though that is the main way we use them while studying statistics. When you encounter a graph, it is always important to carefully read the titles and labels to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or as noted above, you might see the levels for budget categories themselves depicted in a pie chart—highlighting how some categories make up a much larger share of the budget than others. In such cases, the charts would not be telling you how many observations (rows of data) record different values of a variable, as in the example graphs shown here.</p>
+<p>Note that bar charts and pie charts can be used to represent things other than the frequency with which different values of a variable occur, even though that is the main way we use them while studying statistics. When you encounter a graph, it is always important to carefully read the titles and labels to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or as noted above, you might see the levels for budget categories themselves depicted in a pie chart—highlighting how some categories make up much larger shares of the budget than others. In such cases, the charts would not be telling you how many observations (rows of data) record different values of a variable, as in the example graphs shown here.</p>
 </section>
 <section id="sec-quantitative-variables" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="sec-quantitative-variables"><span class="header-section-number">1.3.2</span> Quantitative variables</h3>
@@ -801,12 +796,12 @@ Figure&nbsp;1.8: Various plots of public_sector_size variable from a dataset of 
 </section>
 <section id="best-practices-for-simple-graphs" class="level3" data-number="1.3.3">
 <h3 data-number="1.3.3" class="anchored" data-anchor-id="best-practices-for-simple-graphs"><span class="header-section-number">1.3.3</span> Best practices for simple graphs</h3>
-<p>As useful as graphs are, it is also easy to go wrong with data visualization. Here are three simple guidelines to keep in mind when getting started with graphs.</p>
-<p>First, the simple graphs we examined for quantative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>As useful as graphs are, it is also easy to go wrong with data visualization. Here are three guidelines to keep in mind when getting started with graphs.</p>
+<p>First, the simple graphs we examined for quantitative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example: Estimates of Small Donations
@@ -840,17 +835,17 @@ Figure&nbsp;1.10: Histogram with a bin width of 1 (depicting donations estimate 
 </div>
 </div>
 <p>Second, be careful about using line graphs. When working with time series data, we often depict quantitative variables using a line graph. As we already saw in our example on trends in U.S. education, line graphs allow one to visually observe trends over time. While line graphs are appropriate for depicting time series data, their use in other contexts is often misleading, since the lines suggest connections between points that may not be connected at all in reality.</p>
-<p>Finally, it is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. As I alluded to near the beginning of the chapter, “keep it simple” is a great mantra to remember for data visualization (and much of data analysis). Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> Focus on simplicity and clarity in data visualization, not trying to stand out.</p>
+<p>Third, “keep it simple” is a great mantra to remember for data visualization (and much of data analysis). It is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> Focus on simplicity and clarity in data visualization, not trying to stand out.</p>
 </section>
 </section>
 <section id="sec-critically-evaluating-graphs" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="sec-critically-evaluating-graphs"><span class="header-section-number">1.4</span> Critically Evaluating Graphs</h2>
 <p>Graphs are often poorly constructed in ways that can mislead, so it’s always important to think critically and exercise caution when interpreting data visualizations.</p>
 <p>Let’s look at some examples and see if any of the Three Questions to Always Ask about Data can help us identify misleading graphs.</p>
-<div class="unnumbered callout callout-style-default callout-tip callout-titled">
+<div class="unnumbered callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example: Differences in employee attitudes by sex
@@ -893,10 +888,10 @@ Figure&nbsp;1.12: A tiny difference that looks tiny: Comparing average male and 
 </div>
 <p>Generally speaking, any difference can be made to visually look very large or very small depending on how the axes are drawn. It is all about how “zoomed in” or “zoomed out” you are relative to the range of possible values for the variable.</p>
 <p>It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the one from the prior example. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y axis in order to avoid “zooming in” on the y axis so much that we make small differences appear larger than they really are. Let’s consider this rule in the context of some data on trends in childhood vaccination.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example: Childhood Vaccination Rates
@@ -929,6 +924,73 @@ Figure&nbsp;1.14: Another depiction of the trend in MMR vaccination among childr
 </div>
 <p>For good visualization, we want differences that are meaningful in reality to be visually noticeable in our graphs. How do we define a “meaningful” difference? There is no universal rule. Typically, subject-matter expertise and careful judgment will be our best guides.</p>
 <p>Whenever you see a difference in a graph that “looks big” or “looks small,” take a moment to pause. Look carefully at the numbers on the axes, and think about how to evaluate the third Question to Always Ask about Data: “Based on what I know about this topic and how the variables are measured, <em>how big is this difference</em>? Does my understanding of the numbers match what my eyes see?”</p>
+</section>
+<section id="exercises" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.5</span> Exercises</h2>
+<ol type="1">
+<li><p>What are the three Questions to Always Ask about Data?</p></li>
+<li><p>What types of variables are <code>voter_registration</code>, <code>follows_news</code>, and <code>years_living_in_state</code> in the table below?</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 30%">
+<col style="width: 27%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>voter_registration&nbsp;</th>
+<th>follows_news</th>
+<th>years_living_in_state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>registered</td>
+<td>somewhat agree</td>
+<td>26</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ineligible</td>
+<td>strongly disagree</td>
+<td>51</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>unregistered</td>
+<td>strongly agree</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>registered</td>
+<td>somewhat agree</td>
+<td>34</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>registered</td>
+<td>somewhat disagree</td>
+<td>44</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>unregistered</td>
+<td>strongly agree</td>
+<td>11</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>What is the unit of analysis in the table from question 2?</p></li>
+<li><p>If I have a dataset where the unit of observation is the week, what type of dataset do I have?</p></li>
+<li><p>What is another name for a qualitative variable?</p></li>
+<li><p>Are pie charts or bar charts more popular among scientists for depicting a qualitative variable?</p></li>
+<li><p>What are three best practices for creating graphs (as described in this chapter)?</p></li>
+<li><p>Why is it important to carefully read the labels on a graph’s axes?</p></li>
+</ol>
 
 
 </section>
@@ -941,8 +1003,8 @@ Figure&nbsp;1.14: Another depiction of the trend in MMR vaccination among childr
 <li id="fn4"><p>National Center for Education Statistics (2013).&nbsp;<em>The Nation’s Report Card: Trends in Academic Progress 2012</em> &nbsp;(NCES 2013–456). National Center for Education Statistics, Institute of Education Sciences, U.S. Department of Education, Washington, D.C.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>U.S. Department of Education, Institute of Education Sciences, National Center for Education Statistics, National Assessment of Educational Progress (NAEP), various years, 1971–2023 Long-Term Trend Reading and Mathematics Assessments. <a href="https://www.nationsreportcard.gov/ltt" class="uri">https://www.nationsreportcard.gov/ltt</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>See <a href="https://www.chalkbeat.org/2022/3/31/23005371/high-school-test-scores-underestimate-naep-dropout-nces/" class="uri">https://www.chalkbeat.org/2022/3/31/23005371/high-school-test-scores-underestimate-naep-dropout-nces/</a> and <a href="https://www.edweek.org/teaching-learning/are-rising-grad-rates-pulling-down-naep-scores/2016/05" class="uri">https://www.edweek.org/teaching-learning/are-rising-grad-rates-pulling-down-naep-scores/2016/05</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Data sources are the Worldwide Bureaucracy Indicators dataset (<a href="https://datacatalog.worldbank.org/public-licenses?fragment=cc">CC-BY 4.0</a>) and the Colonial Dates Dataset.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>2024 U.S. Federal Employee Viewpoint Survey<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Data sources are the <a href="https://datacatalog.worldbank.org/search/dataset/0038132/worldwide-bureaucracy-indicators">Worldwide Bureaucracy Indicators</a> (<a href="https://datacatalog.worldbank.org/public-licenses?fragment=cc">CC-BY 4.0</a>) and the <a href="https://doi.org/10.7910/DVN/T9SDEW">Colonial Dates Dataset</a> (public domain).<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>2024 U.S. Federal Employee Viewpoint Survey (public domain)<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>Year 1 of the Nonprofit Trends Longitudinal Survey Public Use Data Files. <a href="https://doi.org/10.7910/DVN/T4OT1J" class="uri">https://doi.org/10.7910/DVN/T4OT1J</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>See, for example, violations of the “principle of proportional ink”: <a href="https://callingbullshit.org/tools/tools_proportional_ink.html" class="uri">https://callingbullshit.org/tools/tools_proportional_ink.html</a><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>Pandey, A., &amp; Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide.&nbsp;<em>The Lancet Global Health</em>,&nbsp;<em>11</em>(4), e478-e479. <a href="https://doi.org/10.1016/S2214-109X(23)00063-3" class="uri">https://doi.org/10.1016/S2214-109X(23)00063-3</a><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

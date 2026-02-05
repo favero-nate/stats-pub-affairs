@@ -8,7 +8,7 @@ Managers, policy makers, and researchers all face uncertainty in the world aroun
 
 **Probability distributions** are precise descriptions of all possible values that could be obtained from a random process as well as the probability of each value occurring. One of the simplest probability distributions describes a coin flip. The two possible values are "heads" and "tails," and each value has a 50% chance—or .5 probability—of occurring. Probability distributions are very useful in statistics because they allow us to build statistical models that account for randomness or uncertainty.
 
-::: callout-tip
+::: {.callout-tip icon="false"}
 ## Example: Anticipating How Many Visitors to Expect {.unnumbered}
 
 Suppose you run an organization and want to plan for how many customers to expect the next day. If you are operating in a stable environment, you might be able to use data on past customer volume to make reasonable predictions about the future.

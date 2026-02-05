@@ -1,224 +1,185 @@
 # Tools for Describing the Relationship Between Two Quantitative Variables {#sec-correlation}
 
-## Introduction to Bivariate Data[^correlation-1]
+When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country's political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.
 
-[^correlation-1]: This section is adapted from Rudy Guerra and David M. Lane. “Introduction to Bivariate Data.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/intro.html>
+## Scatter Plots and Correlation
 
-Measures of central tendency, variability, and spread summarize a single variable by providing important information about its distribution. Often, more than one variable is collected on each individual. For example, in large health studies of populations it is common to obtain variables such as age, sex, height, weight, blood pressure, and total cholesterol on each individual. Economic studies may be interested in, among other things, personal income and years of education. As a third example, most university admissions committees ask for an applicant's high school grade point average and standardized admission test scores (e.g., SAT). In this chapter we consider bivariate data, which for now consists of two quantitative variables for each individual. Our first interest is in summarizing such data in a way that is analogous to summarizing univariate (single variable) data.
+Visually, we can depict the relationship between two quantitative variables using a scatter plot. @fig-stability-gdp shows an example using data from the 2018 World Bank Development Indicators dataset.[^correlation-1] Two variables are depicted: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores).
 
-By way of illustration, let's consider something with which we are all familiar: age. Let’s begin by asking if people tend to marry other people of about the same age. Our experience tells us "yes," but how good is the correspondence? One way to address the question is to look at pairs of ages for a sample of married couples. @tbl-spousalage below shows the ages of 10 married couples. Going across the columns we see that, yes, husbands and wives tend to be of about the same age, with men having a tendency to be slightly older than their wives. This is no big surprise, but at least the data bear out our experiences, which is not always the case.
+[^correlation-1]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 
-|             |     |     |     |     |     |     |     |     |     |     |
-|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| **Husband** | 36  | 72  | 37  | 36  | 51  | 50  | 47  | 50  | 37  | 41  |
-| **Wife**    | 35  | 67  | 33  | 35  | 50  | 46  | 47  | 42  | 36  | 41  |
+Each observation in a scatter plot is shown as one dot, with the x-axis showing values for one variable (GDP per capita in @fig-stability-gdp) and the y-axis representing the other variable (political stability). It is also common to add a straight line, called a regression line, showing the general trend in the data. In this first example, the regression line slopes upward from left to right, so we say there is a **positive relationship** between the two variables. A positive relationship means that when values of one variable are higher, values of the other variable also tend to be higher. If the line slopes downward, we say there is a **negative relationship**. With a negative relationship, higher values for one variable correspond to lower values for the other variable.
 
-: Sample of spousal ages of 10 White American Couples. {#tbl-spousalage}
+![Scatter plot of country wealth and political stability, r=0.66](Images/correlations/stability_gdp.png){#fig-stability-gdp width="400"}
 
-The pairs of ages in @tbl-spousalage are from a dataset consisting of 282 pairs of spousal ages, too many to make sense of from a table. What we need is a way to summarize the 282 pairs of ages. We know that each variable can be summarized by a histogram (see @fig-histspousalage) and by a mean and standard deviation (See @tbl-spousalagemeansd).
+If we want a single number to summarize the relationship between two variables, we can use a **correlation coefficient**. A correlation, represented by the letter "r" ($r$), always falls between -1 and 1. It tells us two things. First, the sign indicates the direction of the relationship (positive or negative). Second, it tells us how *strong* the relationship is. Numbers closer to 0 indicate weaker relationships, while numbers closer to 1 or -1 indicate stronger relationships.
 
-![Histograms of spousal ages.](Images/correlations/histspousalage.jpg){#fig-histspousalage}
+For this first example, the correlation is 0.66, which indicates a positive and moderately strong relationship. The correlation matches what we see visually: it is clear that typical values for political stability tend to be higher when GDP per capita is higher. We can therefore say there is a clear, positive **association** between wealth and political stability (the terms "association" and "relationship" are interchangeable).
 
-+----------+----------+-------------+
-|          | **Mean** | **Standard\ |
-|          |          | Deviation** |
-+==========+==========+=============+
-| Husbands | 49       | 11          |
-+----------+----------+-------------+
-| Wives    | 47       | 11          |
-+----------+----------+-------------+
+@fig-mortality-gpa shows an example of a negative relationship. The correlation is -0.86. Wealthier countries tend to have lower infant mortality rates. The data in this scatter plot also appear to track more closely to the regression line than in our prior example. Notice that the absolute value of this correlation (0.86) is larger than that of the previous example (0.66), indicating a stronger relationship. Thus, we can say that the wealth-infant morality relationship is stronger than the wealth-political stability relationship.
 
-: Means and standard deviations of spousal ages. {#tbl-spousalagemeansd}
+![Scatter plot of country wealth and infant mortality, r=-0.86](Images/correlations/mortality_gdp.png){#fig-mortality-gpa width="400"}
 
-Each distribution is fairly skewed with a long right tail. From @tbl-spousalage we see that not all husbands are older than their wives and it is important to see that this fact is lost when we separate the variables. That is, even though we provide summary statistics on each variable, the pairing within couple is lost by separating the variables. We cannot say, for example, based on the means alone what percentage of couples has younger husbands than wives. We have to count across pairs to find this out. Only by maintaining the pairing can meaningful answers be found about couples per se. Another example of information not available from the separate descriptions of husbands and wives' ages is the mean age of husbands with wives of a certain age. For instance, what is the average age of husbands with 45-year-old wives? Finally, we do not know the relationship between the husband's age and the wife's age.
+As another example, consider @fig-unemployment-urban. The data does not clearly follow any upward or downward trendline. In fact, the regression line in the graph is almost completely flat. The correlation is 0.01, which is very close to 0. Thus, there appears to be no relationship between the variables of urban population and unemployment rate.
 
-![Scatter plot showing wife's age as a function of husband's age, r = 0.97.](Images/correlations/scatterplotspousalage.jpg){#fig-scatterplotspousalage width="325"}
+![Scatter plot of urban population and unemployment, r=0.01](Images/correlations/unemployment_urban.png){#fig-unemployment-urban width="400"}
 
-::: {.content-visible when-format="pdf"}
-{{< pagebreak >}}
-:::
+Note that a scatter plot can be redrawn by changing which variables are assigned to the x- and y- axes. It is standard practice, however, to choose which variable goes where based on a judgement about the likely cause-and-effect (or predictive) relationship between the two variables. Specifically, we usually depict the variable that we assume is the cause on the x-axis. We call this the **independent variable**. The y-axis shows the **dependent variable**, which is the one we believe could be affected (or predicted) by the other variable. In some cases, causal ordering is unclear and we have no intention to predict, so the graph can be drawn either way. Our first scatter plot (@fig-stability-gdp) is an example of an unclear case: wealth might improve stability, but stability might also enable wealth creation.
 
-We can learn much more by displaying the bivariate data in a graphical form that maintains the pairing. @fig-scatterplotspousalage shows a scatter plot of the paired ages. The x-axis represents the age of the husband and the y-axis the age of the wife.
+::: {.callout-tip icon="false"}
+## Example: Visualization with Large Datasets {.unnumbered}
 
-There are two important characteristics of the data revealed by @fig-scatterplotspousalage. First, it is clear that there is a strong relationship between the husband's age and the wife's age: the older the husband, the older the wife. When one variable (Y) increases with the second variable (X), we say that $X$ and $Y$ have a **positive association**. Conversely, when $Y$ decreases as $X$ increases, we say that they have a **negative association**.
+With large datasets, scatter plots can be difficult to interpret since observations tend to stack on top of one another (often leaving only outliers to show up distinctly). The positive association between work experience and wages in @fig-crowded-scatterplot is not particularly strong, but it is a bit difficult to discern exactly what is going on because the graph is crowded with so many observations (2,246 in total).[^correlation-2] Larger samples will make this problem even worse.
 
-Second, the points cluster along a straight line. When this occurs, the relationship is called a **linear relationship**.
+![Scatter plot of 1988 wages and work experience from a sample of young women, r=0.27](Images/correlations/crowded_scatterplot.png){#fig-crowded-scatterplot width="400"}
 
-![Scatter plot of Grip Strength and Arm Strength, r = 0.63.](Images/correlations/scatterplotstrength.jpg){#fig-scatterplotstrength width="350"}
-
-@fig-scatterplotstrength shows a scatter plot of Arm Strength and Grip Strength from 149 individuals working in physically demanding jobs including electricians, construction and maintenance workers, and auto mechanics. Not surprisingly, the stronger someone's grip, the stronger their arm tends to be. There is therefore a positive association between these variables. Although the points cluster along a line, they are not clustered quite as closely as they are for the scatter plot of spousal age.
-
-![Galileo's data showing a non-linear relationship.](Images/correlations/scatterplotgalileo.jpg){#fig-scatterplotgalileo width="400"}
-
-Not all scatter plots show linear relationships. @fig-scatterplotgalileo shows the results of an experiment conducted by Galileo on projectile motion.[^correlation-2] In the experiment, Galileo rolled balls down an incline and measured how far they traveled as a function of the release height. It is clear from @fig-scatterplotgalileo that the relationship between "Release Height" and "Distance Traveled" is not described well by a straight line: If you drew a line connecting the lowest point and the highest point, all of the remaining points would be above the line. The data are better fit by a parabola (a type of curved line).
-
-[^correlation-2]: <https://www.amstat.org/publications/jse/v3n1/datasets.dickey.html>
-
-With large datasets, scatter plots can be difficult to interpret since observations tend to stack on top of one another (often leaving only outliers to show up distinctly). The positive association between work experience and wages in @fig-crowded-scatterplot is not particularly strong, but it is a bit difficult to discern exactly what is going on because the graph is crowded with so many observations (2,246 in total).[^correlation-3] Larger samples will make this problem even worse.
-
-[^correlation-3]: US National Longitudinal Survey of Young Women (NLSW), 1988 extract. Accessed via Stata.
-
-![Scatter plot of 1988 wages and work experience from a sample of young women, r=0.27.](Images/correlations/crowded_scatterplot.png){#fig-crowded-scatterplot width="400"}
-
-Fortunately, we can create what is called a binned scatter plot. Rather than plotting every observation, we can divide the x axis into bins and plot just one dot per bin. The dot will indicate the mean or median value of the y variable among observations within that bin. While binned scatter plots can bring greater clarity when working with large datasets, be aware that binned scatter plots tend to make relationships look stronger than they really are. This is because aggregating data (by bin, in this case) tends to reduce the noisiness associated with idiosyncrasies in individual observations. See how clear and consistent the relationship between work experience and wages appears in the binned scatter plot (@fig-binned-scatterplot), despite the relatively weak relationship in the individual-level data. Notice too that the ranges of both axes are smaller than in the original scatter plot (@fig-crowded-scatterplot), since the binning means that the full ranges of the variables are no longer depicted.
+Fortunately, we can create what is called a binned scatter plot. Rather than plotting every observation, we can divide the x axis into bins and plot just one dot per bin. The dot will indicate the mean or median value of the y variable among observations within that bin. While binned scatter plots can bring greater clarity when working with large datasets, be aware that binned scatter plots tend to make relationships look stronger than they really are. This is because aggregating data (by bin, in this case) tends to reduce the noisiness associated with idiosyncrasies in individual observations. See how clear and consistent the relationship between work experience and wages appears in the binned scatter plot (@fig-binned-scatterplot), despite the relatively weak relationship in the individual-level data ($r=0.27$). Notice too that the ranges of both axes have changed, resulting in a regression line that looks much steeper than in the original scatter plot (@fig-crowded-scatterplot). This happened by default in the software used to create the graph, since the binning procedure produced a narrower range of values. By manually adjusting the graph's settings, the axes could be redrawn to match the original graph.
 
 ![Binned scatter plot of the 1988 data for wages and work experienced among young women](Images/correlations/binned_scatterplot.png){#fig-binned-scatterplot width="400"}
+:::
 
-Note that a scatter plot can be redrawn by changing which variables are assigned to the x- and y- axes. It is standard practice, however, to choose which variable goes where based on a judgement about the likely cause-and-effect relationship between the two variables. Specifically, we usually draw the variable that we assume is the cause on the x-axis. We call this the **independent variable**. The y-axis shows **dependent variable**, which is the one we believe could be affected by the other variable. In some cases, it is not clear how the variables should be causally ordered, so the graph can be drawn either way. In our initial example with spousal ages, there is no clear cause and effect we have in mind between the two variables, so there is no convention for which variable should appear on which axis.
+[^correlation-2]: US National Longitudinal Survey of Young Women (NLSW), 1988 extract. Accessed via Stata.
 
-Scatter plots that show linear relationships between variables can differ in several ways including the slope of the line about which they cluster and how tightly the points cluster about the line. We now turn our attention to a statistical measure of the strength of the relationship between two quantitative variables.
+## Straight Lines and Measuring Correlation
 
-## What is Correlation?[^correlation-4]
+There are multiple types of correlation coefficients, but the one we've been using is Pearson's correlation coefficient. It is the most widely used and the one that is implied when people refer to a "correlation coefficient" without further clarification. Pearson's correlation coefficient describes the *linear* relationship between two variables, so it indicates strength of association by telling us how closely the data follow a straight line. A value of 1 or -1 means that the data fall perfectly along a straight line. The closer the absolute value of the Pearson’s correlation is to 1, the better the data track with a straight line. The closer the correlation is to 0, the more the data defy any pattern conducive to us drawing an upward or downward sloping line through them (the data may still appear to follow a perfectly flat line).
 
-[^correlation-4]: This section is adapted from David M. Lane. “Values of the Pearson Correlation.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/pearson.html>
+@fig-perfect-corr shows an example of a perfect correlation. Any variable has a correlation of 1 with itself, and here we see that a variable also has a correlation of 1 with a linear transformation of itself (i.e., a standardized version of the variable, something we learned about in the prior chapter). Both axes are depicting the same variable, just expressed in different units (notice the different values on the two axes).
 
-The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two variables. It is referred to as Pearson's correlation or simply as the **correlation coefficient**. If the relationship between the variables is not linear, then the correlation coefficient does not adequately represent the strength of the relationship between the variables.
+![A scatter plot of a variable and its standardized values, r=1.00](Images/correlations/perfect_corr.png){#fig-perfect-corr width="400"}
 
-The symbol for Pearson's correlation is "$\rho$" when it is measured in the population and "r" when it is measured in a sample. Because we will be dealing almost exclusively with samples, we will use r to represent Pearson's correlation unless otherwise noted.
+Because Pearson's correlation measures *linear* relationships, data that perfectly follow a curved line will not have a correlation of 1. @fig-log-transform-scatterplot shows GDP per capita plotted against its log transformation. Because log transformations are non-linear transformations, the data does not follow a straight line. The correlation of 0.79 indicates that the data still maps reasonably well to the straight regression line shown in the figure, but this coefficient falls well short of 1 even though we can perfectly determine the value of y (logged GDP per capita) if we know the value of x (GDP per capita). Put differently, there is a perfect relationship between the two variables—just not a linear one. Of course, the reason there is a perfect relationship is because one variable is a transformed version of the other variable. We do not normally expect to encounter variables that are perfectly related unless they are measuring they exact same thing.
 
-Pearson's r can range from -1 to 1. An r of -1 indicates a perfect negative linear relationship between variables, an r of 0 indicates no linear relationship between variables, and an r of 1 indicates a perfect positive linear relationship between variables. @fig-poslinearrel shows a scatter plot for which r = 1.
+![A scatter plot of a variable and its log transformation, r=0.79](Images/correlations/log_transform_scatterplot.png){#fig-log-transform-scatterplot width="400"}
 
-![A perfect positive linear relationship, r = 1.](Images/correlations/poslinearrel.jpg){#fig-poslinearrel width="325"}
+One implication of relying on a measure of linear association is that a correlation of 0 can mask non-linear relationships. Specifically, a Pearson's correlation of 0 indicates that there is no linear association between two variables, but it is still possible for a relationship between variables to exist that cannot be approximated meaningfully with a straight line. This is one reason it is usually helpful during analysis to inspect data visually in addition to observing numerical summaries. Doing so may reveal patterns that standard statistics (like Pearson's correlation) are not well equipped to handle. In @sec-regression, we will learn more about ways to build statistical models for non-linear relationships.
 
-![A perfect negative linear relationship, r = 1.](Images/correlations/neglinearrel.jpg){#fig-neglinearrel width="325"}
+## How Correlation is Calculated {#sec-how-correlation-is-calculated}
 
-![A scatter plot for which r = 0. Notice that there is no relationship between $X$ and $Y$.](Images/correlations/scatterplotnorel.jpg){#fig-scatterplotnorel width="325"}
+There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus here on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
 
-With real data, you would not expect to get values of r of exactly -1, 0, or 1. The data for spousal ages shown earlier in this chapter in @fig-scatterplotspousalage has an r of 0.97.
+Here is one way to calculate correlation:
 
-The relationship between grip strength and arm strength depicted in @fig-scatterplotstrength (also described in the introductory section) is 0.63.
+$$ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \left( \frac{y_i-\mu_y}{\sigma_y} \right) $$ {#eq-pop-corr}
 
-## How Correlation is Calculated[^correlation-5]
+Let's try to make sense of @eq-pop-corr by breaking it up into parts, starting from within the summation.
 
-[^correlation-5]: This section is adapted from David M. Lane. “Computing Pearson's r.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/describing_bivariate_data/calculation.html>
+$\left( \frac{x_i-\mu_x}{\sigma_x} \right)$ looks like the formula for standardization we learned last chapter, except now we have added some subscripts because we are working in the context of two different variables: $x$ and $y$. Adding $x$ as a subscript to $\mu$ and $\sigma$ clarifies that we are referring to the mean and standard deviation of $x$. With this part of the equation, we are converting the values of $x$ to z-scores. We can use $z_x$ to indicate z-scores of $x$, and we can use $z_{x_i}$ to indicate that we are describing the z-score of $x$ for observation $i$:
 
-There are several formulas that can be used to compute Pearson's correlation. Some formulas make more conceptual sense whereas others are easier to actually compute. We are going to begin with a formula that makes more conceptual sense.
+$$z_{x_i} = \frac{x_i-\mu_x}{\sigma_x}$$
 
-We are going to compute the correlation between the variables $X$ and $Y$ shown in @tbl-rcalulation. We begin by computing the mean for $X$ and subtracting this mean from all values of $X$. The new variable is called "x." The variable "y" is computed similarly. The variables x and y are said to be deviation scores because each score is a deviation from the mean. Notice that the means of x and y are both 0. Next we create a new column by multiplying x and y.
+Similarly, the second set of parentheses in @eq-pop-corr indicates that we should generate z-scores for $y$:
 
-Before proceeding with the calculations, let's consider why the sum of the xy column reveals the relationship between $X$ and $Y$. If there were no relationship between $X$ and $Y$, then positive values of x would be just as likely to be paired with negative values of y as with positive values. This would make negative values of xy as likely as positive values and the sum would be small. On the other hand, consider @tbl-rcalulation in which high values of $X$ are associated with high values of $Y$ and low values of $X$ are associated with low values of $Y$. You can see that positive values of x are associated with positive values of y and negative values of x are associated with negative values of y. In all cases, the product of x and y is positive, resulting in a high total for the xy column. Finally, if there were a negative relationship then positive values of x would be associated with negative values of y and negative values of x would be associated with positive values of y. This would lead to negative values for xy.
+$$z_{y_i} = \frac{y_i-\mu_y}{\sigma_y}$$
 
-|       | **X** | **Y** | **x** | **y** | **xy** | **x^2^** | **y^2^** |
-|-------|-------|-------|-------|-------|--------|----------|----------|
-|       |  1    |  4    | -3    | -5    | 15     |  9       | 25       |
-|       |  3    |  6    | -1    | -3    |  3     |  1       |  9       |
-|       |  5    | 10    |  1    |  1    |  1     |  1       |  1       |
-|       |  5    | 12    |  1    |  3    |  3     |  1       |  9       |
-|       |  6    | 13    |  2    |  4    |  8     |  4       | 16       |
-| Total | 20    | 45    |  0    |  0    | 30     | 16       | 60       |
-| Mean  |  4    |  9    |  0    |  0    |  6     |          |          |
-
-: Calculation of r. {#tbl-rcalulation}
-
-Pearson's r is designed so that the correlation between height and weight is the same whether height is measured in inches or in feet. To achieve this property, Pearson's correlation is computed by dividing the sum of the xy column ($\sum{xy}$) by the square root of the product of the sum of the $x^2$ column ($\sum{x^2}$) and the sum of the $y^2$ column ($\sum{y^2}$). The resulting formula is:
+Thus, we can re-write @eq-pop-corr as:
 
 $$
-r = \frac{\sum{xy}}{\sqrt{\sum{x^2}\sum{y^2}}}\
+\rho =\frac{1}{N} \sum_{i=1}^{N} z_{x_i} z_{y_i}=\frac{\sum_{i=1}^{N} z_{x_i} z_{y_i}}{N} 
 $$
 
-and therefore:
+This makes it clear that after standardizing our two variables ($x$ and $y$), we multiply them together and then take the average of this product across all observations $i$ in our dataset to find the correlation.
+
+::: {.callout-tip icon="false"}
+## Example: Correlation of Political Stability with Urban Population {.unnumbered}
+
+@tbl-corr-data-excerpt shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.
+
+In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-3] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
+
+| id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
+| 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
+| 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |
+| 4 | American Samoa | 1.22 | 87.15 | 1.25 | 1.13 | 1.41 |
+| 5 | Andorra | 1.42 | 88.06 | 1.45 | 1.17 | 1.69 |
+| 6 | Angola | -0.34 | 65.51 | -0.30 | 0.22 | -0.07 |
+| 7 | Antigua and Barbuda | 0.84 | 24.60 | 0.87 | -1.50 | -1.31 |
+| 8 | Argentina | 0.01 | 91.87 | 0.04 | 1.33 | 0.06 |
+| 9 | Armenia | -0.44 | 63.15 | -0.41 | 0.12 | -0.05 |
+| ... | ... | ... | ... | ... | ... | ... |
+| **Mean** |  | -0.03 | 60.26 | 0.00 | 0.00 | **0.36** |
+| N=204 |  |  |  |  |  |  |
+
+: Excerpt of data for example of calculating correlation {#tbl-corr-data-excerpt}
+
+This same data is depicted in @fig-scatterplot-quadrants, with `id` numbers used to plot the 9 observations shown in @tbl-corr-data-excerpt; the remainder of the observations are plotted as circles.
+
+![Scatter plot with horizontal and vertical lines depicting means; initial countries are plotted using IDs rather than dots](Images/correlations/scatterplot_quadrants.png){#fig-scatterplot-quadrants width="450"}
+
+Let's consider some of the mechanics underlying the calculation of correlation coefficients. By transforming values to z-scores, we indicate where each observation lies relative to the variable's mean. A positive z-score indicates that the original value of the variable is above the mean while a negative z-score tells us it is below the mean. Visually, we can also see this in @fig-scatterplot-quadrants, where a vertical line indicates the mean of `urban` and a horizontal line marks the mean for `stability`. This divides the observations into four quadrants. The observations in the upper-right quadrant (including observations 2, 4, 5, and 8) have positive z-scores for both variables. Multiplying two positive values results in a positive value, so all observations in this quadrant also have a positive value in the final column of the spreadsheet previewed in @tbl-corr-data-excerpt. The bottom-left quadrant contains observations that have both below-average political stability and a below-average urban population (e.g., observation 1). Since this results in two negative z-scores being multiplied together (and the product of two negative numbers is always positive), we again see positive values in the final column of the spreadsheet. The two remaining quadrants will yield negative values in the final column because one z-score will be negative and the other positive (and the product of a negative and a positive number is negative). The upper-left quadrant has below-average values (negative z-scores) for `urban` but above-average values (positive z-scores) for `stability` (e.g., observation 7). In the bottom-right quadrant, the share of the population that is urban is above average but stability is below average (e.g., observations 3, 6, and 9).
+
+Since the correlation is the mean of the final column, we can imagine the observations with positive values in the final column "pushing" the correlation toward a positive value while the observations with negative products "push" the correlation toward a negative value. From @fig-scatterplot-quadrants, we can see that there are more observations in the two quadrants yielding positive products (upper-right and bottom-left) than in the two "negative" quadrants (upper-left and bottom-right). Thus, it should come as no surprise that the correlation is positive (0.36).
+:::
+
+[^correlation-3]: Note that standardizing was accomplished using the population variance formula, in order to match the calculation of the mean for the final column, which divides by N rather than n - 1.
+
+As illustrated in the example above, multiplying two standardized values together results in a positive value any time both variables are above average. This maps neatly to our conceptual definition of a positive relationship: when values of x tend to be higher (above average), values of y also tend to be higher (above average). Thus, finding above-average values for x being paired with above-average values of y (the upper-right quadrant) is consistent with the notion of a positive relationship (as are below-average x values paired with below-average y values, the lower-left quadrant). A negative relationship means that higher values of x (above average) tend to go with lower values for y (below average), so the combination of a positive z-score for x and a negative z-score for y (or vice versa) is consistent with a negative relationship.
+
+## Introduction to Linear Regression {#sec-introduction-to-linear-regression}
+
+As you have already seen, we often use a regression line to help demonstrate the relationship between two variables when creating a scatter plot. More broadly, regression techniques turn out to be incredibly powerful and are widely used throughout the social sciences. Regression lines are often reported using numbers in tables or equations, so it is important to understand how they can be represented in such formats and not just visually in a graph.
+
+You may recall from geometry that straight lines can be represented with an equation of the following form:
 
 $$
-r = \frac{30}{\sqrt{(16)(60)}} = \frac{30}{\sqrt{960}} = \frac{30}{30.984} = 0.968\
+y = mx + b
 $$
 
-An alternative computational formula that avoids the step of computing deviation scores is:
+where $m$ represents the slope and $b$ represents the y-intercept. By changing the values of $m$ and $b$, we can represent any straight line.
+
+In the context of regression, we usually rearrange the terms and change the notation a bit. We can add a hat (\^) above $y$ to indicate that we are making a *prediction* for the value of $y$, and we will also add the subscript $i$ to indicate that the equation is used to make a prediction for each observation in the dataset. We use $\alpha$ to represent the y-intercept, which we usually just call the **intercept**, and we use $\beta$ to indicate the **slope coefficient**. Finally, we can add the subscript $i$ to $x$ just like we did with $y$:
 
 $$
-r = \frac{\sum{XY}-\frac{\sum{X}\sum{Y}}{n}}{\sqrt{\left(\sum{X^2}-\frac{(\sum{X})^2}{n}\right)}\sqrt{\left(\sum{Y^2}-\frac{(\sum{Y})^2}{n}\right)}}
+\hat{y_i} = \alpha + \beta x_i
 $$
 
-## Introduction to Linear Regression[^correlation-6] {#sec-introduction-to-linear-regression}
+How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called "least squares" because it involves minimizing the squared errors of prediction. "Error of prediction" refers to the difference between the predicted value of $y$ and the actual value of $y$ for each observation. There are well-known formulas for selecting $\alpha$ and $\beta$ that result in the line that minimizes the sum of the squared errors. These formulas are shown in the appendix.
 
-[^correlation-6]: This section is adapted from David M. Lane. “Introduction to Linear Regression.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/intro.html>
+When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. $y$ will always represent the dependent variable, since it is the variable we are trying to predict based on the value of $x$. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of $x$ with $y$ equals the correlation of $y$ with $x$. But when we "run a regression" (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.[^correlation-4]
 
-In simple linear regression, we predict scores on one variable from the scores on a second variable. The variable we are predicting is the dependent variable and is referred to as $Y$. The variable we are basing our predictions on is the independent variable and is referred to as $X$. When there is only one predictor variable, the prediction method is called simple regression. In simple linear regression, the topic of this section, the predictions of $Y$ when plotted as a function of $X$ form a straight line.
+[^correlation-4]: The main exception is that if we have two standardized variables, the regression slope will be equal to the correlation and the intercept will be 0, so coefficients will be equivalent regardless of which variable is designated the dependent variable.
 
-The example data in @tbl-exampledata-regression are plotted in @fig-splotexampledata. You can see that there is a positive relationship between $X$ and $Y$. If you were going to predict $Y$ from $X$, the higher the value of $X$, the higher your prediction of $Y$.
+::: {.callout-note icon="false"}
+## Example: Predicting University Student Grades {.unnumbered}
 
-|     | $X$  | $Y$  |     |
-|-----|------|------|-----|
-|     | 1.00 | 1.00 |     |
-|     | 2.00 | 2.00 |     |
-|     | 3.00 | 1.30 |     |
-|     | 4.00 | 3.75 |     |
-|     | 5.00 | 2.25 |     |
+Lane and colleagues[^correlation-5] offer a simple example of regression being used to predict university student performance based on high school (secondary school) performance. Performance is measured using the standard U.S. grade point system, in which students receive letter grades that are scored between 0 and 4 (e.g., A=4, B=3, C=2, D=1, F=0). Students receive separate grades in each class they take, so their overall performance is measured as a grade point average (GPA).
 
-: Example data. {#tbl-exampledata-regression}
+The dataset consists of observations from 105 students who completed a computer science degree at a state university. The two variables being examined in this initial example are the GPA achieved during university studies and GPA during high school.
 
-![A scatter plot of the example data.](Images/correlations/splotexampledata.jpg){#fig-splotexampledata width="250"}
-
-Linear regression consists of finding the best-fitting straight line through the points. The best-fitting line is called a regression line. The black diagonal line in @fig-splotexampledatadetail is the regression line and consists of the predicted score on $Y$ for each possible value of $X$. The vertical lines from the points to the regression line represent the errors of prediction. As you can see, the red point is very near the regression line; its error of prediction is small. By contrast, the yellow point is much higher than the regression line and therefore its error of prediction is large.
-
-![A scatter plot of the example data. The black line consists of the predictions, the points are the actual data, and the vertical lines between the points and the black line represent errors of prediction.](Images/correlations/splotexampledatadetail.jpg){#fig-splotexampledatadetail width="325"}
-
-The error of prediction for a point is the value of the point minus the predicted value (the value on the line). @tbl-exampledatatable shows the predicted values ($\hat{Y}$) and the errors of prediction ($Y-\hat{Y}$). For example, the first point has a $Y$ of 1.00 and a predicted $Y$ (called $\hat{Y}$) of 1.21. Therefore, its error of prediction is -0.21.
-
-|     | $X$  | $Y$  | $\hat{Y}$ | $Y-\hat{Y}$ | $(Y-\hat{Y})^2$ |     |
-|-----|------|------|-----------|-------------|-----------------|-----|
-|     | 1.00 | 1.00 | 1.210     | -0.210      | 0.044           |     |
-|     | 2.00 | 2.00 | 1.635     | 0.365       | 0.133           |     |
-|     | 3.00 | 1.30 | 2.060     | -0.760      | 0.578           |     |
-|     | 4.00 | 3.75 | 2.485     | 1.265       | 1.600           |     |
-|     | 5.00 | 2.25 | 2.910     | -0.660      | 0.436           |     |
-
-: Example data. {#tbl-exampledatatable}
-
-You may have noticed that we did not specify what is meant by "best-fitting line." By far, the most commonly-used criterion for the best-fitting line is the line that minimizes the sum of the squared errors of prediction. That is the criterion that was used to find the line in @fig-splotexampledatadetail. The last column in @tbl-exampledatatable shows the squared errors of prediction. The sum of the squared errors of prediction shown in @tbl-exampledatatable is lower than it would be for any other regression line.
-
-The formula for a regression line is
+Using the least squares formulas for estimating a regression line, Lane finds that university GPA can be predicted with the following equation:
 
 $$
-\hat{Y} = \alpha + \beta X
+\widehat{university\_gpa}_i = 1.097 + 0.675 \times highschool\_gpa_i
 $$
 
-where $\hat{Y}$ is the predicted score, $\alpha$ is the $Y$-intercept, and $\beta$ is the slope of the line. The equation for the line in @fig-splotexampledatadetail is
+This line is depicted visually in @fig-unihighschoolgpa. The correlation for the two variables is 0.78.
+
+![Predicting university GPA based on high school GPA. Source: Lane, public domain.](Images/correlations/unihighschoolgpa.jpg){#fig-unihighschoolgpa width="400"}
+
+We can plug in any number we want for `highschool_gpa` to see what the resulting prediction is. For example, we can see what the prediction is for students who had a high school GPA of 2.8:
 
 $$
-\hat{Y} = 0.785 + 0.425X
+\widehat{university\_gpa}_i = 1.097 + 0.675 \times (2.8)
+$$$$
+= 1.097 + 1.89 = 2.987
 $$
 
-Using this equation, we can calculate predictions for $Y$ based on the value of $X$. For $X$ = 1,
+So a student with a GPA of 2.8 in high school is predicted (based on this sample) to have a slightly higher university GPA of around 3.0 by the time they graduate. This also tracks with what we see in @fig-unihighschoolgpa: if we find 2.8 on the x axis and then draw a straight line up to the regression line, we can see that the height of this point on the regression line appears to correspond to approximately 3.0 on the y axis.
 
-$$
-\hat{Y} = 0.785 + (0.425)(1) = 1.21.
-$$
+If we stop and think about about the second Question to Always Asks about Data (who is in the dataset?), we might realize the need to add an important caveat to this analysis. The sample only includes university students who completed their degree, but many people who complete high school will never go to university. And even among those who do attend university, those with very poor grades at university are at higher risk of dropping out. Thus, the regression analysis here is unlikely to tell the full story of how high school GPA is related to academic performance at a university, since we don't get to see from this sample how high school GPA affects the rate of completing a university degree in the first place. We only see the final grade point average among students who do complete their degrees.
+:::
 
-For $X$ = 2,
+[^correlation-5]: David M. Lane. "Introduction to Linear Regression." *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/intro.html>
 
-$$
-\hat{Y} = 0.785 + (0.425)(2) = 1.64.
-$$
+## Quick Guide to Interpreting Regression Results {#sec-quick-guide-to-interpreting-regression-results}
 
-### A Real Example
+Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:[^correlation-6]
 
-The case study "SAT and College GPA"[^correlation-7] contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student's university grade point average (GPA) if we knew his or her high sch
+[^correlation-6]: Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
 
-[^correlation-7]: <https://onlinestatbook.com/2/case_studies/sat.html>
-
-@fig-unihighschoolgpa shows a scatter plot of University GPA as a function of High School GPA. You can see from the figure that there is a strong positive relationship. The correlation is 0.78. The regression equation is
-
-$$
-\widehat{University\_GPA} = 1.097 + 0.675 \times High School GPA
-$$
-
-Therefore, a student with a high school GPA of 3 would be predicted to have a university GPA of
-
-$$
-\widehat{University\_GPA} = 1.097 + 0.675 \times (3) = 3.12.
-$$
-
-![University GPA as a function of High School GPA.](Images/correlations/unihighschoolgpa.jpg){#fig-unihighschoolgpa width="450"}
-
-## Quick Guide to Interpreting Regression Results[^correlation-8] {#sec-quick-guide-to-interpreting-regression-results}
-
-[^correlation-8]: This section is written by Nathan Favero.
-
-Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:[^correlation-9]
-
-[^correlation-9]: Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
-
--   **Significance**: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?[^correlation-10] To assess this, check the p-value. For now, you can use the following rule-of-thumb:
+-   **Significance**: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?[^correlation-7] To assess this, check the p-value. For now, you can use the following rule-of-thumb:
 
     -   If p \< 0.05: the relationship is statistically significant; proceed to evaluating sign and size
 
@@ -234,13 +195,13 @@ Many social science papers report their main results in the form of a regression
 
 -   **Size**: How big is the (predictive) effect? This S is often the most difficult to make sense of, and sometimes you may not have enough information to meaningfully evaluate it (e.g., if the units of measurement for a variable are not clearly explained).
 
-    -   For linear models: A one-unit increase in the independent variable means we change our prediction for the dependent variable by $\hat{\beta_i}$ (where $\hat{\beta_i}$ represents the value of the coefficient estimate)[^correlation-11]
+    -   For linear models: When the independent variable increases by one unit, we adjust our prediction for the dependent variable by $\hat{\beta_i}$ (where $\hat{\beta_i}$ represents the value of the coefficient estimate)[^correlation-8]
 
-    -   For non-linear models: Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors' explanation of effect size or "magnitude" of association
+    -   For non-linear models (e.g., logit, probit): Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors' explanation of effect size or "magnitude" of association
 
-[^correlation-10]: In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., & Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. *The American Statistician*, *73*(sup1), 374-384.
+[^correlation-7]: In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., & Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. *The American Statistician*, *73*(sup1), 374-384.
 
-[^correlation-11]: Why $\hat{\beta_i}$ and not simply $\beta_i$? We use the hat symbol ($\hat{~}$) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We'll learn more about estimation in @sec-stat-inference.
+[^correlation-8]: Why $\hat{\beta_i}$ and not simply $\beta_i$? We use the hat symbol ($\hat{~}$) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We'll learn more about estimation in @sec-stat-inference.
 
 @tbl-regression-cs-gpa provides an example of regression results in a format similar to what you may encounter in many research publications. Note, however, that many publications do not list exact p-values; instead, they often use one or more asterisks (\*) to denote coefficients with p-values smaller than 0.05 (sometimes also flagging p-values falling below various other thresholds).
 
@@ -255,13 +216,108 @@ Many social science papers report their main results in the form of a regression
 
 : Results for a regression with computer science GPA as the dependent variable. {#tbl-regression-cs-gpa}
 
-Up til now, we have only discussed simple regression, in which we have a single independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables representing students' university entrance exam scores—the verbal (verb_sat) and math (math_sat) sections of the SAT—are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in @sec-regression. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in @tbl-regression-cs-gpa, we can interpret the results as follows:
+@tbl-regression-cs-gpa was created by analyzing the same dataset described in the previous example, although with different variables. The dependent variable is now university GPA *in computer science classes*. Instead of high school GPA, this regression uses students' university entrance exam scores on the verbal (`verb_sat`) and math (`math_sat`) sections of a test called the SAT. The SAT reports scores on a scale of 200 to 800 for each subject, with 800 representing a perfect score.
 
--   verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA.[^correlation-12] Maybe there is no link, or maybe we would need more data to detect the link. Since we don't find statistical significance, we don't necessarily need to interpret the sign or size.
--   math_sat: The p-value (0.00014) is smaller than 0.05, so math_sat is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible if scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher ($0.0048 \times 100 = 0.48$). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.
+Until now, we have looked at *simple* regression, meaning there is just one independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables (`verb_sat` and `math_sat`) are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as will be further described in @sec-regression. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. We can interpret the results in @tbl-regression-cs-gpa as follows:
 
-[^correlation-12]: Note, however, that the absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA—just one that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association).
+-   `verb_sat`: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA. Maybe there is no link, or maybe we would need more data to detect the link.[^correlation-9] Since we don't find statistical significance, we don't necessarily need to interpret the sign or size.
+-   `math_sat`: The p-value (0.00014) is smaller than 0.05, so `math_sat` is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible since scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher ($0.0048 \times 100 = 0.48$). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.
 
-Note that we do not need to apply the three S's to the intercept (which can also be labeled the "constant") because it is not a variable. @tbl-regression-cs-gpa also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in @sec-sampling-distributions), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).
+[^correlation-9]: The absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association). Confidence intervals (introduced in @sec-stat-inference) will help us evaluate this possibility.
 
-Remember that the three S's are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. And notice that the third S (size) is helps equip us to address the third Question to Always Ask about Data ("how big is the difference?"). If you've started working with a statistical software package by now, you can run your own regression models and try using the three S's to help you understand the results.
+Note that we do not need to apply the three S's to the intercept (which some publications label the "constant") because it is not a variable. @tbl-regression-cs-gpa also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in @sec-sampling-distributions), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).
+
+Remember that the three S's are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. And notice that the third S (size) helps equip us to address the third Question to Always Ask about Data ("how big is the difference?"). If you've started working with a statistical software package by now, you can run your own regression models and try using the three S's to help you understand the results.
+
+## Exercises
+
+1.  If x is *negatively* correlated with y, that means that larger values of x are associated with \_\_\_\_\_\_\_\_\_\_\_\_\_ values of y.
+
+2.  If the data follows an upward sloping line (going left to right), what is the sign of the correlation?
+
+3.  Suppose x and y have a correlation of -0.8 while x and z have a correlation of 0.2. Which pair of variables has a stronger relationship?
+
+4.  If data in a scatter plot appear to closely follow the shape of a U, will there be a strong correlation between the two variables?
+
+5.  With a binned scatter plot, will relationships tend to look weaker or stronger than in a traditional scatter plot?
+
+6.  In the table below, is the independent variable (x) statistically significant? What is its sign? Size?
+
+    |           | Coefficients | Standard Error | t Stat | P-value |
+    |-----------|--------------|----------------|--------|---------|
+    | Intercept | 0.3907111    | 0.2158171      | 1.81   | 0.087   |
+    | x         | -0.1092141   | 0.2002251      | -0.55  | 0.592   |
+
+7.  Write the equation for the regression results shown for question 6. Using this equation, find the predicted value of the dependent variable when x is -2.
+
+8.  Suppose I am studying two variables (x and y), and I discover that their correlation is -0.7. If I then run a regression with x and y, what can I say ahead of time about the slope coefficient that I will find?
+
+## @sec-correlation Appendix: Formulas for Correlation, Covariance, and Regression Coefficients {.unnumbered}
+
+If we are working with a sample, we can rewrite @eq-pop-corr as:
+
+$$
+r=\frac{1}{n-1} \sum_{i=1}^{n} \left( \frac{x_i-\bar{x}}{s_x} \right) \left( \frac{y_i-\bar{y}}{s_y} \right)
+$$ {#eq-sample-corr}
+
+The only real difference (besides notation) is that we divide by $n-1$ rather than $N$. That is because we use sample standard deviations ($s_x$ and $s_y$) rather than population standard deviations ($\sigma_x$, $\sigma_y$), and sample standard deviations are computed using $n-1$ in the denominator.
+
+It is also the case, though, that the correlation coefficient equation can be rewritten without using $N$ or $n-1$ at all, because these terms cancel out (as we will demonstrate below). Thus, we get equivalent results for the correlation coefficient (unlike with standard deviation or variance) whether we treat our dataset as a population or a sample; we just need to make sure that our formula for the correlation matches whatever formula we have used to calculate the standard deviations (when using a correlation formula that relies on standard deviations).
+
+Before we show how $n-1$ can be taken out of @eq-sample-corr, let's look at an important and related statistic called "covariance." The sample covariance, written as $s_{xy}$ or $Cov(x,y)$, is:
+
+$$
+s_{xy}=Cov(x,y)= \frac{ \sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{n-1}
+$$
+
+The population variance is similar, except we divide by $N$ rather than $n-1$:
+
+$$
+\sigma_{xy}=Cov(x,y)= \frac{ \sum_{i=1}^{N}(x_i-\bar{x})(y_i-\bar{y}) }{N}
+$$
+
+We can rewrite @eq-sample-corr to show the relationship between correlation and covariation:
+
+$$
+r=\frac{1}{n-1} \sum_{i=1}^{n} \left( \frac{x_i-\bar{x}}{s_x} \right) \left( \frac{y_i-\bar{y}}{s_y} \right)
+$$$$
+=\frac{1}{n-1} \sum_{i=1}^{n}  \frac{(x_i-\bar{x})(y_i-\bar{y})}{s_x s_y} 
+$$$$
+=\frac{\sum_{i=1}^{n} (x_i-\bar{x})(y_i-\bar{y})}{n-1}   \left( \frac{1}{s_x s_y} \right)
+$$$$
+=s_{xy} \left( \frac{1}{s_x s_y} \right) = \frac{s_{xy}}{s_x s_y} = \frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}
+$$
+
+Because variances are never negative values, the denominator of this equation will always be positive (assuming it is not zero). Thus, correlation and covariance will always have the same sign. They both measure association, but covariance is harder to intepret because unlike correlation, covariance is not bounded by -1 and 1. We can have a covariance of -2,000 or 1,000,000. Correlation cannot have an absolute value greater than 1 because the covariance is scaled by the variance of the underlying variables.
+
+Note too that $Cov(x,x)=Var(x)$. Knowing this, we can demonstrate that any variable has a correlation of 1 with itself:
+
+$$
+r_{x,x}=\frac{Cov(x,x)}{\sqrt{Var(x)Var(x)}}=\frac{Var(x)}{Var(x)}=1
+$$
+
+Now that we know how to write correlation as a function of covariance and variance (or standard deviation), it is not too difficult to show how to remove $n-1$ from the equation. We will need to use the formula for the standard deviation from last chapter ($s=\sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$):
+
+$$
+r=\frac{s_{xy}}{s_x s_y} = \frac{\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{n-1}}{ \sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}} \sqrt{\frac{\sum_{i=1}^{n}(y_i-\bar{y})^2}{n-1}}  }
+$$ $$
+= \frac{\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{n-1}}{ \frac{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2 }}{n-1} }
+$$ $$
+= \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2 } }
+$$
+
+This final expression is another common way to write the equation for the correlation coefficient. It also helps explain why there is no need to create separate functions (in statistical software) for calculating sample versus population correlations, since there is no need to divide by $N$ or $n-1$ or to rely on calculations of variance/standard deviation (which differ for the population and sample).
+
+To conclude this appendix, let's go over the formulas for ordinary least squares (OLS) estimates of a simple regression line. The formula for estimating the slope is:
+
+$$
+\hat{\beta} = \frac{s_{xy}}{s_x^2} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sum_{i=1}^{n}(x_i-\bar{x})^2  }
+$$
+
+As we discussed with correlation, a denominator made up of variances will never be negative. Therefore, the sign of the slope will always be equal to the sign of the covariance ($s_{xy}$) and also of correlation (since covariance and correlation always share the same sign).
+
+The estimate of the intercept is:
+
+$$
+\hat{\alpha} = \bar{y} - \hat{\beta} \bar{x}
+$$

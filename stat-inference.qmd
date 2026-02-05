@@ -4,7 +4,7 @@ In Chapters 1-4, we learned how to describe patterns in our data. In this chapte
 
 [^stat-inference-1]: This chapter was written by Nathan Favero.
 
-::: callout-tip
+::: {.callout-tip icon="false"}
 ## Example: Analyzing Data from a Randomized Experiment {.unnumbered}
 
 [Kim et. al (2025)](https://doi.org/10.1002/pam.70007) study the experience of people trying to access food assistance benefits in the U.S. One requirement of the assistance program is to complete an interview. Working together with a nonprofit organization and a local government, the researchers designed an experiment to study whether interview completion rates could be improved by sending text messages to remind applicants of upcoming appointments and inform them of a new drop-in interview option.

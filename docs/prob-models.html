@@ -415,24 +415,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+ <span class="menu-text">Teaching Resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./change-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+ <span class="menu-text">Change Log</span></a>
   </div>
 </li>
     </ul>
@@ -454,7 +448,8 @@ window.Quarto = {
   <li><a href="#assumptions-about-error-terms" id="toc-assumptions-about-error-terms" class="nav-link" data-scroll-target="#assumptions-about-error-terms"><span class="header-section-number">6.2.1</span> Assumptions About Error Terms</a></li>
   <li><a href="#models-and-probabilistic-thinking" id="toc-models-and-probabilistic-thinking" class="nav-link" data-scroll-target="#models-and-probabilistic-thinking"><span class="header-section-number">6.2.2</span> Models and Probabilistic Thinking</a></li>
   </ul></li>
-  <li><a href="#appendix-expected-values-and-conditional-probabilities" id="toc-appendix-expected-values-and-conditional-probabilities" class="nav-link" data-scroll-target="#appendix-expected-values-and-conditional-probabilities">Appendix: Expected Values and Conditional Probabilities</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.3</span> Exercises</a></li>
+  <li><a href="#sec-prob-models-appendix-expected-values-and-conditional-probabilities" id="toc-sec-prob-models-appendix-expected-values-and-conditional-probabilities" class="nav-link" data-scroll-target="#sec-prob-models-appendix-expected-values-and-conditional-probabilities"><span>Chapter 6</span> Appendix: Expected Values and Conditional Probabilities</a></li>
   </ul>
 </nav>
     </div>
@@ -481,14 +476,14 @@ window.Quarto = {
 </header>
 
 
-<p>Policy makers, managers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Managers, policy makers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <section id="probability-distributions" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="probability-distributions"><span class="header-section-number">6.1</span> Probability distributions</h2>
 <p><strong>Probability distributions</strong> are precise descriptions of all possible values that could be obtained from a random process as well as the probability of each value occurring. One of the simplest probability distributions describes a coin flip. The two possible values are “heads” and “tails,” and each value has a 50% chance—or .5 probability—of occurring. Probability distributions are very useful in statistics because they allow us to build statistical models that account for randomness or uncertainty.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example: Anticipating How Many Visitors to Expect
@@ -503,7 +498,7 @@ window.Quarto = {
 <img src="Images/prob-models/circ1.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cardio-admissions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: Histogram of daily volume of cardiovascular ER admissions; data from <a href="https://doi.org/10.1371/journal.pone.0183224">Hwang et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
+Figure&nbsp;6.1: Histogram of daily volume of cardiovascular ER admissions; data from <a href="https://doi.org/10.1371/journal.pone.0183224">Hwang et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>)
 </figcaption>
 </figure>
 </div>
@@ -546,21 +541,21 @@ Figure&nbsp;6.3: Normal distribution (solid line) overlaid on histogram of daily
 <div id="fig-normaldist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://onlinestatbook.com/2/introduction/distributions.html"><img src="Images/prob-models/normaldist.jpg" class="img-fluid figure-img"></a>
+<img src="Images/prob-models/normaldist.jpg" class="img-fluid figure-img" width="250">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normaldist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.4: An example of the normal distribution
+Figure&nbsp;6.4: An example of the normal distribution. Source: <a href="https://onlinestatbook.com/2/introduction/distributions.html">Lane &amp; Ziemer</a> (public domain).
 </figcaption>
 </figure>
 </div>
 <p>All normal distributions have the basic “bell curve” shape seen in <a href="#fig-normaldist" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>, but we can get different versions of the normal distribution by shifting this curve to the left or right, and by squishing or expanding the width of the curve. <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a> illustrates this by showing three different versions of the normal curve in one graph. Any normal distribution can be uniquely identified by its two parameters: the mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>). Because the normal curve is unimodal and symmetric, the mean, median, and mode are all equal to one another. Thus, the mean can be identified visually as the tallest point (the mode) on the curve. Changing the mean will move the curve to the left or to the right; in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>, the mean must be smallest for the green curve since it is furthest to the left (although no axis labels are provided). Changing the standard deviation will expand or narrow the width of the curve; the black curve in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a> has the largest standard deviation since it is the widest curve. As noted above, all probability density functions have a total area under the curve equal to one, so the narrower versions of the normal distribution (e.g., the green one in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>) have to be taller than the wider curves in order to maintain that same area of 1 under each curve.</p>
-<div id="fig-normaldist3" class="quarto-float quarto-figure quarto-figure-center anchored" width="400">
+<div id="fig-normaldist3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldist3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://onlinestatbook.com/2/normal_distribution/intro.html"><img src="Images/prob-models/normaldist3.png" class="img-fluid figure-img" width="400"></a>
+<img src="Images/prob-models/normaldist3.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normaldist3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.5: Three different examples of normal distributions
+Figure&nbsp;6.5: Three different examples of normal distributions. Source: <a href="https://onlinestatbook.com/2/normal_distribution/intro.html">Lane</a> (public domain).
 </figcaption>
 </figure>
 </div>
@@ -571,13 +566,13 @@ Figure&nbsp;6.5: Three different examples of normal distributions
 <li><p>99.7% of the area under a normal curve is within approximately <em>three</em> standard deviations of the mean</p></li>
 </ul>
 <p>Let’s consider the normal distribution with a mean of 100 and a standard deviation of 20. To find the range describing one standard deviation from the mean, we first subtract the value of the standard deviation from the mean to find the lower bound (100 - 20 = 80), and then we add the standard deviation to the mean to find the upper bound (100 + 20 = 120). We can then say that there is a 68% chance that a draw from this distribution will yield a number between 80 and 120. <a href="#fig-normaldistmean100sd20" class="quarto-xref">Figure&nbsp;<span>6.6</span></a> shows this visually, with the blue highlighted region representing an area of 0.68 (compared to a total area of 1 under the entire cure).</p>
-<div id="fig-normaldistmean100sd20" class="quarto-float quarto-figure quarto-figure-center anchored" width="300">
+<div id="fig-normaldistmean100sd20" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldistmean100sd20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://onlinestatbook.com/2/normal_distribution/areas_normal.html"><img src="Images/prob-models/normaldistmean100sd20.png" class="img-fluid figure-img" width="300"></a>
+<img src="Images/prob-models/normaldistmean100sd20.png" class="img-fluid figure-img" width="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normaldistmean100sd20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.6: A normal distribution with mean of 100 and standard deviation of 20; the region within one standard deviation of the mean is highlighted
+Figure&nbsp;6.6: A normal distribution with mean of 100 and standard deviation of 20; the region within one standard deviation of the mean is highlighted. Source: <a href="https://onlinestatbook.com/2/normal_distribution/areas_normal.html">Lane</a> (public domain).
 </figcaption>
 </figure>
 </div>
@@ -596,7 +591,7 @@ Figure&nbsp;6.6: A normal distribution with mean of 100 and standard deviation o
 <p><span id="eq-a"><span class="math display">\[
 happiness = 3.0 + 2.3 \times income + \varepsilon
 \tag{6.1}\]</span></span></p>
-<p>This model attempts to explain one’s level of happiness based on their income. You might notice that it looks very similar to the regression equations we saw in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a>. That’s because regression is one of the main tools used to estimate a model that includes uncertainty.</p>
+<p>This model attempts to explain one’s level of happiness based on their income. You might notice that it looks very similar to the regression equations we saw in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a>, except that we have added an extra term at the end (<span class="math inline">\(\varepsilon\)</span>). That’s because regression is one of the main tools used to estimate a model that includes uncertainty.</p>
 <p>What does this model mean in practical terms? Well, there are no obvious units we can use to quantify the amount of happiness someone experiences, so the exact values of the numbers we see are not particularly meaningful. But the fact that there’s a positive number (2.3) that is being multiplied by income implies that as income gets bigger, happiness gets larger.</p>
 <p>The key part of this equation that I want to focus on is the little Greek letter at the end of the equation: <span class="math inline">\(\varepsilon\)</span>. This letter is called “epsilon,” and it is often used to represent what we call an <strong>error term</strong> (also sometimes called a <strong>disturbance term</strong>). The error term (<span class="math inline">\(\varepsilon\)</span>) represents everything else besides income that affects happiness. It is a formal acknowledgement that if all we know about someone is their income, we will have uncertainty about their exact level of happiness. An error term (<span class="math inline">\(\varepsilon\)</span>) in the model makes clear that we only claim to have a partial understanding of happiness, not a complete one.</p>
 <p>The first part of our model that appears on the right side of the equation (<span class="math inline">\(3.0 + 2.3 \times income\)</span>) is the <em>systematic</em> part of our model. It’s what we would use to build a prediction of happiness if all we knew about someone was their income level. Suppose, for example, that someone has an income of 4 units (perhaps income is measured in tens of thousands of dollars of annual income, so a salary of $40,000 is coded as a 4). According to our model, that person’s happiness would be:</p>
@@ -633,8 +628,22 @@ happiness=12.2+\varepsilon
 </ul>
 </section>
 </section>
-<section id="appendix-expected-values-and-conditional-probabilities" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="appendix-expected-values-and-conditional-probabilities">Appendix: Expected Values and Conditional Probabilities</h2>
+<section id="exercises" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.3</span> Exercises</h2>
+<ol type="1">
+<li>What is the difference between a distribution of data and a probability distribution?</li>
+<li>What are the two parameters of a normal distribution?</li>
+<li>A draw from a normal distribution with a mean of 5 and a standard deviation of 10 has a 95% chance (approximately) of being between ______ and ______.</li>
+<li>A draw from a normal distribution with a mean of ______ and a standard deviation of ______ has a 68% chance (approximately) of being between 80 and 100.</li>
+<li>What is size of the total area underneath a PDF?</li>
+<li>If the area underneath a PDF between 3 and 5 is .31, what is the probability of drawing a value between 3 and 5?</li>
+<li>What is unique about the standard normal distribution (compared to other normal distributions)?</li>
+<li>What does an error term represent?</li>
+<li>In social science, do we normally use deterministic or probabilistic models? What is the difference?</li>
+</ol>
+</section>
+<section id="sec-prob-models-appendix-expected-values-and-conditional-probabilities" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-prob-models-appendix-expected-values-and-conditional-probabilities"><a href="#sec-prob-models" class="quarto-xref"><span>Chapter 6</span></a> Appendix: Expected Values and Conditional Probabilities</h2>
 <p>Let us now practice using equations to more formally describe some of what we discussed in the main chapter. Given our assumptions and the equation representing our model of happiness, we can use the notation of expected value to express the predictions we previously made:</p>
 <p><span class="math display">\[ \mathbb{E}[happiness|income=4]=\mathbb{E}[(3.0+2.3 \times (4)+\varepsilon)|income=4] \]</span><span class="math display">\[
 =12.2+\mathbb{E}[\varepsilon|income=4] = 12.2 \]</span></p>

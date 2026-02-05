@@ -415,24 +415,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./practical-points.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Practical points</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./teaching-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Teaching Resources</span></span></a>
+ <span class="menu-text">Teaching Resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./change-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Change Log</span></span></a>
+ <span class="menu-text">Change Log</span></a>
   </div>
 </li>
     </ul>
@@ -457,6 +451,7 @@ window.Quarto = {
   <li><a href="#sec-introducing-confidence-intervals-for-regression" id="toc-sec-introducing-confidence-intervals-for-regression" class="nav-link" data-scroll-target="#sec-introducing-confidence-intervals-for-regression"><span class="header-section-number">5.2.1</span> Confidence Intervals for Regression</a></li>
   <li><a href="#sec-interpreting-confidence-intervals-correctly" id="toc-sec-interpreting-confidence-intervals-correctly" class="nav-link" data-scroll-target="#sec-interpreting-confidence-intervals-correctly"><span class="header-section-number">5.2.2</span> Interpreting Confidence Intervals Correctly</a></li>
   </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.3</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -484,10 +479,10 @@ window.Quarto = {
 
 
 <p>In Chapters 1-4, we learned how to describe patterns in our data. In this chapter, we introduce a category of statistical tools used for something more ambitious. <strong>Inferential statistics</strong> allow us to use patterns in our data to draw conclusions about things not directly appearing in our dataset. For example, we might try to answer questions about a <strong>counterfactual</strong>: what outcomes would we see for participants in a program if they had instead not participated? Or we might try to answer questions about a broader set of data to which we do not have access: based on the 100 clients who responded to my satisfaction survey, what can I conclude about satisfaction among all clients of my organization?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example: Analyzing Data from a Randomized Experiment
@@ -495,7 +490,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p><a href="https://doi.org/10.1002/pam.70007">Kim et. al (2025)</a> study the experience of people trying to access food assistance benefits in the U.S. One requirement of the assistance program is to complete an interview. Working together with a nonprofit organization and a local government, the researchers designed an experiment to study whether interview completion rates could be improved by sending text messages to remind applicants of upcoming appointments and inform them of a new drop-in interview option.</p>
-<p>For the experiment, some study participants were assigned to be part of a <strong>control</strong> group and thus received only a traditional mailer and no text reminders. The rest of the participants received the <strong>treatment</strong>, consisting of text reminders that were sent in addition to the mailer. Assignment to treatment and control groups was based on each participant’s randomly-assigned case number: odd case numbers received the treatment while even case numbers received the control.</p>
+<p>For the experiment, some study participants were assigned to be part of a <strong>control</strong> group and thus received only a traditional mailer and no text reminders. A control group refers to a set of participants who receive no intervention, helping to establish a baseline. The rest of the participants received the <strong>treatment</strong>, meaning the intervention of interest to researchers. In this case, the treatment consisted of text reminders that were sent in addition to the mailer. Assignment to treatment and control groups was based on each participant’s randomly-assigned case number: odd case numbers received the treatment while even case numbers received the control.</p>
 <p>Using inferential statistics, the authors estimate how the text reminders affect the chances of completing an interview. The exact effect may vary depending on the study participant. We can game this out by imagining several distinct categories of applicants. Some applicants receiving the reminders would have completed the interview anyway, so for them the reminders had no effect. For others, the reminders were pivotal, causing them to attend an interview instead of missing it. And some missed the interview even with reminders (and possibly some <em>because of</em> the reminders, but I assume this is unlikely). Among those who did not receive the reminders, there were those who completed the interview anyway and for whom the reminders presumably would have had no effect (unless reminders somehow discouraged completion of the interview). There were also those who did not complete the interview but would have had they received the texts. Finally, there are those who did not complete the interview and wouldn’t have even with reminders.</p>
 <p>In a perfect world, we might like to know whether and how the text reminders would have changed the behavior of each person in the study. This is impossible to determine, however, since we can’t ever observe the counterfactual to what actually occurred. The best we can do is estimate the likely effect of the text reminders in the aggregate—an <em>average treatment effect</em>. Based on the fact that this study’s sample of participants receiving text reminders completed interviews at a rate 10.7 percentage points higher than those who received no texts, the researchers estimate that the text reminders increase the rate of interview completion by 10.7 percentage points. In other words, for 10.7% of people in the control group, it is estimated that text reminders could have caused them to complete an interview that they missed (again assuming that no one is discouraged from completing the interview based on the reminders).</p>
 <div id="fig-text-reminders" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -504,7 +499,7 @@ window.Quarto = {
 <img src="Images/stat-inference/SNAP.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-text-reminders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Difference in interview completion rate for treatment versus control groups, originally Figure 2 in <a href="https://doi.org/10.1002/pam.70007">Kim et. al</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
+Figure&nbsp;5.1: Difference in interview completion rate for treatment versus control groups. Source: <a href="https://doi.org/10.1002/pam.70007">Kim et. al</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
 </figcaption>
 </figure>
 </div>
@@ -512,7 +507,7 @@ Figure&nbsp;5.1: Difference in interview completion rate for treatment versus co
 </div>
 </div>
 <p>Because we are trying to make claims about data we do not directly observe, we are doing <strong>estimation</strong> when we use inferential statistics. We also have to make assumptions about how the data in our dataset were generated. Because assumptions usually cannot be (fully) tested and could end up being incorrect, there is always a risk with statistical inference that we will draw invalid conclusions. In the example above, a key assumption is that the assignment of individuals into the treatment and control groups is truly random. This assumption could be violated if there was an error such that participants with a greater ability to make a scheduled interview were systematically more likely to receive an odd case number, for example. Fortunately, it is difficult to imagine how such a violation could have occurred in practice, unless there was deliberate data manipulation by researchers or program personnel. More broadly, it is hard to imagine a system of case ID assignment by which those receiving even-numbered case IDs would be systematically different in important ways from those receiving odd-numbered case IDs, so we can feel fairly confident about meeting the assumption of random assignment in the example above. For other studies, the assumption of random assignment for an experiment may be more questionable, such as when there are concerns that participants may have been able to tamper with their own assignment or when subjects drop out mid-study and thus cannot be included in the final analysis. Assumptions of statistical models will be discussed further in future chapters.</p>
-<p>Another important feature of inferential statistics is that it involves drawing conclusions that are expressed probabilistically. We generally cannot draw 100% definitive conclusions, but we can draw conclusions based on confidence thresholds. In most scientific work, the default confidence threshold is 95%, meaning that we are willing to accept a process for drawing conclusions with a known 5% error rate. We will see this concept demonstrated later in this chapter when discussion confidence intervals.</p>
+<p>Another important feature of inferential statistics is that it involves drawing conclusions that are expressed probabilistically. We generally cannot draw 100% definitive conclusions, but we can draw conclusions based on confidence thresholds. In most scientific work, the default confidence threshold is 95%, meaning that we are willing to accept a process for drawing conclusions with a known 5% error rate. We will see this concept demonstrated later in this chapter when discussing confidence intervals.</p>
 <section id="key-concepts-for-statistical-inference" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="key-concepts-for-statistical-inference"><span class="header-section-number">5.1</span> Key Concepts for Statistical Inference</h2>
 <p>In the context of inferential statistics, the <strong>sample</strong> refers to the actual units we observe (the observations in our dataset). Traditionally, this is contrasted with the <strong>population</strong>, meaning the full universe of units we are interested in learning about. The sample is therefore a subset of the population. If every unit in the population is included in our dataset, we have a <strong>census</strong>, not a sample, that we are analyzing.</p>
@@ -530,6 +525,7 @@ Figure&nbsp;5.1: Difference in interview completion rate for treatment versus co
 <section id="parameters-of-interest" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="parameters-of-interest"><span class="header-section-number">5.1.3</span> Parameters of interest</h3>
 <p>Whether we are trying to draw conclusions about the population or a counterfactual, the quantity that we are estimating is called a <strong>parameter</strong>. For example, the parameter might be the population mean or the average treatment effect. By contrast, a <strong>sample statistic</strong> directly describes the sample itself and is often used as an estimate of a parameter. For example, if the parameter of interest is the population mean, the sample mean can be our estimate of the parameter.</p>
+<p>We often use Greek letters to refer to population parameters (e.g., <span class="math inline">\(\mu\)</span> for the population mean, <span class="math inline">\(\sigma^2\)</span> for variance, <span class="math inline">\(\rho\)</span> for correlation) and the Latin alphabet to represent sample statistics (e.g., <span class="math inline">\(\bar{x}\)</span> for the sample mean, <span class="math inline">\(s^2\)</span> for variance, <span class="math inline">\(r\)</span> for correlation). We can also add a hat above a parameter to indicate an <em>estimate</em> of the parameter. For example, we can formally state that the estimate of the population mean is the sample mean by writing: <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>.</p>
 </section>
 <section id="importance-of-sample-size" class="level3" data-number="5.1.4">
 <h3 data-number="5.1.4" class="anchored" data-anchor-id="importance-of-sample-size"><span class="header-section-number">5.1.4</span> Importance of sample size</h3>
@@ -538,7 +534,7 @@ Figure&nbsp;5.1: Difference in interview completion rate for treatment versus co
 </section>
 <section id="confidence-intervals-a-key-tool-for-estimation" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="confidence-intervals-a-key-tool-for-estimation"><span class="header-section-number">5.2</span> Confidence Intervals: A Key Tool for Estimation</h2>
-<p>Returning to the example at the beginning of the chapter, we saw that researchers found that applicants for a food assistance program who received text reminders were 10.7 percentage points more likely to complete an interview than those in the control group who received no text reminders. This difference in the completion rate between the treatment and control groups (the sample statistic) serves as a <strong>point estimate</strong> for the parameter (effect of the text reminders). As we noted, this estimate is likely to be imperfect because of random differences in who gets assigned to the treatment versus control groups. To better convey the uncertainty surrounding a point estimate, it is usually helpful to provide an <strong>interval estimate</strong>. Interval estimates identify a range of likely values rather than a single number representing one’s best guess. For example, the researchers studying text reminders report a 95% confidence interval ranging from 5.8 to 15.5 percentage points. Thus, there is good reason to believe that the true effect size is at least 5.8 percentage points but no greater than 15.5 percentage points:</p>
+<p>Returning to the example at the beginning of the chapter, we saw that researchers found that applicants for a food assistance program who received text reminders were 10.7 percentage points more likely to complete an interview than those in the control group who received no text reminders. This difference in the completion rate between the treatment and control groups (the sample statistic) serves as a <strong>point estimate</strong> for the parameter (effect of the text reminders). As we noted, this estimate is likely to be imperfect because of random differences in who gets assigned to the treatment versus control groups. To better convey the uncertainty surrounding a point estimate, it is helpful to provide an <strong>interval estimate</strong>. Interval estimates identify a range of likely values rather than a single number representing one’s best guess. For example, the researchers studying text reminders report a 95% confidence interval ranging from 5.8 to 15.5 percentage points. Thus, there is good reason to believe that the true effect size is at least 5.8 percentage points but no greater than 15.5 percentage points:</p>
 <p><span class="math display">\[
 5.8 &lt; \text{effect size} &lt; 15.5
 \]</span></p>
@@ -550,7 +546,7 @@ Figure&nbsp;5.1: Difference in interview completion rate for treatment versus co
 <img src="Images/stat-inference/CI-simulation.png" class="img-fluid figure-img" width="550">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ci-simulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Simulation of interval estimates based on different random samples, adapted from <a href="https://doi.org/10.1525/collabra.197">Nalborczyk et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
+Figure&nbsp;5.2: Simulation of interval estimates based on different random samples; adapted from <a href="https://doi.org/10.1525/collabra.197">Nalborczyk et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>)
 </figcaption>
 </figure>
 </div>
@@ -620,17 +616,20 @@ Table&nbsp;5.1: Results for a regression with computer science GPA as the depend
 <p>Because the coefficients we see in the table are just point estimates, confidence intervals can help us better understand the precision of these estimates by providing us with a range of plausible values for the coefficients. Notice that no confidence intervals have been provided in the table (which is a situation you may frequently encounter when reading social scientific research publications). Fortunately, we can easily calculate a good approximation of a confidence interval for a coefficient estimate <span class="math inline">\(\hat{\beta_i}\)</span> as long as we also have its standard error estimate (<span class="math inline">\(s_{\beta_i}\)</span>), which is provided in the table (in the column label “Std. err.”).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> We will learn exactly what a standard error is in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 7</span></a>, but for now, we can simply insert the standard error estimate into the following formulas:</p>
 <p><span class="math display">\[
 \text{Lower bound} \approx \hat{\beta_i} - 2\times s_{\beta_i}
-\]</span><span class="math display">\[
+\]</span></p>
+<p><span class="math display">\[
 \text{Upper bound} \approx \hat{\beta_i} + 2\times s_{\beta_i}
 \]</span></p>
 <p>Note that these formulas are just an approximation for a 95% confidence interval; the formulas for precise intervals are shown in <a href="sampling-distributions.html#sec-confidence-interval-for-a-regression-slope-coefficient" class="quarto-xref"><span>Section 7.3.3</span></a>. Multiplying the standard error by two yields the approximate margin of error.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> From our initial point estimate of the slope, we can then add or subtract the margin of error to identify a full range of plausible values.</p>
 <p>Our approximation approach provides an inexact but close approximation of a 95% confidence interval as long as the sample size is reasonably large (e.g., at least 30 more observations than the number of independent variables included in the regression). In this case, there are 105 observations and only two independent variables, so we will obtain a good approximation. And an approximation is usually the best we can hope for when calculating confidence intervals by hand from a regression table, since we will usually also lose some precision due to rounding error.</p>
 <p>For the verbal SAT scores, we find the following bounds:</p>
-<p><span class="math display">\[ \text{Lower bound} \approx 0.0017 - (2)(0.0010) = -0.0003 \]</span><span class="math display">\[ \text{Upper bound} \approx 0.0017 + (2)(0.0010) = 0.0037 \]</span></p>
+<p><span class="math display">\[ \text{Lower bound} \approx 0.0017 - (2)(0.0010) = -0.0003 \]</span></p>
+<p><span class="math display">\[ \text{Upper bound} \approx 0.0017 + (2)(0.0010) = 0.0037 \]</span></p>
 <p>This is very close to the precise 95% confidence interval that one finds using statistical software to compute an exact interval: [-0.0003, 0.0038]. Any values within this range can be considered plausible values for the coefficient, according to our model results.</p>
 <p>How do we interpret this confidence interval? Remember that when it comes to interpreting size, the coefficient indicates how many units the prediction for the dependent variable changes when the independent variable increases by one unit. But with SAT scores, a 1-unit increase is so small that we found it more useful to consider a 100-point increase, which required multiplying the coefficient by 100. Doing so here, we can conclude that a 100-point increase in the verbal SAT score (e.g., comparing a student with a 600 to a student with a 500, assuming math SAT scores are equal) predicts a difference in the computer science GPA somewhere in the range of [-0.03, 0.38]. Zero is part of this range, so it’s entirely plausible that there is no real association between verbal SAT score and computer science GPA (hence, the lack of statistical significance for this relationship). According to the model results, it is also plausible that a 100-point increase in verbal SAT is associated with the predicted computer science GPA decreasing by as much as 0.03, or increasing by as much as 0.38. A 0.03 decrease in GPA is tiny, so we might feel comfortable ruling out the possibility that a good verbal SAT score has any substantial negative predictive effect for computer science GPA. But a positive effect of 0.38 grade points is much more substantial, so it is plausible that the verbal SAT has a meaningfully-large positive association with computer science GPA.</p>
 <p>What about the math SAT? Using our approximation method:</p>
-<p><span class="math display">\[ \text{Lower bound} \approx 0.0048 - (2)(0.0012) = 0.0024 \]</span><span class="math display">\[ \text{Upper bound} \approx 0.0048 + (2)(0.0012) = 0.0072 \]</span></p>
+<p><span class="math display">\[ \text{Lower bound} \approx 0.0048 - (2)(0.0012) = 0.0024 \]</span></p>
+<p><span class="math display">\[ \text{Upper bound} \approx 0.0048 + (2)(0.0012) = 0.0072 \]</span></p>
 <p>Multiplying these two values by 100, we find that a 100-point increase in the math SAT is plausibly associated with an increase of between 0.24 and 0.72 points in predicted computer science GPA.</p>
 </section>
 <section id="sec-interpreting-confidence-intervals-correctly" class="level3" data-number="5.2.2">
@@ -649,9 +648,22 @@ Table&nbsp;5.1: Results for a regression with computer science GPA as the depend
 <blockquote class="blockquote">
 <p>Assuming no additional information and an appropriate statistical model, this result usually suggests that we can be about 95% confident the parameter lies between A and B.</p>
 </blockquote>
-
-
 </section>
+</section>
+<section id="exercises" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.3</span> Exercises</h2>
+<ol type="1">
+<li>How is inferential statistics different from the data description we’ve focused on in prior chapters?</li>
+<li>Many medical trials involve tracking patients who are randomly assigned to receive either an experimental medication or a placebo (e.g., a sugar pill). In such trials, what is the treatment group, and what is the control group?</li>
+<li>Suppose I am trying to estimate popular support for the Mayor of London using survey data. My dataset contains responses from 1000 people randomly selected from a list of all registered voters in Greater London. What is my sample? What is my population?</li>
+<li>In practice, why would it be difficult to obtain a truly random sample like the one described in the prior question?</li>
+<li>What letters/symbols do we typically use to represent the mean, variance, and correlation in a sample? What about in a population?</li>
+<li>A regression table shows a coefficient of 2.3 with a standard error of 1.1. Calculate a 95% confidence interval for this coefficient, using the approximation we learned in this chapter.</li>
+<li>Under what condition is the approximation used for the previous question <em>not</em> dependable?</li>
+<li>Suppose I want to know whether I can conclude that an association between two variables is close to zero (meaning they are essentially unrelated). I have estimation results for a regression describing the association of interest. What inference tool from this chapter is most appropriate for helping me discern if the association is near-zero?</li>
+</ol>
+
+
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
