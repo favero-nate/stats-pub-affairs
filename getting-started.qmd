@@ -4,9 +4,9 @@ Data is everywhere. Yet many of us find numbers intimidating. It can be tempting
 
 [^getting-started-1]: This chapter was written by Nathan Favero.
 
-Fortunately, statistics is a topic that most anyone can learn. Even if you think you are not a "numbers person," I am confident you can learn fundamentals that will allow you to critically assess statistical claims. I say this as someone who has spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study public affairs—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. It is true that some people learn numerical material quicker than others. For most people, lots of repetition is required before many statistical concepts are grasped. But I have yet to encounter a student who is unable to learn statistics. If you set your mind to it, you will learn it.
+Fortunately, statistics is a topic that most anyone can learn. Even if you think you are not a "numbers person," I am confident you can learn fundamentals that will allow you to critically assess statistical claims. I say this as someone who has spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study social science topics—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. It is true that some people learn numerical material more quickly than others. For most people, lots of repetition is required before many statistical concepts are grasped. But I have yet to encounter a student who is unable to learn statistics. If you set your mind to it, you will learn it.
 
-In my opinion, the most important skill for dealing with statistics is critical thinking. While statistics is certainly quantitative, doing statistical analysis does not require you to perform complex math because software will handle the number crunching. Thus, being comfortable with statistics is mostly about developing familiarity with statistical concepts, mastering a few technical details, and thinking carefully about how to best apply statistical tools to real-world data. "Subject-matter expertise," by which I mean familiarity with the policy or program area described by the data, is almost always required for good interpretation of statistical results. Sometimes, a bit of math will help with explaining how a statistic works or gaming out the implications of a statistical result. But even then, most of the math we need for an introductory course is relatively simple arithmetic.
+In my opinion, the most important skill for dealing with statistics is critical thinking. While statistics is certainly quantitative, doing statistical analysis does not require you to perform complex math because software will handle the number crunching. Thus, being comfortable with statistics is mostly about developing familiarity with statistical concepts, mastering a few technical details, and thinking carefully about how to best apply statistical tools to real-world data. "Subject-matter expertise," by which I mean familiarity with the topics (e.g., policy or program area) described by the data, is almost always required for good interpretation of statistical results. Sometimes, a bit of math will help with explaining how a statistic works or gaming out the implications of a statistical result. But even then, most of the math we need for an introductory course is relatively simple arithmetic.
 
 ## Three Questions to Always Ask about Data
 
@@ -29,7 +29,7 @@ Notice that there are two y-axes on this graph: one on the left edge showing the
 
 In analyzing this example, I will mostly ignore the spending trend in favor of evaluating the math trend, for sake of brevity. Still, I will note that increased spending is largely driven by (1) increasing labor costs across the (high-skilled) economy and (2) greater investments in special education. The latter investments likely improve equity and fairness in society but may do little to improve test scores.
 
-Regarding the math trend, let us consider our 3 Questions to Always Ask about Data:
+Regarding the math trend, let us consider our three Questions to Always Ask about Data:
 
 1.  **What is being measured?**
 
@@ -41,9 +41,9 @@ Regarding the math trend, let us consider our 3 Questions to Always Ask about Da
 
     If you did some basic reading about the NAEP as suggested for the prior question, you would probably find that NAEP scores are available for various ages. Specifically, the long-term trend scores are available for kids aged 9, 13, and 17. Yet the graph only depicts the data for 17-year olds. On the one hand, it might seem that the oldest age is the most important since it indicates how students are doing near the end of their secondary education. On the other hand, it might be useful to see what the other trends look like. A quick online search for "naep scores over time" will likely return a government website showing NAEP scores for younger students, such as those shown below.[^getting-started-5] Among 9 and 13-year-olds, there is clear improvement in math between the '70s and 2012. Then more recently, there is a large drop associated with the disruptions of COVID-19.
 
-    ![Trend in 9-year-old math proficiency](Images/getting-started/9yo_naep.png){#fig-naep-9yr width="550"}
+    ![Trend in 9-year-old math proficiency. Source: [NCES](https://www.nationsreportcard.gov/ltt) (public domain).](Images/getting-started/9yo_naep.png){#fig-naep-9yr width="550"}
 
-    [![Trend in 13-year-old math proficiency](Images/getting-started/13yo_naep.png){#fig-naep-13yr width="550"}](https://www.nationsreportcard.gov/ltt)
+    ![Trend in 13-year-old math proficiency. Source: [NCES](https://www.nationsreportcard.gov/ltt) (public domain).](Images/getting-started/13yo_naep.png){#fig-naep-13yr width="550"}
 
     Given these results, you might conclude that there was some possible cherry picking in presenting the initial graph, since the trend among 17-year-olds shows much less improvement from the 1970s to the early 2000s than the trends for younger students. That is an important conclusion to reach and helps put the original graph in context.
 
@@ -70,7 +70,7 @@ Regarding the math trend, let us consider our 3 Questions to Always Ask about Da
 
 ## How Datasets are Structured
 
-We often display data in the form of a spreadsheet. @tbl-country-preview shows part of a dataset describing countries. Each row represents one country, and we call the rows **observations**. Each column represents one characteristic of the countries. We call the columns **variables**. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns [vari]{.underline}ables because they display values of a characteristic that [varies]{.underline} depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.
+We often display data in the form of a spreadsheet. @tbl-country-preview shows part of a dataset describing countries. Each row represents one country, and we call the rows **observations**. Each column represents one characteristic of the countries. We call the columns **variables**. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns [vari]{.underline}ables because each column displays values of a characteristic that [varies]{.underline} depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.
 
 | country_name | publ_sector_size | females_publ | females_priv | former_british_colony |
 |---------------|---------------|---------------|---------------|---------------|
@@ -83,7 +83,7 @@ We often display data in the form of a spreadsheet. @tbl-country-preview shows p
 
 : Preview of a dataset of countries and their characteristics[^getting-started-7] {#tbl-country-preview}
 
-[^getting-started-7]: Data sources are the Worldwide Bureaucracy Indicators dataset ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc)) and the Colonial Dates Dataset.
+[^getting-started-7]: Data sources are the [Worldwide Bureaucracy Indicators](https://datacatalog.worldbank.org/search/dataset/0038132/worldwide-bureaucracy-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc)) and the [Colonial Dates Dataset](https://doi.org/10.7910/DVN/T9SDEW) (public domain).
 
 @tbl-fevs-preview previews a dataset where each observation (row) is a different individual who responded to a survey. We use the term **unit of analysis** to describe what constitutes one observation in a dataset: in the prior table the unit of analysis was the country, whereas here it is the individual. Other common units of analysis include the organization, the work unit, and the subnational unit (e.g., city or region).
 
@@ -97,7 +97,7 @@ We often display data in the form of a spreadsheet. @tbl-country-preview shows p
 
 : Preview of data from a 2024 survey of U.S. government employees[^getting-started-8] {#tbl-fevs-preview}
 
-[^getting-started-8]: 2024 U.S. Federal Employee Viewpoint Survey
+[^getting-started-8]: 2024 U.S. Federal Employee Viewpoint Survey (public domain)
 
 ### Types of variables
 
@@ -154,7 +154,7 @@ Another type of graph you can create with qualitative data is a pie chart, using
 
 ![Pie chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/pie.png){#fig-pie-race width="400"}
 
-Note that bar charts and pie charts can be used to represent things other than the frequency with which different values of a variable occur, even though that is the main way we use them while studying statistics. When you encounter a graph, it is always important to carefully read the titles and labels to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or as noted above, you might see the levels for budget categories themselves depicted in a pie chart—highlighting how some categories make up a much larger share of the budget than others. In such cases, the charts would not be telling you how many observations (rows of data) record different values of a variable, as in the example graphs shown here.
+Note that bar charts and pie charts can be used to represent things other than the frequency with which different values of a variable occur, even though that is the main way we use them while studying statistics. When you encounter a graph, it is always important to carefully read the titles and labels to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or as noted above, you might see the levels for budget categories themselves depicted in a pie chart—highlighting how some categories make up much larger shares of the budget than others. In such cases, the charts would not be telling you how many observations (rows of data) record different values of a variable, as in the example graphs shown here.
 
 ### Quantitative variables {#sec-quantitative-variables}
 
@@ -174,9 +174,9 @@ Regardless of which type of plot we use, we see the same asymmetry apparent in t
 
 ### Best practices for simple graphs
 
-As useful as graphs are, it is also easy to go wrong with data visualization. Here are three simple guidelines to keep in mind when getting started with graphs.
+As useful as graphs are, it is also easy to go wrong with data visualization. Here are three guidelines to keep in mind when getting started with graphs.
 
-First, the simple graphs we examined for quantative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
+First, the simple graphs we examined for quantitative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
 
 ::: callout-tip
 ## Example: Estimates of Small Donations {.unnumbered}
@@ -198,7 +198,7 @@ In the initial histogram with 10 bins, the right-most bin included the value 90�
 
 Second, be careful about using line graphs. When working with time series data, we often depict quantitative variables using a line graph. As we already saw in our example on trends in U.S. education, line graphs allow one to visually observe trends over time. While line graphs are appropriate for depicting time series data, their use in other contexts is often misleading, since the lines suggest connections between points that may not be connected at all in reality.
 
-Finally, it is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. As I alluded to near the beginning of the chapter, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-10] Focus on simplicity and clarity in data visualization, not trying to stand out.
+Third, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). It is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-10] Focus on simplicity and clarity in data visualization, not trying to stand out.
 
 [^getting-started-10]: See, for example, violations of the "principle of proportional ink": <https://callingbullshit.org/tools/tools_proportional_ink.html>
 
@@ -259,3 +259,30 @@ Now look at the following alternative. While the exact same data is being depict
 For good visualization, we want differences that are meaningful in reality to be visually noticeable in our graphs. How do we define a "meaningful" difference? There is no universal rule. Typically, subject-matter expertise and careful judgment will be our best guides.
 
 Whenever you see a difference in a graph that "looks big" or "looks small," take a moment to pause. Look carefully at the numbers on the axes, and think about how to evaluate the third Question to Always Ask about Data: "Based on what I know about this topic and how the variables are measured, *how big is this difference*? Does my understanding of the numbers match what my eyes see?"
+
+## Exercises
+
+1.  What are the three Questions to Always Ask about Data?
+
+2.  What types of variables are `voter_registration`, `follows_news`, and `years_living_in_state` in the table below?
+
+    | id  | voter_registration  | follows_news      | years_living_in_state |
+    |-----|---------------------|-------------------|-----------------------|
+    | 1   | registered          | somewhat agree    | 26                    |
+    | 2   | ineligible          | strongly disagree | 51                    |
+    | 3   | unregistered        | strongly agree    | 2                     |
+    | 4   | registered          | somewhat agree    | 34                    |
+    | 5   | registered          | somewhat disagree | 44                    |
+    | 6   | unregistered        | strongly agree    | 11                    |
+
+3.  What is the unit of analysis in the table from question 2?
+
+4.  If I have a dataset where the unit of observation is the week, what type of dataset do I have?
+
+5.  What is another name for a qualitative variable?
+
+6.  Are pie charts or bar charts more popular among scientists for depicting a qualitative variable?
+
+7.  What are three best practices for creating graphs (as described in this chapter)?
+
+8.  Why is it important to carefully read the labels on a graph's axes?

@@ -1,4 +1,4 @@
-# Change Log {#sec-change-log}
+# Change Log {#sec-change-log .unnumbered}
 
 <!-- This version (1.3) was updated July 31, 2024. -->
 

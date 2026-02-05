@@ -9,20 +9,20 @@ In Chapters 1-4, we learned how to describe patterns in our data. In this chapte
 
 [Kim et. al (2025)](https://doi.org/10.1002/pam.70007) study the experience of people trying to access food assistance benefits in the U.S. One requirement of the assistance program is to complete an interview. Working together with a nonprofit organization and a local government, the researchers designed an experiment to study whether interview completion rates could be improved by sending text messages to remind applicants of upcoming appointments and inform them of a new drop-in interview option.
 
-For the experiment, some study participants were assigned to be part of a **control** group and thus received only a traditional mailer and no text reminders. The rest of the participants received the **treatment**, consisting of text reminders that were sent in addition to the mailer. Assignment to treatment and control groups was based on each participant's randomly-assigned case number: odd case numbers received the treatment while even case numbers received the control.
+For the experiment, some study participants were assigned to be part of a **control** group and thus received only a traditional mailer and no text reminders. A control group refers to a set of participants who receive no intervention, helping to establish a baseline. The rest of the participants received the **treatment**, meaning the intervention of interest to researchers. In this case, the treatment consisted of text reminders that were sent in addition to the mailer. Assignment to treatment and control groups was based on each participant's randomly-assigned case number: odd case numbers received the treatment while even case numbers received the control.
 
 Using inferential statistics, the authors estimate how the text reminders affect the chances of completing an interview. The exact effect may vary depending on the study participant. We can game this out by imagining several distinct categories of applicants. Some applicants receiving the reminders would have completed the interview anyway, so for them the reminders had no effect. For others, the reminders were pivotal, causing them to attend an interview instead of missing it. And some missed the interview even with reminders (and possibly some *because of* the reminders, but I assume this is unlikely). Among those who did not receive the reminders, there were those who completed the interview anyway and for whom the reminders presumably would have had no effect (unless reminders somehow discouraged completion of the interview). There were also those who did not complete the interview but would have had they received the texts. Finally, there are those who did not complete the interview and wouldn't have even with reminders.
 
 In a perfect world, we might like to know whether and how the text reminders would have changed the behavior of each person in the study. This is impossible to determine, however, since we can't ever observe the counterfactual to what actually occurred. The best we can do is estimate the likely effect of the text reminders in the aggregate—an *average treatment effect*. Based on the fact that this study's sample of participants receiving text reminders completed interviews at a rate 10.7 percentage points higher than those who received no texts, the researchers estimate that the text reminders increase the rate of interview completion by 10.7 percentage points. In other words, for 10.7% of people in the control group, it is estimated that text reminders could have caused them to complete an interview that they missed (again assuming that no one is discouraged from completing the interview based on the reminders).
 
-![Difference in interview completion rate for treatment versus control groups, originally Figure 2 in [Kim et. al](https://doi.org/10.1002/pam.70007) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)).](Images/stat-inference/SNAP.png){#fig-text-reminders width="400"}
+![Difference in interview completion rate for treatment versus control groups. Source: [Kim et. al](https://doi.org/10.1002/pam.70007) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)).](Images/stat-inference/SNAP.png){#fig-text-reminders width="400"}
 
 Will this estimate be exactly correct? Almost certainly not. There is always noisiness in the real world that will partially distord our estimates. For example, by dumb luck, the participants in the treatment group may have had more family support on average, making it more likely that they would show up to their appointments even without the reminders. If so, the researchers would have overestimated the positive effect of the reminders. However, it is just as likely that the opposite is true: the control group may have had more favorable conditions for attending their appointments, causing the estimated effect to be smaller than the true effect. Because assignment to treatment and control groups was random, we can assume that there are not any systematic differences between the people in the two groups. But there will still be random mismatches, meaning that estimates will almost always be wrong by at least a bit. We have no idea in which direction the estimate is off, however, and 10.7 percentage points is our best guess for what the average treatment effect was.
 :::
 
 Because we are trying to make claims about data we do not directly observe, we are doing **estimation** when we use inferential statistics. We also have to make assumptions about how the data in our dataset were generated. Because assumptions usually cannot be (fully) tested and could end up being incorrect, there is always a risk with statistical inference that we will draw invalid conclusions. In the example above, a key assumption is that the assignment of individuals into the treatment and control groups is truly random. This assumption could be violated if there was an error such that participants with a greater ability to make a scheduled interview were systematically more likely to receive an odd case number, for example. Fortunately, it is difficult to imagine how such a violation could have occurred in practice, unless there was deliberate data manipulation by researchers or program personnel. More broadly, it is hard to imagine a system of case ID assignment by which those receiving even-numbered case IDs would be systematically different in important ways from those receiving odd-numbered case IDs, so we can feel fairly confident about meeting the assumption of random assignment in the example above. For other studies, the assumption of random assignment for an experiment may be more questionable, such as when there are concerns that participants may have been able to tamper with their own assignment or when subjects drop out mid-study and thus cannot be included in the final analysis. Assumptions of statistical models will be discussed further in future chapters.
 
-Another important feature of inferential statistics is that it involves drawing conclusions that are expressed probabilistically. We generally cannot draw 100% definitive conclusions, but we can draw conclusions based on confidence thresholds. In most scientific work, the default confidence threshold is 95%, meaning that we are willing to accept a process for drawing conclusions with a known 5% error rate. We will see this concept demonstrated later in this chapter when discussion confidence intervals.
+Another important feature of inferential statistics is that it involves drawing conclusions that are expressed probabilistically. We generally cannot draw 100% definitive conclusions, but we can draw conclusions based on confidence thresholds. In most scientific work, the default confidence threshold is 95%, meaning that we are willing to accept a process for drawing conclusions with a known 5% error rate. We will see this concept demonstrated later in this chapter when discussing confidence intervals.
 
 ## Key Concepts for Statistical Inference
 
@@ -46,6 +46,8 @@ We've already seen how statistical inference can be used to draw conclusions abo
 
 Whether we are trying to draw conclusions about the population or a counterfactual, the quantity that we are estimating is called a **parameter**. For example, the parameter might be the population mean or the average treatment effect. By contrast, a **sample statistic** directly describes the sample itself and is often used as an estimate of a parameter. For example, if the parameter of interest is the population mean, the sample mean can be our estimate of the parameter.
 
+We often use Greek letters to refer to population parameters (e.g., $\mu$ for the population mean, $\sigma^2$ for variance, $\rho$ for correlation) and the Latin alphabet to represent sample statistics (e.g., $\bar{x}$ for the sample mean, $s^2$ for variance, $r$ for correlation). We can also add a hat above a parameter to indicate an *estimate* of the parameter. For example, we can formally state that the estimate of the population mean is the sample mean by writing: $\hat{\mu}=\bar{x}$.
+
 ### Importance of sample size
 
 All else equal, larger samples are better. This is fairly intuitive: we are better able to estimate the attitudes of a country’s population with a sample of 2000 people than with 20, all else equal.[^stat-inference-2] Larger samples allow us to draw more precise conclusions. Since we typically assume that the imprecision of our estimates is rooted in the random and unpredictable peculiarities of individual units in our sample, a larger sample will increase our precision because the individual-level idiosyncrasies begin to matter less to the overall sample. With a sample of just 20 randomly selected people, it is not at all uncommon to end up with a very unrepresentative sample, such as one with mostly men and very few women. With a random sample of 2000, it would be extremely unlikely (though not technically impossible) to get a gender balance in the sample that deviates substantially from that of the population. One reason the tools of inferential statistics are so useful is that they can precisely show us how much the precision of an estimate increases as the sample size increases (given the assumptions of the model). 
@@ -54,7 +56,7 @@ All else equal, larger samples are better. This is fairly intuitive: we are bett
 
 ## Confidence Intervals: A Key Tool for Estimation
 
-Returning to the example at the beginning of the chapter, we saw that researchers found that applicants for a food assistance program who received text reminders were 10.7 percentage points more likely to complete an interview than those in the control group who received no text reminders. This difference in the completion rate between the treatment and control groups (the sample statistic) serves as a **point estimate** for the parameter (effect of the text reminders). As we noted, this estimate is likely to be imperfect because of random differences in who gets assigned to the treatment versus control groups. To better convey the uncertainty surrounding a point estimate, it is usually helpful to provide an **interval estimate**. Interval estimates identify a range of likely values rather than a single number representing one's best guess. For example, the researchers studying text reminders report a 95% confidence interval ranging from 5.8 to 15.5 percentage points. Thus, there is good reason to believe that the true effect size is at least 5.8 percentage points but no greater than 15.5 percentage points:
+Returning to the example at the beginning of the chapter, we saw that researchers found that applicants for a food assistance program who received text reminders were 10.7 percentage points more likely to complete an interview than those in the control group who received no text reminders. This difference in the completion rate between the treatment and control groups (the sample statistic) serves as a **point estimate** for the parameter (effect of the text reminders). As we noted, this estimate is likely to be imperfect because of random differences in who gets assigned to the treatment versus control groups. To better convey the uncertainty surrounding a point estimate, it is helpful to provide an **interval estimate**. Interval estimates identify a range of likely values rather than a single number representing one's best guess. For example, the researchers studying text reminders report a 95% confidence interval ranging from 5.8 to 15.5 percentage points. Thus, there is good reason to believe that the true effect size is at least 5.8 percentage points but no greater than 15.5 percentage points:
 
 $$
 5.8 < \text{effect size} < 15.5
@@ -64,7 +66,7 @@ The range of values contained within the interval is identified by its **lower b
 
 Creating an interval estimate requires that we select a confidence level. With a 95% confidence level, we calculate an interval using formulas calibrated such that the interval should contain the true value 95% of the time, assuming all assumptions of the statistical model are met. On the flip side, 5% of the time, the interval will not contain the true value.
 
-![Simulation of interval estimates based on different random samples, adapted from [Nalborczyk et al.](https://doi.org/10.1525/collabra.197) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)).](Images/stat-inference/CI-simulation.png){#fig-ci-simulation width="550"}
+![Simulation of interval estimates based on different random samples; adapted from [Nalborczyk et al.](https://doi.org/10.1525/collabra.197) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))](Images/stat-inference/CI-simulation.png){#fig-ci-simulation width="550"}
 
 This property of 95% confidence intervals is demonstrated in @fig-ci-simulation,[^stat-inference-3] which shows the results of a simulation in which random samples were drawn again and again, to see how interval estimates behave. Suppose the true effect size for a treatment is zero and each vertical bar represents the confidence interval resulting from a different random assignment of participants to treatment and control groups. As you can see, most intervals overlap with the true parameter value of zero (on the y axis), but we also expect one out of every 20 estimates (5%) to miss the mark (the bars shown in blue). In practice, we would normally only have one sample and wouldn’t know for sure if ours is one of the unlucky cases in which the confidence interval fails to include the true effect. What we do know is that we’ve followed a process that theoretically gives a correct answer 19 times out of 20.
 
@@ -95,7 +97,9 @@ Because the coefficients we see in the table are just point estimates, confidenc
 
 $$
 \text{Lower bound} \approx \hat{\beta_i} - 2\times s_{\beta_i}
-$$$$
+$$
+
+$$
 \text{Upper bound} \approx \hat{\beta_i} + 2\times s_{\beta_i}
 $$
 
@@ -107,7 +111,9 @@ Our approximation approach provides an inexact but close approximation of a 95% 
 
 For the verbal SAT scores, we find the following bounds:
 
-$$ \text{Lower bound} \approx 0.0017 - (2)(0.0010) = -0.0003 $$$$ \text{Upper bound} \approx 0.0017 + (2)(0.0010) = 0.0037 $$
+$$ \text{Lower bound} \approx 0.0017 - (2)(0.0010) = -0.0003 $$
+
+$$ \text{Upper bound} \approx 0.0017 + (2)(0.0010) = 0.0037 $$
 
 This is very close to the precise 95% confidence interval that one finds using statistical software to compute an exact interval: \[-0.0003, 0.0038\]. Any values within this range can be considered plausible values for the coefficient, according to our model results.
 
@@ -115,7 +121,9 @@ How do we interpret this confidence interval? Remember that when it comes to int
 
 What about the math SAT? Using our approximation method:
 
-$$ \text{Lower bound} \approx 0.0048 - (2)(0.0012) = 0.0024 $$$$ \text{Upper bound} \approx 0.0048 + (2)(0.0012) = 0.0072 $$
+$$ \text{Lower bound} \approx 0.0048 - (2)(0.0012) = 0.0024 $$
+
+$$ \text{Upper bound} \approx 0.0048 + (2)(0.0012) = 0.0072 $$
 
 Multiplying these two values by 100, we find that a 100-point increase in the math SAT is plausibly associated with an increase of between 0.24 and 0.72 points in predicted computer science GPA.
 
@@ -156,3 +164,14 @@ In the same way, it turns out that *absent any other information,* a 95% confide
 If you want to elaborate on how the 95% confidence interval \[A, B\] can inform our practical understanding, you might add the following to our earlier interpretation:
 
 > Assuming no additional information and an appropriate statistical model, this result usually suggests that we can be about 95% confident the parameter lies between A and B.
+
+## Exercises
+
+1.  How is inferential statistics different from the data description we've focused on in prior chapters?
+2.  Many medical trials involve tracking patients who are randomly assigned to receive either an experimental medication or a placebo (e.g., a sugar pill). In such trials, what is the treatment group, and what is the control group?
+3.  Suppose I am trying to estimate popular support for the Mayor of London using survey data. My dataset contains responses from 1000 people randomly selected from a list of all registered voters in Greater London. What is my sample? What is my population?
+4.  In practice, why would it be difficult to obtain a truly random sample like the one described in the prior question?
+5.  What letters/symbols do we typically use to represent the mean, variance, and correlation in a sample? What about in a population?
+6.  A regression table shows a coefficient of 2.3 with a standard error of 1.1. Calculate a 95% confidence interval for this coefficient, using the approximation we learned in this chapter.
+7.  Under what condition is the approximation used for the previous question *not* dependable?
+8.  Suppose I want to know whether I can conclude that an association between two variables is close to zero (meaning they are essentially unrelated). I have estimation results for a regression describing the association of interest. What inference tool from this chapter is most appropriate for helping me discern if the association is near-zero?

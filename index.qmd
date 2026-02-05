@@ -20,13 +20,11 @@ Several features make the approach here a bit unique:
 
 -   The ordering of topics is designed to equip students to start working with data and reading quantitative social science literature as quickly as possible. The first three chapters not only teach data description and visualization but also provide basic guidelines for reading a regression results table. This also allows students to quickly begin work on term papers that may utilize regression. Later chapters add coverage of more abstract topics like probabilistic modeling, statistical inference, and regression assumptions.
 
--   Chapters are relatively short (usually less than 5000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.
+-   Chapters are relatively short (usually less than 5000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Given the broad audience of this text, it may be helpful to read these short chapters alongside applied examples from the field(s) most relevant to students' program of study. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.
 
 <!-- * Part 1 can stand alone as a guide to getting started with data in social science. These first six chapters cover data description and preview how inference tools are used in research. These chapters are therefore ideal for a short course or pairing with other materials for a course with a broader scope. For example, a research methods course might add materials covering research design, qualitative methods, theory building, and/or literature review. A data science course might instead add a book introducing a programming language used for data analysis. -->
 
 This comprehensive introduction to quantitative analysis will equip students to independently evaluate and produce simple statistical analyses. Students will realize through the straightforward applications of statistical concepts to relevant and clear examples how the reasoning skills they’ve utilized their entire lives can help them effectively describe, contextualize, and interpret patterns in data.
-
-Substantial portions of this book are adapted from the public domain resource *Online Statistics Education: A Multimedia Course of Study* (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate precisely where the various sections of each chapter came from. Currently, @sec-describing-one-variable, @sec-correlation, @sec-sampling-distributions, @sec-h-tests, and @sec-h-testing-applied are mostly derived from this public domain resource.
 
 <!-- This book is meant to be a free resource and is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). You're welcome to share or adapt it, as long as you provide attribution to any work of mine that you use. This book was made using [Quarto](https://quarto.org/) and is hosted using [GitHub Pages](https://pages.github.com/). -->
 
@@ -34,4 +32,6 @@ Substantial portions of this book are adapted from the public domain resource *O
 
 ## Acknowledgements
 
-I would like to thank Natasha Kallish for help transforming an earlier version of this text from Word to a Quarto document.
+Substantial portions of this book are adapted from the public domain resource *Online Statistics Education: A Multimedia Course of Study* (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate precisely where the various sections of each chapter came from. Currently, @sec-describing-one-variable, @sec-correlation, @sec-sampling-distributions, @sec-h-tests, and @sec-h-testing-applied are mostly derived from this public domain resource.
+
+I would also like to thank Natasha Kallish for help transforming an earlier version of this text from Word to a Quarto document.

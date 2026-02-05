@@ -1,6 +1,6 @@
 # Probabilistic models {#sec-prob-models}
 
-Policy makers, managers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.[^prob-models-1]
+Managers, policy makers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.[^prob-models-1]
 
 [^prob-models-1]: This chapter was written by Nathan Favero.
 
@@ -15,7 +15,7 @@ Suppose you run an organization and want to plan for how many customers to expec
 
 To demonstrate how past data might help predict the future, we will examine some data on hospital emergency room (ER) visits. This data comes from 2018 and indicates the number of daily visits across 30 different hospitals in Seoul, South Korea.
 
-![Histogram of daily volume of cardiovascular ER admissions; data from [Hwang et al.](https://doi.org/10.1371/journal.pone.0183224) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)).](Images/prob-models/circ1.png){#fig-cardio-admissions width="400"}
+![Histogram of daily volume of cardiovascular ER admissions; data from [Hwang et al.](https://doi.org/10.1371/journal.pone.0183224) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))](Images/prob-models/circ1.png){#fig-cardio-admissions width="400"}
 
 When making a prediction for how many cardiovascular admissions there will be tomorrow, we could provide a guess in the form of a single number. In that case, we would probably want to pick a number that appears to be near the center of the distribution, such as 130. However, if we want to give a more sophisticated (and comprehensive) prediction, we could list out many possible values and indicate each one's probability of occurring. In doing so, we would be creating a probability distribution. We could present this information either graphically or in a table. One very simple approach to creating a probability distribution based on past experience would be to use the exact proportion of times each value was observed in the past year as the probability we assign to that value for the future. If we recreate @fig-cardio-admissions with a bin width of 1 so that each bar displays only a single value, we get a precise visual depiction of this distribution.
 
@@ -50,11 +50,11 @@ A **random variable** is a term used to describe a variable generated through dr
 
 **Normal distributions** are one of the most important sets of probability distributions we use in statistics. As can be seen in @fig-normaldist, a normal distribution has a symmetrical shape called a bell curve. Many variables in nature appear to approximately follow a normal distribution. For example, if you measure the heights of a population of adult humans belonging to a single sex (male or female), the distribution should look similar to a normal distribution. We often encounter normal distributions because of a principle called the central limit theorem, which states that any variable that results from adding up many small, independent factors will approximately follow a normal distribution.
 
-[![An example of the normal distribution](Images/prob-models/normaldist.jpg){#fig-normaldist}](https://onlinestatbook.com/2/introduction/distributions.html)
+![An example of the normal distribution. Source: [Lane & Ziemer](https://onlinestatbook.com/2/introduction/distributions.html) (public domain).](Images/prob-models/normaldist.jpg){#fig-normaldist width="250"}
 
 All normal distributions have the basic "bell curve" shape seen in @fig-normaldist, but we can get different versions of the normal distribution by shifting this curve to the left or right, and by squishing or expanding the width of the curve. @fig-normaldist3 illustrates this by showing three different versions of the normal curve in one graph. Any normal distribution can be uniquely identified by its two parameters: the mean ($\mu$) and standard deviation ($\sigma$). Because the normal curve is unimodal and symmetric, the mean, median, and mode are all equal to one another. Thus, the mean can be identified visually as the tallest point (the mode) on the curve. Changing the mean will move the curve to the left or to the right; in @fig-normaldist3, the mean must be smallest for the green curve since it is furthest to the left (although no axis labels are provided). Changing the standard deviation will expand or narrow the width of the curve; the black curve in @fig-normaldist3 has the largest standard deviation since it is the widest curve. As noted above, all probability density functions have a total area under the curve equal to one, so the narrower versions of the normal distribution (e.g., the green one in @fig-normaldist3) have to be taller than the wider curves in order to maintain that same area of 1 under each curve.
 
-[![Three different examples of normal distributions](Images/prob-models/normaldist3.png){#fig-normaldist3 width="400"}](https://onlinestatbook.com/2/normal_distribution/intro.html)
+![Three different examples of normal distributions. Source: [Lane](https://onlinestatbook.com/2/normal_distribution/intro.html) (public domain).](Images/prob-models/normaldist3.png){#fig-normaldist3 width="400"}
 
 There are some numbers you can memorize to help describe the probabilities associated with any normal distribution:
 
@@ -68,7 +68,7 @@ There are some numbers you can memorize to help describe the probabilities assoc
 
 Let's consider the normal distribution with a mean of 100 and a standard deviation of 20. To find the range describing one standard deviation from the mean, we first subtract the value of the standard deviation from the mean to find the lower bound (100 - 20 = 80), and then we add the standard deviation to the mean to find the upper bound (100 + 20 = 120). We can then say that there is a 68% chance that a draw from this distribution will yield a number between 80 and 120. @fig-normaldistmean100sd20 shows this visually, with the blue highlighted region representing an area of 0.68 (compared to a total area of 1 under the entire cure).
 
-[![A normal distribution with mean of 100 and standard deviation of 20; the region within one standard deviation of the mean is highlighted](Images/prob-models/normaldistmean100sd20.png){#fig-normaldistmean100sd20 width="300"}](https://onlinestatbook.com/2/normal_distribution/areas_normal.html)
+![A normal distribution with mean of 100 and standard deviation of 20; the region within one standard deviation of the mean is highlighted. Source: [Lane](https://onlinestatbook.com/2/normal_distribution/areas_normal.html) (public domain).](Images/prob-models/normaldistmean100sd20.png){#fig-normaldistmean100sd20 width="300"}
 
 To consider two standard deviations from the mean, we would first multiply the standard deviation by two (20 × 2 = 40). For the lower bound, we subtract this value from the mean (100 - 40 = 60), and for the upper bound we add (100 + 40 = 140). Thus, there is a 95% chance that a draw from this normal distribution yields a value between 60 and 140.
 
@@ -94,7 +94,7 @@ $$
 happiness = 3.0 + 2.3 \times income + \varepsilon
 $$ {#eq-a}
 
-This model attempts to explain one’s level of happiness based on their income. You might notice that it looks very similar to the regression equations we saw in @sec-correlation. That’s because regression is one of the main tools used to estimate a model that includes uncertainty.
+This model attempts to explain one’s level of happiness based on their income. You might notice that it looks very similar to the regression equations we saw in @sec-correlation, except that we have added an extra term at the end ($\varepsilon$). That’s because regression is one of the main tools used to estimate a model that includes uncertainty.
 
 What does this model mean in practical terms? Well, there are no obvious units we can use to quantify the amount of happiness someone experiences, so the exact values of the numbers we see are not particularly meaningful. But the fact that there’s a positive number (2.3) that is being multiplied by income implies that as income gets bigger, happiness gets larger.
 
@@ -147,7 +147,19 @@ An important part of learning to do good statistical analysis is learning to thi
 
 -   How often will my prediction differ greatly from what actually happens (even if my model is correct)?
 
-## Appendix: Expected Values and Conditional Probabilities {.unnumbered}
+## Exercises
+
+1.  What is the difference between a distribution of data and a probability distribution?
+2.  What are the two parameters of a normal distribution?
+3.  A draw from a normal distribution with a mean of 5 and a standard deviation of 10 has a 95% chance (approximately) of being between \_\_\_\_\_\_ and \_\_\_\_\_\_.
+4.  A draw from a normal distribution with a mean of \_\_\_\_\_\_ and a standard deviation of \_\_\_\_\_\_ has a 68% chance (approximately) of being between 80 and 100.
+5.  What is size of the total area underneath a PDF?
+6.  If the area underneath a PDF between 3 and 5 is .31, what is the probability of drawing a value between 3 and 5?
+7.  What is unique about the standard normal distribution (compared to other normal distributions)?
+8.  What does an error term represent?
+9.  In social science, do we normally use deterministic or probabilistic models? What is the difference?
+
+## @sec-prob-models Appendix: Expected Values and Conditional Probabilities {.unnumbered}
 
 Let us now practice using equations to more formally describe some of what we discussed in the main chapter. Given our assumptions and the equation representing our model of happiness, we can use the notation of expected value to express the predictions we previously made:
 

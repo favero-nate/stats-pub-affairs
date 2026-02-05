@@ -1,4 +1,4 @@
-# Teaching Resources {#sec-teaching-resources}
+# Teaching Resources {#sec-teaching-resources .unnumbered}
 
 If you're using this text, I'd love to know. You can fill out this brief form (<https://forms.gle/qBUFdb4vEuDUkzBu6>), where you can also sign up to receive emails when I post updated versions or related materials.
 

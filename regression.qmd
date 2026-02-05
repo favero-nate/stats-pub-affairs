@@ -82,21 +82,13 @@ $$ {#eq-simple-reg-sat}
 
 @tbl-multipleregression shows the data and predictions for the first five students in the dataset based on the multiple regression (@eq-multi-reg-sat).
 
-|     |         |     |       |     |                  |     |
-|-----|---------|-----|-------|-----|------------------|-----|
-|     |         |     |       |     |                  |     |
 |     | $HSGPA$ |     | $SAT$ |     | $\widehat{UGPA}$ |     |
-|     |         |     |       |     |                  |     |
+|-----|---------|-----|-------|-----|------------------|-----|
 |     | 3.45    |     | 1232  |     | 3.38             |     |
-|     |         |     |       |     |                  |     |
 |     | 2.78    |     | 1070  |     | 2.89             |     |
-|     |         |     |       |     |                  |     |
 |     | 2.52    |     | 1086  |     | 2.76             |     |
-|     |         |     |       |     |                  |     |
 |     | 3.67    |     | 1287  |     | 3.55             |     |
-|     |         |     |       |     |                  |     |
 |     | 3.24    |     | 1130  |     | 3.19             |     |
-|     |         |     |       |     |                  |     |
 
 : Data and Predictions {#tbl-multipleregression}
 
