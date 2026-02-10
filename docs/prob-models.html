@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Probabilistic models – Statistics Minus the Math 2.0</title>
+<title>7&nbsp; Probabilistic models – Statistics Minus the Math 2.0</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./sampling-distributions.html" rel="next">
-<link href="./stat-inference.html" rel="prev">
+<link href="./h-tests.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -278,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./prob-models.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Going Deeper with Data</a></li><li class="breadcrumb-item"><a href="./prob-models.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -315,7 +315,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Describing Data</span></a>
+ <span class="menu-text">Data Essentials</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -336,7 +336,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tools for Describing the Relationship Between Two Quantitative Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relationships Between Two Quantitative Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -345,17 +345,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Relationships with Qualitative Variables</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Estimation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./stat-inference.html" class="sidebar-item-text sidebar-link">
@@ -364,55 +353,49 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-models.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sampling-distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./h-tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of Hypothesis Testing</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./h-tests-applied.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hypothesis Testing in Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Putting Data to Work</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Going Deeper with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sampling-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Research Designs and Causality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Research Designs and Causality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regression Models</span></span></a>
   </div>
 </li>
       </ul>
@@ -439,17 +422,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link active" data-scroll-target="#probability-distributions"><span class="header-section-number">6.1</span> Probability distributions</a>
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link active" data-scroll-target="#probability-distributions"><span class="header-section-number">7.1</span> Probability distributions</a>
   <ul class="collapse">
-  <li><a href="#sec-normal-distributions" id="toc-sec-normal-distributions" class="nav-link" data-scroll-target="#sec-normal-distributions"><span class="header-section-number">6.1.1</span> Normal distributions</a></li>
+  <li><a href="#sec-normal-distributions" id="toc-sec-normal-distributions" class="nav-link" data-scroll-target="#sec-normal-distributions"><span class="header-section-number">7.1.1</span> Normal distributions</a></li>
   </ul></li>
-  <li><a href="#sec-models-and-uncertainty" id="toc-sec-models-and-uncertainty" class="nav-link" data-scroll-target="#sec-models-and-uncertainty"><span class="header-section-number">6.2</span> Models and Uncertainty</a>
+  <li><a href="#sec-models-and-uncertainty" id="toc-sec-models-and-uncertainty" class="nav-link" data-scroll-target="#sec-models-and-uncertainty"><span class="header-section-number">7.2</span> Models and Uncertainty</a>
   <ul class="collapse">
-  <li><a href="#assumptions-about-error-terms" id="toc-assumptions-about-error-terms" class="nav-link" data-scroll-target="#assumptions-about-error-terms"><span class="header-section-number">6.2.1</span> Assumptions About Error Terms</a></li>
-  <li><a href="#models-and-probabilistic-thinking" id="toc-models-and-probabilistic-thinking" class="nav-link" data-scroll-target="#models-and-probabilistic-thinking"><span class="header-section-number">6.2.2</span> Models and Probabilistic Thinking</a></li>
+  <li><a href="#assumptions-about-error-terms" id="toc-assumptions-about-error-terms" class="nav-link" data-scroll-target="#assumptions-about-error-terms"><span class="header-section-number">7.2.1</span> Assumptions About Error Terms</a></li>
+  <li><a href="#models-and-probabilistic-thinking" id="toc-models-and-probabilistic-thinking" class="nav-link" data-scroll-target="#models-and-probabilistic-thinking"><span class="header-section-number">7.2.2</span> Models and Probabilistic Thinking</a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.3</span> Exercises</a></li>
-  <li><a href="#sec-prob-models-appendix-expected-values-and-conditional-probabilities" id="toc-sec-prob-models-appendix-expected-values-and-conditional-probabilities" class="nav-link" data-scroll-target="#sec-prob-models-appendix-expected-values-and-conditional-probabilities"><span>Chapter 6</span> Appendix: Expected Values and Conditional Probabilities</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.3</span> Exercises</a></li>
+  <li><a href="#sec-prob-models-appendix-expected-values-and-conditional-probabilities" id="toc-sec-prob-models-appendix-expected-values-and-conditional-probabilities" class="nav-link" data-scroll-target="#sec-prob-models-appendix-expected-values-and-conditional-probabilities"><span>Chapter 7</span> Appendix: Expected Values and Conditional Probabilities</a></li>
   </ul>
 </nav>
     </div>
@@ -457,9 +440,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./stat-inference.html">Estimation</a></li><li class="breadcrumb-item"><a href="./prob-models.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-models.html">Going Deeper with Data</a></li><li class="breadcrumb-item"><a href="./prob-models.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-prob-models" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></h1>
+<h1 class="title"><span id="sec-prob-models" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></h1>
 </div>
 
 
@@ -476,9 +459,9 @@ window.Quarto = {
 </header>
 
 
-<p>Managers, policy makers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<section id="probability-distributions" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="probability-distributions"><span class="header-section-number">6.1</span> Probability distributions</h2>
+<p>Managers, policy makers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.</p>
+<section id="probability-distributions" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="probability-distributions"><span class="header-section-number">7.1</span> Probability distributions</h2>
 <p><strong>Probability distributions</strong> are precise descriptions of all possible values that could be obtained from a random process as well as the probability of each value occurring. One of the simplest probability distributions describes a coin flip. The two possible values are “heads” and “tails,” and each value has a 50% chance—or .5 probability—of occurring. Probability distributions are very useful in statistics because they allow us to build statistical models that account for randomness or uncertainty.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -498,34 +481,34 @@ window.Quarto = {
 <img src="Images/prob-models/circ1.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cardio-admissions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: Histogram of daily volume of cardiovascular ER admissions; data from <a href="https://doi.org/10.1371/journal.pone.0183224">Hwang et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>)
+Figure&nbsp;7.1: Histogram of daily volume of cardiovascular ER admissions; data from <a href="https://doi.org/10.1371/journal.pone.0183224">Hwang et al.</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>)
 </figcaption>
 </figure>
 </div>
-<p>When making a prediction for how many cardiovascular admissions there will be tomorrow, we could provide a guess in the form of a single number. In that case, we would probably want to pick a number that appears to be near the center of the distribution, such as 130. However, if we want to give a more sophisticated (and comprehensive) prediction, we could list out many possible values and indicate each one’s probability of occurring. In doing so, we would be creating a probability distribution. We could present this information either graphically or in a table. One very simple approach to creating a probability distribution based on past experience would be to use the exact proportion of times each value was observed in the past year as the probability we assign to that value for the future. If we recreate <a href="#fig-cardio-admissions" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> with a bin width of 1 so that each bar displays only a single value, we get a precise visual depiction of this distribution.</p>
+<p>When making a prediction for how many cardiovascular admissions there will be tomorrow, we could provide a guess in the form of a single number. In that case, we would probably want to pick a number that appears to be near the center of the distribution, such as 130. However, if we want to give a more sophisticated (and comprehensive) prediction, we could list out many possible values and indicate each one’s probability of occurring. In doing so, we would be creating a probability distribution. We could present this information either graphically or in a table. One very simple approach to creating a probability distribution based on past experience would be to use the exact proportion of times each value was observed in the past year as the probability we assign to that value for the future. If we recreate <a href="#fig-cardio-admissions" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> with a bin width of 1 so that each bar displays only a single value, we get a precise visual depiction of this distribution.</p>
 <div id="fig-cardio-admissions-binwidth-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cardio-admissions-binwidth-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/prob-models/circ2.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cardio-admissions-binwidth-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Histogram of daily cardiovascular ER admissions with a bin width of 1
+Figure&nbsp;7.2: Histogram of daily cardiovascular ER admissions with a bin width of 1
 </figcaption>
 </figure>
 </div>
-<p>From <a href="#fig-cardio-admissions-binwidth-1" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>, we might begin to spot some problems with the simple approach of using last year’s proportions as direct probabilities for forecasting. The data looks a bit “choppy,” with some bars noticeably taller or shorter than those surrounding them. In the tails, the issue is particularly pronounced. For example, some values (e.g., 91, 92) were never observed in the last year, but that doesn’t necessarily mean they have 0 probability of occurring in the future.</p>
-<p>A savvier approach to making a prediction might be to take the general shape of this distribution of past occurrences but then smooth it out since we have no reason to believe that the probability of one number should differ much from the numbers immediately around it. One way to accomplish this is to use one of the many well-known distributions that statisticians have developed to describe data generated under various assumptions. We can pick a distribution that resembles the general shape we see here. Let’s try a normal distribution,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> since it is the most widely-used distribution.</p>
+<p>From <a href="#fig-cardio-admissions-binwidth-1" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, we might begin to spot some problems with the simple approach of using last year’s proportions as direct probabilities for forecasting. The data looks a bit “choppy,” with some bars noticeably taller or shorter than those surrounding them. In the tails, the issue is particularly pronounced. For example, some values (e.g., 91, 92) were never observed in the last year, but that doesn’t necessarily mean they have 0 probability of occurring in the future.</p>
+<p>A savvier approach to making a prediction might be to take the general shape of this distribution of past occurrences but then smooth it out since we have no reason to believe that the probability of one number should differ much from the numbers immediately around it. One way to accomplish this is to use one of the many well-known distributions that statisticians have developed to describe data generated under various assumptions. We can pick a distribution that resembles the general shape we see here. Let’s try a normal distribution,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> since it is the most widely-used distribution.</p>
 <div id="fig-cardio-admissions-normal-dist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cardio-admissions-normal-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/prob-models/circ3.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cardio-admissions-normal-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.3: Normal distribution (solid line) overlaid on histogram of daily cardiovascular ER admissions
+Figure&nbsp;7.3: Normal distribution (solid line) overlaid on histogram of daily cardiovascular ER admissions
 </figcaption>
 </figure>
 </div>
-<p>We can see in <a href="#fig-cardio-admissions-normal-dist" class="quarto-xref">Figure&nbsp;<span>6.3</span></a> how the normal distribution provides a smooth curve that generally matches the shape of the distribution of observations from 2018. The height of the normal distribution indicates the probability associated with draws from that area of the curve, so values between 120 and 140 are more likely to occur than values between 140 and 160, according to this probability distribution. There are ways we could further refine our prediction for future visits, such as by differentiating among days of the week (more cardiovascular ER admissions occur on Mondays and Fridays) and accounting for the fact that we probably observe more outliers than the normal distribution assumes. (Technically, a Poisson distribution would also be more appropriate for this data since the number of admissions will always be a whole number, and the normal distribution is more appropriate for situations where we measure a variable to many digits.) Still, you can see how the normal distribution could provide a reasonable basis for making predictions about the relative probability of observing different values for the number of visitors in the future. More generally, this example demonstrates how a probability distribution can be used to think about possible values that may occur for a variable.</p>
+<p>We can see in <a href="#fig-cardio-admissions-normal-dist" class="quarto-xref">Figure&nbsp;<span>7.3</span></a> how the normal distribution provides a smooth curve that generally matches the shape of the distribution of observations from 2018. The height of the normal distribution indicates the probability associated with draws from that area of the curve, so values between 120 and 140 are more likely to occur than values between 140 and 160, according to this probability distribution. There are ways we could further refine our prediction for future visits, such as by differentiating among days of the week (more cardiovascular ER admissions occur on Mondays and Fridays) and accounting for the fact that we probably observe more outliers than the normal distribution assumes. (Technically, a Poisson distribution would also be more appropriate for this data since the number of admissions will always be a whole number, and the normal distribution is more appropriate for situations where we measure a variable to many digits.) Still, you can see how the normal distribution could provide a reasonable basis for making predictions about the relative probability of observing different values for the number of visitors in the future. More generally, this example demonstrates how a probability distribution can be used to think about possible values that may occur for a variable.</p>
 </div>
 </div>
 <p>We learned in <a href="describing-one-variable.html" class="quarto-xref"><span>Chapter 2</span></a> that a distribution describes how frequently every possible value for a variable occurs in a dataset. In contrast to this sort of distribution, a <em>probability</em> distribution doesn’t describe data we’ve collected; instead, probability distributions are used to describe a (theoretical) <em>process</em> and indicate how likely we are to obtain different possible values from this random process.</p>
@@ -535,54 +518,54 @@ Figure&nbsp;6.3: Normal distribution (solid line) overlaid on histogram of daily
 <p>Probability distributions can be described using (usually complex) equations, but in this text, we’ll mainly depict probability distributions graphically. We generally depict complex (continuous) distributions by plotting what is called a probability density function (PDF). The normal distribution depicted in the box above for ER visits is an example of a PDF. Statisticians have developed PDFs for distributions with many different shapes.</p>
 <p>You can basically interpret a graph of a PDF like a kernel density plot (or even a histogram): for values where the graph is taller (indicating greater “density”), those values are more likely to occur. But kernel density plots and histograms are used for data that we’ve already collected; PDF graphs depict a probability distribution from which data can be theoretically “drawn” (you can’t necessarily tell the difference between a kernel density plot and a PDF plot from just looking at the graph). A precise interpretation for PDFs is a bit tricky since any value can be measured to infinite digits (and therefore has infinitely small probability of being selected) when we are discussing continuous distributions like the normal distribution. The total area under a PDF will always equals 1. To calculate actual probabilities, we need to identify a range of values: for example, we can use software (or various online calculators) to determine the probability of drawing a value between 0 and 0.7 for a well-known continuous distribution. This probability will be equal to the area under the line within that range (which can be found using calculus). Our statistics software will often be relying on calculus behind the scenes based on these PDFs to provide relevant statistical results.</p>
 <p>A <strong>random variable</strong> is a term used to describe a variable generated through draws from a probability distribution.</p>
-<section id="sec-normal-distributions" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-normal-distributions"><span class="header-section-number">6.1.1</span> Normal distributions</h3>
-<p><strong>Normal distributions</strong> are one of the most important sets of probability distributions we use in statistics. As can be seen in <a href="#fig-normaldist" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>, a normal distribution has a symmetrical shape called a bell curve. Many variables in nature appear to approximately follow a normal distribution. For example, if you measure the heights of a population of adult humans belonging to a single sex (male or female), the distribution should look similar to a normal distribution. We often encounter normal distributions because of a principle called the central limit theorem, which states that any variable that results from adding up many small, independent factors will approximately follow a normal distribution.</p>
+<section id="sec-normal-distributions" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="sec-normal-distributions"><span class="header-section-number">7.1.1</span> Normal distributions</h3>
+<p><strong>Normal distributions</strong> are one of the most important sets of probability distributions we use in statistics. As can be seen in <a href="#fig-normaldist" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>, a normal distribution has a symmetrical shape called a bell curve. Many variables in nature appear to approximately follow a normal distribution. For example, if you measure the heights of a population of adult humans belonging to a single sex (male or female), the distribution should look similar to a normal distribution. We often encounter normal distributions because of a principle called the central limit theorem, which states that any variable that results from adding up many small, independent factors will approximately follow a normal distribution.</p>
 <div id="fig-normaldist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/prob-models/normaldist.jpg" class="img-fluid figure-img" width="250">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normaldist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.4: An example of the normal distribution. Source: <a href="https://onlinestatbook.com/2/introduction/distributions.html">Lane &amp; Ziemer</a> (public domain).
+Figure&nbsp;7.4: An example of the normal distribution. Source: <a href="https://onlinestatbook.com/2/introduction/distributions.html">Lane &amp; Ziemer</a> (public domain).
 </figcaption>
 </figure>
 </div>
-<p>All normal distributions have the basic “bell curve” shape seen in <a href="#fig-normaldist" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>, but we can get different versions of the normal distribution by shifting this curve to the left or right, and by squishing or expanding the width of the curve. <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a> illustrates this by showing three different versions of the normal curve in one graph. Any normal distribution can be uniquely identified by its two parameters: the mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>). Because the normal curve is unimodal and symmetric, the mean, median, and mode are all equal to one another. Thus, the mean can be identified visually as the tallest point (the mode) on the curve. Changing the mean will move the curve to the left or to the right; in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>, the mean must be smallest for the green curve since it is furthest to the left (although no axis labels are provided). Changing the standard deviation will expand or narrow the width of the curve; the black curve in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a> has the largest standard deviation since it is the widest curve. As noted above, all probability density functions have a total area under the curve equal to one, so the narrower versions of the normal distribution (e.g., the green one in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>) have to be taller than the wider curves in order to maintain that same area of 1 under each curve.</p>
+<p>All normal distributions have the basic “bell curve” shape seen in <a href="#fig-normaldist" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>, but we can get different versions of the normal distribution by shifting this curve to the left or right, and by squishing or expanding the width of the curve. <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> illustrates this by showing three different versions of the normal curve in one graph. Any normal distribution can be uniquely identified by its two parameters: the mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>). Because the normal curve is unimodal and symmetric, the mean, median, and mode are all equal to one another. Thus, the mean can be identified visually as the tallest point (the mode) on the curve. Changing the mean will move the curve to the left or to the right; in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>, the mean must be smallest for the green curve since it is furthest to the left (although no axis labels are provided). Changing the standard deviation will expand or narrow the width of the curve; the black curve in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> has the largest standard deviation since it is the widest curve. As noted above, all probability density functions have a total area under the curve equal to one, so the narrower versions of the normal distribution (e.g., the green one in <a href="#fig-normaldist3" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>) have to be taller than the wider curves in order to maintain that same area of 1 under each curve.</p>
 <div id="fig-normaldist3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldist3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/prob-models/normaldist3.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normaldist3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.5: Three different examples of normal distributions. Source: <a href="https://onlinestatbook.com/2/normal_distribution/intro.html">Lane</a> (public domain).
+Figure&nbsp;7.5: Three different examples of normal distributions. Source: <a href="https://onlinestatbook.com/2/normal_distribution/intro.html">Lane</a> (public domain).
 </figcaption>
 </figure>
 </div>
 <p>There are some numbers you can memorize to help describe the probabilities associated with any normal distribution:</p>
 <ul>
 <li><p>68% of the area under a normal curve is within approximately <em>one</em> standard deviation of the mean</p></li>
-<li><p>95% of the area under a normal curve is within approximately <em>two</em> standard deviations of the mean<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
+<li><p>95% of the area under a normal curve is within approximately <em>two</em> standard deviations of the mean<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
 <li><p>99.7% of the area under a normal curve is within approximately <em>three</em> standard deviations of the mean</p></li>
 </ul>
-<p>Let’s consider the normal distribution with a mean of 100 and a standard deviation of 20. To find the range describing one standard deviation from the mean, we first subtract the value of the standard deviation from the mean to find the lower bound (100 - 20 = 80), and then we add the standard deviation to the mean to find the upper bound (100 + 20 = 120). We can then say that there is a 68% chance that a draw from this distribution will yield a number between 80 and 120. <a href="#fig-normaldistmean100sd20" class="quarto-xref">Figure&nbsp;<span>6.6</span></a> shows this visually, with the blue highlighted region representing an area of 0.68 (compared to a total area of 1 under the entire cure).</p>
+<p>Let’s consider the normal distribution with a mean of 100 and a standard deviation of 20. To find the range describing one standard deviation from the mean, we first subtract the value of the standard deviation from the mean to find the lower bound (100 - 20 = 80), and then we add the standard deviation to the mean to find the upper bound (100 + 20 = 120). We can then say that there is a 68% chance that a draw from this distribution will yield a number between 80 and 120. <a href="#fig-normaldistmean100sd20" class="quarto-xref">Figure&nbsp;<span>7.6</span></a> shows this visually, with the blue highlighted region representing an area of 0.68 (compared to a total area of 1 under the entire cure).</p>
 <div id="fig-normaldistmean100sd20" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldistmean100sd20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Images/prob-models/normaldistmean100sd20.png" class="img-fluid figure-img" width="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normaldistmean100sd20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.6: A normal distribution with mean of 100 and standard deviation of 20; the region within one standard deviation of the mean is highlighted. Source: <a href="https://onlinestatbook.com/2/normal_distribution/areas_normal.html">Lane</a> (public domain).
+Figure&nbsp;7.6: A normal distribution with mean of 100 and standard deviation of 20; the region within one standard deviation of the mean is highlighted. Source: <a href="https://onlinestatbook.com/2/normal_distribution/areas_normal.html">Lane</a> (public domain).
 </figcaption>
 </figure>
 </div>
 <p>To consider two standard deviations from the mean, we would first multiply the standard deviation by two (20 × 2 = 40). For the lower bound, we subtract this value from the mean (100 - 40 = 60), and for the upper bound we add (100 + 40 = 140). Thus, there is a 95% chance that a draw from this normal distribution yields a value between 60 and 140.</p>
-<p>Using a normal distribution calculator (available online<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> or in statistical software), we can easily determine the areas for other ranges of values. For example, still looking at this same normal distribution (mean=100, standard deviation=20), we could discover that the area for values less than 65 is 0.04, meaning there is a 4% chance a draw will yield a value less than 65.</p>
+<p>Using a normal distribution calculator (available online<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> or in statistical software), we can easily determine the areas for other ranges of values. For example, still looking at this same normal distribution (mean=100, standard deviation=20), we could discover that the area for values less than 65 is 0.04, meaning there is a 4% chance a draw will yield a value less than 65.</p>
 <p>The <strong><em>standard</em></strong> <strong>normal distribution</strong> refers to a normal distribution with a mean of 0 and a standard deviation of 1. This name is related to the term <em>standardization</em> we encountered in <a href="describing-one-variable.html#sec-standardization" class="quarto-xref"><span>Section 2.6.1</span></a>; recall that standardizing a variable means transforming it so that its mean is 0 and its standard deviation is 1. The standard normal distribution, and other closely related distributions, are often utilized in statistical tests. Sometimes, variables or individual values are standardized (turned into Z scores) and then compared to the standard normal distribution.</p>
 </section>
 </section>
-<section id="sec-models-and-uncertainty" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="sec-models-and-uncertainty"><span class="header-section-number">6.2</span> Models and Uncertainty</h2>
+<section id="sec-models-and-uncertainty" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-models-and-uncertainty"><span class="header-section-number">7.2</span> Models and Uncertainty</h2>
 <p>Before I leave my house each morning, I need to decide whether to take an umbrella. So I check my phone to see whether it’s supposed to rain. Instead of giving me a direct yes or no answer, the weather app tells me the percent chance of rain for the day.</p>
 <p>Why does the weather app give me a percentage? Because there’s uncertainty. Science has done a lot to help us understand the weather. And as our understanding of the weather improves, our predictions get better. But we still can’t predict rain perfectly.</p>
 <p>Facing uncertainty is a common problem when we’re looking at data. Whether we’re trying to explain the weather, human behavior, or even plant growth, we can’t make perfect predictions because there are things we can’t fully explain with our current scientific knowledge.</p>
@@ -590,7 +573,7 @@ Figure&nbsp;6.6: A normal distribution with mean of 100 and standard deviation o
 <p>In order to build these models that acknowledge uncertainty, we need a way to talk about what we do know and what we don’t know. Consider this simple example of a model that accounts for uncertainty:</p>
 <p><span id="eq-a"><span class="math display">\[
 happiness = 3.0 + 2.3 \times income + \varepsilon
-\tag{6.1}\]</span></span></p>
+\tag{7.1}\]</span></span></p>
 <p>This model attempts to explain one’s level of happiness based on their income. You might notice that it looks very similar to the regression equations we saw in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a>, except that we have added an extra term at the end (<span class="math inline">\(\varepsilon\)</span>). That’s because regression is one of the main tools used to estimate a model that includes uncertainty.</p>
 <p>What does this model mean in practical terms? Well, there are no obvious units we can use to quantify the amount of happiness someone experiences, so the exact values of the numbers we see are not particularly meaningful. But the fact that there’s a positive number (2.3) that is being multiplied by income implies that as income gets bigger, happiness gets larger.</p>
 <p>The key part of this equation that I want to focus on is the little Greek letter at the end of the equation: <span class="math inline">\(\varepsilon\)</span>. This letter is called “epsilon,” and it is often used to represent what we call an <strong>error term</strong> (also sometimes called a <strong>disturbance term</strong>). The error term (<span class="math inline">\(\varepsilon\)</span>) represents everything else besides income that affects happiness. It is a formal acknowledgement that if all we know about someone is their income, we will have uncertainty about their exact level of happiness. An error term (<span class="math inline">\(\varepsilon\)</span>) in the model makes clear that we only claim to have a partial understanding of happiness, not a complete one.</p>
@@ -602,8 +585,8 @@ happiness=12.2+\varepsilon
 \]</span></p>
 <p>We, therefore, predict that someone with an income of 4 will have a happiness of 12.2, but we also acknowledge that their actual happiness will likely be at least a bit different from our prediction since our model indicates that their actual happiness will equal 12.2 plus the value of the error term (<span class="math inline">\(\varepsilon\)</span>).</p>
 <p>The error term describes something unknown, so we can’t measure it or directly observe it. But what we can do is talk about its characteristics using concepts from probability theory. Specifically, we’re going to describe the value of the error term as being randomly drawn from a probability distribution.</p>
-<section id="assumptions-about-error-terms" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="assumptions-about-error-terms"><span class="header-section-number">6.2.1</span> Assumptions About Error Terms</h3>
+<section id="assumptions-about-error-terms" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="assumptions-about-error-terms"><span class="header-section-number">7.2.1</span> Assumptions About Error Terms</h3>
 <p>It’s easy to write out an equation that includes an error term, but we are not going to be able to do much with our model unless we make some assumptions about the error term. One of the most important (and challenging) parts of doing statistical analysis is making assumptions about the possible values of the error term. Different assumptions about the error term can result in very different conclusions.</p>
 <p>As one example, we might assume the following things about the error term (<span class="math inline">\(\varepsilon\)</span>):</p>
 <ol type="1">
@@ -613,11 +596,11 @@ happiness=12.2+\varepsilon
 <p>What do these two assumptions mean?</p>
 <p>First, if the error term (<span class="math inline">\(\varepsilon\)</span>) follows a normal distribution with a mean of zero, that means that (according to our model), people are just as likely to have a positive value of the error term as they are to have a negative value of the error term. In other words, all those factors we haven’t accounted for in our model are equally likely to push people in the direction of being happier or in the direction of being less happy. Our model and assumptions tell us that if we predict happiness purely based on income, we’ll <em>overestimate</em> some people’s happiness, and we’ll <em>underestimate</em> an equal number of people’s happiness.</p>
 <p>Second, these assumptions allow us to describe how much individual observations will tend to deviate from our income-based predictions. We haven’t specified in our assumptions what the standard deviation is for the normal distribution for the error term (<span class="math inline">\(\varepsilon\)</span>), but statistical analysis will let us estimate the standard deviation of an error term. And we know that there is a 95% chance of drawing a value within two standard deviations of the mean for any normal distribution. So whatever the standard deviation of the error term (<span class="math inline">\(\varepsilon\)</span>) is, we would expect that 95% of the time, the error term will take on a value that is within two standard deviations of zero. Conversely, 5% of the time, the error term will take on a value that is more than two standard deviations away from zero. Suppose that the standard deviation of the error term (<span class="math inline">\(\varepsilon\)</span>) happens to be three. If we have a dataset containing the income and happiness of 1,000 randomly selected people, we would expect that about 950 of these people will have a level of happiness that falls within six units of our income-based prediction. But for about 50 of these people, our prediction of their happiness will be off by more than six units.</p>
-<p>Third, our assumptions imply that income is not tied in any consistent way to (the total sum of) factors other than income that also affect peoples’ happiness. Remember, the error term (<span class="math inline">\(\varepsilon\)</span>) represents all factors other than income that affect satisfaction. If income is related to these other factors, then the value of income should help us predict the value of the error term. For example, if having a stable environment in childhood directly causes (on average) both higher incomes and greater happiness in adulthood,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> the error term will partially reflect the effect of childhood stability on happiness, so high incomes (which are partially caused by childhood stability) will probably be predictive of a more positive error term. This would constitute a violation of our assumptions since we indicated that income wasn’t predictive of the error term. As this example illustrates, our assumptions about error terms are often quite strict, making it rather difficult in practice to build good models that account for uncertainty. This example also illustrates how problems of causality can often be conceptualized as violations of assumptions about the error term; in <a href="causality.html" class="quarto-xref"><span>Chapter 10</span></a>, we will see that we can label the problem posed for our analysis by the effects of childhood stability a “third-variable problem,” but here we have shown how it can also be understood as problematic correlation between the dependent variable and the error term.</p>
+<p>Third, our assumptions imply that income is not tied in any consistent way to (the total sum of) factors other than income that also affect peoples’ happiness. Remember, the error term (<span class="math inline">\(\varepsilon\)</span>) represents all factors other than income that affect satisfaction. If income is related to these other factors, then the value of income should help us predict the value of the error term. For example, if having a stable environment in childhood directly causes (on average) both higher incomes and greater happiness in adulthood,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> the error term will partially reflect the effect of childhood stability on happiness, so high incomes (which are partially caused by childhood stability) will probably be predictive of a more positive error term. This would constitute a violation of our assumptions since we indicated that income wasn’t predictive of the error term. As this example illustrates, our assumptions about error terms are often quite strict, making it rather difficult in practice to build good models that account for uncertainty. This example also illustrates how problems of causality can often be conceptualized as violations of assumptions about the error term; in <a href="causality.html" class="quarto-xref"><span>Chapter 9</span></a>, we will see that we can label the problem posed for our analysis by the effects of childhood stability a “third-variable problem,” but here we have shown how it can also be understood as problematic correlation between the dependent variable and the error term.</p>
 <p>If you want to explore in more detail how equations can be used to describe statistical models, this chapter’s appendix provides a more formal presentation of some ideas from this section.</p>
 </section>
-<section id="models-and-probabilistic-thinking" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="models-and-probabilistic-thinking"><span class="header-section-number">6.2.2</span> Models and Probabilistic Thinking</h3>
+<section id="models-and-probabilistic-thinking" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="models-and-probabilistic-thinking"><span class="header-section-number">7.2.2</span> Models and Probabilistic Thinking</h3>
 <p>Despite the difficulty inherent in building models that accommodate uncertainty, we have little alternative unless we wish to build only <em>deterministic</em> models, meaning models that are supposed to predict with 100% accuracy. Little (if anything) about the social world follows absolute laws, so deterministic models are arguably not well suited to social scientific study. Instead, the best we can hope for is a <em>probabilistic</em> model, indicating the conditions under which particular outcomes are more or less likely. And fortunately, our models do not always have to be perfectly correct in order to generate useful predictions or explanations. As the statistician George Box famously said, “all models are wrong, but some are useful.”</p>
 <p>An important part of learning to do good statistical analysis is learning to think clearly about models so that you can pick out a model that is useful for whatever it is you want to accomplish. And the first step toward understanding many statistical models is learning to think about the world in probabilistic terms, as we’ve done throughout this chapter. Probabilistic thinking asks questions like:</p>
 <ul>
@@ -628,8 +611,8 @@ happiness=12.2+\varepsilon
 </ul>
 </section>
 </section>
-<section id="exercises" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.3</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.3</span> Exercises</h2>
 <ol type="1">
 <li>What is the difference between a distribution of data and a probability distribution?</li>
 <li>What are the two parameters of a normal distribution?</li>
@@ -643,7 +626,7 @@ happiness=12.2+\varepsilon
 </ol>
 </section>
 <section id="sec-prob-models-appendix-expected-values-and-conditional-probabilities" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-prob-models-appendix-expected-values-and-conditional-probabilities"><a href="#sec-prob-models" class="quarto-xref"><span>Chapter 6</span></a> Appendix: Expected Values and Conditional Probabilities</h2>
+<h2 class="unnumbered anchored" data-anchor-id="sec-prob-models-appendix-expected-values-and-conditional-probabilities"><a href="#sec-prob-models" class="quarto-xref"><span>Chapter 7</span></a> Appendix: Expected Values and Conditional Probabilities</h2>
 <p>Let us now practice using equations to more formally describe some of what we discussed in the main chapter. Given our assumptions and the equation representing our model of happiness, we can use the notation of expected value to express the predictions we previously made:</p>
 <p><span class="math display">\[ \mathbb{E}[happiness|income=4]=\mathbb{E}[(3.0+2.3 \times (4)+\varepsilon)|income=4] \]</span><span class="math display">\[
 =12.2+\mathbb{E}[\varepsilon|income=4] = 12.2 \]</span></p>
@@ -666,11 +649,10 @@ happiness=12.2+\varepsilon
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>This chapter was written by Nathan Favero.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Specifically, we use a normal distribution with mean and standard deviation set equal to the mean and standard deviation of the 2018 sample we’re examining.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>As we will see in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 7</span></a>, a more precise value is 1.96 standard deviations from the mean.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>For example: <a href="https://onlinestatbook.com/2/calculators/normal_dist.html" class="uri">https://onlinestatbook.com/2/calculators/normal_dist.html</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>By “directly cause” greater happiness in adulthood, I mean that a stable childhood environment causes greater adult happiness by means other than increasing income (which in turn may increase happiness).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Specifically, we use a normal distribution with mean and standard deviation set equal to the mean and standard deviation of the 2018 sample we’re examining.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>As we will see in <a href="sampling-distributions.html" class="quarto-xref"><span>Chapter 8</span></a>, a more precise value is 1.96 standard deviations from the mean.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For example: <a href="https://onlinestatbook.com/2/calculators/normal_dist.html" class="uri">https://onlinestatbook.com/2/calculators/normal_dist.html</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>By “directly cause” greater happiness in adulthood, I mean that a stable childhood environment causes greater adult happiness by means other than increasing income (which in turn may increase happiness).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1090,13 +1072,13 @@ happiness=12.2+\varepsilon
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./stat-inference.html" class="pagination-link" aria-label="Statistical Inference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span>
+      <a href="./h-tests.html" class="pagination-link" aria-label="Hypothesis Testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./sampling-distributions.html" class="pagination-link" aria-label="Sampling Distributions">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

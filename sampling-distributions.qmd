@@ -1,5 +1,7 @@
 # Sampling Distributions {#sec-sampling-distributions}
 
+*Note: This chapter is adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University)*
+
 This is perhaps the most difficult chapter in the whole book. That is because sampling distributions are a very abstract concept that many students struggle to grasp. And yet sampling distributions are the core of how we conduct statistical inference. You may need to reread this chapter a few times before it makes much sense, but doing so will be well worth your time if you want to understand applied statistics.
 
 ## Introduction to Sampling Distributions[^sampling-distributions-1]
@@ -340,7 +342,7 @@ $$ \text{Lower limit} = \hat{\beta} - (t_{.95})(s_{\beta}) $$$$ \text{Upper limi
 
 where $\hat{\beta}$ is the slope coefficient estimate, $t_{.95}$ is the value of t for 95% (2-tailed) confidence, and $s_{\beta}$ is the standard error for the slope estimate. As before, the t value can be found from a table or an inverse t distribution calculator based on the degrees of freedom.
 
-We illustrate generating a confidence interval using the same data as in the example from @sec-introduction-to-linear-regression, depicted again here as @fig-reg-example-cis.
+We illustrate generating a confidence interval using a very simple example with just five observations, depicted in @fig-reg-example-cis.
 
 ![A scatter plot of the example data. The black line consists of the predictions, the points are the actual data, and the vertical lines between the points and the black line represent errors of prediction.](Images/correlations/splotexampledatadetail.jpg){#fig-reg-example-cis width="325"}
 
@@ -350,15 +352,37 @@ $$ df = n-2 $$
 
 where $n$ is the number of pairs of scores (number of observations in the sample).
 
-As we saw in @sec-introduction-to-linear-regression, the estimated regression slope coefficient is 0.425 with this data. An $n$ of 5 yields 3 degrees of freedom (5 - 2 = 3), which means the critical t value (at 95% confidence) is 3.182. Finally, the estimated standard error for this slope coefficient (the calculative of which is shown in this chapter's Appendix II) is 0.305 with this data.
+The estimated regression slope coefficient is 0.425 with this data. An $n$ of 5 yields 3 degrees of freedom (5 - 2 = 3), which means the critical t value (at 95% confidence) is 3.182. Finally, the estimated standard error for this slope coefficient (the calculative of which is shown in this chapter's Appendix II) is 0.305 with this data.
 
 Applying these formulas we obtain a confidence interval with the following lower and upper limits:
 
 $$ \text{Lower limit} = 0.425 - (3.182)(0.305) = -0.55 $$$$ \text{Upper limit} = 0.425 + (3.182)(0.305) = 1.40 $$
 
-## @sec-sampling-distributions Appendix I: Degrees of Freedom[^sampling-distributions-12] {.unnumbered}
+## Exercises[^sampling-distributions-12]
 
-[^sampling-distributions-12]: This section is adapted from David M. Lane. “Degrees of Freedom.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/estimation/df.html>
+[^sampling-distributions-12]: Questions 1-5 adapted from David M. Lane. “Exercises.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/sampling_distributions/ch7_exercises.html>
+
+1.  A population has a mean of 50 and a standard deviation of 6. (a) What are the mean and standard deviation of the sampling distribution of the mean for N = 16? (b) What are the mean and standard deviation of the sampling distribution of the mean for N = 20?
+
+2.  What term refers to the standard deviation of the sampling distribution?
+
+3.  True/false: The standard error of the mean is smaller when N = 20 than when N = 10.
+
+4.  True/false: In your school, 40% of students watch TV at night. You randomly ask 5 students every day if they watch TV at night. Every day, you would find that 2 of the 5 do watch TV at night.
+
+5.  True/false: The median has a sampling distribution.
+
+6.  If the variable `x` has a population mean of 0 and a population standard deviation of 4 but is highly skewed, will the sampling distribution of the mean of `x` approach a normal distribution as the sample size increases?
+
+7.  The exact shape of the t distribution changes depending on what parameter?
+
+8.  When is the t distribution virtually indistinguishable from the standard normal distribution?
+
+9.  With what sample size (small or large) is it especially important to use the t distribution rather than the normal distribution to calculate confidence intervals for a regression slope coefficient?
+
+## @sec-sampling-distributions Appendix I: Degrees of Freedom[^sampling-distributions-13] {.unnumbered}
+
+[^sampling-distributions-13]: This section is adapted from David M. Lane. “Degrees of Freedom.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/estimation/df.html>
 
 Some estimates are based on more information than others. For example, an estimate of the variance based on a sample size of 100 is based on more information than an estimate of the variance based on a sample size of 5. The **degrees of freedom (df)** of an estimate is the number of independent pieces of information on which the estimate is based.
 
@@ -388,9 +412,9 @@ The denominator of this formula is the degrees of freedom.
 
 So far, we’ve mainly seen examples where the degrees of freedom is equal to n - 1. But as we saw in @sec-confidence-interval-for-a-regression-slope-coefficient, the degrees of freedom can also be equal to other values such as n - 2. In the case of constructing a confidence interval for a coefficient from a multiple regression with four independent variables, the degrees of freedom will generally be equal to n - 5. The exact formula for degrees of freedom depends on what we are estimating.
 
-## @sec-sampling-distributions Appendix II: Estimating the Standard Error of a Regression Slope[^sampling-distributions-13] {.unnumbered}
+## @sec-sampling-distributions Appendix II: Estimating the Standard Error of a Regression Slope[^sampling-distributions-14] {.unnumbered}
 
-[^sampling-distributions-13]: This section is adapted from David M. Lane. “Inferential Statistics for b and r.” *Online Statistics Education: A Multimedia Course of Study*. [https://onlinestatbook.com/2/regression/inferent](https://onlinestatbook.com/2/regression/inferential.html)
+[^sampling-distributions-14]: This section is adapted from David M. Lane. “Inferential Statistics for b and r.” *Online Statistics Education: A Multimedia Course of Study*. [https://onlinestatbook.com/2/regression/inferent](https://onlinestatbook.com/2/regression/inferential.html)
 
 This appendix shows how to compute the estimated standard error for the slope of a simple linear regression. The estimated standard error of $\beta$ is computed using the following formula:
 
@@ -412,7 +436,7 @@ $$
 
 where $r$ is the correlation between $X$ and $Y$, and $SSY$ is the sum of squared deviations of $Y$ from the mean of $Y$.
 
-These formulas are illustrated with the data shown in @tbl-example-calc-st-err. These data are reproduced from @sec-introduction-to-linear-regression. The column X has the values of the independent variable and the column Y has the values of the dependent variable. The third column, x, contains the differences between the values of column X and the mean of X. The fourth column, x^2^, is the square of the x column. The fifth column, y, contains the differences between the values of column Y and the mean of Y. The last column, y^2^, is simply square of the y column.\
+These formulas are illustrated with the data shown in @tbl-example-calc-st-err. These data are the same as in the example from @sec-confidence-interval-for-a-regression-slope-coefficient. The column X has the values of the independent variable and the column Y has the values of the dependent variable. The third column, x, contains the differences between the values of column X and the mean of X. The fourth column, x^2^, is the square of the x column. The fifth column, y, contains the differences between the values of column Y and the mean of Y. The last column, y^2^, is simply square of the y column.\
 
 |     | X     | Y     | x     | x^2^  | y     | y^2^   |
 |-----|-------|-------|-------|-------|-------|--------|

@@ -174,7 +174,7 @@ $$ \widehat{UGPA} = 2.663 + 0.00062 \times SAT $$
 
 @fig-sample-split-reg shows these two distinct lines, along with the underlying subsamples from which they are estimated.
 
-![Estimating two regressions separately by subsample](Images/regression/sample_split_reg.png){#fig-sample-split-reg width="350"}
+![Estimating two regressions separately by subsample](Images/regression/sample_split_reg.png){#fig-sample-split-reg width="400"}
 
 It appears that SAT scores have a stronger association with university GPA (a steeper slope) when high school GPA is low.
 
@@ -184,7 +184,7 @@ $$\widehat{UGPA} = -3.516 + 1.780 \times HSGPA + 0.0043 \times SAT - 0.0011 \tim
 
 When we have nonlinear relationships, graphical depictions are typically helpful for demonstrating our results. Using statistical software, we can create a graph that shows us how the predicted value of UGPA changes depending on SAT and certain HSGPA values that we pick out for illustrative purposes. In this case, I chose values of 3.7 (approximately the 90th percentile), 2.3 (approximately the 10th percentile, and 3.0 (half way between the 10th and 90th percentiles).
 
-![Visualization of a moderating relationship, estimated with an interaction term](Images/regression/interaction_reg.png){#fig-interaction-reg width="350"}
+![Visualization of a moderating relationship, estimated with an interaction term](Images/regression/interaction_reg.png){#fig-interaction-reg width="400"}
 
 From @fig-interaction-reg, we again see evidence that for higher levels of HSGPA, the relationship of SAT with university GPA gets weaker. However, an important caveat to this finding is that the coefficient for the interaction term is not statistically significant at the traditional .05 alpha level (p=0.069), so there is not strong statistical evidence that the slope does in fact vary depending on HSGPA. In other words, the changes we see in the slope in @fig-interaction-reg could easily be a coincidence, given the imprecision of our estimate. A larger sample could help us better assess whether the moderating relationship that we seem to observe is more than a statistical anomaly.
 

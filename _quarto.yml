@@ -5,24 +5,21 @@ project:
 book:
   title: "Statistics Minus the Math 2.0"
   author: "Nathan Favero"
-  date: "2/5/2026"
+  date: "2/8/2026"
   chapters:
     - index.qmd
-    - part: "Describing Data"
+    - part: "Data Essentials"
       chapters:
       - getting-started.qmd
       - describing-one-variable.qmd
       - correlation.qmd
       - qual-associations.qmd
-    - part: "Estimation"
-      chapters:
       - stat-inference.qmd
+      - h-tests.qmd
+    - part: "Going Deeper with Data"
+      chapters:
       - prob-models.qmd
       - sampling-distributions.qmd
-      - h-tests.qmd
-      - h-tests-applied.qmd
-    - part: "Putting Data to Work"
-      chapters:
       - causality.qmd
       - measurement.qmd
       - regression.qmd

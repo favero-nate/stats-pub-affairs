@@ -1,18 +1,14 @@
 # Relationships with Qualitative Variables {#sec-qual-associations}
 
-The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.[^qual-associations-1]
-
-[^qual-associations-1]: The first two paragraphs of this chapter are written by Nathan Favero.
+The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.
 
 Where do ordinal variables fit into this discussion? For many types of analysis, ordinal variables can be treated as either qualitative (for maximum flexibility) or as quantitative (if we are willing to assign fixed numbers to the various values, as we saw in the first example in @sec-critically-evaluating-graphs). Often, analysis will be simpler if we treat ordinal variables as quantitative, so that can be a good place to start. You can always then follow up with an analysis treating the ordinal variable as qualitative, which allows you to check if the results indicate something similar to what you saw when you treated the variable as quantitative.
 
-## Describing the Relationship between Two Qualitative Variables[^qual-associations-2] {#sec-describing-the-relationship-between-two-qualitative-variables}
+## Describing the Relationship between Two Qualitative Variables {#sec-describing-the-relationship-between-two-qualitative-variables}
 
-[^qual-associations-2]: The initial material in this section was written by Nathan Favero.
+The relationship between two qualitative variables can be examined using a contingency table (also known as "crosstabs"). For example, @tbl-diet-row-percentages shows the data from the Mediterranean Diet and Health case study,[^qual-associations-1] in which 605 survivors of a heart attack were randomly assigned to follow either (1) a low-fat diet similar to one recommended at the time by the American Heart Association (AHA) or (2) a Mediterranean-type diet rich in vegetables, fruits, and grains. The percentages shown in this table are calculated by row, meaning that they are found by dividing the frequency in each cell by the total for that row, shown in the final column.
 
-The relationship between two qualitative variables can be examined using a contingency table (also known as "crosstabs"). For example, @tbl-diet-row-percentages shows the data from the Mediterranean Diet and Health case study,[^qual-associations-3] in which 605 survivors of a heart attack were randomly assigned to follow either (1) a low-fat diet similar to one recommended at the time by the American Heart Association (AHA) or (2) a Mediterranean-type diet rich in vegetables, fruits, and grains. The percentages shown in this table are calculated by row, meaning that they are found by dividing the frequency in each cell by the total for that row, shown in the final column.
-
-[^qual-associations-3]: <https://onlinestatbook.com/2/case_studies/diet.html>
+[^qual-associations-1]: <https://onlinestatbook.com/2/case_studies/diet.html>
 
 +---------------+-------------+---------------------+-------------------------+----------+-----------+
 |               | **Outcome** |                     |                         |          | **Total** |
@@ -60,13 +56,17 @@ As a general rule, when percentages are calculated by columns, the key to findin
 
 Interpreting results from contingency tables is not always intuitive. You may need to practice several times before you can confidently describe the relationship between two qualitative variables based on a contingency table.
 
-### Visualizing a Qualitative-Qualitative Relationship[^qual-associations-4]
+### Visualizing a Qualitative-Qualitative Relationship[^qual-associations-2]
 
-[^qual-associations-4]: Except for the first paragraph (written by Nathan Favero), this subsection is adapted from David M. Lane. “Graphing Qualitative Variables.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/graphing_distributions/graphing_qualitative.html>
+[^qual-associations-2]: The last two paragraphs of this subsection are adapted from David M. Lane. “Graphing Qualitative Variables.” *Online Statistics Education: A Multimedia Course of Study*. [https://onlinestatbook.com/2/graphing_distributions/graphing_qualitative.html](#0){.uri}
 
-Let us now visualize the relationship we have just discussed based on contingency tables. Bar charts are often an effective choice, although there are many different ways that such charts can be configured, and it may take some trial and error to find the most effective chart for any given data. In this case, because the number of individuals for each of the two diets is roughly the same (303 for the AHA diet and 302 for the Mediterranean diet), it makes it fairly easy to create a helpful chart. We clearly see from @fig-diet-health that more people on the Mediterranean diet have the healthy outcome, while the various negative outcomes are all more common among people on the AHA diet.
+Let us now visualize the relationship we have just discussed based on contingency tables. Bar charts are often an effective choice, although there are many different ways that such charts can be configured, and it may take some trial and error to find the most effective chart for any given data. In this case, because the number of individuals for each of the two diets is roughly the same (303 for the AHA diet and 302 for the Mediterranean diet), it makes it fairly easy to create a helpful chart. We clearly see from the clustered bar chart in @fig-diet-health that more people on the Mediterranean diet have the healthy outcome, while the various negative outcomes are all more common among people on the AHA diet.
 
 ![A bar chart of health outcomes by diet](Images/qual-associations/barchart-diets.png){#fig-diet-health width="400"}
+
+We can also depict this data using a stacked bar chart to directly plot the percentages (rather than the counts) from a contingency table, as in @fig-stacked-barchart-diets. As noted above in our discussion of contingency tables, comparing percentages is an effective way to evaluate relationships even when a sample is not evenly distributed across categories (e.g., if there were many more people on the AHA than the Mediterranean diet). Thus, the stacked bar chart displaying percentages is more versatile in helping clarify associations among qualitative variables. At the same time, this kind of graph leaves out information about the underlying counts: we cannot tell from @fig-stacked-barchart-diets that most people in the sample have the healthy outcome.
+
+![A stacked bar chart of health outcomes by diet](Images/qual-associations/stackedbarchart-diets.png){#fig-stacked-barchart-diets width="350"}
 
 More broadly, suppose we are comparing the results of different surveys, or of different conditions within the same overall survey. Because a qualitative variable allows us to divide our sample into sub-samples (based on survey or condition) and then examine distributions for each sub-sample, we can say that we are comparing the "distributions" of responses between the surveys or conditions. Bar charts are often excellent for illustrating differences between two distributions. @fig-cardgamebarchart shows the number of people playing card games at the Yahoo website on a Sunday and on a Wednesday in the Spring of 2001. We see that there were more players overall on Wednesday compared to Sunday. The number of people playing Pinochle was nonetheless the same on these two days. In contrast, there were about twice as many people playing hearts on Wednesday as on Sunday. Facts like these emerge clearly from a well-designed bar chart.
 
@@ -74,41 +74,37 @@ More broadly, suppose we are comparing the results of different surveys, or of d
 
 The bars in @fig-cardgamebarchart are oriented horizontally rather than vertically. The horizontal format is useful when you have many categories because there is more room for the category labels.
 
-## Describing the Relationship between a Qualitative and a Quantitative Variable[^qual-associations-5]
-
-[^qual-associations-5]: The initial paragraph for this section was written by Nathan Favero.
+## Describing the Relationship between a Qualitative and a Quantitative Variable
 
 When we have a quantitative variable and a qualitative variable, we typically begin by dividing our sample into sub-samples according to the qualitative variable. For example, if we are examining the qualitative variable sex (indicating male or female), we can divide the sample into males and females. We can then compute measures of central tendency for the sub-samples and compare them. We already saw an example of this in @sec-critically-evaluating-graphs, where the relationship between sex and support for innovation was evaluated by comparing the means of the support-for-innovation variable among males versus females. Typically, we compare means, but we can also compare medians if we are concerned about our results being sensitive to outliers. Ultimately, we want to observe whether the means/medians appear similar across groups or if some groups have meaningfully higher means/medians than others. In the example with sex and support for innovation, the means were nearly the same (3.787 for females, 3.798 for males), suggesting that the two variables are not related (at least not to a meaningful extent).
 
-### Visualizing a Quantitative-Qualitative Relationship[^qual-associations-6]
+### Visualizing a Quantitative-Qualitative Relationship[^qual-associations-3]
 
-[^qual-associations-6]: This subsection is adapted from David M. Lane. “Bar Charts.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/graphing_distributions/bar_chart.html>
+[^qual-associations-3]: This subsection is adapted from David M. Lane. “Bar Charts.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/graphing_distributions/bar_chart.html>
 
 Bar charts are often used to compare the means of different experimental conditions. @fig-barchartmeantime shows the mean time it took one of us (DL) to move the mouse to either a small target or a large target. On average, more time was required for small targets than for large ones.
 
 ![Bar chart showing the means for the two conditions.](Images/qual-associations/barchartmeantime.jpg){#fig-barchartmeantime}
 
-Although bar charts can display means, we do not recommend them for this purpose. Box plots should be used instead since they provide more information than bar charts without taking up more space. For example, a box plot of the mouse-movement data is shown in @fig-boxplotmousemovement. You can see that @fig-boxplotmousemovement reveals more about the distribution of movement times than does @fig-barchartmeantime.
+Although bar charts can display means, we do not generally recommend them for this purpose. Box plots should be used instead since they provide more information than bar charts without taking up more space. For example, a box plot of the mouse-movement data is shown in @fig-boxplotmousemovement. You can see that @fig-boxplotmousemovement reveals more about the distribution of movement times than does @fig-barchartmeantime. However, quantitative variables that take on only a few discrete values are not very suitable for box plots. For such variables, it is better to stick with displaying means in a bar chart (or something similar like @fig-gender-compare-zoomed-out).
 
 ![Box plots of times to move the mouse to the small and large targets.](Images/qual-associations/boxplotmousemovement.jpg){#fig-boxplotmousemovement}
 
-### Regression with a Qualitative Independent Variable[^qual-associations-7] {#sec-regression-with-a-qualitative-independent-variable}
-
-[^qual-associations-7]: This subsection was written by Nathan Favero.
+### Regression with a Qualitative Independent Variable {#sec-regression-with-a-qualitative-independent-variable}
 
 Regression analysis is a very flexible set of tools that can be used to examine almost any sort of relationship among variables. For now, we will focus on understanding how it can be used to describe the relationship between a *quantitative* dependent variable and a *qualitative* independent variable.
 
-Let’s say I’m interested in studying how personality relates to gender. The most common model of personality in psychology is called the “Big Five." One common measure consists of 50 survey items (the IPIP Big-Five Factor Markers), with 10 items for each of the five personality traits from the model.[^qual-associations-8] @fig-Big5 shows some of these questions and how they are formatted.
+Let’s say I’m interested in studying how personality relates to gender. The most common model of personality in psychology is called the “Big Five." One common measure consists of 50 survey items (the IPIP Big-Five Factor Markers), with 10 items for each of the five personality traits from the model.[^qual-associations-4] @fig-Big5 shows some of these questions and how they are formatted.
 
-[^qual-associations-8]: Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. *Psychological assessment*, *4*(1), 26.
+[^qual-associations-4]: Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. *Psychological assessment*, *4*(1), 26.
 
 ![Example survey items used in the "Big Five" case study.](Images/qual-associations/Big5.jpg){#fig-Big5 width="450"}
 
 For now, I decide to focus on whether people are introverted or extroverted. Extroverts are outgoing and tend to enjoy interacting with others. Extroverts will tend to agree with the statement “I am the life of the party” while introverts will tend to agree with the item “I don’t talk a lot.”
 
-I find a dataset that contains many responses to the Big Five personality questions as well as information on the gender of each respondent.[^qual-associations-9] There are 10 different questions related to extraversion, and the dataset has one variable for each of these 10 questions (@fig-big5dataset). The variable labeled e1 shows responses to the item “I am the life of the party.” A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.
+I find a dataset that contains many responses to the Big Five personality questions as well as information on the gender of each respondent.[^qual-associations-5] There are 10 different questions related to extraversion, and the dataset has one variable for each of these 10 questions (@fig-big5dataset). The variable labeled e1 shows responses to the item “I am the life of the party.” A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.
 
-[^qual-associations-9]: <https://openpsychometrics.org/_rawdata/> (the file I used is called “BIG5.zip”)
+[^qual-associations-5]: <https://openpsychometrics.org/_rawdata/> (the file I used is called “BIG5.zip”)
 
 ![Screenshot of some observations and variable values in the "Big Five" dataset.](Images/qual-associations/big5dataset.jpg){#fig-big5dataset width="450"}
 
@@ -158,7 +154,7 @@ This is the same prediction we got before. Remember, I decided to initially just
 
 Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the difference between the average level of extraversion for females and the average level for males (0.53-(-0.46)=0.99). This is because @eq-ExtRegFem starts with females as the baseline, so to get our prediction for males, we have to adjust our baseline prediction by the average difference for males.
 
-@eq-ExtRegFem is also typically how we will arrange our equation when we’re running a regression.
+@eq-ExtRegFem is also typically how we will arrange our equation when we’re running a regression. Usually, regression results are displayed in a regression table (as discussed in the prior chapter), so rather than seeing results written out in the form of @eq-ExtRegFem, it would be more typical to find a table listing -0.99 as the coefficient estimate for `male` (or `gender`) and 0.53 as the coefficient estimate for the `intercept` (or the `constant`).
 
 #### Prediction with more than two categories for gender
 
@@ -202,9 +198,7 @@ However, as @eq-ExtRegFem and @eq-ExtRegFemNonBin illustrate, we don’t necessa
 
 As we can see in the appendix, it doesn't really matter which group we select as the omitted category because we get equivalent predictions regardless of which one we choose.
 
-## @sec-qual-associations Appendix: Regression with a Qualitative Dependent Variable[^qual-associations-10] {.unnumbered}
-
-[^qual-associations-10]: This section was written by Nathan Favero.
+## @sec-qual-associations Appendix: Regression with a Qualitative Dependent Variable {.unnumbered}
 
 This appendix will demonstrate one way to perform regression with a qualitative dependent variable, using output from the statistical software program *Stata*. Suppose I want to build a model of voting. I decide to use the 2016 American National Election Studies\[\^qual-associations-11\] survey results to try to understand how race is associated with voting. Respondents in the 2016 survey were asked about who they voted for in 2012, and I’m going to focus on their 2012 voting patterns for now. Using the statistical software package Stata to conduct my analysis, I find the following distributions for my two main variables of interest:
 

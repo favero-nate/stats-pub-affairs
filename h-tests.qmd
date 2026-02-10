@@ -1,322 +1,254 @@
-# Theory of Hypothesis Testing {#sec-h-tests}
+# Hypothesis Testing {#sec-h-tests}
 
-## Introduction to Hypothesis Testing[^h-tests-1]
+Hypothesis tests allow us to determine whether a finding is “statistically significant,” an idea we briefly encountered in Chapter 3 when discussing how to interpret a regression results table. Testing for statistical significance is the dominant way that the probabilistic conclusions from inferential statistics are communicated in science. However, many statisticians (and other methodologists) have criticized this broad reliance on significance testing as overly simplistic, confusing, or otherwise ill-founded. Given its widespread use, hypothesis testing is important to learn, even though confidence intervals are often a better way to describe statistical results.
 
-[^h-tests-1]: This section is adapted from David M. Lane. “Introduction.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/logic_of_hypothesis_testing/intro.html>
+As we will see in this chapter, hypothesis testing can often be understood as a particular application of confidence intervals. The risk with hypothesis tests is that we reduce our results down to a binary (significant or not significant), ignoring other nuances that may be present in the results. We will discuss some of these limitations in more detail at the end of the chapter.
 
-The statistician R. Fisher explained the concept of hypothesis testing with a story of a lady tasting tea. Here we will present an example based on James Bond who insisted that martinis should be shaken rather than stirred. Let's consider a hypothetical experiment to determine whether Mr. Bond can tell the difference between a shaken and a stirred martini. Suppose we gave Mr. Bond a series of 16 taste tests. In each test, we flipped a fair coin to determine whether to stir or shake the martini. Then we presented the martini to Mr. Bond and asked him to decide whether it was shaken or stirred. Let's say Mr. Bond was correct on 13 of the 16 taste tests. Does this prove that Mr. Bond has at least some ability to tell whether the martini was shaken or stirred?
+## Null and Alternative Hypotheses
 
-This result does not prove that he does; it could be he was just lucky and guessed right 13 out of 16 times. But how plausible is the explanation that he was just lucky? To assess its plausibility, we determine the probability that someone who was just guessing would be correct 13/16 times or more. This probability can be computed from what is called the binomial distribution, and a binomial distribution calculator[^h-tests-2] shows it to be 0.0106. This is a pretty low probability, and therefore someone would have to be very lucky to be correct 13 or more times out of 16 if they were just guessing. So either Mr. Bond was very lucky, or he can tell whether the drink was shaken or stirred. The hypothesis that he was guessing is not proven false, but considerable doubt is cast on it. Therefore, there is strong evidence that Mr. Bond can tell whether a drink was shaken or stirred.
-
-[^h-tests-2]: <https://onlinestatbook.com/2/calculators/binomial_dist.html>
-
-Let's consider another example. The case study Physicians' Reactions[^h-tests-3] sought to determine whether physicians spend less time with obese patients. Physicians were sampled randomly and each was shown a chart of a patient complaining of a migraine headache. They were then asked to estimate how long they would spend with the patient. The charts were identical except that for half the charts, the patient was obese and for the other half, the patient was of average weight. The chart a particular physician viewed was determined randomly. Thirty-three physicians viewed charts of average-weight patients and 38 physicians viewed charts of obese patients.
-
-[^h-tests-3]: <https://onlinestatbook.com/2/case_studies/weight.html>
-
-The mean time physicians reported that they would spend with obese patients was 24.7 minutes as compared to a mean of 31.4 minutes for average-weight patients. How might this difference between means have occurred? One possibility is that physicians were influenced by the weight of the patients. On the other hand, perhaps by chance, the physicians who viewed charts of the obese patients tend to see patients for less time than the other physicians. Random assignment of charts does not ensure that the groups will be equal in all respects other than the chart they viewed. In fact, it is certain the two groups differed in many ways by chance. The two groups could not have exactly the same mean age (if measured precisely enough such as in days). Perhaps a physician's age affects how long physicians see patients. There are innumerable differences between the groups that could affect how long they view patients. With this in mind, is it plausible that these chance differences are responsible for the difference in times?
-
-To assess the plausibility of the hypothesis that the difference in mean times is due to chance, we compute the probability of getting a difference as large or larger than the observed difference (31.4 - 24.7 = 6.7 minutes) if the difference were, in fact, due solely to chance. Using methods presented in @sec-comparing-means, this probability can be computed to be 0.0057. Since this is such a low probability, we have confidence that the difference in times is due to the patient's weight and is not due to chance.
-
-### The Probability Value
-
-It is very important to understand precisely what the probability values mean. In the James Bond example, the computed probability of 0.0106 is the probability he would be correct on 13 or more taste tests (out of 16) if he were just guessing.
-
-It is easy to mistake this probability of 0.0106 as the probability he cannot tell the difference. This is not at all what it means.
-
-The probability of 0.0106 is the probability of a certain outcome (13 or more out of 16) assuming a certain state of the world (James Bond was only guessing). It is not the probability that a state of the world is true. Although this might seem like a distinction without a difference, consider the following example. An animal trainer claims that a trained bird can determine whether or not numbers are evenly divisible by 7. In an experiment assessing this claim, the bird is given a series of 16 test trials. On each trial, a number is displayed on a screen and the bird pecks at one of two keys to indicate its choice. The numbers are chosen in such a way that the probability of any number being evenly divisible by 7 is 0.50. The bird is correct on 9/16 choices. Using the binomial calculator, we can compute that the probability of being correct nine or more times out of 16 if one is only guessing is 0.40. Since a bird who is only guessing would do this well 40% of the time, these data do not provide convincing evidence that the bird can tell the difference between the two types of numbers. As a scientist, you would be very skeptical that the bird had this ability. Would you conclude that there is a 0.40 probability that the bird can tell the difference? Certainly not! You would think the probability is much lower than 0.0001.
-
-To reiterate, the **probability value (p value)** is the probability of an outcome (9/16 or better) and not the probability of a particular state of the world (the bird was only guessing). In statistics, it is conventional to refer to possible states of the world as hypotheses since they are hypothesized states of the world. Using this terminology, the probability value is the probability of an outcome given the hypothesis. It is not the probability of the hypothesis given the outcome.
-
-This is not to say that we ignore the probability of the hypothesis. If the probability of the outcome given the hypothesis is sufficiently low, we have evidence that the hypothesis is false. However, we do not compute the probability that the hypothesis is false. In the James Bond example, the hypothesis is that he cannot tell the difference between shaken and stirred martinis. The probability value is low (0.0106), thus providing evidence that he can tell the difference. However, we have not computed the probability that he can tell the difference. A branch of statistics called Bayesian statistics provides methods for computing the probabilities of hypotheses. These computations require that one specify the probability of the hypothesis before the data are considered and, therefore, are difficult to apply in some contexts.
-
-### The Null Hypothesis
-
-The hypothesis that an apparent effect is due to chance is called the **null hypothesis**. In the Physicians' Reactions example, the null hypothesis is that in the population of physicians, the mean time expected to be spent with obese patients is equal to the mean time expected to be spent with average-weight patients. This null hypothesis can be written as:
+The starting point for hypothesis testing is a null hypothesis. Practically speaking, the null hypothesis usually indicates that there is no relationship between variables. Suppose we are studying electoral districts in the US. We might have a binary variable `rural` indicating whether a majority of the district’s residents live in a rural area. A second variable `ideology` is an estimate of the political ideology of the elected official (member of Congress) representing that district. Ideology can be measured on a continuous left-to-right scale (also called “liberal” to “conservative” in the US political system). For analysis of the relationship between these two variables, the null hypothesis would typically be that there is no difference in average ideology between rural and urban districts. Or stated differently, average ideology in rural districts is equal to average ideology in urban districts. The null hypothesis always describes a parameter being estimated, not a sample statistic. For example, a null hypothesis may describe the population mean(s), or a difference that is systematic and not due to the general noisiness that will be present in most samples (something we discuss more in future chapters). Because we are describing parameters, we generally use Greek letters (e.g., to indicate the mean) when writing a null hypothesis as an equation:
 
 $$
-\mu_{obese} = \mu_{average}
-$$
+H_0: \mu_R - \mu_U = 0
+$$ {#eq-rural-null}
+We write $H_0$ to represent the null hypothesis, and we are using the subscripts $U$ and $R$ to indicate "urban" and "rural."
 
-or as
-
-$$
-\mu_{obese} - \mu_{average} = 0.
-$$
-
-The null hypothesis in a correlational study of the relationship between high school grades and college grades would typically be that the population correlation is 0. This can be written as
+Another way to write this same null hypothesis is:
 
 $$
-\rho = 0
+H_0: \mu_R = \mu_U
 $$
 
-where $\rho$ is the population correlation (not to be confused with r, the correlation in the sample).
-
-Although the null hypothesis is usually that the value of a *population* *parameter* is 0, there are occasions in which the null hypothesis is a value other than 0. For example, if one were testing whether a subject differed from chance in their ability to determine whether a flipped coin would come up heads or tails, the null hypothesis would be that $\pi$ = 0.5.
-
-Keep in mind that the null hypothesis is typically the opposite of the researcher's hypothesis. In the Physicians' Reactions study, the researchers hypothesized that physicians would expect to spend less time with obese patients. The null hypothesis that the two types of patients are treated identically is put forward with the hope that it can be discredited and therefore rejected. If the null hypothesis were true, a difference as large or larger than the sample difference of 6.7 minutes would be very unlikely to occur. Therefore, the researchers rejected the null hypothesis of no difference and concluded that in the population, physicians intend to spend less time with obese patients.
-
-If the null hypothesis is rejected, then the alternative to the null hypothesis (called the alternative hypothesis) is accepted. The **alternative hypothesis** is simply the reverse of the null hypothesis. If the null hypothesis
+Every null hypothesis should be paired with an alternative hypothesis, which is normally the logical opposite of the null hypothesis. We write $H_A$ to represent the alternative hypothesis, and our alternative to @eq-rural-null is:
 
 $$
-\mu_{obese} = \mu_{average}
-$$
+H_0: \mu_R - \mu_U \neq 0
+$$ {#eq-rural-alt}
 
-is rejected, then there are two alternatives:
-
-$$
-\mu_{obese} < \mu_{average}
-$$
+Or equivalently:
 
 $$
-\mu_{obese} > \mu_{average}
+H_0: \mu_R \neq \mu_U
 $$
 
-Naturally, the direction of the sample means determines which alternative is adopted. Some textbooks have incorrectly argued that rejecting the null hypothesis that two population means are equal does not justify a conclusion about which population mean is larger. Kaiser (1960)[^h-tests-4] showed how it is justified to draw a conclusion about the direction of the difference.
+One benefit of writing the null and alternative hypotheses in the first form (@eq-rural-null and @eq-rural-alt) is that indicating a difference of means will correspond to how we often set up a regression model. As we saw in @sec-qual-associations, a difference in means can be described with a coefficient in a regression equation. We have already learned that confidence intervals can be constructed for regression coefficients, so let's see if we can evaluate our hypotheses using a confidence interval from a regression.
 
-[^h-tests-4]: Kaiser, H. F. (1960) Directional statistical decisions. *Psychological Review*, *67*, 160-167.
 
-## Steps in Hypothesis Testing[^h-tests-5] {#sec-steps-in-hypothesis-testing}
 
-[^h-tests-5]: This section is adapted from David M. Lane. “Steps in Hypothesis Testing.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html>
+*Note: The remainder of this chapter still needs to be written. What follows is content adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University)*
 
-There’s much to learn about hypothesis testing, but before going any further, here’s an overview of the four basic steps of any hypothesis test. Some of the details won’t make sense yet, but we’ll explain them in more detail in the following sections.
+## Comparing More than Two Means with Pairwise Comparisons[^h-tests-1]
 
-1.  The first step is to ***specify the null hypothesis***. For a two-tailed test, the null hypothesis is typically that a parameter equals zero although there are exceptions. A typical null hypothesis is $\mu_1 - \mu_2 = 0$ which is equivalent to $\mu_1 = \mu_2$. For a one-tailed test, the null hypothesis is either that a parameter is greater than or equal to zero or that a parameter is less than or equal to zero. If the prediction is that $\mu_1$ is larger than $\mu_2$, then the null hypothesis (the reverse of the prediction) is $\mu_2 - \mu_1 \geq 0$. This is equivalent to $\mu_1 \leq \mu_2$.
+[^h-tests-1]: This section is adapted from David M. Lane. “All Pairwise Comparisons Among Means.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/tests_of_means/pairwise.html>
 
-2.  The second step is to ***specify the*** $\alpha$ level which is also known as the significance level. Typical values are 0.05 and 0.01.
+Many experiments are designed to compare more than two conditions. We will take as an example the case study "Smiles and Leniency."[^h-tests-2] In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. "Type of Smile" is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in @tbl-feltmisneutral.
 
-3.  The third step is to ***compute the probability value*** (also known as the p value). This is the probability of obtaining a sample statistic as different or more different from the parameter specified in the null hypothesis given that the null hypothesis is true.
+[^h-tests-2]: <https://onlinestatbook.com/2/case_studies/leniency.html>
 
-4.  Finally, ***compare the probability value with the*** $\alpha$ level. If the probability value is lower then you reject the null hypothesis. Keep in mind that rejecting the null hypothesis is not an all-or-none decision. The lower the probability value, the more confidence you can have that the null hypothesis is false. However, if your probability value is higher than the conventional $\alpha$ level of 0.05, most scientists will consider your findings inconclusive. Failure to reject the null hypothesis does not constitute support for the null hypothesis. It just means you do not have sufficiently strong data to reject it.
++-----------------------+-------------------------------------------+-------------------------------------------+
+| false vs. felt        | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/felt.png)      |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| false vs. miserable   | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/miserable.png) |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| false vs. neutral     | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/neutral.png)   |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| felt vs. miserable    | ![](Images/h-tests-applied/felt.png)      | ![](Images/h-tests-applied/miserable.png) |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| felt vs. neutral      | ![](Images/h-tests-applied/felt.png)      | ![](Images/h-tests-applied/neutral.png)   |
++-----------------------+-------------------------------------------+-------------------------------------------+
+| miserable vs. neutral | ![](Images/h-tests-applied/miserable.png) | ![](Images/h-tests-applied/neutral.png)   |
++-----------------------+-------------------------------------------+-------------------------------------------+
 
-## One- and Two-Tailed Tests[^h-tests-6]
+: Six Comparisons among Means. {#tbl-feltmisneutral}
 
-[^h-tests-6]: This section is adapted from David M. Lane. “One- and Two-Tailed Tests.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html>
+You can certainly conduct a series of six t tests in this manner. However, one potential problem with this approach is that if you did this analysis, you would have six chances to make a Type I error. Therefore, if you were using the 0.05 significance level, the probability that you would make a Type I error on at least one of these comparisons is greater than 0.05.[^h-tests-3] The more means that are compared, the more the Type I error rate is inflated. @fig-pairwisecompfmean shows the number of possible comparisons between pairs of means (pairwise comparisons) as a function of the number of means. If there are only two means, then only one comparison can be made. If there are 12 means, then there are 66 possible comparisons.
 
-In the James Bond case study,[^h-tests-7] Mr. Bond was given 16 trials on which he judged whether a martini had been shaken or stirred. He was correct on 13 of the trials. From the binomial distribution, we know that the probability of being correct 13 or more times out of 16 if one is only guessing is 0.0106. @fig-binomialdistredtail shows a graph of the binomial distribution. The red bars show the values greater than or equal to 13. As you can see in the figure, the probabilities are calculated for the upper tail of the distribution. A probability calculated in only one tail of the distribution is called a "one-tailed probability."
+[^h-tests-3]: When discussing probability of Type I errors, we assume all null hypotheses are true, since a Type I error can't occur if the null hypothesis is false.
 
-[^h-tests-7]: <https://onlinestatbook.com/2/case_studies/bond.html>
+![Number of pairwise comparisons as a function of the number of means.](Images/h-tests-applied/pairwisecompfmean.png){#fig-pairwisecompfmean width="400"}
 
-![The binomial distribution. The upper (right-hand) tail is red.](Images/h-tests/binomialdistredtail.png){#fig-binomialdistredtail width="375"}
+@fig-type1error shows the probability of a Type I error as a function of the number of means. As you can see, if you have an experiment with 12 means, the probability is about 0.70 that at least one of the 66 comparisons among means would be significant even if all 12 population means were the same.
 
-A slightly different question can be asked of the data: "What is the probability of getting a result as extreme or more extreme than the one observed?" Since the chance expectation is 8/16, a result of 3/16 is equally as extreme as 13/16. Thus, to calculate this probability, we would consider both tails of the distribution. Since the binomial distribution is symmetric when $\pi$ = 0.5, this probability is exactly double the probability of 0.0106 computed previously. Therefore, p = 0.0212. A probability calculated in both tails of a distribution is called a "two-tailed probability" (see @fig-binomialdist2redtails).
+![Probability of a Type I error as a function of the number of means.](Images/h-tests-applied/type1error.png){#fig-type1error width="400"}
 
-![The binomial distribution. Both tails are red.](Images/h-tests/binomialdist2redtails.png){#fig-binomialdist2redtails width="375"}
+The Type I error rate can be controlled using a test called the Tukey Honestly Significant Difference test or Tukey HSD for short. The Tukey HSD test is one example of a multiple comparison test, but several alternatives are frequently used, such as the Bonferroni correction. Regardless of the exact method used for a multiple comparison test, the interpretation of results is similar. The Tukey HSD is based on a variation of the t distribution that takes into account the number of means being compared. This distribution is called the studentized range distribution.
 
-Should the one-tailed or the two-tailed probability be used to assess Mr. Bond's performance? That depends on the way the question is posed. If we are asking whether Mr. Bond can tell the difference between shaken or stirred martinis, then we would conclude he could if he performed either much better than chance or much worse than chance. If he performed much worse than chance, we would conclude that he can tell the difference, but he does not know which is which. Therefore, since we are going to reject the null hypothesis if Mr. Bond does either very well or very poorly, we will use a two-tailed probability.
+Normally, statistical software will make all the necessary calculations for you in the background. But to illustrate what sorts of calculations the software is relying on, let's return to the leniency study to see how to compute the Tukey HSD test. You will see that the computations are very similar to those of an independent-groups t test. The steps are outlined below:
 
-On the other hand, if our question is whether Mr. Bond is better than chance at determining whether a martini is shaken or stirred, we would use a one-tailed probability. What would the one-tailed probability be if Mr. Bond were correct on only 3 of the 16 trials? Since the one-tailed probability is the probability of the right-hand tail, it would be the probability of getting 3 or more correct out of 16. This is a very high probability and the null hypothesis would not be rejected.
+1.  Compute the means and variances of each group. For our example, they are shown in @tbl-sum-stats-leniency.
 
-The null hypothesis for the two-tailed test is $\pi = 0.5$. By contrast, the null hypothesis for the one-tailed test is $\pi \leq 0.5$.[^h-tests-8] Accordingly, we reject the two-tailed hypothesis if the sample proportion deviates greatly from 0.5 in either direction. The one-tailed hypothesis is rejected only if the sample proportion is much greater than 0.5. The alternative hypothesis in the two-tailed test is $\pi \ne 0.5$. In the one-tailed test it is $\pi > 0.5$.
+|     | **Condition** |     | **Mean** |     | **Variance** |     |
+|:---:|:-------------:|:---:|:--------:|:---:|:------------:|:---:|
+|     |     False     |     |   5.37   |     |     3.34     |     |
+|     |     Felt      |     |   4.91   |     |     2.83     |     |
+|     |   Miserable   |     |   4.91   |     |     2.11     |     |
+|     |    Neutral    |     |   4.12   |     |     2.32     |     |
 
-[^h-tests-8]: Some sources write the null hypothesis of the one-tailed test identically to the two-tailed test ($\pi = 0.5$). While this alternative notation does not preserve the intuitive logic of the null hypothesis being the strict reverse of the alternative hypothesis, it does hint at how the p-value in a one-tailed test is calculated, since a distribution with $\pi = 0.5$ is used to determine the p-value (as shown in @fig-binomialdistredtail).
+: Means and Variances from the "Smiles and Leniency" Study. {#tbl-sum-stats-leniency}
 
-You should always decide whether you are going to use a one-tailed or a two-tailed probability before looking at the data. Statistical tests that compute one-tailed probabilities are called one-tailed tests; those that compute two-tailed probabilities are called two-tailed tests. Two-tailed tests are much more common than one-tailed tests in scientific research because an outcome signifying that something other than chance is operating is usually worth noting. One-tailed tests are appropriate when it is not important to distinguish between no effect and an effect in the unexpected direction. For example, consider an experiment designed to test the efficacy of a treatment for the common cold. The researcher would only be interested in whether the treatment was better than a placebo control. It would not be worth distinguishing between the case in which the treatment was worse than a placebo and the case in which it was the same because in both cases the drug would be worthless.
+2.  Compute MSE, which is simply the mean of the variances. It is equal to 2.65.
 
-Some have argued that a one-tailed test is justified whenever the researcher predicts the direction of an effect. The problem with this argument is that if the effect comes out strongly in the non-predicted direction, the researcher is not justified (according to the test) in concluding that the effect is not zero. Since this is unrealistic, one-tailed tests are usually viewed skeptically if justified on this basis alone.
+3.  Compute Q (using the formula below) for each pair of means, where $\bar{X}_i$ is one mean, $\bar{X}_j$ is the other mean, and $n$ is the number of scores in each group. For these data, there are 34 observations per group. The value in the denominator is 0.279. $$ Q=\frac{\bar{X}_i-\bar{X}_j}{\sqrt{\frac{MSE}{n}}} $$
 
-## Significance Testing[^h-tests-9]
+4.  Compute p for each comparison using a Studentized Range Calculator.[^h-tests-4] The degrees of freedom is equal to the total number of observations minus the number of means. For this experiment, df = 136 - 4 = 132.
 
-[^h-tests-9]: This section is adapted from David M. Lane. “Significance Testing.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html>
+[^h-tests-4]: <https://onlinestatbook.com/2/calculators/studentized_range_dist.html>
 
-A low probability value casts doubt on the null hypothesis. How low must the probability value be in order to conclude that the null hypothesis is false? Although there is clearly no right or wrong answer to this question, it is conventional to conclude the null hypothesis is false if the probability value is less than 0.05. More conservative researchers conclude the null hypothesis is false only if the probability value is less than 0.01. When a researcher concludes that the null hypothesis is false, the researcher is said to have rejected the null hypothesis. The probability value below which the null hypothesis is rejected is called the $\alpha$ (alpha) level or simply $\alpha$. It is also called the significance level.
+The tests for these data are shown in @tbl-6pairwisecomp.
 
-When the null hypothesis is rejected, the effect is said to be **statistically significant**. For example, in the Physicians' Reactions case study,[^h-tests-10] the probability value is 0.0057. Therefore, the effect of obesity is statistically significant and the null hypothesis that obesity makes no difference is rejected. It is very important to keep in mind that statistical significance means only that the null hypothesis of exactly no effect is rejected; it does not mean that the effect is important, which is what "significant" usually means in contexts outside of statistics. When an effect is statistically significant, you can have confidence the effect is not exactly zero. Finding that an effect is significant does not tell you about how large or important the effect is.
+|     Comparison      | $\bar{X}_i - \bar{X}_j$ | $Q$  |  $p$  |
+|:-------------------:|:-----------------------:|:----:|:-----:|
+|    False - Felt     |          0.46           | 1.65 | 0.649 |
+|  False - Miserable  |          0.46           | 1.65 | 0.649 |
+|   False - Neutral   |          1.25           | 4.48 | 0.010 |
+|  Felt - Miserable   |          0.00           | 0.00 | 1.000 |
+|   Felt - Neutral    |          0.79           | 2.83 | 0.193 |
+| Miserable - Neutral |          0.79           | 2.83 | 0.193 |
 
-[^h-tests-10]: <https://onlinestatbook.com/2/case_studies/weight.html>
+: Six Pairwise Comparisons. {#tbl-6pairwisecomp}
 
-Do not confuse statistical significance with practical significance. A small effect can be highly significant if the sample size is large enough.
+The only significant comparison is between the false smile and the neutral smile.
 
-Why does the word "significant" in the phrase "statistically significant" mean something so different from other uses of the word? Interestingly, this is because the meaning of "significant" in everyday language has changed. It turns out that when the procedures for hypothesis testing were developed, something was "significant" if it signified something. Thus, finding that an effect is statistically significant signifies that the effect is real and not due to chance. Over the years, the meaning of "significant" changed, leading to the potential misinterpretation.
+It is not unusual to obtain results that on the surface appear paradoxical. For example, these results appear to indicate that (a) the false smile is the same as the miserable smile, (b) the miserable smile is the same as the neutral control, and (c) the false smile is different from the neutral control. This apparent contradiction is avoided if you are careful not to accept the null hypothesis when you fail to reject it. The finding that the false smile is not significantly different from the miserable smile does not mean that they are really the same. Rather it means that there is not convincing evidence that they are different. Similarly, the non-significant difference between the miserable smile and the control does not mean that they are the same. The proper conclusion is that the false smile is higher than the control and that the miserable smile is either (a) equal to the false smile, (b) equal to the control, or (c) somewhere in-between.
 
-There are two approaches (at least) to conducting significance tests. In one (favored by R. Fisher), a significance test is conducted and the probability value reflects the strength of the evidence against the null hypothesis.[^h-tests-11] If the probability is below 0.01, the data provide strong evidence that the null hypothesis is false. If the probability value is below 0.05 but larger than 0.01, then the null hypothesis is typically rejected, but not with as much confidence as it would be if the probability value were below 0.01. Probability values between 0.05 and 0.10 provide weak evidence against the null hypothesis and, by convention, are not considered low enough to justify rejecting it. Higher probabilities provide less evidence that the null hypothesis is false.
+The assumptions of the Tukey test are essentially the same as for an independent-groups t test: normality, homogeneity of variance, and independent observations. The test is quite robust to violations of normality. Violating homogeneity of variance can be more problematical than in the two-sample case since the MSE is based on data from all groups. The assumption of independence of observations is important and should not be violated.
 
-[^h-tests-11]: See also: Goodman, W. M., Spruill, S. E., & Komaroff, E. (2019). A proposed hybrid effect size plus p-value criterion: empirical evidence supporting its use. *The American Statistician*, *73*(sup1), 168-185.
+## Comparing More than Two Means with ANOVA[^h-tests-5]
 
-The alternative approach (favored by the statisticians Neyman and Pearson) is to specify an $\alpha$ level before analyzing the data. If the data analysis results in a probability value below the $\alpha$ level, then the null hypothesis is rejected; if it is not, then the null hypothesis is not rejected. According to this perspective, if a result is significant, then it does not matter how significant it is. Moreover, if it is not significant, then it does not matter how close to being significant it is. Therefore, if the 0.05 level is being used, then probability values of 0.049 and 0.001 are treated identically. Similarly, probability values of 0.06 and 0.34 are treated identically.
+[^h-tests-5]: The initial material in this subsection (until the header indicating otherwise) is adapted from David M. Lane. “Introduction.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/analysis_of_variance/intro.html>
 
-The former approach (preferred by Fisher) is more suitable for scientific research and will be adopted here. The latter is more suitable for applications in which a yes/no decision must be made. For example, if a statistical analysis were undertaken to determine whether a machine in a manufacturing plant were malfunctioning, the statistical analysis would be used to determine whether or not the machine should be shut down for repair. The plant manager would be less interested in assessing the weight of the evidence than knowing what action should be taken. There is no need for an immediate decision in scientific research where a researcher may conclude that there is some evidence against the null hypothesis, but that more research is needed before a definitive conclusion can be drawn.
+**Analysis of Variance (ANOVA)** is a statistical method used to test differences between two or more means. It may seem odd that the technique is called "Analysis of Variance" rather than "Analysis of Means." The name is appropriate because inferences about means are made by analyzing variance.
 
-## Testing a Single Mean[^h-tests-12]
+ANOVA is used to test general rather than specific differences among means. This can be seen best by example, so we will continue considering the data on leniency and smiles we examined in the prior section on the Tukey HSD test.
 
-[^h-tests-12]: This section is adapted from David M. Lane. “Testing a Single Mean.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/tests_of_means/single_mean.html>
+ANOVA tests the non-specific null hypothesis that all four population means are equal. That is,
 
-The way we calculate the probability ($p$) value for a hypothesis test depends on what type of statement is made in our null hypothesis. Normally, statistical software will automatically compute a p value behind the scenes, but we still want to learn a bit about how the software comes up with this value. To illustrate what these calculations can look like, this section will focus on what to do if we want to test a null hypothesis stating that the population mean is equal to some hypothesized value. For example, suppose an experimenter wanted to know if people are influenced by a subliminal message and performed the following experiment. Each of nine subjects is presented with a series of 100 pairs of pictures, and for each pair they are asked to select one. As a pair of pictures is presented, a subliminal message is presented suggesting the picture that the subject should choose. The question is whether the (population) mean number of times the suggested picture is chosen is equal to 50 (the number we would expect if subliminal messages have no effect). In other words, the null hypothesis is that the population mean ($\mu$) is 50. The (hypothetical) data are shown in @tbl-scoredist. The data in @tbl-scoredist have a sample mean ($\bar{X}$) of 51. Thus the sample mean differs from the hypothesized population mean by 1.
+$$ \mu_{false} = \mu_{felt} = \mu_{miserable} = \mu_{neutral} $$
 
-| **Frequency** |
-|:-------------:|
-|      45       |
-|      48       |
-|      49       |
-|      49       |
-|      51       |
-|      52       |
-|      53       |
-|      55       |
-|      57       |
+in our example. More generally, the null hypothesis tested by ANOVA is that the population means for all conditions are the same. For whatever data is being examined, this can be written as:
 
-: Distribution of scores. {#tbl-scoredist}
+$$ H_0: \mu_1 = \mu_2 = ... = \mu_k $$
 
-The significance test consists of computing the probability of a sample mean differing from $\mu$ by one (the difference between the hypothesized population mean and the sample mean) or more. The first step is to determine the sampling distribution of the mean. As we learned in the prior chapter, the mean and standard deviation of the sampling distribution of the mean are
+where $H_0$ is the null hypothesis and k is the number of conditions (k = 4 in our example).
 
-$$
-\mu_{\bar{X}} = \mu
-$$
+This non-specific null hypothesis is sometimes called the omnibus null hypothesis. When the omnibus null hypothesis is rejected, the conclusion is that at least one population mean is different from at least one other mean. However, since the ANOVA does not reveal which means are different from which, it offers less specific information than the Tukey HSD test. The Tukey HSD is therefore preferable to ANOVA in this situation.
 
-and
+You might be wondering why you should learn about ANOVA when the Tukey test is better. One reason is that there are complex types of analyses that can be done with ANOVA and not with the Tukey test. A second is that ANOVA is one of the most commonly-used technique for comparing means, and it is important to understand ANOVA in order to understand research reports.
 
-$$
-\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}
-$$
+### The Critical Step: Calculating an F Ratio[^h-tests-6] {#sec-the-critical-step-calculating-an-f-ratio}
 
-respectively. It is clear that if the null hypothesis is true, $\mu_{\bar{X}}$ = 50. In order to compute the standard deviation of the sampling distribution of the mean, we have to know the population standard deviation ($\sigma$).
+[^h-tests-6]: This subsection and the following are adapted from David M. Lane. “One-Factor ANOVA (Between Subjects).” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/analysis_of_variance/one-way.html>
 
-The current example was constructed to be one of the few instances in which the standard deviation is known. In practice, it is very unlikely that you would know $\sigma$ and therefore you would use $s$, the sample estimate of $\sigma$. However, it is instructive to see how the probability is computed if $\sigma$ is known before proceeding to see how it is calculated when $\sigma$ is estimated.
+There are many types of ANOVA, but for our example, we will use what is called a one-factor between-subjects design. Other types of ANOVA are beyond the scope of what is covered in this text.
 
-For the current example, if the null hypothesis is true, then based on a well-established formula for the binomial distribution, one can compute that the variance of the number correct is
+More details are beyond the scope of this text and can be found elsewhere,[^h-tests-7] but the critical step in an ANOVA is comparing what is called the mean square error (MSE) to the mean square between (MSB). MSB estimates a larger quantity than MSE only when the population means are not equal, so finding a larger MSB than an MSE is a sign that the population means are not equal. But since MSB could be larger than MSE by chance even if the population means are equal, MSB must be much larger than MSE in order to justify the conclusion that the population means differ. But how much larger must MSB be? For the "Smiles and Leniency" data, the MSB and MSE are 9.179 and 2.649, respectively. Is that difference big enough? To answer, we would need to know the probability of getting that big a difference or a bigger difference if the population means were all equal. The mathematics necessary to answer this question were worked out by the statistician R. Fisher. Although Fisher's original formulation took a slightly different form, the standard method for determining the probability is based on the ratio of MSB to MSE. This ratio is named after Fisher and is called the F ratio.
 
-$$
-\sigma^2 = N \pi (1-\pi) = 100(0.5)(1-0.5) = 25
-$$
+[^h-tests-7]: For example, see David M. Lane. “One-Factor ANOVA (Between Subjects).” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/analysis_of_variance/one-way.html>
 
-where $N$ is the number of times a subject makes a selection between two pictures. Therefore, $\sigma$ = 5 (since $\sigma = \sqrt{\sigma^2}=\sqrt{25}=5$). For a $\sigma$ of 5 and an $n$ of 9, the standard deviation of the sampling distribution of the mean is $5/\sqrt{9} = 1.667$. Recall that the standard deviation of a sampling distribution is called the standard error.
+For these data, the F ratio is
 
-To recap, we wish to know the probability of obtaining a sample mean of 51 or greater assuming the null hypothesis is true. If the null hypothesis is true, the sampling distribution of the mean has a mean of 50 and a standard deviation of 1.667. To compute the relevant probability, we will make the assumption that the sampling distribution of the mean is normally distributed. We can then use a normal distribution calculator as shown in @fig-prsamplemean_1tail.
+$$ F = \frac{9.179}{2.649} = 3.465. $$
 
-![Probability of a sample mean being 51 or greater.](Images/h-tests/prsamplemean_1tail.png){#fig-prsamplemean_1tail width="300"}
+Therefore, the MSB is 3.465 times higher than MSE. Would this have been likely to happen if all the population means were equal? That depends on the sample size. With a small sample size, it would not be too surprising because results from small samples are unstable. However, with a very large sample, the MSB and MSE are almost always about the same (assuming the null hypothesis is true), and an F ratio of 3.465 or larger would be very unusual. @fig-fdist shows the sampling distribution of F for the sample size in the "Smiles and Leniency" study. As you can see, it has a positive skew.
 
-Notice that the mean is set to 50, the standard deviation to 1.667, and the area above 51 is requested and shown to be 0.274.
+![Distribution of F.](Images/h-tests-applied/fdist_smiles.png){#fig-fdist width="375"}
 
-Therefore, the probability of obtaining a sample mean of 51 or larger is 0.274. Since a mean of 51 or higher is not unlikely under the assumption that the subliminal message has no effect, the effect is not significant and the null hypothesis is not rejected.
+From @fig-fdist, you can see that F ratios of 3.465 or above are unusual occurrences. The area to the right of 3.465 represents the probability of an F that large or larger and is equal to 0.018. In other words, given the null hypothesis that all the population means are equal, the probability value (p) is 0.018 and therefore the null hypothesis can be rejected. The conclusion that at least one of the population means is different from at least one of the others is justified.
 
-The test conducted above was a one-tailed test because it computed the probability of a sample mean being one or more points higher than the hypothesized mean of 50 and the area computed was the area above 51. To test the two-tailed hypothesis, you would compute the probability of a sample mean differing by one or more in either direction from the hypothesized mean of 50. You would do so by computing the probability of a mean being less than or equal to 49 or greater than or equal to 51.
+The shape of the F distribution depends on the sample size. More precisely, it depends on two degrees of freedom (df) parameters: one for the numerator (MSB) and one for the denominator (MSE). Recall that the degrees of freedom for an estimate of variance is equal to the number of observations minus one. Since the MSB is the variance of k means (where k is the number of groups), it has k - 1 df. The MSE is an average of k variances, each with n - 1 df. Therefore, the df for MSE is k(n - 1) = N - k, where N is the total number of observations, n is the number of observations in each group, and k is the number of groups. To summarize:
 
-The results from a normal distribution calculator are shown in @fig-prsamplemean_2tail.
+$$ df_{\text{numerator}} = k-1 $$$$ df_{\text{denominator}} = N-k $$
 
-![Probability of a sample mean being less than or equal to 49 or greater than or equal to 51.](Images/h-tests/prsamplemean_2tail.png){#fig-prsamplemean_2tail width="300"}
+For the "Smiles and Leniency" data,
 
-As you can see, the probability is 0.548 which, as expected, is twice the probability of 0.274 shown in @fig-prsamplemean_1tail.
+$$ df_{\text{numerator}} = k-1 = 4-1 = 3 $$$$ df_{\text{denominator}} = N-k = 136-4 = 132 $$$$ F = 3.465 $$
 
-Before normal calculators such as the one illustrated above were widely available, probability calculations were made based on the standard normal distribution. This was done by computing $Z$ based on the formula
+An F distribution calculator[^h-tests-8] shows that p = 0.018. Again, because this value is less than 0.05, one would generally reject the null hypothesis and conclude that average leniency varies depending on type of smile. The p-value from an ANOVA is sometimes reported in a larger table of summary results such as @tbl-anova-results-summary.
 
-$$
-Z = \frac{\bar{X}-\mu_0}{\sigma_{\bar{X}}}
-$$
+[^h-tests-8]: <https://onlinestatbook.com/2/calculators/F_dist.html>
 
-where $Z$ is the value on the standard normal distribution, $\bar{X}$ is the sample mean, $\mu_0$ is the hypothesized value of the mean (under the null hypothesis),[^h-tests-13] and $\sigma_{\bar{X}}$ is the standard error of the mean. For this example, $Z$ = (51-50)/1.667 = 0.60. Use a normal calculator, with a mean of 0 and a standard deviation of 1, as shown below.
+|  Source   | df  |   SSQ    |   MS   |   F   |   p    |
+|:---------:|:---:|:--------:|:------:|:-----:|:------:|
+| Condition |  3  | 27.5349  | 9.1783 | 3.465 | 0.0182 |
+|   Error   | 132 | 349.6544 | 2.6489 |       |        |
+|   Total   | 135 | 377.1893 |        |       |        |
 
-[^h-tests-13]: The subscript $_0$ in $\mu_0$ (the population mean according to the null hypothesis) corresponds to how we typically represent the null hypothesis: $H_0$.
+: ANOVA Summary Table. {#tbl-anova-results-summary}
 
-![Calculation using the standardized normal distribution.](Images/h-tests/standardnormdistcalc.png){#fig-standardnormdistcalc.png width="300"}
+### Relationship to T Tests and Regression {#sec-relationship-to-t-tests-and-regression}
 
-Notice that the probability (the shaded area) is the same as previously calculated (for the one-tailed test).
+Since an ANOVA and an independent-groups t test can both test the difference between two means, you might be wondering which one to use. Fortunately, it does not matter since the results will always be the same. When there are only two groups, the following relationship between F and t will always hold:
 
-As noted, in real-world data analyses it is very rare that you would know $\sigma$ and wish to estimate $\mu$. Typically $\sigma$ is not known and is estimated in a sample by s, and $\sigma_{\bar{X}}$ is estimated by $s_{\bar{X}}$. For our next example, we will consider the data in the "ADHD Treatment" case study.[^h-tests-14] These data consist of the scores of 24 children with ADHD on a delay of gratification (DOG) task. Each child was tested under four dosage levels. @tbl-dogscores shows the data for the placebo (0 mg) and highest dosage level (0.6 mg) of methylphenidate. Of particular interest here is the column labeled "Diff" that shows the difference in performance between the 0.6 mg (D60) and the 0 mg (D0) conditions. These difference scores are positive for children who performed better in the 0.6 mg condition than in the control condition and negative for those who scored better in the control condition. If methylphenidate has a positive effect, then the mean difference score in the population will be positive. The null hypothesis is that the mean difference score in the population is 0.
+$$ F(1,dfd) = t^2(df) $$
 
-[^h-tests-14]: <https://onlinestatbook.com/2/case_studies/adhd.html>
+where dfd is the degrees of freedom for the denominator of the F test and df is the degrees of freedom for the t test. dfd will always equal df. And because of how their probability distributions are constructed, these values of F and t will yield identical p-values for the (two tailed) null hypothesis of no difference between the two means.
 
-|     | **D0** |     | **D60** |     | **Diff** |     |
-|:---:|:------:|:---:|:-------:|:---:|:--------:|:---:|
-|     |   57   |     |   62    |     |    5     |     |
-|     |   27   |     |   49    |     |    22    |     |
-|     |   32   |     |   30    |     |    -2    |     |
-|     |   31   |     |   34    |     |    3     |     |
-|     |   34   |     |   38    |     |    4     |     |
-|     |   38   |     |   36    |     |    -2    |     |
-|     |   71   |     |   77    |     |    6     |     |
-|     |   33   |     |   51    |     |    18    |     |
-|     |   34   |     |   45    |     |    11    |     |
-|     |   53   |     |   42    |     |   -11    |     |
-|     |   36   |     |   43    |     |    7     |     |
-|     |   42   |     |   57    |     |    15    |     |
-|     |   26   |     |   36    |     |    10    |     |
-|     |   52   |     |   58    |     |    6     |     |
-|     |   36   |     |   35    |     |    -1    |     |
-|     |   55   |     |   60    |     |    5     |     |
-|     |   36   |     |   33    |     |    -3    |     |
-|     |   42   |     |   49    |     |    7     |     |
-|     |   36   |     |   33    |     |    -3    |     |
-|     |   54   |     |   59    |     |    5     |     |
-|     |   34   |     |   35    |     |    1     |     |
-|     |   29   |     |   37    |     |    8     |     |
-|     |   33   |     |   45    |     |    12    |     |
-|     |   33   |     |   29    |     |    -4    |     |
+There is also a third equivalent way to compare two means: using linear regression, as described in @sec-regression-with-a-qualitative-independent-variable. More generally, linear regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.
 
-: DOG scores as a function of dosage. {#tbl-dogscores}
+## Association of Two Qualitative Variables: Chi Square Tests[^h-tests-9] {#sec-contingency-tables}
 
-To test this null hypothesis, we compute what we call a t statistic (as opposed to a z statistic) because we will compare this value to the t distribution—a distribution which allows for accurate inferences when $\sigma$ is estimated rather than known (see @sec-more-about-the-t-distribution). We compute t using a special case of the following formula:
+[^h-tests-9]: This section is adapted from David M. Lane. “Contingency Tables.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/chi_square/contingency.html>
 
-$$
-\text{t} = \frac{\text{statistic} -\text{hypothesized value}}{\text{estimated standard error of the statistic}}
-$$
+We previously learned how to describe the relationship between two qualitative variables with a contingency table or bar chart bar chart (@sec-qual-associations). To make a comparison that includes a significance test, we will need to use a distribution called the Chi Square distribution (more details are beyond the scope of this text and can be found elsewhere[^h-tests-10]). As such, our significance test will be called a Chi Square test.
 
-The special case of this formula applicable to testing a single mean is
+[^h-tests-10]: For example, see David M. Lane. “Chi Square Distribution.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/chi_square/distribution.html>
 
-$$
-\text{t} = \frac{\bar{X}-\mu_0}{s_{\bar{X}}}
-$$
+To demonstrate the Chi Square test, we again look to data from the Mediterranean Diet and Health case study,[^h-tests-11] in which heart attack survivors were randomly assigned to follow one of two diets. Looking to @tbl-studyfreqs, we want to know whether there is a *significant relationship* between diet and outcome.
 
-where $t$ is the value we compute for the significance test, $\bar{X}$ is the sample mean, $\mu_0$ is the hypothesized value of the population mean, and $s_{\bar{X}}$ is the estimated standard error of the mean. Notice the similarity of this formula to the formula for $Z$ we saw before.
+[^h-tests-11]: <https://onlinestatbook.com/2/case_studies/diet.html>
 
-In the previous example, we assumed that the scores were normally distributed. In this case, it is the population of difference scores that we assume to be normally distributed.
++---------------+----------+---------------------+-------------------------+----------+----------+
+|               | Outcome  |                     |                         |          | Total    |
++===============+==========+=====================+=========================+==========+==========+
+| **Diet**      | Cancers  | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |          |
++---------------+----------+---------------------+-------------------------+----------+----------+
+| AHA           | 15       | 24                  | 25                      | 239      | 303      |
++---------------+----------+---------------------+-------------------------+----------+----------+
+| Mediterranean | 7        | 14                  | 8                       | 273      | 302      |
++---------------+----------+---------------------+-------------------------+----------+----------+
+| **Total**     | 22       | 38                  | 33                      | 512      | 605      |
++---------------+----------+---------------------+-------------------------+----------+----------+
 
-The mean ($\bar{X}$) of the n = 24 difference scores is 4.958, the hypothesized value of $\mu$ is 0, and the standard deviation (s) is 7.538. The estimate of the standard error of the mean is computed as:
+: Frequencies for Diet and Health Study. {#tbl-studyfreqs}
 
-$$
-s_{\bar{X}} = \frac{s}{\sqrt{n}} = \frac{7.5382}{\sqrt{24}} = 1.54
-$$
+As with all other hypothesis tests in this chapter, the null hypothesis indicates no relationship between the two values. And once again, software can calculate a p-value for us to evaluate this hypothesis. But if we are wondering what’s going on under the hood, the first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet-Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome (as the null hypothesis states), then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the $i$th row and the $j$th column is equal to
 
-Therefore, t = 4.96/1.54 = 3.22. The probability value for t depends on the degrees of freedom. The number of degrees of freedom is equal to n - 1 = 23. As shown below, a t distribution calculator finds that the probability of a t less than -3.22 or greater than 3.22 is only 0.0038. Therefore, if the drug had no effect, the probability of finding a difference between means as large or larger (in either direction) than the difference found is very low. Therefore the null hypothesis that the population mean difference score is zero can be rejected. The conclusion is that the population mean for the drug condition is higher than the population mean for the placebo condition.
+$$ E_{ij}=\frac{T_iT_j}{T} $$
 
-![Calculation using the t distribution.](Images/h-tests/tdistcalc.png){#fig-tdistcalc width="300"}
+where $E_{ij}$ is the expected frequency for cell $i,j$, $T_i$ is the total for the $i$th row, $T_j$ is the total for the $j$th column, and $T$ is the total number of observations. For the AHA Diet-Cancers cell, $i = 1$, $j = 1$, $T_i = 303$, $T_j = 22$, and $T = 605$. @tbl-observedstudyfreqs shows the expected frequencies (in parenthesis) for each cell in the experiment.
 
-In order to conduct this hypothesis test, we made the following *assumptions*:
+The significance test is conducted by computing Chi Square as follows.
 
-1.  Each value is sampled independently from each other value.
+$$ \chi^2_3=\sum\frac{(E-O)^2}{E}=16.55 $$
 
-2.  The values are sampled from a normal distribution.
+The degrees of freedom is equal to $(r-1)(c-1)$, where $r$ is the number of rows and $c$ is the number of columns. For this example, the degrees of freedom is $(2-1)(4-1) = 3$. A Chi Square calculator[^h-tests-12] can be used to determine that the probability value for a Chi Square of 16.55 with three degrees of freedom is equal to 0.0009. Therefore, the null hypothesis of no relationship between diet and outcome can be rejected.
 
-Now that we've filled in more of the details of hypothesis tests, you may want to go back and review @sec-steps-in-hypothesis-testing to see whether you can follow the succinct overview of the hypothesis testing approach. Once you can follow that description, it is a good indication that you have understood the key concepts essential to every hypothesis test.
+[^h-tests-12]: <https://onlinestatbook.com/2/calculators/chi_square_prob.html>
 
-## Type I and Type II Errors[^h-tests-15]
++---------------+-------------+---------------------+-------------------------+------------+
+|               | **Outcome** |                     |                         |            |
++===============+=============+=====================+=========================+============+
+| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy    |
++---------------+-------------+---------------------+-------------------------+------------+
+| AHA           | 15\         | 24\                 | 25\                     | 239\       |
+|               | (11.02)     | (19.03)             | (16.53)                 | (256.42)   |
++---------------+-------------+---------------------+-------------------------+------------+
+| Mediterranean | 7\          | 14\                 | 8\                      | 273\       |
+|               | (10.98)     | (18.97)             | (16.47)                 | (255.58)   |
++---------------+-------------+---------------------+-------------------------+------------+
+| **Total**     | 22          | 38                  | 33                      | 512        |
++---------------+-------------+---------------------+-------------------------+------------+
 
-[^h-tests-15]: This section is adapted from David M. Lane. “Type I and Type II Errors.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html>
+: Observed and Expected Frequencies for Diet and Health Study. {#tbl-observedstudyfreqs}
 
-In the Physicians' Reactions case study,[^h-tests-16] the probability value associated with the significance test is 0.0057. Therefore, the null hypothesis was rejected, and it was concluded that physicians intend to spend less time with obese patients. Despite the low probability value, it is possible that the null hypothesis of no true difference between obese and average-weight patients is true and that the large difference between sample means occurred by chance. If this is the case, then the conclusion that physicians intend to spend less time with obese patients is in error. This type of error is called a Type I error. More generally, a **Type I error** occurs when a significance test results in the rejection of a true null hypothesis.
+### Drawing Substantive Conclusions from a Contingency Table[^h-tests-13] {#sec-drawing-substantive-conclusions-from-a-contingency-table}
 
-[^h-tests-16]: <https://onlinestatbook.com/2/case_studies/weight.html>
+[^h-tests-13]: This subsection is written by Nathan Favero.
 
-By one common convention, if the probability value is below 0.05, then the null hypothesis is rejected. Another convention, although slightly less common, is to reject the null hypothesis if the probability value is below 0.01. The threshold for rejecting the null hypothesis is called the $\alpha$ (alpha) level or simply $\alpha$. It is also called the significance level. As discussed in the section on significance testing, it is better to interpret the probability value as an indication of the weight of evidence against the null hypothesis than as part of a decision rule for making a reject or do-not-reject decision. Therefore, keep in mind that rejecting the null hypothesis is not an all-or-nothing decision.
+Now that we know there is a statistically significant relationship between diet and health outcome (since we rejected the null hypothesis of no relationship), we will naturally wonder what kind of relationship exists. Specifically, which diet is associated with better health? To answer this, we must look to the specific values within the cells and describe the patterns we observe. We already covered how to do this in @sec-qual-associations when percentages are provided by column or row. An even more straightforward way to interpret the association is to make note of where the observed frequency differs notably from the expected frequency.
 
-The Type I error rate is affected by the $\alpha$ level: the lower the $\alpha$ level, the lower the Type I error rate. It might seem that $\alpha$ is the probability of a Type I error. However, this is not correct. Instead, $\alpha$ is the probability of a Type I error given that the null hypothesis is true. If the null hypothesis is false, then it is impossible to make a Type I error.
+From @tbl-observedstudyfreqs, we can see that for those on the AHA diet, the frequencies for cancers, fatal heart disease, and non-fatal heart disease are all higher than expected. At the same time, the frequency for "healthy" is lower than expected on the AHA diet. Results for the Mediterranean diet are the exact opposite: cancers and both types of heart disease occur less frequently than expected, and the healthy outcome occurs more than expected. Thus, the Mediterranean diet is unambiguously associated with better outcomes than the AHA diet.
 
-The second type of error that can be made in significance testing is failing to reject a false null hypothesis. This kind of error is called a **Type II error**. Unlike a Type I error, a Type II error is not really an error. When a statistical test is not significant, it means that the data do not provide strong evidence that the null hypothesis is false. Lack of significance does not support the conclusion that the null hypothesis is true. Therefore, a researcher should not make the mistake of incorrectly concluding that the null hypothesis is true when a statistical test was not significant. Instead, the researcher should consider the test inconclusive. Contrast this with a Type I error in which the researcher erroneously concludes that the null hypothesis is false when, in fact, it is true.
+Though it is easy to make sense of results in this manner based on a comparison of observe to expected frequencies, the typical contingency table you encounter will probably not display expected frequencies. Instead, it is common to include percentages by row or by column, which is why we focused on interpreting such tables in @sec-describing-the-relationship-between-two-qualitative-variables.
 
-A Type II error can only occur if the null hypothesis is false. If the null hypothesis is false, then the probability of a Type II error is called $\beta$ (beta). The value of this probability $\beta$ will be affected by the sample size (larger sample sizes make it less likely a false null hypothesis will fail to be rejected), but the exact formula for calculating $\beta$ depends on the particular type of hypothesis test being conducted. The probability of correctly rejecting a false null hypothesis equals $1- \beta$ and is called *statistical power*. When researchers say that a study is "well-powered," they mean that the sample size is large enough to reject a false null hypothesis with fairly high probability under certain assumptions (such as a reasonably large effect size).
-
-## Significance Test for a Regression Slope Coefficient[^h-tests-17] {#sec-significance-test-for-a-regression-slope-coefficient}
-
-[^h-tests-17]: This section is adapted from David M. Lane. “Inferential Statistics for b and r.” *Online Statistics Education: A Multimedia Course of Study*. [https://onlinestatbook.com/2/regression/inferent](https://onlinestatbook.com/2/regression/inferential.html)
-
-To conclude this chapter, let's briefly revisit the very first type of hypothesis test we encountered in this textbook (though we did not call it that at the time): testing for the significance of a regression slope coefficient (@sec-quick-guide-to-interpreting-regression-results). Now that we know more about hypothesis testing, let's fill in some of the details of how to calculate the p-values we rely upon to determine the significance of these coefficients.
-
-The appropriate type of significance test in the case of the regression coefficients we have learn about is a t test. Recall the general formula for a t test:
-
-$$
-t = \frac{\text{statistic - hypothesized value}}{\text{estimated standard error of the statistic}}
-$$
-
-As applied to the case of the slope in a simple regression, the statistic is the sample value of the slope coefficient ($\hat{\beta}$). Generally, the hypothesized value is 0, meaning that we want to test a null hypothesis of no relationship between the independent and dependent variables.
-
-Just as when we generated a confidence interval for the slope coefficient in @sec-confidence-interval-for-a-regression-slope-coefficient, the degrees of freedom for this t test is n-2. We also use the same calculation for the estimated standard error as when calculating a confidence interval, so refer back to @sec-sampling-distributions (specifically Appendix II) if you would like to review how we calculate it.
-
-With the data example we used when learning precise confidence interval calculations (@sec-confidence-interval-for-a-regression-slope-coefficient), we had a sample slope coefficient ($\hat{\beta}$) of 0.425, a standard error ($s_{\beta}$) of 0.305, and a sample size of 5. Given these numbers and a hypothesized value of 0:
-
-$$
-t = \frac{0.425-0}{0.305} = 1.39
-$$ $$
-df = n-2 = 5-2 = 3.
-$$
-
-With these values of $t$ and $df$, the p value for a two-tailed t test is 0.26. Therefore, the slope is not significantly different from 0 under this example.
+The good news is that regardless of whether we examine (1) expected versus observed outcomes, (2) percentages by row, or (3) percentages by column, we reach the same conclusion: health outcomes are uniformly better for those on the Mediterranean diet. All three approaches are equally valid ways of evaluating associations from a contingency table, and you normally need use only one. We briefly mention all three here for learning purposes since each approach is one you may encounter in your own analysis or in a research report.

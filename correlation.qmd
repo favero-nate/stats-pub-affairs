@@ -1,4 +1,4 @@
-# Tools for Describing the Relationship Between Two Quantitative Variables {#sec-correlation}
+# Relationships Between Two Quantitative Variables {#sec-correlation}
 
 When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country's political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.
 
@@ -141,7 +141,7 @@ When we are working with regression, it becomes crucial to distinguish between t
 
 [^correlation-4]: The main exception is that if we have two standardized variables, the regression slope will be equal to the correlation and the intercept will be 0, so coefficients will be equivalent regardless of which variable is designated the dependent variable.
 
-::: {.callout-note icon="false"}
+::: {.callout-tip icon="false"}
 ## Example: Predicting University Student Grades {.unnumbered}
 
 Lane and colleagues[^correlation-5] offer a simple example of regression being used to predict university student performance based on high school (secondary school) performance. Performance is measured using the standard U.S. grade point system, in which students receive letter grades that are scored between 0 and 4 (e.g., A=4, B=3, C=2, D=1, F=0). Students receive separate grades in each class they take, so their overall performance is measured as a grade point average (GPA).
