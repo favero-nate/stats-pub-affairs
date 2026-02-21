@@ -206,6 +206,11 @@ While the approaches described in this section are widely employed in the social
 
     Simonsohn U. Two Lines: A Valid Alternative to the Invalid Testing of U-Shaped Relationships With Quadratic Regressions. *Advances in Methods and Practices in Psychological Science*. 2018;1(4):538-555. doi:[10.1177/2515245918805755](https://doi.org/10.1177/2515245918805755)
 
+## Exercises
+
+1.  Suppose you want to understand how a prison education program affects prisoners. You argue that those who participate in the program are likely to experience increased self-efficacy (a sense of confidence that they can achieve their goals). And you think that those with higher self-efficacy will be less likely to recidivate (commit another crime after being released from prison). In sum, you expect participation in the education program to reduce recidivism by increasing self-efficacy. What are your independent, dependent, and mediating variables?
+2.  Based on the argument outline in the prior question, write 3 hypotheses describing your expectations for how the three variables are related to one another. Each hypothesis should describe what sort of correlation (positive or negative) you expect there to be between two variables (e.g., A is positively related to B).
+
 ## @sec-regression Appendix: More Explanation of Partial Slopes/Associations {.unnumbered}
 
 The simple linear regression equation can be written as:

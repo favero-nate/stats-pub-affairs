@@ -1,4 +1,4 @@
-# Probabilistic models {#sec-prob-models}
+# Probabilistic Models {#sec-prob-models}
 
 Managers, policy makers, and researchers all face uncertainty in the world around them. One way we can describe uncertainty about a particular matter is to list out alternative possibilities for what could happen and then describe how likely we think each alternative is to occur. In doing so, we would essentially be creating a probability distribution.
 

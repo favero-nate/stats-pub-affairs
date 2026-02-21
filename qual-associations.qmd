@@ -190,13 +190,71 @@ When considering a female, we use *Male* = 0, and *Other* = 0:
 
 $$ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (0)=0.53 $$
 
-@eq-ExtRegNonBin and @eq-ExtRegFemNonBin indicate equivalent predictions for extraversion based on gender; they just offer this information in two different formats. @eq-ExtRegFemNonBin might be a bit trickier to understand for now, but it will become very useful in the future.
+@eq-ExtRegNonBin and @eq-ExtRegFemNonBin indicate equivalent predictions for extraversion based on gender; they just offer this information in two different formats. @eq-ExtRegFemNonBin might be a bit trickier to understand for now, but it is again the typical form we use with regression.
 
 Notice that we can talk about gender either as one qualitative variable with three possible values (female, male, or other), or we can talk about it as a series of three variables (*Female*, *Male*, and *Other*) that can each take on a value of either 0 or 1 (we call such variables "binary" or "dummy" variables). This can make things a bit confusing, but the important thing to remember is that when we have a qualitative variable with more than two categories, we’ll need to break out the categories into a set of dummy variables for purposes of representing the qualitative variable in an equation.
 
 However, as @eq-ExtRegFem and @eq-ExtRegFemNonBin illustrate, we don’t necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like @eq-ExtRegFem or @eq-ExtRegFemNonBin, the number of dummy variables should be equal to the number of categories minus one. Since our gender variable can take on three possible values in this example, we included two independent variables in @eq-ExtRegFemNonBin. No dummy variable is included for female, so we call female the **omitted category**, also known as the **reference group** or **baseline category**. Remember, the first number in @eq-ExtRegFemNonBin is 0.53, which represents our guess for females—the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.
 
 As we can see in the appendix, it doesn't really matter which group we select as the omitted category because we get equivalent predictions regardless of which one we choose.
+
+## Exercises
+
+1.  What are the basic tools (statistics, tables, and/or graphs) used to describe a relationship between two qualitative variables?
+
+2.  What are the basic tools (statistics, tables, and/or graphs) used to describe a relationship between one qualitative variable and one quantitative variable?
+
+3.  Calculate percentages by row for the following table below. Then, describe whether and how the two variables are related.
+
+    +------------------+---------------+---------------+--------------+
+    |                  | Gender        |               | Total        |
+    +==================+===============+===============+==============+
+    | **Organization** | Women         | Men           |              |
+    +------------------+---------------+---------------+--------------+
+    | Organization A   | 72            | 28            | 100          |
+    |                  |               |               |              |
+    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%         |
+    +------------------+---------------+---------------+--------------+
+    | Organization B   | 166           | 34            | 200          |
+    |                  |               |               |              |
+    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%         |
+    +------------------+---------------+---------------+--------------+
+    | **Total**        | 238           | 62            | 300          |
+    |                  |               |               |              |
+    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%         |
+    +------------------+---------------+---------------+--------------+
+
+4.  Describe the relationship between career ambition and employee type (civilian or uniformed) in the chart below.
+
+    ![](Images/qual-associations/civilian-uniformed.png){width="400"}
+
+5.  Someone collects a sample of bachelor's students and measures each student's age and area of study. Suppose the average age is 21.1 among engineering students, 19.8 among business students, and 20.2 among fine arts students, and 20.7 among humanities students. Write out an equation representing these four means, using business students as the omitted category.
+
+6.  In the regression table below, the dependent variable is GDP per capita measured in thousands of US dollars. Find the mean of country per capita GDP for the seven regions of the world (omitted category is East Asia & Pacific).[^qual-associations-6] Then, describe in words the relationship between income and region.
+
+    +--------------------------------+----------------+----------------+
+    |                                | Coef.          | Std. err.      |
+    +================================+================+================+
+    | Europe & Central Asia          | 14.0           | 4.5            |
+    +--------------------------------+----------------+----------------+
+    | Latin America & Caribbean      | -2.2           | 4.9            |
+    +--------------------------------+----------------+----------------+
+    | Middle East & North Africa     | -1.5           | 5.8            |
+    +--------------------------------+----------------+----------------+
+    | North America                  | 53.9           | 12.6           |
+    +--------------------------------+----------------+----------------+
+    | South Asia                     | -13.5          | 8.2            |
+    +--------------------------------+----------------+----------------+
+    | Sub-Saharan Africa             | -14.2          | 4.7            |
+    +--------------------------------+----------------+----------------+
+    | (intercept)                    | 16.5           | 3.5            |
+    +--------------------------------+----------------+----------------+
+    |                                |                |                |
+    +--------------------------------+----------------+----------------+
+    | n                              | 207            |                |
+    +--------------------------------+----------------+----------------+
+
+[^qual-associations-6]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 
 ## @sec-qual-associations Appendix: Regression with a Qualitative Dependent Variable {.unnumbered}
 
@@ -274,7 +332,9 @@ I also convert my race variable into a set of dummy variables by running:
 tab race, gen(race_)
 ```
 
-I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression. When using linear regression with a binary dependent variable, we call the model a linear probability model.
+I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression (although the standard errors should be computed using a different method than the typical default,[^qual-associations-7] so the tests of statistical significance in this appendix should not be trusted). When using linear regression with a binary dependent variable, we call the model a linear probability model.
+
+[^qual-associations-7]: Specifically, heteroskedasticy-robust standard errors should be used. @sec-regression introduces the topic of heteroskedasticy.
 
 Let’s start by analyzing voting for Obama (vote_1) as the dependent variable:
 
@@ -315,7 +375,7 @@ Remember, vote_1 is equal to zero if the respondent didn’t vote for Obama, and
 
 Now, let’s look at the slope coefficients. The coefficient for (non-Hispanic) Black (race_2) equals .50. Thus, a one-unit increase in race_2 is associated with a .50-unit increase in vote_1. Let’s break that down a bit to see if we can create a clearer interpretation. Since race_2 is a dummy variable and non-Hispanic White is the omitted category, a one-unit increase in race_2 correspondents to having a Black respondent instead of a White respondent. And since our dependent variable is binary, we should think in terms of probabilities, which can be converted to percentages: a .50-unit increase in vote_1 means a 50 percentage-point increase in the probability of voting for Obama. So putting this altogether, we’d say: (non-Hispanic) Black voters are 50 percentage points more likely to vote for Obama than (non-Hispanic) White voters, according to this model.
 
-Similarly, Asian voters are 21 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Native American voters are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Hispanic voters are 31 percentage points more likely to vote for Obama than non-Hispanic White voters. And voters identifying as multiracial or other race are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. All of these differences are statistically significant, except for Native American versus White voters (probably because there are only 27 Native Americans in the sample, making the estimate of this difference very imprecise).
+Similarly, Asian voters are 21 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Native American voters are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Hispanic voters are 31 percentage points more likely to vote for Obama than non-Hispanic White voters. And voters identifying as multiracial or other race are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. All of these differences are statistically significant, except for Native American versus White voters (probably because there are only 27 Native Americans in the sample, making the estimate of this difference very imprecise). As noted above, though, the tests of statistical significance shown here are not reliable since we are using the default method and that is not appropriate when the dependent variable is binary.
 
 Let’s move onto running a regression for the second category of our dependent variable:
 
@@ -365,7 +425,7 @@ Finally, let’s look at a regression with vote_3 as the dependent variable:
        _cons |    .020605   .0028638     7.19   0.000     .0149898    .0262202
 ```
 
-This regression provides some insights into who supported third-party candidates in the 2012 election. First, our constant indicates that a non-Hispanic White voter has a 2% chance of voting third-party. (Non-Hispanic) Black voters are one percentage point less likely to vote third-party than White voters, although this difference is only significant at the .10 level. The only other significant slope coefficient is for race_6, where we see that people who identify as multiracial or other race are estimated to be three percentage points more likely to vote third-party than (non-Hispanic) White respondents.
+This regression provides some insights into who supported third-party candidates in the 2012 election. First, our constant indicates that a non-Hispanic White voter has a 2% chance of voting third-party. (Non-Hispanic) Black voters are one percentage point less likely to vote third-party than White voters, although this difference is only significant at the .10 level. The only other significant slope coefficient is for race_6, where we see that people who identify as multiracial or other race are estimated to be three percentage points more likely to vote third-party than (non-Hispanic) White respondents. Once again, it is important to caveat this discussion with an acknowledgement that the significance tests displayed here are not reliable because a different method of computing standard errors should be used when the dependent variable is binary.
 
 One final thing I want to show you is that our results will be in a slightly different format but will be in one sense equivalent if we decide to use a different category as our omitted category when using a qualitative independent variable. Let’s say we want to make Black (race_2) our reference category. Compare the following results to the previous regression:
 

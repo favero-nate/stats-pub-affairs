@@ -10,8 +10,7 @@ The starting point for hypothesis testing is a null hypothesis. Practically spea
 
 $$
 H_0: \mu_R - \mu_U = 0
-$$ {#eq-rural-null}
-We write $H_0$ to represent the null hypothesis, and we are using the subscripts $U$ and $R$ to indicate "urban" and "rural."
+$$ {#eq-rural-null} We write $H_0$ to represent the null hypothesis, and we are using the subscripts $U$ and $R$ to indicate "urban" and "rural."
 
 Another way to write this same null hypothesis is:
 
@@ -33,8 +32,6 @@ $$
 
 One benefit of writing the null and alternative hypotheses in the first form (@eq-rural-null and @eq-rural-alt) is that indicating a difference of means will correspond to how we often set up a regression model. As we saw in @sec-qual-associations, a difference in means can be described with a coefficient in a regression equation. We have already learned that confidence intervals can be constructed for regression coefficients, so let's see if we can evaluate our hypotheses using a confidence interval from a regression.
 
-
-
 *Note: The remainder of this chapter still needs to be written. What follows is content adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University)*
 
 ## Comparing More than Two Means with Pairwise Comparisons[^h-tests-1]
@@ -45,19 +42,14 @@ Many experiments are designed to compare more than two conditions. We will take 
 
 [^h-tests-2]: <https://onlinestatbook.com/2/case_studies/leniency.html>
 
-+-----------------------+-------------------------------------------+-------------------------------------------+
-| false vs. felt        | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/felt.png)      |
-+-----------------------+-------------------------------------------+-------------------------------------------+
-| false vs. miserable   | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/miserable.png) |
-+-----------------------+-------------------------------------------+-------------------------------------------+
-| false vs. neutral     | ![](Images/h-tests-applied/false.png)     | ![](Images/h-tests-applied/neutral.png)   |
-+-----------------------+-------------------------------------------+-------------------------------------------+
-| felt vs. miserable    | ![](Images/h-tests-applied/felt.png)      | ![](Images/h-tests-applied/miserable.png) |
-+-----------------------+-------------------------------------------+-------------------------------------------+
-| felt vs. neutral      | ![](Images/h-tests-applied/felt.png)      | ![](Images/h-tests-applied/neutral.png)   |
-+-----------------------+-------------------------------------------+-------------------------------------------+
-| miserable vs. neutral | ![](Images/h-tests-applied/miserable.png) | ![](Images/h-tests-applied/neutral.png)   |
-+-----------------------+-------------------------------------------+-------------------------------------------+
+|  |  |  |
+|----|----|----|
+| false vs. felt | ![](Images/h-tests-applied/false.png) | ![](Images/h-tests-applied/felt.png) |
+| false vs. miserable | ![](Images/h-tests-applied/false.png) | ![](Images/h-tests-applied/miserable.png) |
+| false vs. neutral | ![](Images/h-tests-applied/false.png) | ![](Images/h-tests-applied/neutral.png) |
+| felt vs. miserable | ![](Images/h-tests-applied/felt.png) | ![](Images/h-tests-applied/miserable.png) |
+| felt vs. neutral | ![](Images/h-tests-applied/felt.png) | ![](Images/h-tests-applied/neutral.png) |
+| miserable vs. neutral | ![](Images/h-tests-applied/miserable.png) | ![](Images/h-tests-applied/neutral.png) |
 
 : Six Comparisons among Means. {#tbl-feltmisneutral}
 
@@ -197,17 +189,12 @@ To demonstrate the Chi Square test, we again look to data from the Mediterranean
 
 [^h-tests-11]: <https://onlinestatbook.com/2/case_studies/diet.html>
 
-+---------------+----------+---------------------+-------------------------+----------+----------+
-|               | Outcome  |                     |                         |          | Total    |
-+===============+==========+=====================+=========================+==========+==========+
-| **Diet**      | Cancers  | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |          |
-+---------------+----------+---------------------+-------------------------+----------+----------+
-| AHA           | 15       | 24                  | 25                      | 239      | 303      |
-+---------------+----------+---------------------+-------------------------+----------+----------+
-| Mediterranean | 7        | 14                  | 8                       | 273      | 302      |
-+---------------+----------+---------------------+-------------------------+----------+----------+
-| **Total**     | 22       | 38                  | 33                      | 512      | 605      |
-+---------------+----------+---------------------+-------------------------+----------+----------+
+|   | Outcome |   |   |   | Total |
+|----|----|----|----|----|----|
+| **Diet** | Cancers | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy |  |
+| AHA | 15 | 24 | 25 | 239 | 303 |
+| Mediterranean | 7 | 14 | 8 | 273 | 302 |
+| **Total** | 22 | 38 | 33 | 512 | 605 |
 
 : Frequencies for Diet and Health Study. {#tbl-studyfreqs}
 
@@ -225,19 +212,19 @@ The degrees of freedom is equal to $(r-1)(c-1)$, where $r$ is the number of rows
 
 [^h-tests-12]: <https://onlinestatbook.com/2/calculators/chi_square_prob.html>
 
-+---------------+-------------+---------------------+-------------------------+------------+
-|               | **Outcome** |                     |                         |            |
-+===============+=============+=====================+=========================+============+
-| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy    |
-+---------------+-------------+---------------------+-------------------------+------------+
-| AHA           | 15\         | 24\                 | 25\                     | 239\       |
-|               | (11.02)     | (19.03)             | (16.53)                 | (256.42)   |
-+---------------+-------------+---------------------+-------------------------+------------+
-| Mediterranean | 7\          | 14\                 | 8\                      | 273\       |
-|               | (10.98)     | (18.97)             | (16.47)                 | (255.58)   |
-+---------------+-------------+---------------------+-------------------------+------------+
-| **Total**     | 22          | 38                  | 33                      | 512        |
-+---------------+-------------+---------------------+-------------------------+------------+
++---------------+-------------+---------------------+-------------------------+----------+
+|               | **Outcome** |                     |                         |          |
++===============+=============+=====================+=========================+==========+
+| **Diet**      | Cancers     | Fatal Heart Disease | Non-Fatal Heart Disease | Healthy  |
++---------------+-------------+---------------------+-------------------------+----------+
+| AHA           | 15\         | 24\                 | 25\                     | 239\     |
+|               | (11.02)     | (19.03)             | (16.53)                 | (256.42) |
++---------------+-------------+---------------------+-------------------------+----------+
+| Mediterranean | 7\          | 14\                 | 8\                      | 273\     |
+|               | (10.98)     | (18.97)             | (16.47)                 | (255.58) |
++---------------+-------------+---------------------+-------------------------+----------+
+| **Total**     | 22          | 38                  | 33                      | 512      |
++---------------+-------------+---------------------+-------------------------+----------+
 
 : Observed and Expected Frequencies for Diet and Health Study. {#tbl-observedstudyfreqs}
 
@@ -252,3 +239,13 @@ From @tbl-observedstudyfreqs, we can see that for those on the AHA diet, the fre
 Though it is easy to make sense of results in this manner based on a comparison of observe to expected frequencies, the typical contingency table you encounter will probably not display expected frequencies. Instead, it is common to include percentages by row or by column, which is why we focused on interpreting such tables in @sec-describing-the-relationship-between-two-qualitative-variables.
 
 The good news is that regardless of whether we examine (1) expected versus observed outcomes, (2) percentages by row, or (3) percentages by column, we reach the same conclusion: health outcomes are uniformly better for those on the Mediterranean diet. All three approaches are equally valid ways of evaluating associations from a contingency table, and you normally need use only one. We briefly mention all three here for learning purposes since each approach is one you may encounter in your own analysis or in a research report.
+
+## Exercises
+
+1.  What type of hypothesis (null or alternative, 1- or 2- sided) is the following an example of (note: $\rho$ represents the population correlation)? **H**: The correlation between X and Y in the population is zero ($\rho$=0)
+2.  Which type of hypothesis is the following an example of? **H**: The mean of population A is *greater than* the mean of population B ($\mu_A > \mu_B$)
+3.  What type of hypothesis is the following an example of? **H**: Average extraversion among women is different from average extraversion among men ($\mu_W \ne \mu_M$)
+4.  Can the alternative hypothesis ever be rejected?
+5.  Can the null hypothesis ever be rejected?
+6.  If I reject a null hypothesis that is actually true, what type of error have I committed?
+7.  If I have a p-value of .03 and I use an alpha level of .05, what do I conclude?
