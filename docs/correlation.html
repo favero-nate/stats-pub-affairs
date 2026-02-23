@@ -371,7 +371,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -754,7 +754,7 @@ y = mx + b
 <p><span class="math display">\[
 \hat{y_i} = \alpha + \beta x_i
 \]</span></p>
-<p>How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called “least squares” because it involves minimizing the squared errors of prediction. “Error of prediction” refers to the difference between the predicted value of <span class="math inline">\(y\)</span> and the actual value of <span class="math inline">\(y\)</span> for each observation. There are well-known formulas for selecting <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> that result in the line that minimizes the sum of the squared errors. These formulas are shown in the appendix.</p>
+<p>How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called “least squares” because it involves minimizing the squared errors of prediction. “Error of prediction” refers to the difference between the predicted value of <span class="math inline">\(y\)</span> and the actual value of <span class="math inline">\(y\)</span> for each observation. There are well-known formulas for selecting <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> that result in the line that minimizes the sum of the squared errors. These formulas for ordinary least squares (OLS) regression are shown in the appendix.</p>
 <p>When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. <span class="math inline">\(y\)</span> will always represent the dependent variable, since it is the variable we are trying to predict based on the value of <span class="math inline">\(x\)</span>. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of <span class="math inline">\(x\)</span> with <span class="math inline">\(y\)</span> equals the correlation of <span class="math inline">\(y\)</span> with <span class="math inline">\(x\)</span>. But when we “run a regression” (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -785,7 +785,7 @@ Figure&nbsp;3.9: Predicting university GPA based on high school GPA. Source: Lan
 </div>
 <p>We can plug in any number we want for <code>highschool_gpa</code> to see what the resulting prediction is. For example, we can see what the prediction is for students who had a high school GPA of 2.8:</p>
 <p><span class="math display">\[
-\widehat{university\_gpa}_i = 1.097 + 0.675 \times (2.8)
+\widehat{university\_gpa} = 1.097 + 0.675 \times (2.8)
 \]</span><span class="math display">\[
 = 1.097 + 1.89 = 2.987
 \]</span></p>
@@ -819,7 +819,7 @@ Figure&nbsp;3.9: Predicting university GPA based on high school GPA. Source: Lan
 <div id="tbl-regression-cs-gpa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-regression-cs-gpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.2: Results for a regression with computer science GPA as the dependent variable.
+Table&nbsp;3.2: Results for a regression with computer science GPA as the dependent variable
 </figcaption>
 <div aria-describedby="tbl-regression-cs-gpa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -962,7 +962,7 @@ r=\frac{s_{xy}}{s_x s_y} = \frac{\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) 
 = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2 } }
 \]</span></p>
 <p>This final expression is another common way to write the equation for the correlation coefficient. It also helps explain why there is no need to create separate functions (in statistical software) for calculating sample versus population correlations, since there is no need to divide by <span class="math inline">\(N\)</span> or <span class="math inline">\(n-1\)</span> or to rely on calculations of variance/standard deviation (which differ for the population and sample).</p>
-<p>To conclude this appendix, let’s go over the formulas for ordinary least squares (OLS) estimates of a simple regression line. The formula for estimating the slope is:</p>
+<p>To conclude this appendix, let’s go over the formulas for OLS estimates of a simple regression line. The formula for estimating the slope is:</p>
 <p><span class="math display">\[
 \hat{\beta} = \frac{s_{xy}}{s_x^2} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sum_{i=1}^{n}(x_i-\bar{x})^2  }
 \]</span></p>

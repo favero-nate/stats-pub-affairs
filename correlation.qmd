@@ -135,7 +135,7 @@ $$
 \hat{y_i} = \alpha + \beta x_i
 $$
 
-How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called "least squares" because it involves minimizing the squared errors of prediction. "Error of prediction" refers to the difference between the predicted value of $y$ and the actual value of $y$ for each observation. There are well-known formulas for selecting $\alpha$ and $\beta$ that result in the line that minimizes the sum of the squared errors. These formulas are shown in the appendix.
+How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called "least squares" because it involves minimizing the squared errors of prediction. "Error of prediction" refers to the difference between the predicted value of $y$ and the actual value of $y$ for each observation. There are well-known formulas for selecting $\alpha$ and $\beta$ that result in the line that minimizes the sum of the squared errors. These formulas for ordinary least squares (OLS) regression are shown in the appendix.
 
 When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. $y$ will always represent the dependent variable, since it is the variable we are trying to predict based on the value of $x$. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of $x$ with $y$ equals the correlation of $y$ with $x$. But when we "run a regression" (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.[^correlation-4]
 
@@ -161,7 +161,7 @@ This line is depicted visually in @fig-unihighschoolgpa. The correlation for the
 We can plug in any number we want for `highschool_gpa` to see what the resulting prediction is. For example, we can see what the prediction is for students who had a high school GPA of 2.8:
 
 $$
-\widehat{university\_gpa}_i = 1.097 + 0.675 \times (2.8)
+\widehat{university\_gpa} = 1.097 + 0.675 \times (2.8)
 $$$$
 = 1.097 + 1.89 = 2.987
 $$
@@ -214,7 +214,7 @@ Many social science papers report their main results in the form of a regression
 | n           | 105    |           |         |
 | r\^2        | 0.487  |           |         |
 
-: Results for a regression with computer science GPA as the dependent variable. {#tbl-regression-cs-gpa}
+: Results for a regression with computer science GPA as the dependent variable {#tbl-regression-cs-gpa}
 
 @tbl-regression-cs-gpa was created by analyzing the same dataset described in the previous example, although with different variables. The dependent variable is now university GPA *in computer science classes*. Instead of high school GPA, this regression uses students' university entrance exam scores on the verbal (`verb_sat`) and math (`math_sat`) sections of a test called the SAT. The SAT reports scores on a scale of 200 to 800 for each subject, with 800 representing a perfect score.
 
@@ -308,7 +308,7 @@ $$
 
 This final expression is another common way to write the equation for the correlation coefficient. It also helps explain why there is no need to create separate functions (in statistical software) for calculating sample versus population correlations, since there is no need to divide by $N$ or $n-1$ or to rely on calculations of variance/standard deviation (which differ for the population and sample).
 
-To conclude this appendix, let's go over the formulas for ordinary least squares (OLS) estimates of a simple regression line. The formula for estimating the slope is:
+To conclude this appendix, let's go over the formulas for OLS estimates of a simple regression line. The formula for estimating the slope is:
 
 $$
 \hat{\beta} = \frac{s_{xy}}{s_x^2} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{ \sum_{i=1}^{n}(x_i-\bar{x})^2  }

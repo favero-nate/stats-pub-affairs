@@ -156,7 +156,7 @@ Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the differen
 
 @eq-ExtRegFem is also typically how we will arrange our equation when we’re running a regression. Usually, regression results are displayed in a regression table (as discussed in the prior chapter), so rather than seeing results written out in the form of @eq-ExtRegFem, it would be more typical to find a table listing -0.99 as the coefficient estimate for `male` (or `gender`) and 0.53 as the coefficient estimate for the `intercept` (or the `constant`).
 
-#### Prediction with more than two categories for gender
+#### Prediction with more than two categories for gender {#sec-prediction-with-multiple-categories}
 
 I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as "other" gender (@fig-NonBExtHist).
 
@@ -206,23 +206,23 @@ As we can see in the appendix, it doesn't really matter which group we select as
 
 3.  Calculate percentages by row for the following table below. Then, describe whether and how the two variables are related.
 
-    +------------------+---------------+---------------+--------------+
-    |                  | Gender        |               | Total        |
-    +==================+===============+===============+==============+
-    | **Organization** | Women         | Men           |              |
-    +------------------+---------------+---------------+--------------+
-    | Organization A   | 72            | 28            | 100          |
-    |                  |               |               |              |
-    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%         |
-    +------------------+---------------+---------------+--------------+
-    | Organization B   | 166           | 34            | 200          |
-    |                  |               |               |              |
-    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%         |
-    +------------------+---------------+---------------+--------------+
-    | **Total**        | 238           | 62            | 300          |
-    |                  |               |               |              |
-    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%         |
-    +------------------+---------------+---------------+--------------+
+    +------------------+---------------+---------------+---------------+
+    |                  | Gender        |               | Total         |
+    +==================+===============+===============+===============+
+    | **Organization** | Women         | Men           |               |
+    +------------------+---------------+---------------+---------------+
+    | Organization A   | 72            | 28            | 100           |
+    |                  |               |               |               |
+    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%          |
+    +------------------+---------------+---------------+---------------+
+    | Organization B   | 166           | 34            | 200           |
+    |                  |               |               |               |
+    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%          |
+    +------------------+---------------+---------------+---------------+
+    | **Total**        | 238           | 62            | 300           |
+    |                  |               |               |               |
+    |                  | \_\_\_\_\_\_% | \_\_\_\_\_\_% | 100%          |
+    +------------------+---------------+---------------+---------------+
 
 4.  Describe the relationship between career ambition and employee type (civilian or uniformed) in the chart below.
 
@@ -232,27 +232,27 @@ As we can see in the appendix, it doesn't really matter which group we select as
 
 6.  In the regression table below, the dependent variable is GDP per capita measured in thousands of US dollars. Find the mean of country per capita GDP for the seven regions of the world (omitted category is East Asia & Pacific).[^qual-associations-6] Then, describe in words the relationship between income and region.
 
-    +--------------------------------+----------------+----------------+
-    |                                | Coef.          | Std. err.      |
-    +================================+================+================+
-    | Europe & Central Asia          | 14.0           | 4.5            |
-    +--------------------------------+----------------+----------------+
-    | Latin America & Caribbean      | -2.2           | 4.9            |
-    +--------------------------------+----------------+----------------+
-    | Middle East & North Africa     | -1.5           | 5.8            |
-    +--------------------------------+----------------+----------------+
-    | North America                  | 53.9           | 12.6           |
-    +--------------------------------+----------------+----------------+
-    | South Asia                     | -13.5          | 8.2            |
-    +--------------------------------+----------------+----------------+
-    | Sub-Saharan Africa             | -14.2          | 4.7            |
-    +--------------------------------+----------------+----------------+
-    | (intercept)                    | 16.5           | 3.5            |
-    +--------------------------------+----------------+----------------+
-    |                                |                |                |
-    +--------------------------------+----------------+----------------+
-    | n                              | 207            |                |
-    +--------------------------------+----------------+----------------+
+    +------------------------------+----------------+----------------+
+    |                              | Coef.          | Std. err.      |
+    +==============================+================+================+
+    | Europe & Central Asia        | 14.0           | 4.5            |
+    +------------------------------+----------------+----------------+
+    | Latin America & Caribbean    | -2.2           | 4.9            |
+    +------------------------------+----------------+----------------+
+    | Middle East & North Africa   | -1.5           | 5.8            |
+    +------------------------------+----------------+----------------+
+    | North America                | 53.9           | 12.6           |
+    +------------------------------+----------------+----------------+
+    | South Asia                   | -13.5          | 8.2            |
+    +------------------------------+----------------+----------------+
+    | Sub-Saharan Africa           | -14.2          | 4.7            |
+    +------------------------------+----------------+----------------+
+    | (intercept)                  | 16.5           | 3.5            |
+    +------------------------------+----------------+----------------+
+    |                              |                |                |
+    +------------------------------+----------------+----------------+
+    | n                            | 207            |                |
+    +------------------------------+----------------+----------------+
 
 [^qual-associations-6]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 
@@ -425,7 +425,7 @@ Finally, let’s look at a regression with vote_3 as the dependent variable:
        _cons |    .020605   .0028638     7.19   0.000     .0149898    .0262202
 ```
 
-This regression provides some insights into who supported third-party candidates in the 2012 election. First, our constant indicates that a non-Hispanic White voter has a 2% chance of voting third-party. (Non-Hispanic) Black voters are one percentage point less likely to vote third-party than White voters, although this difference is only significant at the .10 level. The only other significant slope coefficient is for race_6, where we see that people who identify as multiracial or other race are estimated to be three percentage points more likely to vote third-party than (non-Hispanic) White respondents. Once again, it is important to caveat this discussion with an acknowledgement that the significance tests displayed here are not reliable because a different method of computing standard errors should be used when the dependent variable is binary.
+This regression provides some insights into who supported third-party candidates in the 2012 election. First, our constant indicates that a non-Hispanic White voter has a 2% chance of voting third-party. (Non-Hispanic) Black voters are one percentage point less likely to vote third-party than White voters, although this difference is not significant when utilizing the traditional .05 threshold (we will learn in @sec-h-tests that a .10 threshold is also sometimes used, and the p-value of .083 is smaller than .10). The only significant slope coefficient is for race_6, where we see that people who identify as multiracial or other race are estimated to be three percentage points more likely to vote third-party than (non-Hispanic) White respondents. Once again, it is important to caveat this discussion with an acknowledgement that the significance tests displayed here are not reliable because a different method of computing standard errors should be used when the dependent variable is binary.
 
 One final thing I want to show you is that our results will be in a slightly different format but will be in one sense equivalent if we decide to use a different category as our omitted category when using a qualitative independent variable. Let’s say we want to make Black (race_2) our reference category. Compare the following results to the previous regression:
 

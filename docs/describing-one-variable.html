@@ -371,7 +371,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -485,6 +485,7 @@ window.Quarto = {
 
 
 <p><em>Note: This chapter is adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<a href="https://onlinestatbook.com" class="uri">https://onlinestatbook.com</a> Project Leader: David M. Lane, Rice University)</em></p>
+<p>This chapter introduces a variety of concepts and statistics that help us describe one variable at a time. Most of this chapter will focus on quantitative variables, since there is a wide variety of commonly used descriptive tools that are only applicable to quantitative variables.</p>
 <section id="distributionsdescribing-one-variable-1" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="distributionsdescribing-one-variable-1"><span class="header-section-number">2.1</span> Distributions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
 <section id="distributions-of-qualitative-or-discrete-variables" class="level3" data-number="2.1.1">
@@ -498,11 +499,11 @@ Table&nbsp;2.1: Frequencies in the Bag of M&amp;M’s
 <div aria-describedby="tbl-mmfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 16%">
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 22%">
-<col style="width: 5%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -541,7 +542,7 @@ Orange</td>
 <section id="sec-continuous-variables" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-continuous-variables"><span class="header-section-number">2.1.2</span> Continuous Variables</h3>
 <p>The variable “color of M&amp;M” is a qualitative variable, and its distribution is called discrete because there are a finite number of values the variable can take on. Let us now extend the concept of a distribution to quantitative variables measured to many decimal places.</p>
-<p>The data shown in <a href="#tbl-responsetimes" class="quarto-xref">Table&nbsp;<span>2.2</span></a> are the times it took David Lane (the author of much of the material appearing in this book) to move the cursor over a small target in a series of 20 trials. The times are sorted from shortest to longest. The variable “time to respond” is a continuous variable. With time measured accurately (to many decimal places), no two response times would be expected to be the same. Measuring time in milliseconds (thousandths of a second) is often precise enough to approximate a continuous variable in psychology. As you can see in <a href="#tbl-responsetimes" class="quarto-xref">Table&nbsp;<span>2.2</span></a>, measuring David Lane’s responses this way produced times no two of which were the same. As a result, a frequency distribution would be uninformative: it would consist of the 20 times in the experiment, each with a frequency of 1.</p>
+<p>The data shown in <a href="#tbl-responsetimes" class="quarto-xref">Table&nbsp;<span>2.2</span></a> are the times it took David Lane (the author of most of the material in this chapter) to move the cursor over a small target in a series of 20 trials. The times are sorted from shortest to longest. The variable “time to respond” is a continuous variable. With time measured accurately (to many decimal places), no two response times would be expected to be the same. Measuring time in milliseconds (thousandths of a second) is often precise enough to approximate a continuous variable in psychology. As you can see in <a href="#tbl-responsetimes" class="quarto-xref">Table&nbsp;<span>2.2</span></a>, measuring David Lane’s responses this way produced times no two of which were the same. As a result, a frequency distribution would be uninformative: it would consist of the 20 times in the experiment, each with a frequency of 1.</p>
 <div id="tbl-responsetimes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-responsetimes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -550,11 +551,11 @@ Table&nbsp;2.2: Response Times
 <div aria-describedby="tbl-responsetimes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 6%">
 <col style="width: 9%">
-<col style="width: 5%">
+<col style="width: 6%">
 <col style="width: 9%">
-<col style="width: 5%">
+<col style="width: 6%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -596,11 +597,11 @@ Table&nbsp;2.3: Grouped frequency distribution
 <div aria-describedby="tbl-groupfreqdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 16%">
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 22%">
-<col style="width: 5%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -686,20 +687,20 @@ Figure&nbsp;2.3: Frequencies of times between eruptions of the Old Faithful geys
 <section id="mean" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">2.3.1</span> Mean</h3>
 <p>The <strong>mean</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is the most common measure of central tendency. It is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in <a href="stat-inference.html" class="quarto-xref"><span>Chapter 5</span></a>. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.</p>
-<p>The symbol <span class="math inline">\(\mu\)</span> is used for the mean of a population. The symbol <span class="math inline">\(\bar{X}\)</span> is used for the mean of a sample. The formula for <span class="math inline">\(\mu\)</span> is shown below:</p>
+<p>The symbol <span class="math inline">\(\mu\)</span> is used for the mean of a population. The symbol <span class="math inline">\(\bar{x}\)</span> is used for the mean of a sample. The formula for <span class="math inline">\(\mu\)</span> is shown below:</p>
 <p><span class="math display">\[
-\mu = \frac{\sum X}{N}
+\mu = \frac{\sum_{i=1}^{N} x_i}{N}
 \]</span></p>
-<p>where <span class="math inline">\(\sum X\)</span> is the sum of all the numbers in the population and <span class="math inline">\(N\)</span> is the number of numbers in the population.</p>
-<p>The formula for <span class="math inline">\(\bar{X}\)</span> is essentially identical:</p>
+<p>where <span class="math inline">\(\sum_{i=1}^{N} x_i\)</span> is the sum of all the numbers in the population and <span class="math inline">\(N\)</span> is the number of numbers in the population. Note that the summation syntax <span class="math inline">\(\sum_{i=1}^{N}\)</span> indicates that we begin at <span class="math inline">\(i=1\)</span> and repeatedly increase the value of our counter <span class="math inline">\(i\)</span> by 1 until we get to <span class="math inline">\(N\)</span>. Each time, we take <span class="math inline">\(x_i\)</span>, which refers to the <span class="math inline">\(i\)</span>th observation of the variable <span class="math inline">\(x\)</span>, and that is the value we add to the running list of values to sum.</p>
+<p>The formula for <span class="math inline">\(\bar{x}\)</span> is essentially identical:</p>
 <p><span class="math display">\[
-\bar{X} = \frac{\sum X}{n}
+\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
 \]</span></p>
-<p>where <span class="math inline">\(\sum X\)</span> is the sum of all the numbers in the sample and <span class="math inline">\(n\)</span> is the number of numbers in the sample.</p>
+<p>where <span class="math inline">\(\sum_{i=1}^{n} x_i\)</span> is the sum of all the numbers in the sample and <span class="math inline">\(n\)</span> is the number of numbers in the sample.</p>
 <p>As an example, the mean of the numbers 1, 2, 3, 6, 8 is 20/5 = 4 regardless of whether the numbers constitute the entire population or just a sample from the population.</p>
 <p><a href="#tbl-tdownpasses" class="quarto-xref">Table&nbsp;<span>2.4</span></a> shows the number of touchdown (TD) passes thrown by each of the 31 teams in the National Football League in the 2000 season. The mean number of touchdown passes thrown is 20.4516 as shown below.</p>
 <p><span class="math display">\[
-\mu = \frac{\sum X}{N} = \frac{634}{31} = 20.4516
+\mu = \frac{\sum_{i=1}^{N} x_i}{N} = \frac{634}{31} = 20.4516
 \]</span></p>
 <div id="tbl-tdownpasses" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -709,9 +710,9 @@ Table&nbsp;2.4: Number of touchdown passes.
 <div aria-describedby="tbl-tdownpasses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 16%">
+<col style="width: 66%">
+<col style="width: 16%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -744,10 +745,10 @@ Table&nbsp;2.5: Grouped frequency distribution.
 <div aria-describedby="tbl-groupfreqdist1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 11%">
 <col style="width: 16%">
 <col style="width: 22%">
-<col style="width: 5%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -791,10 +792,10 @@ Table&nbsp;2.6: Measures of central tendency for the test scores.
 <div aria-describedby="tbl-testscoremeasures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 11%">
 <col style="width: 19%">
 <col style="width: 16%">
-<col style="width: 5%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -840,11 +841,11 @@ Table&nbsp;2.7: Measures of central tendency for baseball salaries (in thousands
 <div aria-describedby="tbl-bballmeasures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 19%">
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 16%">
-<col style="width: 5%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -925,13 +926,13 @@ Table&nbsp;2.8: Calculation of Variance for Quiz 1 scores.
 <div aria-describedby="tbl-quiz1var-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 15%">
-<col style="width: 6%">
-<col style="width: 31%">
-<col style="width: 6%">
-<col style="width: 28%">
-<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 25%">
+<col style="width: 8%">
+<col style="width: 23%">
+<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1150,18 +1151,18 @@ Table&nbsp;2.8: Calculation of Variance for Quiz 1 scores.
 </div>
 <p>One thing that is important to notice is that the mean deviation from the mean is 0. This will always be the case. The mean of the squared deviations is 1.5. Therefore, the variance is 1.5. Analogous calculations with Quiz 2 show that its variance is 6.7. The formula for the variance is:</p>
 <p><span class="math display">\[
-\sigma^2=\frac{\sum (X-\mu)^2}{N}
+\sigma^2=\frac{\sum_{i=1}^{N} (x_i-\mu)^2}{N}
 \]</span></p>
-<p>where <span class="math inline">\(\sigma2\)</span> is the variance, <span class="math inline">\(\mu\)</span> is the mean, and <span class="math inline">\(N\)</span> is the number of numbers. For Quiz 1, <span class="math inline">\(\mu\)</span> = 7 and <span class="math inline">\(N\)</span> = 20.</p>
+<p>where <span class="math inline">\(\sigma^2\)</span> is the variance, <span class="math inline">\(\mu\)</span> is the mean, and <span class="math inline">\(N\)</span> is the number of numbers. For Quiz 1, <span class="math inline">\(\mu\)</span> = 7 and <span class="math inline">\(N\)</span> = 20.</p>
 <p>If the variance in a sample is used to estimate the variance in a population, then the previous formula underestimates the variance and the following formula should be used:</p>
 <p><span class="math display">\[
-s^2=\frac{\sum(X-\bar{X})^2}{n-1}
+s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}
 \]</span></p>
-<p>where <span class="math inline">\(s^2\)</span> is the estimate of the variance and <span class="math inline">\(\bar{X}\)</span> is the sample mean.</p>
-<p>Note that <span class="math inline">\(\bar{X}\)</span> is the mean of a sample taken from a population with a mean of <span class="math inline">\(\mu\)</span>. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by <span class="math inline">\(n-1\)</span> rather than simply <span class="math inline">\(n\)</span>, the simulation “estimating variance”<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> illustrates the bias that arises if we use <span class="math inline">\(n\)</span> as the denominator in the formula.</p>
+<p>where <span class="math inline">\(s^2\)</span> is the estimate of the variance and <span class="math inline">\(\bar{x}\)</span> is the sample mean.</p>
+<p>Note that <span class="math inline">\(\bar{x}\)</span> is the mean of a sample taken from a population with a mean of <span class="math inline">\(\mu\)</span>. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by <span class="math inline">\(n-1\)</span> rather than simply <span class="math inline">\(n\)</span>, the simulation “estimating variance”<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> illustrates the bias that arises if we use <span class="math inline">\(n\)</span> as the denominator in the formula.</p>
 <p>Let’s look at a concrete example of calculating the sample variance. Assume the scores 1, 2, 4, and 5 were sampled from a larger population. To estimate the variance in the population you would compute <span class="math inline">\(s^2\)</span> as follows:</p>
 <p><span class="math display">\[
-\bar{X} = (1 + 2 + 4 + 5)/4 = 12/4 = 3
+\bar{x} = (1 + 2 + 4 + 5)/4 = 12/4 = 3
 \]</span></p>
 <p><span class="math display">\[
 s^2 = [(1-3)^2 + (2-3)^2 + (4-3)^2 + (5-3)^2]/(4-1)
@@ -1253,9 +1254,9 @@ Table&nbsp;2.10: Box plot terms and values for women’s times.
 <div aria-describedby="tbl-terminology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 21%">
+<col style="width: 56%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1410,11 +1411,11 @@ Table&nbsp;2.11: Converting between feet and inches.
 <div aria-describedby="tbl-heightconversion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 15%">
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 18%">
-<col style="width: 5%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1453,13 +1454,13 @@ Table&nbsp;2.12: Temperatures in 5 cities on 11/16/2002.
 <div aria-describedby="tbl-temp5cities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 17%">
-<col style="width: 4%">
-<col style="width: 29%">
-<col style="width: 4%">
-<col style="width: 29%">
-<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 14%">
+<col style="width: 7%">
+<col style="width: 24%">
+<col style="width: 7%">
+<col style="width: 24%">
+<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1521,16 +1522,16 @@ Figure&nbsp;2.13: Degrees Centigrade as a function of degrees Fahrenheit.
 </div>
 <section id="sec-standardization" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="sec-standardization"><span class="header-section-number">2.6.1</span> Standardization (Z Scores)</h3>
-<p>So far, we’ve discussed transformations that are probably familiar to you. A type of transformation that may be new to you is <strong>standardization</strong> or creating <span class="math inline">\(Z\)</span> scores. A value from any distribution can be transformed into a <span class="math inline">\(Z\)</span> score using the following formula:</p>
+<p>So far, we’ve discussed transformations that are probably familiar to you. A type of transformation that may be new to you is <strong>standardization</strong> or creating <span class="math inline">\(z\)</span> scores. A value from any distribution can be transformed into a <span class="math inline">\(z\)</span> score using the following formula:</p>
 <p><span class="math display">\[
-Z = \frac{(X - \mu)}{\sigma}
+z = \frac{(x - \mu)}{\sigma}
 \]</span></p>
-<p>where <span class="math inline">\(Z\)</span> is the new value, <span class="math inline">\(X\)</span> is the value on the original distribution, <span class="math inline">\(\mu\)</span> is the mean of the original distribution, and <span class="math inline">\(\sigma\)</span> is the standard deviation of the original distribution.</p>
-<p>As a simple application, suppose you want the <span class="math inline">\(Z\)</span> score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:</p>
+<p>where <span class="math inline">\(z\)</span> is the new value, <span class="math inline">\(x\)</span> is the value on the original distribution, <span class="math inline">\(\mu\)</span> is the mean of the original distribution, and <span class="math inline">\(\sigma\)</span> is the standard deviation of the original distribution.</p>
+<p>As a simple application, suppose you want the <span class="math inline">\(z\)</span> score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:</p>
 <p><span class="math display">\[
-Z = (26 - 50)/10 = -2.4
+z = (26 - 50)/10 = -2.4
 \]</span></p>
-<p>If all the values in a distribution are transformed to <span class="math inline">\(Z\)</span> scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.</p>
+<p>If all the values in a distribution are transformed to <span class="math inline">\(z\)</span> scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.</p>
 </section>
 <section id="log-transformationsdescribing-one-variable-11" class="level3" data-number="2.6.2">
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="log-transformationsdescribing-one-variable-11"><span class="header-section-number">2.6.2</span> Log Transformations<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></h3>
@@ -1691,11 +1692,11 @@ Table&nbsp;2.13: Test Scores.
 <div aria-describedby="tbl-numberrankscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 18%">
-<col style="width: 5%">
+<col style="width: 9%">
 <col style="width: 15%">
-<col style="width: 5%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1758,11 +1759,11 @@ Table&nbsp;2.14: 20 quiz scores.
 <div aria-describedby="tbl-quizscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 8%">
 <col style="width: 16%">
-<col style="width: 5%">
+<col style="width: 8%">
 <col style="width: 15%">
-<col style="width: 5%">
+<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">

@@ -371,7 +371,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -431,6 +431,7 @@ window.Quarto = {
   <li><a href="#visualizing-a-quantitative-qualitative-relationshipqual-associations-3" id="toc-visualizing-a-quantitative-qualitative-relationshipqual-associations-3" class="nav-link" data-scroll-target="#visualizing-a-quantitative-qualitative-relationshipqual-associations-3"><span class="header-section-number">4.2.1</span> Visualizing a Quantitative-Qualitative Relationship</a></li>
   <li><a href="#sec-regression-with-a-qualitative-independent-variable" id="toc-sec-regression-with-a-qualitative-independent-variable" class="nav-link" data-scroll-target="#sec-regression-with-a-qualitative-independent-variable"><span class="header-section-number">4.2.2</span> Regression with a Qualitative Independent Variable</a></li>
   </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.3</span> Exercises</a></li>
   <li><a href="#sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable" id="toc-sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable" class="nav-link" data-scroll-target="#sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable"><span>Chapter 4</span> Appendix: Regression with a Qualitative Dependent Variable</a></li>
   </ul>
 </nav>
@@ -761,8 +762,8 @@ Figure&nbsp;4.9: Distribution of extraversion by female/male identity.
 <p>Notice that in <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>, the number next to <em>Male</em> is equal to the difference between the average level of extraversion for females and the average level for males (0.53-(-0.46)=0.99). This is because <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> starts with females as the baseline, so to get our prediction for males, we have to adjust our baseline prediction by the average difference for males.</p>
 <p><a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> is also typically how we will arrange our equation when we’re running a regression. Usually, regression results are displayed in a regression table (as discussed in the prior chapter), so rather than seeing results written out in the form of <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>, it would be more typical to find a table listing -0.99 as the coefficient estimate for <code>male</code> (or <code>gender</code>) and 0.53 as the coefficient estimate for the <code>intercept</code> (or the <code>constant</code>).</p>
 </section>
-<section id="prediction-with-more-than-two-categories-for-gender" class="level4" data-number="4.2.2.2">
-<h4 data-number="4.2.2.2" class="anchored" data-anchor-id="prediction-with-more-than-two-categories-for-gender"><span class="header-section-number">4.2.2.2</span> Prediction with more than two categories for gender</h4>
+<section id="sec-prediction-with-multiple-categories" class="level4" data-number="4.2.2.2">
+<h4 data-number="4.2.2.2" class="anchored" data-anchor-id="sec-prediction-with-multiple-categories"><span class="header-section-number">4.2.2.2</span> Prediction with more than two categories for gender</h4>
 <p>I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as “other” gender (<a href="#fig-NonBExtHist" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>).</p>
 <div id="fig-NonBExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -788,12 +789,136 @@ Figure&nbsp;4.10: Distribution of extraversion trait among those identifying wit
 <p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (1)=-5.66 \]</span></p>
 <p>When considering a female, we use <em>Male</em> = 0, and <em>Other</em> = 0:</p>
 <p><span class="math display">\[ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (0)=0.53 \]</span></p>
-<p><a href="#eq-ExtRegNonBin" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> and <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> indicate equivalent predictions for extraversion based on gender; they just offer this information in two different formats. <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> might be a bit trickier to understand for now, but it will become very useful in the future.</p>
+<p><a href="#eq-ExtRegNonBin" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> and <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> indicate equivalent predictions for extraversion based on gender; they just offer this information in two different formats. <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> might be a bit trickier to understand for now, but it is again the typical form we use with regression.</p>
 <p>Notice that we can talk about gender either as one qualitative variable with three possible values (female, male, or other), or we can talk about it as a series of three variables (<em>Female</em>, <em>Male</em>, and <em>Other</em>) that can each take on a value of either 0 or 1 (we call such variables “binary” or “dummy” variables). This can make things a bit confusing, but the important thing to remember is that when we have a qualitative variable with more than two categories, we’ll need to break out the categories into a set of dummy variables for purposes of representing the qualitative variable in an equation.</p>
 <p>However, as <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> and <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> illustrate, we don’t necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like <a href="#eq-ExtRegFem" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> or <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a>, the number of dummy variables should be equal to the number of categories minus one. Since our gender variable can take on three possible values in this example, we included two independent variables in <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a>. No dummy variable is included for female, so we call female the <strong>omitted category</strong>, also known as the <strong>reference group</strong> or <strong>baseline category</strong>. Remember, the first number in <a href="#eq-ExtRegFemNonBin" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is 0.53, which represents our guess for females—the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.</p>
 <p>As we can see in the appendix, it doesn’t really matter which group we select as the omitted category because we get equivalent predictions regardless of which one we choose.</p>
 </section>
 </section>
+</section>
+<section id="exercises" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.3</span> Exercises</h2>
+<ol type="1">
+<li><p>What are the basic tools (statistics, tables, and/or graphs) used to describe a relationship between two qualitative variables?</p></li>
+<li><p>What are the basic tools (statistics, tables, and/or graphs) used to describe a relationship between one qualitative variable and one quantitative variable?</p></li>
+<li><p>Calculate percentages by row for the following table below. Then, describe whether and how the two variables are related.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Gender</th>
+<th></th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Organization</strong></td>
+<td>Women</td>
+<td>Men</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Organization A</td>
+<td><p>72</p>
+<p>______%</p></td>
+<td><p>28</p>
+<p>______%</p></td>
+<td><p>100</p>
+<p>100%</p></td>
+</tr>
+<tr class="odd">
+<td>Organization B</td>
+<td><p>166</p>
+<p>______%</p></td>
+<td><p>34</p>
+<p>______%</p></td>
+<td><p>200</p>
+<p>100%</p></td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><p>238</p>
+<p>______%</p></td>
+<td><p>62</p>
+<p>______%</p></td>
+<td><p>300</p>
+<p>100%</p></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Describe the relationship between career ambition and employee type (civilian or uniformed) in the chart below.</p>
+<p><img src="Images/qual-associations/civilian-uniformed.png" class="img-fluid" width="400"></p></li>
+<li><p>Someone collects a sample of bachelor’s students and measures each student’s age and area of study. Suppose the average age is 21.1 among engineering students, 19.8 among business students, and 20.2 among fine arts students, and 20.7 among humanities students. Write out an equation representing these four means, using business students as the omitted category.</p></li>
+<li><p>In the regression table below, the dependent variable is GDP per capita measured in thousands of US dollars. Find the mean of country per capita GDP for the seven regions of the world (omitted category is East Asia &amp; Pacific).<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> Then, describe in words the relationship between income and region.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Coef.</th>
+<th>Std. err.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Europe &amp; Central Asia</td>
+<td>14.0</td>
+<td>4.5</td>
+</tr>
+<tr class="even">
+<td>Latin America &amp; Caribbean</td>
+<td>-2.2</td>
+<td>4.9</td>
+</tr>
+<tr class="odd">
+<td>Middle East &amp; North Africa</td>
+<td>-1.5</td>
+<td>5.8</td>
+</tr>
+<tr class="even">
+<td>North America</td>
+<td>53.9</td>
+<td>12.6</td>
+</tr>
+<tr class="odd">
+<td>South Asia</td>
+<td>-13.5</td>
+<td>8.2</td>
+</tr>
+<tr class="even">
+<td>Sub-Saharan Africa</td>
+<td>-14.2</td>
+<td>4.7</td>
+</tr>
+<tr class="odd">
+<td>(intercept)</td>
+<td>16.5</td>
+<td>3.5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>n</td>
+<td>207</td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
 </section>
 <section id="sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable"><a href="#sec-qual-associations" class="quarto-xref"><span>Chapter 4</span></a> Appendix: Regression with a Qualitative Dependent Variable</h2>
@@ -855,7 +980,7 @@ Mitt Romney |      Freq.     Percent        Cum.
       Total |      3,054      100.00</code></pre>
 <p>I also convert my race variable into a set of dummy variables by running:</p>
 <pre><code>tab race, gen(race_)</code></pre>
-<p>I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression. When using linear regression with a binary dependent variable, we call the model a linear probability model.</p>
+<p>I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression (although the standard errors should be computed using a different method than the typical default,<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> so the tests of statistical significance in this appendix should not be trusted). When using linear regression with a binary dependent variable, we call the model a linear probability model.</p>
 <p>Let’s start by analyzing voting for Obama (vote_1) as the dependent variable:</p>
 <pre><code>. reg vote_1 race_2 race_3 race_4 race_5 race_6
 
@@ -885,7 +1010,7 @@ Mitt Romney |      Freq.     Percent        Cum.
 \]</span></p>
 <p>Remember, vote_1 is equal to zero if the respondent didn’t vote for Obama, and it is equal to one if the respondent did vote for Obama. Our predicted value is neither zero nor one; instead, we get .48. This can be interpreted as indicating the probability of a one. In other words, a non-Hispanic White respondent has a .48 probability of voting for Obama. We can also convert this probability to a percentage by moving the decimal place two spots to the right: a non-Hispanic White person is estimated to have a 48% chance of voting for Obama, according to this model.</p>
 <p>Now, let’s look at the slope coefficients. The coefficient for (non-Hispanic) Black (race_2) equals .50. Thus, a one-unit increase in race_2 is associated with a .50-unit increase in vote_1. Let’s break that down a bit to see if we can create a clearer interpretation. Since race_2 is a dummy variable and non-Hispanic White is the omitted category, a one-unit increase in race_2 correspondents to having a Black respondent instead of a White respondent. And since our dependent variable is binary, we should think in terms of probabilities, which can be converted to percentages: a .50-unit increase in vote_1 means a 50 percentage-point increase in the probability of voting for Obama. So putting this altogether, we’d say: (non-Hispanic) Black voters are 50 percentage points more likely to vote for Obama than (non-Hispanic) White voters, according to this model.</p>
-<p>Similarly, Asian voters are 21 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Native American voters are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Hispanic voters are 31 percentage points more likely to vote for Obama than non-Hispanic White voters. And voters identifying as multiracial or other race are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. All of these differences are statistically significant, except for Native American versus White voters (probably because there are only 27 Native Americans in the sample, making the estimate of this difference very imprecise).</p>
+<p>Similarly, Asian voters are 21 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Native American voters are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. Hispanic voters are 31 percentage points more likely to vote for Obama than non-Hispanic White voters. And voters identifying as multiracial or other race are 10 percentage points more likely to vote for Obama than (non-Hispanic) White voters. All of these differences are statistically significant, except for Native American versus White voters (probably because there are only 27 Native Americans in the sample, making the estimate of this difference very imprecise). As noted above, though, the tests of statistical significance shown here are not reliable since we are using the default method and that is not appropriate when the dependent variable is binary.</p>
 <p>Let’s move onto running a regression for the second category of our dependent variable:</p>
 <pre><code>. reg vote_2 race_2 race_3 race_4 race_5 race_6
 
@@ -925,7 +1050,7 @@ Mitt Romney |      Freq.     Percent        Cum.
       race_5 |  -.0120213    .009407    -1.28   0.201     -.030466    .0064234
       race_6 |   .0302425   .0129128     2.34   0.019     .0049238    .0555611
        _cons |    .020605   .0028638     7.19   0.000     .0149898    .0262202</code></pre>
-<p>This regression provides some insights into who supported third-party candidates in the 2012 election. First, our constant indicates that a non-Hispanic White voter has a 2% chance of voting third-party. (Non-Hispanic) Black voters are one percentage point less likely to vote third-party than White voters, although this difference is only significant at the .10 level. The only other significant slope coefficient is for race_6, where we see that people who identify as multiracial or other race are estimated to be three percentage points more likely to vote third-party than (non-Hispanic) White respondents.</p>
+<p>This regression provides some insights into who supported third-party candidates in the 2012 election. First, our constant indicates that a non-Hispanic White voter has a 2% chance of voting third-party. (Non-Hispanic) Black voters are one percentage point less likely to vote third-party than White voters, although this difference is not significant when utilizing the traditional .05 threshold (we will learn in <a href="h-tests.html" class="quarto-xref"><span>Chapter 6</span></a> that a .10 threshold is also sometimes used, and the p-value of .083 is smaller than .10). The only significant slope coefficient is for race_6, where we see that people who identify as multiracial or other race are estimated to be three percentage points more likely to vote third-party than (non-Hispanic) White respondents. Once again, it is important to caveat this discussion with an acknowledgement that the significance tests displayed here are not reliable because a different method of computing standard errors should be used when the dependent variable is binary.</p>
 <p>One final thing I want to show you is that our results will be in a slightly different format but will be in one sense equivalent if we decide to use a different category as our omitted category when using a qualitative independent variable. Let’s say we want to make Black (race_2) our reference category. Compare the following results to the previous regression:</p>
 <pre><code>. reg vote_3 race_1 race_3 race_4 race_5 race_6
 
@@ -959,6 +1084,8 @@ Mitt Romney |      Freq.     Percent        Cum.
 <li id="fn3"><p>This subsection is adapted from David M. Lane. “Bar Charts.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/graphing_distributions/bar_chart.html" class="uri">https://onlinestatbook.com/2/graphing_distributions/bar_chart.html</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological assessment</em>, <em>4</em>(1), 26.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><a href="https://openpsychometrics.org/_rawdata/" class="uri">https://openpsychometrics.org/_rawdata/</a> (the file I used is called “BIG5.zip”)<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">World Development Indicators</a> (<a href="https://datacatalog.worldbank.org/public-licenses?fragment=cc">CC-BY 4.0</a>)<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Specifically, heteroskedasticy-robust standard errors should be used. <a href="regression.html" class="quarto-xref"><span>Chapter 11</span></a> introduces the topic of heteroskedasticy.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

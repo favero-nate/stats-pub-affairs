@@ -8,7 +8,7 @@ There are many different articulations of the assumptions that underlie our typi
 
 ### 1. Validity {.unnumbered}
 
-Just as our list of Three Questions to Always Ask about Data prods us to start by asking "what is being measured?", the first regression assumption highlights the importance of valid measurement of variables (see discussion of validity in @sec-measurement). With any statistical analysis (whether using regression or not), the data in the sample must validly measure whatever you are trying to understand, or else the results will be of no use. In their concept of validity, Gelman and colleagues also indicate the need to "include all relevant" independent variables and to have observations that fall within the realm of the phenomena of interest (e.g., a study of employee attitudes should use a sample that consists of employees).
+Just as our list of Three Questions to Always Ask about Data prods us to start by asking "what is being measured?", the first regression assumption highlights the importance of valid measurement of variables (see discussion of validity in @sec-measurement). With any statistical analysis (whether using regression or not), the data in the sample must validly measure whatever you are trying to understand, or else the results will be of no use. In their concept of validity, Gelman and colleagues also indicate the need to "include all relevant" independent variables and to have observations that fall within the realm of the phenomena of interest (e.g., a study of employee attitudes should use a sample that consists of employees). Deciding on which independent variables to include in a regression will be discussed in more detail in @sec-multiple-regression.
 
 ### 2. Representativeness {.unnumbered}
 
@@ -16,7 +16,7 @@ The data should be appropriate for generalizing to the broader phenomena of inte
 
 ### 3. Additivity and linearity {.unnumbered}
 
-We use the term "linear regression" to refer to the standard regression model because of its linear form: the value of each independent variable is multiplied by a constant, and then these products are added up to form the predicted value of the dependent variable (together with the intercept). Predictions from a linear regression model will always follow this pattern of additivity and linearity. If we wish to create predictions that cannot be represented through a linear combination of independent variables, a linear regression is the wrong tool to use. Note, however, that sometimes relationships that are not strictly linear can still be approximated through a linear function. Linear relationships offer a simplicity that is not always apparent in other functional forms, so sometimes we may prefer the straightforward interpretability of linear regression results at the cost of the flexibility we might be able to achieve with other types of models. For example, if our primary concern is whether two variables generally exhibit a positive (versus negative) association and what the general strength of that association is, we may prefer a linear model of that association since it can provide a single number (a slope coefficient) that indicates direction and magnitude of association, even if this number oversimplifies a bit (as when there is some curvature in the true line describing their association).
+We use the term "linear regression" to refer to the standard regression model because of its linear form: the value of each independent variable is multiplied by a constant, and then these products are added up to form the predicted value of the dependent variable (together with the intercept). We will see this written out as an equation in @sec-multiple-regression. Predictions from a linear regression model will always follow this pattern of additivity and linearity. If we wish to create predictions that cannot be represented through a linear combination of independent variables, a linear regression is the wrong tool to use. Note, however, that sometimes relationships that are not strictly linear can still be approximated through a linear function. Linear relationships offer a simplicity that is not always apparent in other functional forms, so sometimes we may prefer the straightforward interpretability of linear regression results at the cost of the flexibility we might be able to achieve with other types of models. For example, if our primary concern is whether two variables generally exhibit a positive (versus negative) association and what the general strength of that association is, we may prefer a linear model of that association since it can provide a single number (a slope coefficient) that indicates direction and magnitude of association, even if this number oversimplifies a bit (as when there is some curvature in the true line describing their association).
 
 Another important consideration to mention here (that we will explore in more detail later on in this chapter, and in the next) is that certain non-linear relationships can be modeled through linear regression, so long as they can be expressed by manipulating variables to create a linear function that represents these non-linearities. For example, the relationship between two variables need not follow a straight line if we transform the independent variable by squaring it, allowing for a prediction line to follow the shape of a parabola (for the original, untransformed variable).
 
@@ -63,21 +63,21 @@ This assumption is considered to the be least important. Still, regression resul
 In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study we've used several times already to illustrate regression, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination[^regression-8] of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of $\beta_1$ and $\beta_2$ in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction (the "least squares" criterion).
 
 [^regression-8]: A linear combination of variables is a way of creating a new variable by combining other variables. A linear combination is one in which each variable is multiplied by a coefficient and the products are summed. For example, if\
-    $$Y = 3X_1 + 2X_2 + .5X_3$$\
-    then $Y$ is a linear combination of the variables $X_1$, $X_2$, and $X_3$.
+    $$y_i = 3x_{1i} + 2x_{2i} + .5x_{3i}$$\
+    then $y$ is a linear combination of the variables $x_1$, $x_2$, and $x_3$.
 
-$$\widehat{UGPA} = \alpha + \beta_1HSGPA + \beta_2SAT$$
+$$\widehat{UGPA}_i = \alpha + \beta_1HSGPA_i + \beta_2SAT_i$$
 
-where $\widehat{UGPA}$ is the predicted value of University GPA and $\alpha$ is a constant. For these data, the best prediction equation is shown below:
+where $\widehat{UGPA}$ is the predicted value of University GPA and $\alpha$ is the intercept (note that many authors instead use $\beta_0$ to denote the intercept). For these data, the best prediction equation is shown below:
 
-$$\widehat{UGPA} = 0.540 + 0.541 \times HSGPA + 0.008 \times SAT$$ {#eq-multi-reg-sat}
+$$\widehat{UGPA}_i = 0.540 + 0.541 \times HSGPA_i + 0.008 \times SAT_i$$ {#eq-multi-reg-sat}
 
 In other words, to compute the prediction of a student's University GPA, you add up (a) 0.540, (b) their High-School GPA multiplied by 0.541, and (c) their SAT multiplied by 0.008.
 
 For comparison purposes, here is the regression equation from the simple regression discussed in @sec-introduction-to-linear-regression.
 
 $$
-\widehat{UGPA} = 1.097 + 0.675 \times HSGPA
+\widehat{UGPA}_i = 1.097 + 0.675 \times HSGPA_i
 $$ {#eq-simple-reg-sat}
 
 @tbl-multipleregression shows the data and predictions for the first five students in the dataset based on the multiple regression (@eq-multi-reg-sat).
@@ -94,7 +94,7 @@ $$ {#eq-simple-reg-sat}
 
 The values of $\beta$ ($\beta_1$ and $\beta_2$) are called "regression slope coefficients."
 
-The multiple correlation (R) is equal to the correlation between the predicted scores and the actual scores. In this example, it is the correlation between $\widehat{UGPA}$ and $UGPA$, which turns out to be 0.79. That is, R = 0.79. Note that R will never be negative since if there are negative correlations between the predictor variables and the criterion, the regression coefficients will be negative so that the correlation between the predicted and actual scores will be positive.
+The multiple correlation (R) is equal to the correlation between the predicted scores and the actual scores. In this example, it is the correlation between $\widehat{UGPA}$ and $UGPA$, which turns out to be 0.79. That is, R = 0.79. Note that R will never be negative since if there are negative correlations between the predictor variables and the criterion, the regression coefficients will be negative so that the correlation between the predicted and actual scores will be positive. By squaring the value of R, we obtain the commonly reported R-squared statistic (also written r\^2 or $R^2$). R-squared indicates the proportion of variation in the dependent variable that can be explained by the independent variables in the model (or put differently, the proportion of variance in the dependent variable accounted for by the predicted scores).
 
 ### Interpretation of Regression Coefficients {.unnumbered}
 
@@ -102,15 +102,15 @@ A regression coefficient in multiple regression is the slope of the linear relat
 
 The final step in computing the regression coefficient is to find the slope of the relationship between these residuals and UGPA. This slope is the regression coefficient for HSGPA. The following equation is used to predict HSGPA from SAT:
 
-$$\widehat{HSGPA} = -1.314 + 0.0036 \times SAT$$
+$$\widehat{HSGPA}_i = -1.314 + 0.0036 \times SAT_i$$
 
 The residuals are then computed as:
 
-$$HSGPA.SAT = HSGPA - \widehat{HSGPA}$$
+$$HSGPA.SAT_i = HSGPA_i - \widehat{HSGPA}_i$$
 
 The linear regression equation for the prediction of UGPA by the residuals is
 
-$$\widehat{UGPA} = 3.173 + 0.541 \times HSGPA.SAT$$
+$$\widehat{UGPA}_i = 3.173 + 0.541 \times HSGPA.SAT_i$$
 
 Notice that the slope (0.541) is the same value given previously for the estimate of $\beta_1$ in the multiple regression equation.
 
@@ -136,7 +136,7 @@ You might also consider including as a control variable any factor that you beli
 
 When there is an interest in causal relationships, it is generally best to avoid adding as control variables anything that may be caused by X. One reason is that when X causes Z and Z causes Y, Z is a mediator, and therefore Z is one route (or mechanism) through which X may affect Y. Thus, by controlling for (or pulling out) one route through which X may affect Y, we are distorting our ability to observe the total effect of X on Y.
 
-For estimations of causal effects, a more complete assessment of which variables should and should not be included in a regression can be faciliated through the use of Directed Acyclic Graphs (DAGs), an increasingly popular tool for applied researchers that is beyond the scope of what can be covered in this text.
+For estimations of causal effects, a more complete assessment of which variables should and should not be included in a regression can be facilitated through the use of Directed Acyclic Graphs (DAGs), an increasingly popular tool for applied researchers that is beyond the scope of what can be covered in this text.
 
 #### More on Mediating Relationships
 
@@ -153,7 +153,7 @@ While we often find phenomena in the world that we believe can be described thro
 One way to model a non-linear relationship is to square the values of an independent variable, and then include both the original (non-squared) version of the variable as well as the squared variable in the regression. Doing so with the SAT variable, we find our estimates generate the following equation (with university GPA as the dependent variable):
 
 $$
-\widehat{UGPA} = -11.331 + 0.021 \times SAT - 0.0000074 \times SAT^2
+\widehat{UGPA}_i = -11.331 + 0.021 \times SAT_i - 0.0000074 \times SAT^2_i
 $$
 
 This results in the curved line shown in @fig-polynomial-reg, which better tracks the data in the scatterplot than a straight line would. Adding a squared line allows for the shape of the line to follow the shape of a parabola. If we want to allow for a second bend in the line (of a certain sort), we could add a cubed term. Higher-level polynomials can also be added.
@@ -166,11 +166,11 @@ Let's check whether the SAT-UGPA relationship appears to differ depending on the
 
 Estimating a regression line among our low HSGPA subsample yields a slope of 0.0029:
 
-$$ \widehat{UGPA} = -0.448 + 0.0029 \times SAT $$
+$$ \widehat{UGPA}_i = -0.448 + 0.0029 \times SAT_i $$
 
 Estimated among students in the high HSGPA subsample, the slope shrinks to just 0.00062:
 
-$$ \widehat{UGPA} = 2.663 + 0.00062 \times SAT $$
+$$ \widehat{UGPA}_i = 2.663 + 0.00062 \times SAT_i $$
 
 @fig-sample-split-reg shows these two distinct lines, along with the underlying subsamples from which they are estimated.
 
@@ -180,7 +180,7 @@ It appears that SAT scores have a stronger association with university GPA (a st
 
 We can also model moderation with a single regression for the whole sample using an **interaction term**. We create an interaction term by multiplying two independent variables together. In this example, we should multiply SAT by high school GPA. We can then run a regression where we have three independent variables: the original SAT variable, the original HSGPA variable, and the interaction term. The regression line is estimated to be:
 
-$$\widehat{UGPA} = -3.516 + 1.780 \times HSGPA + 0.0043 \times SAT - 0.0011 \times HSGPA \times SAT $$
+$$\widehat{UGPA}_i = -3.516 + 1.780 \times HSGPA_i + 0.0043 \times SAT_i - 0.0011 \times HSGPA_i \times SAT_i $$
 
 When we have nonlinear relationships, graphical depictions are typically helpful for demonstrating our results. Using statistical software, we can create a graph that shows us how the predicted value of UGPA changes depending on SAT and certain HSGPA values that we pick out for illustrative purposes. In this case, I chose values of 3.7 (approximately the 90th percentile), 2.3 (approximately the 10th percentile, and 3.0 (half way between the 10th and 90th percentiles).
 
@@ -208,8 +208,10 @@ While the approaches described in this section are widely employed in the social
 
 ## Exercises
 
-1.  Suppose you want to understand how a prison education program affects prisoners. You argue that those who participate in the program are likely to experience increased self-efficacy (a sense of confidence that they can achieve their goals). And you think that those with higher self-efficacy will be less likely to recidivate (commit another crime after being released from prison). In sum, you expect participation in the education program to reduce recidivism by increasing self-efficacy. What are your independent, dependent, and mediating variables?
-2.  Based on the argument outline in the prior question, write 3 hypotheses describing your expectations for how the three variables are related to one another. Each hypothesis should describe what sort of correlation (positive or negative) you expect there to be between two variables (e.g., A is positively related to B).
+1.  Suppose I want to predict country crime rates based on income inequality, gun ownership rates, and ethnoracial heterogeneity. Write out a linear regression equation that allows for this type of prediction.
+2.  If I want to control for Z (another variable) in my estimation of the effect of X on Y, how do I set up my regression?
+3.  Suppose you want to understand how a prison education program affects prisoners. You argue that those who participate in the program are likely to experience increased self-efficacy (a sense of confidence that they can achieve their goals). And you think that those with higher self-efficacy will be less likely to recidivate (commit another crime after being released from prison). In sum, you expect participation in the education program to reduce recidivism by increasing self-efficacy. What are your independent, dependent, and mediating variables?
+4.  Based on the argument outlined in the prior question, write 3 hypotheses describing your expectations for how the three variables are related to one another. Each hypothesis should describe what sort of correlation (positive or negative) you expect there to be between two variables (e.g., A is positively related to B).
 
 ## @sec-regression Appendix: More Explanation of Partial Slopes/Associations {.unnumbered}
 

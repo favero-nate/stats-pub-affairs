@@ -371,7 +371,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -704,7 +704,7 @@ Table&nbsp;8.2: Frequencies of means for n = 2.
 </div>
 </figure>
 </div>
-<p><a href="#fig-meansdist" class="quarto-xref">Figure&nbsp;<span>8.2</span></a> shows a relative frequency distribution of the means based on <a href="#tbl-meansfreqs" class="quarto-xref">Table&nbsp;<span>8.2</span></a>. This distribution is also a probability distribution since the Y-axis is the probability of obtaining a given mean from a sample of two balls in addition to being the relative frequency.</p>
+<p><a href="#fig-meansdist" class="quarto-xref">Figure&nbsp;<span>8.2</span></a> shows a relative frequency distribution of the means based on <a href="#tbl-meansfreqs" class="quarto-xref">Table&nbsp;<span>8.2</span></a>. This distribution is also a probability distribution since the y-axis is the probability of obtaining a given mean from a sample of two balls in addition to being the relative frequency.</p>
 <div id="fig-meansdist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-meansdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -953,23 +953,23 @@ Figure&nbsp;8.4: Distribution of ranges for n = 3.
 <p>As we learned in the prior section, the sampling distribution of the mean refers to the probability distribution describing all possible values of the sample mean we could obtain in repeated sampling. This section goes over some important properties of the sampling distribution of the mean.</p>
 <section id="mean" class="level3" data-number="8.2.1">
 <h3 data-number="8.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">8.2.1</span> Mean</h3>
-<p>The mean of the sampling distribution of the mean is the mean of the population from which the scores were sampled. Therefore, if a population has a mean <span class="math inline">\(\mu\)</span>, then the mean of the sampling distribution of the mean (<span class="math inline">\(\bar{X}\)</span>) is also <span class="math inline">\(\mu\)</span>. The symbol <span class="math inline">\(\mu_{\bar{X}}\)</span> is used to refer to the mean of the sampling distribution of the mean. Therefore, the formula for the mean of the sampling distribution of the mean can be written as:</p>
+<p>The mean of the sampling distribution of the mean is the mean of the population from which the scores were sampled. Therefore, if a population has a mean <span class="math inline">\(\mu\)</span>, then the mean of the sampling distribution of the mean (<span class="math inline">\(\bar{x}\)</span>) is also <span class="math inline">\(\mu\)</span>. The symbol <span class="math inline">\(\mu_{\bar{x}}\)</span> is used to refer to the mean of the sampling distribution of the mean. Therefore, the formula for the mean of the sampling distribution of the mean can be written as:</p>
 <p><span class="math display">\[
-\mu_{\bar{X}} = \mu
+\mu_{\bar{x}} = \mu
 \]</span></p>
 </section>
 <section id="variance" class="level3" data-number="8.2.2">
 <h3 data-number="8.2.2" class="anchored" data-anchor-id="variance"><span class="header-section-number">8.2.2</span> Variance</h3>
 <p>The variance of the sampling distribution of the mean is computed as follows:</p>
 <p><span class="math display">\[
-\sigma^2_{\bar{X}} = \frac{\sigma^2}{n}
+\sigma^2_{\bar{x}} = \frac{\sigma^2}{n}
 \]</span></p>
 <p>That is, the variance of the sampling distribution of the mean is the population variance divided by <span class="math inline">\(n\)</span>, the sample size (the number of scores used to compute a mean).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Thus, the larger the sample size, the smaller the variance of the sampling distribution of the mean.</p>
 <p>As noted previously, the <strong>standard error</strong> of the mean is the standard deviation of the sampling distribution of the mean. It is therefore the square root of the variance of the sampling distribution of the mean and can be written as:</p>
 <p><span class="math display">\[
-\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
 \]</span></p>
-<p>The standard error is represented by a <span class="math inline">\(\sigma\)</span> because it is a standard deviation. The subscript (<span class="math inline">\(\bar{X}\)</span>) indicates that the standard error in question is the standard error of the (sample) mean.</p>
+<p>The standard error is represented by a <span class="math inline">\(\sigma\)</span> because it is a standard deviation. The subscript (<span class="math inline">\(\bar{x}\)</span>) indicates that the standard error in question is the standard error of the (sample) mean.</p>
 </section>
 <section id="central-limit-theorem" class="level3" data-number="8.2.3">
 <h3 data-number="8.2.3" class="anchored" data-anchor-id="central-limit-theorem"><span class="header-section-number">8.2.3</span> Central Limit Theorem</h3>
@@ -1010,7 +1010,7 @@ Figure&nbsp;8.6: A simulation of a sampling distribution. The parent population 
 <h4 data-number="8.3.1.1" class="anchored" data-anchor-id="an-artificial-example-using-the-normal-distribution"><span class="header-section-number">8.3.1.1</span> An Artificial Example: Using the Normal Distribution</h4>
 <p>Assume that the weights of 10-year-old children are normally distributed with a mean of 90 and a standard deviation of 36. What is the sampling distribution of the mean for a sample size of 9? Recall from <a href="#sec-sampling-distribution-of-the-mean" class="quarto-xref"><span>Section 8.2</span></a> that the mean of the sampling distribution is <span class="math inline">\(\mu\)</span> and the standard error of the mean is</p>
 <p><span class="math display">\[
-\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
 \]</span></p>
 <p>For the present example, the sampling distribution of the mean has a mean of 90 and a standard deviation of 36/3 = 12. Note that the standard deviation of a sampling distribution is its standard error. <a href="#fig-samplingdistn9" class="quarto-xref">Figure&nbsp;<span>8.7</span></a> shows this distribution. The shaded area represents the middle 95% of the distribution and stretches from 66.48 to 113.52. These limits were computed by adding and subtracting 1.96 standard deviations to/from the mean of 90 as follows:</p>
 <p><span class="math display">\[
@@ -1030,22 +1030,22 @@ Figure&nbsp;8.7: The sampling distribution of the mean for n=9. The middle 95% o
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-samplingdistn9" class="quarto-xref">Figure&nbsp;<span>8.7</span></a> shows that 95% of the means are no more than 23.52 units (1.96 standard deviations) from the mean of 90. Now consider the probability that a sample mean computed in a random sample is within 23.52 units of the population mean of 90. Since 95% of the distribution is within 23.52 of 90, the probability that the mean from any given sample will be within 23.52 of 90 is 0.95. This means that if we repeatedly compute the mean (<span class="math inline">\(\bar{X}\)</span>) from a sample (drawing a new random sample each time), and create an interval ranging from <span class="math inline">\(\bar{X} - 23.52\)</span> to <span class="math inline">\(\bar{X} + 23.52\)</span>, this interval will contain the population mean 95% of the time. In general, you compute the 95% confidence interval for the mean with the following formula:</p>
+<p><a href="#fig-samplingdistn9" class="quarto-xref">Figure&nbsp;<span>8.7</span></a> shows that 95% of the means are no more than 23.52 units (1.96 standard deviations) from the mean of 90. Now consider the probability that a sample mean computed in a random sample is within 23.52 units of the population mean of 90. Since 95% of the distribution is within 23.52 of 90, the probability that the mean from any given sample will be within 23.52 of 90 is 0.95. This means that if we repeatedly compute the mean (<span class="math inline">\(\bar{x}\)</span>) from a sample (drawing a new random sample each time), and create an interval ranging from <span class="math inline">\(\bar{x} - 23.52\)</span> to <span class="math inline">\(\bar{x} + 23.52\)</span>, this interval will contain the population mean 95% of the time. In general, you compute the 95% confidence interval for the mean with the following formula:</p>
 <p><span class="math display">\[
-\text{Lower limit} = \bar{X} - Z_{.95}\times\sigma_{\bar{X}}
+\text{Lower limit} = \bar{x} - z_{.95}\times\sigma_{\bar{x}}
 \]</span><span class="math display">\[
-\text{Upper limit} = \bar{X} + Z_{.95}\times\sigma_{\bar{X}}
+\text{Upper limit} = \bar{x} + z_{.95}\times\sigma_{\bar{x}}
 \]</span></p>
-<p>where <span class="math inline">\(Z_{.95}\)</span> is the number of standard deviations extending from the mean of a normal distribution required to contain 0.95 of the area (always equal to 1.96) and <span class="math inline">\(\sigma_{\bar{X}}\)</span> is the standard error of the mean.</p>
+<p>where <span class="math inline">\(z_{.95}\)</span> is the number of standard deviations extending from the mean of a normal distribution required to contain 0.95 of the area (always equal to 1.96) and <span class="math inline">\(\sigma_{\bar{x}}\)</span> is the standard error of the mean.</p>
 <p>If you look closely at this formula for a confidence interval, you will notice that you need to know the standard deviation (<span class="math inline">\(\sigma\)</span>) in order to estimate the mean. This may sound unrealistic, and it is. However, computing a confidence interval when <span class="math inline">\(\sigma\)</span> is known is easier than when <span class="math inline">\(\sigma\)</span> has to be estimated, and serves a pedagogical purpose. Later in this section we will show how to compute a confidence interval for the mean when <span class="math inline">\(\sigma\)</span> has to be estimated.</p>
 <p>Suppose the following five numbers were sampled from a normal distribution with a standard deviation of 2.5: 2, 3, 5, 6, and 9. To compute the 95% confidence interval, start by computing the mean and standard error:</p>
 <p><span class="math display">\[
-\bar{X} = (2 + 3 + 5 + 6 + 9)/5 = 5.
+\bar{x} = (2 + 3 + 5 + 6 + 9)/5 = 5.
 \]</span></p>
 <p><span class="math display">\[
-\sigma_{\bar{X}}=\frac{2.5}{\sqrt5}=1.118.
+\sigma_{\bar{x}}=\frac{2.5}{\sqrt5}=1.118.
 \]</span></p>
-<p>Z<sub>.95</sub> can be found using the normal distribution calculator<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and specifying that the shaded area is 0.95 and indicating that you want the area to be between the cutoff points. As shown in <a href="#fig-normaldistcalc" class="quarto-xref">Figure&nbsp;<span>8.8</span></a>, the value is 1.96. If you had wanted to compute the 99% confidence interval, you would have set the shaded area to 0.99 and the result would have been 2.58.</p>
+<p>z<sub>.95</sub> can be found using the normal distribution calculator<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and specifying that the shaded area is 0.95 and indicating that you want the area to be between the cutoff points. As shown in <a href="#fig-normaldistcalc" class="quarto-xref">Figure&nbsp;<span>8.8</span></a>, the value is 1.96. If you had wanted to compute the 99% confidence interval, you would have set the shaded area to 0.99 and the result would have been 2.58.</p>
 <div id="fig-normaldistcalc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normaldistcalc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1069,20 +1069,20 @@ Figure&nbsp;8.8: 95% of the area is between -1.96 and 1.96.
 <p>The values of t to be used in a confidence interval can be looked up in a table of the t distribution, a small version of which is provided in the following section. You can also use an “inverse t distribution” calculator<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> to find the t values to use in confidence intervals. With either approach, the t values will vary depending upon what is called the degrees of freedom (df). For confidence intervals on the mean, df is equal to n - 1, where n is the sample size.</p>
 <p>Assume that the following five numbers are sampled from a normal distribution: 2, 3, 5, 6, and 9 and that the standard deviation is not known. The first steps are to compute the sample mean and variance:</p>
 <p><span class="math display">\[
-\bar{X} = 5
+\bar{x} = 5
 \]</span></p>
 <p><span class="math display">\[
 s^2 = 7.5
 \]</span></p>
 <p>The next step is to estimate the standard error of the mean. If we knew the population variance, we could use the following formula:</p>
 <p><span class="math display">\[
-\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
 \]</span></p>
-<p>Instead we compute an estimate of the standard error (<span class="math inline">\(s_{\bar{X}}\)</span>). Note that since we previously computed the sample variance (<span class="math inline">\(s^2 = 7.5\)</span>), we can take the square root of this to obtain the sample standard deviation (<span class="math inline">\(s\)</span>):</p>
+<p>Instead we compute an estimate of the standard error (<span class="math inline">\(s_{\bar{x}}\)</span>). Note that since we previously computed the sample variance (<span class="math inline">\(s^2 = 7.5\)</span>), we can take the square root of this to obtain the sample standard deviation (<span class="math inline">\(s\)</span>):</p>
 <p><span class="math display">\[
-s_{\bar{X}} = \frac{s}{\sqrt{n}} = \frac{\sqrt{7.5}}{\sqrt{5}} = 1.225
+s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{\sqrt{7.5}}{\sqrt{5}} = 1.225
 \]</span></p>
-<p>The next step is to find the value of t. As shown in <a href="#tbl-abbrevttable" class="quarto-xref">Table&nbsp;<span>8.6</span></a> of the following section, the value for the 95% interval for df = n - 1 = 4 is 2.776. The confidence interval is then computed just as it is when <span class="math inline">\(\sigma_{\bar{X}}\)</span>. The only differences are that <span class="math inline">\(s_{\bar{X}}\)</span> and <span class="math inline">\(t\)</span> rather than <span class="math inline">\(\sigma_{\bar{X}}\)</span> and <span class="math inline">\(Z\)</span> are used.</p>
+<p>The next step is to find the value of t. As shown in <a href="#tbl-abbrevttable" class="quarto-xref">Table&nbsp;<span>8.6</span></a> of the following section, the value for the 95% interval for df = n - 1 = 4 is 2.776. The confidence interval is then computed just as it is when <span class="math inline">\(\sigma_{\bar{x}}\)</span>. The only differences are that <span class="math inline">\(s_{\bar{x}}\)</span> and <span class="math inline">\(t\)</span> rather than <span class="math inline">\(\sigma_{\bar{x}}\)</span> and <span class="math inline">\(z\)</span> are used.</p>
 <p><span class="math display">\[
 \text{Lower limit} = 5 - (2.776)(1.225) = 1.60
 \]</span><span class="math display">\[
@@ -1090,11 +1090,11 @@ s_{\bar{X}} = \frac{s}{\sqrt{n}} = \frac{\sqrt{7.5}}{\sqrt{5}} = 1.225
 \]</span></p>
 <p>More generally, the formula for the 95% confidence interval on the mean is:</p>
 <p><span class="math display">\[
-\text{Lower limit} = \bar{X} - (t_{CL})(s_{\bar{X}})
+\text{Lower limit} = \bar{x} - (t_{CL})(s_{\bar{x}})
 \]</span><span class="math display">\[
-\text{Upper limit} = \bar{X} + (t_{CL})(s_{\bar{X}})
+\text{Upper limit} = \bar{x} + (t_{CL})(s_{\bar{x}})
 \]</span></p>
-<p>where <span class="math inline">\(\bar{X}\)</span> is the sample mean, <span class="math inline">\(t_{CL}\)</span> is the t for the confidence level desired (0.95 in the above example), and <span class="math inline">\(s_{\bar{X}}\)</span> is the estimated standard error of the mean.</p>
+<p>where <span class="math inline">\(\bar{x}\)</span> is the sample mean, <span class="math inline">\(t_{CL}\)</span> is the t for the confidence level desired (0.95 in the above example), and <span class="math inline">\(s_{\bar{x}}\)</span> is the estimated standard error of the mean.</p>
 <p>We will finish our discussion of confidence intervals for the mean with an analysis of the Stroop Data.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> Specifically, we will compute a confidence interval on the mean difference score. As mentioned in <a href="describing-one-variable.html#sec-box-plots" class="quarto-xref"><span>Section 2.5</span></a>, the study involved 47 subjects naming the color of ink that words were written in. An additional detail that is now relevant to us is that subjects completed similar naming tasks multiple times under different conditions. In the “interference” condition, the names conflicted so that, for example, they would name the ink color of the word “blue” written in red ink. The correct response is to say “red” and ignore the fact that the word is “blue.” In a second condition, subjects named the ink color of colored rectangles.</p>
 <div id="tbl-responsetime" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1104,13 +1104,13 @@ Table&nbsp;8.5: Response times in seconds for 10 subjects.
 <div aria-describedby="tbl-responsetime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
+<col style="width: 12%">
+<col style="width: 22%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1230,8 +1230,8 @@ Table&nbsp;8.5: Response times in seconds for 10 subjects.
 </section>
 <section id="sec-more-about-the-t-distribution" class="level3" data-number="8.3.2">
 <h3 data-number="8.3.2" class="anchored" data-anchor-id="sec-more-about-the-t-distribution"><span class="header-section-number">8.3.2</span> More about the T Distribution<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></h3>
-<p>In the introduction to normal distributions it was shown that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean. Therefore, if you randomly sampled a value from a normal distribution with a mean of 100, the probability it would be within 1.96<span class="math inline">\(\sigma\)</span> of 100 is 0.95. Similarly, if you sample n values from the population, the probability that the sample mean (<span class="math inline">\(\bar{X}\)</span>) will be within 1.96 <span class="math inline">\(\sigma_{\bar{X}}\)</span> of 100 is 0.95.</p>
-<p>Now consider the case in which you have a normal distribution but you do not know the standard deviation. You sample <span class="math inline">\(n\)</span> values and compute the sample mean (<span class="math inline">\(\bar{X}\)</span>) and estimate the standard error of the mean (<span class="math inline">\(\sigma_{\bar{X}}\)</span>) with <span class="math inline">\(s_{\bar{X}}\)</span>. What is the probability that <span class="math inline">\(\bar{X}\)</span> will be within 1.96 <span class="math inline">\(s_{\bar{X}}\)</span> of the population mean (<span class="math inline">\(\mu\)</span>)? This is a difficult problem because there are two ways in which <span class="math inline">\(\bar{X}\)</span> could be more than 1.96 <span class="math inline">\(s_{\bar{X}}\)</span> from <span class="math inline">\(\mu\)</span>: (1) <span class="math inline">\(\bar{X}\)</span> could, by chance, be either very high or very low and (2) <span class="math inline">\(s_{\bar{X}}\)</span> could, by chance, be very low. Intuitively, it makes sense that the probability of being within 1.96 standard errors of the mean should be smaller than in the case when the standard deviation is known (and cannot be underestimated). But exactly how much smaller? Fortunately, the way to work out this type of problem was solved in the early 20th century by W. S. Gosset who determined the distribution of a mean divided by an estimate of its standard error. This distribution is called the <em>Student’s t distribution</em> or sometimes just the t distribution. Gosset worked out the t distribution and associated statistical tests while working for a brewery in Ireland. Because of a contractual agreement with the brewery, he published the article under the pseudonym “Student.” That is why the t test is called the “Student’s t test.”</p>
+<p>In the introduction to normal distributions it was shown that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean. Therefore, if you randomly sampled a value from a normal distribution with a mean of 100, the probability it would be within 1.96<span class="math inline">\(\sigma\)</span> of 100 is 0.95. Similarly, if you sample n values from the population, the probability that the sample mean (<span class="math inline">\(\bar{x}\)</span>) will be within 1.96 <span class="math inline">\(\sigma_{\bar{x}}\)</span> of 100 is 0.95.</p>
+<p>Now consider the case in which you have a normal distribution but you do not know the standard deviation. You sample <span class="math inline">\(n\)</span> values and compute the sample mean (<span class="math inline">\(\bar{x}\)</span>) and estimate the standard error of the mean (<span class="math inline">\(\sigma_{\bar{x}}\)</span>) with <span class="math inline">\(s_{\bar{x}}\)</span>. What is the probability that <span class="math inline">\(\bar{x}\)</span> will be within 1.96 <span class="math inline">\(s_{\bar{x}}\)</span> of the population mean (<span class="math inline">\(\mu\)</span>)? This is a difficult problem because there are two ways in which <span class="math inline">\(\bar{x}\)</span> could be more than 1.96 <span class="math inline">\(s_{\bar{x}}\)</span> from <span class="math inline">\(\mu\)</span>: (1) <span class="math inline">\(\bar{x}\)</span> could, by chance, be either very high or very low and (2) <span class="math inline">\(s_{\bar{x}}\)</span> could, by chance, be very low. Intuitively, it makes sense that the probability of being within 1.96 standard errors of the mean should be smaller than in the case when the standard deviation is known (and cannot be underestimated). But exactly how much smaller? Fortunately, the way to work out this type of problem was solved in the early 20th century by W. S. Gosset who determined the distribution of a mean divided by an estimate of its standard error. This distribution is called the <em>Student’s t distribution</em> or sometimes just the t distribution. Gosset worked out the t distribution and associated statistical tests while working for a brewery in Ireland. Because of a contractual agreement with the brewery, he published the article under the pseudonym “Student.” That is why the t test is called the “Student’s t test.”</p>
 <p>The <strong>t distribution</strong> is very similar to the normal distribution when the estimate of variance is based on a large sample, but the t distribution has relatively more scores in its tails when there is a small sample. When working with the t distribution, sample size is expressed in what are called <strong>degrees of freedom</strong>. Degrees of freedom indicate the number of independent pieces of information on which an estimate is based; a more complete discussion of the concept is provided in Appendix I at the end of this chapter. As we noted in the prior section, when we are estimating the standard error for a sample mean, the degrees of freedom is simply equal to the sample size minus one (n-1).</p>
 <p><a href="#fig-tdiststandardsd" class="quarto-xref">Figure&nbsp;<span>8.9</span></a> shows t distributions with 2, 4, and 10 degrees of freedom and the standard normal distribution. Notice that the normal distribution has relatively more scores in the center of the distribution and the t distribution has relatively more in the tails. The t distribution approaches the normal distribution as the degrees of freedom increase.</p>
 <div id="fig-tdiststandardsd" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1348,8 +1348,8 @@ Table&nbsp;8.6: Abbreviated t table.
 </div>
 </figure>
 </div>
-<p>Returning to the problem posed at the beginning of this section, suppose you sampled 9 values from a normal population and estimated the standard error of the mean (<span class="math inline">\(\sigma_{\bar{X}}\)</span>) with <span class="math inline">\(s_{\bar{X}}\)</span>. What is the probability that <span class="math inline">\(\bar{X}\)</span> would be within 1.96<span class="math inline">\(s_{\bar{X}}\)</span> of <span class="math inline">\(\mu\)</span>? Since the sample size is 9, there are n - 1 = 8 df. From <a href="#tbl-abbrevttable" class="quarto-xref">Table&nbsp;<span>8.6</span></a>, you can see that with 8 df the probability is 0.95 that the mean will be within 2.306 <span class="math inline">\(s_{\bar{X}}\)</span> of <span class="math inline">\(\mu\)</span>. The probability that it will be within 1.96 <span class="math inline">\(s_{\bar{X}}\)</span> of <span class="math inline">\(\mu\)</span> is therefore lower than 0.95.</p>
-<p>As shown in <a href="#fig-tdist8df" class="quarto-xref">Figure&nbsp;<span>8.10</span></a>, a t distribution calculator<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> can be used to find that 0.086 of the area of a t distribution is more than 1.96 standard deviations from the mean, so the probability that <span class="math inline">\(\bar{X}\)</span> would be less than 1.96<span class="math inline">\(s_{\bar{X}}\)</span> from <span class="math inline">\(\mu\)</span> is 1 - 0.086 = 0.914.</p>
+<p>Returning to the problem posed at the beginning of this section, suppose you sampled 9 values from a normal population and estimated the standard error of the mean (<span class="math inline">\(\sigma_{\bar{x}}\)</span>) with <span class="math inline">\(s_{\bar{x}}\)</span>. What is the probability that <span class="math inline">\(\bar{x}\)</span> would be within 1.96<span class="math inline">\(s_{\bar{x}}\)</span> of <span class="math inline">\(\mu\)</span>? Since the sample size is 9, there are n - 1 = 8 df. From <a href="#tbl-abbrevttable" class="quarto-xref">Table&nbsp;<span>8.6</span></a>, you can see that with 8 df the probability is 0.95 that the mean will be within 2.306 <span class="math inline">\(s_{\bar{x}}\)</span> of <span class="math inline">\(\mu\)</span>. The probability that it will be within 1.96 <span class="math inline">\(s_{\bar{x}}\)</span> of <span class="math inline">\(\mu\)</span> is therefore lower than 0.95.</p>
+<p>As shown in <a href="#fig-tdist8df" class="quarto-xref">Figure&nbsp;<span>8.10</span></a>, a t distribution calculator<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> can be used to find that 0.086 of the area of a t distribution is more than 1.96 standard deviations from the mean, so the probability that <span class="math inline">\(\bar{x}\)</span> would be less than 1.96<span class="math inline">\(s_{\bar{x}}\)</span> from <span class="math inline">\(\mu\)</span> is 1 - 0.086 = 0.914.</p>
 <div id="fig-tdist8df" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tdist8df-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1360,7 +1360,7 @@ Figure&nbsp;8.10: Area more than 1.96 standard deviations from the mean in a t d
 </figcaption>
 </figure>
 </div>
-<p>As expected, this probability is less than 0.95 that would have been obtained if <span class="math inline">\(\sigma_{\bar{X}}\)</span> had been known instead of estimated.</p>
+<p>As expected, this probability is less than 0.95 that would have been obtained if <span class="math inline">\(\sigma_{\bar{x}}\)</span> had been known instead of estimated.</p>
 </section>
 <section id="sec-confidence-interval-for-a-regression-slope-coefficient" class="level3" data-number="8.3.3">
 <h3 data-number="8.3.3" class="anchored" data-anchor-id="sec-confidence-interval-for-a-regression-slope-coefficient"><span class="header-section-number">8.3.3</span> Confidence Intervals for a Regression Slope Coefficient <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></h3>
@@ -1371,10 +1371,10 @@ Figure&nbsp;8.10: Area more than 1.96 standard deviations from the mean in a t d
 <div id="fig-reg-example-cis" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-reg-example-cis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/correlations/splotexampledatadetail.jpg" class="img-fluid figure-img" width="325">
+<img src="Images/correlations/splotexampledata.jpg" class="img-fluid figure-img" width="325">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reg-example-cis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.11: A scatter plot of the example data. The black line consists of the predictions, the points are the actual data, and the vertical lines between the points and the black line represent errors of prediction.
+Figure&nbsp;8.11: A scatter plot of the example data.
 </figcaption>
 </figure>
 </div>
@@ -1398,34 +1398,36 @@ Figure&nbsp;8.11: A scatter plot of the example data. The black line consists of
 <li><p>The exact shape of the t distribution changes depending on what parameter?</p></li>
 <li><p>When is the t distribution virtually indistinguishable from the standard normal distribution?</p></li>
 <li><p>With what sample size (small or large) is it especially important to use the t distribution rather than the normal distribution to calculate confidence intervals for a regression slope coefficient?</p></li>
+<li><p>Suppose I am conducting a two-sample difference of means test (a t-test) with a large sample size, and I obtain a t-score of -3.4. What conclusion do I reach?</p></li>
 </ol>
 </section>
 <section id="sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix I: Degrees of Freedom<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></h2>
 <p>Some estimates are based on more information than others. For example, an estimate of the variance based on a sample size of 100 is based on more information than an estimate of the variance based on a sample size of 5. The <strong>degrees of freedom (df)</strong> of an estimate is the number of independent pieces of information on which the estimate is based.</p>
 <p>As an example, let’s say that we know that the mean height of Martians is 6 and wish to estimate the variance of their heights. We randomly sample one Martian and find that its height is 8. Recall that the variance is defined as the mean squared deviation of the values from their population mean. We can compute the squared deviation of our value of 8 from the population mean of 6 to find a single squared deviation from the mean. This single squared deviation from the mean, (8-6)<sup>2</sup> = 4, is an estimate of the mean squared deviation for all Martians. Therefore, based on this sample of one, we would estimate that the population variance is 4. This estimate is based on a single piece of information and therefore has 1 df. If we sampled another Martian and obtained a height of 5, then we could compute a second estimate of the variance, (5-6)<sup>2</sup> = 1. We could then average our two estimates (4 and 1) to obtain an estimate of 2.5. Since this estimate is based on two independent pieces of information, it has two degrees of freedom. The two estimates are independent because they are based on two independently and randomly selected Martians. The estimates would not be independent if after sampling one Martian, we decided to choose its brother as our second Martian.</p>
-<p>As you are probably thinking, it is pretty rare that we know the population mean when we are estimating the variance. Instead, we have to first estimate the population mean (<span class="math inline">\(\mu\)</span>) with the sample mean (<span class="math inline">\(\bar{X}\)</span>). The process of estimating the mean affects our degrees of freedom as shown below.</p>
-<p>Returning to our problem of estimating the variance in Martian heights, let’s assume we do not know the population mean and therefore we have to estimate it from the sample. We have sampled two Martians and found that their heights are 8 and 5. Therefore <span class="math inline">\(\bar{X}\)</span>, our estimate of the population mean, is</p>
-<p><span class="math display">\[ \bar{X} = (8+5)/2 = 6.5. \]</span></p>
+<p>As you are probably thinking, it is pretty rare that we know the population mean when we are estimating the variance. Instead, we have to first estimate the population mean (<span class="math inline">\(\mu\)</span>) with the sample mean (<span class="math inline">\(\bar{x}\)</span>). The process of estimating the mean affects our degrees of freedom as shown below.</p>
+<p>Returning to our problem of estimating the variance in Martian heights, let’s assume we do not know the population mean and therefore we have to estimate it from the sample. We have sampled two Martians and found that their heights are 8 and 5. Therefore <span class="math inline">\(\bar{x}\)</span>, our estimate of the population mean, is</p>
+<p><span class="math display">\[ \bar{x} = (8+5)/2 = 6.5. \]</span></p>
 <p>We can now compute two estimates of variance:</p>
 <p><span class="math display">\[ \text{Estimate 1} = (8-6.5)^2 = 2.25 \]</span></p>
 <p><span class="math display">\[ \text{Estimate 2} = (5-6.5)^2 = 2.25 \]</span></p>
-<p>Now for the key question: Are these two estimates independent? The answer is no because each height contributed to the calculation of <span class="math inline">\(\bar{X}\)</span>. Since the first Martian’s height of 8 influenced <span class="math inline">\(\bar{X}\)</span>, it also influenced Estimate 2. If the first height had been, for example, 10, then <span class="math inline">\(\bar{X}\)</span> would have been 7.5 and Estimate 2 would have been (5-7.5)<sup>2</sup> = 6.25 instead of 2.25. The important point is that the two estimates are not independent and therefore we do not have two degrees of freedom. Another way to think about the non-independence is to consider that if you knew the mean and one of the scores, you would know the other score. For example, if one score is 5 and the mean is 6.5, you can compute that the total of the two scores is 13 and therefore that the other score must be 13-5 = 8.</p>
+<p>Now for the key question: Are these two estimates independent? The answer is no because each height contributed to the calculation of <span class="math inline">\(\bar{x}\)</span>. Since the first Martian’s height of 8 influenced <span class="math inline">\(\bar{x}\)</span>, it also influenced Estimate 2. If the first height had been, for example, 10, then <span class="math inline">\(\bar{x}\)</span> would have been 7.5 and Estimate 2 would have been (5-7.5)<sup>2</sup> = 6.25 instead of 2.25. The important point is that the two estimates are not independent and therefore we do not have two degrees of freedom. Another way to think about the non-independence is to consider that if you knew the mean and one of the scores, you would know the other score. For example, if one score is 5 and the mean is 6.5, you can compute that the total of the two scores is 13 and therefore that the other score must be 13-5 = 8.</p>
 <p>In general, the degrees of freedom for an estimate is equal to the number of values minus the number of parameters estimated en route to the estimate in question. In the Martians example, there are two values (8 and 5) and we had to estimate one parameter (<span class="math inline">\(\mu\)</span>) on the way to estimating the parameter of interest (<span class="math inline">\(\sigma^2\)</span>). Therefore, the estimate of variance has 2 - 1 = 1 degree of freedom. If we had sampled 12 Martians, then our estimate of variance would have had 11 degrees of freedom. Therefore, the degrees of freedom of an estimate of variance is equal to n - 1, where n is the number of observations.</p>
 <p>Recall from <a href="describing-one-variable.html#sec-variance" class="quarto-xref"><span>Section 2.4.4</span></a> that the formula for estimating the variance in a sample is:</p>
-<p><span class="math display">\[ s^2=\frac{\sum{(X-\bar{X})^2}}{n-1} \]</span></p>
+<p><span class="math display">\[ s^2=\frac{\sum_{i=1}^n {(x_i-\bar{x})^2}}{n-1} \]</span></p>
 <p>The denominator of this formula is the degrees of freedom.</p>
 <p>So far, we’ve mainly seen examples where the degrees of freedom is equal to n - 1. But as we saw in <a href="#sec-confidence-interval-for-a-regression-slope-coefficient" class="quarto-xref"><span>Section 8.3.3</span></a>, the degrees of freedom can also be equal to other values such as n - 2. In the case of constructing a confidence interval for a coefficient from a multiple regression with four independent variables, the degrees of freedom will generally be equal to n - 5. The exact formula for degrees of freedom depends on what we are estimating.</p>
 </section>
 <section id="sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix II: Estimating the Standard Error of a Regression Slope<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></h2>
+<p>Note that in this appendix, I depart from my notation throughout the rest of the book by using uppercase letters (<span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>) to refer to our variables of interest, in order to allow for lowercase letters (<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>) to refer to a transformed (mean-centered) version of these variables. This will simplify some of the presentation of material.</p>
 <p>This appendix shows how to compute the estimated standard error for the slope of a simple linear regression. The estimated standard error of <span class="math inline">\(\beta\)</span> is computed using the following formula:</p>
 <p><span class="math display">\[
 s_{\beta} = \frac{s_{est}}{\sqrt{SSX}}
 \]</span></p>
 <p>where <span class="math inline">\(s_{\beta}\)</span> is the estimated standard error of <span class="math inline">\(\beta\)</span>, <span class="math inline">\(s_{est}\)</span> is the standard error of the estimate, and <span class="math inline">\(SSX\)</span> is the sum of squared deviations of <span class="math inline">\(X\)</span> from the mean of <span class="math inline">\(X\)</span>. <span class="math inline">\(SSX\)</span> is calculated as:</p>
 <p><span class="math display">\[
-SSX = \sum{(X-\bar{X})^2}
+SSX = \sum_{i=1}^n {(x_i-\bar{x})^2}
 \]</span></p>
 <p>where <span class="math inline">\(\bar{X}\)</span> is the mean of <span class="math inline">\(X\)</span>. The standard error of the estimate can be calculated as:</p>
 <p><span class="math display">\[
@@ -1512,7 +1514,7 @@ Table&nbsp;8.7: Example data.
 </div>
 </figure>
 </div>
-<p><span class="math inline">\(SSY\)</span> is the sum of squared deviations from the mean of Y. It is, therefore, equal to the sum of the y<sup>2</sup> column and is equal to 4.597. The correlation (<span class="math inline">\(r\)</span>) between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is 0.6268, and there are 5 observations (n=5). Thus, the standard error of the estimate is:</p>
+<p><span class="math inline">\(SSY\)</span> is the sum of squared deviations from the mean of y. It is, therefore, equal to the sum of the y<sup>2</sup> column and is equal to 4.597. The correlation (<span class="math inline">\(r\)</span>) between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is 0.6268, and there are 5 observations (n=5). Thus, the standard error of the estimate is:</p>
 <p><span class="math display">\[
 s_{est} = \sqrt{\frac{(1-(0.6268)^2)(4.597)}{5-2}} = \sqrt{\frac{2.791}{3}} = 0.964
 \]</span></p>
@@ -1960,8 +1962,8 @@ s_{\beta} = \frac{0.964}{\sqrt{10}} = 0.305
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic models</span></span>
+      <a href="./prob-models.html" class="pagination-link" aria-label="Probabilistic Models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilistic Models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
