@@ -8,7 +8,7 @@
 <!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. -->
 ::::
 
-*Note: This is now a complete draft of the second edition, which should be usable. However, some chapters have not yet been carefully proof-read. Small updates will therefore be made to this edition in the coming months, and the main domain ([minusthemath.com](https://minusthemath.com/)) will be configured to point to this version sometimes in Summer 2026.*
+*Note: This is now a complete draft of the second edition, which should be usable. However, some chapters have not yet been carefully proof-read. Small updates will therefore be made to this edition in the coming months, and the main domain ([minusthemath.com](https://minusthemath.com/)) will be configured to point to this version sometimes in Summer 2026. If you prefer to continue using the first edition, it will be preserved at this URL: <https://minusthemath.com/1e>.*
 
 For young professionals entering the workforce in people-oriented fields, a basic familiarity with fundamental statistics is increasingly expected. This introduction to quantitative research methods for the social sciences teaches foundational skills in data description, quantitative reasoning, and statistical inference. The power of simple statistical techniques is demonstrated using examples from throughout the social sciences, with ample attention to practical uses of data like those students are likely to encounter on the job.
 

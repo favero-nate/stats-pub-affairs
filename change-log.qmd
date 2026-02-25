@@ -2,12 +2,14 @@
 
 <!-- This version (1.3) was updated July 31, 2024. -->
 
-PDFs of past versions are currently available at <https://github.com/favero-nate/minus-the-math/tree/main/past_versions>
+The first edition (1.4) is available here: <https://minusthemath.com/1e>
+
+PDFs of older versions are currently available at <https://github.com/favero-nate/minus-the-math/tree/main/past_versions>
 
 -   Version 2.0: This second edition is heavily revised. Coverage of topics by chapter often changes, as shown in the table below. Exercises have been added to the end of each chapter.
 
     | 2nd edition | 1st edition |
-    |----------------------------------------------|--------------------------|
+    |---------------------------------------------|--------------------------|
     | Ch. 1 (data structures & a bit of graphing) | most of Ch. 1 |
     | Ch. 2 (describing one variable at a time) | Ch. 2; a bit of Ch. 1 (percentiles & boxplots) |
     | Ch. 3 (bivariate relationships - quantitative variables) | Ch. 3 |
