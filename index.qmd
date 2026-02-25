@@ -5,10 +5,10 @@
 ![](cover.png)
 :::
 
-<!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. An [EPUB version (for e-readers)](Statistics-Minus-The-Math.epub) is also available, although the formatting has not been optimized for this format, so some sections do not display well. -->
+<!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. -->
 ::::
 
-*Note: This is an unstable, early version of a substantial rewrite (which may become version 2.0).*
+*Note: This is now a complete draft of the second edition, which should be usable. However, some chapters have not yet been carefully proof-read. Small updates will therefore be made to this edition in the coming months, and the main domain ([minusthemath.com](https://minusthemath.com/)) will be configured to point to this version sometimes in Summer 2026.*
 
 For young professionals entering the workforce in people-oriented fields, a basic familiarity with fundamental statistics is increasingly expected. This introduction to quantitative research methods for the social sciences teaches foundational skills in data description, quantitative reasoning, and statistical inference. The power of simple statistical techniques is demonstrated using examples from throughout the social sciences, with ample attention to practical uses of data like those students are likely to encounter on the job.
 
@@ -20,7 +20,7 @@ Several features make the approach here a bit unique:
 
 -   The ordering of topics is designed to equip students to start working with data and reading quantitative social science literature as quickly as possible. The first three chapters not only teach data description and visualization but also provide basic guidelines for reading a regression results table. Later chapters add coverage of more abstract topics like probabilistic modeling, statistical inference, and regression assumptions.
 
--   Chapters are relatively short (usually less than 5000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Given the broad audience of this text, it may be helpful to read these short chapters alongside applied examples from one's field of study. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.
+-   Chapters are relatively short (usually around 5000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Given the broad audience of this text, it may be helpful to read these short chapters alongside applied examples from one's field of study. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.
 
 -   Part 1 can stand alone as a guide to getting started with data in social science. These first six chapters cover data description and preview how inference tools are used in research. These chapters are therefore ideal for a short course or pairing with other materials for a course with a broader scope. For example, a research methods course might add materials covering research design, qualitative methods, theory building, and/or literature review. A data science course might instead add a book introducing a programming language used for data analysis.
 
@@ -32,6 +32,6 @@ This is still a work in progress. If you find errors, feel free to reach out (fi
 
 ## Acknowledgements
 
-Portions of this book (and most of the original version) are adapted from the public domain resource *Online Statistics Education: A Multimedia Course of Study* (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate when specific sections are adapted from Lane and colleagues. Currently, @sec-describing-one-variable and @sec-sampling-distributions are mostly derived from this public domain resource, in addition to sections of @sec-qual-associations, @sec-causality and @sec-regression.
+Portions of this book (and most of the original version) are adapted from the public domain resource *Online Statistics Education: A Multimedia Course of Study* (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate when specific sections are adapted from Lane and colleagues. Currently, @sec-describing-one-variable and @sec-sampling-distributions are mostly derived from this public domain resource, in addition to sections of @sec-h-tests, @sec-qual-associations, @sec-causality and @sec-regression.
 
 I would also like to thank Natasha Kallish for help transforming an earlier version of this text from Word to a Quarto document.

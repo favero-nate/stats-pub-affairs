@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Regression Models – Statistics Minus the Math 2.0</title>
+<title>11&nbsp; Regression Models – Statistics Minus the Math (2e)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -293,7 +293,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Statistics Minus the Math 2.0</a> 
+      <a href="./">Statistics Minus the Math (2e)</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -481,7 +481,7 @@ window.Quarto = {
 <h3 class="unnumbered anchored" data-anchor-id="additivity-and-linearity">3. Additivity and linearity</h3>
 <p>We use the term “linear regression” to refer to the standard regression model because of its linear form: the value of each independent variable is multiplied by a constant, and then these products are added up to form the predicted value of the dependent variable (together with the intercept). We will see this written out as an equation in <a href="#sec-multiple-regression" class="quarto-xref"><span>Section 11.2</span></a>. Predictions from a linear regression model will always follow this pattern of additivity and linearity. If we wish to create predictions that cannot be represented through a linear combination of independent variables, a linear regression is the wrong tool to use. Note, however, that sometimes relationships that are not strictly linear can still be approximated through a linear function. Linear relationships offer a simplicity that is not always apparent in other functional forms, so sometimes we may prefer the straightforward interpretability of linear regression results at the cost of the flexibility we might be able to achieve with other types of models. For example, if our primary concern is whether two variables generally exhibit a positive (versus negative) association and what the general strength of that association is, we may prefer a linear model of that association since it can provide a single number (a slope coefficient) that indicates direction and magnitude of association, even if this number oversimplifies a bit (as when there is some curvature in the true line describing their association).</p>
 <p>Another important consideration to mention here (that we will explore in more detail later on in this chapter, and in the next) is that certain non-linear relationships can be modeled through linear regression, so long as they can be expressed by manipulating variables to create a linear function that represents these non-linearities. For example, the relationship between two variables need not follow a straight line if we transform the independent variable by squaring it, allowing for a prediction line to follow the shape of a parabola (for the original, untransformed variable).</p>
-<p>If an independent variable is binary, the assumption of linearity is not practically restrictive. Since binary variables can only take on two different values (typically coded as 0 and 1), the coefficient associated with a binary variable will simply indicate how much to shift the prediction when going from one value to the other. The shape of the “line” connecting the two points is immaterial. Thus, linear regression can generally be considered “non-parametric” (meaning minimal assumptions are imposed) when studying only binary independent variables. In such cases, we can think of regression as simply using an equation to compare means across groups, as previously demonstrated in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> (and in <a href="h-tests.html#sec-relationship-to-t-tests-and-regression" class="quarto-xref"><span>Section 6.8.2</span></a>, where we noted linear regression yields equivalent results to ANOVA).</p>
+<p>If an independent variable is binary, the assumption of linearity is not practically restrictive. Since binary variables can only take on two different values (typically coded as 0 and 1), the coefficient associated with a binary variable will simply indicate how much to shift the prediction when going from one value to the other. The shape of the “line” connecting the two points is immaterial. Thus, linear regression can generally be considered “non-parametric” (meaning minimal assumptions are imposed) when studying only binary independent variables. In such cases, we can think of regression as simply using an equation to compare means across groups, as discussed in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> and <a href="h-tests.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
 </section>
 <section id="independence-of-errors" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="independence-of-errors">4. Independence of errors</h3>

@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "Statistics Minus the Math 2.0"
+  title: "Statistics Minus the Math (2e)"
   author: "Nathan Favero"
-  date: "2/8/2026"
+  date: "2/25/2026"
   chapters:
     - index.qmd
     - part: "Data Essentials"
@@ -36,3 +36,6 @@ format:
       dark: superhero
   pdf:
     documentclass: scrreprt
+    header-includes: |
+      \publishers{Get the latest version of this text at: \url{https://minusthemath.com} \bigskip \bigskip \bigskip \bigskip \\
+      \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{\includegraphics{Images/by-nc-nd.png}}}

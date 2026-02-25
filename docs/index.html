@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nathan Favero">
-<meta name="dcterms.date" content="2026-02-08">
+<meta name="dcterms.date" content="2026-02-25">
 
-<title>Statistics Minus the Math 2.0</title>
+<title>Statistics Minus the Math (2e)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -265,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Statistics Minus the Math 2.0</a> 
+      <a href="./">Statistics Minus the Math (2e)</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -407,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistics Minus the Math 2.0</h1>
+<h1 class="title">Statistics Minus the Math (2e)</h1>
 </div>
 
 
@@ -424,7 +424,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 8, 2026</p>
+      <p class="date">February 25, 2026</p>
     </div>
   </div>
   
@@ -439,17 +439,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="preface" class="level1 unnumbered page-columns page-full">
 <h1 class="unnumbered">Preface</h1>
 
-<!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. An [EPUB version (for e-readers)](Statistics-Minus-The-Math.epub) is also available, although the formatting has not been optimized for this format, so some sections do not display well. -->
+<!-- [Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book. -->
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="cover.png" class="img-fluid"></p>
-</div></div><p><em>Note: This is an unstable, early version of a substantial rewrite (which may become version 2.0).</em></p>
+</div></div><p><em>Note: This is now a complete draft of the second edition, which should be usable. However, some chapters have not yet been carefully proof-read. Small updates will therefore be made to this edition in the coming months, and the main domain (<a href="https://minusthemath.com/">minusthemath.com</a>) will be configured to point to this version sometimes in Summer 2026.</em></p>
 <p>For young professionals entering the workforce in people-oriented fields, a basic familiarity with fundamental statistics is increasingly expected. This introduction to quantitative research methods for the social sciences teaches foundational skills in data description, quantitative reasoning, and statistical inference. The power of simple statistical techniques is demonstrated using examples from throughout the social sciences, with ample attention to practical uses of data like those students are likely to encounter on the job.</p>
 <p>Several features make the approach here a bit unique:</p>
 <ul>
 <li><p>This text does not assume any prior training in statistics or a strong mathematical background. Explanations prioritize conceptual understanding over extended mathematical treatments. The text also emphasizes the importance of drawing on subject-matter knowledge to critically evaluate assumptions underlying measurement, visualization, and inference.</p></li>
 <li><p>Contemporary approaches to quantitative social science are prioritized, resulting in greater attention to causality, regression modeling, and confidence intervals.</p></li>
 <li><p>The ordering of topics is designed to equip students to start working with data and reading quantitative social science literature as quickly as possible. The first three chapters not only teach data description and visualization but also provide basic guidelines for reading a regression results table. Later chapters add coverage of more abstract topics like probabilistic modeling, statistical inference, and regression assumptions.</p></li>
-<li><p>Chapters are relatively short (usually less than 5000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Given the broad audience of this text, it may be helpful to read these short chapters alongside applied examples from one’s field of study. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.</p></li>
+<li><p>Chapters are relatively short (usually around 5000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Given the broad audience of this text, it may be helpful to read these short chapters alongside applied examples from one’s field of study. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.</p></li>
 <li><p>Part 1 can stand alone as a guide to getting started with data in social science. These first six chapters cover data description and preview how inference tools are used in research. These chapters are therefore ideal for a short course or pairing with other materials for a course with a broader scope. For example, a research methods course might add materials covering research design, qualitative methods, theory building, and/or literature review. A data science course might instead add a book introducing a programming language used for data analysis.</p></li>
 </ul>
 <p>This comprehensive introduction to quantitative analysis will equip students to independently evaluate and produce simple statistical analyses. Students will realize through the straightforward applications of statistical concepts to relevant and clear examples how the reasoning skills they’ve utilized their entire lives can help them effectively describe, contextualize, and interpret patterns in data.</p>
@@ -457,7 +457,7 @@ ul.task-list li input[type="checkbox"] {
 <p>This is still a work in progress. If you find errors, feel free to reach out (find updated contact info here: <a href="https://nathanfavero.com" class="uri">https://nathanfavero.com</a>) so I can correct them for the next version I publish.</p>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>Portions of this book (and most of the original version) are adapted from the public domain resource <em>Online Statistics Education: A Multimedia Course of Study</em> (<a href="https://onlinestatbook.com" class="uri">https://onlinestatbook.com</a> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate when specific sections are adapted from Lane and colleagues. Currently, <a href="describing-one-variable.html" class="quarto-xref"><span>2&nbsp; Describing One Variable at a Time</span></a> and <a href="sampling-distributions.html" class="quarto-xref"><span>8&nbsp; Sampling Distributions</span></a> are mostly derived from this public domain resource, in addition to sections of <a href="qual-associations.html" class="quarto-xref"><span>4&nbsp; Relationships with Qualitative Variables</span></a>, <a href="causality.html" class="quarto-xref"><span>9&nbsp; Research Designs and Causality</span></a> and <a href="regression.html" class="quarto-xref"><span>11&nbsp; Regression Models</span></a>.</p>
+<p>Portions of this book (and most of the original version) are adapted from the public domain resource <em>Online Statistics Education: A Multimedia Course of Study</em> (<a href="https://onlinestatbook.com" class="uri">https://onlinestatbook.com</a> Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate when specific sections are adapted from Lane and colleagues. Currently, <a href="describing-one-variable.html" class="quarto-xref"><span>2&nbsp; Describing One Variable at a Time</span></a> and <a href="sampling-distributions.html" class="quarto-xref"><span>8&nbsp; Sampling Distributions</span></a> are mostly derived from this public domain resource, in addition to sections of <a href="h-tests.html" class="quarto-xref"><span>6&nbsp; Hypothesis Testing</span></a>, <a href="qual-associations.html" class="quarto-xref"><span>4&nbsp; Relationships with Qualitative Variables</span></a>, <a href="causality.html" class="quarto-xref"><span>9&nbsp; Research Designs and Causality</span></a> and <a href="regression.html" class="quarto-xref"><span>11&nbsp; Regression Models</span></a>.</p>
 <p>I would also like to thank Natasha Kallish for help transforming an earlier version of this text from Word to a Quarto document.</p>
 
 

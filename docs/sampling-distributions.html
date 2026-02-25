@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Sampling Distributions – Statistics Minus the Math 2.0</title>
+<title>8&nbsp; Sampling Distributions – Statistics Minus the Math (2e)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -293,7 +293,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Statistics Minus the Math 2.0</a> 
+      <a href="./">Statistics Minus the Math (2e)</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -440,9 +440,11 @@ window.Quarto = {
   <li><a href="#sec-more-about-the-t-distribution" id="toc-sec-more-about-the-t-distribution" class="nav-link" data-scroll-target="#sec-more-about-the-t-distribution"><span class="header-section-number">8.3.2</span> More about the T Distribution</a></li>
   <li><a href="#sec-confidence-interval-for-a-regression-slope-coefficient" id="toc-sec-confidence-interval-for-a-regression-slope-coefficient" class="nav-link" data-scroll-target="#sec-confidence-interval-for-a-regression-slope-coefficient"><span class="header-section-number">8.3.3</span> Confidence Intervals for a Regression Slope Coefficient </a></li>
   </ul></li>
-  <li><a href="#exercisessampling-distributions-12" id="toc-exercisessampling-distributions-12" class="nav-link" data-scroll-target="#exercisessampling-distributions-12"><span class="header-section-number">8.4</span> Exercises</a></li>
-  <li><a href="#sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13" id="toc-sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13" class="nav-link" data-scroll-target="#sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13"><span>Chapter 8</span> Appendix I: Degrees of Freedom</a></li>
-  <li><a href="#sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14" id="toc-sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14" class="nav-link" data-scroll-target="#sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14"><span>Chapter 8</span> Appendix II: Estimating the Standard Error of a Regression Slope</a></li>
+  <li><a href="#sec-significance-test-for-a-regression-slope-coefficient" id="toc-sec-significance-test-for-a-regression-slope-coefficient" class="nav-link" data-scroll-target="#sec-significance-test-for-a-regression-slope-coefficient"><span class="header-section-number">8.4</span> Calcuating P-Values</a></li>
+  <li><a href="#exercisessampling-distributions-13" id="toc-exercisessampling-distributions-13" class="nav-link" data-scroll-target="#exercisessampling-distributions-13"><span class="header-section-number">8.5</span> Exercises</a></li>
+  <li><a href="#sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-14" id="toc-sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-14" class="nav-link" data-scroll-target="#sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-14"><span>Chapter 8</span> Appendix I: Degrees of Freedom</a></li>
+  <li><a href="#sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-15" id="toc-sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-15" class="nav-link" data-scroll-target="#sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-15"><span>Chapter 8</span> Appendix II: Estimating the Standard Error of a Regression Slope</a></li>
+  <li><a href="#sec-sampling-distributions-appendix-iii-testing-a-single-meansampling-distributions-16" id="toc-sec-sampling-distributions-appendix-iii-testing-a-single-meansampling-distributions-16" class="nav-link" data-scroll-target="#sec-sampling-distributions-appendix-iii-testing-a-single-meansampling-distributions-16"><span>Chapter 8</span> Appendix III: Testing a Single Mean</a></li>
   </ul>
 </nav>
     </div>
@@ -953,7 +955,7 @@ Figure&nbsp;8.4: Distribution of ranges for n = 3.
 <p>As we learned in the prior section, the sampling distribution of the mean refers to the probability distribution describing all possible values of the sample mean we could obtain in repeated sampling. This section goes over some important properties of the sampling distribution of the mean.</p>
 <section id="mean" class="level3" data-number="8.2.1">
 <h3 data-number="8.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">8.2.1</span> Mean</h3>
-<p>The mean of the sampling distribution of the mean is the mean of the population from which the scores were sampled. Therefore, if a population has a mean <span class="math inline">\(\mu\)</span>, then the mean of the sampling distribution of the mean (<span class="math inline">\(\bar{x}\)</span>) is also <span class="math inline">\(\mu\)</span>. The symbol <span class="math inline">\(\mu_{\bar{x}}\)</span> is used to refer to the mean of the sampling distribution of the mean. Therefore, the formula for the mean of the sampling distribution of the mean can be written as:</p>
+<p>The mean of the sampling distribution of the mean is the mean of the population from which the scores were sampled (or the expected value of the random data generating process). Therefore, if a population has a mean <span class="math inline">\(\mu\)</span>, then the mean of the sampling distribution of the mean (<span class="math inline">\(\bar{x}\)</span>) is also <span class="math inline">\(\mu\)</span>. The symbol <span class="math inline">\(\mu_{\bar{x}}\)</span> is used to refer to the mean of the sampling distribution of the mean. Therefore, the formula for the mean of the sampling distribution of the mean can be written as:</p>
 <p><span class="math display">\[
 \mu_{\bar{x}} = \mu
 \]</span></p>
@@ -964,7 +966,7 @@ Figure&nbsp;8.4: Distribution of ranges for n = 3.
 <p><span class="math display">\[
 \sigma^2_{\bar{x}} = \frac{\sigma^2}{n}
 \]</span></p>
-<p>That is, the variance of the sampling distribution of the mean is the population variance divided by <span class="math inline">\(n\)</span>, the sample size (the number of scores used to compute a mean).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Thus, the larger the sample size, the smaller the variance of the sampling distribution of the mean.</p>
+<p>That is, the variance of the sampling distribution of the mean is the population variance divided by <span class="math inline">\(n\)</span>, the sample size (the number of scores used to compute a mean).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (If not sampling from a population, the variance of the probability distribution from which the random variable is drawn is used rather than the population variance.) Thus, the larger the sample size, the smaller the variance of the sampling distribution of the mean.</p>
 <p>As noted previously, the <strong>standard error</strong> of the mean is the standard deviation of the sampling distribution of the mean. It is therefore the square root of the variance of the sampling distribution of the mean and can be written as:</p>
 <p><span class="math display">\[
 \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
@@ -1005,7 +1007,7 @@ Figure&nbsp;8.6: A simulation of a sampling distribution. The parent population 
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-calculating-confidence-intervals"><span class="header-section-number">8.3</span> Calculating Confidence Intervals</h2>
 <section id="confidence-intervals-for-the-meansampling-distributions-4" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="confidence-intervals-for-the-meansampling-distributions-4"><span class="header-section-number">8.3.1</span> Confidence Intervals for the Mean<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h3>
-<p>When you compute a confidence interval on the mean, you compute the mean of a sample in order to estimate the mean of the population. Clearly, if you already knew the population mean, there would be no need for a confidence interval. However, to explain how confidence intervals are constructed, we are going to work backwards and begin by assuming characteristics of the population. Then we will show how sample data can be used to construct a confidence interval.</p>
+<p>When you compute a confidence interval on the mean, you compute the mean of a sample in order to estimate the mean of the population or the expected value. Clearly, if you already knew the population mean (expected value), there would be no need for a confidence interval. However, to explain how confidence intervals are constructed, we are going to work backwards and begin by assuming characteristics of the population. Then we will show how sample data can be used to construct a confidence interval.</p>
 <section id="an-artificial-example-using-the-normal-distribution" class="level4" data-number="8.3.1.1">
 <h4 data-number="8.3.1.1" class="anchored" data-anchor-id="an-artificial-example-using-the-normal-distribution"><span class="header-section-number">8.3.1.1</span> An Artificial Example: Using the Normal Distribution</h4>
 <p>Assume that the weights of 10-year-old children are normally distributed with a mean of 90 and a standard deviation of 36. What is the sampling distribution of the mean for a sample size of 9? Recall from <a href="#sec-sampling-distribution-of-the-mean" class="quarto-xref"><span>Section 8.2</span></a> that the mean of the sampling distribution is <span class="math inline">\(\mu\)</span> and the standard error of the mean is</p>
@@ -1056,7 +1058,7 @@ Figure&nbsp;8.8: 95% of the area is between -1.96 and 1.96.
 </figcaption>
 </figure>
 </div>
-<p>The confidence interval can then be computed as follows:</p>
+<p>The 95% confidence interval can then be computed as follows:</p>
 <p><span class="math display">\[
 \text{Lower limit} = 5 - (1.96)(1.118)= 2.81
 \]</span><span class="math display">\[
@@ -1082,7 +1084,7 @@ s^2 = 7.5
 <p><span class="math display">\[
 s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{\sqrt{7.5}}{\sqrt{5}} = 1.225
 \]</span></p>
-<p>The next step is to find the value of t. As shown in <a href="#tbl-abbrevttable" class="quarto-xref">Table&nbsp;<span>8.6</span></a> of the following section, the value for the 95% interval for df = n - 1 = 4 is 2.776. The confidence interval is then computed just as it is when <span class="math inline">\(\sigma_{\bar{x}}\)</span>. The only differences are that <span class="math inline">\(s_{\bar{x}}\)</span> and <span class="math inline">\(t\)</span> rather than <span class="math inline">\(\sigma_{\bar{x}}\)</span> and <span class="math inline">\(z\)</span> are used.</p>
+<p>The next step is to find the value of t. As shown in <a href="#tbl-abbrevttable" class="quarto-xref">Table&nbsp;<span>8.6</span></a> of the following section, the value for the 95% interval for df = n - 1 = 4 is 2.776. The confidence interval is then computed just as it is with <span class="math inline">\(\sigma_{\bar{x}}\)</span>. The only differences are that <span class="math inline">\(s_{\bar{x}}\)</span> and <span class="math inline">\(t\)</span> rather than <span class="math inline">\(\sigma_{\bar{x}}\)</span> and <span class="math inline">\(z\)</span> are used.</p>
 <p><span class="math display">\[
 \text{Lower limit} = 5 - (2.776)(1.225) = 1.60
 \]</span><span class="math display">\[
@@ -1104,13 +1106,13 @@ Table&nbsp;8.5: Response times in seconds for 10 subjects.
 <div aria-describedby="tbl-responsetime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 22%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1386,8 +1388,26 @@ Figure&nbsp;8.11: A scatter plot of the example data.
 <p><span class="math display">\[ \text{Lower limit} = 0.425 - (3.182)(0.305) = -0.55 \]</span><span class="math display">\[ \text{Upper limit} = 0.425 + (3.182)(0.305) = 1.40 \]</span></p>
 </section>
 </section>
-<section id="exercisessampling-distributions-12" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="exercisessampling-distributions-12"><span class="header-section-number">8.4</span> Exercises<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></h2>
+<section id="sec-significance-test-for-a-regression-slope-coefficient" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sec-significance-test-for-a-regression-slope-coefficient"><span class="header-section-number">8.4</span> Calcuating P-Values<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></h2>
+<p>Now that we’ve learned about sampling distributions, we can fill in the details of how p-values are calculated. Let’s start by revisiting the first type of hypothesis test we encountered in this textbook: testing for the significance of a regression slope coefficient (<a href="correlation.html#sec-quick-guide-to-interpreting-regression-results" class="quarto-xref"><span>Section 3.5</span></a>).</p>
+<p>The appropriate type of significance test in the case of the regression coefficients we have learned about is a t test. The general formula for computing a t statistic is:</p>
+<p><span class="math display">\[
+t = \frac{\text{point estimate - hypothesized value}}{\text{estimated standard error of point estimate}}
+\]</span></p>
+<p>As applied to the case of the slope in a simple regression, the point estimate is the sample value of the slope coefficient (<span class="math inline">\(\hat{\beta}\)</span>). The hypothesized value comes from our null hypothesis and is typically 0, meaning we want to test a null hypothesis of no relationship between the independent and dependent variables.</p>
+<p>Just as when we generated a confidence interval for the slope coefficient in the prior section, the degrees of freedom for this t test is n-2. We also use the same calculation for the estimated standard error (again, see Appendix II).</p>
+<p>With our example from the prior section, we had a sample slope coefficient (<span class="math inline">\(\hat{\beta}\)</span>) of 0.425, an estimated standard error (<span class="math inline">\(s_{\beta}\)</span>) of 0.305, and a sample size of 5. Given these numbers and a hypothesized value of 0:</p>
+<p><span class="math display">\[
+t = \frac{0.425-0}{0.305} = 1.39
+\]</span> <span class="math display">\[
+df = n-2 = 5-2 = 3.
+\]</span></p>
+<p>From software or a t-distribution calculator, we find that with these values of <span class="math inline">\(t\)</span> and <span class="math inline">\(df\)</span>, the two-tailed p-value is 0.26. Therefore, the slope is not significantly different from 0 under this example.</p>
+<p>Appendix III provides further examples of how p-values are calculated, including for a one-tailed test. Details for other types of analysis can be found in various sources, including the free online text on which this chapter is based (<a href="https://onlinestatbook.com/2/tests_of_means/difference_means.html">difference of means</a>, <a href="https://onlinestatbook.com/2/analysis_of_variance/one-way.html">ANOVA</a>, <a href="https://onlinestatbook.com/2/chi_square/Chi_Square.html">Chi Square tests</a>)</p>
+</section>
+<section id="exercisessampling-distributions-13" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="exercisessampling-distributions-13"><span class="header-section-number">8.5</span> Exercises<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></h2>
 <ol type="1">
 <li><p>A population has a mean of 50 and a standard deviation of 6. (a) What are the mean and standard deviation of the sampling distribution of the mean for N = 16? (b) What are the mean and standard deviation of the sampling distribution of the mean for N = 20?</p></li>
 <li><p>What term refers to the standard deviation of the sampling distribution?</p></li>
@@ -1401,8 +1421,8 @@ Figure&nbsp;8.11: A scatter plot of the example data.
 <li><p>Suppose I am conducting a two-sample difference of means test (a t-test) with a large sample size, and I obtain a t-score of -3.4. What conclusion do I reach?</p></li>
 </ol>
 </section>
-<section id="sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-13"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix I: Degrees of Freedom<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></h2>
+<section id="sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-14" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-i-degrees-of-freedomsampling-distributions-14"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix I: Degrees of Freedom<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></h2>
 <p>Some estimates are based on more information than others. For example, an estimate of the variance based on a sample size of 100 is based on more information than an estimate of the variance based on a sample size of 5. The <strong>degrees of freedom (df)</strong> of an estimate is the number of independent pieces of information on which the estimate is based.</p>
 <p>As an example, let’s say that we know that the mean height of Martians is 6 and wish to estimate the variance of their heights. We randomly sample one Martian and find that its height is 8. Recall that the variance is defined as the mean squared deviation of the values from their population mean. We can compute the squared deviation of our value of 8 from the population mean of 6 to find a single squared deviation from the mean. This single squared deviation from the mean, (8-6)<sup>2</sup> = 4, is an estimate of the mean squared deviation for all Martians. Therefore, based on this sample of one, we would estimate that the population variance is 4. This estimate is based on a single piece of information and therefore has 1 df. If we sampled another Martian and obtained a height of 5, then we could compute a second estimate of the variance, (5-6)<sup>2</sup> = 1. We could then average our two estimates (4 and 1) to obtain an estimate of 2.5. Since this estimate is based on two independent pieces of information, it has two degrees of freedom. The two estimates are independent because they are based on two independently and randomly selected Martians. The estimates would not be independent if after sampling one Martian, we decided to choose its brother as our second Martian.</p>
 <p>As you are probably thinking, it is pretty rare that we know the population mean when we are estimating the variance. Instead, we have to first estimate the population mean (<span class="math inline">\(\mu\)</span>) with the sample mean (<span class="math inline">\(\bar{x}\)</span>). The process of estimating the mean affects our degrees of freedom as shown below.</p>
@@ -1418,8 +1438,8 @@ Figure&nbsp;8.11: A scatter plot of the example data.
 <p>The denominator of this formula is the degrees of freedom.</p>
 <p>So far, we’ve mainly seen examples where the degrees of freedom is equal to n - 1. But as we saw in <a href="#sec-confidence-interval-for-a-regression-slope-coefficient" class="quarto-xref"><span>Section 8.3.3</span></a>, the degrees of freedom can also be equal to other values such as n - 2. In the case of constructing a confidence interval for a coefficient from a multiple regression with four independent variables, the degrees of freedom will generally be equal to n - 5. The exact formula for degrees of freedom depends on what we are estimating.</p>
 </section>
-<section id="sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-14"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix II: Estimating the Standard Error of a Regression Slope<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></h2>
+<section id="sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-15" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-ii-estimating-the-standard-error-of-a-regression-slopesampling-distributions-15"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix II: Estimating the Standard Error of a Regression Slope<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></h2>
 <p>Note that in this appendix, I depart from my notation throughout the rest of the book by using uppercase letters (<span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>) to refer to our variables of interest, in order to allow for lowercase letters (<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>) to refer to a transformed (mean-centered) version of these variables. This will simplify some of the presentation of material.</p>
 <p>This appendix shows how to compute the estimated standard error for the slope of a simple linear regression. The estimated standard error of <span class="math inline">\(\beta\)</span> is computed using the following formula:</p>
 <p><span class="math display">\[
@@ -1427,7 +1447,7 @@ s_{\beta} = \frac{s_{est}}{\sqrt{SSX}}
 \]</span></p>
 <p>where <span class="math inline">\(s_{\beta}\)</span> is the estimated standard error of <span class="math inline">\(\beta\)</span>, <span class="math inline">\(s_{est}\)</span> is the standard error of the estimate, and <span class="math inline">\(SSX\)</span> is the sum of squared deviations of <span class="math inline">\(X\)</span> from the mean of <span class="math inline">\(X\)</span>. <span class="math inline">\(SSX\)</span> is calculated as:</p>
 <p><span class="math display">\[
-SSX = \sum_{i=1}^n {(x_i-\bar{x})^2}
+SSX = \sum_{i=1}^n {(X_i-\bar{X})^2}
 \]</span></p>
 <p>where <span class="math inline">\(\bar{X}\)</span> is the mean of <span class="math inline">\(X\)</span>. The standard error of the estimate can be calculated as:</p>
 <p><span class="math display">\[
@@ -1523,6 +1543,383 @@ s_{est} = \sqrt{\frac{(1-(0.6268)^2)(4.597)}{5-2}} = \sqrt{\frac{2.791}{3}} = 0.
 <p><span class="math display">\[
 s_{\beta} = \frac{0.964}{\sqrt{10}} = 0.305
 \]</span></p>
+</section>
+<section id="sec-sampling-distributions-appendix-iii-testing-a-single-meansampling-distributions-16" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-sampling-distributions-appendix-iii-testing-a-single-meansampling-distributions-16"><a href="#sec-sampling-distributions" class="quarto-xref"><span>Chapter 8</span></a> Appendix III: Testing a Single Mean<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></h2>
+<p>The way we calculate the probability (<span class="math inline">\(p\)</span>) value for a hypothesis test depends on what type of statement is made in our null hypothesis. Normally, statistical software will automatically compute a p value behind the scenes, but we still want to learn a bit about how the software comes up with this value. To illustrate what these calculations can look like, this section will focus on what to do if we want to test a null hypothesis stating that the population mean is equal to some hypothesized value. For example, suppose an experimenter wanted to know if people are influenced by a subliminal message and performed the following experiment. Each of nine subjects is presented with a series of 100 pairs of pictures, and for each pair they are asked to select one. As a pair of pictures is presented, a subliminal message is presented suggesting the picture that the subject should choose. The question is whether the (population) mean number of times the suggested picture is chosen is equal to 50 (the number we would expect if subliminal messages have no effect). In other words, the null hypothesis is that the population mean (<span class="math inline">\(\mu\)</span>) is 50. The (hypothetical) data are shown in <a href="#tbl-scoredist" class="quarto-xref">Table&nbsp;<span>8.8</span></a>. The data in <a href="#tbl-scoredist" class="quarto-xref">Table&nbsp;<span>8.8</span></a> have a sample mean (<span class="math inline">\(\bar{X}\)</span>) of 51. Thus the sample mean differs from the hypothesized population mean by 1.</p>
+<div id="tbl-scoredist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scoredist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.8: Distribution of scores.
+</figcaption>
+<div aria-describedby="tbl-scoredist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Frequency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">49</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">57</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The significance test consists of computing the probability of a sample mean differing from <span class="math inline">\(\mu\)</span> by one (the difference between the hypothesized population mean and the sample mean) or more. The first step is to determine the sampling distribution of the mean. As we learned in the prior chapter, the mean and standard deviation of the sampling distribution of the mean are</p>
+<p><span class="math display">\[
+\mu_{\bar{x}} = \mu
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+\]</span></p>
+<p>respectively. It is clear that if the null hypothesis is true, <span class="math inline">\(\mu_{\bar{x}}\)</span> = 50. In order to compute the standard deviation of the sampling distribution of the mean, we have to know the population standard deviation (<span class="math inline">\(\sigma\)</span>).</p>
+<p>The current example was constructed to be one of the few instances in which the standard deviation is known. In practice, it is very unlikely that you would know <span class="math inline">\(\sigma\)</span> and therefore you would use <span class="math inline">\(s\)</span>, the sample estimate of <span class="math inline">\(\sigma\)</span>. However, it is instructive to see how the probability is computed if <span class="math inline">\(\sigma\)</span> is known before proceeding to see how it is calculated when <span class="math inline">\(\sigma\)</span> is estimated.</p>
+<p>For the current example, if the null hypothesis is true, then based on a well-established formula for the binomial distribution, one can compute that the variance of the number correct is</p>
+<p><span class="math display">\[
+\sigma^2 = N \pi (1-\pi) = 100(0.5)(1-0.5) = 25
+\]</span></p>
+<p>where <span class="math inline">\(N\)</span> is the number of times a subject makes a selection between two pictures. Therefore, <span class="math inline">\(\sigma\)</span> = 5 (since <span class="math inline">\(\sigma = \sqrt{\sigma^2}=\sqrt{25}=5\)</span>). For a <span class="math inline">\(\sigma\)</span> of 5 and an <span class="math inline">\(n\)</span> of 9, the standard deviation of the sampling distribution of the mean is <span class="math inline">\(5/\sqrt{9} = 1.667\)</span>. Recall that the standard deviation of a sampling distribution is called the standard error.</p>
+<p>To recap, we wish to know the probability of obtaining a sample mean of 51 or greater assuming the null hypothesis is true. If the null hypothesis is true, the sampling distribution of the mean has a mean of 50 and a standard deviation of 1.667. To compute the relevant probability, we will make the assumption that the sampling distribution of the mean is normally distributed. We can then use a normal distribution calculator as shown in <a href="#fig-prsamplemean_1tail" class="quarto-xref">Figure&nbsp;<span>8.12</span></a>.</p>
+<div id="fig-prsamplemean_1tail" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prsamplemean_1tail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/h-tests/prsamplemean_1tail.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prsamplemean_1tail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.12: Probability of a sample mean being 51 or greater.
+</figcaption>
+</figure>
+</div>
+<p>Notice that the mean is set to 50, the standard deviation to 1.667, and the area above 51 is requested and shown to be 0.274.</p>
+<p>Therefore, the probability of obtaining a sample mean of 51 or larger is 0.274. Since a mean of 51 or higher is not unlikely under the assumption that the subliminal message has no effect, the effect is not significant and the null hypothesis is not rejected.</p>
+<p>The test conducted above was a one-tailed test because it computed the probability of a sample mean being one or more points higher than the hypothesized mean of 50 and the area computed was the area above 51. To test the two-tailed hypothesis, you would compute the probability of a sample mean differing by one or more in either direction from the hypothesized mean of 50. You would do so by computing the probability of a mean being less than or equal to 49 or greater than or equal to 51.</p>
+<p>The results from a normal distribution calculator are shown in <a href="#fig-prsamplemean_2tail" class="quarto-xref">Figure&nbsp;<span>8.13</span></a>.</p>
+<div id="fig-prsamplemean_2tail" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prsamplemean_2tail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/h-tests/prsamplemean_2tail.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prsamplemean_2tail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.13: Probability of a sample mean being less than or equal to 49 or greater than or equal to 51.
+</figcaption>
+</figure>
+</div>
+<p>As you can see, the probability is 0.548 which, as expected, is twice the probability of 0.274 shown in <a href="#fig-prsamplemean_1tail" class="quarto-xref">Figure&nbsp;<span>8.12</span></a>.</p>
+<p>Before normal calculators such as the one illustrated above were widely available, probability calculations were made based on the standard normal distribution (which also maps to how we conduct t tests). This was done by computing <span class="math inline">\(z\)</span> based on the formula</p>
+<p><span class="math display">\[
+z = \frac{\bar{x}-\mu_0}{\sigma_{\bar{x}}}
+\]</span></p>
+<p>where <span class="math inline">\(z\)</span> is the value on the standard normal distribution, <span class="math inline">\(\bar{x}\)</span> is the sample mean, <span class="math inline">\(\mu_0\)</span> is the hypothesized value of the mean (under the null hypothesis),<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> and <span class="math inline">\(\sigma_{\bar{x}}\)</span> is the standard error of the mean. For this example, <span class="math inline">\(z\)</span> = (51-50)/1.667 = 0.60. Use a normal calculator, with a mean of 0 and a standard deviation of 1, as shown below.</p>
+<div id="fig-standardnormdistcalc.png" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-standardnormdistcalc.png-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/h-tests/standardnormdistcalc.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-standardnormdistcalc.png-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.14: Calculation using the standardized normal distribution.
+</figcaption>
+</figure>
+</div>
+<p>Notice that the probability (the shaded area) is the same as previously calculated (for the one-tailed test).</p>
+<p>As noted, in real-world data analyses it is very rare that you would know <span class="math inline">\(\sigma\)</span> and wish to estimate <span class="math inline">\(\mu\)</span>. Typically <span class="math inline">\(\sigma\)</span> is not known and is estimated in a sample by s, and <span class="math inline">\(\sigma_{\bar{x}}\)</span> is estimated by <span class="math inline">\(s_{\bar{x}}\)</span>. For our next example, we will consider the data in the “ADHD Treatment” case study.<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> These data consist of the scores of 24 children with ADHD on a delay of gratification (DOG) task. Each child was tested under four dosage levels. <a href="#tbl-dogscores" class="quarto-xref">Table&nbsp;<span>8.9</span></a> shows the data for the placebo (0 mg) and highest dosage level (0.6 mg) of methylphenidate. Of particular interest here is the column labeled “Diff” that shows the difference in performance between the 0.6 mg (D60) and the 0 mg (D0) conditions. These difference scores are positive for children who performed better in the 0.6 mg condition than in the control condition and negative for those who scored better in the control condition. If methylphenidate has a positive effect, then the mean difference score in the population will be positive. The null hypothesis is that the mean difference score in the population is 0.</p>
+<div id="tbl-dogscores" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dogscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.9: DOG scores as a function of dosage.
+</figcaption>
+<div aria-describedby="tbl-dogscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>D0</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>D60</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Diff</strong></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">57</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">77</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-11</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">57</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">54</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>To test this null hypothesis, we compute what we call a t statistic (as opposed to a z statistic) because we will compare this value to the t distribution—a distribution which allows for accurate inferences when <span class="math inline">\(\sigma\)</span> is estimated rather than known (see <a href="#sec-more-about-the-t-distribution" class="quarto-xref"><span>Section 8.3.2</span></a>). We compute t using a special case of the following formula:</p>
+<p><span class="math display">\[
+\text{t} = \frac{\text{point estimate} -\text{hypothesized value}}{\text{estimated standard error of point estimate}}
+\]</span></p>
+<p>The special case of this formula applicable to testing a single mean is</p>
+<p><span class="math display">\[
+\text{t} = \frac{\bar{x}-\mu_0}{s_{\bar{x}}}
+\]</span></p>
+<p>where <span class="math inline">\(t\)</span> is the value we compute for the significance test, <span class="math inline">\(\bar{x}\)</span> is the sample mean, <span class="math inline">\(\mu_0\)</span> is the hypothesized value of the population mean, and <span class="math inline">\(s_{\bar{x}}\)</span> is the estimated standard error of the mean. Notice the similarity of this formula to the formula for <span class="math inline">\(z\)</span> we saw before.</p>
+<p>In the previous example, we assumed that the scores were normally distributed. In this case, it is the population of difference scores that we assume to be normally distributed.</p>
+<p>The mean (<span class="math inline">\(\bar{x}\)</span>) of the n = 24 difference scores is 4.958, the hypothesized value of <span class="math inline">\(\mu\)</span> is 0, and the standard deviation (s) is 7.538. The estimate of the standard error of the mean is computed as:</p>
+<p><span class="math display">\[
+s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{7.5382}{\sqrt{24}} = 1.54
+\]</span></p>
+<p>Therefore, t = 4.96/1.54 = 3.22. The probability value for t depends on the degrees of freedom. The number of degrees of freedom is equal to n - 1 = 23. As shown below, a t distribution calculator finds that the probability of a t less than -3.22 or greater than 3.22 is only 0.0038. Therefore, if the drug had no effect, the probability of finding a difference between means as large or larger (in either direction) than the difference found is very low. Therefore the null hypothesis that the population mean difference score is zero can be rejected. The conclusion is that the population mean for the drug condition is higher than the population mean for the placebo condition.</p>
+<div id="fig-tdistcalc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tdistcalc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/h-tests/tdistcalc.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tdistcalc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.15: Calculation using the t distribution.
+</figcaption>
+</figure>
+</div>
+<p>In order to conduct this hypothesis test, we made the following <em>assumptions</em>:</p>
+<ol type="1">
+<li><p>Each value is sampled independently from each other value.</p></li>
+<li><p>The values are sampled from a normal distribution.</p></li>
+</ol>
 
 
 </section>
@@ -1540,9 +1937,13 @@ s_{\beta} = \frac{0.964}{\sqrt{10}} = 0.305
 <li id="fn9"><p><a href="https://onlinestatbook.com/2/calculators/inverse_t_dist.html" class="uri">https://onlinestatbook.com/2/calculators/inverse_t_dist.html</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p><a href="https://onlinestatbook.com/2/calculators/t_dist.html" class="uri">https://onlinestatbook.com/2/calculators/t_dist.html</a><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>This section is adapted from David M. Lane. “Inferential Statistics for b and r.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferent</a><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Questions 1-5 adapted from David M. Lane. “Exercises.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/sampling_distributions/ch7_exercises.html" class="uri">https://onlinestatbook.com/2/sampling_distributions/ch7_exercises.html</a><a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>This section is adapted from David M. Lane. “Degrees of Freedom.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/estimation/df.html" class="uri">https://onlinestatbook.com/2/estimation/df.html</a><a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn14"><p>This section is adapted from David M. Lane. “Inferential Statistics for b and r.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferent</a><a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>This section is adapted from David M. Lane. “Inferential Statistics for b and r.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferent</a><a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Questions 1-5 adapted from David M. Lane. “Exercises.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/sampling_distributions/ch7_exercises.html" class="uri">https://onlinestatbook.com/2/sampling_distributions/ch7_exercises.html</a><a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>This section is adapted from David M. Lane. “Degrees of Freedom.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/estimation/df.html" class="uri">https://onlinestatbook.com/2/estimation/df.html</a><a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>This section is adapted from David M. Lane. “Inferential Statistics for b and r.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferent</a><a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>This section is adapted from David M. Lane. “Testing a Single Mean.” <em>Online Statistics Education: A Multimedia Course of Study</em>. <a href="https://onlinestatbook.com/2/tests_of_means/single_mean.html" class="uri">https://onlinestatbook.com/2/tests_of_means/single_mean.html</a><a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>The subscript <span class="math inline">\(_0\)</span> in <span class="math inline">\(\mu_0\)</span> (the population mean according to the null hypothesis) corresponds to how we typically represent the null hypothesis: <span class="math inline">\(H_0\)</span>.<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p><a href="https://onlinestatbook.com/2/case_studies/adhd.html" class="uri">https://onlinestatbook.com/2/case_studies/adhd.html</a><a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
