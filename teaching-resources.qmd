@@ -2,6 +2,10 @@
 
 If you're using this text, I'd love to know. You can fill out this brief form (<https://forms.gle/qBUFdb4vEuDUkzBu6>), where you can also sign up to receive emails when I post updated versions or related materials.
 
+## Answers to Exercises
+
+Please email me (find my address at <https://nathanfavero.com>) from your institutional email address to request an answer key. I may ask for verification that you are a course instructor.
+
 ## Stata/R Labs
 
 I've created a number of Stata and R labs that I use when I teach. There are also some handouts, including a couple covering Excel. Such resources are available here: <https://github.com/favero-nate/minus-the-math/tree/main/labs>
