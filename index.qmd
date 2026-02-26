@@ -5,7 +5,7 @@
 ![](cover.png)
 :::
 
-[Click here for a PDF version](Statistics-Minus-The-Math.pdf) of this book.
+[Click here for a PDF version](Statistics-Minus-The-Math--2e-.pdf) of this book.
 ::::
 
 *Note: This is now a complete draft of the second edition, which should be usable. However, some chapters have not yet been carefully proof-read. Small updates will therefore be made to this edition in the coming months, and the main domain ([minusthemath.com](https://minusthemath.com/)) will be configured to point to this version sometimes in Summer 2026. If you prefer to continue using the first edition, it will be preserved at this URL: <https://minusthemath.com/1e>.*
