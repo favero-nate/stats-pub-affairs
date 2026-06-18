@@ -16,8 +16,10 @@ While they do not directly correspond to this version of the text, there are som
 
 ## A Few More Details about What's Unique in this Text
 
-1.  There is a bit of Stata code in one appendix (@sec-qual-associations), but otherwise all examples are presented apart from any statistical software package.
+1.  My own assessment is that this text is compatible with the highly-regarded 2016 Guidelines for Assessment and Instruction in Statistics Education (GAISE) College Report, as well as the new guidance currently described in the ongoing revision that has yet to be finalized (<https://amstat.quarto.pub/college-gaise/>). Some of the guidelines go beyond what a textbook will directly cover, describing course pedagogy and assessment. Use of software/apps is also not embedded in this text, with the intent that instructors can choose the particular software that best matches their program needs. Please see the above-linked guidelines for ideas about how to best approach teaching a course that uses this book.
 
-2.  The treatment of probability theory skips much of the typical material in favor of discussing probabilistic modeling, which I believe is far more relevant to quantitative social science.
+2.  There is a bit of Stata code in one appendix (@sec-qual-associations), but otherwise all examples are presented apart from any statistical software package.
 
-3.  In addition to traditional statistical inference ideas that describe estimating parameters of population from a sample, I emphasize that we often use inference to draw conclusions about counterfactuals. This approach is informed by Kass (2011): <https://doi.org/10.1214%2F10-STS337>
+3.  The treatment of probability theory skips much of the typical material in favor of discussing probabilistic modeling, which I believe is far more relevant to quantitative social science. (I also note alignment here with the aforementioned GAISE College Reports, which have long recommended de-emphasis of probability theory in teaching college-level introductory statistics.)
+
+4.  In addition to traditional statistical inference ideas that describe estimating parameters of population from a sample, I emphasize that we often use inference to draw conclusions about counterfactuals. This approach is informed by Kass (2011): <https://doi.org/10.1214%2F10-STS337>
