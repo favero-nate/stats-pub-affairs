@@ -40,6 +40,20 @@ Fortunately, we can create what is called a binned scatter plot. Rather than plo
 
 [^correlation-2]: US National Longitudinal Survey of Young Women (NLSW), 1988 extract. Accessed via Stata.
 
+### Interpreting the Strength of a Correlation
+
+@tbl-corr-benchmarks provides example language we might use to describe the strength of a relationship based on a correlation coefficient. For example, a correlation of -0.42 can be considered "moderate" while a correlation of 0.23 can be called "weak." However, the labels from the table should only be considered rough guidelines. As with many other aspects of statistics, the context of the data should really inform our interpretation. For example, many areas of social science focus on aspects of human behavior that are difficult to explain, such as how attitudes are linked to many behaviors.[^correlation-3] In such contexts, it may be somewhat rare to find a correlation outside the narrow range of -0.2 to 0.2. Someone doing analysis in one of these contexts might therefore reasonably describe a correlation of 0.3 as "strong," given that the correlation is indeed strong *relative* to most other correlations in that context. This is a bit like how the way we use the term "big" changes based on context (e.g., a big insect is still a small creature in the forest).
+
+[^correlation-3]: Bosco, F. A., Aguinis, H., Singh, K., Field, J. G., & Pierce, C. A. (2015). Correlational effect size benchmarks. *Journal of applied psychology*, *100*(2), 431.
+
+|   | Strong | Moderate | Weak | Mostly Unrelated | Weak | Moderate | Strong |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| **r** | -1.0 to -0.6 | -0.5 to -0.3 | -0.2 to -0.1 | Rounding to 0.0 | 0.1 to 0.2 | 0.3 to 0.5 | 0.6 to 1.0 |
+
+: Example language to interpret the strength of a correlation, based roughly on Cohen's effect size benchmarks {#tbl-corr-benchmarks}
+
+If you're interested in learning more about exactly how the values of a correlation are calculated, further details are provided in Appendix I.
+
 ## Straight Lines and Measuring Correlation
 
 There are multiple types of correlation coefficients, but the one we've been using is Pearson's correlation coefficient. It is the most widely used and the one that is implied when people refer to a "correlation coefficient" without further clarification. Pearson's correlation coefficient describes the *linear* relationship between two variables, so it indicates strength of association by telling us how closely the data follow a straight line. A value of 1 or -1 means that the data fall perfectly along a straight line. The closer the absolute value of the Pearson’s correlation is to 1, the better the data track with a straight line. The closer the correlation is to 0, the more the data defy any pattern conducive to us drawing an upward or downward sloping line through them (the data may still appear to follow a perfectly flat line).
@@ -53,69 +67,6 @@ Because Pearson's correlation measures *linear* relationships, data that perfect
 ![A scatter plot of a variable and its log transformation, r=0.79](Images/correlations/log_transform_scatterplot.png){#fig-log-transform-scatterplot width="400"}
 
 One implication of relying on a measure of linear association is that a correlation of 0 can mask non-linear relationships. Specifically, a Pearson's correlation of 0 indicates that there is no linear association between two variables, but it is still possible for a relationship between variables to exist that cannot be approximated meaningfully with a straight line. This is one reason it is usually helpful during analysis to inspect data visually in addition to observing numerical summaries. Doing so may reveal patterns that standard statistics (like Pearson's correlation) are not well equipped to handle. In @sec-regression, we will learn more about ways to build statistical models for non-linear relationships.
-
-## How Correlation is Calculated {#sec-how-correlation-is-calculated}
-
-There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus here on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
-
-Here is one way to calculate correlation:
-
-$$ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \left( \frac{y_i-\mu_y}{\sigma_y} \right) $$ {#eq-pop-corr}
-
-Let's try to make sense of @eq-pop-corr by breaking it up into parts, starting from within the summation.
-
-$\left( \frac{x_i-\mu_x}{\sigma_x} \right)$ looks like the formula for standardization we learned last chapter, except now we have added some subscripts because we are working in the context of two different variables: $x$ and $y$. Adding $x$ as a subscript to $\mu$ and $\sigma$ clarifies that we are referring to the mean and standard deviation of $x$. With this part of the equation, we are converting the values of $x$ to z-scores. We can use $z_x$ to indicate z-scores of $x$, and we can use $z_{x_i}$ to indicate that we are describing the z-score of $x$ for observation $i$:
-
-$$z_{x_i} = \frac{x_i-\mu_x}{\sigma_x}$$
-
-Similarly, the second set of parentheses in @eq-pop-corr indicates that we should generate z-scores for $y$:
-
-$$z_{y_i} = \frac{y_i-\mu_y}{\sigma_y}$$
-
-Thus, we can re-write @eq-pop-corr as:
-
-$$
-\rho =\frac{1}{N} \sum_{i=1}^{N} z_{x_i} z_{y_i}=\frac{\sum_{i=1}^{N} z_{x_i} z_{y_i}}{N} 
-$$
-
-This makes it clear that after standardizing our two variables ($x$ and $y$), we multiply them together and then take the average of this product across all observations $i$ in our dataset to find the correlation.
-
-::: {.callout-tip icon="false"}
-## Example: Correlation of Political Stability with Urban Population {.unnumbered}
-
-@tbl-corr-data-excerpt shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.
-
-In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-3] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
-
-| id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
-| 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
-| 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |
-| 4 | American Samoa | 1.22 | 87.15 | 1.25 | 1.13 | 1.41 |
-| 5 | Andorra | 1.42 | 88.06 | 1.45 | 1.17 | 1.69 |
-| 6 | Angola | -0.34 | 65.51 | -0.30 | 0.22 | -0.07 |
-| 7 | Antigua and Barbuda | 0.84 | 24.60 | 0.87 | -1.50 | -1.31 |
-| 8 | Argentina | 0.01 | 91.87 | 0.04 | 1.33 | 0.06 |
-| 9 | Armenia | -0.44 | 63.15 | -0.41 | 0.12 | -0.05 |
-| ... | ... | ... | ... | ... | ... | ... |
-| **Mean** |  | -0.03 | 60.26 | 0.00 | 0.00 | **0.36** |
-| N=204 |  |  |  |  |  |  |
-
-: Excerpt of data for example of calculating correlation {#tbl-corr-data-excerpt}
-
-This same data is depicted in @fig-scatterplot-quadrants, with `id` numbers used to plot the 9 observations shown in @tbl-corr-data-excerpt; the remainder of the observations are plotted as circles.
-
-![Scatter plot with horizontal and vertical lines depicting means; initial countries are plotted using IDs rather than dots](Images/correlations/scatterplot_quadrants.png){#fig-scatterplot-quadrants width="450"}
-
-Let's consider some of the mechanics underlying the calculation of correlation coefficients. By transforming values to z-scores, we indicate where each observation lies relative to the variable's mean. A positive z-score indicates that the original value of the variable is above the mean while a negative z-score tells us it is below the mean. Visually, we can also see this in @fig-scatterplot-quadrants, where a vertical line indicates the mean of `urban` and a horizontal line marks the mean for `stability`. This divides the observations into four quadrants. The observations in the upper-right quadrant (including observations 2, 4, 5, and 8) have positive z-scores for both variables. Multiplying two positive values results in a positive value, so all observations in this quadrant also have a positive value in the final column of the spreadsheet previewed in @tbl-corr-data-excerpt. The bottom-left quadrant contains observations that have both below-average political stability and a below-average urban population (e.g., observation 1). Since this results in two negative z-scores being multiplied together (and the product of two negative numbers is always positive), we again see positive values in the final column of the spreadsheet. The two remaining quadrants will yield negative values in the final column because one z-score will be negative and the other positive (and the product of a negative and a positive number is negative). The upper-left quadrant has below-average values (negative z-scores) for `urban` but above-average values (positive z-scores) for `stability` (e.g., observation 7). In the bottom-right quadrant, the share of the population that is urban is above average but stability is below average (e.g., observations 3, 6, and 9).
-
-Since the correlation is the mean of the final column, we can imagine the observations with positive values in the final column "pushing" the correlation toward a positive value while the observations with negative products "push" the correlation toward a negative value. From @fig-scatterplot-quadrants, we can see that there are more observations in the two quadrants yielding positive products (upper-right and bottom-left) than in the two "negative" quadrants (upper-left and bottom-right). Thus, it should come as no surprise that the correlation is positive (0.36).
-:::
-
-[^correlation-3]: Note that standardizing was accomplished using the population variance formula, in order to match the calculation of the mean for the final column, which divides by N rather than n - 1.
-
-As illustrated in the example above, multiplying two standardized values together results in a positive value any time both variables are above average. This maps neatly to our conceptual definition of a positive relationship: when values of x tend to be higher (above average), values of y also tend to be higher (above average). Thus, finding above-average values for x being paired with above-average values of y (the upper-right quadrant) is consistent with the notion of a positive relationship (as are below-average x values paired with below-average y values, the lower-left quadrant). A negative relationship means that higher values of x (above average) tend to go with lower values for y (below average), so the combination of a positive z-score for x and a negative z-score for y (or vice versa) is consistent with a negative relationship.
 
 ## Introduction to Linear Regression {#sec-introduction-to-linear-regression}
 
@@ -252,7 +203,68 @@ Remember that the three S's are just a starting point. But they should be enough
 
 8.  Suppose I am studying two variables (x and y), and I discover that their correlation is -0.7. If I then run a regression with x and y, what can I say ahead of time about the slope coefficient that I will find?
 
-## @sec-correlation Appendix: Formulas for Correlation, Covariance, and Regression Coefficients {.unnumbered}
+## @sec-correlation Appendix I: How Correlation is Calculated {.unnumbered}
+
+There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus here on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the next appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
+
+Here is one way to calculate correlation:
+
+$$ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \left( \frac{y_i-\mu_y}{\sigma_y} \right) $$
+
+Let's try to make sense of @eq-pop-corr by breaking it up into parts, starting from within the summation.
+
+$\left( \frac{x_i-\mu_x}{\sigma_x} \right)$ looks like the formula for standardization we learned last chapter, except now we have added some subscripts because we are working in the context of two different variables: $x$ and $y$. Adding $x$ as a subscript to $\mu$ and $\sigma$ clarifies that we are referring to the mean and standard deviation of $x$. With this part of the equation, we are converting the values of $x$ to z-scores. We can use $z_x$ to indicate z-scores of $x$, and we can use $z_{x_i}$ to indicate that we are describing the z-score of $x$ for observation $i$:
+
+$$z_{x_i} = \frac{x_i-\mu_x}{\sigma_x}$$
+
+Similarly, the second set of parentheses in @eq-pop-corr indicates that we should generate z-scores for $y$:
+
+$$z_{y_i} = \frac{y_i-\mu_y}{\sigma_y}$$
+
+Thus, we can re-write @eq-pop-corr as:
+
+$$ \rho =\frac{1}{N} \sum_{i=1}^{N} z_{x_i} z_{y_i}=\frac{\sum_{i=1}^{N} z_{x_i} z_{y_i}}{N}  $$
+
+This makes it clear that after standardizing our two variables ($x$ and $y$), we multiply them together and then take the average of this product across all observations $i$ in our dataset to find the correlation.
+
+::: {.callout-tip icon="false"}
+## Example: Correlation of Political Stability with Urban Population {.unnumbered}
+
+@tbl-corr-data-excerpt shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.
+
+In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-10] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
+
+| id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
+| 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
+| 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |
+| 4 | American Samoa | 1.22 | 87.15 | 1.25 | 1.13 | 1.41 |
+| 5 | Andorra | 1.42 | 88.06 | 1.45 | 1.17 | 1.69 |
+| 6 | Angola | -0.34 | 65.51 | -0.30 | 0.22 | -0.07 |
+| 7 | Antigua and Barbuda | 0.84 | 24.60 | 0.87 | -1.50 | -1.31 |
+| 8 | Argentina | 0.01 | 91.87 | 0.04 | 1.33 | 0.06 |
+| 9 | Armenia | -0.44 | 63.15 | -0.41 | 0.12 | -0.05 |
+| ... | ... | ... | ... | ... | ... | ... |
+| **Mean** |  | -0.03 | 60.26 | 0.00 | 0.00 | **0.36** |
+| N=204 |  |  |  |  |  |  |
+
+: Excerpt of data for example of calculating correlation {#tbl-corr-data-excerpt}
+
+This same data is depicted in @fig-scatterplot-quadrants, with `id` numbers used to plot the 9 observations shown in @tbl-corr-data-excerpt; the remainder of the observations are plotted as circles.
+
+![Scatter plot with horizontal and vertical lines depicting means; initial countries are plotted using IDs rather than dots](Images/correlations/scatterplot_quadrants.png){#fig-scatterplot-quadrants width="450"}
+
+Let's consider some of the mechanics underlying the calculation of correlation coefficients. By transforming values to z-scores, we indicate where each observation lies relative to the variable's mean. A positive z-score indicates that the original value of the variable is above the mean while a negative z-score tells us it is below the mean. Visually, we can also see this in @fig-scatterplot-quadrants, where a vertical line indicates the mean of `urban` and a horizontal line marks the mean for `stability`. This divides the observations into four quadrants. The observations in the upper-right quadrant (including observations 2, 4, 5, and 8) have positive z-scores for both variables. Multiplying two positive values results in a positive value, so all observations in this quadrant also have a positive value in the final column of the spreadsheet previewed in @tbl-corr-data-excerpt. The bottom-left quadrant contains observations that have both below-average political stability and a below-average urban population (e.g., observation 1). Since this results in two negative z-scores being multiplied together (and the product of two negative numbers is always positive), we again see positive values in the final column of the spreadsheet. The two remaining quadrants will yield negative values in the final column because one z-score will be negative and the other positive (and the product of a negative and a positive number is negative). The upper-left quadrant has below-average values (negative z-scores) for `urban` but above-average values (positive z-scores) for `stability` (e.g., observation 7). In the bottom-right quadrant, the share of the population that is urban is above average but stability is below average (e.g., observations 3, 6, and 9).
+
+Since the correlation is the mean of the final column, we can imagine the observations with positive values in the final column "pushing" the correlation toward a positive value while the observations with negative products "push" the correlation toward a negative value. From @fig-scatterplot-quadrants, we can see that there are more observations in the two quadrants yielding positive products (upper-right and bottom-left) than in the two "negative" quadrants (upper-left and bottom-right). Thus, it should come as no surprise that the correlation is positive (0.36).
+:::
+
+[^correlation-10]: Note that standardizing was accomplished using the population variance formula, in order to match the calculation of the mean for the final column, which divides by N rather than n - 1.
+
+As illustrated in the example above, multiplying two standardized values together results in a positive value any time both variables are above average. This maps neatly to our conceptual definition of a positive relationship: when values of x tend to be higher (above average), values of y also tend to be higher (above average). Thus, finding above-average values for x being paired with above-average values of y (the upper-right quadrant) is consistent with the notion of a positive relationship (as are below-average x values paired with below-average y values, the lower-left quadrant). A negative relationship means that higher values of x (above average) tend to go with lower values for y (below average), so the combination of a positive z-score for x and a negative z-score for y (or vice versa) is consistent with a negative relationship.
+
+## @sec-correlation Appendix II: Formulas for Correlation, Covariance, and Regression Coefficients {.unnumbered}
 
 If we are working with a sample, we can rewrite @eq-pop-corr as:
 

@@ -1,5 +1,7 @@
 # Relationships with Qualitative Variables {#sec-qual-associations}
 
+\[***Working draft notes for instructors**: I don't anticipate major changes to the structure of this chapter, but I am planning to change all of the examples/datasets.*\]
+
 The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.
 
 Where do ordinal variables fit into this discussion? For many types of analysis, ordinal variables can be treated as either qualitative (for maximum flexibility) or as quantitative (if we are willing to assign fixed numbers to the various values, as we saw in the first example in @sec-critically-evaluating-graphs). Often, analysis will be simpler if we treat ordinal variables as quantitative, so that can be a good place to start. You can always then follow up with an analysis treating the ordinal variable as qualitative, which allows you to check if the results indicate something similar to what you saw when you treated the variable as quantitative.
@@ -232,27 +234,27 @@ As we can see in the appendix, it doesn't really matter which group we select as
 
 6.  In the regression table below, the dependent variable is GDP per capita measured in thousands of US dollars. Find the mean of country per capita GDP for the seven regions of the world (omitted category is East Asia & Pacific).[^qual-associations-6] Then, describe in words the relationship between income and region.
 
-    +------------------------------+----------------+----------------+
-    |                              | Coef.          | Std. err.      |
-    +==============================+================+================+
-    | Europe & Central Asia        | 14.0           | 4.5            |
-    +------------------------------+----------------+----------------+
-    | Latin America & Caribbean    | -2.2           | 4.9            |
-    +------------------------------+----------------+----------------+
-    | Middle East & North Africa   | -1.5           | 5.8            |
-    +------------------------------+----------------+----------------+
-    | North America                | 53.9           | 12.6           |
-    +------------------------------+----------------+----------------+
-    | South Asia                   | -13.5          | 8.2            |
-    +------------------------------+----------------+----------------+
-    | Sub-Saharan Africa           | -14.2          | 4.7            |
-    +------------------------------+----------------+----------------+
-    | (intercept)                  | 16.5           | 3.5            |
-    +------------------------------+----------------+----------------+
-    |                              |                |                |
-    +------------------------------+----------------+----------------+
-    | n                            | 207            |                |
-    +------------------------------+----------------+----------------+
+    +-----------------------------+----------------+----------------+
+    |                             | Coef.          | Std. err.      |
+    +=============================+================+================+
+    | Europe & Central Asia       | 14.0           | 4.5            |
+    +-----------------------------+----------------+----------------+
+    | Latin America & Caribbean   | -2.2           | 4.9            |
+    +-----------------------------+----------------+----------------+
+    | Middle East & North Africa  | -1.5           | 5.8            |
+    +-----------------------------+----------------+----------------+
+    | North America               | 53.9           | 12.6           |
+    +-----------------------------+----------------+----------------+
+    | South Asia                  | -13.5          | 8.2            |
+    +-----------------------------+----------------+----------------+
+    | Sub-Saharan Africa          | -14.2          | 4.7            |
+    +-----------------------------+----------------+----------------+
+    | (intercept)                 | 16.5           | 3.5            |
+    +-----------------------------+----------------+----------------+
+    |                             |                |                |
+    +-----------------------------+----------------+----------------+
+    | n                           | 207            |                |
+    +-----------------------------+----------------+----------------+
 
 [^qual-associations-6]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 

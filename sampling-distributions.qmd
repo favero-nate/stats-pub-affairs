@@ -1,5 +1,7 @@
 # Sampling Distributions {#sec-sampling-distributions}
 
+\[***Working draft notes for instructors**: This chapter will be completely re-written but will cover most of the same concepts.*\]
+
 *Note: This chapter is adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University)*
 
 This is perhaps the most difficult chapter in the whole book. That is because sampling distributions are a very abstract concept that many students struggle to grasp. And yet sampling distributions are the core of how we conduct statistical inference. You may need to reread this chapter a few times before it makes much sense, but doing so will be well worth your time if you want to understand applied statistics.
