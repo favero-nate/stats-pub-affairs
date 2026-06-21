@@ -6,11 +6,11 @@ Fortunately, statistics is a topic that most anyone can learn. Even if you think
 
 In my opinion, the most important skill for dealing with statistics is critical thinking. While statistics is certainly quantitative, doing statistical analysis does not require you to perform complex math because software will handle the number crunching. Thus, being comfortable with statistics is mostly about developing familiarity with statistical concepts, mastering a few technical details, and thinking carefully about how to best apply statistical tools to real-world data. "Subject-matter expertise," by which I mean familiarity with the topics (e.g., policy or program area) described by the data, is almost always required for good interpretation of statistical results. Sometimes, a bit of math will help with explaining how a statistic works or gaming out the implications of a statistical result. But even then, most of the math we need for an introductory course is relatively simple arithmetic.
 
-This book will teach you the basics of statistics, with a focus on applications to the social sciences. It is intended for complete beginners, especially those taking an introductory statistics or quantitative methods course at the post-secondary level (e.g., at a college or university). The first half of the book (chapters 1-6) is a crash course on data essentials. It will help you get started using various tools to describe and analyze data. The second half of the book (chapters 7-12) goes into more detail on how to understand statistical tools and use data to learn about the social world. Many of the topics are more abstract than in the first half, but the concepts covered will help you critically evaluate exactly what a dataset can and cannot tell you.
-
 With the emergence of new and powerful forms of artificial intelligence (AI), many people are currently asking how the field of statistics will change going forward. While it is always difficult to predict the future, we are already seeing emerging AI technologies that can effectively perform and interpret many statistical analyses. If a machine can do statistics, you might wonder: what is the point of learning to do statistics yourself? One reason I believe it is still important to learn about statistics is that the quality of statistics-based analysis produced by AI systems can vary widely. Without your own understanding of statistics, it is very difficult to evaluate the quality of an analysis produced by AI. Even if it soon becomes the case that many statistical analyses are carried out almost entirely by AI, I believe it will still be important that humans can understand and critically evaluate AI output. In the future, you might end up using AI tools to help you accomplish statistical analysis that is relevant to your work or personal life. But you will almost certainly be a smarter "supervisor" of the AI tool if you have your own grasp of statistics. Learning is not something you can outsource to AI; you will have to think hard and engage with the material in this text yourself if you want to learn statistics.
 
-In this chapter, we'll be introduced to several different datasets and will start learning some fundamentals for describing and exploring data. First, we'll learn three questions that highlight important issues to think through for almost any data analysis. Second, we will discuss simple ways of visualizing patterns in data. Finally, we will go over the structure of datasets, including key terminology that is used to talk about data.
+This book will introduce you to the basics of statistics, with a focus on applications to the social sciences. It is intended for complete beginners, especially those taking an introductory statistics or quantitative methods course at the post-secondary level (e.g., at a college or university). The first half of the book (chapters 1-6) is a crash course on data essentials. It will help you get started using various tools to describe and analyze data. The second half of the book (chapters 7-12) goes into more detail on how to understand statistical tools and use data to learn about the social world. Compared to the first half, many topics in the second half are more abstract. But they are equally practical for learning to evaluate exactly what the data in front of us do (and do not) indicate.
+
+In this chapter, we will encounter several different datasets as we begin covering fundamentals for describing and exploring data. To start, we'll walk through three questions that highlight important issues to think through for almost any data analysis. Next, we will learn about simple ways of visualizing patterns in data. Finally, we will go over the structure of datasets, including key terminology that is used to talk about data.
 
 ## Three Questions to Always Ask about Data
 
@@ -84,7 +84,7 @@ One type of bar chart that is very common in statistics is called a **histogram*
 
 ![Histogram of post length](Images/getting-started/hist-char-count.png){#fig-hist-char-count width="400"}
 
-The use of "bins" will generally be beneficial when plotting data like "post length," where there are many, many different possible values (any whole number between 0 and 300). An alternative would be to create a bar chart where each value has its own bar: the first bar indicates the number of posts with 0 characters, the second bar indicates posts with 1 character, and so on. This would require having as many as 301 bars in the graph (assuming at least one post occurred for each possible length), which would create a rather cluttered graph. With data this is reported using decimal places, the number of bars could easily be much larger than 301. Hence, use of bins is necessary for reasonable visualization through bar charts in many data contexts.
+The use of "bins" will generally be beneficial when plotting data like "post length," where there are many different possible values (any whole number between 0 and 300). An alternative would be to create a bar chart where each value has its own bar: the first bar indicates the number of posts with 0 characters, the second bar indicates posts with 1 character, and so on. This would require having as many as 301 bars in the graph (assuming at least one post occurred for each possible length), which would create a rather cluttered graph. With data this is reported using decimal places, the number of bars could easily be much larger than 301. Hence, use of bins is necessary for reasonable visualization through bar charts in many data contexts.
 
 @fig-hist-like-count displays a histogram for the number of times each post is liked. This graph looks a bit funny: there is one tall bar on the left and three very short bars scattered throughout the rest of the graph. This is because almost all of your friend's 70 posts have received relatively few likes—between 0 and approximately 15. However, they have occasionally made posts that appear to break out to a somewhat larger audience. The first short bar (going left to right) indicates a small number of posts (less than 5, maybe only 1) has around 40 likes. Another short bar indicates at least one post has received around 60 or 70 likes. And a slightly taller bar indicates occasional posts that have received a bit more than 100 likes.
 
@@ -94,13 +94,13 @@ For another example, we can use data on the proportion of government employees w
 
 ![Histogram showing female employment by governments in different countries](Images/getting-started/hist-female-employees.png){#fig-hist-females_publ width="400"}
 
-There are several alternatives to histograms. You can see in @fig-various-females_publ several different types of graphs being used to depict the same data described by @fig-hist-females_publ. Each one uses a different visual technique to indicate the relative density of observations across the range of possible values. As a new student of statistics, you do not need to know exactly how each of these types of graphs is constructed, but it is still worth taking a moment to compare each one to the histogram. A kernel density (k-density) plot uses height to indicate the frequency with which values occur, much like a histogram except that rather than dividing values up into discrete ranges (bins), an algorithm is used to create a smooth, continuous line that is drawn across the values. A violin plot (which can be oriented horizontally or vertically) is somewhat similar but uses thickness rather than height to indicate density of observations across the range of values. A strip plot uses one dot per observation but usually adds some random noise called "jitter" to the data. Without this jitter, dots often stack on top of one another such that the actual density of observations is obscured. Finally, a box plot uses a box to indicate the range of values containing the middle 50% of observations, with other lines indicating other important quantities like the full range of values. Given the importance and complexity of box plots, we will examine them in more detail in the next chapter.
+There are several alternatives to histograms. @fig-various-females_publ shows several different types of graphs depicting the same data as in @fig-hist-females_publ. Each one uses a different visual technique to indicate the relative density of observations across the range of possible values. As a new student of statistics, you do not need to know exactly how each of these types of graphs is constructed, but it is still worth taking a moment to compare each one to the histogram. A kernel density (k-density) plot uses height to indicate the frequency with which values occur, much like a histogram except that rather than dividing values up into discrete ranges (bins), an algorithm is used to create a smooth, continuous line that is drawn across the values. A violin plot (which can be oriented horizontally or vertically) is somewhat similar but uses thickness rather than height to indicate density of observations across the range of values. A strip plot uses one dot per observation but usually adds some random noise called "jitter" to the data. Without this jitter, dots often stack on top of one another such that the actual density of observations is obscured. Finally, a box plot uses a box to indicate the range of values containing the middle 50% of observations, with other lines indicating other important quantities like the full range of values. Given the importance and complexity of box plots, we will examine them in more detail in the next chapter.
 
 ![Various plots showing female employment by governments in different countries](Images/getting-started/compare-female-employees.png){#fig-various-females_publ width="550"}
 
 Regardless of which type of plot we use, we see the same asymmetry apparent in the original histogram depicting female government employment: most of the data lies in the range of .4-.8, with a few observations also occurring in the range of .1-.4.
 
-### Careful thought is required to evaluate graphs {#sec-critically-evaluating-graphs}
+### Importance of critical evaluation {#sec-critically-evaluating-graphs}
 
 Graphs are often poorly constructed in ways that can mislead, so it's always important to think critically and exercise caution when interpreting data visualizations.
 
@@ -123,13 +123,13 @@ One question from the previously-mentioned survey of U.S. government employees a
 
 Because we have now assigned numbers to the response options, we can calculate the average response to the survey question. The overall average is 3.79, which is a bit less than the value we assigned to "agree." We can also compute averages for different subsets of survey respondents. For example, we can compute separate averages by sex (separating out males and females) and display these averages in a simple graph. Here is one possibility for what that graph could look like:
 
-![A tiny difference that looks large: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedin.png){#fig-gender-compare-zoomed-in alt="A tiny difference that looks large: Comparing average male and female responses to survey item \"I feel encouraged to come up with new and better ways of doing things.\"" width="400"}
+![A tiny difference that looks large: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedin.png){#fig-gender-compare-zoomed-in width="400"}
 
 A quick glance at this graph suggests that males feel much more supported in pursuing innovation than than females. But our third Question to Always Ask about Data indicates we should consider "How big is the difference?" Look closely at the y-axis here. The average response for females appears to be around 3.787, while the average response for males is approximately 3.798. That is a tiny difference—just .011 on a 1-5 scale. In reality, male and female respondents report very similar average levels of support for pursing innovation. It is just that the figure is depicting a very narrow portion of the range for this variable, which makes a mole hill look like a mountain.
 
 Let's look at what happens when we redraw the y-axis, which can easily be done in whatever software is being used to create a graph:
 
-![A tiny difference that looks tiny: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedout.png){#fig-gender-compare-zoomed-out alt="A tiny difference that looks tiny: Comparing average male and female responses to survey item \"I feel encouraged to come up with new and better ways of doing things.\"" width="400"}
+![A tiny difference that looks tiny: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedout.png){#fig-gender-compare-zoomed-out width="400"}
 
 Now, the difference in averages between females and males is difficult to visually detect because the dot for Male is barely higher up than the dot for Female. Notice the values on the y-axis: the range begins at 3 (Neither Agree nor Disagree) and ends at 4 (Agree). We have "zoomed out" on the difference we saw in @fig-gender-compare-zoomed-in.
 :::
@@ -143,11 +143,11 @@ It is sometimes tempting to create simplistic rules to try to avoid misleading g
 
 Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-1] @fig-vaccines-zoomed-out shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line).[^getting-started-2] The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.
 
-![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination2.png){#fig-vaccines-zoomed-out alt="A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target" width="400"}
+![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination2.png){#fig-vaccines-zoomed-out width="400"}
 
 Now look at the following alternative. While the exact same data is being depicted in @fig-vaccines-zoomed-in, the redrawn y-axis makes the solid line look like it is moving a lot (suggesting big year-to-year differences). Prior to 2020, rates were pretty consistently within the 94-95% range. But more recent years show rates two or three percentage points below the 95% target. Given the potential public health implications of falling just one or two percentage points below the target of 95% vaccine coverage, it does not seem like a smart choice to include 0 on the y-axis for this data (as in @fig-vaccines-zoomed-out), since doing so makes it quite difficult to precisely discern changes of one or two percentage points.
 
-![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination1.png){#fig-vaccines-zoomed-in alt="Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target" width="400"}
+![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination1.png){#fig-vaccines-zoomed-in width="400"}
 :::
 
 [^getting-started-1]: Pandey, A., & Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide. *The Lancet Global Health*, *11*(4), e478-e479. <https://doi.org/10.1016/S2214-109X(23)00063-3>
@@ -158,9 +158,9 @@ For good visualization, we want differences that are meaningful in reality to be
 
 Whenever you see a difference in a graph that "looks big" or "looks small," take a moment to pause. Look carefully at the numbers on the axes, and think about how to evaluate the third Question to Always Ask about Data: "Based on what I know about this topic and how the variables are measured, *how big is this difference*? Does my understanding of the numbers match what my eyes see?"
 
-### Three best practices for simple graphs
+### Best practices for simple graphs
 
-As useful as graphs are, it is also easy to go wrong with data visualization. Here are three guidelines to keep in mind when getting started with graphs.
+Here are three guidelines to keep in mind when getting started with graphs.
 
 First, histograms and the related graphs we saw (from @fig-various-females_publ) are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
 
@@ -270,14 +270,14 @@ Sources also disagree on whether ordinal variables should be considered a subcat
 
 5.  What types of variables are `voter_registration`, `follows_news`, and `years_living_in_state` in the table below?
 
-    | `id`  | `voter_registration`  | `follows_news`    | `years_living_in_state` |
-    |-------|-----------------------|-------------------|-------------------------|
-    | 1     | registered            | somewhat agree    | 26                      |
-    | 2     | ineligible            | strongly disagree | 51                      |
-    | 3     | unregistered          | strongly agree    | 2                       |
-    | 4     | registered            | somewhat agree    | 34                      |
-    | 5     | registered            | somewhat disagree | 44                      |
-    | 6     | unregistered          | strongly agree    | 11                      |
+    | `id` | `voter_registration` | `follows_news`    | `years_living_in_state` |
+    |------|----------------------|-------------------|-------------------------|
+    | 1    | registered           | somewhat agree    | 26                      |
+    | 2    | ineligible           | strongly disagree | 51                      |
+    | 3    | unregistered         | strongly agree    | 2                       |
+    | 4    | registered           | somewhat agree    | 34                      |
+    | 5    | registered           | somewhat disagree | 44                      |
+    | 6    | unregistered         | strongly agree    | 11                      |
 
 6.  What is the unit of analysis in the table from question 2?
 
