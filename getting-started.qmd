@@ -1,7 +1,5 @@
 # Getting Started with Data {#sec-getting-started}
 
-\[***Working draft notes for instructors**: Examples throughout the chapter will be revised to make wider use of the social media dataset from the initial example. The country-level dataset will likely be replaced by the social media one.*\]
-
 Data is everywhere. Yet many of us find numbers intimidating. It can be tempting to assume that someone sophisticated enough to fluently cite numerical information must know what they're talking about. At the same time, there is a kind of backlash to using numbers to describe the world. The title of the popular book *How to Lie with Statistics* captures a cynicism many people feel: since statistics can easily trick you, you shouldn't believe them at all. Such extreme reactions reflect people's lack of self-confidence in evaluating quantitative information. Because we don't trust ourselves, we reflexively either dismiss or accept numerical claims—perhaps depending on whether the claim is one we already agree with or the source is one we trust.
 
 Fortunately, statistics is a topic that most anyone can learn. Even if you think you are not a "numbers person," I am confident you can learn fundamentals that will allow you to critically assess statistical claims. I say this as someone who has spent much of my academic life surrounded by people who lacked confidence in their numerical abilities and yet decided to study social science topics—sometimes not realizing the extent to which they were signing up to work with numbers along the way. Many peers during my time studying for a PhD thought their abilities in math were not strong, but by the time they completed their degrees, they were all exceptionally competent in statistics. It is true that some people learn numerical material more quickly than others. For most people, lots of repetition is required before many statistical concepts are grasped. But I have yet to encounter a student who is unable to learn statistics. If you set your mind to it, you will learn it.
@@ -11,6 +9,8 @@ In my opinion, the most important skill for dealing with statistics is critical 
 This book will teach you the basics of statistics, with a focus on applications to the social sciences. It is intended for complete beginners, especially those taking an introductory statistics or quantitative methods course at the post-secondary level (e.g., at a college or university). The first half of the book (chapters 1-6) is a crash course on data essentials. It will help you get started using various tools to describe and analyze data. The second half of the book (chapters 7-12) goes into more detail on how to understand statistical tools and use data to learn about the social world. Many of the topics are more abstract than in the first half, but the concepts covered will help you critically evaluate exactly what a dataset can and cannot tell you.
 
 With the emergence of new and powerful forms of artificial intelligence (AI), many people are currently asking how the field of statistics will change going forward. While it is always difficult to predict the future, we are already seeing emerging AI technologies that can effectively perform and interpret many statistical analyses. If a machine can do statistics, you might wonder: what is the point of learning to do statistics yourself? One reason I believe it is still important to learn about statistics is that the quality of statistics-based analysis produced by AI systems can vary widely. Without your own understanding of statistics, it is very difficult to evaluate the quality of an analysis produced by AI. Even if it soon becomes the case that many statistical analyses are carried out almost entirely by AI, I believe it will still be important that humans can understand and critically evaluate AI output. In the future, you might end up using AI tools to help you accomplish statistical analysis that is relevant to your work or personal life. But you will almost certainly be a smarter "supervisor" of the AI tool if you have your own grasp of statistics. Learning is not something you can outsource to AI; you will have to think hard and engage with the material in this text yourself if you want to learn statistics.
+
+In this chapter, we'll start learning about a few different ways to explore and describe data. First, we'll learn three questions that highlight some important issues to think through for almost any data analysis. Second, we will discuss some of the basics of visualizing patterns in data. Finally, we will go over the structure of datasets, including key terminology that is used to talk about data.
 
 ## Three Questions to Always Ask about Data
 
@@ -37,9 +37,9 @@ Suppose you have a friend who has been trying to use social media to build and s
 
 @tbl-long-vs-short-posts provides a comparison of the number of "likes" for short versus long posts.
 
-|   | Short Posts (\< 150 Char.) | Long Posts (at least 150 Char.) |
-|----|----|----|
-| **Average \# of Likes** | 2.4 | 10.5 |
+|   | Short Posts (0-100 Char.) | Medium Posts (101-200 Char.) | Long Posts (201-300 Char.) |
+|------------------|------------------|------------------|------------------|
+| **Average \# of Likes** | 2.7 | 1.9 | 13.0 |
 
 : Comparison of Engagement with Short and Long Posts {#tbl-short-vs-long-posts}
 
@@ -51,33 +51,159 @@ To help evaluate these two tables, let us consider our three Questions to Always
 
 2.  **Who (or what) is in the dataset?**
 
-    Again, there is a fairly straightforward answer to this question: the data describes all the posts from your friends account, in terms of volume (of posts), length, likes, and use of images. Typically when we ask this question, we should also consider what is *missing* from the data. For example, we might note that in @tbl-short-vs-long-posts, we don't know anything about the contents of the posts, other than their length. This becomes especially relevant when trying to draw conclusions from the table. A naive interpretation might be that to get greater engagement (more likes), your friend needs to write longer posts. But such advice could easily be misguided: writing more words just for the sake of length is poor communication. Maybe your friend tends to write shorter posts when they have less interesting things to say. Making these less interesting posts longer will not necessarily make them better! Instead, we need to try to figure out what it is about the longer posts that makes them seemingly more effective (at least when measured through likes). Unfortunately, we can't learn that from the data summaries contained in the two tables above. Some further digging is probably required to draw any strong conclusions based on @tbl-short-vs-long-posts. For example, maybe your friend can go read through their previous posts, checking for what might be different in the contents of the short versus the long posts.
+    Again, there is a fairly straightforward answer to this question: the data describes all the posts from your friends account, in terms of volume (of posts), length, likes, and use of images. Typically when we ask this question, we should also consider what is *missing* from the data. For example, we might note that in @tbl-short-vs-long-posts, we don't know anything about the contents of the posts, other than their length. This becomes especially relevant when trying to draw conclusions from the table. A naive interpretation might be that to get greater engagement (more likes), your friend needs to write longer posts. But such advice could easily be misguided: writing more words just for the sake of length is poor communication. Maybe your friend tends to write short or medium posts when they have less interesting things to say. Making these less interesting posts longer will not necessarily make them better! Instead, we need to try to figure out what it is about the longer posts that makes them seemingly more effective (at least when measured through likes). Unfortunately, we can't learn that from the data summaries contained in the two tables above. Some further digging is probably required to draw any strong conclusions based on @tbl-short-vs-long-posts. For example, maybe your friend can go read through their previous posts, checking for what might be different in the contents of the short/medium versus the long posts.
 
 3.  **How big are the differences?**
 
-    This question is most relevant when making comparisons. There aren't necessarily any obvious comparisons to make it @tbl-social-media-stats. But @tbl-short-vs-long-posts makes a comparison. Is the difference in number of likes between short and long posts very big? I would say so. 10.5 likes is over four times as large as 2.4. So whatever is driving this difference in number of likes may well be worth your friend investigating, if they are trying to learn how to better post content that other users will find interesting enough to click the "like" button after seeing it.
+    This question is most relevant when making comparisons. There aren't necessarily any obvious comparisons to make it @tbl-social-media-stats. But @tbl-short-vs-long-posts makes a comparison. Is the difference in number of likes between long versus short/medium posts very big? I would say so. The average number of likes for long posts (13.0) is several times the number for medium (1.9) or short (2.7) posts. Specifically, 13.0 likes is nearly five times the average for short posts (13.0 / 2.7 = 4.8) and is almost seven times the average for medium posts (13.0 / 1.9 = 6.8). We can also ask about the size of the difference between short and medium posts. Even though short posts have a higher average number of likes than medium posts, the difference is much less dramatic. The average number of likes for short posts is about one and a half times the average likes for medium posts (2.7 / 1.9 = 1.4). Considering that we have a relatively small dataset (only 70 posts to evaluate), we can say that this relatively modest difference is probably not so important, especially given the much larger difference apparent for long posts. So whatever is driving this spike in number of likes for long posts may well be worth your friend investigating, assuming the friend wants to learn how to post content that other users will find interesting enough to click the "like" button after seeing it.
 :::
+
+## Visualization Basics
+
+Creating simple graphs is often a great first step for getting familiar with a dataset. In this chapter, we will focus mainly on graphing just one variable at a time.
+
+### Bar Charts and Pie Charts
+
+One of the simplest graphs is a bar chart, which we can use to depict the frequencies of different values occurring in a dataset. For example, we can visualize how often your friend's posts include images. From @fig-bar-has-image, we can see that most posts do not contain images. The y-axis, shown on the left edge of the graph, allows us to determine approximate percentages. It appears that a bit fewer than 80% of posts contain no image, while a bit more than 20% of posts do contain images.
+
+![Bar chart of how often posts include images](Images/getting-started/bar-has-image.png){#fig-bar-has-image width="400"}
+
+For another example, we can look at data from a survey of U.S. government employees. \@fig-bar-race shows the racial groups the survey respondents identify with. One can quickly see that the bar for White is larger than all the other bars combined, meaning that most employees responding to the survey are White. We also see that the values of Asian and Other are fairly rare (each occurring in fewer than 10% of employees). Black or African American appear to make up around 15% of the employees responding to the survey.
+
+![Bar chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/bar.png){#fig-bar-race width="400"}
+
+Another type of graph you can create with this sort of data is a pie chart, using the frequency of each value to create the size of the pie slice. Pie charts visually suggest what we might call a competitive approach to describing the sizes of the different categories: you can't make one slice bigger without making at least one other slice smaller. We can also call this a "zero-sum" depiction, since there is a finite area (a finite "sum") in the circle that is divided across the categories. This makes pie charts particularly effective for depicting something like how a budget is spent across different categories (e.g., how much a business spends on paying employees, utility bills, advertising, etc.) since a scarce resource is being divided for different purposes. However, a zero-sum allocation is not always what we wish to emphasize when summarizing a qualitative variable. Pie charts can also be hard to read with certain configurations of data (i.e., when there are too many categories or the slices get too small). Thus, it should come as no surprise that research scientists tend to rely on bar charts more than pie charts for depicting data.
+
+![Pie chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/pie.png){#fig-pie-race width="400"}
+
+Bar charts and pie charts can also be used to represent things other than the frequency with which different values of a variable occur, even though that is the main way we use them while studying statistics. When you encounter a graph, it is always important to carefully read the titles and labels to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or as noted above, you might see the levels for budget categories themselves depicted in a pie chart—highlighting how some categories make up much larger shares of the budget than others. In such cases, the charts would not be telling you how many people (or other units represented by rows of data) record different values of a variable, as in the example graphs shown here.
+
+### Graphs for data with many different numeric values {#sec-quantitative-variables}
+
+One type of bar chart that is very common in statistics is called a **histogram**. An example is shown in @fig-hist-char-count, using data on the length of each post by your friend. In a histogram, each bar represents a range of values, known as a “bin.” The x-axis (along the bottom of the graph) shows us the range of values for the publ_sector_size variable being described by each bar. The height of each bar represents how many data points fall within the corresponding bin. In this particular histogram, the y-axis (along the left side of the graph) shows how different heights indicate different numbers of observations. For example, the first bar on the left has a height indicating approximately nine observations. The approximate range shown on the x-axis for this bar is 0 to 40. Therefore, we can approximate that nine of your friends posts are 0-40 characters long. The right-most bar indicates that approximately 16 posts are 260-300 characters long. This right-most bar is also the tallest, perhaps indicating that your friend likes long posts and sometimes struggles with hitting up against the cap of 300 characters on the social media platform they use.
+
+![Histogram of post length](Images/getting-started/hist-char-count.png){#fig-hist-char-count width="400"}
+
+@fig-hist-like-count displays a histogram for the number of times each post is liked. This graph looks a bit funny: there is one tall bar on the left and three very short bars scattered throughout the rest of the graph. This is because almost all of your friend's 70 posts have received relatively few likes—between 0 and approximately 15. However, they have occasionally made posts that appear to break out to a somewhat larger audience. The first short bar (going left to right) indicates a small number of posts (less than 5, maybe only 1) has around 40 likes. Another short bar indicates at least one post has received around 60 or 70 likes. And a slightly taller bar indicates occasional posts that have received a bit more than 100 likes.
+
+![Histogram of public_sector_size variable from a dataset of countries and their characteristics](Images/getting-started/hist-like-count.png){#fig-hist-like-count width="400"}
+
+For another example, we can use data on the proportion of government employees who are female in different countries around the world. @fig-hist-females_publ visualizes this data, which displays a certain asymmetry: the bars on the right half of the graph tend to be taller than those on the left. The x-axis shows the range of proportions seen accross the countries. We can convert a proportion to a percentage by shifting the decimal point two places to the right. So a country where the proportion of government employees who are female is .2 would have 20% female employees. The short bars in the graph indicate that relatively few countries have proportions in the approximate range of .1 to .45; in other words, for a small number of countries, we see that 10-45% of the government workforce is female. Most countries have a government workforce that is more like 45-75% female (the tall bars on the right side of the graph). Thus, it seems that in a majority of the 44 countries included in this dataset, the government employs more females than males.
+
+![Histogram showing female employment by governments in different countries](Images/getting-started/hist-female-employees.png){#fig-hist-females_publ width="400"}
+
+There are several alternatives to histograms. You can see in @fig-various-females_publ several different types of graphs being used to depict the same data for the females_publ variable. Each one indicates the relative density of observations across the range of possible values. Much like a histogram, a kernel density (k-density) plot uses height to indicate the frequency with which values occur, but rather than dividing values up into discrete ranges (bins), an algorithm is used to create a smooth, continuous line that is drawn across the values. A violin plot (which can be oriented horizontally or vertically) is somewhat similar but uses thickness rather than height to indicate density of observations across the range of values. A strip plot uses one dot per observation but usually adds some random noise called "jitter" to the data. Without this jitter, dots often stack on top of one another such that the actual density of observations is obscured. Finally, a box plot uses a box to indicate the range of values containing the middle 50% of observations, with other lines indicating other important quantities like the full range of values. Given the importance and complexity of box plots, we will examine them in more detail in the next chapter.
+
+![Various plots showing female employment by governments in different countries](Images/getting-started/compare-female-employees.png){#fig-various-females_publ width="550"}
+
+Regardless of which type of plot we use, we see the same asymmetry apparent in the original histogram for females_publ: most of the data lies in the range of .4-.8, with a few observations also occurring in the range of .1-.4.
+
+### Best practices for simple graphs
+
+As useful as graphs are, it is also easy to go wrong with data visualization. Here are three guidelines to keep in mind when getting started with graphs.
+
+First, histograms and the related graphs we saw (from @fig-various-females_publ) are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
+
+::: {.callout-tip icon="false"}
+## Example: Estimates of Small Donations {.unnumbered}
+
+A survey of nonprofits asked each respondent to estimate the percentage of individual donations to their organization in 2019 that were smaller than \$250.[^getting-started-1] Look at how different the right-most bars of the histogram look, depending on whether we use 10 bins or 11 bins (a setting we can change in the software creating the histogram):
+
+![Histograms with different bin settings (depicting donations estimate variable)](Images/getting-started/donations_hist1.png){#fig-bin-settings width="400"}
+
+Why the dramatic change? If we plot bins with a width of 1, we get a better sense of what is unusual about the underlying data:
+
+![Histogram with a bin width of 1 (depicting donations estimate variable)](Images/getting-started/donations_hist2.png){#fig-bin-width-1 width="400"}
+
+From this more fine-grained depiction of the data, we see that respondents appear to typically answer with numbers divisible by 5. Remember, survey respondents were asked to provide an estimate—not look up the exact number from their records. People are more likely to offer estimates that are "round" numbers like 90 or 95, as opposed to something like 92.
+
+In the initial histogram with 10 bins, the right-most bin included the value 90—the most popular answer. When we switched to using 11 bins, the right-most bin was redrawn to exclude 90, so the number of observations in the bin (represented by its height) dropped dramatically. Because of the spikes in frequency at round numbers (divisible by 10 or 5), changes in bin settings can cause relatively large changes to the visual pattern of the histogram.
+:::
+
+[^getting-started-1]: Year 1 of the Nonprofit Trends Longitudinal Survey Public Use Data Files. <https://doi.org/10.7910/DVN/T4OT1J>
+
+Second, be careful about using line graphs. We have not used any line graphs yet, but some software packages for data work will prominently suggest line graphs as a visualization option. When working with data showing trends over time, using line graphs makes perfect sense. We will see an example of this below, using data on estimated vaccinated rates over time. But use of line graphs in other contexts (where time trends are not being shown) is often misleading, since the lines suggest connections between points that may not be connected at all in reality.
+
+Third, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). It is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-2] Focus on simplicity and clarity in data visualization, not trying to stand out.
+
+[^getting-started-2]: See, for example, violations of the "principle of proportional ink": <https://callingbullshit.org/tools/tools_proportional_ink.html>
+
+## Critically Evaluating Graphs {#sec-critically-evaluating-graphs}
+
+Graphs are often poorly constructed in ways that can mislead, so it's always important to think critically and exercise caution when interpreting data visualizations.
+
+Let's look at some examples and see if any of the Three Questions to Always Ask about Data can help us identify misleading graphs.
+
+::: {.callout-tip .unnumbered icon="false"}
+## Example: Differences in employee attitudes by sex
+
+One question from the previously-mentioned survey of U.S. government employees asks whether there is a workplace environment supportive of innovation. Survey respondents can select from various options, ranging from "strongly disagree" to "strongly agree." To allow for easier analysis of the data from this question, we adopt the common practice of assigning numbers to the different response options, starting from 1 and counting up through the different options:
+
+-   Strong Disagree = 1
+
+-   Disagree = 2
+
+-   Neither Agree nor Disagree = 3
+
+-   Agree = 4
+
+-   Strongly Agree = 5
+
+Because we have now assigned numbers to the response options, we can calculate the average response to the survey question. The overall average is 3.79, which is a bit less than the value we assigned to "agree." We can also compute averages for different subsets of survey respondents. For example, we can compute separate averages by sex (separating out males and females) and display these averages in a simple graph. Here is one possibility for what that graph could look like:
+
+![A tiny difference that looks large: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedin.png){#fig-gender-compare-zoomed-in width="400"}
+
+A quick glance at this graph suggests that males feel much more supported in pursuing innovation than than females. But our third Question to Always Ask about Data indicates we should consider "How big is the difference?" Look closely at the y-axis here. The average response for females appears to be around 3.787, while the average response for males is approximately 3.798. That is a tiny difference—just .011 on a 1-5 scale. In reality, male and female respondents report very similar average levels of support for pursing innovation. It is just that the figure is depicting a very narrow portion of the range for this variable, which makes a mole hill look like a mountain.
+
+Let's look at what happens when we redraw the y-axis, which can easily be done in whatever software is being used to create a graph:
+
+![A tiny difference that looks tiny: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedout.png){#fig-gender-compare-zoomed-out width="400"}
+
+Now, the difference in averages between females and males is difficult to visually detect because the dot for Male is barely higher up than the dot for Female. Notice the values on the y-axis: the range begins at 3 (Neither Agree nor Disagree) and ends at 4 (Agree). We have "zoomed out" on the difference we saw in @fig-gender-compare-zoomed-in.
+:::
+
+Generally speaking, any difference can be made to visually look very large or very small depending on how the axes are drawn. It is all about how "zoomed in" or "zoomed out" you are relative to the range of possible values for the variable.
+
+It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the one from the prior example. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y-axis in order to avoid "zooming in" on the y-axis so much that we make small differences appear larger than they really are. Let's consider this rule in the context of some data on trends in childhood vaccination.
+
+::: {.callout-tip icon="false"}
+## Example: Childhood Vaccination Rates {.unnumbered}
+
+Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-3] @fig-vaccines-zoomed-out shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line).[^getting-started-4] The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.
+
+![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination2.png){#fig-vaccines-zoomed-out width="400"}
+
+Now look at the following alternative. While the exact same data is being depicted in @fig-vaccines-zoomed-in, the redrawn y-axis makes the solid line look like it is moving a lot (suggesting big year-to-year differences). Prior to 2020, rates were pretty consistently within the 94-95% range. But more recent years show rates two or three percentage points below the 95% target. Given the potential public health implications of falling just one or two percentage points below the target of 95% vaccine coverage, it does not seem like a smart choice to include 0 on the y-axis for this data (as in @fig-vaccines-zoomed-out), since doing so makes it quite difficult to precisely discern changes of one or two percentage points.
+
+![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination1.png){#fig-vaccines-zoomed-in width="400"}
+:::
+
+[^getting-started-3]: Pandey, A., & Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide. *The Lancet Global Health*, *11*(4), e478-e479. <https://doi.org/10.1016/S2214-109X(23)00063-3>
+
+[^getting-started-4]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
+
+For good visualization, we want differences that are meaningful in reality to be visually noticeable in our graphs. How do we define a "meaningful" difference? There is no universal rule. Typically, subject-matter expertise and careful judgment will be our best guides.
+
+Whenever you see a difference in a graph that "looks big" or "looks small," take a moment to pause. Look carefully at the numbers on the axes, and think about how to evaluate the third Question to Always Ask about Data: "Based on what I know about this topic and how the variables are measured, *how big is this difference*? Does my understanding of the numbers match what my eyes see?"
 
 ## How Datasets are Structured
 
-We often display data in the form of a spreadsheet. @tbl-country-preview shows part of a dataset describing countries. Each row represents one country, and we call the rows **observations**. Each column represents one characteristic of the countries. We call the columns **variables**. Variables allow us to describe whatever it is we care about—concepts like size of the public sector, the share of workers who are female in the public (or private) sector, and whether a country is a former British colony. We can easily imagine adding other variables like country wealth, average education level, or government spending on social programs. We call the columns [vari]{.underline}ables because each column displays values of a characteristic that [varies]{.underline} depending on which observation we are talking about: in Guatemala, the public sector size is 0.064, while in Hungary it is 0.261. What do these numbers mean? Here, public sector size is measured as the proportion of employment that is in the public sector. We can convert a proportion to a percentage by shifting the decimal point two places to the right. Thus, in Guatemala, 6.4% of jobs are found in the public sector, whereas in Hungary the figure is 26.1%. The public sector is much larger in Hungary than in any other country shown in this table.
+Even though graphs are often appealing for exploring data, behind the scenes our data is usually stored in the form of a spreadsheet. @tbl-social-media-preview shows part of the dataset describing your hypothetical friend's social media posts. Each row represents one post, and we call the rows **observations**. Each column represents one characteristic of the posts. We call the columns **variables**. Variables allow us to describe whatever it is we care about—concepts such as the length of the post (character count or `char_count`), how many likes it received (`like_count`), and whether the post includes an image (`has_image`). We can easily imagine adding other variables such as the number of times a post was reposted by others, whether the post is a reply to another post, and when the post was made. We call the columns [vari]{.underline}ables because each column displays values of a characteristic that [varies]{.underline} depending on which observation we are talking about: post 1 has a length of 56 characters, while the second post is 91 characters long.
 
-| country_name | publ_sector_size | females_publ | females_priv | former_british_colony |
-|---------------|---------------|---------------|---------------|---------------|
-| Guatemala | 0.0642733 | 0.437011 | 0.2751051 | 0 |
-| Guinea-Bissau | 0.0535029 | 0.2742133 | 0.3592181 | 0 |
-| Honduras | 0.0602268 | 0.5613141 | 0.3063367 | 0 |
-| Hungary | 0.2614872 | 0.694158 | 0.3943521 | 0 |
-| India | 0.0851988 | 0.3021879 | 0.1555202 | 1 |
-| Indonesia | 0.097229 | 0.4430795 | 0.3249187 | 0 |
+| `post_id` | `char_count` | `like_count` | `has_image` |
+|-----------|--------------|--------------|-------------|
+| 1         | 56           | 0            | 0           |
+| 2         | 91           | 1            | 1           |
+| 3         | 86           | 0            | 0           |
+| 4         | 42           | 0            | 0           |
+| 5         | 33           | 3            | 1           |
+| 6         | 88           | 0            | 0           |
 
-: Preview of a dataset of countries and their characteristics[^getting-started-1] {#tbl-country-preview}
-
-[^getting-started-1]: Data sources are the [Worldwide Bureaucracy Indicators](https://datacatalog.worldbank.org/search/dataset/0038132/worldwide-bureaucracy-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc)) and the [Colonial Dates Dataset](https://doi.org/10.7910/DVN/T9SDEW) (public domain).
+: Preview of dataset describing your friend's social media posts {#tbl-social-media-preview}
 
 @tbl-fevs-preview previews a dataset where each observation (row) is a different individual who responded to a survey. We use the term **unit of analysis** to describe what constitutes one observation in a dataset: in the prior table the unit of analysis was the country, whereas here it is the individual. Other common units of analysis include the organization, the work unit, and the subnational unit (e.g., city or region).
 
-| random_id | race | hispanic | sex | q1 | q2 |
+| `random_id` | `race` | `hispanic` | `sex` | `q1` | `q2` |
 |------------|------------|------------|------------|------------|------------|
 | 194868625278 | White  | No  | Male  | Neither Agree nor Disagree | Neither Agree nor Disagree |
 | 152966380283 | White  | No  | Male  | Disagree | Strongly Disagree |
@@ -85,34 +211,36 @@ We often display data in the form of a spreadsheet. @tbl-country-preview shows p
 | 161966059804 | White  | Yes  |  | Strongly Agree | Strongly Agree |
 | 133516090099 | Black or African American  | No  | Male  | Agree | Agree |
 
-: Preview of data from a 2024 survey of U.S. government employees[^getting-started-2] {#tbl-fevs-preview}
+: Preview of data from a 2024 survey of U.S. government employees[^getting-started-5] {#tbl-fevs-preview}
 
-[^getting-started-2]: 2024 U.S. Federal Employee Viewpoint Survey (public domain)
+[^getting-started-5]: 2024 U.S. Federal Employee Viewpoint Survey (public domain)
 
 ### Types of variables
 
 We also distinguish among different kinds of variables, which will often require different types of analysis.
 
-**Quantitative variables** are expressed in numbers. The public sector size variable we examined above is quantitative.
+**Quantitative variables** are expressed in numbers. The character count and like count variables we examined above are quantitative. All of our examples of histograms also depict quantitative variables, since histograms (and the alternative plot types shown in @fig-various-females_publ) can only be created for quantitative variables.
 
-For **qualitative variables**, it typically makes more sense to use text than numbers to describe the values. For example, race is a qualitative variable, as shown in the example survey data above. While you may sometimes encounter datasets that record the values of a qualitative variable using numbers (for ease of processing), the assignment of numbers to values will be arbitrary. This is because qualitative variables take on values that are unordered categories (cannot be arranged from least to most). Hispanic and sex are also qualitative variables in the example survey data.
+For **qualitative variables**, it typically makes more sense to use text than numbers to describe the values. For example, `race` is a qualitative variable, as shown in the example survey data above. While you may sometimes encounter datasets that record the values of a qualitative variable using numbers (for ease of processing), the assignment of numbers to values will be arbitrary. This is because qualitative variables take on values that are unordered categories (cannot be arranged from least to most). `hispanic` and `sex` are also qualitative variables in the example survey data.
 
-A qualitative variable that takes on only two values is called a **binary variable**. The variables hispanic and sex are binary. For the sex variable, there is also one blank cell, indicating a missing value. Binary variables often appear in spreadsheets with values shown as 1s and 0s. In some cases, a 1 indicates “yes” while a 0 indicates “no.” For example, in the country data shown above, the variable “former_british_colony” is coded as a 1 if “yes, this country is a former British colony” and 0 if it is not.
+A qualitative variable that takes on only two values is called a **binary variable**. The variables `hispanic` and `sex` are binary. For the `sex`, there is also one blank cell, indicating a missing value. Binary variables often appear in spreadsheets with values shown as 1s and 0s. In some cases, a 1 indicates “yes” while a 0 indicates “no.” For example, in the dataset describing a friend's social media posts, the variable `has_image` is coded as a 1 if “yes, this post has an image” and 0 if it does not.
 
-There is also a third type of variable called an **ordinal variable**, where values can be arranged in order but cannot be easily quantified. This type exists in a somewhat grey zone between quantitative and qualitative. Many surveys utilize Likert scales, which allow respondents to choose from a range of options along a continuum (e.g., strongly disagree, disagree, agree, strongly agree). Variables q1 and q2 in the survey data example use this kind of scale. For q1, people are responding to the statement "I am given a real opportunity to improve my skills in my organization." Q2 asks them to indicate whether they agree that "I feel encouraged to come up with new and better ways of doing things." Likert scales result in ordinal variables: while we can arrange response options from most agreement to least agreement, it is not clear how to assign precise numbers because we don’t know if the distances between response options are equal. If “strongly disagree” is a 1 and “disagree” is a 2, should “neither agree nor disagree” be a 3? Or a 4? Maybe 3.5? It is difficult to say what numbering scheme would most accurately represent respondents’ attitudes because this is an ordinal variable.
+There is also a third type of variable called an **ordinal variable**, where values can be arranged in order but cannot be easily quantified. This type exists in a somewhat grey zone between quantitative and qualitative. Many surveys utilize Likert scales, which allow respondents to choose from a range of options along a continuum (e.g., strongly disagree, disagree, agree, strongly agree). Variables `q1` and `q2` in the survey data example use this kind of scale. For `q1`, people are responding to the statement "I am given a real opportunity to improve my skills in my organization." `q2` asks them to indicate whether they agree that "I feel encouraged to come up with new and better ways of doing things."
+
+Likert scales result in ordinal variables: while we can arrange response options from most agreement to least agreement, it is not clear how to assign precise numbers because we don’t know if the distances between response options are equal. If “strongly disagree” is a 1 and “disagree” is a 2, should “neither agree nor disagree” be a 3? Or a 4? Maybe 3.5? It is difficult to say what numbering scheme would most accurately represent respondents’ attitudes because this is an ordinal variable. In the example provided earlier in this chapter using the `q2` variable, we simply counted up by 1 as we went across the response options. Whenever we take a simplistic approach like this, we're not sure if these numbers are really the ideal ones to assign, but they may still be a reasonable approximation of how attitudes might be mapped to numbers. And by assigning precise numbers to the response options, we enable treating this variable as quantitative. This is beneficial because quantitative variables are often easier to work with than qualitative variables.
 
 ### Types of datasets
 
-So far, the datasets we have seen are what we call **cross sections**. Each observation is a different unit. There are also **time series** datasets, where each observation is a different point in time. We saw an example of time series data on U.S. education being depicted graphically at the beginning of the chapter. @tbl-edu-spending shows some of this same data displayed as a spreadsheet. With time series data, the unit of analysis could be the year (as in this example), the quarter, the month, the week, the day, etc.
+So far, the datasets we have seen in spreadsheet form are what we call **cross sections**. Each observation is a different unit. There are also **time series** datasets, where each observation is a different point in time. Our Childhood Vaccination Rates example was about a time series dataset, and we can see part of this dataset in spreadsheet form in @tbl-vaccination-rates. With time series data, the unit of analysis could be the year (as in this example), the quarter, the month, the week, the day, etc.
 
-| year | spending_per_pupil |
-|------|--------------------|
-| 1973 | 7817               |
-| 1974 | 7994               |
-| 1975 | 8235               |
-| 1976 | 8445               |
+| `year` | `percent_vaccinated` |
+|--------|----------------------|
+| 2011   | 94.7                 |
+| 2012   | 94.1                 |
+| 2013   | 94                   |
+| 2014   | 94                   |
 
-: Time series data (U.S. education spending) {#tbl-edu-spending}
+: Time series data (estimated MMR vaccination rates) {#tbl-vaccination-rates}
 
 You may also sometimes encounter more complicated data structures that combine the attributes of cross-sectional and time series data. A **panel** dataset tracks multiple units over multiple time periods. For example, a dataset might track several countries over several years (each row describing one country in one year). A **repeated cross section** is similar, except that different units are observed in each time period. A survey that is conducted annually but where the respondents are different each year is a repeated cross section.
 
@@ -128,133 +256,17 @@ Unfortunately, there are many cases where statistical terminology is inconsisten
 
 Sources also disagree on whether ordinal variables should be considered a subcategory of quantitative or qualitative variables. For this text, I consider ordinal variables to be a distinct third category, but different authors classify them differently.
 
-## Visualization Basics
-
-Creating simple graphs is often a great first step for getting familiar with a dataset. In this chapter, we will focus mainly on graphing just one variable at a time.
-
-### Qualitative and ordinal variables
-
-For qualitative and ordinal variables, we often use bar charts to depict the frequencies of different values. (We can also sometimes use bar charts to depict quantitative variables if all values are whole numbers, as we will see next chapter in @fig-quiz-1.)
-
-![Bar chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/bar.png){#fig-bar-race width="400"}
-
-One can quickly see from @fig-bar-race that the most common value for the race variable is White, meaning that most U.S. government employees responding to the survey are White. We also see that the values of Asian and Other are fairly rare (each occurring in fewer than 10% of observations). Black or African American occurs a bit more frequently (around 15% of observations).
-
-Another type of graph you can create with qualitative data is a pie chart, using the frequency of each value to create the size of the pie slice. Pie charts visually suggest a zero-sum approach to thinking about the sizes of the different categories: you can't make one slice bigger without making at least one other slice smaller. This makes pie charts particularly effective for depicting something like a budget allocation where a scarce resource is being distributed across categories. However, a zero-sum allocation is not always what we wish to emphasize when summarizing a qualitative variable. Pie charts can also be hard to read with certain configurations of data (i.e., when there are too many categories or the slices get too small). Thus, it should come as no surprise that research scientists tend to rely on bar charts more than pie charts for depicting qualitative variables.
-
-![Pie chart of race variable from 2024 survey of U.S. government employees](Images/getting-started/pie.png){#fig-pie-race width="400"}
-
-Note that bar charts and pie charts can be used to represent things other than the frequency with which different values of a variable occur, even though that is the main way we use them while studying statistics. When you encounter a graph, it is always important to carefully read the titles and labels to make sure you understand exactly what is depicted. A bar graph might, for example, indicate the size of the change (positive or negative) in the budget from 2024 to 2025 for various categories of spending. Or as noted above, you might see the levels for budget categories themselves depicted in a pie chart—highlighting how some categories make up much larger shares of the budget than others. In such cases, the charts would not be telling you how many observations (rows of data) record different values of a variable, as in the example graphs shown here.
-
-### Quantitative variables {#sec-quantitative-variables}
-
-Perhaps the most popular type of graph for visualizing a single quantitative variable is a histogram. An example is shown below, using the publ_sector_size variable we discussed above. In a histogram, each bar represents a range of values, known as a “bin.” The x-axis (along the bottom of the graph) shows us the range of values for the publ_sector_size variable being described by each bar. The height of each bar represents how many data points fall within the corresponding bin. In this particular histogram, the y-axis (along the left side of the graph) shows how different heights indicate different numbers of observations. For example, the first bar on the left has a height indicating seven observations. The approximate range shown on the x-axis for this bar is .02 to .07. Therefore, seven countries have a public sector size between approximately .02 and .07, meaning that 2-7% of employment in those countries is within the public sector. The right-most bar indicates that 5 countries—those with the largest public sectors—have approximately 30-35% of all workers employed by the public sector. Most countries in this dataset lie between the two extremes depicted by the left-most and right-most bars. There are more observations in the middle three bins (indicated by the taller bars) than there are in the two left-most or the two right-most bins.
-
-![Histogram of public_sector_size variable from a dataset of countries and their characteristics](Images/getting-started/hist1.png){#fig-hist-publ_sector width="400"}
-
-Now, let's examine a histogram for the variable females_publ, which indicates the proportion of public sector employees who are female. In this graph, we can notice a certain asymmetry: the bars on the right half of the graph tend to be taller than those on the left. The short bars indicate that relatively few countries have proportions in the approximate range of .1 to .45; in other words, for a small number of countries, we see that 10-45% of the public workforce is female. Most countries have a public workforce that is more like 45-75% female (the tall bars on the right side of the graph). Thus, it seems that in a majority of the 44 countries included in this dataset, the public sector employs more females than males.
-
-![Histogram of females_publ variable from a dataset of countries and their characteristics](Images/getting-started/hist2.png){#fig-hist-females_publ width="400"}
-
-There are several alternatives to histograms. You can see in @fig-various-females_publ several different types of graphs being used to depict the same data for the females_publ variable. Each one indicates the relative density of observations across the range of possible values. Much like a histogram, a kernel density (k-density) plot uses height to indicate the frequency with which values occur, but rather than dividing values up into discrete ranges (bins), an algorithm is used to create a smooth, continuous line that is drawn across the values. A violin plot (which can be oriented horizontally or vertically) is somewhat similar but uses thickness rather than height to indicate density of observations across the range of values. A strip plot uses one dot per observation but usually adds some random noise called "jitter" to the data. Without this jitter, dots often stack on top of one another such that the actual density of observations is obscured. Finally, a box plot uses a box to indicate the range of values containing the middle 50% of observations, with other lines indicating other important quantities like the full range of values. Given the importance and complexity of box plots, we will examine them in more detail in the next chapter.
-
-![Various plots of public_sector_size variable from a dataset of countries and their characteristics](Images/getting-started/compare.png){#fig-various-females_publ width="550"}
-
-Regardless of which type of plot we use, we see the same asymmetry apparent in the original histogram for females_publ: most of the data lies in the range of .4-.8, with a few observations also occurring in the range of .1-.4.
-
-### Best practices for simple graphs
-
-As useful as graphs are, it is also easy to go wrong with data visualization. Here are three guidelines to keep in mind when getting started with graphs.
-
-First, the simple graphs we examined for quantitative variables are typically a good starting point for learning about a variable, but there may be important details that are not apparent from the first graph we look at. For example, while histograms usually provide a nice overview of a variable, the overall shape depicted by the bars in a histogram can sometimes change in surprising ways if we alter the boundaries of the bins.
-
-::: {.callout-tip icon="false"}
-## Example: Estimates of Small Donations {.unnumbered}
-
-A survey of nonprofits asked each respondent to estimate the percentage of individual donations to their organization in 2019 that were smaller than \$250.[^getting-started-3] Look at how different the right-most bars of the histogram look, depending on whether we use 10 bins or 11 bins (a setting we can change in the software creating the histogram):
-
-![Histograms with different bin settings (depicting donations estimate variable)](Images/getting-started/donations_hist1.png){#fig-bin-settings width="400"}
-
-Why the dramatic change? If we plot bins with a width of 1, we get a better sense of what is unusual about the underlying data:
-
-![Histogram with a bin width of 1 (depicting donations estimate variable)](Images/getting-started/donations_hist2.png){#fig-bin-width-1 width="400"}
-
-From this more fine-grained depiction of the data, we see that respondents appear to typically answer with numbers divisible by 5. Remember, survey respondents were asked to provide an estimate—not look up the exact number from their records. People are more likely to offer estimates that are "round" numbers like 90 or 95, as opposed to something like 92.
-
-In the initial histogram with 10 bins, the right-most bin included the value 90—the most popular answer. When we switched to using 11 bins, the right-most bin was redrawn to exclude 90, so the number of observations in the bin (represented by its height) dropped dramatically. Because of the spikes in frequency at round numbers (divisible by 10 or 5), changes in bin settings can cause relatively large changes to the visual pattern of the histogram.
-:::
-
-[^getting-started-3]: Year 1 of the Nonprofit Trends Longitudinal Survey Public Use Data Files. <https://doi.org/10.7910/DVN/T4OT1J>
-
-Second, be careful about using line graphs. When working with time series data, we often depict quantitative variables using a line graph. As we already saw in our example on trends in U.S. education, line graphs allow one to visually observe trends over time. While line graphs are appropriate for depicting time series data, their use in other contexts is often misleading, since the lines suggest connections between points that may not be connected at all in reality.
-
-Third, "keep it simple" is a great mantra to remember for data visualization (and much of data analysis). It is no accident that the graphs we have just reviewed are visually quite simple—maybe even boring. Some software programs will point you toward features like 3-dimensional graphs or using images instead of bars to depict information. While such graphs may look impressive on the surface, the flourishes usually distract from the main point of the graph (and can sometimes even actively mislead the reader).[^getting-started-4] Focus on simplicity and clarity in data visualization, not trying to stand out.
-
-[^getting-started-4]: See, for example, violations of the "principle of proportional ink": <https://callingbullshit.org/tools/tools_proportional_ink.html>
-
-## Critically Evaluating Graphs {#sec-critically-evaluating-graphs}
-
-Graphs are often poorly constructed in ways that can mislead, so it's always important to think critically and exercise caution when interpreting data visualizations.
-
-Let's look at some examples and see if any of the Three Questions to Always Ask about Data can help us identify misleading graphs.
-
-::: {.callout-tip .unnumbered icon="false"}
-## Example: Differences in employee attitudes by sex
-
-Q2 from the survey of federal employees asks whether there is a workplace environment supportive of innovation. As already noted, this variable is ordinal, meaning it is not obvious what numbers would be most appropriate to attach to the variable values. Nonetheless, we adopt here the common practice of starting from 1 and counting up by whole numbers for the different response option:
-
--   Strong Disagree = 1
-
--   Disagree = 2
-
--   Neither Agree nor Disagree = 3
-
--   Agree = 4
-
--   Strongly Agree = 5
-
-We're not sure if these numbers are really the ideal ones to assign, but they are a reasonable approximation of how attitudes might be mapped to numbers. And by assigning precise numbers to the response options, we enable treating this variable as quantitative. This is beneficial because quantitative variables are often easier to work with than qualitative variables. For example, we can calculate the average of a quantitative variable. The overall average of the q2 variable is 3.79, which is a bit less than the value we assigned to Agree. We can also compute averages for different subsets of survey respondents. For example, we can compute separate averages by sex (separating out males and females) and display these averages in a simple graph. Here is one possibility for what that graph could look like:
-
-![A tiny difference that looks large: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedin.png){#fig-gender-compare-zoomed-in width="400"}
-
-A quick glance at this graph suggests that males feel much more supported in pursuing innovation than than females. But our third Question to Always Ask about Data indicates we should consider "How big is the difference?" Look closely at the y-axis here. The average response for females appears to be around 3.787, while the average response for males is approximately 3.798. That is a tiny difference—just .011 on a 1-5 scale. In reality, male and female respondents report very similar average levels of support for pursing innovation. It is just that the figure is depicting a very narrow portion of the range for this variable, which makes a mole hill look like a mountain.
-
-Let's look at what happens when we redraw the y-axis:
-
-![A tiny difference that looks tiny: Comparing average male and female responses to survey item "I feel encouraged to come up with new and better ways of doing things."](Images/getting-started/zoomedout.png){#fig-gender-compare-zoomed-out width="400"}
-
-Now, the difference in averages between females and males is difficult to visually detect because the dot for Male is barely higher up than the dot for Female. Notice the values on the y-axis: the range begins at 3 (Neither Agree nor Disagree) and ends at 4 (Agree). We have "zoomed out" on the difference we saw in @fig-gender-compare-zoomed-in.
-:::
-
-Generally speaking, any difference can be made to visually look very large or very small depending on how the axes are drawn. It is all about how "zoomed in" or "zoomed out" you are relative to the range of possible values for the variable.
-
-It is sometimes tempting to create simplistic rules to try to avoid misleading graphs like the one from the prior example. Such rules are generally a bad substitute for carefully thinking through how to best describe the data in front of us. As an example, it is sometimes advised to always including 0 in the y axis in order to avoid "zooming in" on the y axis so much that we make small differences appear larger than they really are. Let's consider this rule in the context of some data on trends in childhood vaccination.
-
-::: {.callout-tip icon="false"}
-## Example: Childhood Vaccination Rates {.unnumbered}
-
-Public health officials advise that at least 95% of the community should be vaccinated against measles in order to maintain herd immunity.[^getting-started-5] @fig-vaccines-zoomed-out shows estimates for the rate of measles-mumps-rubella (MMR) vaccination in the U.S. among children starting primary school (solid line).[^getting-started-6] The y-axis is drawn to start at 0, and the target rate of 95% is depicted as a dashed line. The solid line looks almost flat and is always close to the dashed line. It is hard to say much more based on this graph, except that the actual vaccination rate appears to fall a bit shy of the 95% target in recent years.
-
-![A depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination2.png){#fig-vaccines-zoomed-out width="400"}
-
-Now look at the following alternative. While the exact same data is being depicted in @fig-vaccines-zoomed-in, the redrawn y axis makes the solid line look like it is moving a lot (suggesting big year-to-year differences). Prior to 2020, rates were pretty consistently within the 94-95% range. But more recent years show rates two or three percentage points below the 95% target. Given the potential public health implications of falling just one or two percentage points below the target of 95% vaccine coverage, it does not seem like a smart choice to include 0 on the y axis for this data (as in @fig-vaccines-zoomed-out), since doing so makes it quite difficult to precisely discern changes of one or two percentage points.
-
-![Another depiction of the trend in MMR vaccination among children starting primary school (kindergarten), compared to 95% target](Images/getting-started/vaccination1.png){#fig-vaccines-zoomed-in width="400"}
-:::
-
-[^getting-started-5]: Pandey, A., & Galvani, A. P. (2023). Exacerbation of measles mortality by vaccine hesitancy worldwide. *The Lancet Global Health*, *11*(4), e478-e479. <https://doi.org/10.1016/S2214-109X(23)00063-3>
-
-[^getting-started-6]: [Data](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye) from the U.S. Centers for Disease Control and Prevention.
-
-For good visualization, we want differences that are meaningful in reality to be visually noticeable in our graphs. How do we define a "meaningful" difference? There is no universal rule. Typically, subject-matter expertise and careful judgment will be our best guides.
-
-Whenever you see a difference in a graph that "looks big" or "looks small," take a moment to pause. Look carefully at the numbers on the axes, and think about how to evaluate the third Question to Always Ask about Data: "Based on what I know about this topic and how the variables are measured, *how big is this difference*? Does my understanding of the numbers match what my eyes see?"
-
 ## Exercises
 
 1.  What are the three Questions to Always Ask about Data?
 
-2.  What types of variables are `voter_registration`, `follows_news`, and `years_living_in_state` in the table below?
+2.  Are pie charts or bar charts more popular among scientists for depicting a qualitative variable?
+
+3.  What are three best practices for creating graphs (as described in this chapter)?
+
+4.  Why is it important to carefully read the labels on a graph's axes?
+
+5.  What types of variables are `voter_registration`, `follows_news`, and `years_living_in_state` in the table below?
 
     | id  | voter_registration  | follows_news      | years_living_in_state |
     |-----|---------------------|-------------------|-----------------------|
@@ -265,14 +277,8 @@ Whenever you see a difference in a graph that "looks big" or "looks small," take
     | 5   | registered          | somewhat disagree | 44                    |
     | 6   | unregistered        | strongly agree    | 11                    |
 
-3.  What is the unit of analysis in the table from question 2?
+6.  What is the unit of analysis in the table from question 2?
 
-4.  If I have a dataset where the unit of observation is the week, what type of dataset do I have?
+7.  If I have a dataset where the unit of observation is the week, what type of dataset do I have?
 
-5.  What is another name for a qualitative variable?
-
-6.  Are pie charts or bar charts more popular among scientists for depicting a qualitative variable?
-
-7.  What are three best practices for creating graphs (as described in this chapter)?
-
-8.  Why is it important to carefully read the labels on a graph's axes?
+8.  What is another name for a qualitative variable?

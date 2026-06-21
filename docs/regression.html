@@ -465,7 +465,7 @@ window.Quarto = {
 </header>
 
 
-<p>Regression is the most important tool for statistical analysis in the social sciences, and we have already seen several examples of how regression is used, starting from <a href="correlation.html#sec-introduction-to-linear-regression" class="quarto-xref"><span>Section 3.4</span></a>. In this chapter, we will learn more about the assumptions that typically underlie our regression models as well as how we can think about using regression to test more complex relationships among variables than we have examined so far.</p>
+<p>Regression is the most important tool for statistical analysis in the social sciences, and we have already seen several examples of how regression is used, starting from <a href="correlation.html#sec-introduction-to-linear-regression" class="quarto-xref"><span>Section 3.3</span></a>. In this chapter, we will learn more about the assumptions that typically underlie our regression models as well as how we can think about using regression to test more complex relationships among variables than we have examined so far.</p>
 <section id="sec-regression-assumptions" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="sec-regression-assumptions"><span class="header-section-number">11.1</span> Regression Assumptions</h2>
 <p>There are many different articulations of the assumptions that underlie our typical linear regression models, with some authors providing longer lists than others. Here, we will focus on the list provided by Gelman, Hill, and Vehtari (2021), which has the benefit of being arranged in decreasing order of importance. The authors caution, though, that this list of assumptions is for <em>predictive</em> inferences; drawing <em>causal</em> conclusions requires additional considerations, as implied by the discussion of causality in <a href="causality.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
@@ -516,7 +516,7 @@ Figure&nbsp;11.1: University GPA as a function of High School GPA.
 <p>where <span class="math inline">\(\widehat{UGPA}\)</span> is the predicted value of University GPA and <span class="math inline">\(\alpha\)</span> is the intercept (note that many authors instead use <span class="math inline">\(\beta_0\)</span> to denote the intercept). For these data, the best prediction equation is shown below:</p>
 <p><span id="eq-multi-reg-sat"><span class="math display">\[\widehat{UGPA}_i = 0.540 + 0.541 \times HSGPA_i + 0.008 \times SAT_i \tag{11.1}\]</span></span></p>
 <p>In other words, to compute the prediction of a student’s University GPA, you add up (a) 0.540, (b) their High-School GPA multiplied by 0.541, and (c) their SAT multiplied by 0.008.</p>
-<p>For comparison purposes, here is the regression equation from the simple regression discussed in <a href="correlation.html#sec-introduction-to-linear-regression" class="quarto-xref"><span>Section 3.4</span></a>.</p>
+<p>For comparison purposes, here is the regression equation from the simple regression discussed in <a href="correlation.html#sec-introduction-to-linear-regression" class="quarto-xref"><span>Section 3.3</span></a>.</p>
 <p><span id="eq-simple-reg-sat"><span class="math display">\[
 \widehat{UGPA}_i = 1.097 + 0.675 \times HSGPA_i
 \tag{11.2}\]</span></span></p>
