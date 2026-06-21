@@ -47,7 +47,7 @@ Fortunately, we can create what is called a binned scatter plot. Rather than plo
 [^correlation-3]: Bosco, F. A., Aguinis, H., Singh, K., Field, J. G., & Pierce, C. A. (2015). Correlational effect size benchmarks. *Journal of applied psychology*, *100*(2), 431.
 
 |   | Strong | Moderate | Weak | Mostly Unrelated | Weak | Moderate | Strong |
-|----|----|----|----|----|----|----|----|
+|---------|---------|---------|---------|---------|---------|---------|---------|
 | **r** | -1.0 to -0.6 | -0.5 to -0.3 | -0.2 to -0.1 | Rounding to 0.0 | 0.1 to 0.2 | 0.3 to 0.5 | 0.6 to 1.0 |
 
 : Example language to interpret the strength of a correlation, based roughly on Cohen's effect size benchmarks {#tbl-corr-benchmarks}
@@ -86,7 +86,7 @@ $$
 \hat{y_i} = \alpha + \beta x_i
 $$
 
-How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called "least squares" because it involves minimizing the squared errors of prediction. "Error of prediction" refers to the difference between the predicted value of $y$ and the actual value of $y$ for each observation. There are well-known formulas for selecting $\alpha$ and $\beta$ that result in the line that minimizes the sum of the squared errors. These formulas for ordinary least squares (OLS) regression are shown in the appendix.
+How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called "least squares" because it involves minimizing the squared errors of prediction. "Error of prediction" refers to the difference between the predicted value of $y$ and the actual value of $y$ for each observation. There are well-known formulas for selecting $\alpha$ and $\beta$ that result in the line that minimizes the sum of the squared errors. These formulas for ordinary least squares (OLS) regression are shown in Appendix II.
 
 When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. $y$ will always represent the dependent variable, since it is the variable we are trying to predict based on the value of $x$. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of $x$ with $y$ equals the correlation of $y$ with $x$. But when we "run a regression" (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.[^correlation-4]
 
@@ -205,7 +205,7 @@ Remember that the three S's are just a starting point. But they should be enough
 
 ## @sec-correlation Appendix I: How Correlation is Calculated {.unnumbered}
 
-There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus here on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the next appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
+There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus in this appendix on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the next appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
 
 Here is one way to calculate correlation:
 
@@ -235,7 +235,7 @@ This makes it clear that after standardizing our two variables ($x$ and $y$), we
 In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-10] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
 
 | id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
-|----|----|----|----|----|----|----|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
 | 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
 | 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |
@@ -266,7 +266,7 @@ As illustrated in the example above, multiplying two standardized values togethe
 
 ## @sec-correlation Appendix II: Formulas for Correlation, Covariance, and Regression Coefficients {.unnumbered}
 
-If we are working with a sample, we can rewrite @eq-pop-corr as:
+If we are working with a sample, we can rewrite @eq-pop-corr (from Appendix I) as:
 
 $$
 r=\frac{1}{n-1} \sum_{i=1}^{n} \left( \frac{x_i-\bar{x}}{s_x} \right) \left( \frac{y_i-\bar{y}}{s_y} \right)
