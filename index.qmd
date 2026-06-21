@@ -16,7 +16,7 @@ Accessible yet rigorous explanations prioritize conceptual understanding over ex
 
 *Statistics Minus the Math* will appeal to undergraduates and early postgraduate students who are new to statistics—especially those who lack confidence in math. It can be used as a main text for introductory statistics, data analysis, or quantitative research methods courses. It also makes for a good supplementary textbook for courses with a broader focus on research methods, data science, or thesis writing.
 
-## What's different about this book?
+## How this book is different
 
 There several things that make this book is a bit different from most introductory statistics texts:
 
@@ -30,7 +30,7 @@ There several things that make this book is a bit different from most introducto
 
 -   Chapters are relatively short (usually around 6000 words), allowing for quick reading and making clear the most essential material for students to master on each topic. Given the broad audience of this text, it may be helpful to read these short chapters alongside applied examples from one's field of study. Chapter appendices sometimes provide additional content that may be important for more technically-oriented versions of an intro course.
 
--   Instructors may be interested in further considerations outlined in @sec-a-few-more-details-about-whats-unique-in-this-text.
+-   Instructors may be interested in further considerations outlined in Teaching Resources section at the end of the book.
 
 This digital book is meant to be a free resource, and this version is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). The book was made using [Quarto](https://quarto.org/) and is hosted using [GitHub Pages](https://pages.github.com/).
 

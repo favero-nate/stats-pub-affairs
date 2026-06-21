@@ -14,7 +14,9 @@ I've created a number of Stata and R labs that I use when I teach. There are als
 
 While they do not directly correspond to this version of the text, there are some (Stata-based) lecture slides and videos I created to use alongside this book when I teach. They are currently available here: <https://github.com/favero-nate/minus-the-math/tree/main/lecture_slides>
 
-## A Few More Details about What's Unique in this Text {#sec-a-few-more-details-about-whats-unique-in-this-text}
+## A Few More Ways this Book is Unique
+
+Beyond the initial list provided in the book's preface, I highlight here some additional unique aspects of this text that may be of particular interest to instructors:
 
 1.  My own assessment is that this text is compatible with the highly-regarded 2016 Guidelines for Assessment and Instruction in Statistics Education (GAISE) College Report, as well as the new guidance currently described in the ongoing revision that has yet to be finalized (<https://amstat.quarto.pub/college-gaise/>). Some of the guidelines go beyond what a textbook will directly cover, describing course pedagogy and assessment. Use of software/apps is also not embedded in this text, with the intent that instructors can choose the particular software that best matches their program needs. Please see the above-linked guidelines for ideas about how to best approach teaching a course that uses this book.
 

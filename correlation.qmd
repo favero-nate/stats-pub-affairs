@@ -47,7 +47,7 @@ Fortunately, we can create what is called a binned scatter plot. Rather than plo
 [^correlation-3]: Bosco, F. A., Aguinis, H., Singh, K., Field, J. G., & Pierce, C. A. (2015). Correlational effect size benchmarks. *Journal of applied psychology*, *100*(2), 431.
 
 |   | Strong | Moderate | Weak | Mostly Unrelated | Weak | Moderate | Strong |
-|---------|---------|---------|---------|---------|---------|---------|---------|
+|----|----|----|----|----|----|----|----|
 | **r** | -1.0 to -0.6 | -0.5 to -0.3 | -0.2 to -0.1 | Rounding to 0.0 | 0.1 to 0.2 | 0.3 to 0.5 | 0.6 to 1.0 |
 
 : Example language to interpret the strength of a correlation, based roughly on Cohen's effect size benchmarks {#tbl-corr-benchmarks}
@@ -209,7 +209,7 @@ There are many ways to write the formula for correlation. As we saw in the prior
 
 Here is one way to calculate correlation:
 
-$$ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \left( \frac{y_i-\mu_y}{\sigma_y} \right) $$
+$$ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \left( \frac{y_i-\mu_y}{\sigma_y} \right) $$ {#eq-pop-corr}
 
 Let's try to make sense of @eq-pop-corr by breaking it up into parts, starting from within the summation.
 
@@ -235,7 +235,7 @@ This makes it clear that after standardizing our two variables ($x$ and $y$), we
 In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-10] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
 
 | id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|----|----|----|----|----|----|----|
 | 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
 | 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
 | 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |
