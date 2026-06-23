@@ -58,3 +58,5 @@ I will highlight several aspects of how LLMs function that are useful to know ab
 4.  Specific LLMs vary widely from one another.
 5.  LLMs can be integrated with various other tools and algorithms.
 6.  LLMs can be applied to things other than just language.
+
+## How LLMs are Changing Research, Study, and Communication

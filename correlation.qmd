@@ -1,16 +1,22 @@
 # Relationships Between Two Quantitative Variables {#sec-correlation}
 
+\[***Working draft notes for instructors**: I don't anticipate major changes to the structure of this chapter, but I am hoping to replace the linear regression example so that it comes from the chapter case study dataset.*\]
+
 When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country's political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.
 
-## Scatter Plots and Correlation
+::: {.callout-tip icon="false"}
+## Chapter Case Study: World Bank Development Indicators {.unnumbered}
 
-Visually, we can depict the relationship between two quantitative variables using a scatter plot. @fig-stability-gdp shows an example using data from the 2018 World Bank Development Indicators dataset.[^correlation-1] Two variables are depicted: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores).
+Data examples throughout this chapter come from the 2018 World Bank Development Indicators dataset.[^correlation-1] This dataset describes various countries around the world. For an initial example, we consider two variables: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores). Visually, we can depict the relationship between two quantitative variables using a scatter plot, as shown in @fig-stability-gdp.
+
+![Scatter plot of country wealth and political stability, r=0.66](Images/correlations/stability_gdp.png){#fig-stability-gdp width="400"}
+:::
 
 [^correlation-1]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 
-Each observation in a scatter plot is shown as one dot, with the x-axis showing values for one variable (GDP per capita in @fig-stability-gdp) and the y-axis representing the other variable (political stability). It is also common to add a straight line, called a regression line, showing the general trend in the data. In this first example, the regression line slopes upward from left to right, so we say there is a **positive relationship** between the two variables. A positive relationship means that when values of one variable are higher, values of the other variable also tend to be higher. If the line slopes downward, we say there is a **negative relationship**. With a negative relationship, higher values for one variable correspond to lower values for the other variable.
+## Scatter Plots and Correlation
 
-![Scatter plot of country wealth and political stability, r=0.66](Images/correlations/stability_gdp.png){#fig-stability-gdp width="400"}
+Each observation in a scatter plot is shown as one dot, with the x-axis showing values for one variable (GDP per capita in @fig-stability-gdp) and the y-axis representing the other variable (political stability). It is also common to add a straight line, called a regression line, showing the general trend in the data. In this first example, the regression line slopes upward from left to right, so we say there is a **positive relationship** between the two variables. A positive relationship means that when values of one variable are higher, values of the other variable also tend to be higher. If the line slopes downward, we say there is a **negative relationship**. With a negative relationship, higher values for one variable correspond to lower values for the other variable.
 
 If we want a single number to summarize the relationship between two variables, we can use a **correlation coefficient**. A correlation, represented by the letter "r" ($r$), always falls between -1 and 1. It tells us two things. First, the sign indicates the direction of the relationship (positive or negative). Second, it tells us how *strong* the relationship is. Numbers closer to 0 indicate weaker relationships, while numbers closer to 1 or -1 indicate stronger relationships.
 
@@ -47,7 +53,7 @@ Fortunately, we can create what is called a binned scatter plot. Rather than plo
 [^correlation-3]: Bosco, F. A., Aguinis, H., Singh, K., Field, J. G., & Pierce, C. A. (2015). Correlational effect size benchmarks. *Journal of applied psychology*, *100*(2), 431.
 
 |   | Strong | Moderate | Weak | Mostly Unrelated | Weak | Moderate | Strong |
-|---------|---------|---------|---------|---------|---------|---------|---------|
+|----|----|----|----|----|----|----|----|
 | **r** | -1.0 to -0.6 | -0.5 to -0.3 | -0.2 to -0.1 | Rounding to 0.0 | 0.1 to 0.2 | 0.3 to 0.5 | 0.6 to 1.0 |
 
 : Example language to interpret the strength of a correlation, based roughly on Cohen's effect size benchmarks {#tbl-corr-benchmarks}
@@ -235,7 +241,7 @@ This makes it clear that after standardizing our two variables ($x$ and $y$), we
 In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-10] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
 
 | id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|----|----|----|----|----|----|----|
 | 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
 | 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
 | 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |

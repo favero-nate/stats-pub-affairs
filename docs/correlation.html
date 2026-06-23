@@ -464,11 +464,19 @@ window.Quarto = {
 </header>
 
 
+<p>[<em><strong>Working draft notes for instructors</strong>: I don’t anticipate major changes to the structure of this chapter, but I am hoping to replace the linear regression example so that it comes from the chapter case study dataset.</em>]</p>
 <p>When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country’s political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.</p>
-<section id="scatter-plots-and-correlation" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="scatter-plots-and-correlation"><span class="header-section-number">3.1</span> Scatter Plots and Correlation</h2>
-<p>Visually, we can depict the relationship between two quantitative variables using a scatter plot. <a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> shows an example using data from the 2018 World Bank Development Indicators dataset.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Two variables are depicted: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores).</p>
-<p>Each observation in a scatter plot is shown as one dot, with the x-axis showing values for one variable (GDP per capita in <a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>) and the y-axis representing the other variable (political stability). It is also common to add a straight line, called a regression line, showing the general trend in the data. In this first example, the regression line slopes upward from left to right, so we say there is a <strong>positive relationship</strong> between the two variables. A positive relationship means that when values of one variable are higher, values of the other variable also tend to be higher. If the line slopes downward, we say there is a <strong>negative relationship</strong>. With a negative relationship, higher values for one variable correspond to lower values for the other variable.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Chapter Case Study: World Bank Development Indicators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Data examples throughout this chapter come from the 2018 World Bank Development Indicators dataset.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This dataset describes various countries around the world. For an initial example, we consider two variables: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores). Visually, we can depict the relationship between two quantitative variables using a scatter plot, as shown in <a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>.</p>
 <div id="fig-stability-gdp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stability-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -479,6 +487,11 @@ Figure&nbsp;3.1: Scatter plot of country wealth and political stability, r=0.66
 </figcaption>
 </figure>
 </div>
+</div>
+</div>
+<section id="scatter-plots-and-correlation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="scatter-plots-and-correlation"><span class="header-section-number">3.1</span> Scatter Plots and Correlation</h2>
+<p>Each observation in a scatter plot is shown as one dot, with the x-axis showing values for one variable (GDP per capita in <a href="#fig-stability-gdp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>) and the y-axis representing the other variable (political stability). It is also common to add a straight line, called a regression line, showing the general trend in the data. In this first example, the regression line slopes upward from left to right, so we say there is a <strong>positive relationship</strong> between the two variables. A positive relationship means that when values of one variable are higher, values of the other variable also tend to be higher. If the line slopes downward, we say there is a <strong>negative relationship</strong>. With a negative relationship, higher values for one variable correspond to lower values for the other variable.</p>
 <p>If we want a single number to summarize the relationship between two variables, we can use a <strong>correlation coefficient</strong>. A correlation, represented by the letter “r” (<span class="math inline">\(r\)</span>), always falls between -1 and 1. It tells us two things. First, the sign indicates the direction of the relationship (positive or negative). Second, it tells us how <em>strong</em> the relationship is. Numbers closer to 0 indicate weaker relationships, while numbers closer to 1 or -1 indicate stronger relationships.</p>
 <p>For this first example, the correlation is 0.66, which indicates a positive and moderately strong relationship. The correlation matches what we see visually: it is clear that typical values for political stability tend to be higher when GDP per capita is higher. We can therefore say there is a clear, positive <strong>association</strong> between wealth and political stability (the terms “association” and “relationship” are interchangeable).</p>
 <p><a href="#fig-mortality-gpa" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> shows an example of a negative relationship. The correlation is -0.86. Wealthier countries tend to have lower infant mortality rates. The data in this scatter plot also appear to track more closely to the regression line than in our prior example. Notice that the absolute value of this correlation (0.86) is larger than that of the previous example (0.66), indicating a stronger relationship. Thus, we can say that the wealth-infant morality relationship is stronger than the wealth-political stability relationship.</p>

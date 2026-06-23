@@ -4,21 +4,49 @@ Hypothesis tests allow us to determine whether a finding is “statistically sig
 
 As we will see in this chapter, hypothesis testing can often be understood as a particular application of confidence intervals. The risk with hypothesis tests is that we reduce our results down to a binary (significant or not significant), ignoring other nuances that may be present in the results. We will discuss some of these limitations in more detail throughout this chapter.
 
-## Getting Started: A Binary-Quantitative Relationship
+::: {.callout-tip icon="false"}
+## Chapter Case Study: Ideology of Representatives in the U.S. Congress {.unnumbered}
 
 We learned in @sec-qual-associations that we can use a comparison of means to evaluate how a binary (qualitative) variable relates to a quantitative variable. To see how hypothesis testing applies when comparing two means, we will use data describing U.S. congressional districts. Each district elects a single member (a Representative) to the U.S. House of Representatives. There is a binary variable `rural` indicating whether a majority of the district’s residents live in a rural area. A quantitative variable `ideology` is an estimate of political ideology for the Representative from that district.[^h-tests-1] Ideology can be measured on a continuous left-to-right scale (also called “liberal” to “conservative” in the US political system), with higher values indicating an official is further to the right.
 
+With hypotheses testing, we evaluate a hypothesis called a **null hypothesis**. More details will be provided in the main part of the chapter, but normally the null hypothesis claims that there is no association between the independent and dependent variables. In the context of a regression, a coefficient of 0 indicates no association, so if we are using $\beta$ to represent the regression coefficient of interest, we can write the null hypothesis to be tested as $\beta = 0$.
+
+@tbl-ideology-region presents results for a regression where ideology is the dependent variable and the binary variable `rural` is the independent variable. The table includes confidence intervals for the coefficients:
+
+|             | Coef.  | Std. Err. | p-value | 95% Conf. Interval |
+|-------------|--------|-----------|---------|--------------------|
+| rural       | 2.294  | 0.446     | 0.000   | \[1.418, 3.170\]   |
+| (intercept) | -0.024 | 0.140     | 0.864   | \[-0.299, 0.251\]  |
+|             |        |           |         |                    |
+| n           | 435    |           |         |                    |
+| r\^2        | 0.058  |           |         |                    |
+
+: Results for a regression with ideology as the dependent variable {#tbl-ideology-rural}
+
+The row labeled `rural` corresponds to what we have written as $\beta$ in our hypotheses. The null hypothesis indicates that $\beta$ is 0, but the value of 0 is not included within the range identified by the 95% confidence interval (0 is not between 1.418 and 3.170). Thus, we can *reject* the null hypothesis. Therefore, we conclude that $\beta$ is non-zero, as the 95% confidence interval suggests.
+
+Because we reject the null hypothesis of no relationship between the two variables, we can say that the relationship is *statistically significant*. We previously learned to draw this same conclusion by noting that the coefficient's p-value is less than 0.05. It is no coincidence that @tbl-ideology-region indicates a p-value smaller than 0.05 for the `rural` coefficient, aligning with what we concluded using the confidence interval. The calculation of the p-value follows a process that perfectly aligns with the confidence interval, such that the p-value will always be less than 0.05 when the confidence interval indicates we reject the null hypothesis. It does not matter, therefore, whether we use a confidence interval or a p-value to test a hypothesis. Note that in any regression table, the p-value shown for each coefficient will typically correspond to the null hypothesis stating that the coefficient is 0.
+
+If the 95% confidence interval for the `rural` coefficient had included 0 (i.e., if the lower bound was negative and the upper bound was positive), we would have *failed to reject* the null hypothesis.
+
+A word of caution about our conclusion here: statistical significance doesn't mean that the relationship between variables is strong—only that we could reject the possibility of a relationship being entirely absent (i.e., we reject the notion that the expected value of `ideology` is exactly the same in rural and urban districts). To assess whether a relationship is strong or *substantively* significant, we need to use tools other than standard hypothesis tests (such as scrutinizing the range of the confidence interval, as we did in the prior chapter). This is one reason I encourage you to always consider "How big are the differences?" (the third Question to Always Ask about Data): many publications clearly indicate statistical significance but do not devote sufficient attention to substantive significance.
+
+In this case, assessing substantive size is a bit difficult because ideology is measured in unfamiliar units. Ideology scores (among Representatives in this sample) range from -4.10 to 4.57, and the standard deviation is 2.85. Since the smallest number (in absolute value) within the confidence interval for the `rural` coefficient is its lower bound of 1.42, we can say that the systematic difference between urban and rural districts appears to be at least half a standard deviation ($1.42 \div 2.85 = 0.498$). A difference of half a standard deviation is generally considered to be quite large, so we can say that Representatives from rural districts are notably further to the right politically (more conservative) than Representatives from urban districts.
+
+While I will not walk through an analysis of substantive size for every example presented in this chapter (for sake of brevity), it is almost always important in applied research to consider substantive strength of associations when interpreting statistically significant findings.
+:::
+
 [^h-tests-1]: Data shared under [ODC-BY 1.0](https://opendatacommons.org/licenses/by/1-0/): Bonica, Adam. 2024. Database on Ideology, Money in Politics, and Elections: Public version 4.0 \[Computer file\]. Stanford, CA: Stanford University Libraries. <https://data.stanford.edu/dime>.
 
-### Null and Alternative Hypotheses
+## Establishing Hypotheses to Evaluate
 
-The starting point for hypothesis testing is a **null hypothesis**, which is sometimes just called "the null." Practically speaking, the null hypothesis usually indicates that there is no relationship between variables.[^h-tests-2] So if we are comparing two means, the null hypothesis would typically be that the two means are the same. The null hypothesis always describes a parameter being estimated, not a sample statistic. Therefore, when writing a null hypothesis as an equation, we generally use Greek letters. For example, a null hypothesis may contain one or more instances of $\mu$, representing a population mean. If there is no clearly-defined population, $\mu$ might represent the "expected value" (defined in the following chapter) for a variable that we assume was generated through a (partially) random process. This latter interpretation is probably more appropriate to the example data we're using. $H_0$ is how we formally denote the null hypothesis, so for our data example we can write:
+The starting point for hypothesis testing is a **null hypothesis**, which is sometimes just called "the null." Practically speaking, the null hypothesis usually indicates that there is no relationship between variables.[^h-tests-2] So if we are comparing two means, the null hypothesis would typically be that the two means are the same. The null hypothesis always describes a parameter being estimated, not a sample statistic. Therefore, when writing a null hypothesis as an equation, we generally use Greek letters. For example, a null hypothesis may contain one or more instances of $\mu$, representing a population mean. If there is no clearly-defined population, $\mu$ might represent the "expected value" (defined in the following chapter) for a variable that we assume was generated through a (partially) random process. This latter interpretation is probably more appropriate to the example data we're using. $H_0$ is how we formally denote the null hypothesis, so for our chapter case study we can write:
 
 [^h-tests-2]: This description of "no relationship" is confined to a specific measure of association. For example, the null hypothesis might indicate no *linear* relationship between two variables (a correlation of zero) but say nothing about possibilities for a nonlinear relationship. Or it might indicate that the means are equal, saying nothing about medians or variances.
 
 $$
 H_0: \mu_R = \mu_U
-$$ {#eq-rural-null-equal-means} using the subscripts $R$ and $U$ to indicate "rural" and "urban," and $\mu$ for the expected value (or population mean) of the quantitative variable: `ideology`. Simply put, this null hypothesis states that the expected value of `ideology` among rural districts is the same as the expected value of `ideology` among urban districts.
+$$ {#eq-rural-null-equal-means} uusing the subscripts $R$ and $U$ to indicate "rural" and "urban," and $\mu$ for the expected value (or population mean) of the quantitative variable: `ideology`. Simply put, this null hypothesis states that the expected value of `ideology` among rural districts is the same as the expected value of `ideology` among urban districts.
 
 Another way to write this null hypothesis is:
 
@@ -54,41 +82,7 @@ $$
 H_A: \beta \neq 0
 $$ {#eq-rural-alt-beta}
 
-Moving forward, we will focus on the final form in which we've written the null and alternative hypotheses (@eq-rural-null-beta and @eq-rural-alt-beta). We have already learned that confidence intervals can be constructed for regression coefficients, so let's see if we can evaluate these hypotheses using a confidence interval from a regression.
-
-### Evaluating Hypotheses with a Confidence Interval
-
-@tbl-ideology-region presents results for a regression where ideology is the dependent variable and the binary variable `rural` is the independent variable. The table includes confidence intervals for the coefficients:
-
-+-------------+------------+------------+------------+--------------------+
-|             | Coef.      | Std. Err.  | p-value    | 95% Conf. Interval |
-+=============+============+============+============+====================+
-| rural       | 2.294      | 0.446      | 0.000      | \[1.418, 3.170\]   |
-+-------------+------------+------------+------------+--------------------+
-| (intercept) | -0.024     | 0.140      | 0.864      | \[-0.299, 0.251\]  |
-+-------------+------------+------------+------------+--------------------+
-|             |            |            |            |                    |
-+-------------+------------+------------+------------+--------------------+
-| n           | 435        |            |            |                    |
-+-------------+------------+------------+------------+--------------------+
-| r\^2        | 0.058      |            |            |                    |
-+-------------+------------+------------+------------+--------------------+
-
-: Results for a regression with ideology as the dependent variable {#tbl-ideology-rural}
-
-The row labeled `rural` corresponds to what we have written as $\beta$ in our hypotheses. The null hypothesis indicates that $\beta$ is 0, but the value of 0 is not included within the range identified by the 95% confidence interval (0 is not between 1.418 and 3.170). Thus, we can *reject* the null hypothesis. The alternative hypothesis indicates that $\beta$ is not zero, and the 95% confidence interval suggests that $\beta$ is indeed not zero. Thus, we *accept* the alternative hypothesis. Given that null and alternative hypotheses are logical opposites, we accept the alternative hypothesis whenever we reject the null hypothesis.
-
-Because we reject the null hypothesis of no relationship between the two variables, we can say that the relationship is *statistically significant*. We previously learned to draw this same conclusion by noting that the coefficient's p-value is less than 0.05. It is no coincidence that @tbl-ideology-region indicates a p-value smaller than 0.05 for the `rural` coefficient, aligning with what we concluded using the confidence interval. The calculation of the p-value follows a process that perfectly aligns with the confidence interval, such that the p-value will always be less than 0.05 when the confidence interval indicates we reject the null hypothesis. It does not matter, therefore, whether we use a confidence interval or a p-value to test a hypothesis. Note that in any regression table, the p-value shown for each coefficient will typically correspond to the null hypothesis stating that the coefficient is 0.
-
-If the 95% confidence interval for the `rural` coefficient had included 0 (i.e., if the lower bound was negative and the upper bound was positive), we would have *failed to reject* the null hypothesis.
-
-### Substantive Significance
-
-A word of caution about our conclusion here: statistical significance doesn't mean that the relationship between variables is strong—only that we could reject the possibility of a relationship being entirely absent (i.e., we reject the notion that the expected value of `ideology` is exactly the same in rural and urban districts). To assess whether a relationship is strong or *substantively* significant, we need to use tools other than standard hypothesis tests (such as scrutinizing the range of the confidence interval, as we did in the prior chapter). This is one reason I encourage you to always consider "How big are the differences?" (the third Question to Always Ask about Data): many publications clearly indicate statistical significance but do not devote sufficient attention to substantive significance.
-
-In this case, assessing substantive size is a bit difficult because ideology is measured in unfamiliar units. Ideology scores (among Representatives in this sample) range from -4.10 to 4.57, and the standard deviation is 2.85. Since the smallest number (in absolute value) within the confidence interval for the `rural` coefficient is its lower bound of 1.42, we can say that the systematic difference between urban and rural districts appears to be at least half a standard deviation ($1.42 \div 2.85 = 0.498$). A difference of half a standard deviation is generally considered to be quite large, so we can say that Representatives from rural districts are notably further to the right politically (more conservative) than Representatives from urban districts.
-
-While I will not walk through an analysis of substantive size for every example presented in this chapter (for sake of brevity), it is almost always important in applied research to consider substantive strength of associations when interpreting statistically significant findings.
+Moving forward, we will focus on the final form in which we've written the null and alternative hypotheses (@eq-rural-null-beta and @eq-rural-alt-beta). We already saw an example in the chapter case study of a null hypothesis being evaluated using a confidence interval. In that example, we reject the null hypothesis, and therefore we also *accept* the alternative hypothesis. Given that null and alternative hypotheses are logical opposites, we accept the alternative hypothesis whenever we reject the null hypothesis.
 
 ## Testing Relationships for Various Types of Variables
 
@@ -96,7 +90,7 @@ Let's now consider each possible pairing of qualitative and quantitative variabl
 
 ### Qualitative-Quantitative Relationships
 
-We already saw how to evaluate this when the qualitative variable is binary, but what about when it is not? Consider the qualitative variable `region`, which divides the country into four different parts (using U.S. Census Bureau regions).[^h-tests-3]
+We already saw in our chapter case study how to evaluate this when the qualitative variable is binary, but what about when it is not? Consider the qualitative variable `region`, which divides the country into four different parts (using U.S. Census Bureau regions).[^h-tests-3]
 
 [^h-tests-3]: <https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf>
 
@@ -272,19 +266,13 @@ Though a simple regression slope coefficient and correlation coefficient normall
 
 In @tbl-ideology-area, we see a confidence interval for the geographic size coefficient, labeled `log_area`. The confidence interval ranges from 0.811 to 1.046 and does not include 0. Therefore, we reject the null hypothesis of a regression slope of 0 (meaning we also reject that the correlation could be 0). Note that the p-value is also less than 0.05, which is another way to arrive at the conclusion that we reject the null hypothesis and accept the alternative.
 
-+-------------+------------+------------+------------+--------------------+
-|             | Coef.      | Std. Err.  | p-value    | 95% Conf. Interval |
-+=============+============+============+============+====================+
-| log_area    | 0.929      | 0.060      | 0.000      | \[0.811,1.046\]    |
-+-------------+------------+------------+------------+--------------------+
-| (intercept) | -6.687     | 0.456      | 0.000      | \[-7.583,-5.791\]  |
-+-------------+------------+------------+------------+--------------------+
-|             |            |            |            |                    |
-+-------------+------------+------------+------------+--------------------+
-| N           | 429        |            |            |                    |
-+-------------+------------+------------+------------+--------------------+
-| r2          | 0.362      |            |            |                    |
-+-------------+------------+------------+------------+--------------------+
+|             | Coef.  | Std. Err. | p-value | 95% Conf. Interval |
+|-------------|--------|-----------|---------|--------------------|
+| log_area    | 0.929  | 0.060     | 0.000   | \[0.811,1.046\]    |
+| (intercept) | -6.687 | 0.456     | 0.000   | \[-7.583,-5.791\]  |
+|             |        |           |         |                    |
+| N           | 429    |           |         |                    |
+| r2          | 0.362  |           |         |                    |
 
 : Results for a regression with ideology as the dependent variable {#tbl-ideology-area}
 

@@ -262,7 +262,7 @@ $$
 
 where $\bar{x}$ is the sample mean, $t_{CL}$ is the t for the confidence level desired (0.95 in the above example), and $s_{\bar{x}}$ is the estimated standard error of the mean.
 
-We will finish our discussion of confidence intervals for the mean with an analysis of the Stroop Data.[^sampling-distributions-7] Specifically, we will compute a confidence interval on the mean difference score. As mentioned in @sec-box-plots, the study involved 47 subjects naming the color of ink that words were written in. An additional detail that is now relevant to us is that subjects completed similar naming tasks multiple times under different conditions. In the "interference" condition, the names conflicted so that, for example, they would name the ink color of the word "blue" written in red ink. The correct response is to say "red" and ignore the fact that the word is "blue." In a second condition, subjects named the ink color of colored rectangles.
+We will finish our discussion of confidence intervals for the mean with an analysis of the Stroop Data.[^sampling-distributions-7] Specifically, we will compute a confidence interval on the mean difference score. As mentioned in @sec-percentiles-and-box-plots, the study involved 47 subjects naming the color of ink that words were written in. An additional detail that is now relevant to us is that subjects completed similar naming tasks multiple times under different conditions. In the "interference" condition, the names conflicted so that, for example, they would name the ink color of the word "blue" written in red ink. The correct response is to say "red" and ignore the fact that the word is "blue." In a second condition, subjects named the ink color of colored rectangles.
 
 [^sampling-distributions-7]: <https://onlinestatbook.com/2/case_studies/stroop.html>
 
@@ -436,7 +436,7 @@ Now for the key question: Are these two estimates independent? The answer is no 
 
 In general, the degrees of freedom for an estimate is equal to the number of values minus the number of parameters estimated en route to the estimate in question. In the Martians example, there are two values (8 and 5) and we had to estimate one parameter ($\mu$) on the way to estimating the parameter of interest ($\sigma^2$). Therefore, the estimate of variance has 2 - 1 = 1 degree of freedom. If we had sampled 12 Martians, then our estimate of variance would have had 11 degrees of freedom. Therefore, the degrees of freedom of an estimate of variance is equal to n - 1, where n is the number of observations.
 
-Recall from @sec-variance that the formula for estimating the variance in a sample is:
+Recall from Appendix II of @sec-describing-one-variable that the formula for estimating the variance in a sample is:
 
 $$ s^2=\frac{\sum_{i=1}^n {(x_i-\bar{x})^2}}{n-1} $$
 

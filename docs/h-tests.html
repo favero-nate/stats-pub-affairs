@@ -428,12 +428,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#getting-started-a-binary-quantitative-relationship" id="toc-getting-started-a-binary-quantitative-relationship" class="nav-link active" data-scroll-target="#getting-started-a-binary-quantitative-relationship"><span class="header-section-number">6.1</span> Getting Started: A Binary-Quantitative Relationship</a>
-  <ul class="collapse">
-  <li><a href="#null-and-alternative-hypotheses" id="toc-null-and-alternative-hypotheses" class="nav-link" data-scroll-target="#null-and-alternative-hypotheses"><span class="header-section-number">6.1.1</span> Null and Alternative Hypotheses</a></li>
-  <li><a href="#evaluating-hypotheses-with-a-confidence-interval" id="toc-evaluating-hypotheses-with-a-confidence-interval" class="nav-link" data-scroll-target="#evaluating-hypotheses-with-a-confidence-interval"><span class="header-section-number">6.1.2</span> Evaluating Hypotheses with a Confidence Interval</a></li>
-  <li><a href="#substantive-significance" id="toc-substantive-significance" class="nav-link" data-scroll-target="#substantive-significance"><span class="header-section-number">6.1.3</span> Substantive Significance</a></li>
-  </ul></li>
+  <li><a href="#establishing-hypotheses-to-evaluate" id="toc-establishing-hypotheses-to-evaluate" class="nav-link active" data-scroll-target="#establishing-hypotheses-to-evaluate"><span class="header-section-number">6.1</span> Establishing Hypotheses to Evaluate</a></li>
   <li><a href="#testing-relationships-for-various-types-of-variables" id="toc-testing-relationships-for-various-types-of-variables" class="nav-link" data-scroll-target="#testing-relationships-for-various-types-of-variables"><span class="header-section-number">6.2</span> Testing Relationships for Various Types of Variables</a>
   <ul class="collapse">
   <li><a href="#qualitative-quantitative-relationships" id="toc-qualitative-quantitative-relationships" class="nav-link" data-scroll-target="#qualitative-quantitative-relationships"><span class="header-section-number">6.2.1</span> Qualitative-Quantitative Relationships</a></li>
@@ -476,41 +471,18 @@ window.Quarto = {
 
 <p>Hypothesis tests allow us to determine whether a finding is “statistically significant,” an idea we briefly encountered in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a> when discussing how to interpret regression results tables. Testing for statistical significance is the dominant way that the probabilistic conclusions from inferential statistics are communicated in science. However, many statisticians (and other methodologists) have criticized this broad reliance on significance testing as overly simplistic, confusing, or otherwise ill-founded. Hypothesis testing is important to learn because of its widespread use, but confidence intervals are often more informative for describing statistical results.</p>
 <p>As we will see in this chapter, hypothesis testing can often be understood as a particular application of confidence intervals. The risk with hypothesis tests is that we reduce our results down to a binary (significant or not significant), ignoring other nuances that may be present in the results. We will discuss some of these limitations in more detail throughout this chapter.</p>
-<section id="getting-started-a-binary-quantitative-relationship" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="getting-started-a-binary-quantitative-relationship"><span class="header-section-number">6.1</span> Getting Started: A Binary-Quantitative Relationship</h2>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Chapter Case Study: Ideology of Representatives in the U.S. Congress
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We learned in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> that we can use a comparison of means to evaluate how a binary (qualitative) variable relates to a quantitative variable. To see how hypothesis testing applies when comparing two means, we will use data describing U.S. congressional districts. Each district elects a single member (a Representative) to the U.S. House of Representatives. There is a binary variable <code>rural</code> indicating whether a majority of the district’s residents live in a rural area. A quantitative variable <code>ideology</code> is an estimate of political ideology for the Representative from that district.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Ideology can be measured on a continuous left-to-right scale (also called “liberal” to “conservative” in the US political system), with higher values indicating an official is further to the right.</p>
-<section id="null-and-alternative-hypotheses" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="null-and-alternative-hypotheses"><span class="header-section-number">6.1.1</span> Null and Alternative Hypotheses</h3>
-<p>The starting point for hypothesis testing is a <strong>null hypothesis</strong>, which is sometimes just called “the null.” Practically speaking, the null hypothesis usually indicates that there is no relationship between variables.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> So if we are comparing two means, the null hypothesis would typically be that the two means are the same. The null hypothesis always describes a parameter being estimated, not a sample statistic. Therefore, when writing a null hypothesis as an equation, we generally use Greek letters. For example, a null hypothesis may contain one or more instances of <span class="math inline">\(\mu\)</span>, representing a population mean. If there is no clearly-defined population, <span class="math inline">\(\mu\)</span> might represent the “expected value” (defined in the following chapter) for a variable that we assume was generated through a (partially) random process. This latter interpretation is probably more appropriate to the example data we’re using. <span class="math inline">\(H_0\)</span> is how we formally denote the null hypothesis, so for our data example we can write:</p>
-<p><span id="eq-rural-null-equal-means"><span class="math display">\[
-H_0: \mu_R = \mu_U
-\tag{6.1}\]</span></span> using the subscripts <span class="math inline">\(R\)</span> and <span class="math inline">\(U\)</span> to indicate “rural” and “urban,” and <span class="math inline">\(\mu\)</span> for the expected value (or population mean) of the quantitative variable: <code>ideology</code>. Simply put, this null hypothesis states that the expected value of <code>ideology</code> among rural districts is the same as the expected value of <code>ideology</code> among urban districts.</p>
-<p>Another way to write this null hypothesis is:</p>
-<p><span id="eq-rural-null-diff-means"><span class="math display">\[
-H_0: \mu_R - \mu_U = 0
-\tag{6.2}\]</span></span></p>
-<p>This indicates that the difference in the expected value of <code>ideology</code> between rural versus urban districts is zero (there is no difference).</p>
-<p>As we learned in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a>, we can use a regression equation to indicate a difference in means. Thus, we often rewrite <span class="math inline">\(\mu_R - \mu_U\)</span> as <span class="math inline">\(\beta\)</span>:</p>
-<p><span id="eq-rural-null-beta"><span class="math display">\[
-H_0: \beta = 0
-\tag{6.3}\]</span></span></p>
-<p>Note that when analyzing an experimental study, a null hypothesis of this form might be used but with <span class="math inline">\(\beta\)</span> defined as the average treatment effect.</p>
-<p>Every null hypothesis should be paired with an <strong>alternative hypothesis</strong>, which is the logical opposite of the null hypothesis. We write <span class="math inline">\(H_A\)</span> (or <span class="math inline">\(H_1\)</span>) to represent the alternative hypothesis, and our alternative to <a href="#eq-rural-null-equal-means" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> is:</p>
-<p><span id="eq-rural-alt-equal-means"><span class="math display">\[
-H_A: \mu_R \neq \mu_U
-\tag{6.4}\]</span></span></p>
-<p>Or equivalently:</p>
-<p><span id="eq-rural-alt-diff-means"><span class="math display">\[
-H_A: \mu_R - \mu_U \neq 0
-\tag{6.5}\]</span></span></p>
-<p>Or:</p>
-<p><span id="eq-rural-alt-beta"><span class="math display">\[
-H_A: \beta \neq 0
-\tag{6.6}\]</span></span></p>
-<p>Moving forward, we will focus on the final form in which we’ve written the null and alternative hypotheses (<a href="#eq-rural-null-beta" class="quarto-xref">Equation&nbsp;<span>6.3</span></a> and <a href="#eq-rural-alt-beta" class="quarto-xref">Equation&nbsp;<span>6.6</span></a>). We have already learned that confidence intervals can be constructed for regression coefficients, so let’s see if we can evaluate these hypotheses using a confidence interval from a regression.</p>
-</section>
-<section id="evaluating-hypotheses-with-a-confidence-interval" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="evaluating-hypotheses-with-a-confidence-interval"><span class="header-section-number">6.1.2</span> Evaluating Hypotheses with a Confidence Interval</h3>
+<p>With hypotheses testing, we evaluate a hypothesis called a <strong>null hypothesis</strong>. More details will be provided in the main part of the chapter, but normally the null hypothesis claims that there is no association between the independent and dependent variables. In the context of a regression, a coefficient of 0 indicates no association, so if we are using <span class="math inline">\(\beta\)</span> to represent the regression coefficient of interest, we can write the null hypothesis to be tested as <span class="math inline">\(\beta = 0\)</span>.</p>
 <p><a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> presents results for a regression where ideology is the dependent variable and the binary variable <code>rural</code> is the independent variable. The table includes confidence intervals for the coefficients:</p>
 <div id="tbl-ideology-rural" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -519,13 +491,6 @@ Table&nbsp;6.1: Results for a regression with ideology as the dependent variable
 </figcaption>
 <div aria-describedby="tbl-ideology-rural-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 27%">
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -576,23 +541,50 @@ Table&nbsp;6.1: Results for a regression with ideology as the dependent variable
 </div>
 </figure>
 </div>
-<p>The row labeled <code>rural</code> corresponds to what we have written as <span class="math inline">\(\beta\)</span> in our hypotheses. The null hypothesis indicates that <span class="math inline">\(\beta\)</span> is 0, but the value of 0 is not included within the range identified by the 95% confidence interval (0 is not between 1.418 and 3.170). Thus, we can <em>reject</em> the null hypothesis. The alternative hypothesis indicates that <span class="math inline">\(\beta\)</span> is not zero, and the 95% confidence interval suggests that <span class="math inline">\(\beta\)</span> is indeed not zero. Thus, we <em>accept</em> the alternative hypothesis. Given that null and alternative hypotheses are logical opposites, we accept the alternative hypothesis whenever we reject the null hypothesis.</p>
+<p>The row labeled <code>rural</code> corresponds to what we have written as <span class="math inline">\(\beta\)</span> in our hypotheses. The null hypothesis indicates that <span class="math inline">\(\beta\)</span> is 0, but the value of 0 is not included within the range identified by the 95% confidence interval (0 is not between 1.418 and 3.170). Thus, we can <em>reject</em> the null hypothesis. Therefore, we conclude that <span class="math inline">\(\beta\)</span> is non-zero, as the 95% confidence interval suggests.</p>
 <p>Because we reject the null hypothesis of no relationship between the two variables, we can say that the relationship is <em>statistically significant</em>. We previously learned to draw this same conclusion by noting that the coefficient’s p-value is less than 0.05. It is no coincidence that <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> indicates a p-value smaller than 0.05 for the <code>rural</code> coefficient, aligning with what we concluded using the confidence interval. The calculation of the p-value follows a process that perfectly aligns with the confidence interval, such that the p-value will always be less than 0.05 when the confidence interval indicates we reject the null hypothesis. It does not matter, therefore, whether we use a confidence interval or a p-value to test a hypothesis. Note that in any regression table, the p-value shown for each coefficient will typically correspond to the null hypothesis stating that the coefficient is 0.</p>
 <p>If the 95% confidence interval for the <code>rural</code> coefficient had included 0 (i.e., if the lower bound was negative and the upper bound was positive), we would have <em>failed to reject</em> the null hypothesis.</p>
-</section>
-<section id="substantive-significance" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="substantive-significance"><span class="header-section-number">6.1.3</span> Substantive Significance</h3>
 <p>A word of caution about our conclusion here: statistical significance doesn’t mean that the relationship between variables is strong—only that we could reject the possibility of a relationship being entirely absent (i.e., we reject the notion that the expected value of <code>ideology</code> is exactly the same in rural and urban districts). To assess whether a relationship is strong or <em>substantively</em> significant, we need to use tools other than standard hypothesis tests (such as scrutinizing the range of the confidence interval, as we did in the prior chapter). This is one reason I encourage you to always consider “How big are the differences?” (the third Question to Always Ask about Data): many publications clearly indicate statistical significance but do not devote sufficient attention to substantive significance.</p>
 <p>In this case, assessing substantive size is a bit difficult because ideology is measured in unfamiliar units. Ideology scores (among Representatives in this sample) range from -4.10 to 4.57, and the standard deviation is 2.85. Since the smallest number (in absolute value) within the confidence interval for the <code>rural</code> coefficient is its lower bound of 1.42, we can say that the systematic difference between urban and rural districts appears to be at least half a standard deviation (<span class="math inline">\(1.42 \div 2.85 = 0.498\)</span>). A difference of half a standard deviation is generally considered to be quite large, so we can say that Representatives from rural districts are notably further to the right politically (more conservative) than Representatives from urban districts.</p>
 <p>While I will not walk through an analysis of substantive size for every example presented in this chapter (for sake of brevity), it is almost always important in applied research to consider substantive strength of associations when interpreting statistically significant findings.</p>
-</section>
+</div>
+</div>
+<section id="establishing-hypotheses-to-evaluate" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="establishing-hypotheses-to-evaluate"><span class="header-section-number">6.1</span> Establishing Hypotheses to Evaluate</h2>
+<p>The starting point for hypothesis testing is a <strong>null hypothesis</strong>, which is sometimes just called “the null.” Practically speaking, the null hypothesis usually indicates that there is no relationship between variables.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> So if we are comparing two means, the null hypothesis would typically be that the two means are the same. The null hypothesis always describes a parameter being estimated, not a sample statistic. Therefore, when writing a null hypothesis as an equation, we generally use Greek letters. For example, a null hypothesis may contain one or more instances of <span class="math inline">\(\mu\)</span>, representing a population mean. If there is no clearly-defined population, <span class="math inline">\(\mu\)</span> might represent the “expected value” (defined in the following chapter) for a variable that we assume was generated through a (partially) random process. This latter interpretation is probably more appropriate to the example data we’re using. <span class="math inline">\(H_0\)</span> is how we formally denote the null hypothesis, so for our chapter case study we can write:</p>
+<p><span id="eq-rural-null-equal-means"><span class="math display">\[
+H_0: \mu_R = \mu_U
+\tag{6.1}\]</span></span> uusing the subscripts <span class="math inline">\(R\)</span> and <span class="math inline">\(U\)</span> to indicate “rural” and “urban,” and <span class="math inline">\(\mu\)</span> for the expected value (or population mean) of the quantitative variable: <code>ideology</code>. Simply put, this null hypothesis states that the expected value of <code>ideology</code> among rural districts is the same as the expected value of <code>ideology</code> among urban districts.</p>
+<p>Another way to write this null hypothesis is:</p>
+<p><span id="eq-rural-null-diff-means"><span class="math display">\[
+H_0: \mu_R - \mu_U = 0
+\tag{6.2}\]</span></span></p>
+<p>This indicates that the difference in the expected value of <code>ideology</code> between rural versus urban districts is zero (there is no difference).</p>
+<p>As we learned in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a>, we can use a regression equation to indicate a difference in means. Thus, we often rewrite <span class="math inline">\(\mu_R - \mu_U\)</span> as <span class="math inline">\(\beta\)</span>:</p>
+<p><span id="eq-rural-null-beta"><span class="math display">\[
+H_0: \beta = 0
+\tag{6.3}\]</span></span></p>
+<p>Note that when analyzing an experimental study, a null hypothesis of this form might be used but with <span class="math inline">\(\beta\)</span> defined as the average treatment effect.</p>
+<p>Every null hypothesis should be paired with an <strong>alternative hypothesis</strong>, which is the logical opposite of the null hypothesis. We write <span class="math inline">\(H_A\)</span> (or <span class="math inline">\(H_1\)</span>) to represent the alternative hypothesis, and our alternative to <a href="#eq-rural-null-equal-means" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> is:</p>
+<p><span id="eq-rural-alt-equal-means"><span class="math display">\[
+H_A: \mu_R \neq \mu_U
+\tag{6.4}\]</span></span></p>
+<p>Or equivalently:</p>
+<p><span id="eq-rural-alt-diff-means"><span class="math display">\[
+H_A: \mu_R - \mu_U \neq 0
+\tag{6.5}\]</span></span></p>
+<p>Or:</p>
+<p><span id="eq-rural-alt-beta"><span class="math display">\[
+H_A: \beta \neq 0
+\tag{6.6}\]</span></span></p>
+<p>Moving forward, we will focus on the final form in which we’ve written the null and alternative hypotheses (<a href="#eq-rural-null-beta" class="quarto-xref">Equation&nbsp;<span>6.3</span></a> and <a href="#eq-rural-alt-beta" class="quarto-xref">Equation&nbsp;<span>6.6</span></a>). We already saw an example in the chapter case study of a null hypothesis being evaluated using a confidence interval. In that example, we reject the null hypothesis, and therefore we also <em>accept</em> the alternative hypothesis. Given that null and alternative hypotheses are logical opposites, we accept the alternative hypothesis whenever we reject the null hypothesis.</p>
 </section>
 <section id="testing-relationships-for-various-types-of-variables" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="testing-relationships-for-various-types-of-variables"><span class="header-section-number">6.2</span> Testing Relationships for Various Types of Variables</h2>
 <p>Let’s now consider each possible pairing of qualitative and quantitative variable types and see how a hypothesis test can be applied to each relationship.</p>
 <section id="qualitative-quantitative-relationships" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="qualitative-quantitative-relationships"><span class="header-section-number">6.2.1</span> Qualitative-Quantitative Relationships</h3>
-<p>We already saw how to evaluate this when the qualitative variable is binary, but what about when it is not? Consider the qualitative variable <code>region</code>, which divides the country into four different parts (using U.S. Census Bureau regions).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>We already saw in our chapter case study how to evaluate this when the qualitative variable is binary, but what about when it is not? Consider the qualitative variable <code>region</code>, which divides the country into four different parts (using U.S. Census Bureau regions).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>To get an initial sense of how <code>region</code> is related to <code>ideology</code>, we can examine the box plots in <a href="#fig-ideology-region" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>. On average, the Representatives from the Northeast and West appear to be markedly more left-leaning (liberal) than Representatives from the Midwest and South.</p>
 <p>In the following discussion (as in the rest of this chapter), we will focus mainly on interpreting results from regression tables, and there will be a lot of details to keep track of. But remember, you can always refer back to <a href="#fig-ideology-region" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> if you get lost. Note, however, that a simple plot of box plots does not allow you to directly evaluate hypothesis tests. One reason why is that we don’t learn anything about sample size from box plots, and the ability to find statistical significance partially depends on sample size. For example, two distributions that look very different in a box plot may fail to have a statistically significant difference if the sample size of one or both distributions is very small. Still, a visualization like <a href="#fig-ideology-region" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> can help us think about the big picture of what we are seeing from two variables. Having this big picture in mind can help us avoid mistakes while we are down “in the weeds” of evaluating regression coefficients.</p>
 <div id="fig-ideology-region" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -699,8 +691,8 @@ Table&nbsp;6.2: Results for a regression with ideology as the dependent variable
 </figure>
 </div>
 <p>In this regression, each slope coefficient estimate indicates the difference in means between the given region and the omitted category (Northeast). The null hypothesis should indicate that there is no relationship between the two variables <code>region</code> and <code>ideology</code>, but what does that look like in practice?</p>
-<section id="null-and-alternative-hypotheses-1" class="level4" data-number="6.2.1.1">
-<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="null-and-alternative-hypotheses-1"><span class="header-section-number">6.2.1.1</span> Null and Alternative Hypotheses</h4>
+<section id="null-and-alternative-hypotheses" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="null-and-alternative-hypotheses"><span class="header-section-number">6.2.1.1</span> Null and Alternative Hypotheses</h4>
 <p>If there is no relationship in this context, then changing the value of <code>region</code> should result in no change in the prediction for <code>ideology</code>. This implies that each pair of differences should be equal to 0, so all regression slope coefficients should be 0 (according to the null hypothesis). We can write this as a single hypothesis, using <span class="math inline">\(\beta_1\)</span> to indicate the first slope coefficient, <span class="math inline">\(\beta_2\)</span> to indicate the second slope coefficient, and so on:</p>
 <p><span id="eq-region-null-betas"><span class="math display">\[
 H_0: \beta_1 = \beta_2 = \beta_3 = 0
@@ -944,8 +936,8 @@ Table&nbsp;6.3: Results for a regression with ideology as the dependent variable
 <section id="relationships-between-quantitative-variables" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="relationships-between-quantitative-variables"><span class="header-section-number">6.2.2</span> Relationships between Quantitative Variables</h3>
 <p>If we have two quantitative variables, it is straightforward to test for the statistical significance of the relationship between the two variables. Let us consider the relationship between the geographic size of a congressional district (measured in logged square miles) and the elected member’s ideology.</p>
-<section id="null-and-alternative-hypotheses-2" class="level4" data-number="6.2.2.1">
-<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="null-and-alternative-hypotheses-2"><span class="header-section-number">6.2.2.1</span> Null and Alternative Hypotheses</h4>
+<section id="null-and-alternative-hypotheses-1" class="level4" data-number="6.2.2.1">
+<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="null-and-alternative-hypotheses-1"><span class="header-section-number">6.2.2.1</span> Null and Alternative Hypotheses</h4>
 <p>A null hypothesis of no relationship between two quantitative variables can be written either using <span class="math inline">\(\beta\)</span> to represent a regression coefficient or <span class="math inline">\(\rho\)</span> to represent a population correlation:</p>
 <p><span id="eq-ideology-null-beta"><span class="math display">\[ H_0: \beta = 0  \tag{6.12}\]</span></span></p>
 <p><span id="eq-ideology-null-rho"><span class="math display">\[
@@ -956,8 +948,8 @@ H_0: \rho = 0
 <p><span id="eq-ideology-alt-rho"><span class="math display">\[ H_A: \rho \ne 0  \tag{6.15}\]</span></span></p>
 <p>Though a simple regression slope coefficient and correlation coefficient normally have different values, their signs are always the same, as noted in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a>. Tests of the above null hypotheses (<a href="#eq-ideology-null-beta" class="quarto-xref">Equation&nbsp;<span>6.12</span></a> and <a href="#eq-ideology-null-rho" class="quarto-xref">Equation&nbsp;<span>6.13</span></a>) also yield equivalent p-values, so we will obtain equivalent results regardless of which statistic (<span class="math inline">\(\hat{\beta}\)</span> or <span class="math inline">\(\hat{\rho}\)</span>) we use for our hypothesis testing. We will focus here on using regression.</p>
 </section>
-<section id="evaluating-hypotheses-with-a-confidence-interval-1" class="level4" data-number="6.2.2.2">
-<h4 data-number="6.2.2.2" class="anchored" data-anchor-id="evaluating-hypotheses-with-a-confidence-interval-1"><span class="header-section-number">6.2.2.2</span> Evaluating Hypotheses with a Confidence Interval</h4>
+<section id="evaluating-hypotheses-with-a-confidence-interval" class="level4" data-number="6.2.2.2">
+<h4 data-number="6.2.2.2" class="anchored" data-anchor-id="evaluating-hypotheses-with-a-confidence-interval"><span class="header-section-number">6.2.2.2</span> Evaluating Hypotheses with a Confidence Interval</h4>
 <p>In <a href="#tbl-ideology-area" class="quarto-xref">Table&nbsp;<span>6.4</span></a>, we see a confidence interval for the geographic size coefficient, labeled <code>log_area</code>. The confidence interval ranges from 0.811 to 1.046 and does not include 0. Therefore, we reject the null hypothesis of a regression slope of 0 (meaning we also reject that the correlation could be 0). Note that the p-value is also less than 0.05, which is another way to arrive at the conclusion that we reject the null hypothesis and accept the alternative.</p>
 <div id="tbl-ideology-area" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -966,13 +958,6 @@ Table&nbsp;6.4: Results for a regression with ideology as the dependent variable
 </figcaption>
 <div aria-describedby="tbl-ideology-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 27%">
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>

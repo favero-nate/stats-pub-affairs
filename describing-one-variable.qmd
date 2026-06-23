@@ -1,421 +1,215 @@
 # Describing One Variable at a Time {#sec-describing-one-variable}
 
-\[***Working draft notes for instructors**: This chapter will be completely re-written but will cover most of the same concepts.*\]
+\[***Working draft notes for instructors**: I expect the basic structure of this chapter to remain the same, but it is freshly written and will need some substantial editing. Some sections (mostly in the second half) still need some additional examples, and the section on transformations needs to be rewritten.*\]
 
-*Note: This chapter is adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University)*
+This chapter introduces a variety of concepts and statistics that help us describe one variable at a time. We can describe variables using words, tables, and graphs. The prior chapter already introduced the use of graphs to depict a variable, so this chapter will mainly focus on explaining how to describe distributions using words and tables. When we describe a single variable, we typically focus on the **distribution** of the variable. A distribution refers to how frequently all values of a variable occur. For example, if I am examining the binary variable sex in a dataset, the distribution might be 53% female and 47% male. For binary variables it is very easy to succinctly describe the distribution because there are only two possible values. By contrast, quantitative variables sometimes take on many more values than would make sense to list out in a sentence (or even a table), so a variety of terms and statistics have been developed to succinctly summarize the distributions of quantitative variables. As such, most of this chapter will focus on quantitative variables.
 
-This chapter introduces a variety of concepts and statistics that help us describe one variable at a time. Most of this chapter will focus on quantitative variables, since there is a wide variety of commonly used descriptive tools that are only applicable to quantitative variables.
+After introducing this chapter’s case study, the following sections will introduce key terms for describing a distribution, explain percentiles, describe measures of central tendency, and then cover measures of spread. Finally, the chapter will go over variable transformations, which can be used to change the units in which a variable is expressed.
 
-## Distributions[^describing-one-variable-1]
+::: {.callout-tip icon="false"}
+## Chapter Case Study: A Survey of Nonprofit Organizations {.unnumbered}
 
-[^describing-one-variable-1]: This section is adapted from David M. Lane and Heidi Ziemer. “Distributions.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/distributions.html>
+Some researchers wanted to learn about nonprofit organizations, so they created a survey and invited leaders of nonprofits in the U.S. to respond to it. The authors made efforts to ensure the final survey data included responses from a broad range of nonprofit organizations throughout the U.S., making it a particularly high quality source of information about the nonprofit sector. The researchers have made the data publicly available, although they mask certain details in order to anonymize the data (meaning that one should not be able to identify the exact nonprofit being described in a given observation).
 
-### Distributions of Qualitative or Discrete Variables
+There are many variables available in the nonprofit survey dataset, but we will look at only a handful in this chapter. To start, we can get a sense of the types of missions pursued by the nonprofits completing the survey by looking at a 5-category sub-sector variable provided by the researchers.
 
-I recently purchased a bag of Plain M&M's. The M&M's were in six different colors. A quick count showed that there were 55 M&M's: 17 brown, 18 red, 7 yellow, 7 green, 2 blue, and 4 orange. These counts are shown below in @tbl-mmfreqs.
+@tbl-5-nonprofit-subsectors is an example of **frequency table**, which lists all the values a variable takes on and how frequently each one occurs. Based on the frequencies shown, the category with the largest percentage is human services, so we can say that the **mode** of the sub-sector variable is “human services.” Since no category has more than 50%, there is no category that accounts for a majority of observations. Instead, we say that a *plurality* of organizations in this dataset belong to the human services sub-sector, meaning that it is the largest category but is still less than 50%.
 
-+--------+-----------+--------+---------------+--------+
-|        | **Color** |        | **Frequency** |        |
-+========+===========+========+===============+========+
-|        | Brown\    |        | 17\           |        |
-|        | Red\      |        | 18\           |        |
-|        | Yellow\   |        | 7\            |        |
-|        | Green\    |        | 7\            |        |
-|        | Blue\     |        | 2\            |        |
-|        | Orange    |        | 4             |        |
-+--------+-----------+--------+---------------+--------+
+| Nonprofit Sub-Sector | Freq. | Percent |
+|----------------------|-------|---------|
+| Arts                 | 862   | 21.25   |
+| Education            | 220   | 5.42    |
+| Health               | 302   | 7.45    |
+| Human Services       | 1,753 | 43.22   |
+| Other                | 919   | 22.66   |
+|                      |       |         |
+| Total                | 4,056 | 100.00  |
 
-: Frequencies in the Bag of M&M's {#tbl-mmfreqs}
+: Frequency Table for Sub-Sector Variable {#tbl-5-nonprofit-subsectors}
 
-This table is called a frequency table and it describes the distribution of M&M color frequencies. Not surprisingly, this kind of distribution is called a **frequency distribution**. Often a frequency distribution is shown graphically, as we saw in the prior chapter.
+How do these nonprofits fund their operations? There are multiple survey questions relevant to this topic, but let’s focus on an item asking about reliance on individual donations. Specifically, the item asks nonprofit leaders to estimate the percent of their revenue that comes from individual donations. @tbl-nonprofits-descriptive-stats displays some typical statistics to describe this variable, alongside two other variables that we will also discuss. As the headings indicate, this table displays (for each variable) the number of observations (after excluding any observations with missing data for this variable), the mean (or average), the standard deviation, the minimum, and the maximum. The row marked XXX displays these statistics for the individual donations variable. The number of observations is 2,672, which is notably smaller than the values listed for the other two variables, meaning that this variable has more missing values, probably because many respondents skipped answering this question (or perhaps quit the survey altogether before getting to this question). We also see that the nonprofit leaders in this dataset estimate they receive an average of 27% of their revenue from individual donations, though the minimum and maximum values also indicate the existence of organizations receiving no individual donations (0%) and receiving revenue only from individual donations (100%). The standard deviation is a more difficult statistic to interpret, so we will wait to describe it until later in this chapter.
 
-### Continuous Variables {#sec-continuous-variables}
++------------------------------+---------+-----------+------------+---------+----------+
+|                              | Obs.    | Mean      | Std. Dev.  | Min     | Max      |
++==============================+=========+===========+============+=========+==========+
+| \% Rev. from Indv. Donations | 2672    | 27.0      | 28.7       | 0       | 100      |
++------------------------------+---------+-----------+------------+---------+----------+
+| \# of Staff                  | 3529    | 14.4      | 58.6       | 0       | 1600     |
++------------------------------+---------+-----------+------------+---------+----------+
+| \# of People Served          | 3527    | 1,187,561 | 67,354,868 | 0       | 4.00e+09 |
++------------------------------+---------+-----------+------------+---------+----------+
 
-The variable "color of M&M" is a qualitative variable, and its distribution is called discrete because there are a finite number of values the variable can take on. Let us now extend the concept of a distribution to quantitative variables measured to many decimal places.
+: Descriptive Statistics for Quantitative Variables {#tbl-nonprofits-descriptive-stats}
 
-The data shown in @tbl-responsetimes are the times it took David Lane (the author of most of the material in this chapter) to move the cursor over a small target in a series of 20 trials. The times are sorted from shortest to longest. The variable "time to respond" is a continuous variable. With time measured accurately (to many decimal places), no two response times would be expected to be the same. Measuring time in milliseconds (thousandths of a second) is often precise enough to approximate a continuous variable in psychology. As you can see in @tbl-responsetimes, measuring David Lane's responses this way produced times no two of which were the same. As a result, a frequency distribution would be uninformative: it would consist of the 20 times in the experiment, each with a frequency of 1.
+The next two variables in @tbl-nonprofits-descriptive-stats are related to another feature of organizations that we can consider here: how large these nonprofit organizations are. How exactly shall we measure organizational size? There are many possibilities, but we will focus on three: (1) the number of employees, (2) the number of people served, and (3) how much money the organization spends. The measures available for the first two measures are regular quantitative variables, which is why they appear in @tbl-nonprofits-descriptive-stats.
 
-+----+------+----+------+----+
-|    | 568\ |    | 720\ |    |
-|    | 577\ |    | 728\ |    |
-|    | 581\ |    | 729\ |    |
-|    | 640\ |    | 777\ |    |
-|    | 641\ |    | 808\ |    |
-|    | 645\ |    | 824\ |    |
-|    | 657\ |    | 825\ |    |
-|    | 673\ |    | 865\ |    |
-|    | 696\ |    | 875\ |    |
-|    | 703  |    | 1007 |    |
-+----+------+----+------+----+
+For the third measure of size (organizational spending levels), the survey researchers have reported this variable only in “bins” (a concept we learned about in the prior chapter in the context of histograms). The researchers likely report the data in this way to protect the privacy of those responding to the survey.[^describing-one-variable-1] This effectively converts what was originally a quantitative variable into an ordinal variable. Ordinal variables can typically be treated as either quantitative or qualitative. For the present discussion, it is simpler to treat this variable as qualitative and show its distribution with a frequency table.
 
-: Response Times {#tbl-responsetimes}
+| Revenue                 | Freq. | Percent |
+|-------------------------|-------|---------|
+| \<\$100,000             | 641   | 15.80   |
+| \$100,000-\$499,999     | 1,803 | 44.45   |
+| \$500,000-\$999,999     | 648   | 15.98   |
+| \$1 million-\$9,999,999 | 861   | 21.23   |
+| \$10 million and above  | 103   | 2.54    |
+|                         |       |         |
+| Total                   | 4,056 | 100.00  |
 
-The solution to this problem is to create a grouped frequency distribution, as we saw when creating bins for histograms in @sec-quantitative-variables. In a grouped frequency distribution, scores falling within various ranges are tabulated. @tbl-groupfreqdist shows a grouped frequency distribution for these 20 times.
+Throughout this chapter, we will re-examine the variables and statistics shown above to further demonstrate key material for this chapter on describing variables one at a time. Before returning to the main chapter, though, it is worth briefly zooming out and making a few more observations about the big picture of this dataset. We will do so using the Three Questions to Always Ask about Data.
 
-+--------+-----------+--------+---------------+--------+
-|        | **Range** |        | **Frequency** |        |
-+========+===========+========+===============+========+
-|        | 500-600\  |        | 3\            |        |
-|        | 600-700\  |        | 6\            |        |
-|        | 700-800\  |        | 5\            |        |
-|        | 800-900\  |        | 5\            |        |
-|        | 900-1000\ |        | 0\            |        |
-|        | 1000-1100 |        | 1             |        |
-+--------+-----------+--------+---------------+--------+
+1.  What is being measured? This question is particularly relevant when considering the various ways to measure organizational size. In this case study, we have highlighted three different measures, but many studies will report only one. Would it matter if they had used an alternative measure? As we weigh the strengths/limitations of each measure, we might want to envision what kinds of organizations might display very different values depending on the measure used. In social science, it is very common that the best measures available are only approximations of whatever it is we care about. One way we can try to develop a better sense of each measure’s limitations is to think through some of the ways that each one might miss the mark for certain organizations. For the employee-based measure, one clear limitation is that it only counts full-time employees, so for organizations that rely heavily on part-time employees, the size of the organization will be understated. For this reason, studies often rely on “full time equivalent” measures that count part time employees using fractions based on how many hours they work each week. Unfortunately, this measure is not available for this dataset. An even thornier problem is that organizations relying heavily on volunteers will not have the volunteer-based resources counted when measuring personnel size. The measure based on number of people served is arguably even more limited. For one thing, not all nonprofits have missions that involve directly serving people. They might instead focus on protecting the environment, for example. A raw count of people served will also not reflect the quality or depth of engagement with those served. An organization with a relatively small staff and budget may be capable of planning a one-a-year event that feeds over a thousand people, but to provide daily or weekly meals in a way that leads to interacting with a similar number of people throughout the year requires a much larger operation. Organizations that register as large in terms of spending but which have few personnel can be difficult to characterize when it comes to size. Their main work may consist of funneling money to other nonprofits, or they may run expensive ad campaigns to promote public awareness of an issue. Considering these various possibilities may encourage us to reevaluate what exactly it is we mean when we say “organizational size.”
 
-: Grouped frequency distribution {#tbl-groupfreqdist}
+2.  Who (or what) is in the dataset? The researchers conducting this survey provide a detailed description in one of their reports of the types of organizations that were excluded from the study. Particularly notable is the exclusion of very small organizations and many types of religious and educational organizations (such as most churches and schools). These are important things to know about the sample when trying to understand what portions of the nonprofit sector this data is describing.
 
-### Shapes of Distributions {#sec-shapes-of-distributions}
+3.  How big are the differences? One way to answer this question is to observe how highly varied nonprofit organizations appear to be in terms of size. There are many organizations that are very small and many others that are stunningly large by comparison. This is not a dataset describing a set of organizations with fairly uniform size. Describing the amount of “spread” or lack of uniformity in a variable is not a particularly easy or intuitive thing to do, but we will learn several tools to help us in this chapter.
+:::
 
-As we’ve already seen when graphing different data, distributions have different shapes. Some distributions are symmetric; if you folded them in the middle, the two sides would match perfectly. @fig-posskewdist shows the discrete distribution of scores on a psychology test. This distribution is not symmetric: the tail in the positive direction extends further than the tail in the negative direction. A distribution with the longer tail extending in the positive direction is said to have a **positive skew**. It is also described as "skewed to the right."
+[^describing-one-variable-1]: If exact numbers for spending levels were reported, people could match precise values to what has been reported in publicly-available tax records, making it possible to match many responses to exact organizations.
 
-![A distribution with a positive skew.](Images/describing-one-variable/posskewdist.jpg){#fig-posskewdist width="375"}
+## Essential Terms and Concepts for Describing Quantitative Variables
 
-Although less common, some distributions have a **negative skew**. @fig-negskewdist shows the scores on a 20-point problem on a statistics exam. Since the tail of the distribution extends to the left, this distribution is skewed to the left.
+Several statistical terms can help us describe in words different characteristics we see in the distributions of quantitative variables. We can get familiar with these terms by looking at several histograms together and then describing their shapes.
 
-![A distribution with negative skew.](Images/describing-one-variable/negskewdist.jpg){#fig-negskewdist width="350"}
+@fig-hist-log-gdp shows a histogram that appears to be fairly **symmetric**: if we divided the graph with a vertical line at the midpoint, the two halves would roughly mirror each other.[^describing-one-variable-2] The peak of the distribution is called the **mode**. Since there is only one well-defined peak (despite some choppiness adding a bit of uncertainty about this), we say that this distribution is **unimodal**. At each end of the graph (left and right), we see some fairly short bars that we refer to as the **tails** of the distribution.
 
-The distributions shown so far all have one distinct high point or peak. The distribution in @fig-eruptionfreqs has two distinct peaks. A distribution with two peaks is called a **bimodal distribution**.
+[^describing-one-variable-2]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 
-![Frequencies of times between eruptions of the Old Faithful geyser. Notice the two distinct peaks: one at 1.75 and the other at 4.25.](Images/describing-one-variable/eruptionfreqs.jpg){#fig-eruptionfreqs width="350"}
+![Histogram of Countries' Log-Transformed Gross Domestic Product Per Capita, 2018. Source: World Bank.](Images/describing-one-variable/hist-log-gdp.png){#fig-hist-log-gdp width="400"}
 
-## Percentiles[^describing-one-variable-2]
+Our next histogram (@fig-hist-donations) also depicts what is arguably a unimodal distribution, since there is only one really well-defined peak (although one could argue that the right-most bar indicates a second, much smaller peak). However, this one is not symmetric. Instead, it is **skewed**. Specifically, it is **skewed right** because there is a long tail extending out to the right. The values far out in the tail are often referred to as **outliers**. Outliers refer to unusually small or large values in a distribution. Outliers can also be called *extreme values*. Note too that right skew can also be referred to as **positive skew**.
 
-[^describing-one-variable-2]: This section is adapted from David M. Lane. “Percentiles.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/percentiles.html>
+![Histogram Based on Variable from Chapter Case Study](Images/describing-one-variable/hist-donations.png){#fig-hist-donations width="400"}
 
-**Percentiles** are a helpful tool for describing distributions. Many of us have probably encountered percentiles before in the context of standardized exam testing. A test score in and of itself is usually difficult to interpret. For example, if you learned that your score on a measure of shyness was 35 out of a possible 50, you would have little idea how shy you are compared to other people. More relevant is the percentage of people with lower shyness scores than yours. This percentage is called a percentile. If 65% of the scores were below yours, then your score would be the 65th percentile.
+@fig-hist-females_publ-2 (seen once already in the previous chapter) shows an example of **left skew**, also known as **negative skew**. Notice that there is a tail extending out to the left side of the graph (and toward the negative side of the number line), but no similar tail exists on the right.
 
-### Three Alternative Definitions of Percentile
+![Histogram showing female employment by governments in different countries](Images/getting-started/hist-female-employees.png){#fig-hist-females_publ-2 width="400"}
 
-There is no universally accepted definition of a percentile. Using the 65th percentile as an example, the 65th percentile can be defined as the lowest score that is greater than 65% of the scores. This is the way we defined it above and we will call this "Definition 1." The 65th percentile can also be defined as the smallest score that is greater than *or equal to* 65% of the scores. This we will call "Definition 2." Though these two definitions appear very similar, they can sometimes lead to dramatically different results, especially when there is relatively little data. Moreover, neither of these definitions is explicit about how to handle rounding. For instance, what rank is required to be higher than 65% of the scores when the total number of scores is 50? This is tricky because 65% of 50 is 32.5. How do we find the lowest number that is higher than 32.5 of the scores?
+As one final example for this section, consider @fig-eruptionfreqs, which is a **bimodal** distribution, since there are two clear peaks apparent in the histogram. It is also possible to have more than two peaks, so we can generally refer to any distribution with more than one well-defined peak as **multimodal**.
 
-A third way to compute percentiles is a weighted average of the percentiles computed according to the first two definitions. The details of computing percentiles under this third definition are a bit complicated, but fortunately, statistical software can easily do the calculations for us. Since it is unlikely you will need to compute percentiles by hand, we leave the details of these computations to the appendix appearing at the end of this chapter. Despite its complexity, the third definition handles rounding more gracefully than the other two and has the advantage that it allows the median to be defined conveniently as the 50th percentile. Unless otherwise specified, when we refer to "percentile," we will be referring to this third definition of percentiles.
+![Frequencies of times between eruptions of the Old Faithful geyser. Source: Lane & Ziemer](Images/describing-one-variable/eruptionfreqs.jpg){#fig-eruptionfreqs width="400"}
 
-## Measures of Central Tendency[^describing-one-variable-3]
+## Percentiles and Box Plots {#sec-percentiles-and-box-plots}
 
-[^describing-one-variable-3]: This section is adapted from David M. Lane. “Measures of Central Tendency.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/measures.html>
+Percentiles are a powerful tool for describing a distribution. They are commonly used to help interpret standardized exam scores (e.g., university admissions exams). For example, you may have been told that you scored a 139 on an exam, which indicates you are in the 81st percentile, meaning you scored as good or better than 81% of people taking the exam.
 
-### Mean
+To further illustrate percentiles, let’s return to the dataset from the Chapter 1 case study, which describes your hypothetical friend’s social media posts. We will focus specifically on the variable recording the length (in characters) of each post. As we apply percentiles, we can think of dividing a dataset in two. @fig- demonstrates this, using the 50th percentile to divide a histogram for the post length variable into the bottom 50% and the top 50%. The 50th percentile is 158.5 here, marked with a dashed line in the figure. 50% of posts are 158.5 characters or less. These relatively short posts are shown with the bars drawn in a darker shade and labeled “Bottom 50%” in the legend at the bottom of @fig-hist-post-length-p50. The “Top 50%,” represented by bars in lighter shade, are 158.5 characters or longer.
 
-The **mean**[^describing-one-variable-4] is the most common measure of central tendency. It is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in @sec-stat-inference. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.
+![Graphical Depiction of the 50th Percentile](Images/describing-one-variable/hist-post-length-p50.png){#fig-hist-post-length-p50 width="400"}
 
-[^describing-one-variable-4]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
+By using multiple percentiles simultaneously, we can divide a variable into more than two “buckets.” For example, we can divide this same variable into 3 buckets: the bottom 25%, the middle 50%, and the top 25%. This division is shown in @fig-hist-post-length-p25-p75. The divisions between “buckets” are marked with dashed lines, and each bucket uses different shading for the histogram’s bars.
 
-The symbol $\mu$ is used for the mean of a population. The symbol $\bar{x}$ is used for the mean of a sample. The formula for $\mu$ is shown below:
+![Graphical Depiction of the 25th and 75th Percentiles](Images/describing-one-variable/hist-post-length-p25-p75.png){#fig-hist-post-length-p25-p75 width="400"}
 
-$$
-\mu = \frac{\sum_{i=1}^{N} x_i}{N}
-$$
+Using the terminology of percentiles, we can say that the 25th percentile for this variable is 88, as indicated by the dashed line on the left. We can interpret this percentile as indicating that 25% of the posts have a length of 88 or less. To mark the top 25% of the data, we use the 75th percentile, which is 253 for this variable. Thus, 75% of the posts in this dataset are 253 characters or shorter.
 
-where $\sum_{i=1}^{N} x_i$ is the sum of all the numbers in the population and $N$ is the number of numbers in the population. Note that the summation syntax $\sum_{i=1}^{N}$ indicates that we begin at $i=1$ and repeatedly increase the value of our counter $i$ by 1 until we get to $N$. Each time, we take $x_i$, which refers to the $i$th observation of the variable $x$, and that is the value we add to the running list of values to sum.
+Box plots are a common way to visualize the percentiles we just discussed for a variable. @fig-boxplot-post-length shows a box plot for the post length variable. In a box plot, the edges of a rectangle depict the 25th and 75th percentiles. The correspond exactly to the dashed lines we saw in the prior figure (@fig-boxplot-post-length). A line within the box also marks the 50th percentile. “Whiskers” extend out from the sides of the box to show the minimum and maximum values for the variable. Based on where the whiskers end, we can say that the shortest posts in this dataset are 0 characters long while the longest posts are 300 characters.
 
-The formula for $\bar{x}$ is essentially identical:
+![Box Plot of Post Length Variable](Images/describing-one-variable/boxplot-post-length.png){#fig-boxplot-post-length width="400"}
 
-$$
-\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
-$$
+Now that we have discussed a couple examples, let’s define percentiles a bit more precisely. The key thing to remember is this: *p*% of the data falls (at or) below the *p*th percentile. Thus, the *p*th percentile is a value indicating the point at which *p*% of the data is less than or equal to this value. *p* can be any number between 0 and 100. For example, if the 22nd percentile of a variable is 5, then 22% of the variable’s observations are less than or equal to 5. The flip side of this is that 78% of the variable’s observation must be greater than or equal to 5. Any percentile can be understood as marking a dividing line in a dataset, with *p*% of the data to the left and (100 - *p*)% to the right.
 
-where $\sum_{i=1}^{n} x_i$ is the sum of all the numbers in the sample and $n$ is the number of numbers in the sample.
+To find the *p*th percentile, we can line all the observations for a variable from least to greatest and then pick the value that marks the *p*% point in this lineup (e.g, for 50th percentile, pick the middle point). In practice, this process can get a bit complicated because we need rules to deal with ties, rounding, etc. There are, in fact, conflicting definitions of percentiles that employ different rules for such situations. If you are curious to learn more, this chapter contains an appendix with further details (Appendix I). Fortunately, these details are not essential for making use of percentiles to describe distributions. For the purposes of an introductory text, we can simply assume that software will make the exact computations needed to find percentiles under a widely-used definition. Slight differences in methods for computing percentiles will not usually affect our conclusions, at least if we are working with a large dataset where there are not large gaps in the values observed. Percentiles may be less useful/well-defined for describing datasets with very few observations (e.g., less than 50) or variables that take on only a small number of different values (e.g., only small whole numbers).
 
-As an example, the mean of the numbers 1, 2, 3, 6, 8 is 20/5 = 4 regardless of whether the numbers constitute the entire population or just a sample from the population.
+Let’s revisit the initial example of a box plot we saw in the prior chapter, shown here as a standalone graph in @fig-box-female-employees. Notice that in addition to the box and whiskers, two dots are shown on the left side of the graph. These indicate outliers, which are often ignored for purposes of defining the minimum and maximum values when drawing the whiskers. Dots are typically (though not always) used to indicate the presence of any outliers beyond the range of the whiskers, as in this example. Various algorithms can be used to determine what exactly counts as an outlier, and most software will use one of these algorithms by default when creating a box plot.
 
-@tbl-tdownpasses shows the number of touchdown (TD) passes thrown by each of the 31 teams in the National Football League in the 2000 season. The mean number of touchdown passes thrown is 20.4516 as shown below.
+![Box Plot of Share of Female Employees in Public Sector](Images/describing-one-variable/box-female-employees.png){#fig-box-female-employees width="400"}
 
-$$
-\mu = \frac{\sum_{i=1}^{N} x_i}{N} = \frac{634}{31} = 20.4516
-$$
+As one final example of a box plot, let’s examine the individual donations variable from this chapter’s case study. @fig-box-donations contains a box plot for this variable, and unlike the other box plots we’ve seen so far, this one has been drawn vertically. The dots for outliers are also quite dense, appearing as one thick line rather than distinct points. Thus, the use of dots to depict outliers is perhaps less effective in this graph, so we might want to consider omitting them altogether (or displaying them in a different way, such as using open circles and perhaps adding some “jitter,” as in the strip plot shown in the prior chapter).
 
-+------------+--------------------------------------------------------------------------------------------+------------+
-|            | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |            |
-+------------+--------------------------------------------------------------------------------------------+------------+
+![Box Plot of Share of Revenue from Individual Donations](Images/describing-one-variable/box-donations.png){#fig-box-donations width="400"}
 
-: Number of touchdown passes. {#tbl-tdownpasses}
+One common way of using percentiles to succinctly describe a distribution is with a “five number summary.” This refers to the 0th, 25th, 50th, 75th, and 100th percentiles. In fact, that is exactly what a boxplot shows (with the caveat noted above about outliers often being omitted when drawing the whiskers). The five number summary can also be reported succinctly in the form of a table. @tbl-five-number-summary shows an alternative to the descriptive statistics table from this chapter’s case study, using the five number summary instead of the statistics shown previously.
 
-### Median
++------------------------------+-----------+---------+---------+---------+-------------+
+|                              | Min. (p0) | p25     | p50     | p75     | Max. (p100) |
++==============================+===========+=========+=========+=========+=============+
+| \% Rev. from Indv. Donations | 0         | 5       | 15      | 40      | 100         |
++------------------------------+-----------+---------+---------+---------+-------------+
+| \# of Staff                  | 0         | 1       | 3       | 10      | 1600        |
++------------------------------+-----------+---------+---------+---------+-------------+
+| \# of People Served          | 0         | 329     | 1,500   | 7,000   | 4.00e+09    |
++------------------------------+-----------+---------+---------+---------+-------------+
 
-The **median** is also a frequently used measure of central tendency. The median is the midpoint of a distribution: the same number of scores is above the median as below it. For the data in @tbl-tdownpasses, there are 31 scores. The 16th highest score (which equals 20) is the median because there are 15 scores below the 16th score and 15 scores above the 16th score. The median can also be thought of as the 50th percentile.
+: Five Number Summary for Quantitative Variables from Chapter Case Study {#tbl-five-number-summary}
 
-#### Computation of the Median
+To conclude this section, I highlight some interchangeable terminology that is important to know in the context of percentiles:
 
-When there is an odd number of numbers, the median is simply the middle number. For example, the median of 2, 4, and 7 is 4. When there is an even number of numbers, the median is the mean of the two middle numbers. Thus, the median of the numbers 2, 4, 7, 12 is (4+7)/2 = 5.5.
+-   The 0th percentile is the same as the **minimum**, or the smallest value observed for a variable.
 
-### Mode
+-   The 100th percentile is the same as the **maximum**, or the largest value observed for a variable.
 
-The **mode** is the most frequently occurring value. For the data in @tbl-tdownpasses, the mode is 18 since more teams (4) had 18 touchdown passes than any other number of touchdown passes. With continuous data such as response time measured to many decimals, the frequency of each value is one since no two scores will be exactly the same (see @sec-continuous-variables). Therefore the mode of continuous data is normally computed from a grouped frequency distribution. @tbl-groupfreqdist1 shows a grouped frequency distribution for the target response time data. Since the interval with the highest frequency is 600-700, the mode is the middle of that interval (650).
+-   The 50th percentile is also called the **median**, as we will discuss in further detail in the following section.
 
-+---------+-----------+---------------+---------+
-|         | **Range** | **Frequency** |         |
-+=========+===========+===============+=========+
-|         | 500-600\  | 3\            |         |
-|         | 600-700\  | 6\            |         |
-|         | 700-800\  | 5\            |         |
-|         | 800-900\  | 5\            |         |
-|         | 900-1000\ | 0\            |         |
-|         | 1000-1100 | 1             |         |
-+---------+-----------+---------------+---------+
+-   The five number summary suggest a division of the data into four “buckets.” These four buckets are known as **quartiles**.
 
-: Grouped frequency distribution. {#tbl-groupfreqdist1}
+## Measures of Central Tendency
 
-### Comparing Measures of Central Tendency[^describing-one-variable-5]
+With measures of central tendency, we seek to identify a single number that helps answer the question “What is the typical value for this variable?”
 
-[^describing-one-variable-5]: This section is adapted from David M. Lane. “Comparing Measures of Central Tendency.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html>
+The most common measure of central tendency is the **mean**, which is what we typically mean when we say the “average.” To calculate the mean, we simply add up all the values appearing for a variable and then divide by the number of observations.
 
-How do the various measures of central tendency compare with each other? For symmetric distributions, the mean and median are equal, as is the mode except in bimodal distributions. Differences among the measures occur with skewed distributions. Consider the positively skewed distribution we saw earlier in the chapter (@fig-posskewdist). Measures of central tendency for this distribution are shown in @tbl-testscoremeasures. Notice they do not differ greatly, with the exception that the mode is considerably lower than the other measures. When distributions have a positive skew, the mean is typically higher than the median, although it may not be in bimodal distributions. For these data, the mean of 91.58 is higher than the median of 90.
+A common alternative to the mean is the **median**. As noted in the prior section, the median is also the 50th percentile. To identify the median, we can line up all observations from least to greatest (according to the variable of interest) and then pick the value in the very middle. If two values are tied (i.e., there is an even number of observations), we take the average of the two tied values.
 
-+---------+-------------+-----------+---------+
-|         | **Measure** | **Value** |         |
-+=========+=============+===========+=========+
-|         | Mode\       | 84.00\    |         |
-|         | Median\     | 90.00\    |         |
-|         | Mean        | 91.58     |         |
-+---------+-------------+-----------+---------+
+A third measure of central tendency is the **mode**. This is the value that occurs most often.
 
-: Measures of central tendency for the test scores. {#tbl-testscoremeasures}
+How do we choose among these three measures of central tendency? The ideal measure usually depends on the data and the purpose of the analysis.
 
-The distribution of baseball salaries (in 1994) shown in @fig-bballsalarydist has a much more pronounced skew than the distribution in @fig-posskewdist.
+For qualitative data, only the mode is available. There is no way to calculate a mean or median for a qualitative variable (although people sometimes accidentally do so if they have used numbers to code the variable within a spreadsheet).
 
-![A distribution with a very large positive skew. This histogram shows the salaries of major league baseball players (in thousands of dollars: 25 equals 250,000).](Images/describing-one-variable/bballsalarydist.jpg){#fig-bballsalarydist width="400"}
+For quantitative variables, the mode is sometimes a reasonable option but not always. It largely depends on the specific type of quantitative variable. *Continuous* variables are reported to many digits (usually with decimal places), so it is rare to see the same value repeating very often if at all. As such, the mode is a poor measure of central tendency for continuous variables. For *discrete* variables, which typically take on whole numbers, the mode can be more appropriate. For example, the mode is a perfectly reasonable measure of central tendency for a variable measuring the number of people in a household.
 
-@tbl-bballmeasures shows the measures of central tendency for these data. The large skew results in very different values for these measures. No single measure of central tendency is sufficient for data such as these. If you were asked the very general question: "So, what do baseball players make?" and answered with the mean of \$1,183,000, you would not have told the whole story since only about one third of baseball players make that much. If you answered with the mode of \$250,000 or the median of \$500,000, you would not be giving any indication that some players make many millions of dollars. Fortunately, there is no need to summarize a distribution with a single number. When the various measures differ, our opinion is that you should report the mean and the median. Sometimes it is worth reporting the mode as well. In the media, the median is usually reported to summarize the center of skewed distributions. You will hear about median salaries and median prices of houses sold, etc. This is better than reporting only the mean, but it would be informative to hear more statistics.
+There is still a way to make use of the mode for continuous variables. It requires using “bins,” as we do whenever we create a histogram. When we refer to the peak or tallest bar in a histogram as the mode, we are identifying the bin with the range of values that occur most often.
 
-+--------+-------------+--------+-----------+--------+
-|        | **Measure** |        | **Value** |        |
-+========+=============+========+===========+========+
-|        | Mode\       |        | 250\      |        |
-|        | Median\     |        | 500\      |        |
-|        | Mean        |        | 1,183     |        |
-+--------+-------------+--------+-----------+--------+
+If we are examining a quantitative variable and do not want outliers to have too much influence on our measure of central tendency, then the median is often the preferred option. This is because mean is highly sensitive to outliers, while the median is not. Consider the quantitative measures of organizational size from this chapter's case study. The values of the mean shown in our initial descriptive statistics table turn out to be rather poor summaries of these variables for most purposes. This is especially true for the variable indicating the number of people served, where an extreme outlier hugely influences the mean: one organization indicates that it has served 2 billion people. The contrast between the median (percentile) based description in @tbl-five-number-summary and the original descriptive table (@tbl-nonprofits-descriptive-stats) is stark for this variable, as well as the variable indicating number of employees.
 
-: Measures of central tendency for baseball salaries (in thousands of dollars). {#tbl-bballmeasures}
+For variables where there are no big outliers or where the distribution is symmetric (and thus the outliers are balanced between the left and right tails), the mean and the median usually yield similar values. In right-skewed distributions, the mean is typically larger (to the “right” of) the median. This matches the description provided above for the quantitative size variables from our case study. For left-skewed distributions, the mean is typically to the left of the median.
 
-## Measures of Spread[^describing-one-variable-6]
+Given concerns about outliers, you will find that the median is often used to describe variables like income or size that may be highly right-skewed.
 
-[^describing-one-variable-6]: This section is adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
+Sometimes, however, the mean’s sensitivity to outliers is a strength. If we are trying to run a business and need to make sure that subscription revenues for a maintenance will cover the costs, we will probably want to compare average revenue per subscriber to average costs. If one in every 100 subscribers requires help that costs many multiples of the ordinary subscriber, we will need to price the subscription to cover these “outlier” expenses. Relying on median costs to set the price of subscriptions could yield disastrous results, since the outliers cases could cost so much that they wipe out our earnings from all the typical customers.
 
-### What is Variability?
+The mean is also often an attractive option when summarizing certain ordinal variables, like those commonly resulting from use of Likert scales. Such variables will not have large outliers, and the median will often not respond to relatively subtle but potentially important differences in response pattern. For example, suppose employees from two different companies respond to a survey where they respond to a question asking how satisfied they are at work. If 90% of respondents in company A select “very satisfied” (the top response option) while only 60% select “very satisfied” in company B, median satisfaction for both companies will be the same, but the mean will be higher in company A.
 
-Variability refers to how "spread out" a group of scores is. To see what we mean by spread out, consider @fig-quiz-1 and @fig-quiz-2. These graphs represent the scores on two quizzes. The mean score for each quiz is 7.0. Despite the equality of means, you can see that the distributions are quite different. Specifically, the scores on Quiz 1 are more densely packed and those on Quiz 2 are more spread out. The differences among students were much greater on Quiz 2 than on Quiz 1.
+Given that both the mean and the median have clear advantages and clear drawbacks, some sources recommend reporting both statistics whenever describing the central tendency of a variable. This is probably a good rule of thumb to start from, and with experience you can figure out when one statistics or the other is more useful depending on the data and the broader context of your analysis.
+
+## Measures of Spread[^describing-one-variable-3]
+
+[^describing-one-variable-3]: The first pargraph and initial graphs in this section are adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
+
+Spread refers to how "spread out" a group of scores is. To see what we mean by spread out, consider @fig-quiz-1 and @fig-quiz-2. These graphs represent the scores on two quizzes. The mean score for each quiz is 7.0. Despite the equality of means, you can see that the distributions are quite different. Specifically, the scores on Quiz 1 are more densely packed and those on Quiz 2 are more spread out. The differences among students were much greater on Quiz 2 than on Quiz 1.
 
 ![Quiz 1](Images/describing-one-variable/Quiz1.jpg){#fig-quiz-1 width="425"}
 
 ![Quiz 2](Images/describing-one-variable/Quiz2.jpg){#fig-quiz-2 width="425"}
 
-The terms variability, spread, and dispersion are synonyms, and refer to how spread out a distribution is. Just as in the section on central tendency where we discussed measures of the center of a distribution of scores, in this section we will discuss measures of the variability of a distribution. There are four frequently used measures of variability: the range, interquartile range, variance, and standard deviation. In the next few paragraphs, we will look at each of these four measures of variability in more detail.
+Measures of spread help us answer the question “How tightly is the data clustered around the center of the distribution?” Or if we wish to more specifically reference a measure of central tendency, we might ask “Are most observed values for this variable pretty close to its mean/median?”
 
-### Range
+The simplest measure of central tendency is the **range**. The range is the difference between a variable’s minimum and maximum value. Sometimes it is expressed as a single number (e.g., if the minimum is 100 and the maximum is 300, the range is 200 since 300 - 100 = 200). Other times, it is described as the interval defined by the minimum and maximum (e.g., 100 to 300). While the range has the benefit of being simple and intuitive, it is sensitive to outliers and tells us little about whether the typical value lies close to the mean/median.
 
-The **range** is the simplest measure of variability to calculate, and one you have probably encountered many times in your life. The range is simply the highest score minus the lowest score. Let’s take a few examples. What is the range of the following group of numbers: 10, 2, 5, 6, 7, 3, 4? Well, the highest number is 10, and the lowest number is 2, so 10 - 2 = 8. The range is 8. Let’s take another example. Here’s a dataset with 10 numbers: 99, 45, 23, 67, 45, 91, 82, 78, 62, 51. What is the range? The highest number is 99 and the lowest number is 23, so 99 - 23 equals 76; the range is 76. Now consider the two quizzes shown above. On Quiz 1, the lowest score is 5 and the highest score is 9. Therefore, the range is 4. The range on Quiz 2 was larger: the lowest score was 4 and the highest score was 10. Therefore the range is 6.
+One should also exercise great caution in using the range to make comparisons. The range can be sensitive to sample size: a larger sample offers greater opportunity for the range to expand. If one is comparing males to females and has equally-sized samples for each sex, comparing the range among female for some variable to its range among men may be reasonable. However, if we were to compare two samples with different numbers of observations, then the range is not necessarily a good way to compare the spreads of the samples.
 
-Be careful, though, about using the range to make comparisons. The range can be sensitive to sample size: a larger sample offers greater opportunity for the range to expand. In the example above, both quizzes have the same number of observations (20), so using the range to make a comparison is perfectly fine. However, if we were to compare two samples with different numbers of observations, then the range is not necessarily a good way to compare the variability of the samples.
+Another measure of spread is the **interquartile range (IQR)**, which refers to the difference between the 75th and 25th percentile. The IQR is depicted as the length of the “box” when we draw a box plot. When the IQR is larger, it indicates that the middle 50% of the data is spread out over a larger range of values.
 
-### Interquartile Range
+The most common measures of spread are **variance** and **standard deviation**. The formula for variance is provided in Appendix II. It is based on observing how far each and every value is from the average value. If the mean is 52 and most observations are very close to this average (e.g., most observations are in the range of 51 to 53), the variance will be quite small. If many observations have values that are quite far from the average (e.g., many observations are as low as in the 20s and and high as in the 80s), the variance will be quite large. To be precise, the calculation of variance is based on finding the average squared distance between each observation and the mean.
 
-The **interquartile range** (IQR) is the range of the middle 50% of the scores in a distribution. It is computed as follows:
+Standard deviation is closely related to variance: you simply take the square root of the variance to find the standard deviation. Since variance is based on squared distance from the mean, taking the square root at the end gets us back to our original units in some sense. Therefore, we can interpret the standard deviation of X as approximating the typical distance between a given value of X and the mean of X. For example, suppose I tell you about a prison where the prisoners have a mean age of 42 years with a standard deviation of 8 years. If I randomly select one prisoner and ask you to guess their age, you should probably guess 42 since I’ve told you that is the mean. But even though 42 is your best guess, you can expect your guess to be off by about 8 years since the standard deviation is 8 (meaning the typical distance between a random prisoner’s age and the mean age is approximately 8). You can’t say ahead of time which direction your guess is likely to be off (guessing too old versus too young), just that you are likely to miss the reality for a randomly-selected individual by about 8 years on a typical guess (though any one guess may happen to be closer or further than 8 years).
 
-$$
-IQR = \text{ 75th percentile } - \text{ 25th percentile }
-$$
+The concept of spread can also be referred to as *variability* or *dispersion*. We can also say that large spread indicates high **heterogeneity**, meaning that units tend not to closely resemble one another. On the flip side, a small spread indicates that for the variable being examined, observations are highly **homogeneous** or highly uniform.
 
-For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquartile range is therefore 2. For Quiz 2, which has greater spread, the 75th percentile is 9, the 25th percentile is 5, and the interquartile range is 4. We'll see in @sec-box-plots that when creating boxplots, the 75th percentile is also called the upper hinge and the 25th percentile is called the lower hinge. Thus, the interquartile range is neatly depicted by the box portion of a boxplot.
+## Transforming Variables[^describing-one-variable-4] {#sec-transforming-variables}
 
-### Variance {#sec-variance}
-
-Variability can also be defined in terms of how close the scores in the distribution are to the middle of the distribution. Using the mean as the measure of the middle of the distribution, the **variance** is defined as the average squared difference of the scores from the mean. The data from Quiz 1 are shown in @tbl-quiz1var. The mean score is 7.0. Therefore, the column "Deviation from Mean" contains the score minus 7. The column "Squared Deviation" is simply the previous column squared.
-
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | **Scores** |        | **Deviation from Mean** |        | **Squared Deviation** |        |
-+========+============+========+=========================+========+=======================+========+
-|        | 9          |        | 2                       |        | 4                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 9          |        | 2                       |        | 4                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 9          |        | 2                       |        | 4                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 8          |        | 1                       |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 8          |        | 1                       |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 8          |        | 1                       |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 8          |        | 1                       |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 7          |        | 0                       |        | 0                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 7          |        | 0                       |        | 0                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 7          |        | 0                       |        | 0                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 7          |        | 0                       |        | 0                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 7          |        | 0                       |        | 0                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 6          |        | -1                      |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 6          |        | -1                      |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 6          |        | -1                      |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 6          |        | -1                      |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 6          |        | -1                      |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 6          |        | -1                      |        | 1                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 5          |        | -2                      |        | 4                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 5          |        | -2                      |        | 4                     |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        |            |        | **Means**               |        |                       |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-|        | 7          |        | 0                       |        | 1.5                   |        |
-+--------+------------+--------+-------------------------+--------+-----------------------+--------+
-
-: Calculation of Variance for Quiz 1 scores. {#tbl-quiz1var}
-
-One thing that is important to notice is that the mean deviation from the mean is 0. This will always be the case. The mean of the squared deviations is 1.5. Therefore, the variance is 1.5. Analogous calculations with Quiz 2 show that its variance is 6.7. The formula for the variance is:
-
-$$
-\sigma^2=\frac{\sum_{i=1}^{N} (x_i-\mu)^2}{N}
-$$
-
-where $\sigma^2$ is the variance, $\mu$ is the mean, and $N$ is the number of numbers. For Quiz 1, $\mu$ = 7 and $N$ = 20.
-
-If the variance in a sample is used to estimate the variance in a population, then the previous formula underestimates the variance and the following formula should be used:
-
-$$
-s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}
-$$
-
-where $s^2$ is the estimate of the variance and $\bar{x}$ is the sample mean.
-
-Note that $\bar{x}$ is the mean of a sample taken from a population with a mean of $\mu$. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by $n-1$ rather than simply $n$, the simulation "estimating variance"[^describing-one-variable-7] illustrates the bias that arises if we use $n$ as the denominator in the formula.
-
-[^describing-one-variable-7]: <https://onlinestatbook.com/2/summarizing_distributions/variance_est.html>
-
-Let's look at a concrete example of calculating the sample variance. Assume the scores 1, 2, 4, and 5 were sampled from a larger population. To estimate the variance in the population you would compute $s^2$ as follows:
-
-$$
-\bar{x} = (1 + 2 + 4 + 5)/4 = 12/4 = 3
-$$
-
-$$
-s^2 = [(1-3)^2 + (2-3)^2 + (4-3)^2 + (5-3)^2]/(4-1)
-$$$$
-= (4 + 1 + 1 + 4)/3 = 10/3 = 3.333
-$$
-
-### Standard Deviation
-
-The **standard deviation** is simply the square root of the variance. This makes the standard deviations of the two quiz distributions 1.225 and 2.588. We can interpret the standard deviation of X as approximating the typical distance between a given value of X and the mean of X. For example, suppose I tell you about a prison where the prisoners have a mean age of 42 years with a standard deviation of 8 years. If I randomly select one prisoner and ask you to guess their age, you should probably guess 42 since I’ve told you that is the mean. But even though 42 is your best guess, you can expect your guess to be off by about 8 years since the standard deviation is 8 (meaning the typical distance between a random prisoner’s age and the mean age is approximately 8). You can't say ahead of time which direction your guess is likely to be off (guessing too old versus too young), just that you are likely to miss the reality for a randomly-selected individual by about 8 years on a typical guess (though any one guess may happen to be closer or further than 8 years).
-
-## Box Plots[^describing-one-variable-8] {#sec-box-plots}
-
-[^describing-one-variable-8]: This section is adapted from David M. Lane. “Box Plots.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/graphing_distributions/boxplots.html>
-
-Box plots are useful for making comparisons and identifying **outliers**, meaning unusually large or small values for a variable. We will explain box plots with the help of data from an in-class experiment. As part of the "Stroop Interference Case Study,"[^describing-one-variable-9] students in introductory statistics were presented with a page containing 30 colored rectangles. Their task was to name the colors as quickly as possible. Their times (in seconds) were recorded. We'll compare the scores for the 16 men and 31 women who participated in the experiment by making separate box plots for each gender. Such a display is said to involve *parallel box plots*.
-
-[^describing-one-variable-9]: <https://onlinestatbook.com/2/case_studies/stroop.html>
-
-There are several steps in constructing a box plot. The first relies on the 25^th^, 50^th^, and 75^th^ percentiles in the distribution of scores. @fig-boxplot1 shows how these three statistics are used. For each gender, we draw a box extending from the 25^th^ percentile to the 75^th^ percentile. The 50^th^ percentile is drawn inside the box. Therefore, the bottom of each box is the 25th percentile, the top is the 75th percentile, and the line in the middle is the 50th percentile. The data for the women in our sample are shown in @tbl-womenstimes.
-
-![The first step in creating box plots.](Images/describing-one-variable/boxplot1.jpg){#fig-boxplot1}
-
-+-----+-----+-----+-----+-----+-----+----+
-| 14\ | 17\ | 18\ | 19\ | 20\ | 21\ | 29 |
-| 15\ | 17\ | 18\ | 19\ | 20\ | 22\ |    |
-| 16\ | 17\ | 18\ | 19\ | 20\ | 23\ |    |
-| 16\ | 17\ | 18\ | 20\ | 20\ | 24\ |    |
-| 17  | 18  | 18  | 20  | 21  | 24  |    |
-+-----+-----+-----+-----+-----+-----+----+
-
-: Women's times. {#tbl-womenstimes}
-
-For these data, the 25th percentile is 17, the 50th percentile is 19, and the 75th percentile is 20. For the men (whose data are not shown), the 25th percentile is 19, the 50th percentile is 22.5, and the 75th percentile is 25.5.
-
-Before proceeding, the terminology in @tbl-terminology is helpful.
-
-+-------------------+-------------------------------------------------------------+---------------+
-| Name              | Formula                                                     | Value         |
-+===================+=============================================================+===============+
-| Upper Hinge       | 75th Percentile                                             | 20            |
-+-------------------+-------------------------------------------------------------+---------------+
-| Lower Hinge       | 25th Percentile                                             | 17            |
-+-------------------+-------------------------------------------------------------+---------------+
-| H-Spread          | Upper Hinge - Lower Hinge                                   | 3             |
-+-------------------+-------------------------------------------------------------+---------------+
-| Step              | 1.5 x H-Spread                                              | 4.5           |
-+-------------------+-------------------------------------------------------------+---------------+
-| Upper Inner Fence | Upper Hinge + 1 Step                                        | 24.5          |
-+-------------------+-------------------------------------------------------------+---------------+
-| Lower Inner Fence | Lower Hinge - 1 Step                                        | 12.5          |
-+-------------------+-------------------------------------------------------------+---------------+
-| Upper Outer Fence | Upper Hinge + 2 Steps                                       | 29            |
-+-------------------+-------------------------------------------------------------+---------------+
-| Lower Outer Fence | Lower Hinge - 2 Steps                                       | 8             |
-+-------------------+-------------------------------------------------------------+---------------+
-| Upper Adjacent    | Largest value below Upper Inner Fence                       | 24            |
-+-------------------+-------------------------------------------------------------+---------------+
-| Lower Adjacent    | Smallest value above Lower Inner Fence                      | 14            |
-+-------------------+-------------------------------------------------------------+---------------+
-| Outside Value     | A value beyond an Inner Fence but not beyond an Outer Fence | 29            |
-+-------------------+-------------------------------------------------------------+---------------+
-| Far Out Value     | A value beyond an Outer Fence                               | None          |
-+-------------------+-------------------------------------------------------------+---------------+
-
-: Box plot terms and values for women's times. {#tbl-terminology}
-
-Continuing with the box plots, we put "whiskers" above and below each box to give additional information about the spread of the data. Whiskers are vertical lines that end in a horizontal stroke. Whiskers are drawn from the upper and lower hinges to the upper and lower adjacent values (24 and 14 for the women's data).
-
-Although we don't draw whiskers all the way to outside or far out values, we still wish to represent them in our box plots. This is achieved by adding additional marks beyond the whiskers. Specifically, outside values are indicated by small "o's" and far out values are indicated by asterisks (\*). In our data, there are no far out values and just one outside value. This outside value of 29 is for the women and is shown in @fig-boxplotoutsidevalue.
-
-![The box plots with the whiskers and outside value shown.](Images/describing-one-variable/boxplotoutsidevalue.jpg){#fig-boxplotoutsidevalue}
-
-There is one more mark to include in box plots (although sometimes it is omitted). We indicate the mean score for a group by inserting a plus sign. @fig-completedboxplots shows the result of adding means to our box plots.
-
-![The completed box plots.](Images/describing-one-variable/completedboxplots.jpg){#fig-completedboxplots}
-
-@fig-completedboxplots provides a revealing summary of the data. Since half the scores in a distribution are between the hinges (recall that the hinges are the 25^th^ and 75^th^ percentiles), we see that half the women's times are between 17 and 20 seconds, whereas half the men's times are between 19 and 25.5. We also see that women generally named the colors faster than the men did, although one woman was slower than almost all of the men. @fig-boxplotdetailedlabels shows the box plot for the women's data with detailed labels.
-
-![The box plot for the women's data with detailed labels.](Images/describing-one-variable/boxplotdetailedlabels.jpg){#fig-boxplotdetailedlabels}
-
-Box plots provide basic information about a distribution. For example, a distribution with a positive skew would have a longer whisker in the positive direction than in the negative direction. A larger mean than median would also indicate a positive skew. Box plots are good at portraying extreme values and are especially good at showing differences between distributions. However, many of the details of a distribution are not revealed in a box plot, and to examine these details one should create a histogram.
-
-### Variations on box plots
-
-Statistical analysis programs may offer options on how box plots are created. For example, the box plots in @fig-boxplotindvscores are constructed from our data but differ from the previous box plots in several ways.
-
-1.  It does not mark outliers.
-
-2.  The means are indicated by green lines rather than plus signs.
-
-3.  The mean of all scores is indicated by a gray line.
-
-4.  Individual scores are represented by dots. Since the scores have been rounded to the nearest second, any given dot might represent more than one score.
-
-5.  The box for the women is wider than the box for the men because the widths of the boxes are proportional to the number of subjects of each gender (31 women and 16 men).
-
-![Box plots showing the individual scores and the means.](Images/describing-one-variable/boxplotindvscores.jpg){#fig-boxplotindvscores}
-
-Each dot in @fig-boxplotindvscores represents a group of subjects with the same score (rounded to the nearest second). An alternative graphing technique is to “jitter” the points. This means spreading out different dots at the same horizontal position, one dot for each subject. The exact horizontal position of a dot is determined randomly (under the constraint that different dots don’t overlap exactly). Spreading out the dots helps you to see multiple occurrences of a given score. However, depending on the dot size and the screen resolution, some points may be obscured even if the points are jittererd. @fig-boxplotindvscoresjittered shows what jittering looks like.
-
-![Box plots with the individual scores jittered.](Images/describing-one-variable/boxplotindvscoresjittered.jpg){#fig-boxplotindvscoresjittered}
-
-Different styles of box plots are best for different situations, and there are no firm rules for which to use. When exploring your data, you should try several ways of visualizing them. Which graphs you include in your report should depend on how well different graphs reveal the aspects of the data you consider most important.
-
-## Transforming Variables[^describing-one-variable-10] {#sec-transforming-variables}
-
-[^describing-one-variable-10]: The initial part of this section is adapted from David M. Lane. “Linear Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/linear_transforms.html>. There is also material adapted from David M. Lane. “Standard Normal Distribution.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/normal_distribution/standard_normal.html>.
+[^describing-one-variable-4]: The initial part of this section is adapted from David M. Lane. “Linear Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/linear_transforms.html>. There is also material adapted from David M. Lane. “Standard Normal Distribution.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/normal_distribution/standard_normal.html>.
 
 Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. @tbl-heightconversion shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
 
-+-------+----------+-------+------------+-------+
-|       | **Feet** |       | **Inches** |       |
-+=======+==========+=======+============+=======+
-|       | 5.00\    |       | 60\        |       |
-|       | 6.25\    |       | 75\        |       |
-|       | 5.50\    |       | 66\        |       |
-|       | 5.75     |       | 69         |       |
-+-------+----------+-------+------------+-------+
++---------+----------+---------+------------+---------+
+|         | **Feet** |         | **Inches** |         |
++=========+==========+=========+============+=========+
+|         | 5.00\    |         | 60\        |         |
+|         | 6.25\    |         | 75\        |         |
+|         | 5.50\    |         | 66\        |         |
+|         | 5.75     |         | 69         |         |
++---------+----------+---------+------------+---------+
 
 : Converting between feet and inches. {#tbl-heightconversion}
 
@@ -469,9 +263,9 @@ $$
 
 If all the values in a distribution are transformed to $z$ scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.
 
-### Log Transformations[^describing-one-variable-11]
+### Log Transformations[^describing-one-variable-5]
 
-[^describing-one-variable-11]: This subsection is adapted from David M. Lane. “Log Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/transformations/log.html>
+[^describing-one-variable-5]: This subsection is adapted from David M. Lane. “Log Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/transformations/log.html>
 
 Sometimes it is also useful to use transformations that are not linear. For example, the log transformation can sometimes be used to make highly skewed distributions less skewed. This can be valuable both for making patterns in the data more interpretable and for helping to meet the assumptions of inferential statistics (see @sec-stat-inference).
 
@@ -481,9 +275,9 @@ Sometimes it is also useful to use transformations that are not linear. For exam
 
 It is hard to discern a pattern in the upper panel whereas the strong relationship is shown clearly in the lower panel.
 
-## Exercises[^describing-one-variable-12]
+## Exercises[^describing-one-variable-6]
 
-[^describing-one-variable-12]: Adapted from David M. Lane. “Exercises.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/graphing_distributions/ch2_exercises.html> and <https://onlinestatbook.com/2/summarizing_distributions/ch3_exercises.html> and <https://onlinestatbook.com/2/transformations/exercises.html>
+[^describing-one-variable-6]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
 
 1.  Find the mean and median for the following three variables:
 
@@ -539,24 +333,26 @@ It is hard to discern a pattern in the upper panel whereas the strong relationsh
 
 11. When is a log transformation valuable?
 
-## @sec-describing-one-variable Appendix: Calculating Percentiles Under the Third Definition[^describing-one-variable-13] {.unnumbered}
+## @sec-describing-one-variable Appendix I: Calculating Percentiles[^describing-one-variable-7] {.unnumbered}
 
-[^describing-one-variable-13]: This section is adapted from David M. Lane. “Percentiles.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/percentiles.html>
+[^describing-one-variable-7]: This section is adapted from David M. Lane. “Percentiles.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/percentiles.html>
 
-Let's begin with an example. Consider the 25th percentile for the 8 numbers in @tbl-numberrankscores. Notice the numbers are given ranks ranging from 1 for the lowest number to 8 for the highest number.
+There is no universally accepted definition of a percentile. Using the 65th percentile as an example, the 65th percentile can be defined as the lowest score that is greater than 65% of the scores. We will call this "Definition 1." The 65th percentile can also be defined as the smallest score that is greater than *or equal to* 65% of the scores. This we will call "Definition 2." Though these two definitions appear very similar, they can sometimes lead to dramatically different results, especially when there is relatively little data. Moreover, neither of these definitions is explicit about how to handle rounding. For instance, what rank is required to be higher than 65% of the scores when the total number of scores is 50? This is tricky because 65% of 50 is 32.5. How do we find the lowest number that is higher than 32.5 of the scores?
 
-+-------+------------+-------+----------+-------+
-|       | **Number** |       | **Rank** |       |
-+=======+============+=======+==========+=======+
-|       | 3\         |       | 1\       |       |
-|       | 5\         |       | 2\       |       |
-|       | 7\         |       | 3\       |       |
-|       | 8\         |       | 4\       |       |
-|       | 9\         |       | 5\       |       |
-|       | 11\        |       | 6\       |       |
-|       | 13\        |       | 7\       |       |
-|       | 15         |       | 8        |       |
-+-------+------------+-------+----------+-------+
+A third way to compute percentiles is a weighted average of the percentiles computed according to the first two definitions. The details of computing percentiles under this third definition are a bit complicated. Let's begin with an example. Consider the 25th percentile for the 8 numbers in @tbl-numberrankscores. Notice the numbers are given ranks ranging from 1 for the lowest number to 8 for the highest number.
+
++---------+------------+---------+----------+---------+
+|         | **Number** |         | **Rank** |         |
++=========+============+=========+==========+=========+
+|         | 3\         |         | 1\       |         |
+|         | 5\         |         | 2\       |         |
+|         | 7\         |         | 3\       |         |
+|         | 8\         |         | 4\       |         |
+|         | 9\         |         | 5\       |         |
+|         | 11\        |         | 6\       |         |
+|         | 13\        |         | 7\       |         |
+|         | 15         |         | 8        |         |
++---------+------------+---------+----------+---------+
 
 : Test Scores. {#tbl-numberrankscores}
 
@@ -586,30 +382,30 @@ Therefore, the 25th percentile is 5.5. If we had used the first definition (the 
 
 For a second example, consider the 20 quiz scores shown in @tbl-quizscores.
 
-+-------+-----------+-------+----------+-------+
-|       | **Score** |       | **Rank** |       |
-+=======+===========+=======+==========+=======+
-|       | 4\        |       | 1\       |       |
-|       | 4\        |       | 2\       |       |
-|       | 5\        |       | 3\       |       |
-|       | 5\        |       | 4\       |       |
-|       | 5\        |       | 5\       |       |
-|       | 5\        |       | 6\       |       |
-|       | 6\        |       | 7\       |       |
-|       | 6\        |       | 8\       |       |
-|       | 6\        |       | 9\       |       |
-|       | 7\        |       | 10\      |       |
-|       | 7\        |       | 11\      |       |
-|       | 7\        |       | 12\      |       |
-|       | 8\        |       | 13\      |       |
-|       | 8\        |       | 14\      |       |
-|       | 9\        |       | 15\      |       |
-|       | 9\        |       | 16\      |       |
-|       | 9\        |       | 17\      |       |
-|       | 10\       |       | 18\      |       |
-|       | 10\       |       | 19\      |       |
-|       | 10        |       | 20       |       |
-+-------+-----------+-------+----------+-------+
++--------+-----------+--------+----------+--------+
+|        | **Score** |        | **Rank** |        |
++========+===========+========+==========+========+
+|        | 4\        |        | 1\       |        |
+|        | 4\        |        | 2\       |        |
+|        | 5\        |        | 3\       |        |
+|        | 5\        |        | 4\       |        |
+|        | 5\        |        | 5\       |        |
+|        | 5\        |        | 6\       |        |
+|        | 6\        |        | 7\       |        |
+|        | 6\        |        | 8\       |        |
+|        | 6\        |        | 9\       |        |
+|        | 7\        |        | 10\      |        |
+|        | 7\        |        | 11\      |        |
+|        | 7\        |        | 12\      |        |
+|        | 8\        |        | 13\      |        |
+|        | 8\        |        | 14\      |        |
+|        | 9\        |        | 15\      |        |
+|        | 9\        |        | 16\      |        |
+|        | 9\        |        | 17\      |        |
+|        | 10\       |        | 18\      |        |
+|        | 10\       |        | 19\      |        |
+|        | 10        |        | 20       |        |
++--------+-----------+--------+----------+--------+
 
 : 20 quiz scores. {#tbl-quizscores}
 
@@ -678,3 +474,133 @@ Whenever $FR$ = 0, you simply find the number with rank $IR$. In this case, the 
 $$
  \text{ 50th percentile }= (0.00) (9 - 5) + 5 = 5.
 $$
+
+## @sec-describing-one-variable Appendix II: Formulas for Calculating Key Descriptive Statistics
+
+### Mean[^describing-one-variable-8] {.unnumbered}
+
+[^describing-one-variable-8]: This section is adapted from David M. Lane. “Measures of Central Tendency.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/measures.html>
+
+The mean[^describing-one-variable-9] is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in @sec-stat-inference. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.
+
+[^describing-one-variable-9]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
+
+The symbol $\mu$ is used for the mean of a population. The symbol $\bar{x}$ is used for the mean of a sample. The formula for $\mu$ is shown below:
+
+$$
+\mu = \frac{\sum_{i=1}^{N} x_i}{N}
+$$
+
+where $\sum_{i=1}^{N} x_i$ is the sum of all the numbers in the population and $N$ is the number of numbers in the population. Note that the summation syntax $\sum_{i=1}^{N}$ indicates that we begin at $i=1$ and repeatedly increase the value of our counter $i$ by 1 until we get to $N$. Each time, we take $x_i$, which refers to the $i$th observation of the variable $x$, and that is the value we add to the running list of values to sum.
+
+The formula for $\bar{x}$ is essentially identical:
+
+$$
+\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
+$$
+
+where $\sum_{i=1}^{n} x_i$ is the sum of all the numbers in the sample and $n$ is the number of numbers in the sample.
+
+As an example, the mean of the numbers 1, 2, 3, 6, 8 is 20/5 = 4 regardless of whether the numbers constitute the entire population or just a sample from the population.
+
+@tbl-tdownpasses shows the number of touchdown (TD) passes thrown by each of the 31 teams in the National Football League in the 2000 season. The mean number of touchdown passes thrown is 20.4516 as shown below.
+
+$$
+\mu = \frac{\sum_{i=1}^{N} x_i}{N} = \frac{634}{31} = 20.4516
+$$
+
++---------+--------------------------------------------------------------------------------------------+---------+
+|         | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |         |
++---------+--------------------------------------------------------------------------------------------+---------+
+
+: Number of touchdown passes. {#tbl-tdownpasses}
+
+### Variance[^describing-one-variable-10] {.unnumbered}
+
+[^describing-one-variable-10]: This section is adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
+
+Using the mean as the measure of the middle of the distribution, the variance is defined as the average squared difference of the scores from the mean. The data from Quiz 1 are shown in @tbl-quiz1var. The mean score is 7.0. Therefore, the column "Deviation from Mean" contains the score minus 7. The column "Squared Deviation" is simply the previous column squared.
+
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | **Scores** |        | **Deviation from Mean** |        | **Squared Deviation** |        |
++========+============+========+=========================+========+=======================+========+
+|        | 9          |        | 2                       |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 9          |        | 2                       |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 9          |        | 2                       |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 8          |        | 1                       |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 0                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 6          |        | -1                      |        | 1                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 5          |        | -2                      |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 5          |        | -2                      |        | 4                     |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        |            |        | **Means**               |        |                       |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+|        | 7          |        | 0                       |        | 1.5                   |        |
++--------+------------+--------+-------------------------+--------+-----------------------+--------+
+
+: Calculation of Variance for Quiz 1 scores. {#tbl-quiz1var}
+
+One thing that is important to notice is that the mean deviation from the mean is 0. This will always be the case. The mean of the squared deviations is 1.5. Therefore, the variance is 1.5. Analogous calculations with Quiz 2 show that its variance is 6.7. The formula for the variance is:
+
+$$
+\sigma^2=\frac{\sum_{i=1}^{N} (x_i-\mu)^2}{N}
+$$
+
+where $\sigma^2$ is the variance, $\mu$ is the mean, and $N$ is the number of numbers. For Quiz 1, $\mu$ = 7 and $N$ = 20.
+
+If the variance in a sample is used to estimate the variance in a population, then the previous formula underestimates the variance and the following formula should be used:
+
+$$
+s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}
+$$
+
+where $s^2$ is the estimate of the variance and $\bar{x}$ is the sample mean.
+
+Note that $\bar{x}$ is the mean of a sample taken from a population with a mean of $\mu$. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by $n-1$ rather than simply $n$, the simulation "estimating variance"[^describing-one-variable-11] illustrates the bias that arises if we use $n$ as the denominator in the formula.
+
+[^describing-one-variable-11]: <https://onlinestatbook.com/2/summarizing_distributions/variance_est.html>
+
+Let's look at a concrete example of calculating the sample variance. Assume the scores 1, 2, 4, and 5 were sampled from a larger population. To estimate the variance in the population you would compute $s^2$ as follows:
+
+$$
+\bar{x} = (1 + 2 + 4 + 5)/4 = 12/4 = 3
+$$
+
+$$
+s^2 = [(1-3)^2 + (2-3)^2 + (4-3)^2 + (5-3)^2]/(4-1)
+$$$$
+= (4 + 1 + 1 + 4)/3 = 10/3 = 3.333
+$$
+
+As noted in the main text, the standard deviation is simply the square root of the variance. This makes the standard deviations of the two quiz distributions 1.225 and 2.588.
