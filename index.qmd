@@ -5,7 +5,7 @@
 ![](cover.png)
 :::
 
-[Click here for a PDF version](Statistics-Minus-the-Math--2e-.pdf) of this book.
+[Click here for a PDF version (Currently unavailable, but I will get this working in July; you can email me for a rough version in the meantime)](Statistics-Minus-the-Math--2e-.pdf) of this book.
 ::::
 
 ***Note: This is an unstable version** that will be finalized and launched as version 2.1 in mid-July. For all major changes I plan to make, I have left notes at the beginning of relevant chapters indicating what will change prior to the mid-July launch. The most recent stable version (2.0) can be accessed here: <https://minusthemath.com/2e>.*
