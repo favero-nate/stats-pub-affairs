@@ -46,7 +46,7 @@ The starting point for hypothesis testing is a **null hypothesis**, which is som
 
 $$
 H_0: \mu_R = \mu_U
-$$ {#eq-rural-null-equal-means} uusing the subscripts $R$ and $U$ to indicate "rural" and "urban," and $\mu$ for the expected value (or population mean) of the quantitative variable: `ideology`. Simply put, this null hypothesis states that the expected value of `ideology` among rural districts is the same as the expected value of `ideology` among urban districts.
+$$ {#eq-rural-null-equal-means} using the subscripts $R$ and $U$ to indicate "rural" and "urban," and $\mu$ for the expected value (or population mean) of the quantitative variable: `ideology`. Simply put, this null hypothesis states that the expected value of `ideology` among rural districts is the same as the expected value of `ideology` among urban districts.
 
 Another way to write this null hypothesis is:
 

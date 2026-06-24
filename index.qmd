@@ -20,11 +20,11 @@ Accessible yet rigorous explanations prioritize conceptual understanding over ex
 
 There several things that make this book is a bit different from most introductory statistics texts:
 
--   It emphasizes three topics that are rarely found together in one text: (1) data description, (2) quantitative reasoning, and (3) causality in social science research.
+-   It emphasizes three topics that are rarely covered together (in depth) in one text: (1) data description, (2) quantitative reasoning, and (3) causality in social science research.
 
 -   There are diverse social science examples, with a particular emphasis on organizational studies (especially public and nonprofit sectors) and public policy. These are practical and relatable areas of focus for many social science students.
 
--   Contemporary approaches to quantitative social science are prioritized, resulting in greater attention to regression modeling and confidence intervals.
+-   Contemporary approaches to quantitative social science are prioritized, resulting in greater attention to regression modeling and confidence intervals (as well as misuses of hypothesis testing).
 
 -   The ordering of topics is designed to equip students to start working with data and reading quantitative social science literature as quickly as possible. The first three chapters not only teach data description and visualization but also provide basic guidelines for reading a regression results table.
 
