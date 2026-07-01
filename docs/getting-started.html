@@ -465,81 +465,28 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>Suppose you have a friend who has been trying to use social media to build and strengthen their professional network. When this friend finds out that you’re studying statistics, they start coming to you with questions about what they can learn from the engagement data from their social media account.</p>
-<p><a href="#tbl-social-media-stats" class="quarto-xref">Table&nbsp;<span>1.1</span></a> shows some basic statistics for your friend’s profile while <a href="#tbl-likes-by-length" class="quarto-xref">Table&nbsp;<span>1.2</span></a> provides a comparison of the number of “likes” for posts of different lengths. (Note that while I am describing a hypothetical friend to make this example more vivid, the underlying data is an unmodified copy of a real user’s data.)</p>
-<div id="tbl-social-media-stats" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-social-media-stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Summary of Data from Social Media Account
-</figcaption>
-<div aria-describedby="tbl-social-media-stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th># of Posts</th>
-<th>Average Length (Characters)</th>
-<th>Average # of Likes</th>
-<th>Posts with Images</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>70</td>
-<td>164</td>
-<td>6.5</td>
-<td>23%</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<div id="tbl-likes-by-length" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-likes-by-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.2: Comparison of Engagement with Short, Medium, and Long Posts
-</figcaption>
-<div aria-describedby="tbl-likes-by-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Short Posts (0-100 Char.)</th>
-<th>Medium Posts (101-200 Char.)</th>
-<th>Long Posts (201-300 Char.)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Average # of Likes</strong></td>
-<td>2.7</td>
-<td>1.9</td>
-<td>13.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
+<p>The Overview Table below shows some basic statistics for your friend’s profile while the Engagement Comparison provides a comparison of the number of “likes” for posts of different lengths. (Note that while I am describing a hypothetical friend to make this example more vivid, the underlying data is an unmodified copy of a real user’s data.)</p>
+<pre><code>Overview Table
+
+| # of Posts | Average Length | Average Likes | Includes Image |
+|------------|----------------|---------------|----------------|
+| 70         | 164            | 6.5           | 23%            |
+
+
+Engagement Comparison
+
+|               | Short Posts | Medium Posts | Long Posts |
+|---------------|-------------|--------------|------------|
+| Average Likes | 2.7         | 1.9          | 13.0       |</code></pre>
 <p>To help evaluate these two tables, let us consider our three Questions to Always Ask about Data:</p>
 <ol type="1">
 <li><p><strong>What is being measured?</strong></p>
-<p>Each row of <a href="#tbl-social-media-stats" class="quarto-xref">Table&nbsp;<span>1.1</span></a> shows something that is relatively straightforward to measure. And yet, when we dig deeper, it is not always so clear how a straightforward measure relates to whatever it is we really care about. Your friend cares about using this social media account for professional networking. How can we measure success for that goal? Doing so is rather difficult. Making many posts might seem to aid that goal because more posts means more opportunities to be seen by professional peers. And yet this would not be productive if the posts are perceived as annoying or somehow make a bad impression on people. Perhaps “likes” are a better metric, but here it is important to ask exactly what is being measured? It is just a count of the number of people who click the “like” button for a given post. But we don’t necessarily know <em>why</em> users decided to click “like.” It is probably reasonable to assume that most users click like after having some positive reaction to a post. But many users with positive reactions may also just keep scrolling and never click the like button. Furthermore, a highly controversial post might generate many likes while also creating many negative reactions that will go unmeasured. If what we are really interested in is how a post is perceived, the number of “likes” is a rather crude measure. Still, it may be the best data available. Often, we have to make due with imperfect data, but we should make sure we acknowledge its limitations. Here, we might want to regularly reminder ourselves that the number of “likes” probably doesn’t tell the whole story of how a post is perceived.</p></li>
+<p>Each row of the Overview Table shows something that is relatively straightforward to measure, although it is not clear from the tables how post length is being measured. It turns out that length is being measured as number of characters. For the Engagement Comparison, posts of 0-100 characters are defined as “short,” 101-200 characters as “medium”, and 201-300 character posts are “long.”</p>
+<p>Having clarified that, let’s think about the big picture: is this data measuring whatever it is we really care about? Your friend wants to use this social media account for professional networking. How can we measure success for that goal? Doing so is rather difficult. Making many posts might seem to aid that goal because more posts means more opportunities to be seen by professional peers. And yet this would not be productive if the posts are perceived as annoying or somehow make a bad impression on people. Perhaps “likes” are a better metric, but here it is important to ask exactly what is being measured? It is just a count of the number of people who click the “like” button for a given post. But we don’t necessarily know <em>why</em> users decided to click “like.” It is probably reasonable to assume that most users click like after having some positive reaction to a post. But many users with positive reactions may also just keep scrolling and never click the like button. Furthermore, a highly controversial post might generate many likes while also creating many negative reactions that will go unmeasured. If what we are really interested in is how a post is perceived, the number of “likes” is a rather crude measure. Still, it may be the best data available. Often, we have to make due with imperfect data, but we should make sure we acknowledge its limitations. Here, we might want to regularly reminder ourselves that the number of “likes” probably doesn’t tell the whole story of how a post is perceived.</p></li>
 <li><p><strong>Who (or what) is in the dataset?</strong></p>
-<p>Again, there is a fairly straightforward answer to this question: the data describes all the posts from your friends account, in terms of volume (of posts), length, likes, and use of images. Typically when we ask this question, we should also consider what is <em>missing</em> from the data. For example, we might note that in <a href="#tbl-likes-by-length" class="quarto-xref">Table&nbsp;<span>1.2</span></a>, we don’t know anything about the contents of the posts, other than their length. This becomes especially relevant when trying to draw conclusions from the table. A naive interpretation might be that to get greater engagement (more likes), your friend needs to write longer posts. But such advice could easily be misguided: writing more words just for the sake of length is poor communication. Maybe your friend tends to write short or medium posts when they have less interesting things to say. Making these less interesting posts longer will not necessarily make them better! Instead, we need to try to figure out what it is about the longer posts that makes them seemingly more effective (at least when measured through likes). Unfortunately, we can’t learn that from the data summaries contained in the two tables above. Some further digging is probably required to draw any strong conclusions based on <a href="#tbl-likes-by-length" class="quarto-xref">Table&nbsp;<span>1.2</span></a>. For example, maybe your friend can go read through their previous posts, checking for what might be different in the contents of the short/medium versus the long posts.</p></li>
+<p>Again, there is a fairly straightforward answer to this question: the data describes all the posts from your friends account, in terms of volume (of posts), length, likes, and use of images. Typically when we ask this question, we should also consider what is <em>missing</em> from the data. For example, we might note that in the Engagement Comparison, we don’t know anything about the contents of the posts, other than their length. This becomes especially relevant when trying to draw conclusions from the table. A naive interpretation might be that to get greater engagement (more likes), your friend needs to write longer posts. But such advice could easily be misguided: writing more words just for the sake of length is poor communication. Maybe your friend tends to write short or medium posts when they have less interesting things to say. Making these less interesting posts longer will not necessarily make them better! Instead, we need to try to figure out what it is about the longer posts that makes them seemingly more effective (at least when measured through likes). Unfortunately, we can’t learn that from the data summaries contained in the two tables above. Some further digging is probably required to draw any strong conclusions based on the Engagement Comparison. For example, maybe your friend can go read through their previous posts, checking for what might be different in the contents of the short/medium versus the long posts.</p></li>
 <li><p><strong>How big are the differences?</strong></p>
-<p>This question is most relevant when making comparisons. There aren’t necessarily any obvious comparisons to make it <a href="#tbl-social-media-stats" class="quarto-xref">Table&nbsp;<span>1.1</span></a>. But <a href="#tbl-likes-by-length" class="quarto-xref">Table&nbsp;<span>1.2</span></a> makes a comparison. Is the difference in number of likes between long versus short/medium posts very big? I would say so. The average number of likes for long posts (13.0) is several times the number for medium (1.9) or short (2.7) posts. Specifically, 13.0 likes is nearly five times the average for short posts (13.0 / 2.7 = 4.8) and is almost seven times the average for medium posts (13.0 / 1.9 = 6.8). We can also ask about the size of the difference between short and medium posts. Even though short posts have a higher average number of likes than medium posts, the difference is much less dramatic. The average number of likes for short posts is about one and a half times the average likes for medium posts (2.7 / 1.9 = 1.4). We can say that this relatively modest difference is probably not so important, especially given the much larger difference apparent for long posts. Furthermore, we have a relatively small dataset (only 70 posts to evaluate), which means we should probably ignore any small differences we observe since small datasets don’t allow for drawing highly precise conclusions. The long posts seem to be the ones that stand out. Whatever is driving this spike in number of likes for long posts may well be worth your friend investigating, assuming the friend wants to learn how to post content that other users will find interesting enough to click the “like” button after seeing it.</p></li>
+<p>This question is most relevant when making comparisons. There aren’t necessarily any obvious comparisons to make it the Overview Table. But the Engagement Comparison makes a comparison. Is the difference in number of likes between long versus short/medium posts very big? I would say so. The average number of likes for long posts (13.0) is several times the number for medium (1.9) or short (2.7) posts. Specifically, 13.0 likes is nearly five times the average for short posts (13.0 / 2.7 = 4.8) and is almost seven times the average for medium posts (13.0 / 1.9 = 6.8). We can also ask about the size of the difference between short and medium posts. Even though short posts have a higher average number of likes than medium posts, the difference is much less dramatic. The average number of likes for short posts is about one and a half times the average likes for medium posts (2.7 / 1.9 = 1.4). We can say that this relatively modest difference is probably not so important, especially given the much larger difference apparent for long posts. Furthermore, we have a relatively small dataset (only 70 posts to evaluate), which means we should probably ignore any small differences we observe since small datasets don’t allow for drawing highly precise conclusions. The long posts seem to be the ones that stand out. Whatever is driving this spike in number of likes for long posts may well be worth your friend investigating, assuming the friend wants to learn how to post content that other users will find interesting enough to click the “like” button after seeing it.</p></li>
 </ol>
 <p>Throughout this chapter, we will return to this case study a few times to make further observations. Specifically, we’ll see how we can visualize and describe the structure of this data.</p>
 </div>
@@ -767,11 +714,11 @@ Figure&nbsp;1.13: Histogram with a bin width of 1 (depicting donations estimate 
 </section>
 <section id="how-datasets-are-structured" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="how-datasets-are-structured"><span class="header-section-number">1.3</span> How Datasets are Structured</h2>
-<p>Even though graphs are often appealing for exploring data, behind the scenes our data is usually stored in the form of a spreadsheet. <a href="#tbl-social-media-preview" class="quarto-xref">Table&nbsp;<span>1.3</span></a> shows part of the dataset describing your hypothetical friend’s social media posts. Each row represents one post, and we call the rows <strong>observations</strong>. Each column represents one characteristic of the posts. We call the columns <strong>variables</strong>. Variables allow us to describe whatever it is we care about—concepts such as the length of the post (character count or <code>char_count</code>), how many likes it received (<code>like_count</code>), and whether the post includes an image (<code>has_image</code>). We can easily imagine adding other variables such as the number of times a post was reposted by others, whether the post is a reply to another post, and when the post was made. We call the columns <u>vari</u>ables because each column displays values of a characteristic that <u>varies</u> depending on which observation we are talking about: post 1 has a length of 56 characters, while the second post is 91 characters long.</p>
+<p>Even though graphs are often appealing for exploring data, behind the scenes our data is usually stored in the form of a spreadsheet. <a href="#tbl-social-media-preview" class="quarto-xref">Table&nbsp;<span>1.1</span></a> shows part of the dataset describing your hypothetical friend’s social media posts. Each row represents one post, and we call the rows <strong>observations</strong>. Each column represents one characteristic of the posts. We call the columns <strong>variables</strong>. Variables allow us to describe whatever it is we care about—concepts such as the length of the post (character count or <code>char_count</code>), how many likes it received (<code>like_count</code>), and whether the post includes an image (<code>has_image</code>). We can easily imagine adding other variables such as the number of times a post was reposted by others, whether the post is a reply to another post, and when the post was made. We call the columns <u>vari</u>ables because each column displays values of a characteristic that <u>varies</u> depending on which observation we are talking about: post 1 has a length of 56 characters, while the second post is 91 characters long.</p>
 <div id="tbl-social-media-preview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-social-media-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.3: Preview of dataset describing your friend’s social media posts
+Table&nbsp;1.1: Preview of dataset describing your friend’s social media posts
 </figcaption>
 <div aria-describedby="tbl-social-media-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -825,11 +772,11 @@ Table&nbsp;1.3: Preview of dataset describing your friend’s social media posts
 </div>
 </figure>
 </div>
-<p><a href="#tbl-fevs-preview" class="quarto-xref">Table&nbsp;<span>1.4</span></a> previews a dataset where each observation (row) is a different individual who responded to a survey. We use the term <strong>unit of analysis</strong> to describe what constitutes one observation in a dataset: in the prior table the unit of analysis was the country, whereas here it is the individual. Other common units of analysis include the organization, the work unit, and the subnational unit (e.g., city or region).</p>
+<p><a href="#tbl-fevs-preview" class="quarto-xref">Table&nbsp;<span>1.2</span></a> previews a dataset where each observation (row) is a different individual who responded to a survey. We use the term <strong>unit of analysis</strong> to describe what constitutes one observation in a dataset: in the prior table the unit of analysis was the country, whereas here it is the individual. Other common units of analysis include the organization, the work unit, and the subnational unit (e.g., city or region).</p>
 <div id="tbl-fevs-preview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fevs-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.4: Preview of data from a 2024 survey of U.S. government employees<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>
+Table&nbsp;1.2: Preview of data from a 2024 survey of U.S. government employees<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>
 </figcaption>
 <div aria-describedby="tbl-fevs-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -908,11 +855,11 @@ Table&nbsp;1.4: Preview of data from a 2024 survey of U.S. government employees<
 </section>
 <section id="types-of-datasets" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="types-of-datasets"><span class="header-section-number">1.3.2</span> Types of datasets</h3>
-<p>So far, the datasets we have seen in spreadsheet form are what we call <strong>cross sections</strong>. Each observation is a different unit. There are also <strong>time series</strong> datasets, where each observation is a different point in time. Our Childhood Vaccination Rates example was about a time series dataset, and we can see part of this dataset in spreadsheet form in <a href="#tbl-vaccination-rates" class="quarto-xref">Table&nbsp;<span>1.5</span></a>. With time series data, the unit of analysis could be the year (as in this example), the quarter, the month, the week, the day, etc.</p>
+<p>So far, the datasets we have seen in spreadsheet form are what we call <strong>cross sections</strong>. Each observation is a different unit. There are also <strong>time series</strong> datasets, where each observation is a different point in time. Our Childhood Vaccination Rates example was about a time series dataset, and we can see part of this dataset in spreadsheet form in <a href="#tbl-vaccination-rates" class="quarto-xref">Table&nbsp;<span>1.3</span></a>. With time series data, the unit of analysis could be the year (as in this example), the quarter, the month, the week, the day, etc.</p>
 <div id="tbl-vaccination-rates" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-vaccination-rates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.5: Time series data (estimated MMR vaccination rates)
+Table&nbsp;1.3: Time series data (estimated MMR vaccination rates)
 </figcaption>
 <div aria-describedby="tbl-vaccination-rates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">

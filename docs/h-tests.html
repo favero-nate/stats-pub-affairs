@@ -483,66 +483,18 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p>We learned in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> that we can use a comparison of means to evaluate how a binary (qualitative) variable relates to a quantitative variable. To see how hypothesis testing applies when comparing two means, we will use data describing U.S. congressional districts. Each district elects a single member (a Representative) to the U.S. House of Representatives. There is a binary variable <code>rural</code> indicating whether a majority of the district’s residents live in a rural area. A quantitative variable <code>ideology</code> is an estimate of political ideology for the Representative from that district.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Ideology can be measured on a continuous left-to-right scale (also called “liberal” to “conservative” in the US political system), with higher values indicating an official is further to the right.</p>
 <p>With hypotheses testing, we evaluate a hypothesis called a <strong>null hypothesis</strong>. More details will be provided in the main part of the chapter, but normally the null hypothesis claims that there is no association between the independent and dependent variables. In the context of a regression, a coefficient of 0 indicates no association, so if we are using <span class="math inline">\(\beta\)</span> to represent the regression coefficient of interest, we can write the null hypothesis to be tested as <span class="math inline">\(\beta = 0\)</span>.</p>
-<p><a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> presents results for a regression where ideology is the dependent variable and the binary variable <code>rural</code> is the independent variable. The table includes confidence intervals for the coefficients:</p>
-<div id="tbl-ideology-rural" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ideology-rural-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Results for a regression with ideology as the dependent variable
-</figcaption>
-<div aria-describedby="tbl-ideology-rural-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Coef.</th>
-<th>Std. Err.</th>
-<th>p-value</th>
-<th>95% Conf. Interval</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>rural</td>
-<td>2.294</td>
-<td>0.446</td>
-<td>0.000</td>
-<td>[1.418, 3.170]</td>
-</tr>
-<tr class="even">
-<td>(intercept)</td>
-<td>-0.024</td>
-<td>0.140</td>
-<td>0.864</td>
-<td>[-0.299, 0.251]</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>n</td>
-<td>435</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>r^2</td>
-<td>0.058</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
+<p>The Regression Output presents results for a regression where ideology is the dependent variable and the binary variable <code>rural</code> is the independent variable. The table includes confidence intervals for the coefficients:</p>
+<pre><code>Regression Output (ideology is the dependent variable)
+
+|             | Coef.  | Std. Err. | p-value | 95% Conf. Interval |
+|-------------|--------|-----------|---------|--------------------|
+| rural       | 2.294  | 0.446     | 0.000   | [1.418, 3.170]     |
+| (intercept) | -0.024 | 0.140     | 0.864   | [-0.299, 0.251]    |
+|             |        |           |         |                    |
+| n           | 435    |           |         |                    |
+| r^2         | 0.058  |           |         |                    |</code></pre>
 <p>The row labeled <code>rural</code> corresponds to what we have written as <span class="math inline">\(\beta\)</span> in our hypotheses. The null hypothesis indicates that <span class="math inline">\(\beta\)</span> is 0, but the value of 0 is not included within the range identified by the 95% confidence interval (0 is not between 1.418 and 3.170). Thus, we can <em>reject</em> the null hypothesis. Therefore, we conclude that <span class="math inline">\(\beta\)</span> is non-zero, as the 95% confidence interval suggests.</p>
-<p>Because we reject the null hypothesis of no relationship between the two variables, we can say that the relationship is <em>statistically significant</em>. We previously learned to draw this same conclusion by noting that the coefficient’s p-value is less than 0.05. It is no coincidence that <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> indicates a p-value smaller than 0.05 for the <code>rural</code> coefficient, aligning with what we concluded using the confidence interval. The calculation of the p-value follows a process that perfectly aligns with the confidence interval, such that the p-value will always be less than 0.05 when the confidence interval indicates we reject the null hypothesis. It does not matter, therefore, whether we use a confidence interval or a p-value to test a hypothesis. Note that in any regression table, the p-value shown for each coefficient will typically correspond to the null hypothesis stating that the coefficient is 0.</p>
+<p>Because we reject the null hypothesis of no relationship between the two variables, we can say that the relationship is <em>statistically significant</em>. We previously learned to draw this same conclusion by noting that the coefficient’s p-value is less than 0.05. It is no coincidence that the Regression Output indicates a p-value smaller than 0.05 for the <code>rural</code> coefficient, aligning with what we concluded using the confidence interval. The calculation of the p-value follows a process that perfectly aligns with the confidence interval, such that the p-value will always be less than 0.05 when the confidence interval indicates we reject the null hypothesis. It does not matter, therefore, whether we use a confidence interval or a p-value to test a hypothesis. Note that in any regression table, the p-value shown for each coefficient will typically correspond to the null hypothesis stating that the coefficient is 0.</p>
 <p>If the 95% confidence interval for the <code>rural</code> coefficient had included 0 (i.e., if the lower bound was negative and the upper bound was positive), we would have <em>failed to reject</em> the null hypothesis.</p>
 <p>A word of caution about our conclusion here: statistical significance doesn’t mean that the relationship between variables is strong—only that we could reject the possibility of a relationship being entirely absent (i.e., we reject the notion that the expected value of <code>ideology</code> is exactly the same in rural and urban districts). To assess whether a relationship is strong or <em>substantively</em> significant, we need to use tools other than standard hypothesis tests (such as scrutinizing the range of the confidence interval, as we did in the prior chapter). This is one reason I encourage you to always consider “How big are the differences?” (the third Question to Always Ask about Data): many publications clearly indicate statistical significance but do not devote sufficient attention to substantive significance.</p>
 <p>In this case, assessing substantive size is a bit difficult because ideology is measured in unfamiliar units. Ideology scores (among Representatives in this sample) range from -4.10 to 4.57, and the standard deviation is 2.85. Since the smallest number (in absolute value) within the confidence interval for the <code>rural</code> coefficient is its lower bound of 1.42, we can say that the systematic difference between urban and rural districts appears to be at least half a standard deviation (<span class="math inline">\(1.42 \div 2.85 = 0.498\)</span>). A difference of half a standard deviation is generally considered to be quite large, so we can say that Representatives from rural districts are notably further to the right politically (more conservative) than Representatives from urban districts.</p>
@@ -597,11 +549,11 @@ Figure&nbsp;6.1: Box plots of the political ideology of U.S. Representatives, by
 </figcaption>
 </figure>
 </div>
-<p><a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> shows results for a regression where the independent variable is <code>region</code>. Northeast is the omitted category (see <a href="qual-associations.html#sec-prediction-with-multiple-categories" class="quarto-xref"><span>Section 4.2.2.2</span></a>).</p>
+<p><a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.1</span></a> shows results for a regression where the independent variable is <code>region</code>. Northeast is the omitted category (see <a href="qual-associations.html#sec-prediction-with-multiple-categories" class="quarto-xref"><span>Section 4.2.2.2</span></a>).</p>
 <div id="tbl-ideology-region" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ideology-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.2: Results for a regression with ideology as the dependent variable
+Table&nbsp;6.1: Results for a regression with ideology as the dependent variable
 </figcaption>
 <div aria-describedby="tbl-ideology-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -672,7 +624,7 @@ Table&nbsp;6.2: Results for a regression with ideology as the dependent variable
 <td></td>
 </tr>
 <tr class="even">
-<td>r2</td>
+<td>r^2</td>
 <td>0.140</td>
 <td></td>
 <td></td>
@@ -710,7 +662,7 @@ H_A: \beta_i \ne 0 \text{ for some } i
 <section id="evaluating-hypotheses-with-an-f-test" class="level4" data-number="6.2.1.2">
 <h4 data-number="6.2.1.2" class="anchored" data-anchor-id="evaluating-hypotheses-with-an-f-test"><span class="header-section-number">6.2.1.2</span> Evaluating Hypotheses with an F Test</h4>
 <p>How can we use the regression output to evaluate these hypotheses? A natural place to start is by again evaluating the confidence intervals on each slope coefficient: while the coefficient for West could very well be 0 (0 is within the confidence interval), the confidence intervals for Midwest and South both contain all positive (non-zero) values. Thus, we can conclude that the expected value of ideology for Representatives in the Midwest is different than in the Northeast, and there is also a difference for the South versus the Northeast. This would seem to imply that the null hypothesis (<a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>) should be rejected.</p>
-<p>However, this approach of evaluating each slope coefficient one-by-one is not the ideal way to test the null hypothesis indicated in <a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>. Instead, it is better to take an all-in-one approach to match the nature of the hypothesis, which makes a joint statement about three coefficients. While there is no easy way to do this with confidence intervals, we can utilize something called an F test, which provides a p-value like we used initially when learning about statistical significance for regression (in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a>). The typical F test that is performed by default with a regression in statistical software packages tests the null hypothesis that all coefficient slopes are equal to zero, which is exactly what we want in this case. You may have noticed that the bottom of <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> includes an extra row (not seen in prior regression tables) displaying an F statistic (23.35) and a corresponding p-value (0.000). The exact details of how this F test is conducted are beyond the scope of this book, but you can use what you’ve already learned (in the context of regression slopes) about comparing p-values to a 0.05 threshold to evaluate this null hypothesis. Because this p-value is less than 0.05, we reject the null hypothesis and conclude that at least one slope coefficient is non-zero. Thus, we conclude that when it comes to Representatives’ <code>ideology</code>, at least one region has a different expected value (population mean) from another region.</p>
+<p>However, this approach of evaluating each slope coefficient one-by-one is not the ideal way to test the null hypothesis indicated in <a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>. Instead, it is better to take an all-in-one approach to match the nature of the hypothesis, which makes a joint statement about three coefficients. While there is no easy way to do this with confidence intervals, we can utilize something called an F test, which provides a p-value like we used initially when learning about statistical significance for regression (in <a href="correlation.html" class="quarto-xref"><span>Chapter 3</span></a>). The typical F test that is performed by default with a regression in statistical software packages tests the null hypothesis that all coefficient slopes are equal to zero, which is exactly what we want in this case. You may have noticed that the bottom of <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.1</span></a> includes an extra row (not seen in prior regression tables) displaying an F statistic (23.35) and a corresponding p-value (0.000). The exact details of how this F test is conducted are beyond the scope of this book, but you can use what you’ve already learned (in the context of regression slopes) about comparing p-values to a 0.05 threshold to evaluate this null hypothesis. Because this p-value is less than 0.05, we reject the null hypothesis and conclude that at least one slope coefficient is non-zero. Thus, we conclude that when it comes to Representatives’ <code>ideology</code>, at least one region has a different expected value (population mean) from another region.</p>
 </section>
 <section id="pairwise-comparisons" class="level4" data-number="6.2.1.3">
 <h4 data-number="6.2.1.3" class="anchored" data-anchor-id="pairwise-comparisons"><span class="header-section-number">6.2.1.3</span> Pairwise Comparisons</h4>
@@ -728,12 +680,12 @@ H_0: \mu_M = \mu_W
 \]</span><span id="eq-region-nulls-pairwise"><span class="math display">\[
 H_0: \mu_S = \mu_W
 \tag{6.11}\]</span></span></p>
-<p><a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a> allows us to easily test the first three of these pairwise null hypotheses. In fact, we already observed that the first and second hypotheses can be rejected but the third cannot (since the coefficient for West could plausibly be 0, given the 95% confidence interval). It may seem odd that I am returning to evaluating each comparison one-by-one, after I said in the prior section that doing so was not a good way to evaluate <a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>. What is important to highlight is that the way we test the single hypothesis <a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a> is different from how we test a series of pairwise null hypotheses (<a href="#eq-region-nulls-pairwise" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>). While the distinction can be confusing, since the series of pairwise nulls implies in combination the single combined null, the details of how we evaluate a single hypothesis differ from testing a series of hypotheses. For this reason, it is also possible (though not particularly common) that results for the pairwise hypotheses will appear to contradict results for the single combined hypothesis. Applied researchers commonly use both the combined single hypothesis and the pairwise series of hypotheses, sometimes in combination and sometimes separately. Thus, it is important to be familiar with both approaches to testing a qualitative-quantitative relationship. When results seem to differ from the two approaches, it is hard to give broad advice about which testing approach to favor since researchers apply varied standards, and different research settings may merit different priorities.</p>
-<p>Returning to the present example, we said the first three of the pairwise null hypotheses (in <a href="#eq-region-nulls-pairwise" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>) can be evaluated with the results from <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a>, but what about the other three? We can re-specify the regression by changing the omitted category, in order to make the remaining three comparisons. <a href="#tbl-ideology-region-pairwise" class="quarto-xref">Table&nbsp;<span>6.3</span></a> shows the results, with information corresponding to each coefficient (standard errors, p-values, and confidence intervals) now shown in vertical rather than horizontal format, in order to make space to display four regression models in one table.</p>
+<p><a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.1</span></a> allows us to easily test the first three of these pairwise null hypotheses. In fact, we already observed that the first and second hypotheses can be rejected but the third cannot (since the coefficient for West could plausibly be 0, given the 95% confidence interval). It may seem odd that I am returning to evaluating each comparison one-by-one, after I said in the prior section that doing so was not a good way to evaluate <a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>. What is important to highlight is that the way we test the single hypothesis <a href="#eq-region-null-betas" class="quarto-xref">Equation&nbsp;<span>6.7</span></a> is different from how we test a series of pairwise null hypotheses (<a href="#eq-region-nulls-pairwise" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>). While the distinction can be confusing, since the series of pairwise nulls implies in combination the single combined null, the details of how we evaluate a single hypothesis differ from testing a series of hypotheses. For this reason, it is also possible (though not particularly common) that results for the pairwise hypotheses will appear to contradict results for the single combined hypothesis. Applied researchers commonly use both the combined single hypothesis and the pairwise series of hypotheses, sometimes in combination and sometimes separately. Thus, it is important to be familiar with both approaches to testing a qualitative-quantitative relationship. When results seem to differ from the two approaches, it is hard to give broad advice about which testing approach to favor since researchers apply varied standards, and different research settings may merit different priorities.</p>
+<p>Returning to the present example, we said the first three of the pairwise null hypotheses (in <a href="#eq-region-nulls-pairwise" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>) can be evaluated with the results from <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.1</span></a>, but what about the other three? We can re-specify the regression by changing the omitted category, in order to make the remaining three comparisons. <a href="#tbl-ideology-region-pairwise" class="quarto-xref">Table&nbsp;<span>6.2</span></a> shows the results, with information corresponding to each coefficient (standard errors, p-values, and confidence intervals) now shown in vertical rather than horizontal format, in order to make space to display four regression models in one table.</p>
 <div id="tbl-ideology-region-pairwise" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ideology-region-pairwise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.3: Results for a regression with ideology as the dependent variable, standard errors shown in parentheses and 95% confidence intervals in square brackets
+Table&nbsp;6.2: Results for a regression with ideology as the dependent variable, standard errors shown in parentheses and 95% confidence intervals in square brackets
 </figcaption>
 <div aria-describedby="tbl-ideology-region-pairwise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -909,7 +861,7 @@ Table&nbsp;6.3: Results for a regression with ideology as the dependent variable
 <td>435</td>
 </tr>
 <tr class="odd">
-<td>r2</td>
+<td>r^2</td>
 <td>0.140</td>
 <td>0.140</td>
 <td>0.140</td>
@@ -927,7 +879,7 @@ Table&nbsp;6.3: Results for a regression with ideology as the dependent variable
 </div>
 </figure>
 </div>
-<p>Model 1 duplicates (in the new format) what we already saw in <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.2</span></a>. Looking to Model 2, we see that the first coefficient (Northeast) indicates a comparison we already considered in Model 1: the comparison of the Northeast with the Midwest (the new omitted category). The sign of the coefficient has flipped from what it was before (because we have changed which mean we subtract from the other), but otherwise information is identical to what we saw for the Midwest coefficient in Model 1. Across the models, all of the coefficients appearing above the omitted category will turn out to duplicate a comparison we already saw in a prior model, so we will skip over examining these coefficients. Model 4 turns out to be entirely unnecessary, since it only duplicates comparisons that have already been made.</p>
+<p>Model 1 duplicates (in the new format) what we already saw in <a href="#tbl-ideology-region" class="quarto-xref">Table&nbsp;<span>6.1</span></a>. Looking to Model 2, we see that the first coefficient (Northeast) indicates a comparison we already considered in Model 1: the comparison of the Northeast with the Midwest (the new omitted category). The sign of the coefficient has flipped from what it was before (because we have changed which mean we subtract from the other), but otherwise information is identical to what we saw for the Midwest coefficient in Model 1. Across the models, all of the coefficients appearing above the omitted category will turn out to duplicate a comparison we already saw in a prior model, so we will skip over examining these coefficients. Model 4 turns out to be entirely unnecessary, since it only duplicates comparisons that have already been made.</p>
 <p>The South coefficient in Model 2 indicates the difference between the South and the Midwest (the omitted category in this model). The confidence interval indicates a range of all-positive (non-zero) values, so we can reject the null hypothesis of no difference between the South and the Midwest. The West coefficient has a confidence interval that contains all-negative values, so we also reject the null hypothesis for the West-Midwest comparison.</p>
 <p>In Model 3, we find the final comparison in the West coefficient, which has a confidence interval consisting of all-negative values. Therefore, we reject the null hypothesis of no difference between the West and the South.</p>
 <p>The first appendix to this chapter discusses a concern that is often raised when doing a series of (pairwise) hypothesis tests in the manner we have just done. Because we relied on a standard 95% confidence threshold for each estimate we evaluated, our process will generally yield errors more than 5% of the time for <em>at least one</em> estimate we are evaluating (even if all assumptions are met). Exactly what should be done about this is a matter of some debate, and there are multiple ways that researchers conduct pairwise comparisons of means in practice; see the appendix for additional details.</p>
@@ -950,11 +902,11 @@ H_0: \rho = 0
 </section>
 <section id="evaluating-hypotheses-with-a-confidence-interval" class="level4" data-number="6.2.2.2">
 <h4 data-number="6.2.2.2" class="anchored" data-anchor-id="evaluating-hypotheses-with-a-confidence-interval"><span class="header-section-number">6.2.2.2</span> Evaluating Hypotheses with a Confidence Interval</h4>
-<p>In <a href="#tbl-ideology-area" class="quarto-xref">Table&nbsp;<span>6.4</span></a>, we see a confidence interval for the geographic size coefficient, labeled <code>log_area</code>. The confidence interval ranges from 0.811 to 1.046 and does not include 0. Therefore, we reject the null hypothesis of a regression slope of 0 (meaning we also reject that the correlation could be 0). Note that the p-value is also less than 0.05, which is another way to arrive at the conclusion that we reject the null hypothesis and accept the alternative.</p>
+<p>In <a href="#tbl-ideology-area" class="quarto-xref">Table&nbsp;<span>6.3</span></a>, we see a confidence interval for the geographic size coefficient, labeled <code>log_area</code>. The confidence interval ranges from 0.811 to 1.046 and does not include 0. Therefore, we reject the null hypothesis of a regression slope of 0 (meaning we also reject that the correlation could be 0). Note that the p-value is also less than 0.05, which is another way to arrive at the conclusion that we reject the null hypothesis and accept the alternative.</p>
 <div id="tbl-ideology-area" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ideology-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.4: Results for a regression with ideology as the dependent variable
+Table&nbsp;6.3: Results for a regression with ideology as the dependent variable
 </figcaption>
 <div aria-describedby="tbl-ideology-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -997,7 +949,7 @@ Table&nbsp;6.4: Results for a regression with ideology as the dependent variable
 <td></td>
 </tr>
 <tr class="odd">
-<td>r2</td>
+<td>r^2</td>
 <td>0.362</td>
 <td></td>
 <td></td>
@@ -1013,11 +965,11 @@ Table&nbsp;6.4: Results for a regression with ideology as the dependent variable
 <section id="sec-contingency-tables" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-contingency-tables"><span class="header-section-number">6.2.3</span> Relationships between Qualitative Variables</h3>
 <p>It is not very straightforward to use regression to test whether a relationship between two qualitative variables is statistically significant, so we will use a different approach that builds on the contingency tables we learned about in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a>. To add a test of statistical significance to a contingency table, we can use a test called a Chi Square test. More details can be found in the second appendix to this chapter, but we will focus here on using the p-value resulting from the test to draw a conclusion. Note, however, that the Chi Square test does not work well with very small samples.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<p>To demonstrate the Chi Square test, we again look to data from the Mediterranean Diet and Health case study,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> in which heart attack survivors were randomly assigned to follow one of two diets. We already discussed in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> how the frequencies in <a href="#tbl-studyfreqs" class="quarto-xref">Table&nbsp;<span>6.5</span></a> indicate that people on the Mediterranean diet tended to have better outcomes, but we did not say anything previously about the <em>statistical significance</em> of this relationship.</p>
+<p>To demonstrate the Chi Square test, we again look to data from the Mediterranean Diet and Health case study,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> in which heart attack survivors were randomly assigned to follow one of two diets. We already discussed in <a href="qual-associations.html" class="quarto-xref"><span>Chapter 4</span></a> how the frequencies in <a href="#tbl-studyfreqs" class="quarto-xref">Table&nbsp;<span>6.4</span></a> indicate that people on the Mediterranean diet tended to have better outcomes, but we did not say anything previously about the <em>statistical significance</em> of this relationship.</p>
 <div id="tbl-studyfreqs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-studyfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.5: Frequencies for Diet and Health Study.
+Table&nbsp;6.4: Frequencies for Diet and Health Study.
 </figcaption>
 <div aria-describedby="tbl-studyfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1094,7 +1046,7 @@ Table&nbsp;6.5: Frequencies for Diet and Health Study.
 </section>
 <section id="one-tailed-and-two-tailed-tests" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="one-tailed-and-two-tailed-tests"><span class="header-section-number">6.5</span> One-Tailed and Two-Tailed Tests</h2>
-<p>So far, our coverage of hypothesis testing has assumed that we are using what is called a <strong>two-tailed test</strong>. It is also possible to conduct a <strong>one-tailed test</strong>. A one-tailed test has an alternative hypothesis with a greater-than (&gt;) or less-than (&lt;) sign rather than an unequal sign (<span class="math inline">\(\ne\)</span>). Returning to the example at the start of this chapter, we could indicate that we are testing whether rural districts have more right-leaning (conservative) Representatives with this alternative hypothesis:</p>
+<p>So far, our coverage of hypothesis testing has assumed that we are using what is called a <strong>two-tailed test</strong>. It is also possible to conduct a <strong>one-tailed test</strong>. A one-tailed test has an alternative hypothesis with a greater-than (&gt;) or less-than (&lt;) sign rather than an unequal sign (<span class="math inline">\(\ne\)</span>). Returning to the example from our chapter case study, we could indicate that we are testing whether rural districts have more right-leaning (conservative) Representatives with this alternative hypothesis:</p>
 <p><span id="eq-rural-alt-beta-1-sided"><span class="math display">\[
 H_A: \beta &gt; 0
 \tag{6.16}\]</span></span></p>
@@ -1111,7 +1063,7 @@ H_0: \beta \leq 0
 H_0: \mu_R \leq \mu_U
 \tag{6.19}\]</span></span></p>
 <p>A confidence interval can be used to conduct a 1-tailed hypothesis test, but an adjustment needs to be made for the fact that a 2-tailed confidence interval is being used to conduct a 1-tailed test. Specifically, one should use an interval derived from a confidence level that corresponds to two times the alpha level. For example, with an alpha of 0.05, we use a 90% confidence interval (<span class="math inline">\(1-(2\times.05) = 0.9\)</span>) to conduct a 1-sided test.</p>
-<p>In our example, the 90% confidence interval for the rural coefficient is [1.559, 3.029]. The 90% confidence interval is always a bit narrower than the 95% one (as seen if we compare to <a href="#tbl-ideology-rural" class="quarto-xref">Table&nbsp;<span>6.1</span></a>). In this case, we reject the null hypothesis (<a href="#eq-rural-null-beta-1-sided" class="quarto-xref">Equation&nbsp;<span>6.18</span></a>) because the entire confidence interval consists of positive (non-zero) values. We therefore accept the alternative hypothesis.</p>
+<p>In our example, the 90% confidence interval for the rural coefficient is [1.559, 3.029]. The 90% confidence interval is always a bit narrower than the 95% one (as seen if we compare to the regression output in the chapter case study). In this case, we reject the null hypothesis (<a href="#eq-rural-null-beta-1-sided" class="quarto-xref">Equation&nbsp;<span>6.18</span></a>) because the entire confidence interval consists of positive (non-zero) values. We therefore accept the alternative hypothesis.</p>
 <p>The logic underlying the practice of using a 90% confidence interval to test a one-sided hypothesis at the 0.05 alpha level may be difficult to follow, but I will provide an explanation nonetheless. With a 2-tailed test, a standard 95% confidence interval will map to a 5% type I error rate (assuming a true null hypothesis) in hypothesis testing because the interval estimate will “miss” the truth with 5% probability. That 5% probability of a miss is evenly divided between the two sides of distribution of estimates. In other words, there is a 2.5% probability that the interval estimate will be fully above the true parameter value and a 2.5% probability that it will be fully below the true parameter value. With a 1-tailed test, we only reject the null hypothesis (and accept the alternative) if we are on one side of the (assumed) null parameter value. Thus, under the assumption that the null hypothesis is true, we only have a 2.5% chance of a type I error when using a 95% confidence interval to conduct our hypothesis test, since half of the “misses” will be in the opposite direction of the alternative hypothesis. Using a 95% confidence interval to test a 1-sided hypothesis at an alpha of 0.05 will therefore result in a test that is not properly calibrated: the error rate (2.5%) does not match the alpha levels of 0.05 (5%). Using a confidence interval that corresponds to two times the alpha level brings the error rate back into alignment with alpha. If working directly with p-values, the equivalent procedure involves dividing a 2-sided p-value by two to obtain the 1-sided p-value, assuming that the point estimate aligns with the alternative hypothesis (if the point estimate is in the opposite direction of the alternative hypothesis, the 1-sided p-value will be one minus the 2-sided p-value divided by two). Thus, it is generally understood that using a 1-sided test makes it easier to find support for a directional argument (since the p-value will be smaller—and thus will more easily fall below alpha—whenever the point estimate indicates the direction suggested by the alternative hypothesis).</p>
 <p>Two-tailed tests are more commonly used in applied social science than one-tailed tests, but you will sometimes still encounter one-tailed tests. Many statistical software programs will offer two-tailed results by default, and there is generally nothing wrong with using two-tailed tests. One benefit of one-tailed tests is that if there is a clear directional research hypothesis, it is slightly easier to detect a statistically significant association consistent with the hypothesis when using a one-tailed test. However, unless the study is preregistered (meaning that the hypotheses, research design details, and statistical modeling approach are publicly described ahead of time), there may be concerns about cherry-picking results and building a directional hypothesis after seeing the results (even if there was originally no strong expectation that an association should point in a particular direction).</p>
 </section>
@@ -1155,11 +1107,11 @@ H_0: \mu_R \leq \mu_U
 <section id="sec-h-tests-appendix-i-multiple-comparison-tests" class="level2" data-number="6.9">
 <h2 data-number="6.9" class="anchored" data-anchor-id="sec-h-tests-appendix-i-multiple-comparison-tests"><span class="header-section-number">6.9</span> <a href="#sec-h-tests" class="quarto-xref"><span>Chapter 6</span></a> Appendix I: Multiple Comparison Tests</h2>
 <p><em>Both appendices to this chapter consist of content adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<a href="https://onlinestatbook.com" class="uri">https://onlinestatbook.com</a> Project Leader: David M. Lane, Rice University)</em><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<p>Many experiments are designed to compare more than two conditions. We will take as an example the case study “Smiles and Leniency.”<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. “Type of Smile” is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in <a href="#tbl-feltmisneutral" class="quarto-xref">Table&nbsp;<span>6.6</span></a>.</p>
+<p>Many experiments are designed to compare more than two conditions. We will take as an example the case study “Smiles and Leniency.”<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. “Type of Smile” is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in <a href="#tbl-feltmisneutral" class="quarto-xref">Table&nbsp;<span>6.5</span></a>.</p>
 <div id="tbl-feltmisneutral" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-feltmisneutral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.6: Six Comparisons among Means.
+Table&nbsp;6.5: Six Comparisons among Means.
 </figcaption>
 <div aria-describedby="tbl-feltmisneutral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1230,12 +1182,12 @@ Figure&nbsp;6.3: Probability of a Type I error as a function of the number of me
 <p>The Tukey HSD is based on a variation of the t distribution that takes into account the number of means being compared. This distribution is called the studentized range distribution.</p>
 <p>Normally, statistical software will make all the necessary calculations for you in the background. But to illustrate what sorts of calculations the software is relying on, let’s return to the leniency study to see how to compute the Tukey HSD test. You will see that the computations are very similar to those of an independent-groups t test. The steps are outlined below:</p>
 <ol type="1">
-<li>Compute the means and variances of each group. For our example, they are shown in <a href="#tbl-sum-stats-leniency" class="quarto-xref">Table&nbsp;<span>6.7</span></a>.</li>
+<li>Compute the means and variances of each group. For our example, they are shown in <a href="#tbl-sum-stats-leniency" class="quarto-xref">Table&nbsp;<span>6.6</span></a>.</li>
 </ol>
 <div id="tbl-sum-stats-leniency" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum-stats-leniency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.7: Means and Variances from the “Smiles and Leniency” Study.
+Table&nbsp;6.6: Means and Variances from the “Smiles and Leniency” Study.
 </figcaption>
 <div aria-describedby="tbl-sum-stats-leniency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1297,11 +1249,11 @@ Table&nbsp;6.7: Means and Variances from the “Smiles and Leniency” Study.
 <li><p>Compute Q (using the formula below) for each pair of means, where <span class="math inline">\(\bar{X}_i\)</span> is one mean, <span class="math inline">\(\bar{X}_j\)</span> is the other mean, and <span class="math inline">\(n\)</span> is the number of scores in each group. For these data, there are 34 observations per group. The value in the denominator is 0.279. <span class="math display">\[ Q=\frac{\bar{X}_i-\bar{X}_j}{\sqrt{\frac{MSE}{n}}} \]</span></p></li>
 <li><p>Compute p for each comparison using a Studentized Range Calculator.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> The degrees of freedom is equal to the total number of observations minus the number of means. For this experiment, df = 136 - 4 = 132.</p></li>
 </ol>
-<p>The tests for these data are shown in <a href="#tbl-6pairwisecomp" class="quarto-xref">Table&nbsp;<span>6.8</span></a>.</p>
+<p>The tests for these data are shown in <a href="#tbl-6pairwisecomp" class="quarto-xref">Table&nbsp;<span>6.7</span></a>.</p>
 <div id="tbl-6pairwisecomp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-6pairwisecomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.8: Six Pairwise Comparisons.
+Table&nbsp;6.7: Six Pairwise Comparisons.
 </figcaption>
 <div aria-describedby="tbl-6pairwisecomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1363,14 +1315,14 @@ Table&nbsp;6.8: Six Pairwise Comparisons.
 <p>A Chi Square test is so-named because it relies on a probability distribution called the Chi Square distribution (more details are beyond the scope of this text and can be found elsewhere<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>).</p>
 <p>The first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet-Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome (as the null hypothesis states), then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the <span class="math inline">\(i\)</span>th row and the <span class="math inline">\(j\)</span>th column is equal to</p>
 <p><span class="math display">\[ E_{ij}=\frac{T_iT_j}{T} \]</span></p>
-<p>where <span class="math inline">\(E_{ij}\)</span> is the expected frequency for cell <span class="math inline">\(i,j\)</span>, <span class="math inline">\(T_i\)</span> is the total for the <span class="math inline">\(i\)</span>th row, <span class="math inline">\(T_j\)</span> is the total for the <span class="math inline">\(j\)</span>th column, and <span class="math inline">\(T\)</span> is the total number of observations. For the AHA Diet-Cancers cell, <span class="math inline">\(i = 1\)</span>, <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(T_i = 303\)</span>, <span class="math inline">\(T_j = 22\)</span>, and <span class="math inline">\(T = 605\)</span>. <a href="#tbl-observedstudyfreqs" class="quarto-xref">Table&nbsp;<span>6.9</span></a> shows the expected frequencies (in parenthesis) for each cell in the experiment.</p>
+<p>where <span class="math inline">\(E_{ij}\)</span> is the expected frequency for cell <span class="math inline">\(i,j\)</span>, <span class="math inline">\(T_i\)</span> is the total for the <span class="math inline">\(i\)</span>th row, <span class="math inline">\(T_j\)</span> is the total for the <span class="math inline">\(j\)</span>th column, and <span class="math inline">\(T\)</span> is the total number of observations. For the AHA Diet-Cancers cell, <span class="math inline">\(i = 1\)</span>, <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(T_i = 303\)</span>, <span class="math inline">\(T_j = 22\)</span>, and <span class="math inline">\(T = 605\)</span>. <a href="#tbl-observedstudyfreqs" class="quarto-xref">Table&nbsp;<span>6.8</span></a> shows the expected frequencies (in parenthesis) for each cell in the experiment.</p>
 <p>The significance test is conducted by computing Chi Square as follows.</p>
 <p><span class="math display">\[ \chi^2_3=\sum\frac{(E-O)^2}{E}=16.55 \]</span></p>
 <p>The degrees of freedom is equal to <span class="math inline">\((r-1)(c-1)\)</span>, where <span class="math inline">\(r\)</span> is the number of rows and <span class="math inline">\(c\)</span> is the number of columns. For this example, the degrees of freedom is <span class="math inline">\((2-1)(4-1) = 3\)</span>. A Chi Square calculator<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> can be used to determine that the probability value for a Chi Square of 16.55 with three degrees of freedom is equal to 0.0009. Therefore, the null hypothesis of no relationship between diet and outcome can be rejected.</p>
 <div id="tbl-observedstudyfreqs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-observedstudyfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.9: Observed and Expected Frequencies for Diet and Health Study.
+Table&nbsp;6.8: Observed and Expected Frequencies for Diet and Health Study.
 </figcaption>
 <div aria-describedby="tbl-observedstudyfreqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">

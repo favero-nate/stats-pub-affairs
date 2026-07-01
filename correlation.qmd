@@ -315,32 +315,50 @@ This makes it clear that after standardizing our two variables ($x$ and $y$), we
 ::: {.callout-tip icon="false"}
 ## Example: Correlation of Political Stability with Urban Population {.unnumbered}
 
-@tbl-corr-data-excerpt shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.
+The Data Excerpt below shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.
 
-In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-12] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
+In the Data Excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-12] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
 
-| id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
-|----|----|----|----|----|----|----|
-| 1 | Afghanistan | -2.76 | 25.50 | -2.73 | -1.46 | 3.99 |
-| 2 | Albania | 0.37 | 60.32 | 0.40 | 0.00 | 0.00 |
-| 3 | Algeria | -0.84 | 72.63 | -0.80 | 0.52 | -0.42 |
-| 4 | American Samoa | 1.22 | 87.15 | 1.25 | 1.13 | 1.41 |
-| 5 | Andorra | 1.42 | 88.06 | 1.45 | 1.17 | 1.69 |
-| 6 | Angola | -0.34 | 65.51 | -0.30 | 0.22 | -0.07 |
-| 7 | Antigua and Barbuda | 0.84 | 24.60 | 0.87 | -1.50 | -1.31 |
-| 8 | Argentina | 0.01 | 91.87 | 0.04 | 1.33 | 0.06 |
-| 9 | Armenia | -0.44 | 63.15 | -0.41 | 0.12 | -0.05 |
-| ... | ... | ... | ... | ... | ... | ... |
-| **Mean** |  | -0.03 | 60.26 | 0.00 | 0.00 | **0.36** |
-| N=204 |  |  |  |  |  |  |
+```         
+Data Excerpt
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| id     | country     | stability | urban  | z_stability | z_urban | z_stability |
+|        |             |           |        |             |         |  × z_urban  |
++========+=============+===========+========+=============+=========+=============+
+| 1      | Afghanistan | -2.76     | 25.50  | -2.73       | -1.46   | 3.99        |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 2      | Albania     | 0.37      | 60.32  | 0.40        | 0.00    | 0.00        |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 3      | Algeria     | -0.84     | 72.63  | -0.80       | 0.52    | -0.42       |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 4      | American    | 1.22      | 87.15  | 1.25        | 1.13    | 1.41        |
+|        |  Samoa      |           |        |             |         |             |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 5      | Andorra     | 1.42      | 88.06  | 1.45        | 1.17    | 1.69        |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 6      | Angola      | -0.34     | 65.51  | -0.30       | 0.22    | -0.07       |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 7      | Antigua     | 0.84      | 24.60  | 0.87        | -1.50   | -1.31       |
+|        |  and        |           |        |             |         |             |
+|        |  Barbuda    |           |        |             |         |             |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 8      | Argentina   | 0.01      | 91.87  | 0.04        | 1.33    | 0.06        |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| 9      | Armenia     | -0.44     | 63.15  | -0.41       | 0.12    | -0.05       |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| ...    | ...         | ...       | ...    | ...         | ...     | ...         |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+|**Mean**|             | -0.03     | 60.26  | 0.00        | 0.00    | **0.36**    |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+| N=204  |             |           |        |             |         |             |
++--------+-------------+-----------+--------+-------------+---------+-------------+
+```
 
-: Excerpt of data for example of calculating correlation {#tbl-corr-data-excerpt}
-
-This same data is depicted in @fig-scatterplot-quadrants, with `id` numbers used to plot the 9 observations shown in @tbl-corr-data-excerpt; the remainder of the observations are plotted as circles.
+This same data is depicted in @fig-scatterplot-quadrants, with `id` numbers used to plot the 9 observations shown in the Data Excerpt; the remainder of the observations are plotted as circles.
 
 ![Scatter plot with horizontal and vertical lines depicting means; initial countries are plotted using IDs rather than dots](Images/correlations/scatterplot_quadrants.png){#fig-scatterplot-quadrants width="450"}
 
-Let's consider some of the mechanics underlying the calculation of correlation coefficients. By transforming values to z-scores, we indicate where each observation lies relative to the variable's mean. A positive z-score indicates that the original value of the variable is above the mean while a negative z-score tells us it is below the mean. Visually, we can also see this in @fig-scatterplot-quadrants, where a vertical line indicates the mean of `urban` and a horizontal line marks the mean for `stability`. This divides the observations into four quadrants. The observations in the upper-right quadrant (including observations 2, 4, 5, and 8) have positive z-scores for both variables. Multiplying two positive values results in a positive value, so all observations in this quadrant also have a positive value in the final column of the spreadsheet previewed in @tbl-corr-data-excerpt. The bottom-left quadrant contains observations that have both below-average political stability and a below-average urban population (e.g., observation 1). Since this results in two negative z-scores being multiplied together (and the product of two negative numbers is always positive), we again see positive values in the final column of the spreadsheet. The two remaining quadrants will yield negative values in the final column because one z-score will be negative and the other positive (and the product of a negative and a positive number is negative). The upper-left quadrant has below-average values (negative z-scores) for `urban` but above-average values (positive z-scores) for `stability` (e.g., observation 7). In the bottom-right quadrant, the share of the population that is urban is above average but stability is below average (e.g., observations 3, 6, and 9).
+Let's consider some of the mechanics underlying the calculation of correlation coefficients. By transforming values to z-scores, we indicate where each observation lies relative to the variable's mean. A positive z-score indicates that the original value of the variable is above the mean while a negative z-score tells us it is below the mean. Visually, we can also see this in @fig-scatterplot-quadrants, where a vertical line indicates the mean of `urban` and a horizontal line marks the mean for `stability`. This divides the observations into four quadrants. The observations in the upper-right quadrant (including observations 2, 4, 5, and 8) have positive z-scores for both variables. Multiplying two positive values results in a positive value, so all observations in this quadrant also have a positive value in the final column of the spreadsheet previewed in the Data Excerpt. The bottom-left quadrant contains observations that have both below-average political stability and a below-average urban population (e.g., observation 1). Since this results in two negative z-scores being multiplied together (and the product of two negative numbers is always positive), we again see positive values in the final column of the spreadsheet. The two remaining quadrants will yield negative values in the final column because one z-score will be negative and the other positive (and the product of a negative and a positive number is negative). The upper-left quadrant has below-average values (negative z-scores) for `urban` but above-average values (positive z-scores) for `stability` (e.g., observation 7). In the bottom-right quadrant, the share of the population that is urban is above average but stability is below average (e.g., observations 3, 6, and 9).
 
 Since the correlation is the mean of the final column, we can imagine the observations with positive values in the final column "pushing" the correlation toward a positive value while the observations with negative products "push" the correlation toward a negative value. From @fig-scatterplot-quadrants, we can see that there are more observations in the two quadrants yielding positive products (upper-right and bottom-left) than in the two "negative" quadrants (upper-left and bottom-right). Thus, it should come as no surprise that the correlation is positive (0.36).
 :::

@@ -465,7 +465,7 @@ window.Quarto = {
 </header>
 
 
-<p>[<em><strong>Working draft notes for instructors</strong>: I don’t anticipate major changes to the structure of this chapter, but I am planning to change all of the examples/datasets.</em>]</p>
+<p>[<em><strong>Working draft notes for instructors</strong>: I don’t anticipate major changes to the structure of this chapter, but I am hoping to change out the extraversion example.</em>]</p>
 <p>The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.</p>
 <p>Where do ordinal variables fit into this discussion? For many types of analysis, ordinal variables can be treated as either qualitative (for maximum flexibility) or as quantitative (if we are willing to assign fixed numbers to the various values, as we saw in the first example in <a href="getting-started.html#sec-critically-evaluating-graphs" class="quarto-xref"><span>Section 1.2.3</span></a>). Often, analysis will be simpler if we treat ordinal variables as quantitative, so that can be a good place to start. You can always then follow up with an analysis treating the ordinal variable as qualitative, which allows you to check if the results indicate something similar to what you saw when you treated the variable as quantitative.</p>
 <section id="sec-describing-the-relationship-between-two-qualitative-variables" class="level2" data-number="4.1">
@@ -713,7 +713,7 @@ Figure&nbsp;4.6: Example survey items used in the “Big Five” case study.
 </figcaption>
 </figure>
 </div>
-<p>For now, I decide to focus on whether people are introverted or extroverted. Extroverts are outgoing and tend to enjoy interacting with others. Extroverts will tend to agree with the statement “I am the life of the party” while introverts will tend to agree with the item “I don’t talk a lot.”</p>
+<p>For now, I decide to focus on whether people are introverted or extraverted. extraverts are outgoing and tend to enjoy interacting with others. extraverts will tend to agree with the statement “I am the life of the party” while introverts will tend to agree with the item “I don’t talk a lot.”</p>
 <p>I find a dataset that contains many responses to the Big Five personality questions as well as information on the gender of each respondent.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> There are 10 different questions related to extraversion, and the dataset has one variable for each of these 10 questions (<a href="#fig-big5dataset" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>). The variable labeled e1 shows responses to the item “I am the life of the party.” A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.</p>
 <div id="fig-big5dataset" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -725,12 +725,12 @@ Figure&nbsp;4.7: Screenshot of some observations and variable values in the “B
 </figcaption>
 </figure>
 </div>
-<p>For all of the odd-numbered extraversion questions (e1, e3, e5, etc.), agreement indicates extraversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extraversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extrovert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 (<span class="math inline">\(5 \times 5-5 \times 1=20\)</span>). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones (<span class="math inline">\(5 \times 1-5 \times 5=-20\)</span>).</p>
+<p>For all of the odd-numbered extraversion questions (e1, e3, e5, etc.), agreement indicates extraversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extraversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extravert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 (<span class="math inline">\(5 \times 5-5 \times 1=20\)</span>). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones (<span class="math inline">\(5 \times 1-5 \times 5=-20\)</span>).</p>
 <p>As <a href="#fig-ExtHist" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> indicates, most people lie somewhere in the middle between introversion and extraversion.</p>
 <div id="fig-ExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/ExtHist.jpg" class="img-fluid figure-img" width="350">
+<img src="Images/qual-associations/hist-extraversion.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.8: Distribution of the extraversion trait.
@@ -740,11 +740,11 @@ Figure&nbsp;4.8: Distribution of the extraversion trait.
 <p>Our gender variable was measured by asking respondents “What is your gender?” and they could choose from male (coded as a 1), female (2), or other (3). In a moment, we’ll consider those who responded “other,” but for now, let’s just look at those who chose either male or female.</p>
 <section id="predicting-extraversion-using-gender" class="level4" data-number="4.2.2.1">
 <h4 data-number="4.2.2.1" class="anchored" data-anchor-id="predicting-extraversion-using-gender"><span class="header-section-number">4.2.2.1</span> Predicting extraversion using gender</h4>
-<p>If I want to describe differences in extraversion by gender in this dataset, I can compute the mean value of extraversion for males and for females. It turns out that males have an average extraversion of -0.46 while females’ average level of extraversion is 0.53. Thus, the average female is about 1-point more extroverted than the average male. But of course, there is abundant variation in extraversion among both groups, as seen clearly in <a href="#fig-GenderExtHist" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>. There are plenty of females who are introverts and plenty of males who are extroverts.</p>
+<p>If I want to describe differences in extraversion by gender in this dataset, I can compute the mean value of extraversion for males and for females. It turns out that males have an average extraversion of -0.46 while females’ average level of extraversion is 0.53. Thus, the average female is about 1-point more extraverted than the average male. But of course, there is abundant variation in extraversion among both groups, as seen clearly in <a href="#fig-GenderExtHist" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>. There are plenty of females who are introverts and plenty of males who are extraverts.</p>
 <div id="fig-GenderExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-GenderExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/GenderExtHist.jpg" class="img-fluid figure-img" width="350">
+<img src="Images/qual-associations/boxplot-extraversion-gender-binary.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GenderExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.9: Distribution of extraversion by female/male identity.
@@ -775,10 +775,10 @@ Figure&nbsp;4.9: Distribution of extraversion by female/male identity.
 <div id="fig-NonBExtHist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-NonBExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/qual-associations/NonBExtHist.jpg" class="img-fluid figure-img" width="350">
+<img src="Images/qual-associations/boxplot-extraversion-gender-nonbinary.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-NonBExtHist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: Distribution of extraversion trait among those identifying with “other” gender (neither male nor female).
+Figure&nbsp;4.10: Distribution of extraversion trait, including among those identifying with “other” gender (neither male nor female).
 </figcaption>
 </figure>
 </div>
@@ -929,7 +929,7 @@ Figure&nbsp;4.10: Distribution of extraversion trait among those identifying wit
 </section>
 <section id="sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-qual-associations-appendix-regression-with-a-qualitative-dependent-variable"><a href="#sec-qual-associations" class="quarto-xref"><span>Chapter 4</span></a> Appendix: Regression with a Qualitative Dependent Variable</h2>
-<p>This appendix will demonstrate one way to perform regression with a qualitative dependent variable, using output from the statistical software program <em>Stata</em>. Suppose I want to build a model of voting. I decide to use the 2016 American National Election Studies[^qual-associations-11] survey results to try to understand how race is associated with voting. Respondents in the 2016 survey were asked about who they voted for in 2012, and I’m going to focus on their 2012 voting patterns for now. Using the statistical software package Stata to conduct my analysis, I find the following distributions for my two main variables of interest:</p>
+<p>This appendix will demonstrate one way to perform regression with a qualitative dependent variable, using output from the statistical software program <em>Stata</em>. Suppose I want to build a model of voting. I decide to use the 2016 American National Election Studies<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> survey results to try to understand how race is associated with voting. Respondents in the 2016 survey were asked about who they voted for in 2012, and I’m going to focus on their 2012 voting patterns for now. Using the statistical software package Stata to conduct my analysis, I find the following distributions for my two main variables of interest:</p>
 <pre><code>. tab vote         
 PRE: RECALL OF LAST (2012) PRESIDENTAL  |
                             VOTE CHOICE |      Freq.     Percent        Cum.
@@ -987,7 +987,7 @@ Mitt Romney |      Freq.     Percent        Cum.
       Total |      3,054      100.00</code></pre>
 <p>I also convert my race variable into a set of dummy variables by running:</p>
 <pre><code>tab race, gen(race_)</code></pre>
-<p>I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression (although the standard errors should be computed using a different method than the typical default,<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> so the tests of statistical significance in this appendix should not be trusted). When using linear regression with a binary dependent variable, we call the model a linear probability model.</p>
+<p>I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression (although the standard errors should be computed using a different method than the typical default,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> so the tests of statistical significance in this appendix should not be trusted). When using linear regression with a binary dependent variable, we call the model a linear probability model.</p>
 <p>Let’s start by analyzing voting for Obama (vote_1) as the dependent variable:</p>
 <pre><code>. reg vote_1 race_2 race_3 race_4 race_5 race_6
 
@@ -1092,7 +1092,8 @@ Mitt Romney |      Freq.     Percent        Cum.
 <li id="fn4"><p>Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological assessment</em>, <em>4</em>(1), 26.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><a href="https://openpsychometrics.org/_rawdata/" class="uri">https://openpsychometrics.org/_rawdata/</a> (the file I used is called “BIG5.zip”)<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p><a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">World Development Indicators</a> (<a href="https://datacatalog.worldbank.org/public-licenses?fragment=cc">CC-BY 4.0</a>)<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Specifically, heteroskedasticy-robust standard errors should be used. <a href="regression.html" class="quarto-xref"><span>Chapter 11</span></a> introduces the topic of heteroskedasticy.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://electionstudies.org/data-center/2016-time-series-study/" class="uri">https://electionstudies.org/data-center/2016-time-series-study/</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Specifically, heteroskedasticy-robust standard errors should be used. <a href="regression.html" class="quarto-xref"><span>Chapter 11</span></a> introduces the topic of heteroskedasticy.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

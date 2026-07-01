@@ -447,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="scaling" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="scaling"><span class="header-section-number">10.2</span> Scaling</h2>
-<p><strong>Scaling</strong> refers to combining multiple indicates of a construct into a single variable called an index. The simplest scaling method involves taking the average (or sum) of the indicators. We call the result a <strong>summative index</strong>. While taking the average and taking the sum might seem like entirely distinct ways of creating an index, they are in some sense equivalent since each is a linear transformation of the other: divide the sum by the number of indicators, and you will have the average. Just as our results should not meaningfully change if we decide to measure something in inches instead of feet (<a href="describing-one-variable.html#sec-transforming-variables" class="quarto-xref"><span>Section 2.5</span></a>), using a sum versus an average to construct an index will make not difference to our results so long as we remember to interpret our units correctly.</p>
+<p><strong>Scaling</strong> refers to combining multiple indicates of a construct into a single variable called an index. The simplest scaling method involves taking the average (or sum) of the indicators. We call the result a <strong>summative index</strong>. While taking the average and taking the sum might seem like entirely distinct ways of creating an index, they are in some sense equivalent since each is a linear transformation of the other: divide the sum by the number of indicators, and you will have the average. Just as our results should not meaningfully change if we decide to measure something in inches instead of feet (<a href="correlation.html#sec-transforming-variables" class="quarto-xref"><span>Section 3.2</span></a>), using a sum versus an average to construct an index will make not difference to our results so long as we remember to interpret our units correctly.</p>
 <p>If the indicators don’t have a common scale (or even if they do), it is often a good idea to first standardize the items before combining them into an index. Some scaling approaches will automatically do this in the background, but if you are creating a summative index you may need to make this transformation first before calculating a sum/average.</p>
 <p><strong>Factor analysis</strong> refers to various methods for scaling that involve calculating different weights to apply to the various indicators. By contrast, with a summative index we are effectively applying an equal weight to all indicators, making it so that all indicators contribute equally to the final index. By assigning different weights, we make some indicators more important than others. This makes conceptual sense if we believe that some indicators are more precise or offer more unique information about the true value of the construct. <em>Confirmatory factor analysis</em> (as opposed to exploratory factor analysis) requires that you specify a measurement model indicating how various indicators are linked to constructs (as well as other linkages indicators may have to one another) and yields results that can be used as tests of whether the measurement model is plausible.</p>
 <p><strong>Principal component analysis</strong> (PCA, also called principal component factors or PCF) is a widely used technique that is often (mis)labled a type of factor analysis and accomplishes something similar, in that it creates an index based on calculating different weights for the indicators. Unlike confirmatory factor analysis, PCA does not require the user to map out a model of measurement. The basic intuition underlying PCA is that it selects values for weights in a way that maximizes the extent to which a common (latent) factor can explain the variation in the various indicators.</p>
@@ -463,6 +463,68 @@ ul.task-list li input[type="checkbox"] {
 <section id="privacy-and-deliberate-introduction-of-measurement-error" class="level3" data-number="10.3.1">
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="privacy-and-deliberate-introduction-of-measurement-error"><span class="header-section-number">10.3.1</span> Privacy and Deliberate Introduction of Measurement Error</h3>
 <p>With datasets that measure individual-level characteristics, we often wish to maintain anonymity when making data available out of respect for the subjects’ privacy. This is especially common when the dataset describe ordinary people (as opposed to public figures like politicians or professional athletes). Various approaches can be taken to help ensure that individuals in a dataset cannot be identified, such as restricting access to certain variable that contain information (such as membership in a small group like a religious sect) making it easier to narrow down which observation in a dataset describes some particular individual. Another approach that is sometimes possible is to introduce some random noise (measurement error) into the dataset. If only a very small amount of error is required to obscure identification of individuals, this error should have barely any affect on statistical results but will serve to maintain privacy for subjects. In some cases, techniques can also be used to correct for the errors, making it so that statistical results will be unbiased while preserving anonymity.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: Measurement in the Survey of Nonprofit Organizations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s revisit the dataset from the <a href="describing-one-variable.html" class="quarto-xref"><span>Chapter 2</span></a> case study. Remember, this dataset contains responses from a survey of U.S. nonprofit leaders.</p>
+<p>Suppose we wish to measure organizational size. This may seem like a simple construct, but how exactly shall we operationalize it? There are many possibilities, but we will focus on three: (1) the number of employees, (2) the number of people served, and (3) how much money the organization spends.</p>
+<p>For the third measure of size (organizational spending levels), the survey researchers have reported this variable only in “bins” (a concept we learned about in the prior chapter in the context of histograms). The researchers likely report the data in this way to protect the privacy of those responding to the survey. If exact numbers for spending levels were reported, people could match precise values to what has been reported in publicly-available tax records, making it possible to match many responses to exact organizations. This effectively converts what was originally a quantitative variable into an ordinal variable. Ordinal variables can typically be treated as either quantitative or qualitative. For the present discussion, it is simpler to treat this variable as qualitative and show its distribution with a frequency table.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Revenue</th>
+<th>Freq.</th>
+<th>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;$100,000</td>
+<td>641</td>
+<td>15.80</td>
+</tr>
+<tr class="even">
+<td>$100,000-$499,999</td>
+<td>1,803</td>
+<td>44.45</td>
+</tr>
+<tr class="odd">
+<td>$500,000-$999,999</td>
+<td>648</td>
+<td>15.98</td>
+</tr>
+<tr class="even">
+<td>$1 million-$9,999,999</td>
+<td>861</td>
+<td>21.23</td>
+</tr>
+<tr class="odd">
+<td>$10 million and above</td>
+<td>103</td>
+<td>2.54</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>4,056</td>
+<td>100.00</td>
+</tr>
+</tbody>
+</table>
+<p>Many studies will report only one measure of organizational size. Would it matter if they had used an alternative measure? As we weigh the strengths/limitations of each measure, we might want to envision what kinds of organizations might display very different values depending on the measure used. In social science, it is very common that the best measures available are only approximations of whatever it is we care about. One way we can try to develop a better sense of each measure’s limitations is to think through some of the ways that each one might miss the mark for certain organizations. For the employee-based measure, one clear limitation is that it only counts full-time employees, so for organizations that rely heavily on part-time employees, the size of the organization will be understated. For this reason, studies often rely on “full time equivalent” measures that count part time employees using fractions based on how many hours they work each week. Unfortunately, this measure is not available for this dataset. An even thornier problem is that organizations relying heavily on volunteers will not have the volunteer-based resources counted when measuring personnel size. The measure based on number of people served is arguably even more limited. For one thing, not all nonprofits have missions that involve directly serving people. They might instead focus on protecting the environment, for example. A raw count of people served will also not reflect the quality or depth of engagement with those served. An organization with a relatively small staff and budget may be capable of planning a one-a-year event that feeds over a thousand people, but to provide daily or weekly meals in a way that leads to interacting with a similar number of people throughout the year requires a much larger operation. Organizations that register as large in terms of spending but which have few personnel can be difficult to characterize when it comes to size. Their main work may consist of funneling money to other nonprofits, or they may run expensive ad campaigns to promote public awareness of an issue. Considering these various possibilities may encourage us to reevaluate what exactly it is we mean when we say “organizational size.”</p>
+</div>
+</div>
 </section>
 </section>
 <section id="exercises" class="level2" data-number="10.4">
