@@ -1,6 +1,6 @@
 # Relationships Between Two Quantitative Variables {#sec-correlation}
 
-\[***Working draft notes for instructors**: I am hoping to replace the linear regression example so that it comes from the chapter case study dataset. If you were looking at this in June, note that I have now (as of July 1) move the section on variable transformations to the middle of this chapter (it was previously in Ch. 3).*\]
+\[***Working draft notes for instructors**: I am hoping to replace the linear regression example so that it comes from the chapter case study dataset. If you were looking at this in June, note that I have now (as of July 1) moved the section on variable transformations to the middle of this chapter (it was previously in Ch. 3).*\]
 
 When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country's political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.
 
@@ -117,9 +117,11 @@ $$ z = \frac{(x - \mu)}{\sigma} $$
 
 where $z$ is the new value, $x$ is the value on the original distribution, $\mu$ is the mean of the original distribution, and $\sigma$ is the standard deviation of the original distribution.
 
-As a simple application, suppose you want the $z$ score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:
+As a simple application, suppose you want the $z$ score for a student who got a 26 on an exam, where the full set of exam-takers have a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:
 
 $$ z = (26 - 50)/10 = -2.4 $$
+
+The value -2.4 indicates that the student scored 2.4 standard deviations below the mean.
 
 If all the values in a distribution are transformed to $z$ scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.
 

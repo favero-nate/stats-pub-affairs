@@ -1,6 +1,6 @@
 # Describing One Variable at a Time {#sec-describing-one-variable}
 
-\[***Working draft notes for instructors**: This is an early draft of this chapter, and while I expect the basic structure to remain, I am aware that the current examples (including the case study) are underdeveloped. They will be updated shortly (as of June 23, 2026). If you were looking at this in June, note that I have now (as of July 1) move the section on variable transformations to the middle of Ch. 4.*\]
+\[***Working draft notes for instructors**: This is an early draft of this chapter, and while I expect the basic structure to remain, I am aware that the current examples (including the case study) are underdeveloped. They will be updated shortly (as of June 23, 2026). If you were looking at this in June, note that I have now (as of July 1) moved the section on variable transformations to the middle of Ch. 4.*\]
 
 This chapter introduces a variety of concepts and statistics that help us describe one variable at a time. We can describe variables using words, tables, and graphs. The prior chapter already introduced the use of graphs to depict a variable, so this chapter will mainly focus on explaining how to describe variables using words and tables. When we describe a single variable, we typically focus on the **distribution** of the variable. A distribution refers to how frequently all values of a variable occur. For example, if I am examining the binary variable sex in a dataset, the distribution might be 53% female and 47% male. For binary variables it is very easy to succinctly describe the distribution because there are only two possible values. By contrast, quantitative variables sometimes take on many more values than would make sense to list out in a sentence (or even a table), so a variety of terms and statistics have been developed to succinctly summarize the distributions of quantitative variables. As such, most of this chapter will focus on quantitative variables.
 
@@ -268,18 +268,18 @@ There is no universally accepted definition of a percentile. Using the 65th perc
 
 A third way to compute percentiles is a weighted average of the percentiles computed according to the first two definitions. The details of computing percentiles under this third definition are a bit complicated. Let's begin with an example. Consider the 25th percentile for the 8 numbers in @tbl-numberrankscores. Notice the numbers are given ranks ranging from 1 for the lowest number to 8 for the highest number.
 
-+-------+------------+-------+----------+-------+
-|       | **Number** |       | **Rank** |       |
-+=======+============+=======+==========+=======+
-|       | 3\         |       | 1\       |       |
-|       | 5\         |       | 2\       |       |
-|       | 7\         |       | 3\       |       |
-|       | 8\         |       | 4\       |       |
-|       | 9\         |       | 5\       |       |
-|       | 11\        |       | 6\       |       |
-|       | 13\        |       | 7\       |       |
-|       | 15         |       | 8        |       |
-+-------+------------+-------+----------+-------+
++--------+------------+--------+----------+--------+
+|        | **Number** |        | **Rank** |        |
++========+============+========+==========+========+
+|        | 3\         |        | 1\       |        |
+|        | 5\         |        | 2\       |        |
+|        | 7\         |        | 3\       |        |
+|        | 8\         |        | 4\       |        |
+|        | 9\         |        | 5\       |        |
+|        | 11\        |        | 6\       |        |
+|        | 13\        |        | 7\       |        |
+|        | 15         |        | 8        |        |
++--------+------------+--------+----------+--------+
 
 : Test Scores. {#tbl-numberrankscores}
 
@@ -309,30 +309,30 @@ Therefore, the 25th percentile is 5.5. If we had used the first definition (the 
 
 For a second example, consider the 20 quiz scores shown in @tbl-quizscores.
 
-+-------+-----------+-------+----------+-------+
-|       | **Score** |       | **Rank** |       |
-+=======+===========+=======+==========+=======+
-|       | 4\        |       | 1\       |       |
-|       | 4\        |       | 2\       |       |
-|       | 5\        |       | 3\       |       |
-|       | 5\        |       | 4\       |       |
-|       | 5\        |       | 5\       |       |
-|       | 5\        |       | 6\       |       |
-|       | 6\        |       | 7\       |       |
-|       | 6\        |       | 8\       |       |
-|       | 6\        |       | 9\       |       |
-|       | 7\        |       | 10\      |       |
-|       | 7\        |       | 11\      |       |
-|       | 7\        |       | 12\      |       |
-|       | 8\        |       | 13\      |       |
-|       | 8\        |       | 14\      |       |
-|       | 9\        |       | 15\      |       |
-|       | 9\        |       | 16\      |       |
-|       | 9\        |       | 17\      |       |
-|       | 10\       |       | 18\      |       |
-|       | 10\       |       | 19\      |       |
-|       | 10        |       | 20       |       |
-+-------+-----------+-------+----------+-------+
++--------+-----------+--------+----------+--------+
+|        | **Score** |        | **Rank** |        |
++========+===========+========+==========+========+
+|        | 4\        |        | 1\       |        |
+|        | 4\        |        | 2\       |        |
+|        | 5\        |        | 3\       |        |
+|        | 5\        |        | 4\       |        |
+|        | 5\        |        | 5\       |        |
+|        | 5\        |        | 6\       |        |
+|        | 6\        |        | 7\       |        |
+|        | 6\        |        | 8\       |        |
+|        | 6\        |        | 9\       |        |
+|        | 7\        |        | 10\      |        |
+|        | 7\        |        | 11\      |        |
+|        | 7\        |        | 12\      |        |
+|        | 8\        |        | 13\      |        |
+|        | 8\        |        | 14\      |        |
+|        | 9\        |        | 15\      |        |
+|        | 9\        |        | 16\      |        |
+|        | 9\        |        | 17\      |        |
+|        | 10\       |        | 18\      |        |
+|        | 10\       |        | 19\      |        |
+|        | 10        |        | 20       |        |
++--------+-----------+--------+----------+--------+
 
 : 20 quiz scores. {#tbl-quizscores}
 
@@ -436,9 +436,9 @@ $$
 \mu = \frac{\sum_{i=1}^{N} x_i}{N} = \frac{634}{31} = 20.4516
 $$
 
-+-------------+--------------------------------------------------------------------------------------------+-------------+
-|             | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |             |
-+-------------+--------------------------------------------------------------------------------------------+-------------+
++----------+--------------------------------------------------------------------------------------------+----------+
+|          | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |          |
++----------+--------------------------------------------------------------------------------------------+----------+
 
 : Number of touchdown passes. {#tbl-tdownpasses}
 
