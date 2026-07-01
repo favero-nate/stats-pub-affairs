@@ -568,14 +568,14 @@ Table&nbsp;3.1: Example language to interpret the strength of a correlation, bas
 <div aria-describedby="tbl-corr-benchmarks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
+<col style="width: 6%">
 <col style="width: 12%">
 <col style="width: 12%">
 <col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -653,7 +653,7 @@ Table&nbsp;3.3: Temperatures in 5 cities on 11/16/2002.
 <div aria-describedby="tbl-temp5cities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 22%">
 <col style="width: 34%">
 <col style="width: 34%">
 </colgroup>
@@ -975,37 +975,37 @@ Table&nbsp;3.4: Results for a regression with computer science GPA as the depend
 <p>The Data Excerpt below shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.</p>
 <p>In the Data Excerpt, we see that the variables <code>stability</code> and <code>urban</code> have been transformed to z-scores (columns labeled <code>z_stability</code> and <code>z_urban</code>).<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between <code>stability</code> and <code>urban</code>: 0.36. Thus, there is a weak but noticeable positive association between the two variables.</p>
 <pre><code>Data Excerpt
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| id     | country     | stability | urban  | z_stability | z_urban | z_stability |
-|        |             |           |        |             |         |  × z_urban  |
-+========+=============+===========+========+=============+=========+=============+
-| 1      | Afghanistan | -2.76     | 25.50  | -2.73       | -1.46   | 3.99        |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 2      | Albania     | 0.37      | 60.32  | 0.40        | 0.00    | 0.00        |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 3      | Algeria     | -0.84     | 72.63  | -0.80       | 0.52    | -0.42       |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 4      | American    | 1.22      | 87.15  | 1.25        | 1.13    | 1.41        |
-|        |  Samoa      |           |        |             |         |             |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 5      | Andorra     | 1.42      | 88.06  | 1.45        | 1.17    | 1.69        |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 6      | Angola      | -0.34     | 65.51  | -0.30       | 0.22    | -0.07       |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 7      | Antigua     | 0.84      | 24.60  | 0.87        | -1.50   | -1.31       |
-|        |  and        |           |        |             |         |             |
-|        |  Barbuda    |           |        |             |         |             |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 8      | Argentina   | 0.01      | 91.87  | 0.04        | 1.33    | 0.06        |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| 9      | Armenia     | -0.44     | 63.15  | -0.41       | 0.12    | -0.05       |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| ...    | ...         | ...       | ...    | ...         | ...     | ...         |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-|**Mean**|             | -0.03     | 60.26  | 0.00        | 0.00    | **0.36**    |
-+--------+-------------+-----------+--------+-------------+---------+-------------+
-| N=204  |             |           |        |             |         |             |
-+--------+-------------+-----------+--------+-------------+---------+-------------+</code></pre>
++------+-------------+-----------+--------+--------+-------+----------+
+| id   | country     | stability | urban  | z_stab | z_urb | z_stab   |
+|      |             |           |        |        |       |  × z_urb |
++======+=============+===========+========+========+=======+==========+
+| 1    | Afghanistan | -2.76     | 25.50  | -2.73  | -1.46 | 3.99     |
++------+-------------+-----------+--------+--------+-------+----------+
+| 2    | Albania     | 0.37      | 60.32  | 0.40   | 0.00  | 0.00     |
++------+-------------+-----------+--------+--------+-------+----------+
+| 3    | Algeria     | -0.84     | 72.63  | -0.80  | 0.52  | -0.42    |
++------+-------------+-----------+--------+--------+-------+----------+
+| 4    | American    | 1.22      | 87.15  | 1.25   | 1.13  | 1.41     |
+|      |  Samoa      |           |        |        |       |          |
++------+-------------+-----------+--------+--------+-------+----------+
+| 5    | Andorra     | 1.42      | 88.06  | 1.45   | 1.17  | 1.69     |
++------+-------------+-----------+--------+--------+-------+----------+
+| 6    | Angola      | -0.34     | 65.51  | -0.30  | 0.22  | -0.07    |
++------+-------------+-----------+--------+--------+-------+----------+
+| 7    | Antigua     | 0.84      | 24.60  | 0.87   | -1.50 | -1.31    |
+|      |  and        |           |        |        |       |          |
+|      |  Barbuda    |           |        |        |       |          |
++------+-------------+-----------+--------+--------+-------+----------+
+| 8    | Argentina   | 0.01      | 91.87  | 0.04   | 1.33  | 0.06     |
++------+-------------+-----------+--------+--------+-------+----------+
+| 9    | Armenia     | -0.44     | 63.15  | -0.41  | 0.12  | -0.05    |
++------+-------------+-----------+--------+--------+-------+----------+
+| ...  | ...         | ...       | ...    | ...    | ...   | ...      |
++------+-------------+-----------+--------+--------+-------+----------+
+|*Mean*|             | -0.03     | 60.26  | 0.00   | 0.00  | *0.36*   |
++------+-------------+-----------+--------+--------+-------+----------+
+| N=204|             |           |        |        |       |          |
++------+-------------+-----------+--------+--------+-------+----------+</code></pre>
 <p>This same data is depicted in <a href="#fig-scatterplot-quadrants" class="quarto-xref">Figure&nbsp;<span>3.11</span></a>, with <code>id</code> numbers used to plot the 9 observations shown in the Data Excerpt; the remainder of the observations are plotted as circles.</p>
 <div id="fig-scatterplot-quadrants" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">

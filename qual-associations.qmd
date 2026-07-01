@@ -114,7 +114,7 @@ For all of the odd-numbered extraversion questions (e1, e3, e5, etc.), agreement
 
 As @fig-ExtHist indicates, most people lie somewhere in the middle between introversion and extraversion.
 
-![Distribution of the extraversion trait.](Images/qual-associations/hist-extraversion.png){#fig-ExtHist}
+![Distribution of the extraversion trait.](Images/qual-associations/hist-extraversion.png){#fig-ExtHist width="400"}
 
 Our gender variable was measured by asking respondents “What is your gender?” and they could choose from male (coded as a 1), female (2), or other (3). In a moment, we’ll consider those who responded “other,” but for now, let’s just look at those who chose either male or female.
 
@@ -122,7 +122,7 @@ Our gender variable was measured by asking respondents “What is your gender?�
 
 If I want to describe differences in extraversion by gender in this dataset, I can compute the mean value of extraversion for males and for females. It turns out that males have an average extraversion of -0.46 while females’ average level of extraversion is 0.53. Thus, the average female is about 1-point more extraverted than the average male. But of course, there is abundant variation in extraversion among both groups, as seen clearly in @fig-GenderExtHist. There are plenty of females who are introverts and plenty of males who are extraverts.
 
-![Distribution of extraversion by female/male identity.](Images/qual-associations/boxplot-extraversion-gender-binary.png){#fig-GenderExtHist}
+![Distribution of extraversion by female/male identity.](Images/qual-associations/boxplot-extraversion-gender-binary.png){#fig-GenderExtHist width="400"}
 
 If you asked me to guess the extraversion level of someone in this dataset and the only thing you told me about them was their gender, my best bet would probably be to guess the average extraversion level for someone of that gender. So for a female I knew nothing else about, I would guess their extraversion to be 0.53, while for a male I’d guess -0.46.
 
@@ -162,7 +162,7 @@ Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the differen
 
 I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as "other" gender (@fig-NonBExtHist).
 
-![Distribution of extraversion trait, including among those identifying with "other" gender (neither male nor female).](Images/qual-associations/boxplot-extraversion-gender-nonbinary.png){#fig-NonBExtHist}
+![Distribution of extraversion trait, including among those identifying with "other" gender (neither male nor female).](Images/qual-associations/boxplot-extraversion-gender-nonbinary.png){#fig-NonBExtHist width="400"}
 
 The number of respondents selecting "other" is relatively small (102), so it’s not terribly surprising that this histogram looks a bit choppier than the ones we saw before.
 
