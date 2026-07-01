@@ -1,6 +1,6 @@
 # Describing One Variable at a Time {#sec-describing-one-variable}
 
-\[***Working draft notes for instructors**: This is an early draft of this chapter, and while I expect the basic structure to remain, I am aware that the current examples (including the case study) are underdeveloped. They will be updated shortly (as of June 23, 2026). The section on transformations needs to be entirely rewritten, and I am also considering moving it to another chapter.*\]
+\[***Working draft notes for instructors**: This is an early draft of this chapter, and while I expect the basic structure to remain, I am aware that the current examples (including the case study) are underdeveloped. They will be updated shortly (as of June 23, 2026). If you were looking at this in June, note that I have now (as of July 1) move the section on variable transformations to the middle of Ch. 4.*\]
 
 This chapter introduces a variety of concepts and statistics that help us describe one variable at a time. We can describe variables using words, tables, and graphs. The prior chapter already introduced the use of graphs to depict a variable, so this chapter will mainly focus on explaining how to describe variables using words and tables. When we describe a single variable, we typically focus on the **distribution** of the variable. A distribution refers to how frequently all values of a variable occur. For example, if I am examining the binary variable sex in a dataset, the distribution might be 53% female and 47% male. For binary variables it is very easy to succinctly describe the distribution because there are only two possible values. By contrast, quantitative variables sometimes take on many more values than would make sense to list out in a sentence (or even a table), so a variety of terms and statistics have been developed to succinctly summarize the distributions of quantitative variables. As such, most of this chapter will focus on quantitative variables.
 
@@ -43,7 +43,7 @@ How do these nonprofits fund their operations? There are multiple survey questio
 
 The next two variables in @tbl-nonprofits-descriptive-stats are related to another feature of organizations that we can consider here: how large these nonprofit organizations are. How exactly shall we measure organizational size? There are many possibilities, but we will focus on three: (1) the number of employees, (2) the number of people served, and (3) how much money the organization spends. The measures available for the first two measures are regular quantitative variables, which is why they appear in @tbl-nonprofits-descriptive-stats. We can see that the average organization has around 14 fulltime staff members, though there are organizations
 
-For the third measure of size (organizational spending levels), the survey researchers have reported this variable only in “bins” (a concept we learned about in the prior chapter in the context of histograms). The researchers likely report the data in this way to protect the privacy of those responding to the survey.[^describing-one-variable-1] This effectively converts what was originally a quantitative variable into an ordinal variable. Ordinal variables can typically be treated as either quantitative or qualitative. For the present discussion, it is simpler to treat this variable as qualitative and show its distribution with a frequency table.
+For the third measure of size (organizational spending levels), the survey researchers have reported this variable only in “bins” (a concept we learned about in the prior chapter in the context of histograms). The researchers likely report the data in this way to protect the privacy of those responding to the survey.\[\^describing-one-variable-1\] This effectively converts what was originally a quantitative variable into an ordinal variable. Ordinal variables can typically be treated as either quantitative or qualitative. For the present discussion, it is simpler to treat this variable as qualitative and show its distribution with a frequency table.
 
 | Revenue                 | Freq. | Percent |
 |-------------------------|-------|---------|
@@ -57,10 +57,6 @@ For the third measure of size (organizational spending levels), the survey resea
 
 Throughout this chapter, we will re-examine the variables and statistics shown above to further demonstrate key material for this chapter on describing variables one at a time. Before returning to the main chapter, though, it is worth briefly zooming out and making a few more observations about the big picture of this dataset, drawing on the Three Questions to Always Ask about Data.
 
-1.  **What is being measured?**
-
-    This question is particularly relevant when considering the various ways to measure organizational size. In this case study, we have highlighted three different measures, but many studies will report only one. Would it matter if they had used an alternative measure? As we weigh the strengths/limitations of each measure, we might want to envision what kinds of organizations might display very different values depending on the measure used. In social science, it is very common that the best measures available are only approximations of whatever it is we care about. One way we can try to develop a better sense of each measure’s limitations is to think through some of the ways that each one might miss the mark for certain organizations. For the employee-based measure, one clear limitation is that it only counts full-time employees, so for organizations that rely heavily on part-time employees, the size of the organization will be understated. For this reason, studies often rely on “full time equivalent” measures that count part time employees using fractions based on how many hours they work each week. Unfortunately, this measure is not available for this dataset. An even thornier problem is that organizations relying heavily on volunteers will not have the volunteer-based resources counted when measuring personnel size. The measure based on number of people served is arguably even more limited. For one thing, not all nonprofits have missions that involve directly serving people. They might instead focus on protecting the environment, for example. A raw count of people served will also not reflect the quality or depth of engagement with those served. An organization with a relatively small staff and budget may be capable of planning a one-a-year event that feeds over a thousand people, but to provide daily or weekly meals in a way that leads to interacting with a similar number of people throughout the year requires a much larger operation. Organizations that register as large in terms of spending but which have few personnel can be difficult to characterize when it comes to size. Their main work may consist of funneling money to other nonprofits, or they may run expensive ad campaigns to promote public awareness of an issue. Considering these various possibilities may encourage us to reevaluate what exactly it is we mean when we say “organizational size.”
-
 2.  **Who (or what) is in the dataset?**
 
     The researchers conducting this survey provide a detailed description in one of their reports of the types of organizations that were excluded from the study. Particularly notable is the exclusion of very small organizations and many types of religious and educational organizations (such as most churches and schools). These are important things to know about the sample when trying to understand what portions of the nonprofit sector this data is describing.
@@ -70,15 +66,13 @@ Throughout this chapter, we will re-examine the variables and statistics shown a
     One way to answer this question is to observe how highly varied nonprofit organizations appear to be in terms of size. There are many organizations that are very small and many others that are stunningly large by comparison. This is not a dataset describing a set of organizations with fairly uniform size. Describing the amount of “spread” or lack of uniformity in a variable is not a particularly easy or intuitive thing to do, but we will learn several tools to help us in this chapter.
 :::
 
-[^describing-one-variable-1]: If exact numbers for spending levels were reported, people could match precise values to what has been reported in publicly-available tax records, making it possible to match many responses to exact organizations.
-
 ## Essential Terms and Concepts for Describing Quantitative Variables
 
 Several statistical terms can help us describe in words different characteristics we see in the distributions of quantitative variables. We can get familiar with these terms by looking at several histograms together and then describing their shapes.
 
-@fig-hist-er-cardio shows a histogram for a variable we will examine in more detail in @sec-prob-models. The distribution appears to be fairly **symmetric**: if we divided the graph with a vertical line at the midpoint, the two halves would roughly mirror each other.[^describing-one-variable-2] The peak of the distribution is called the **mode**. Since there is only one well-defined peak, we say that this distribution is **unimodal**. At each end of the graph (left and right), we see some fairly short bars that we refer to as the **tails** of the distribution.
+@fig-hist-er-cardio shows a histogram for a variable we will examine in more detail in @sec-prob-models. The distribution appears to be fairly **symmetric**: if we divided the graph with a vertical line at the midpoint, the two halves would roughly mirror each other.[^describing-one-variable-1] The peak of the distribution is called the **mode**. Since there is only one well-defined peak, we say that this distribution is **unimodal**. At each end of the graph (left and right), we see some fairly short bars that we refer to as the **tails** of the distribution.
 
-[^describing-one-variable-2]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
+[^describing-one-variable-1]: [World Development Indicators](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) ([CC-BY 4.0](https://datacatalog.worldbank.org/public-licenses?fragment=cc))
 
 ![Histogram of daily volume of cardiovascular ER admissions; data from [Hwang et al.](https://doi.org/10.1371/journal.pone.0183224) ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))](Images/describing-one-variable/hist-er-cardio.png){#fig-hist-er-cardio width="400"}
 
@@ -96,35 +90,41 @@ As one final example for this section, consider @fig-eruptionfreqs, which is a *
 
 ## Percentiles and Box Plots {#sec-percentiles-and-box-plots}
 
-Percentiles are a powerful tool for describing a distribution. They are commonly used to help interpret standardized exam scores (e.g., university admissions exams). For example, you may have been told that you scored a 139 on an exam, which indicates you are in the 81st percentile, meaning you scored as good or better than 81% of people taking the exam.
+Percentiles are a powerful tool for describing a distribution. They are commonly used to help interpret standardized exam scores (e.g., university admissions exams). For example, you may have been told that you received a 139 on an exam and that this score indicates the 81st percentile, meaning you scored as good or better than 81% of people taking the exam.
 
-To further illustrate percentiles, let’s return to the dataset from the Chapter 1 case study, which describes your hypothetical friend’s social media posts. We will focus specifically on the variable recording the length (in characters) of each post. As we apply percentiles, we can think of dividing a dataset in two. @fig-hist-post-length-p50 demonstrates this, using the 50th percentile to divide a histogram for the post length variable into the bottom 50% and the top 50%. The bins for the histogram are quite narrow, in order to demonstrate finer distinctions that will be relevant when considering percentiles. The 50th percentile is 158.5 here, marked with a dashed line in the figure. 50% of posts are 158.5 characters or less. These relatively short posts are shown with the bars drawn in a darker shade and labeled “Bottom 50%” in the legend at the bottom of @fig-hist-post-length-p50. The “Top 50%,” represented by bars in lighter shade, are 158.5 characters or longer.
+We can further illustrate percentiles using the board size variable from this chapter's case study. As we apply percentiles, we can think of dividing a dataset in two. @fig-hist-board-p50 demonstrates this, using the 50th percentile to divide the observed values of board size into the bottom 50% and the top 50%. Each bar in this graph represents a single value, which is feasible because there are only whole numbers for this variable (you can't have half a board member). The 50th percentile is 9 here, marked with a dashed line in the figure. 50% of these education nonprofits have boards that are 9 members or smaller. The relatively small boards with fewer than 9 members are shown with the bars drawn in a darker shade and labeled “Bottom 50%” in the legend at the bottom of @fig-hist-board-p50. The “Top 50%,” represented by bars in lighter shade, are larger than 9 members. Note that there are also some nonprofit boards with exactly 9 members, which are depicted with a white bar (with grey outline) because some (but not all) of these observations would be needed to get up to exactly 50% when delineating the bottom 50% or the top 50%. Because of these observation's somewhat ambiguous status (being exactly equal to the 50th percentile), they are not shown in either dark or light shading.
 
-![Graphical Depiction of the 50th Percentile](Images/describing-one-variable/hist-post-length-p50.png){#fig-hist-post-length-p50 width="400"}
+![Graphical Illustration of the 50th Percentile](Images/describing-one-variable/hist-board-p50.png){#fig-hist-board-p50 width="400"}
 
-By using multiple percentiles simultaneously, we can divide a variable into more than two “buckets.” For example, we can divide this same variable into 3 buckets: the bottom 25%, the middle 50%, and the top 25%. This division is shown in @fig-hist-post-length-p25-p75. The divisions between “buckets” are marked with dashed lines, and each bucket uses different shading for the histogram’s bars.
+By using multiple percentiles simultaneously, we can divide a variable into more than two “buckets.” For example, we can divide this same variable into 3 buckets: the bottom 25%, the middle 50%, and the top 25%. This division is shown in @fig-hist-board-p25-p75. The divisions between “buckets” are marked with dashed lines, and each bucket uses different shading for the histogram’s bars.
 
-![Graphical Depiction of the 25th and 75th Percentiles](Images/describing-one-variable/hist-post-length-p25-p75.png){#fig-hist-post-length-p25-p75 width="400"}
+![Graphical Illustration of the 25th and 75th Percentiles](Images/describing-one-variable/hist-board-p25-p75.png){#fig-hist-board-p25-p75 width="400"}
 
-Using the terminology of percentiles, we can say that the 25th percentile for this variable is 88, as indicated by the dashed line on the left. We can interpret this percentile as indicating that 25% of the posts have a length of 88 or less. To mark the top 25% of the data, we use the 75th percentile, which is 253 for this variable. Thus, 75% of the posts in this dataset are 253 characters or shorter.
+Using the terminology of percentiles, we can say that the 25th percentile for this variable is 6, as indicated by the dashed line on the left. We can interpret this percentile as indicating that 25% of the boards have a size of 6 members or less. To mark the top 25% of the data, we use the 75th percentile, which is 13 for this variable. Thus, 75% of the education nonprofits in this dataset have boards with 13 or more members.
 
-Box plots are a common way to visualize the percentiles we just discussed for a variable. @fig-boxplot-post-length shows a box plot for the post length variable. In a box plot, the edges of a rectangle depict the 25th and 75th percentiles. The correspond exactly to the dashed lines we saw in the prior figure (@fig-boxplot-post-length). A line within the box also marks the 50th percentile. “Whiskers” extend out from the sides of the box to show the minimum and maximum values for the variable. Based on where the whiskers end, we can say that the shortest posts in this dataset are 0 characters long while the longest posts are 300 characters.
+Box plots are a common way to visualize the percentiles we just discussed for a variable. @fig-boxplot-board shows a box plot for the board size variable. In a box plot, the edges of a rectangle depict the 25th and 75th percentiles. This corresponds exactly to the dashed lines we saw in the prior figure (@fig-hist-board-p25-p75). A line within the box also marks the 50th percentile.
 
-![Box Plot of Post Length Variable](Images/describing-one-variable/boxplot-post-length.png){#fig-boxplot-post-length width="400"}
+![Box Plot of Board Size Variable](Images/describing-one-variable/boxplot-board.png){#fig-boxplot-board width="400"}
 
-Now that we have discussed a couple examples, let’s define percentiles a bit more precisely. The key thing to remember is this: *p*% of the data falls (at or) below the *p*th percentile. Thus, the *p*th percentile is a value indicating the point at which *p*% of the data is less than or equal to this value. *p* can be any number between 0 and 100. For example, if the 22nd percentile of a variable is 5, then 22% of the variable’s observations are less than or equal to 5. The flip side of this is that 78% of the variable’s observation must be greater than or equal to 5. Any percentile can be understood as marking a dividing line in a dataset, with *p*% of the data to the left and (100 - *p*)% to the right.
+“Whiskers” extend out from the sides of the box to show the minimum and maximum values for the variable. Based on where the whiskers end, we can say that the smallest boards have 0 members while the largest have 22. However, 22 is not the true maximum. Notice the dots on the right side of the graph. These indicate outliers, which are often ignored for purposes of defining the minimum and maximum values when drawing the whiskers. Typically (though not always), outliers beyond the range of the whiskers are depicted using dots, as in this example. Various algorithms can be used to determine what exactly counts as an outlier, and most software will use one of these algorithms by default when creating a box plot.
+
+Previously, while examining a histogram of this same variable, we noted that it is right-skewed. We can also see that here, based on the right-side whisker being somewhat longer than the left-side whisker, as well as the presence of outliers on the right side of the graph.
+
+### Defining percentiles
+
+Now that we have seen some visualizations of percentiles, let’s define them a bit more precisely. The key thing to remember is this: *p*% of the data falls (at or) below the *p*th percentile. Thus, the *p*th percentile is a value indicating the point at which *p*% of the data is less than or equal to this value. *p* can be any number between 0 and 100. For example, if the 22nd percentile of a variable is 5, then 22% of the variable’s observations are less than or equal to 5. The flip side of this is that 78% of the variable’s observation must be greater than or equal to 5. Any percentile can be understood as marking a dividing line in a dataset, with *p*% of the data to the left and (100 - *p*)% to the right.
 
 To find the *p*th percentile, we can line all the observations for a variable from least to greatest and then pick the value that marks the *p*% point in this lineup (e.g, for 50th percentile, pick the middle point). In practice, this process can get a bit complicated because we need rules to deal with ties, rounding, etc. There are, in fact, conflicting definitions of percentiles that employ different rules for such situations. If you are curious to learn more, this chapter contains an appendix with further details (Appendix I). Fortunately, these details are not essential for making use of percentiles to describe distributions. For the purposes of an introductory text, we can simply assume that software will make the exact computations needed to find percentiles under a widely-used definition. Slight differences in methods for computing percentiles will not usually affect our conclusions, at least if we are working with a large dataset where there are not large gaps in the values observed. Percentiles may be less useful/well-defined for describing datasets with very few observations (e.g., less than 50) or variables that take on only a small number of different values (e.g., only small whole numbers).
 
-Let’s revisit the initial example of a box plot we saw in the prior chapter, shown here as a standalone graph in @fig-box-female-employees. Given the long whisker on the left side of the graph, we can say this distribution appears to be left-skewed. Notice that in addition to the box and whiskers, two dots are shown on the left side of the graph. These indicate outliers, which are often ignored for purposes of defining the minimum and maximum values when drawing the whiskers. Dots are typically (though not always) used to indicate the presence of any outliers beyond the range of the whiskers, as in this example. Various algorithms can be used to determine what exactly counts as an outlier, and most software will use one of these algorithms by default when creating a box plot.
+### Box plots and five number summaries
 
-![Box Plot of Share of Female Employees in Public Sector](Images/describing-one-variable/box-female-employees.png){#fig-box-female-employees width="400"}
-
-As one final example of a box plot, let’s examine the individual donations variable from this chapter’s case study. @fig-box-donations contains a box plot for this variable, and unlike the other box plots we’ve seen so far, this one has been drawn vertically. As we noted in the prior section, this variable is right-skewed, which we now see in the form of the long whisker at the top of the graph, since it is now the top of the graph that shows the highest values. There are dots depicting outliers, but they are quite dense, giving the appearance of one thick line rather than several distinct points. Thus, the use of dots to depict outliers is perhaps less effective in this graph; if using this graph to present results to others, we might want to consider omitting the outlier dots altogether (or displaying them in a different way, such as using open circles and perhaps adding some “jitter,” as in the strip plot shown in the prior chapter).
+As one additional example of a box plot, let’s examine the individual donations variable from this chapter’s case study. @fig-box-donations contains a box plot for this variable, and unlike the other box plots we’ve seen so far, this one has been drawn vertically. As we noted in an earlier section when examining a histogram, this variable is right-skewed, which we now see in the form of the long whisker and outliers at the top of the graph, since it is now the top of the graph that shows the highest values. There are dots depicting outliers, but they appear to be quite dense, sometimes overlapping and perhaps even stacking on top of one another. In cases like this, we can consider plotting the outliers in another way, such as using open circles and perhaps spreading them out a bit by adding some random “jitter” to their locations (as in the strip plot shown in the prior chapter).
 
 ![Box Plot of Share of Revenue from Individual Donations](Images/describing-one-variable/box-donations.png){#fig-box-donations width="400"}
 
-One common way of using percentiles to succinctly describe a distribution is with a “five number summary.” This refers to the 0th, 25th, 50th, 75th, and 100th percentiles. In fact, that is exactly what a boxplot shows (with the caveat noted above about outliers often being omitted when drawing the whiskers). The five number summary can also be reported succinctly in the form of a table. @tbl-five-number-summary shows an alternative to the descriptive statistics table from this chapter’s case study, using the five number summary instead of the statistics shown previously.
+You will likely encounter box plots that look quite different from the ones displayed in this chapter. While every box plot should start from drawing a box and whiskers, formating varies and extra features can be added to the plot. For example, people sometimes add a marking (such as an "X") to indicate the mean for the variable. Sometimes it will also be the case that so many observations take on the same value that the minimum and the 25th percentile are the same, for example. This leads to a rather funny looking box plot since the whisker has a length of 0, meaning it essentially stacks on top of the edge of the box. If you try making your own box plots with software, you may encounter issues like this that make some box plots look very different from what you expected.
+
+One common way of using percentiles to succinctly describe a distribution in table format is with a “five number summary.” This refers to the 0th, 25th, 50th, 75th, and 100th percentiles. In fact, that is exactly what a box plot shows, except that outliers are often omitted when drawing the whiskers in such plots. @tbl-five-number-summary shows an alternative to the descriptive statistics table from this chapter’s case study, using the five number summary.
 
 +------------------------------+-----------+---------+---------+---------+-------------+
 |                              | Min. (p0) | p25     | p50     | p75     | Max. (p100) |
@@ -178,9 +178,9 @@ The mean is also often an attractive option when summarizing certain ordinal var
 
 Given that both the mean and the median have clear advantages and clear drawbacks, some sources recommend reporting both statistics whenever describing the central tendency of a variable. This is probably a good rule of thumb to start from, and with experience you can figure out when one statistics or the other is more useful depending on the data and the broader context of your analysis.
 
-## Measures of Spread[^describing-one-variable-3]
+## Measures of Spread[^describing-one-variable-2]
 
-[^describing-one-variable-3]: The first pargraph and initial graphs in this section are adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
+[^describing-one-variable-2]: The first pargraph and initial graphs in this section are adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
 
 Spread refers to how "spread out" a group of scores is. To see what we mean by spread out, consider @fig-quiz-1 and @fig-quiz-2. These graphs represent the scores on two quizzes. The mean score for each quiz is 7.0. Despite the equality of means, you can see that the distributions are quite different. Specifically, the scores on Quiz 1 are more densely packed and those on Quiz 2 are more spread out. The differences among students were much greater on Quiz 2 than on Quiz 1.
 
@@ -202,88 +202,9 @@ Standard deviation is closely related to variance: you simply take the square ro
 
 The concept of spread can also be referred to as *variability* or *dispersion*. We can also say that large spread indicates high **heterogeneity**, meaning that units tend not to closely resemble one another. On the flip side, a small spread indicates that for the variable being examined, observations are highly **homogeneous** or highly uniform.
 
-## Transforming Variables[^describing-one-variable-4] {#sec-transforming-variables}
+## Exercises[^describing-one-variable-3]
 
-[^describing-one-variable-4]: The initial part of this section is adapted from David M. Lane. “Linear Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/linear_transforms.html>. There is also material adapted from David M. Lane. “Standard Normal Distribution.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/normal_distribution/standard_normal.html>.
-
-Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. @tbl-heightconversion shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
-
-+---------+----------+---------+------------+---------+
-|         | **Feet** |         | **Inches** |         |
-+=========+==========+=========+============+=========+
-|         | 5.00\    |         | 60\        |         |
-|         | 6.25\    |         | 75\        |         |
-|         | 5.50\    |         | 66\        |         |
-|         | 5.75     |         | 69         |         |
-+---------+----------+---------+------------+---------+
-
-: Converting between feet and inches. {#tbl-heightconversion}
-
-Some conversions require that you multiply by a number and then add a second number. A good example of this is the transformation between degrees Centigrade and degrees Fahrenheit. @tbl-temp5cities shows the temperatures of 5 US cities in the early afternoon of November 16, 2002.
-
-+--------+--------------+--------+------------------------+--------+------------------------+--------+
-|        | **City**     |        | **Degrees Fahrenheit** |        | **Degrees Centigrade** |        |
-+========+==============+========+========================+========+========================+========+
-|        | Houston\     |        | 54\                    |        | 12.22\                 |        |
-|        | Chicago\     |        | 37\                    |        | 2.78\                  |        |
-|        | Minneapolis\ |        | 31\                    |        | -0.56\                 |        |
-|        | Miami\       |        | 78\                    |        | 25.56\                 |        |
-|        | Phoenix      |        | 70                     |        | 21.11                  |        |
-+--------+--------------+--------+------------------------+--------+------------------------+--------+
-
-: Temperatures in 5 cities on 11/16/2002. {#tbl-temp5cities}
-
-The formula to transform Centigrade to Fahrenheit is:
-
-$$
-F = 1.8C + 32
-$$
-
-The formula for converting from Fahrenheit to Centigrade is
-
-$$
-C = 0.5556F - 17.778
-$$
-
-The transformation consists of multiplying by a constant and then adding a second constant. For the conversion from Centigrade to Fahrenheit, the first constant is 1.8 and the second is 32.
-
-@fig-cfunctionf shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called **linear transformations**.
-
-![Degrees Centigrade as a function of degrees Fahrenheit.](Images/describing-one-variable/cfunctionf.png){#fig-cfunctionf width="350"}
-
-### Standardization (Z Scores) {#sec-standardization}
-
-So far, we’ve discussed transformations that are probably familiar to you. A type of transformation that may be new to you is **standardization** or creating $z$ scores. A value from any distribution can be transformed into a $z$ score using the following formula:
-
-$$
-z = \frac{(x - \mu)}{\sigma}
-$$
-
-where $z$ is the new value, $x$ is the value on the original distribution, $\mu$ is the mean of the original distribution, and $\sigma$ is the standard deviation of the original distribution.
-
-As a simple application, suppose you want the $z$ score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:
-
-$$
-z = (26 - 50)/10 = -2.4
-$$
-
-If all the values in a distribution are transformed to $z$ scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.
-
-### Log Transformations[^describing-one-variable-5]
-
-[^describing-one-variable-5]: This subsection is adapted from David M. Lane. “Log Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/transformations/log.html>
-
-Sometimes it is also useful to use transformations that are not linear. For example, the log transformation can sometimes be used to make highly skewed distributions less skewed. This can be valuable both for making patterns in the data more interpretable and for helping to meet the assumptions of inferential statistics (see @sec-stat-inference).
-
-@fig-scatterplotbrainweight shows an example of how a log transformation can make patterns more visible. Both graphs plot the brain weight of animals as a function of their body weight. The raw weights are shown in the upper panel; the log-transformed weights are plotted in the lower panel.
-
-![Scatter plots of brain weight as a function of body weight in terms of both raw data (upper panel) and log-transformed data (lower panel).](Images/describing-one-variable/scatterplotbrainweight.jpg){#fig-scatterplotbrainweight}
-
-It is hard to discern a pattern in the upper panel whereas the strong relationship is shown clearly in the lower panel.
-
-## Exercises[^describing-one-variable-6]
-
-[^describing-one-variable-6]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
+[^describing-one-variable-3]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
 
 1.  Find the mean and median for the following three variables:
 
@@ -339,26 +260,26 @@ It is hard to discern a pattern in the upper panel whereas the strong relationsh
 
 11. When is a log transformation valuable?
 
-## @sec-describing-one-variable Appendix I: Calculating Percentiles[^describing-one-variable-7] {.unnumbered}
+## @sec-describing-one-variable Appendix I: Calculating Percentiles[^describing-one-variable-4] {.unnumbered}
 
-[^describing-one-variable-7]: This section is adapted from David M. Lane. “Percentiles.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/percentiles.html>
+[^describing-one-variable-4]: This section is adapted from David M. Lane. “Percentiles.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/percentiles.html>
 
 There is no universally accepted definition of a percentile. Using the 65th percentile as an example, the 65th percentile can be defined as the lowest score that is greater than 65% of the scores. We will call this "Definition 1." The 65th percentile can also be defined as the smallest score that is greater than *or equal to* 65% of the scores. This we will call "Definition 2." Though these two definitions appear very similar, they can sometimes lead to dramatically different results, especially when there is relatively little data. Moreover, neither of these definitions is explicit about how to handle rounding. For instance, what rank is required to be higher than 65% of the scores when the total number of scores is 50? This is tricky because 65% of 50 is 32.5. How do we find the lowest number that is higher than 32.5 of the scores?
 
 A third way to compute percentiles is a weighted average of the percentiles computed according to the first two definitions. The details of computing percentiles under this third definition are a bit complicated. Let's begin with an example. Consider the 25th percentile for the 8 numbers in @tbl-numberrankscores. Notice the numbers are given ranks ranging from 1 for the lowest number to 8 for the highest number.
 
-+---------+------------+---------+----------+---------+
-|         | **Number** |         | **Rank** |         |
-+=========+============+=========+==========+=========+
-|         | 3\         |         | 1\       |         |
-|         | 5\         |         | 2\       |         |
-|         | 7\         |         | 3\       |         |
-|         | 8\         |         | 4\       |         |
-|         | 9\         |         | 5\       |         |
-|         | 11\        |         | 6\       |         |
-|         | 13\        |         | 7\       |         |
-|         | 15         |         | 8        |         |
-+---------+------------+---------+----------+---------+
++-------+------------+-------+----------+-------+
+|       | **Number** |       | **Rank** |       |
++=======+============+=======+==========+=======+
+|       | 3\         |       | 1\       |       |
+|       | 5\         |       | 2\       |       |
+|       | 7\         |       | 3\       |       |
+|       | 8\         |       | 4\       |       |
+|       | 9\         |       | 5\       |       |
+|       | 11\        |       | 6\       |       |
+|       | 13\        |       | 7\       |       |
+|       | 15         |       | 8        |       |
++-------+------------+-------+----------+-------+
 
 : Test Scores. {#tbl-numberrankscores}
 
@@ -388,30 +309,30 @@ Therefore, the 25th percentile is 5.5. If we had used the first definition (the 
 
 For a second example, consider the 20 quiz scores shown in @tbl-quizscores.
 
-+--------+-----------+--------+----------+--------+
-|        | **Score** |        | **Rank** |        |
-+========+===========+========+==========+========+
-|        | 4\        |        | 1\       |        |
-|        | 4\        |        | 2\       |        |
-|        | 5\        |        | 3\       |        |
-|        | 5\        |        | 4\       |        |
-|        | 5\        |        | 5\       |        |
-|        | 5\        |        | 6\       |        |
-|        | 6\        |        | 7\       |        |
-|        | 6\        |        | 8\       |        |
-|        | 6\        |        | 9\       |        |
-|        | 7\        |        | 10\      |        |
-|        | 7\        |        | 11\      |        |
-|        | 7\        |        | 12\      |        |
-|        | 8\        |        | 13\      |        |
-|        | 8\        |        | 14\      |        |
-|        | 9\        |        | 15\      |        |
-|        | 9\        |        | 16\      |        |
-|        | 9\        |        | 17\      |        |
-|        | 10\       |        | 18\      |        |
-|        | 10\       |        | 19\      |        |
-|        | 10        |        | 20       |        |
-+--------+-----------+--------+----------+--------+
++-------+-----------+-------+----------+-------+
+|       | **Score** |       | **Rank** |       |
++=======+===========+=======+==========+=======+
+|       | 4\        |       | 1\       |       |
+|       | 4\        |       | 2\       |       |
+|       | 5\        |       | 3\       |       |
+|       | 5\        |       | 4\       |       |
+|       | 5\        |       | 5\       |       |
+|       | 5\        |       | 6\       |       |
+|       | 6\        |       | 7\       |       |
+|       | 6\        |       | 8\       |       |
+|       | 6\        |       | 9\       |       |
+|       | 7\        |       | 10\      |       |
+|       | 7\        |       | 11\      |       |
+|       | 7\        |       | 12\      |       |
+|       | 8\        |       | 13\      |       |
+|       | 8\        |       | 14\      |       |
+|       | 9\        |       | 15\      |       |
+|       | 9\        |       | 16\      |       |
+|       | 9\        |       | 17\      |       |
+|       | 10\       |       | 18\      |       |
+|       | 10\       |       | 19\      |       |
+|       | 10        |       | 20       |       |
++-------+-----------+-------+----------+-------+
 
 : 20 quiz scores. {#tbl-quizscores}
 
@@ -483,13 +404,13 @@ $$
 
 ## @sec-describing-one-variable Appendix II: Formulas for Calculating Key Descriptive Statistics
 
-### Mean[^describing-one-variable-8] {.unnumbered}
+### Mean[^describing-one-variable-5] {.unnumbered}
 
-[^describing-one-variable-8]: This section is adapted from David M. Lane. “Measures of Central Tendency.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/measures.html>
+[^describing-one-variable-5]: This section is adapted from David M. Lane. “Measures of Central Tendency.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/measures.html>
 
-The mean[^describing-one-variable-9] is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in @sec-stat-inference. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.
+The mean[^describing-one-variable-6] is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a “sample” or a “population.” We’ll cover this distinction in more detail in @sec-stat-inference. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.
 
-[^describing-one-variable-9]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
+[^describing-one-variable-6]: More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.
 
 The symbol $\mu$ is used for the mean of a population. The symbol $\bar{x}$ is used for the mean of a sample. The formula for $\mu$ is shown below:
 
@@ -515,15 +436,15 @@ $$
 \mu = \frac{\sum_{i=1}^{N} x_i}{N} = \frac{634}{31} = 20.4516
 $$
 
-+---------+--------------------------------------------------------------------------------------------+---------+
-|         | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |         |
-+---------+--------------------------------------------------------------------------------------------+---------+
++-------------+--------------------------------------------------------------------------------------------+-------------+
+|             | 37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6 |             |
++-------------+--------------------------------------------------------------------------------------------+-------------+
 
 : Number of touchdown passes. {#tbl-tdownpasses}
 
-### Variance[^describing-one-variable-10] {.unnumbered}
+### Variance[^describing-one-variable-7] {.unnumbered}
 
-[^describing-one-variable-10]: This section is adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
+[^describing-one-variable-7]: This section is adapted from David M. Lane. “Measures of Variability.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/summarizing_distributions/variability.html>
 
 Using the mean as the measure of the middle of the distribution, the variance is defined as the average squared difference of the scores from the mean. The data from Quiz 1 are shown in @tbl-quiz1var. The mean score is 7.0. Therefore, the column "Deviation from Mean" contains the score minus 7. The column "Squared Deviation" is simply the previous column squared.
 
@@ -593,9 +514,9 @@ $$
 
 where $s^2$ is the estimate of the variance and $\bar{x}$ is the sample mean.
 
-Note that $\bar{x}$ is the mean of a sample taken from a population with a mean of $\mu$. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by $n-1$ rather than simply $n$, the simulation "estimating variance"[^describing-one-variable-11] illustrates the bias that arises if we use $n$ as the denominator in the formula.
+Note that $\bar{x}$ is the mean of a sample taken from a population with a mean of $\mu$. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by $n-1$ rather than simply $n$, the simulation "estimating variance"[^describing-one-variable-8] illustrates the bias that arises if we use $n$ as the denominator in the formula.
 
-[^describing-one-variable-11]: <https://onlinestatbook.com/2/summarizing_distributions/variance_est.html>
+[^describing-one-variable-8]: <https://onlinestatbook.com/2/summarizing_distributions/variance_est.html>
 
 Let's look at a concrete example of calculating the sample variance. Assume the scores 1, 2, 4, and 5 were sampled from a larger population. To estimate the variance in the population you would compute $s^2$ as follows:
 

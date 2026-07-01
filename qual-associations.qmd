@@ -1,6 +1,6 @@
 # Relationships with Qualitative Variables {#sec-qual-associations}
 
-\[***Working draft notes for instructors**: I don't anticipate major changes to the structure of this chapter, but I am planning to change all of the examples/datasets.*\]
+\[***Working draft notes for instructors**: I don't anticipate major changes to the structure of this chapter, but I am hoping to change out the extraversion example.*\]
 
 The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.
 
@@ -102,7 +102,7 @@ Let’s say I’m interested in studying how personality relates to gender. The 
 
 ![Example survey items used in the "Big Five" case study.](Images/qual-associations/Big5.jpg){#fig-Big5 width="450"}
 
-For now, I decide to focus on whether people are introverted or extroverted. Extroverts are outgoing and tend to enjoy interacting with others. Extroverts will tend to agree with the statement “I am the life of the party” while introverts will tend to agree with the item “I don’t talk a lot.”
+For now, I decide to focus on whether people are introverted or extraverted. extraverts are outgoing and tend to enjoy interacting with others. extraverts will tend to agree with the statement “I am the life of the party” while introverts will tend to agree with the item “I don’t talk a lot.”
 
 I find a dataset that contains many responses to the Big Five personality questions as well as information on the gender of each respondent.[^qual-associations-5] There are 10 different questions related to extraversion, and the dataset has one variable for each of these 10 questions (@fig-big5dataset). The variable labeled e1 shows responses to the item “I am the life of the party.” A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.
 
@@ -110,19 +110,19 @@ I find a dataset that contains many responses to the Big Five personality questi
 
 ![Screenshot of some observations and variable values in the "Big Five" dataset.](Images/qual-associations/big5dataset.jpg){#fig-big5dataset width="450"}
 
-For all of the odd-numbered extraversion questions (e1, e3, e5, etc.), agreement indicates extraversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extraversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extrovert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 ($5 \times 5-5 \times 1=20$). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones ($5 \times 1-5 \times 5=-20$).
+For all of the odd-numbered extraversion questions (e1, e3, e5, etc.), agreement indicates extraversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extraversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extravert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 ($5 \times 5-5 \times 1=20$). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones ($5 \times 1-5 \times 5=-20$).
 
 As @fig-ExtHist indicates, most people lie somewhere in the middle between introversion and extraversion.
 
-![Distribution of the extraversion trait.](Images/qual-associations/ExtHist.jpg){#fig-ExtHist width="350"}
+![Distribution of the extraversion trait.](Images/qual-associations/hist-extraversion.png){#fig-ExtHist}
 
 Our gender variable was measured by asking respondents “What is your gender?” and they could choose from male (coded as a 1), female (2), or other (3). In a moment, we’ll consider those who responded “other,” but for now, let’s just look at those who chose either male or female.
 
 #### Predicting extraversion using gender
 
-If I want to describe differences in extraversion by gender in this dataset, I can compute the mean value of extraversion for males and for females. It turns out that males have an average extraversion of -0.46 while females’ average level of extraversion is 0.53. Thus, the average female is about 1-point more extroverted than the average male. But of course, there is abundant variation in extraversion among both groups, as seen clearly in @fig-GenderExtHist. There are plenty of females who are introverts and plenty of males who are extroverts.
+If I want to describe differences in extraversion by gender in this dataset, I can compute the mean value of extraversion for males and for females. It turns out that males have an average extraversion of -0.46 while females’ average level of extraversion is 0.53. Thus, the average female is about 1-point more extraverted than the average male. But of course, there is abundant variation in extraversion among both groups, as seen clearly in @fig-GenderExtHist. There are plenty of females who are introverts and plenty of males who are extraverts.
 
-![Distribution of extraversion by female/male identity.](Images/qual-associations/GenderExtHist.jpg){#fig-GenderExtHist width="350"}
+![Distribution of extraversion by female/male identity.](Images/qual-associations/boxplot-extraversion-gender-binary.png){#fig-GenderExtHist}
 
 If you asked me to guess the extraversion level of someone in this dataset and the only thing you told me about them was their gender, my best bet would probably be to guess the average extraversion level for someone of that gender. So for a female I knew nothing else about, I would guess their extraversion to be 0.53, while for a male I’d guess -0.46.
 
@@ -162,7 +162,7 @@ Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the differen
 
 I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as "other" gender (@fig-NonBExtHist).
 
-![Distribution of extraversion trait among those identifying with "other" gender (neither male nor female).](Images/qual-associations/NonBExtHist.jpg){#fig-NonBExtHist width="350"}
+![Distribution of extraversion trait, including among those identifying with "other" gender (neither male nor female).](Images/qual-associations/boxplot-extraversion-gender-nonbinary.png){#fig-NonBExtHist}
 
 The number of respondents selecting "other" is relatively small (102), so it’s not terribly surprising that this histogram looks a bit choppier than the ones we saw before.
 
@@ -260,7 +260,9 @@ As we can see in the appendix, it doesn't really matter which group we select as
 
 ## @sec-qual-associations Appendix: Regression with a Qualitative Dependent Variable {.unnumbered}
 
-This appendix will demonstrate one way to perform regression with a qualitative dependent variable, using output from the statistical software program *Stata*. Suppose I want to build a model of voting. I decide to use the 2016 American National Election Studies\[\^qual-associations-11\] survey results to try to understand how race is associated with voting. Respondents in the 2016 survey were asked about who they voted for in 2012, and I’m going to focus on their 2012 voting patterns for now. Using the statistical software package Stata to conduct my analysis, I find the following distributions for my two main variables of interest:
+This appendix will demonstrate one way to perform regression with a qualitative dependent variable, using output from the statistical software program *Stata*. Suppose I want to build a model of voting. I decide to use the 2016 American National Election Studies[^qual-associations-7] survey results to try to understand how race is associated with voting. Respondents in the 2016 survey were asked about who they voted for in 2012, and I’m going to focus on their 2012 voting patterns for now. Using the statistical software package Stata to conduct my analysis, I find the following distributions for my two main variables of interest:
+
+[^qual-associations-7]: <https://electionstudies.org/data-center/2016-time-series-study/>
 
 ```         
 . tab vote         
@@ -334,9 +336,9 @@ I also convert my race variable into a set of dummy variables by running:
 tab race, gen(race_)
 ```
 
-I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression (although the standard errors should be computed using a different method than the typical default,[^qual-associations-7] so the tests of statistical significance in this appendix should not be trusted). When using linear regression with a binary dependent variable, we call the model a linear probability model.
+I can then run three regressions, one for each value of my dependent variables. I will use regular linear regression (least squares) for this example, although there are arguably better and more precise models for qualitative dependent variables (e.g., various types of probit and logit regression). Nonetheless, we can get by with linear regression (although the standard errors should be computed using a different method than the typical default,[^qual-associations-8] so the tests of statistical significance in this appendix should not be trusted). When using linear regression with a binary dependent variable, we call the model a linear probability model.
 
-[^qual-associations-7]: Specifically, heteroskedasticy-robust standard errors should be used. @sec-regression introduces the topic of heteroskedasticy.
+[^qual-associations-8]: Specifically, heteroskedasticy-robust standard errors should be used. @sec-regression introduces the topic of heteroskedasticy.
 
 Let’s start by analyzing voting for Obama (vote_1) as the dependent variable:
 

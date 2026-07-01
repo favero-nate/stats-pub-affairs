@@ -1,13 +1,15 @@
 # Relationships Between Two Quantitative Variables {#sec-correlation}
 
-\[***Working draft notes for instructors**: I don't anticipate major changes to the structure of this chapter, but I am hoping to replace the linear regression example so that it comes from the chapter case study dataset.*\]
+\[***Working draft notes for instructors**: I am hoping to replace the linear regression example so that it comes from the chapter case study dataset. If you were looking at this in June, note that I have now (as of July 1) move the section on variable transformations to the middle of this chapter (it was previously in Ch. 3).*\]
 
 When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country's political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.
 
 ::: {.callout-tip icon="false"}
 ## Chapter Case Study: World Bank Development Indicators {.unnumbered}
 
-Data examples throughout this chapter come from the 2018 World Bank Development Indicators dataset.[^correlation-1] This dataset describes various countries around the world. For an initial example, we consider two variables: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. This latter measure is reported in standardized units (z-scores). Visually, we can depict the relationship between two quantitative variables using a scatter plot, as shown in @fig-stability-gdp.
+Data examples throughout this chapter come from the 2018 World Bank Development Indicators dataset.[^correlation-1] This dataset describes various countries around the world. For an initial example, we consider two variables: a common measure of country wealth (logged per capita GDP) and an estimate of perceived political stability that the World Bank generates by combining several data sources. Political stability is reported in standardized units (z-scores), which are explained later in this chapter. For now, it is enough to know that 0 indicates average political stability while negative values indicate lower-than-average stability and positive values indicate greater-than-average stability. A later section will also explain what is meant by *logged* per capita GDP.
+
+Visually, we can depict the relationship between two quantitative variables using a scatter plot, as shown in @fig-stability-gdp. The basic pattern from this plot is that wealthier countries (represented by dots further to the right) tend to be more politically stable (indicated by the dots appearing closer to the top of the graph). Notice the general absence of dots in the bottom-right corner: this means that few countries are both very wealthy and politically unstable.
 
 ![Scatter plot of country wealth and political stability, r=0.66](Images/correlations/stability_gdp.png){#fig-stability-gdp width="400"}
 :::
@@ -60,11 +62,84 @@ Fortunately, we can create what is called a binned scatter plot. Rather than plo
 
 If you're interested in learning more about exactly how the values of a correlation are calculated, further details are provided in Appendix I.
 
+## Transforming Variables[^correlation-4] {#sec-transforming-variables}
+
+[^correlation-4]: The initial part of this section is adapted from David M. Lane. “Linear Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/introduction/linear_transforms.html>. There is also material adapted from David M. Lane. “Standard Normal Distribution.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/normal_distribution/standard_normal.html>.
+
+Especially when describing relationships between variable, it is often necessary to transform data from one measurement scale to another. What do we mean by measurement scales? Some of the simplest examples come from ordinary measures of the physical world. For example, you might want to convert height measured in feet to height measured in inches. @tbl-heightconversion shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
+
++----------+------------+
+| **Feet** | **Inches** |
++==========+============+
+| 5.00\    | 60\        |
+| 6.25\    | 75\        |
+| 5.50\    | 66\        |
+| 5.75     | 69         |
++----------+------------+
+
+: Converting between feet and inches. {#tbl-heightconversion}
+
+Some conversions require that you multiply by a number and then add a second number. A good example of this is the transformation between degrees Centigrade and degrees Fahrenheit. @tbl-temp5cities shows the temperatures of 5 US cities in the early afternoon of November 16, 2002.
+
++--------------+------------------------+------------------------+
+| **City**     | **Degrees Fahrenheit** | **Degrees Centigrade** |
++==============+========================+========================+
+| Houston\     | 54\                    | 12.22\                 |
+| Chicago\     | 37\                    | 2.78\                  |
+| Minneapolis\ | 31\                    | -0.56\                 |
+| Miami\       | 78\                    | 25.56\                 |
+| Phoenix      | 70                     | 21.11                  |
++--------------+------------------------+------------------------+
+
+: Temperatures in 5 cities on 11/16/2002. {#tbl-temp5cities}
+
+The formula to transform Centigrade to Fahrenheit is:
+
+$$ F = 1.8C + 32 $$
+
+The formula for converting from Fahrenheit to Centigrade is
+
+$$ C = 0.5556F - 17.778 $$
+
+The transformation consists of multiplying by a constant and then adding a second constant. For the conversion from Centigrade to Fahrenheit, the first constant is 1.8 and the second is 32.
+
+@fig-cfunctionf shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called **linear transformations**.
+
+![Degrees Centigrade as a function of degrees Fahrenheit.](Images/describing-one-variable/cfunctionf.png){#fig-cfunctionf width="350"}
+
+### Standardization (Z Scores) {#sec-standardization}
+
+So far, we’ve discussed transformations that are probably familiar to you. A type of transformation that may be new to you is **standardization** or creating $z$ scores. A value from any distribution can be transformed into a $z$ score using the following formula:
+
+$$ z = \frac{(x - \mu)}{\sigma} $$
+
+where $z$ is the new value, $x$ is the value on the original distribution, $\mu$ is the mean of the original distribution, and $\sigma$ is the standard deviation of the original distribution.
+
+As a simple application, suppose you want the $z$ score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:
+
+$$ z = (26 - 50)/10 = -2.4 $$
+
+If all the values in a distribution are transformed to $z$ scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.
+
+### Log Transformations[^correlation-5]
+
+[^correlation-5]: This subsection is adapted from David M. Lane. “Log Transformations.” *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/transformations/log.html>
+
+Sometimes it is also useful to use transformations that are not linear. For example, the log transformation can sometimes be used to make highly skewed distributions less skewed. This can be valuable both for making patterns in the data more interpretable and for helping to meet the assumptions of inferential statistics (see @sec-stat-inference).
+
+In fact, we have already been making use of the log transformation when looking at country wealth in this chapter, although I did not previously draw attention to the transformation. "*Logged* per capita GDP" refers to a log transformed version of per capita GDP. Without this log transformation, the per capita GDP measure would be skewed right with large outliers for very wealthy countries.
+
+Let's turn briefly to the natural sciences for a particularly stark example of how log transformations are useful. @fig-scatterplotbrainweight shows how a log transformation can make patterns more visible. Both graphs plot the brain weight of animals as a function of their body weight. The raw weights are shown in the upper panel; the log-transformed weights are plotted in the lower panel.
+
+![Scatter plots of brain weight as a function of body weight in terms of both raw data (upper panel) and log-transformed data (lower panel).](Images/describing-one-variable/scatterplotbrainweight.jpg){#fig-scatterplotbrainweight}
+
+It is hard to discern a pattern in the upper panel whereas the strong relationship is shown clearly in the lower panel.
+
 ## Straight Lines and Measuring Correlation
 
 There are multiple types of correlation coefficients, but the one we've been using is Pearson's correlation coefficient. It is the most widely used and the one that is implied when people refer to a "correlation coefficient" without further clarification. Pearson's correlation coefficient describes the *linear* relationship between two variables, so it indicates strength of association by telling us how closely the data follow a straight line. A value of 1 or -1 means that the data fall perfectly along a straight line. The closer the absolute value of the Pearson’s correlation is to 1, the better the data track with a straight line. The closer the correlation is to 0, the more the data defy any pattern conducive to us drawing an upward or downward sloping line through them (the data may still appear to follow a perfectly flat line).
 
-@fig-perfect-corr shows an example of a perfect correlation. Any variable has a correlation of 1 with itself, and here we see that a variable also has a correlation of 1 with a linear transformation of itself (i.e., a standardized version of the variable, something we learned about in the prior chapter). Both axes are depicting the same variable, just expressed in different units (notice the different values on the two axes).
+@fig-perfect-corr shows an example of a perfect correlation. Any variable has a correlation of 1 with itself, and here we see that a variable also has a correlation of 1 with a linear transformation of itself (i.e., a standardized version of the variable). Both axes are depicting the same variable, just expressed in different units (notice the different values on the two axes).
 
 ![A scatter plot of a variable and its standardized values, r=1.00](Images/correlations/perfect_corr.png){#fig-perfect-corr width="400"}
 
@@ -94,14 +169,14 @@ $$
 
 How do we select exactly where to draw the regression line? There are multiple methods, but the most widely used one is called "least squares" because it involves minimizing the squared errors of prediction. "Error of prediction" refers to the difference between the predicted value of $y$ and the actual value of $y$ for each observation. There are well-known formulas for selecting $\alpha$ and $\beta$ that result in the line that minimizes the sum of the squared errors. These formulas for ordinary least squares (OLS) regression are shown in Appendix II.
 
-When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. $y$ will always represent the dependent variable, since it is the variable we are trying to predict based on the value of $x$. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of $x$ with $y$ equals the correlation of $y$ with $x$. But when we "run a regression" (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.[^correlation-4]
+When we are working with regression, it becomes crucial to distinguish between the independent and dependent variables. $y$ will always represent the dependent variable, since it is the variable we are trying to predict based on the value of $x$. Note that calculating a correlation coefficient does not require you to make this distinction: the correlation of $x$ with $y$ equals the correlation of $y$ with $x$. But when we "run a regression" (meaning we estimate a regression equation), we must specify which variable is the dependent variable. The solution often differs depending on which variable is designated the dependent variable.[^correlation-6]
 
-[^correlation-4]: The main exception is that if we have two standardized variables, the regression slope will be equal to the correlation and the intercept will be 0, so coefficients will be equivalent regardless of which variable is designated the dependent variable.
+[^correlation-6]: The main exception is that if we have two standardized variables, the regression slope will be equal to the correlation and the intercept will be 0, so coefficients will be equivalent regardless of which variable is designated the dependent variable.
 
 ::: {.callout-tip icon="false"}
 ## Example: Predicting University Student Grades {.unnumbered}
 
-Lane and colleagues[^correlation-5] offer a simple example of regression being used to predict university student performance based on high school (secondary school) performance. Performance is measured using the standard U.S. grade point system, in which students receive letter grades that are scored between 0 and 4 (e.g., A=4, B=3, C=2, D=1, F=0). Students receive separate grades in each class they take, so their overall performance is measured as a grade point average (GPA).
+Lane and colleagues[^correlation-7] offer a simple example of regression being used to predict university student performance based on high school (secondary school) performance. Performance is measured using the standard U.S. grade point system, in which students receive letter grades that are scored between 0 and 4 (e.g., A=4, B=3, C=2, D=1, F=0). Students receive separate grades in each class they take, so their overall performance is measured as a grade point average (GPA).
 
 The dataset consists of observations from 105 students who completed a computer science degree at a state university. The two variables being examined in this initial example are the GPA achieved during university studies and GPA during high school.
 
@@ -128,15 +203,18 @@ So a student with a GPA of 2.8 in high school is predicted (based on this sample
 If we stop and think about about the second Question to Always Asks about Data (who is in the dataset?), we might realize the need to add an important caveat to this analysis. The sample only includes university students who completed their degree, but many people who complete high school will never go to university. And even among those who do attend university, those with very poor grades at university are at higher risk of dropping out. Thus, the regression analysis here is unlikely to tell the full story of how high school GPA is related to academic performance at a university, since we don't get to see from this sample how high school GPA affects the rate of completing a university degree in the first place. We only see the final grade point average among students who do complete their degrees.
 :::
 
-[^correlation-5]: David M. Lane. "Introduction to Linear Regression." *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/intro.html>
+[^correlation-7]: David M. Lane. "Introduction to Linear Regression." *Online Statistics Education: A Multimedia Course of Study*. <https://onlinestatbook.com/2/regression/intro.html>
 
 ## Quick Guide to Interpreting Regression Results {#sec-quick-guide-to-interpreting-regression-results}
 
-Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:[^correlation-6]
+Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:[^correlation-8]
 
-[^correlation-6]: Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
+[^correlation-8]: Wheelan, C. (2010.) *Introduction to Public Policy*. New York: W. W. Norton & Company.
 
--   **Significance**: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?[^correlation-7] To assess this, check the p-value. For now, you can use the following rule-of-thumb:
+::: {.callout-tip icon="false"}
+## The Three S's (of Regression Results) {.unnumbered}
+
+-   **Significance**: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?[^correlation-9] To assess this, check the p-value. For now, you can use the following rule-of-thumb:
 
     -   If p \< 0.05: the relationship is statistically significant; proceed to evaluating sign and size
 
@@ -152,13 +230,14 @@ Many social science papers report their main results in the form of a regression
 
 -   **Size**: How big is the (predictive) effect? This S is often the most difficult to make sense of, and sometimes you may not have enough information to meaningfully evaluate it (e.g., if the units of measurement for a variable are not clearly explained).
 
-    -   For linear models: When the independent variable increases by one unit, we adjust our prediction for the dependent variable by $\hat{\beta_i}$ (where $\hat{\beta_i}$ represents the value of the coefficient estimate)[^correlation-8]
+    -   For linear models: When the independent variable increases by one unit, we adjust our prediction for the dependent variable by $\hat{\beta_i}$ (where $\hat{\beta_i}$ represents the value of the coefficient estimate)[^correlation-10]
 
     -   For non-linear models (e.g., logit, probit): Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors' explanation of effect size or "magnitude" of association
+:::
 
-[^correlation-7]: In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., & Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. *The American Statistician*, *73*(sup1), 374-384.
+[^correlation-9]: In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., & Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. *The American Statistician*, *73*(sup1), 374-384.
 
-[^correlation-8]: Why $\hat{\beta_i}$ and not simply $\beta_i$? We use the hat symbol ($\hat{~}$) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We'll learn more about estimation in @sec-stat-inference.
+[^correlation-10]: Why $\hat{\beta_i}$ and not simply $\beta_i$? We use the hat symbol ($\hat{~}$) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate. We'll learn more about estimation in @sec-stat-inference.
 
 @tbl-regression-cs-gpa provides an example of regression results in a format similar to what you may encounter in many research publications. Note, however, that many publications do not list exact p-values; instead, they often use one or more asterisks (\*) to denote coefficients with p-values smaller than 0.05 (sometimes also flagging p-values falling below various other thresholds).
 
@@ -177,10 +256,10 @@ Many social science papers report their main results in the form of a regression
 
 Until now, we have looked at *simple* regression, meaning there is just one independent variable. But in @tbl-regression-cs-gpa, we find results for a regression where two independent variables (`verb_sat` and `math_sat`) are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as will be further described in @sec-regression. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. We can interpret the results in @tbl-regression-cs-gpa as follows:
 
--   `verb_sat`: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA. Maybe there is no link, or maybe we would need more data to detect the link.[^correlation-9] Since we don't find statistical significance, we don't necessarily need to interpret the sign or size.
+-   `verb_sat`: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. This means we could not establish a reliable link between verbal SAT scores and computer science GPA. Maybe there is no link, or maybe we would need more data to detect the link.[^correlation-11] Since we don't find statistical significance, we don't necessarily need to interpret the sign or size.
 -   `math_sat`: The p-value (0.00014) is smaller than 0.05, so `math_sat` is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in math SAT (e.g., someone with a 501 versus someone with a 500) yields a prediction for the computer science GPA that is 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible since scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., someone with a 600 versus someone with a 500) predicts a computer science GPA that is 0.48 points higher ($0.0048 \times 100 = 0.48$). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.
 
-[^correlation-9]: The absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association). Confidence intervals (introduced in @sec-stat-inference) will help us evaluate this possibility.
+[^correlation-11]: The absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association). Confidence intervals (introduced in @sec-stat-inference) will help us evaluate this possibility.
 
 Note that we do not need to apply the three S's to the intercept (which some publications label the "constant") because it is not a variable. @tbl-regression-cs-gpa also contains some additional information frquently shown in regression tables: standard errors (which we will learn more about in @sec-sampling-distributions), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).
 
@@ -211,7 +290,7 @@ Remember that the three S's are just a starting point. But they should be enough
 
 ## @sec-correlation Appendix I: How Correlation is Calculated {.unnumbered}
 
-There are many ways to write the formula for correlation. As we saw in the prior chapter, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus in this appendix on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the next appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
+There are many ways to write the formula for correlation. As the second appendix from the prior chapter explained, we make a distinction between statistics for a "sample" versus a "population" when writing equations for certain statistics (e.g., variance). It is more common to have data from a sample, but we will focus in this appendix on a formula describing the population since it is a bit simpler. Additional formulas (including for samples) are presented in the next appendix. Note that we use the Greek letter $\rho$ (rather than $r$) to represent the correlation when we are describing a population.
 
 Here is one way to calculate correlation:
 
@@ -219,7 +298,7 @@ $$ \rho =\frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i-\mu_x}{\sigma_x} \right) \l
 
 Let's try to make sense of @eq-pop-corr by breaking it up into parts, starting from within the summation.
 
-$\left( \frac{x_i-\mu_x}{\sigma_x} \right)$ looks like the formula for standardization we learned last chapter, except now we have added some subscripts because we are working in the context of two different variables: $x$ and $y$. Adding $x$ as a subscript to $\mu$ and $\sigma$ clarifies that we are referring to the mean and standard deviation of $x$. With this part of the equation, we are converting the values of $x$ to z-scores. We can use $z_x$ to indicate z-scores of $x$, and we can use $z_{x_i}$ to indicate that we are describing the z-score of $x$ for observation $i$:
+$\left( \frac{x_i-\mu_x}{\sigma_x} \right)$ looks like the formula for standardization from @sec-transforming-variables, except now we have added some subscripts because we are working in the context of two different variables: $x$ and $y$. Adding $x$ as a subscript to $\mu$ and $\sigma$ clarifies that we are referring to the mean and standard deviation of $x$. With this part of the equation, we are converting the values of $x$ to z-scores. We can use $z_x$ to indicate z-scores of $x$, and we can use $z_{x_i}$ to indicate that we are describing the z-score of $x$ for observation $i$:
 
 $$z_{x_i} = \frac{x_i-\mu_x}{\sigma_x}$$
 
@@ -238,7 +317,7 @@ This makes it clear that after standardizing our two variables ($x$ and $y$), we
 
 @tbl-corr-data-excerpt shows one way to compute a correlation manually in a spreadsheet. Only 9 observations are shown in the table, but the full dataset consists of 204 observations. The means at the bottom of the table are computed from the full dataset.
 
-In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-10] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
+In @tbl-corr-data-excerpt, we see that the variables `stability` and `urban` have been transformed to z-scores (columns labeled `z_stability` and `z_urban`).[^correlation-12] In the final column, the values of the z-scores for the two variables are multiplied together. The average of this final column shown at the bottom of the table indicates the correlation between `stability` and `urban`: 0.36. Thus, there is a weak but noticeable positive association between the two variables.
 
 | id | country | stability | urban | z_stability | z_urban | z_stability × z_urban |
 |----|----|----|----|----|----|----|
@@ -266,7 +345,7 @@ Let's consider some of the mechanics underlying the calculation of correlation c
 Since the correlation is the mean of the final column, we can imagine the observations with positive values in the final column "pushing" the correlation toward a positive value while the observations with negative products "push" the correlation toward a negative value. From @fig-scatterplot-quadrants, we can see that there are more observations in the two quadrants yielding positive products (upper-right and bottom-left) than in the two "negative" quadrants (upper-left and bottom-right). Thus, it should come as no surprise that the correlation is positive (0.36).
 :::
 
-[^correlation-10]: Note that standardizing was accomplished using the population variance formula, in order to match the calculation of the mean for the final column, which divides by N rather than n - 1.
+[^correlation-12]: Note that standardizing was accomplished using the population variance formula, in order to match the calculation of the mean for the final column, which divides by N rather than n - 1.
 
 As illustrated in the example above, multiplying two standardized values together results in a positive value any time both variables are above average. This maps neatly to our conceptual definition of a positive relationship: when values of x tend to be higher (above average), values of y also tend to be higher (above average). Thus, finding above-average values for x being paired with above-average values of y (the upper-right quadrant) is consistent with the notion of a positive relationship (as are below-average x values paired with below-average y values, the lower-left quadrant). A negative relationship means that higher values of x (above average) tend to go with lower values for y (below average), so the combination of a positive z-score for x and a negative z-score for y (or vice versa) is consistent with a negative relationship.
 
