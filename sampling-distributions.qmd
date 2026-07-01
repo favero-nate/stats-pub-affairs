@@ -1,6 +1,6 @@
 # Sampling Distributions {#sec-sampling-distributions}
 
-\[***Working draft notes for instructors**: This chapter will eventually need to be completely re-written, but for this revision I am just hoping to improve the first section a bit with a more relatable example for the social sciences.*\]
+\[***Working draft notes for instructors**: This chapter will eventually need to be completely re-written, but for this revision I am now just hoping to improve the first section a bit with a more relatable example for the social sciences.*\]
 
 *Note: This chapter is adapted from the public domain resource Online Statistics Education: A Multimedia Course of Study (<https://onlinestatbook.com> Project Leader: David M. Lane, Rice University)*
 
