@@ -1,6 +1,6 @@
 # Relationships with Qualitative Variables {#sec-qual-associations}
 
-\[***Working draft notes for instructors**: I ended up deciding to mostly keep the examples for now, but some have been revised for clarity and consistency.*\]
+\[***Working draft notes for instructors**: I ended up deciding to mostly keep the examples for now, but some have been revised/restructured for clarity and consistency.*\]
 
 The way that we study relationships among variables depends on the types of variables we are examining—specifically whether they are quantitative or qualitative. In the prior chapter, we learned about how to describe the relationship (or association) between two quantitative variables. In this chapter, we will consider the case when one or both variables are qualitative.
 
@@ -108,7 +108,7 @@ The bars in @fig-cardgamebarchart are oriented horizontally rather than vertical
 
 ## Describing the Relationship between a Qualitative and a Quantitative Variable
 
-When we have a quantitative variable and a qualitative variable, we typically begin by dividing our sample into sub-samples according to the qualitative variable. For example, if we are examining the qualitative variable sex (indicating male or female), we can divide the sample into males and females. We can then compute measures of central tendency for the sub-samples and compare them. We already saw an example of this in @sec-critically-evaluating-graphs, where the relationship between sex and support for innovation was evaluated by comparing the means of the support-for-innovation variable among males versus females. Typically, we compare means, but we can also compare medians if we are concerned about our results being sensitive to outliers. Ultimately, we want to observe whether the means/medians appear similar across groups or if some groups have meaningfully higher means/medians than others. In the example with sex and support for innovation, the means were nearly the same (3.787 for females, 3.798 for males), suggesting that the two variables are not related (at least not to a meaningful extent).
+When we have a quantitative variable and a qualitative variable, we typically begin by dividing our sample into sub-samples according to the qualitative variable. As we saw in the chapter case study, if we are examining the qualitative variable gender (indicating male or female), this means dividing the sample into males and females. We can then examine measures of central tendency for the sub-samples and compare them. This is exactly what we did when we compared the median lines in the box plots describing the distribution of the extraversion variable among females and males. We also saw an example of evaluating a qualitative-quantitative relationship in @sec-critically-evaluating-graphs, where we compared the means of the support-for-innovation variable among males versus females. Typically, we compare means, but we can also compare medians if we are concerned about our results being sensitive to outliers. Ultimately, we want to observe whether the means/medians appear similar across groups or if some groups have meaningfully higher means/medians than others. In the example with sex and support for innovation, the means were nearly the same (3.787 for females, 3.798 for males), suggesting that the two variables are not related (at least not to a meaningful extent). When it came to extraversion, a more meaningful difference between females and males was apparent. (Note that we used boxplots to compare the two subsamples when examining extraversion, and since boxplots require drawing axes that show the entire range of the data, a very tiny difference relative to the range of the quantitative variables would not be visually noticeable in a graph showing boxplots.)
 
 ### Visualizing a Quantitative-Qualitative Relationship[^qual-associations-6]
 
@@ -118,7 +118,7 @@ Bar charts are often used to compare the means of different experimental conditi
 
 ![Bar chart showing the means for the two conditions.](Images/qual-associations/barchartmeantime.jpg){#fig-barchartmeantime}
 
-Although bar charts can display means, we do not generally recommend them for this purpose. Box plots should be used instead since they provide more information than bar charts without taking up more space. For example, a box plot of the mouse-movement data is shown in @fig-boxplotmousemovement. You can see that @fig-boxplotmousemovement reveals more about the distribution of movement times than does @fig-barchartmeantime. However, quantitative variables that take on only a few discrete values are not very suitable for box plots. For such variables, it is better to stick with displaying means in a bar chart (or something similar like @fig-gender-compare-zoomed-out).
+Although bar charts can display means, we do not generally recommend them for this purpose. Box plots should generally be used instead since they provide more information than bar charts without taking up more space. For example, a box plot of the mouse-movement data is shown in @fig-boxplotmousemovement. You can see that @fig-boxplotmousemovement reveals more about the distribution of movement times than does @fig-barchartmeantime. While use of box plots is a good general rule, quantitative variables that take on only a few discrete values (such as the number of children someone has) are not very suitable for box plots, as noted in @sec-describing-one-variable. For such variables, it is better to stick with displaying means in a bar chart (or something similar like @fig-gender-compare-zoomed-out).
 
 ![Box plots of times to move the mouse to the small and large targets.](Images/qual-associations/boxplotmousemovement.jpg){#fig-boxplotmousemovement}
 
@@ -176,7 +176,7 @@ Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the differen
 
 : Results for a regression with extraversion as the dependent variable {#tbl-reg-extraversion-gender}
 
-#### Prediction with more than two categories for gender {#sec-prediction-with-multiple-categories}
+#### Prediction with more than two categories {#sec-prediction-with-multiple-categories}
 
 I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as "other" gender (@fig-NonBExtHist).
 
