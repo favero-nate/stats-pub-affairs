@@ -136,7 +136,7 @@ When we’re working with data, sometimes it’s helpful to express how I would 
 
 $$ \widehat{Extraversion}=0.53 \times Female-0.46 \times Male $$ {#eq-ExtReg}
 
-Notice I’ve added a “hat” above the name of the variable *Extraversion*; this hat means that I’m making a guess about the value of that variable (I’m guessing the level of extraversion based on gender). The equation has two other variables *Female* and *Male*, and these two variables will take on a value of 1 if the person’s gender is equal to the name of the variable and will otherwise take on a value of 0. For a female, *Female* will equal 1 and *Male* will equal 0, giving us:
+Notice I’ve added a “hat” above the name of the variable *Extraversion*; this hat means that I’m making a guess about the value of that variable (I’m guessing the level of extraversion based on gender). The equation has two other indicator variables *Female* and *Male*, and these two variables will take on a value of 1 if the person’s gender is equal to the name of the variable and will otherwise take on a value of 0. For a female, *Female* will equal 1 and *Male* will equal 0, giving us:
 
 $$ \widehat{Extraversion}=0.53 \times (1)-0.46 \times (0)=0.53 $$
 
@@ -178,43 +178,43 @@ Notice that in @eq-ExtRegFem, the number next to *Male* is equal to the differen
 
 #### Prediction with more than two categories {#sec-prediction-with-multiple-categories}
 
-I now move beyond the gender binary and consider the “other” category in survey responses. The average level of extraversion among those identifying as neither male nor female is -5.66. This is notably more introverted (on average) than those who identify as male or female. As with males and females, there is still considerable variation among those identifying as "other" gender (@fig-NonBExtHist).
+To see how our analysis changes when examining a qualitative variable with more than two categories, let's examine a variable recording the response to the question "What hand do you use to write with?" There are three response options: right, left, and both. We interpret these as indicating that someone is right-handed, left-handed, or ambidextrous (using both). To first get an overall sense of how this variable is related to extraversion, we can examine a set of box plots (@fig-boxplot-extraversion-hand). It appears that the median is exactly the same (0) for all three subsamples. This is perhaps unsurprising: we would probably not expect hand dominance to have much relationship to extraversion.
 
-![Distribution of extraversion trait, including among those identifying with "other" gender (neither male nor female).](Images/qual-associations/boxplot-extraversion-gender-nonbinary.png){#fig-NonBExtHist width="400"}
+![Distribution of extraversion trait by hand one writes with.](Images/qual-associations/boxplot-extraversion-hand.png){#fig-boxplot-extraversion-hand width="400"}
 
-The number of respondents selecting "other" is relatively small (102), so it’s not terribly surprising that this histogram looks a bit choppier than the ones we saw before.
+Since we are focusing on use of regression in this section, let's also consider the mean for each subsample, since the most popular type of regression (ordinary least squares) corresponds directly to the mean (not the median). The mean of the extraversion variable is 0.15 for right-handed respondents, -0.09 for left-handed respondents, and -0.45 for respondents who write with both hands.
 
-Again, if we had to make a guess about the level of extraversion of someone, and all we knew about that person was that their gender is other, we would probably want to guess the mean value among other-gender respondents (-5.66). Modifying @eq-ExtReg to incorporate a third category is relatively straightforward:
+If we had to make a guess about the level of extraversion of someone, and all we knew about that person was which hand they wrote with, it would be reasonable to guess the mean or median value for the subsample writing with the same hand as them. Here, we focus on the mean. From what we already saw in @eq-ExtReg, it is relatively straightforward to extend this format to incorporate a third category:
 
-$$ \widehat{Extraversion}=0.53 \times Female-0.46 \times Male-5.69 \times Other $$ {#eq-ExtRegNonBin}
+$$ \widehat{Extraversion}=0.15 \times Right-0.09 \times Left-0.45 \times Both$$ {#eq-ExtHand}
 
-For someone who identifies as female, we would plug in *Female* = 1, *Male* = 0, and *Other* = 0:
+For someone who writes with their right hand, we would plug in *Right* = 1, *Left* = 0, and *Both* = 0:
 
-$$ \widehat{Extraversion}=0.53 \times (1)-0.46 \times (0)-5.66 \times (0)=0.53 $$
+$$ \widehat{Extraversion}=0.15 \times (1) -0.09 \times (0) -0.45 \times (0)=0.15 $$
 
-If someone identifies as other-gender, we would use *Female* = 0, *Male* = 0, and *Other* = 1:
+If someone writes with both hands, we would use *Right* = 0, *Left* = 0, and *Both* = 1:
 
-$$ \widehat{Extraversion}=0.53 \times (0)-0.46 \times (0)-5.66 \times (1)=-5.66 $$
+$$ \widehat{Extraversion}=0.15 \times (0) -0.09 \times (0) -0.45 \times (1)= -0.45$$
 
-We can also return to the format of @eq-ExtRegFem but modify it to include the other category. This is how we will typically write our equation if we are doing a regression:
+We can also return to the format of @eq-ExtRegFem but modify it to include the other category. We start from one category as our baseline. Here, we choose right-handed respondents as our baseline, so we start by writing 0.15, to reflect their average. Then, we must create a coefficient for *Left* indicating the difference in the means of left-handed and right-handed respondents (-0.09-0.15=-0.24). Finally, we create a coefficient for *Both* by subtracting the right-handed mean from the ambidextrous mean (-0.45-0.15=0.60). This type of format is how we will typically write our equation if we are doing a regression:
 
-$$ \widehat{Extraversion}=0.53-0.99 \times Male-6.19 \times Other $$ {#eq-ExtRegFemNonBin}
+$$ \widehat{Extraversion}=0.15-0.24 \times Left-0.60 \times Both$$ {#eq-ExtRegHand}
 
-Now that there are three possible values for gender (female, male, and other), knowing the value of *Male* doesn’t necessarily allow us to conclude what the value of female is. If *Male* = 0, the individual could identify as either female or other. So we have to include a second variable. In this case, we chose to include the variable *Other*. If we know the values of *Male* and *Other*, we can always figure out the value of *Female* by process of elimination.
+Now, because there are three possible values for the main hand dominance variable (right, left, and both), knowing the value of one of our binary indicators *Left* doesn’t necessarily allow us to conclude what the value of *Right* is. If *Left* = 0, the individual could be either right-handed or ambidextrous. So we have to include a second binary variable. In this case, we chose to include the variable *Both*. If we know the values of *Left* and *Both*, we can always figure out the value of *Right* by process of elimination.
 
-For an other-gender person, we plug in *Male* = 0, and *Other* = 1:
+For an ambidextrousperson, we plug in *Left* = 0, and *Both* = 1:
 
-$$ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (1)=-5.66 $$
+$$ \widehat{Extraversion}=0.15-0.24 \times (0)-0.60 \times (1)=-0.45 $$
 
-When considering a female, we use *Male* = 0, and *Other* = 0:
+When considering a right-handed person, we use *Left* = 0, and *Both* = 0:
 
-$$ \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (0)=0.53 $$
+$$ \widehat{Extraversion}=0.15-0.24 \times (0)-0.60 \times (0)= 0.15 $$
 
-@eq-ExtRegNonBin and @eq-ExtRegFemNonBin indicate equivalent predictions for extraversion based on gender; they just offer this information in two different formats. @eq-ExtRegFemNonBin might be a bit trickier to understand for now, but it is again the typical form we use with regression.
+@eq-ExtHand and @eq-ExtRegHand indicate equivalent predictions for extraversion based on hand dominance; they just offer this information in two different formats. @eq-ExtRegHand might be a bit trickier to understand for now, but it is again the typical form we use with regression.
 
-Notice that we can talk about gender either as one qualitative variable with three possible values (female, male, or other), or we can talk about it as a series of three variables (*Female*, *Male*, and *Other*) that can each take on a value of either 0 or 1 (we call such variables "binary" or "dummy" variables). This can make things a bit confusing, but the important thing to remember is that when we have a qualitative variable with more than two categories, we’ll need to break out the categories into a set of dummy variables for purposes of representing the qualitative variable in an equation.
+Notice that we can talk about hand dominance either as one qualitative variable with three possible values (right, left, or both), or we can talk about it as a series of three binary (indicator) variables (*Right*, *Left*, and *Both*) that can each take on a value of either 0 or 1. This can make things a bit confusing, but the important thing to remember is that when we have a qualitative variable with more than two categories, we’ll need to break out the categories into a set of dummy variables for purposes of representing the qualitative variable in an equation.
 
-However, as @eq-ExtRegFem and @eq-ExtRegFemNonBin illustrate, we don’t necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like @eq-ExtRegFem or @eq-ExtRegFemNonBin, the number of dummy variables should be equal to the number of categories minus one. Since our gender variable can take on three possible values in this example, we included two independent variables in @eq-ExtRegFemNonBin. No dummy variable is included for female, so we call female the **omitted category**, also known as the **reference group** or **baseline category**. Remember, the first number in @eq-ExtRegFemNonBin is 0.53, which represents our guess for females—the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.
+However, as @eq-ExtRegFem and @eq-ExtRegHand illustrate, we don’t necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like @eq-ExtRegFem or @eq-ExtRegHand, the number of dummy variables should be equal to the number of categories minus one. Since our hand dominance variable can take on three possible values in this example, we included two independent variables in @eq-ExtRegHand. No dummy variable is included for right-handed people, so we call right-handed the **baseline category**, also known as the **reference group** or **omitted category**. Remember, the first number in @eq-ExtRegHand is 0.15, which represents our guess for right-handed people—the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.
 
 As we can see in the appendix, it doesn't really matter which group we select as the omitted category because we get equivalent predictions regardless of which one we choose.
 

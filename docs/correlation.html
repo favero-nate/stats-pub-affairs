@@ -469,7 +469,7 @@ window.Quarto = {
 </header>
 
 
-<p>[<em><strong>Working draft notes for instructors</strong>: I am hoping to replace the linear regression example so that it comes from the chapter case study dataset. If you were looking at this in June, note that I have now (as of July 1) move the section on variable transformations to the middle of this chapter (it was previously in Ch. 3).</em>]</p>
+<p>[<em><strong>Working draft notes for instructors</strong>: I am hoping to replace the linear regression example so that it comes from the chapter case study dataset. If you were looking at this in June, note that I have now (as of July 1) moved the section on variable transformations to the middle of this chapter (it was previously in Ch. 3).</em>]</p>
 <p>When analyzing data, we often want to know how variables are related to one another. For example, we might wonder to what extent a country’s political stability is related to its level of wealth. Supposing we had a dataset containing measures of political stability and wealth, we could use what we learned in the prior chapters to describe the distribution of the political stability measure and of the wealth variable. But we have not yet learned how to assess whether and how two variables are linked. This chapter begins to explore these questions, with a focus on quantitative variables. The next chapter will then extend this discussion to qualitative variables.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -708,8 +708,9 @@ Figure&nbsp;3.6: Degrees Centigrade as a function of degrees Fahrenheit.
 <p>So far, we’ve discussed transformations that are probably familiar to you. A type of transformation that may be new to you is <strong>standardization</strong> or creating <span class="math inline">\(z\)</span> scores. A value from any distribution can be transformed into a <span class="math inline">\(z\)</span> score using the following formula:</p>
 <p><span class="math display">\[ z = \frac{(x - \mu)}{\sigma} \]</span></p>
 <p>where <span class="math inline">\(z\)</span> is the new value, <span class="math inline">\(x\)</span> is the value on the original distribution, <span class="math inline">\(\mu\)</span> is the mean of the original distribution, and <span class="math inline">\(\sigma\)</span> is the standard deviation of the original distribution.</p>
-<p>As a simple application, suppose you want the <span class="math inline">\(z\)</span> score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:</p>
+<p>As a simple application, suppose you want the <span class="math inline">\(z\)</span> score for a student who got a 26 on an exam, where the full set of exam-takers have a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:</p>
 <p><span class="math display">\[ z = (26 - 50)/10 = -2.4 \]</span></p>
+<p>The value -2.4 indicates that the student scored 2.4 standard deviations below the mean.</p>
 <p>If all the values in a distribution are transformed to <span class="math inline">\(z\)</span> scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.</p>
 </section>
 <section id="log-transformationscorrelation-5" class="level3" data-number="3.2.2">
